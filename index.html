@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille Concurrentielle — Assurance de Personnes Canada 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── Variables ── */
+  :root {
+    --bg: #F7F7F5;
+    --surface: #FFFFFF;
+    --accent: #1A4D8F;
+    --accent-light: #E8F0FB;
+    --accent-hover: #163F7A;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5A5A5A;
+    --text-muted: #888888;
+    --border: #E2E2DE;
+    --green: #1B7F4A;
+    --green-bg: #EAF6EF;
+    --red: #B93232;
+    --red-bg: #FAEAEA;
+    --amber: #7A5C00;
+    --amber-bg: #FFF8E1;
+    --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --radius: 8px;
+    --radius-sm: 4px;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  /* ── Reset ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { cursor: pointer; font-family: inherit; }
+
+  /* ── Header sticky ── */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 64px;
+  }
+  .header-brand { display: flex; flex-direction: column; }
+  .header-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .header-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+  }
+  .btn-export {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: background 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-export:hover { background: var(--accent-hover); }
+  .btn-export svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* ── Main layout ── */
+  .main { max-width: 1200px; margin: 0 auto; padding: 28px 24px 60px; }
+
+  /* ── Company Tabs ── */
+  .tabs-company {
+    display: flex;
+    gap: 4px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .tabs-company::-webkit-scrollbar { display: none; }
+  .tab-company {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 18px 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+    gap: 1px;
+  }
+  .tab-company .ticker {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+  }
+  .tab-company:hover { color: var(--accent); }
+  .tab-company.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .tab-company.active .ticker { color: var(--accent); opacity: 0.7; }
+
+  /* ── Period Toggle ── */
+  .period-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .period-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .period-toggle {
+    display: flex;
+    background: var(--border);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+    gap: 2px;
+  }
+  .btn-period {
+    padding: 5px 14px;
+    border: none;
+    background: transparent;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    transition: background 0.15s, color 0.15s;
+  }
+  .btn-period:hover { background: rgba(255,255,255,0.7); color: var(--accent); }
+  .btn-period.active {
+    background: var(--surface);
+    color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+
+  /* ── Company header ── */
+  .company-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .company-name { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+  .company-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+  .company-ticker {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .company-period-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+  .btn-ir {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--surface);
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .btn-ir:hover { background: var(--accent); color: #fff; }
+  .btn-ir svg { width: 13px; height: 13px; }
+
+  /* ── Metrics Grid ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    opacity: 0.3;
+  }
+  .metric-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .metric-value {
+    font-family: var(--font-mono);
+    font-size: 1.65rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .metric-value.large { font-size: 1.35rem; }
+  .metric-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .metric-prev {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+  .badge-delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+  }
+  .badge-delta.up { background: var(--green-bg); color: var(--green); }
+  .badge-delta.down { background: var(--red-bg); color: var(--red); }
+  .badge-delta.neutral { background: var(--amber-bg); color: var(--amber); }
+
+  /* ── News section ── */
+  .news-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .news-grid { display: flex; flex-direction: column; gap: 10px; }
+  .news-item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.15s;
+  }
+  .news-item:hover { box-shadow: var(--shadow-md); }
+  .news-date {
+    background: var(--accent-light);
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+    border-right: 1px solid var(--border);
+  }
+  .news-date-month {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+  .news-date-day {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+  .news-date-year {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--text-muted);
+  }
+  .news-content { padding: 14px 16px; }
+  .news-source {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    font-family: var(--font-mono);
+  }
+  .news-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+    transition: color 0.15s;
+    display: block;
+  }
+  .news-title:hover { color: var(--accent); }
+  .news-title svg {
+    display: inline;
+    width: 11px;
+    height: 11px;
+    margin-left: 4px;
+    vertical-align: middle;
+    opacity: 0.5;
+  }
+  .news-desc {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    line-height: 1.45;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    margin-top: 40px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-sources {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .footer-sources strong { color: var(--text-secondary); }
+  .footer-disclaimer {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* ── Data table divider ── */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .header-inner { padding: 0 16px; height: auto; min-height: 56px; padding-top: 10px; padding-bottom: 10px; gap: 10px; flex-wrap: wrap; }
+    .header-title { font-size: 0.92rem; }
+    .header-sub { font-size: 0.65rem; }
+    .main { padding: 18px 16px 48px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .metric-value { font-size: 1.35rem; }
+    .metric-value.large { font-size: 1.1rem; }
+    .company-name { font-size: 1.2rem; }
+    .tabs-company { gap: 0; }
+    .tab-company { padding: 8px 12px; font-size: 0.82rem; }
+    .news-item { grid-template-columns: 76px 1fr; }
+    .news-date { padding: 12px 8px; }
+  }
+  @media (max-width: 400px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+    .period-toggle-wrap { flex-wrap: wrap; }
+    .news-item { grid-template-columns: 1fr; }
+    .news-date {
+      flex-direction: row; align-items: center; gap: 8px;
+      border-right: none; border-bottom: 1px solid var(--border);
+      padding: 10px 14px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="header-title">Veille Concurrentielle — Assurance de Personnes Canada</span>
+      <span class="header-sub">MFC · SLF · GWO · IAG &nbsp;|&nbsp; Résultats 2025 &nbsp;|&nbsp; Toutes valeurs en CA$</span>
+    </div>
+    <button class="btn-export" onclick="exportCSV()">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M8 2v8M5 7l3 3 3-3M2 12h12v2H2z"/>
+      </svg>
+      Exporter CSV
+    </button>
+  </div>
+</header>
+
+<!-- ── MAIN ── -->
+<main class="main">
+
+  <!-- Company Tabs -->
+  <nav class="tabs-company" role="tablist">
+    <button class="tab-company active" onclick="setCompany('MFC')" role="tab" id="tab-MFC">
+      Manuvie
+      <span class="ticker">MFC.TO</span>
+    </button>
+    <button class="tab-company" onclick="setCompany('SLF')" role="tab" id="tab-SLF">
+      Sun Life
+      <span class="ticker">SLF.TO</span>
+    </button>
+    <button class="tab-company" onclick="setCompany('GWO')" role="tab" id="tab-GWO">
+      Great-West Lifeco
+      <span class="ticker">GWO.TO</span>
+    </button>
+    <button class="tab-company" onclick="setCompany('IAG')" role="tab" id="tab-IAG">
+      iA Groupe financier
+      <span class="ticker">IAG.TO</span>
+    </button>
+  </nav>
+
+  <!-- Period Toggle -->
+  <div class="period-toggle-wrap">
+    <span class="period-label">Période</span>
+    <div class="period-toggle">
+      <button class="btn-period active" onclick="setPeriod('T1')" id="btn-T1">T1 2025</button>
+      <button class="btn-period" onclick="setPeriod('T2')" id="btn-T2">T2 2025</button>
+      <button class="btn-period" onclick="setPeriod('T3')" id="btn-T3">T3 2025</button>
+      <button class="btn-period" onclick="setPeriod('AN')" id="btn-AN">Annuel</button>
+    </div>
+  </div>
+
+  <!-- Dynamic content -->
+  <div id="content"></div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-sources">
+      <strong>Sources :</strong> Communiqués de presse officiels via Newswire Canada (newswire.ca), Business Wire (businesswire.com), PR Newswire (prnewswire.com), SEC EDGAR, Sun Life Newsroom (sunlife.com), iA Groupe financier (ia.ca), Great-West Lifeco (greatwestlifeco.com), Manulife (manulife.com). Données extraites des rapports trimestriels T1–T3 2025 publiés respectivement les 7 mai, 5–8 août et 5–12 novembre 2025, ainsi que des résultats annuels 2025 publiés le 11–17 février 2026.
+    </div>
+    <div class="footer-disclaimer">
+      ⓘ Tableau de bord statique — données extraites de sources officielles · Toutes les valeurs sont en dollars canadiens (CA$) sauf indication contraire · Mis à jour : juin 2026 · BPA = Bénéfice par action dilué tiré des activités de base / core EPS
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════
+   DATA — Sources officielles vérifiées
+   ═══════════════════════════════════════════════ */
+const DATA = {
+
+  MFC: {
+    name: "Manuvie",
+    fullName: "La Société Financière Manuvie",
+    ticker: "MFC.TO",
+    ir_url: "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+    T1: {
+      period: "T1 2025 (31 mars 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "0,99 $",
+          prev: "0,96 $ (T1 2024)",
+          delta: "+3 %",
+          dir: "up",
+          note: "RPA tiré des activités de base, taux de change constant"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "0,5 G$",
+          prev: "0,9 G$ (T1 2024)",
+          delta: "−48 %",
+          dir: "down",
+          note: "Bénéfice net IFRS attribué aux actionnaires"
+        },
+        {
+          label: "Ratio LICAT (MLI)",
+          value: "134 %",
+          prev: "∼133 % (T1 2024)",
+          delta: "+1 pp",
+          dir: "up",
+          note: "Ratio de la Manufacturers Life Insurance Co."
+        },
+        {
+          label: "Résultat activités de base",
+          value: "1,8 G$",
+          prev: "1,8 G$ (T1 2024)",
+          delta: "−1 %",
+          dir: "down",
+          note: "Résultat tiré des activités de base (taux change constant)"
+        }
+      ],
+      news: [
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "Newswire Canada",
+          title: "Manuvie présente ses résultats pour le premier trimestre de 2025",
+          desc: "BPA de base de 0,99 $, souscriptions EPA +37 %, MSC affaires nouvelles +31 %, VAN +36 %.",
+          url: "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-le-premier-trimestre-de-2025-844457828.html"
+        },
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "Finance et Investissement",
+          title: "IA, Great-West et Manuvie dévoilent leurs résultats du T1 2025",
+          desc: "Synthèse des résultats des trois assureurs canadiens au premier trimestre 2025.",
+          url: "https://www.finance-investissement.com/nouvelles/actualites/ia-great-west-et-manuvie-devoilent-leurs-resultats-trimestriels/"
+        },
+        {
+          date: "2025-03-27",
+          dateStr: { day: "27", month: "Mar", year: "2025" },
+          source: "Manulife.com",
+          title: "Rapport annuel 2024 et circulaire 2025 de Manuvie maintenant disponibles",
+          desc: "Manuvie publie son rapport annuel 2024 incluant les états financiers audités et la circulaire de la direction.",
+          url: "https://www.manulife.com/ca/en/about-us/investors/results-and-reports"
+        }
+      ]
+    },
+    T2: {
+      period: "T2 2025 (30 juin 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "0,95 $",
+          prev: "0,93 $ (T2 2024)",
+          delta: "+2 %",
+          dir: "up",
+          note: "RPA tiré des activités de base, taux de change constant"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "1,8 G$",
+          prev: "1,1 G$ (T2 2024)",
+          delta: "+88 %",
+          dir: "up",
+          note: "Bénéfice net IFRS attribué aux actionnaires"
+        },
+        {
+          label: "Ratio LICAT (MLI)",
+          value: "134 %",
+          prev: "133 % (T1 2025)",
+          delta: "+1 pp",
+          dir: "up",
+          note: "Ratio de la Manufacturers Life Insurance Co."
+        },
+        {
+          label: "Résultat activités de base",
+          value: "1,7 G$",
+          prev: "1,8 G$ (T2 2024)",
+          delta: "−2 %",
+          dir: "down",
+          note: "Résultat tiré des activités de base (taux change constant)"
+        }
+      ],
+      news: [
+        {
+          date: "2025-08-06",
+          dateStr: { day: "06", month: "Août", year: "2025" },
+          source: "Newswire Canada",
+          title: "Manuvie présente ses résultats pour le deuxième trimestre de 2025",
+          desc: "BPA de base 0,95 $, EPA +15 %, MSC affaires nouvelles +37 %, VAN +20 %, entrées nettes GP&A 0,9 G$.",
+          url: "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-le-deuxieme-trimestre-de-2025-840374356.html"
+        },
+        {
+          date: "2025-07-23",
+          dateStr: { day: "23", month: "Juil", year: "2025" },
+          source: "Newswire Canada",
+          title: "Manuvie s'apprête à publier ses résultats du deuxième trimestre de 2025",
+          desc: "Annonce de la date de publication des résultats financiers T2 2025 et webémission pour le 7 août 2025.",
+          url: "https://www.newswire.ca/fr/news-releases/manuvie-s-apprete-a-publier-ses-resultats-du-deuxieme-trimestre-de-2025-822284257.html"
+        },
+        {
+          date: "2025-08-06",
+          dateStr: { day: "06", month: "Août", year: "2025" },
+          source: "manulife.com",
+          title: "Rapport aux actionnaires T2 2025 — Manuvie (PDF officiel)",
+          desc: "Rapport trimestriel complet avec états financiers consolidés et rapport de gestion du T2 2025.",
+          url: "https://www.manulife.com/content/dam/manulife-com/ca/financial-documents/investors/MFC_QPR_2025_Q2_FR.pdf"
+        }
+      ]
+    },
+    T3: {
+      period: "T3 2025 (30 septembre 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "1,16 $",
+          prev: "1,00 $ (T3 2024)",
+          delta: "+16 %",
+          dir: "up",
+          note: "RPA tiré des activités de base, résultats records"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "1,8 G$",
+          prev: "1,8 G$ (T3 2024)",
+          delta: "≈ stable",
+          dir: "neutral",
+          note: "Bénéfice net IFRS attribué aux actionnaires"
+        },
+        {
+          label: "Ratio LICAT (MLI)",
+          value: "138 %",
+          prev: "134 % (T2 2025)",
+          delta: "+4 pp",
+          dir: "up",
+          note: "Ratio de la Manufacturers Life Insurance Co."
+        },
+        {
+          label: "Résultat activités de base",
+          value: "2,0 G$",
+          prev: "1,8 G$ (T3 2024)",
+          delta: "+10 %",
+          dir: "up",
+          note: "Résultats records — hausse à taux de change constant"
+        }
+      ],
+      news: [
+        {
+          date: "2025-11-12",
+          dateStr: { day: "12", month: "Nov", year: "2025" },
+          source: "PR Newswire",
+          title: "Manulife Reports Third Quarter 2025 Results — Record Core Earnings",
+          desc: "Core EPS de 1,16 $ (+16 %), résultats de base records, ROE activités de base 18,1 %, LICAT 138 %.",
+          url: "https://www.prnewswire.com/news-releases/manulife-reports-third-quarter-2025-results-302613663.html"
+        },
+        {
+          date: "2025-11-12",
+          dateStr: { day: "12", month: "Nov", year: "2025" },
+          source: "Newswire Canada",
+          title: "Manuvie présente ses résultats pour le troisième trimestre de 2025",
+          desc: "Résultats de base records de 2,0 G$, hausse de 10 % à taux constant. Classement TIME des meilleures entreprises mondiales.",
+          url: "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-le-troisieme-trimestre-de-2025-891547759.html"
+        },
+        {
+          date: "2025-11-12",
+          dateStr: { day: "12", month: "Nov", year: "2025" },
+          source: "Seeking Alpha / PR",
+          title: "Manulife Q3 2025 — Rapport aux actionnaires (résultats détaillés)",
+          desc: "Détail par segment : Asie, Canada, É.-U. et Gestion mondiale de patrimoine. VAN +11 %, EPA +8 %.",
+          url: "https://seekingalpha.com/pr/20305296"
+        }
+      ]
+    },
+    AN: {
+      period: "Annuel 2025 (31 décembre 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "4,21 $",
+          prev: "3,85 $ (2024)",
+          delta: "+8 %",
+          dir: "up",
+          note: "RPA tiré des activités de base — record annuel"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "5,6 G$",
+          prev: "5,4 G$ (2024)",
+          delta: "+2 %",
+          dir: "up",
+          note: "Bénéfice net IFRS annuel attribué aux actionnaires"
+        },
+        {
+          label: "Ratio LICAT (MLI)",
+          value: "136 %",
+          prev: "137 % (2024)",
+          delta: "−1 pp",
+          dir: "neutral",
+          note: "Fin d'exercice au 31 décembre 2025"
+        },
+        {
+          label: "Résultat activités de base",
+          value: "7,5 G$",
+          prev: "7,2 G$ (2024)",
+          delta: "+3 %",
+          dir: "up",
+          note: "Record annuel — hausse à taux de change constant"
+        }
+      ],
+      news: [
+        {
+          date: "2026-02-11",
+          dateStr: { day: "11", month: "Fév", year: "2026" },
+          source: "Newswire Canada",
+          title: "Manuvie présente ses résultats pour l'exercice et le T4 2025 — Résultats records",
+          desc: "BPA de base annuel 4,21 $ (+8 %), résultats records, dividende haussé de 10,2 %, LICAT 136 %.",
+          url: "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-l-exercice-et-le-quatrieme-trimestre-de-2025-850273658.html"
+        },
+        {
+          date: "2026-02-11",
+          dateStr: { day: "11", month: "Fév", year: "2026" },
+          source: "PR Newswire",
+          title: "Manulife Reports Full Year and Fourth Quarter 2025 Results",
+          desc: "Core earnings record de 7,5 G$, core EPS 4,21 $, retour de 5,4 G$ aux actionnaires en 2025.",
+          url: "https://www.prnewswire.com/news-releases/manulife-reports-full-year-and-fourth-quarter-2025-results-302685675.html"
+        },
+        {
+          date: "2026-02-11",
+          dateStr: { day: "11", month: "Fév", year: "2026" },
+          source: "manulife.com",
+          title: "Manuvie dépose ses états financiers annuels 2025 vérifiés et le rapport de gestion connexe",
+          desc: "Dépôt auprès des Autorités canadiennes en valeurs mobilières et de la SEC (formulaire 40-F).",
+          url: "https://www.manulife.com/ca/en/about-us/news/manulife-files-2025-audited-annual-financial-statements-and-related-mda"
+        }
+      ]
+    }
+  },
+
+  SLF: {
+    name: "Sun Life",
+    fullName: "Sun Life Financial Inc.",
+    ticker: "SLF.TO",
+    ir_url: "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+    T1: {
+      period: "T1 2025 (31 mars 2025)",
+      metrics: [
+        {
+          label: "BPA sous-jacent (dilué)",
+          value: "1,82 $",
+          prev: "1,50 $ (T1 2024)",
+          delta: "+21 %",
+          dir: "up",
+          note: "Underlying EPS (diluted), résultat net sous-jacent"
+        },
+        {
+          label: "Revenu net sous-jacent",
+          value: "1,045 G$",
+          prev: "0,875 G$ (T1 2024)",
+          delta: "+19 %",
+          dir: "up",
+          note: "Underlying net income — hausse tirée par gestion d'actifs"
+        },
+        {
+          label: "Ratio LICAT (SLF Inc.)",
+          value: "149 %",
+          prev: "∼149 % (T1 2024)",
+          delta: "stable",
+          dir: "neutral",
+          note: "Ratio LICAT de SLF Inc. au 31 mars 2025"
+        },
+        {
+          label: "Actif sous gestion (AUM)",
+          value: "1 551 G$",
+          prev: "∼1 465 G$ (T1 2024)",
+          delta: "+6 %",
+          dir: "up",
+          note: "AUM total incluant MFS, SLC Management et assurance"
+        }
+      ],
+      news: [
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "The Globe and Mail",
+          title: "Sun Life Reports First Quarter 2025 Results — Underlying EPS +21 %",
+          desc: "Revenu net sous-jacent de 1,045 G$ (+19 %), LICAT 149 %, dividende trimestriel augmenté de 5 %.",
+          url: "https://www.theglobeandmail.com/investing/markets/stocks/SLF-T/pressreleases/32301335/sun-life-reports-first-quarter-2025-results/"
+        },
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "SEC EDGAR",
+          title: "Sun Life Financial — Formulaire 6-K T1 2025 (communiqué de presse officiel)",
+          desc: "Formulaire 6-K déposé à la SEC incluant le communiqué de résultats complet du premier trimestre 2025.",
+          url: "https://www.sec.gov/Archives/edgar/data/0001097362/000109736225000016/a2025q1slfenrlive.htm"
+        },
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "sunlife.com",
+          title: "Sun Life Reports First Quarter 2025 Results (communiqué officiel)",
+          desc: "Résultats T1 : gestion de patrimoine et d'actifs +19 % en revenu sous-jacent, ROE sous-jacent 17,7 %.",
+          url: "https://www.sunlife.com/content/dam/sunlife/regional/global-marketing/documents/com/pa-e-q125-earnings.pdf"
+        }
+      ]
+    },
+    T2: {
+      period: "T2 2025 (30 juin 2025)",
+      metrics: [
+        {
+          label: "BPA sous-jacent (dilué)",
+          value: "1,79 $",
+          prev: "1,72 $ (T2 2024)",
+          delta: "+4 %",
+          dir: "up",
+          note: "Underlying EPS (diluted) — légère hausse"
+        },
+        {
+          label: "Revenu net sous-jacent",
+          value: "1,015 G$",
+          prev: "1,000 G$ (T2 2024)",
+          delta: "+2 %",
+          dir: "up",
+          note: "Underlying net income — Asie record, É.-U. difficile"
+        },
+        {
+          label: "Ratio LICAT (SLF Inc.)",
+          value: "151 %",
+          prev: "149 % (T1 2025)",
+          delta: "+2 pp",
+          dir: "up",
+          note: "Ratio LICAT de SLF Inc. au 30 juin 2025"
+        },
+        {
+          label: "Actif sous gestion (AUM)",
+          value: "1 541 G$",
+          prev: "1 465 G$ (T2 2024)",
+          delta: "+5 %",
+          dir: "up",
+          note: "AUM total incluant MFS (1 114 G$) et SLC (250 G$)"
+        }
+      ],
+      news: [
+        {
+          date: "2025-08-07",
+          dateStr: { day: "07", month: "Août", year: "2025" },
+          source: "PR Newswire",
+          title: "Sun Life Reports Second Quarter 2025 Results",
+          desc: "AUM 1 541 G$ (+5 %), LICAT 151 %, revenu sous-jacent Asie record, rachat de 400 M$ d'actions.",
+          url: "https://www.prnewswire.com/news-releases/sun-life-reports-second-quarter-2025-results-302524813.html"
+        },
+        {
+          date: "2025-08-07",
+          dateStr: { day: "07", month: "Août", year: "2025" },
+          source: "Sun Life Newsroom",
+          title: "Sun Life Reports Second Quarter 2025 Results (site officiel)",
+          desc: "Revenu net sous-jacent +2 %, ROE sous-jacent 17,6 %, LICAT 151 %, BPA rapporté 1,26 $ (+14 %).",
+          url: "https://www.sunlife.com/en/newsroom/news-releases/announcement/sun-life-reports-second-quarter-2025-results/123988/"
+        },
+        {
+          date: "2025-08-07",
+          dateStr: { day: "07", month: "Août", year: "2025" },
+          source: "SEC EDGAR",
+          title: "Sun Life Financial — Formulaire 6-K T2 2025 (communiqué de presse officiel)",
+          desc: "Dépôt SEC du communiqué de résultats complet du deuxième trimestre 2025.",
+          url: "https://www.sec.gov/Archives/edgar/data/0001097362/000109736225000026/a2025q2slfenrlive.htm"
+        }
+      ]
+    },
+    T3: {
+      period: "T3 2025 (30 septembre 2025)",
+      metrics: [
+        {
+          label: "BPA sous-jacent (dilué)",
+          value: "1,85 $",
+          prev: "1,72 $ (T3 2024)",
+          delta: "+8 %",
+          dir: "up",
+          note: "Underlying EPS T3 2025"
+        },
+        {
+          label: "Revenu net sous-jacent",
+          value: "1,047 G$",
+          prev: "1,016 G$ (T3 2024)",
+          delta: "+3 %",
+          dir: "up",
+          note: "Hausse Canada et Asie, É.-U. en difficulté"
+        },
+        {
+          label: "Ratio LICAT (SLF Inc.)",
+          value: "154 %",
+          prev: "151 % (T2 2025)",
+          delta: "+3 pp",
+          dir: "up",
+          note: "Hausse grâce à émission obligataire et génération organique"
+        },
+        {
+          label: "Actif sous gestion (AUM)",
+          value: "1 623 G$",
+          prev: "1 515 G$ (T3 2024)",
+          delta: "+7 %",
+          dir: "up",
+          note: "Record — dont MFS 1 176 G$ et SLC 259 G$"
+        }
+      ],
+      news: [
+        {
+          date: "2025-11-05",
+          dateStr: { day: "05", month: "Nov", year: "2025" },
+          source: "Sun Life Newsroom",
+          title: "Sun Life Reports Third Quarter 2025 Results — AUM 1 623 G$",
+          desc: "AUM +7 %, LICAT 154 %, dividende augmenté à 0,92 $, rachat de 400 M$ d'actions au T3.",
+          url: "https://www.sunlife.com/en/newsroom/news-releases/announcement/sun-life-reports-third-quarter-2025-results/124016/"
+        },
+        {
+          date: "2025-11-05",
+          dateStr: { day: "05", month: "Nov", year: "2025" },
+          source: "PR Newswire",
+          title: "Sun Life Reports Third Quarter 2025 Results (communiqué complet)",
+          desc: "Revenu net sous-jacent 1,047 G$ (+3 %), ROE sous-jacent 18,3 %, LICAT 154 %.",
+          url: "https://www.prnewswire.com/news-releases/sun-life-reports-third-quarter-2025-results-302606233.html"
+        },
+        {
+          date: "2025-11-05",
+          dateStr: { day: "05", month: "Nov", year: "2025" },
+          source: "SEC EDGAR",
+          title: "Sun Life Financial — Formulaire 6-K T3 2025 (rapport aux actionnaires)",
+          desc: "Rapport aux actionnaires T3 2025 complet — rapport de gestion et états financiers condensés.",
+          url: "https://www.sec.gov/Archives/edgar/data/0001097362/000109736225000039/q32025shareholdersreport.htm"
+        }
+      ]
+    },
+    AN: {
+      period: "Annuel 2025 (31 décembre 2025)",
+      metrics: [
+        {
+          label: "BPA sous-jacent (dilué)",
+          value: "7,45 $",
+          prev: "6,65 $ (2024)",
+          delta: "+12 %",
+          dir: "up",
+          note: "Underlying EPS — croissance conforme aux objectifs à MT"
+        },
+        {
+          label: "Revenu net sous-jacent",
+          value: "4,201 G$",
+          prev: "3,856 G$ (2024)",
+          delta: "+9 %",
+          dir: "up",
+          note: "Underlying net income annuel 2025"
+        },
+        {
+          label: "Ratio LICAT (SLF Inc.)",
+          value: "157 %",
+          prev: "∼152 % (2024)",
+          delta: "+5 pp",
+          dir: "up",
+          note: "Position de capital robuste fin 2025"
+        },
+        {
+          label: "Actif sous gestion (AUM)",
+          value: "1 605 G$",
+          prev: "1 543 G$ (2024)",
+          delta: "+4 %",
+          dir: "up",
+          note: "AUM total au 31 décembre 2025"
+        }
+      ],
+      news: [
+        {
+          date: "2026-02-11",
+          dateStr: { day: "11", month: "Fév", year: "2026" },
+          source: "Sun Life Newsroom",
+          title: "Sun Life Reports Fourth Quarter and Full Year 2025 Results",
+          desc: "BPA sous-jacent annuel 7,45 $ (+12 %), LICAT 157 %, ROE sous-jacent 18,2 %, dividende haussé.",
+          url: "https://www.sunlife.com/en/newsroom/news-releases/announcement/sun-life-reports-fourth-quarter-and-full-year-2025-results/124057/"
+        },
+        {
+          date: "2026-02-11",
+          dateStr: { day: "11", month: "Fév", year: "2026" },
+          source: "PR Newswire",
+          title: "Sun Life Reports Fourth Quarter and Full Year 2025 Results (communiqué officiel)",
+          desc: "Revenu net sous-jacent annuel 4,201 G$, retour de valeur aux actionnaires, AUM 1 605 G$.",
+          url: "https://www.prnewswire.com/news-releases/sun-life-reports-fourth-quarter-and-full-year-2025-results-302685703.html"
+        },
+        {
+          date: "2026-03-30",
+          dateStr: { day: "30", month: "Mar", year: "2026" },
+          source: "Stock Titan",
+          title: "Sun Life publie un package d'informations supplémentaires mis à jour",
+          desc: "Nouvelles divulgations alignées avec la création du groupe Gestion d'actifs Sun Life et du plan de rémunération en actions de SLC Management.",
+          url: "https://www.stocktitan.net/news/SLF/sun-life-releases-updated-supplementary-information-xht3ub4vboz4.html"
+        }
+      ]
+    }
+  },
+
+  GWO: {
+    name: "Great-West Lifeco",
+    fullName: "Great-West Lifeco Inc.",
+    ticker: "GWO.TO",
+    ir_url: "https://www.greatwestlifeco.com/en/investor-relations.html",
+    T1: {
+      period: "T1 2025 (31 mars 2025)",
+      metrics: [
+        {
+          label: "BPA de base (dilué)",
+          value: "1,11 $",
+          prev: "1,05 $ (T1 2024)",
+          delta: "+6 %",
+          dir: "up",
+          note: "Base EPS — croissance malgré volatilité des marchés"
+        },
+        {
+          label: "Bénéfice de base",
+          value: "1,03 G$",
+          prev: "0,98 G$ (T1 2024)",
+          delta: "+5 %",
+          dir: "up",
+          note: "Base earnings — solide performance retraite et patrimoine"
+        },
+        {
+          label: "Ratio LICAT",
+          value: "130 %",
+          prev: "130 % (T4 2024)",
+          delta: "stable",
+          dir: "neutral",
+          note: "Ratio LICAT au 31 mars 2025, trésorerie Lifeco 2,5 G$"
+        },
+        {
+          label: "Actifs clients totaux",
+          value: "3,0 Bil $",
+          prev: "∼2,7 Bil $ (T1 2024)",
+          delta: "+11 %",
+          dir: "up",
+          note: "Total client assets incluant retraite, patrimoine et GPA"
+        }
+      ],
+      news: [
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "Newswire Canada",
+          title: "Great-West Lifeco reports strong first quarter 2025 results",
+          desc: "Bénéfice de base 1,03 G$ (+5 %), BPA de base 1,11 $ (+6 %), LICAT 130 %, trésorerie 2,5 G$.",
+          url: "https://www.newswire.ca/news-releases/great-west-lifeco-reports-strong-first-quarter-2025-results-driven-by-growth-in-wealth-and-retirement-businesses-800756760.html"
+        },
+        {
+          date: "2025-05-08",
+          dateStr: { day: "08", month: "Mai", year: "2025" },
+          source: "Investing.com",
+          title: "Great-West Lifeco Q1 2025 slides — Base earnings up 5%, Retirement surges 24%",
+          desc: "Segment retraite en hausse de 24 %, portefeuille de 3 Bil $ en actifs clients, ROE de base 17,2 %.",
+          url: "https://in.investing.com/news/company-news/greatwest-lifeco-q1-2025-slides-base-earnings-up-5-retirement-segment-surges-24-93CH-4818240"
+        },
+        {
+          date: "2025-02-24",
+          dateStr: { day: "24", month: "Fév", year: "2025" },
+          source: "Finance et Investissement",
+          title: "IA, Great-West et Manuvie dévoilent leurs résultats trimestriels",
+          desc: "Synthèse des résultats du T1 2025 pour les trois assureurs canadiens incluant Great-West Lifeco.",
+          url: "https://www.finance-investissement.com/nouvelles/actualites/ia-great-west-et-manuvie-devoilent-leurs-resultats-trimestriels/"
+        }
+      ]
+    },
+    T2: {
+      period: "T2 2025 (30 juin 2025)",
+      metrics: [
+        {
+          label: "BPA de base (dilué)",
+          value: "1,24 $",
+          prev: "1,11 $ (T2 2024)",
+          delta: "+12 %",
+          dir: "up",
+          note: "Base EPS record T2 — hausse de 12 %"
+        },
+        {
+          label: "Bénéfice de base",
+          value: "1,1 G$",
+          prev: "1,0 G$ (T2 2024)",
+          delta: "+11 %",
+          dir: "up",
+          note: "Base earnings record T2 — avantages et retraite solides"
+        },
+        {
+          label: "Ratio LICAT",
+          value: "132 %",
+          prev: "130 % (T1 2025)",
+          delta: "+2 pp",
+          dir: "up",
+          note: "Hausse grâce à la forte génération de capital de base"
+        },
+        {
+          label: "Actifs clients totaux",
+          value: "3,0 Bil $",
+          prev: "∼2,7 Bil $ (T2 2024)",
+          delta: "+11 %",
+          dir: "up",
+          note: "Retraite +11 %, patrimoine +16 % d'une année à l'autre"
+        }
+      ],
+      news: [
+        {
+          date: "2025-08-05",
+          dateStr: { day: "05", month: "Août", year: "2025" },
+          source: "Newswire Canada",
+          title: "Great-West Lifeco reports record base earnings — additional $500M buybacks",
+          desc: "BPA de base 1,24 $ (+12 %), LICAT 132 %, trésorerie 2,1 G$, intention de racheter 500 M$ supplémentaires.",
+          url: "https://www.newswire.ca/news-releases/great-west-lifeco-reports-record-base-earnings-and-announces-intention-for-additional-500-million-in-share-buybacks-839984903.html"
+        },
+        {
+          date: "2025-08-05",
+          dateStr: { day: "05", month: "Août", year: "2025" },
+          source: "The Globe and Mail",
+          title: "Great-West Lifeco — résultats T2 2025 (communiqué presse)",
+          desc: "Bénéfice net 0,894 G$ (−11 %), BPA de base record T2, segment É.-U. (Empower) bien positionné.",
+          url: "https://www.theglobeandmail.com/investing/markets/stocks/GWO-T/pressreleases/33901652/great-west-lifeco-reports-record-base-earnings-and-announces-intention-for-additional-500-million-in-share-buybacks/"
+        },
+        {
+          date: "2025-08-06",
+          dateStr: { day: "06", month: "Août", year: "2025" },
+          source: "Investing.com",
+          title: "Great-West Lifeco Q2 2025 — Record base earnings with double-digit growth",
+          desc: "BPA de base +12 %, LICAT 132 %, actifs clients 3,0 Bil $, retraite Empower: croissance rentable à deux chiffres.",
+          url: "https://www.investing.com/news/company-news/greatwest-lifeco-q2-2025-slides-record-base-earnings-with-doubledigit-growth-93CH-4175431"
+        }
+      ]
+    },
+    T3: {
+      period: "T3 2025 (30 septembre 2025)",
+      metrics: [
+        {
+          label: "BPA de base (dilué)",
+          value: "1,33 $",
+          prev: "1,14 $ (T3 2024)",
+          delta: "+17 %",
+          dir: "up",
+          note: "Record — BPA de base supérieur à l'objectif à MT (+15 %)"
+        },
+        {
+          label: "Bénéfice de base",
+          value: "1,225 G$",
+          prev: "1,061 G$ (T3 2024)",
+          delta: "+15 %",
+          dir: "up",
+          note: "Record — hausse à deux chiffres dans tous les segments"
+        },
+        {
+          label: "Ratio LICAT",
+          value: "131 %",
+          prev: "132 % (T2 2025)",
+          delta: "−1 pp",
+          dir: "neutral",
+          note: "Hausse des rachats d'actions (995 M$ cumulé), trésorerie 2,5 G$"
+        },
+        {
+          label: "Actifs clients totaux",
+          value: "3,1 Bil $",
+          prev: "∼2,8 Bil $ (T3 2024)",
+          delta: "+11 %",
+          dir: "up",
+          note: "Empower Wealth flux nets améliorés de 43 % à 3,4 G$ US"
+        }
+      ],
+      news: [
+        {
+          date: "2025-11-05",
+          dateStr: { day: "05", month: "Nov", year: "2025" },
+          source: "Newswire Canada",
+          title: "Great-West Lifeco reports double-digit earnings growth — increases share buybacks",
+          desc: "BPA de base record 1,33 $ (+15 %), rachat porté à 1,5 G$ pour 2025, valeur comptable/action +8 %.",
+          url: "https://www.newswire.ca/news-releases/great-west-lifeco-reports-double-digit-base-earnings-growth-and-increases-share-buybacks-881959532.html"
+        },
+        {
+          date: "2025-11-07",
+          dateStr: { day: "07", month: "Nov", year: "2025" },
+          source: "Investing.com",
+          title: "Earnings call transcript: Great-West Lifeco Q3 2025 — robust earnings growth",
+          desc: "BPA 1,33 $ (+9,92 % vs prévisions), hausse de l'action de 3,07 %, revenu 1,42 G$, LICAT 131 %.",
+          url: "https://www.investing.com/news/transcripts/earnings-call-transcript-greatwest-lifeco-q3-2025-reports-robust-earnings-growth-93CH-4338975"
+        },
+        {
+          date: "2025-11-06",
+          dateStr: { day: "06", month: "Nov", year: "2025" },
+          source: "Investing.com",
+          title: "Great-West Lifeco Q3 2025 — Record earnings and increased buyback plans",
+          desc: "Hausse à deux chiffres dans É.-U., Europe et CRS. Programme de rachat passé à 1,5 G$ pour l'exercice.",
+          url: "https://www.investing.com/news/company-news/greatwest-lifeco-q3-2025-slides-record-earnings-and-increased-buyback-plans-93CH-4339269"
+        }
+      ]
+    },
+    AN: {
+      period: "Annuel 2025 (31 décembre 2025)",
+      metrics: [
+        {
+          label: "BPA de base (dilué)",
+          value: "5,03 $",
+          prev: "4,49 $ (2024)",
+          delta: "+12 %",
+          dir: "up",
+          note: "Base EPS annuel record — au-delà de l'objectif à MT 8-10 %"
+        },
+        {
+          label: "Bénéfice de base",
+          value: "4,6 G$",
+          prev: "4,1 G$ (2024)",
+          delta: "+11 %",
+          dir: "up",
+          note: "Record annuel — É.-U. 31 %, Canada 29 %, Europe 21 %, CRS 19 %"
+        },
+        {
+          label: "Ratio LICAT",
+          value: "128 %",
+          prev: "130 % (2024)",
+          delta: "−2 pp",
+          dir: "neutral",
+          note: "Fin 2025 — après 1,6 G$ de rachats d'actions en 2025"
+        },
+        {
+          label: "Actifs clients totaux",
+          value: "3,1 Bil $",
+          prev: "∼2,7 Bil $ (2024)",
+          delta: "+15 %",
+          dir: "up",
+          note: "Dont 1,0 Bil $ actifs sous gestion ou conseil (marge élevée)"
+        }
+      ],
+      news: [
+        {
+          date: "2026-02-11",
+          dateStr: { day: "11", month: "Fév", year: "2026" },
+          source: "Newswire Canada",
+          title: "Great-West Lifeco reports record 2025 base earnings — dividend +10 %, buybacks continued",
+          desc: "BPA de base annuel 5,03 $ (+12 %), bénéfice de base 4,6 G$ record, dividende haussé de 10 %.",
+          url: "https://www.newswire.ca/news-releases/great-west-lifeco-reports-record-2025-base-earnings-announces-dividend-increase-of-10-and-continued-share-repurchases-869886801.html"
+        },
+        {
+          date: "2026-02-12",
+          dateStr: { day: "12", month: "Fév", year: "2026" },
+          source: "Investing.com (fr)",
+          title: "Great-West Lifeco dépasse les prévisions au T4 2025 — BPA 1,36 $",
+          desc: "BPA T4 1,36 $ vs 1,28 $ prévu (+6,25 %), chiffre d'affaires 1,52 G$, hausse record de 11 % sur un an.",
+          url: "https://fr.investing.com/news/transcripts/transcription-de-lalerte-resultats--greatwest-lifeco-depasse-les-previsions-au-t4-2025-93CH-3269840"
+        },
+        {
+          date: "2026-02-03",
+          dateStr: { day: "03", month: "Fév", year: "2026" },
+          source: "Quartr",
+          title: "Great-West Lifeco Investor Day 2025 — objectifs à moyen terme confirmés",
+          desc: "Cibles de 8-10 % de croissance BPA de base, ROE de base 19 %+, génération de capital 80 %+.",
+          url: "https://quartr.com/companies/great-west-lifeco-inc_11704"
+        }
+      ]
+    }
+  },
+
+  IAG: {
+    name: "iA Groupe financier",
+    fullName: "iA Société financière inc.",
+    ticker: "IAG.TO",
+    ir_url: "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+    T1: {
+      period: "T1 2025 (31 mars 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "2,91 $",
+          prev: "2,44 $ (T1 2024)",
+          delta: "+19 %",
+          dir: "up",
+          note: "BPA dilué tiré des activités de base — forte croissance"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "186 M$",
+          prev: "∼165 M$ (T1 2024)",
+          delta: "+13 %",
+          dir: "up",
+          note: "BPA dilué IFRS 1,98 $, ROE 12 derniers mois 13,0 %"
+        },
+        {
+          label: "Ratio de solvabilité",
+          value: "132 %",
+          prev: "139 % (T4 2024)",
+          delta: "−7 pp",
+          dir: "down",
+          note: "ESCAP (AMF) — déploiement de capital et croissance affaires"
+        },
+        {
+          label: "Actif sous gestion/admin.",
+          value: "264 G$",
+          prev: "230 G$ (T1 2024)",
+          delta: "+15 %",
+          dir: "up",
+          note: "ASG + ASA total — forte progression sur 12 mois"
+        }
+      ],
+      news: [
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "Newswire Canada",
+          title: "iA Groupe financier déclare ses résultats pour le premier trimestre",
+          desc: "BPA de base 2,91 $ (+19 %), primes et dépôts 5,8 G$ (+19 %), actif total 264 G$ (+15 %), solvabilité 132 %.",
+          url: "https://www.newswire.ca/fr/news-releases/ia-groupe-financier-declare-ses-resultats-pour-le-premier-trimestre-825226350.html"
+        },
+        {
+          date: "2025-05-07",
+          dateStr: { day: "07", month: "Mai", year: "2025" },
+          source: "Finance et Investissement",
+          title: "IA, Great-West et Manuvie dévoilent leurs résultats — T1 2025",
+          desc: "BPA de base de iA de 2,91 $ (+19 %), ratio de solvabilité 132 %, capital disponible 1,4 G$.",
+          url: "https://www.finance-investissement.com/nouvelles/actualites/ia-great-west-et-manuvie-devoilent-leurs-resultats-trimestriels/"
+        },
+        {
+          date: "2025-02-24",
+          dateStr: { day: "24", month: "Fév", year: "2025" },
+          source: "Newswire Canada",
+          title: "iA Groupe financier présente ses nouvelles indications de marché — Événement investisseurs",
+          desc: "Objectif de croissance BPA 10 %+ annuel à MT, ROE activités de base 17 %+ en 2027, Ready for more.",
+          url: "https://www.newswire.ca/fr/news-releases/ia-groupe-financier-presente-ses-nouvelles-indications-de-marche-a-son-evenement-destine-aux-investisseurs-894164402.html"
+        }
+      ]
+    },
+    T2: {
+      period: "T2 2025 (30 juin 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "3,49 $",
+          prev: "2,75 $ (T2 2024)",
+          delta: "+27 %",
+          dir: "up",
+          note: "BPA dilué tiré des activités de base — hausse exceptionnelle"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "321 M$",
+          prev: "∼285 M$ (T2 2024)",
+          delta: "+13 %",
+          dir: "up",
+          note: "BPA dilué IFRS 3,43 $, ROE 12 derniers mois 14,7 %"
+        },
+        {
+          label: "Ratio de solvabilité",
+          value: "138 %",
+          prev: "132 % (T1 2025)",
+          delta: "+6 pp",
+          dir: "up",
+          note: "ESCAP (AMF) — retour au-dessus des cibles internes"
+        },
+        {
+          label: "Actif sous gestion/admin.",
+          value: "≈ 275 G$",
+          prev: "∼245 G$ (T2 2024)",
+          delta: "+12 %",
+          dir: "up",
+          note: "Croissance soutenue fonds distincts, accum. patrimoine"
+        }
+      ],
+      news: [
+        {
+          date: "2025-08-05",
+          dateStr: { day: "05", month: "Août", year: "2025" },
+          source: "Business Wire",
+          title: "iA Groupe financier déclare ses résultats pour le deuxième trimestre 2025",
+          desc: "BPA de base 3,49 $ (+27 %), solvabilité 138 %, ROE activités de base 12 mois 17,0 %, résultat net 321 M$.",
+          url: "https://www.businesswire.com/news/home/20250805358364/fr"
+        },
+        {
+          date: "2025-07-23",
+          dateStr: { day: "23", month: "Juil", year: "2025" },
+          source: "Business Wire",
+          title: "iA Groupe financier annonce la date de publication des résultats T2 2025",
+          desc: "Résultats du T2 2025 publiés le 5 août 2025 après la clôture des marchés — audioconférence le 6 août.",
+          url: "https://www.businesswire.com/news/home/20250723731758/fr"
+        },
+        {
+          date: "2025-07-28",
+          dateStr: { day: "28", month: "Juil", year: "2025" },
+          source: "Business Wire",
+          title: "iA Groupe financier annonce l'acquisition de RF Capital Group Inc.",
+          desc: "Annonce d'acquisition de RF Capital, leader en gestion de patrimoine, ajoutant 43,6 G$ d'actifs sous gestion.",
+          url: "https://www.businesswire.com/news/home/20250728741424/fr"
+        }
+      ]
+    },
+    T3: {
+      period: "T3 2025 (30 septembre 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "3,47 $",
+          prev: "2,93 $ (T3 2024)",
+          delta: "+18 %",
+          dir: "up",
+          note: "BPA dilué tiré des activités de base — dépasse objectif MT"
+        },
+        {
+          label: "Résultat net actionnaires",
+          value: "364 M$",
+          prev: "∼295 M$ (T3 2024)",
+          delta: "+23 %",
+          dir: "up",
+          note: "BPA dilué IFRS 3,91 $, ROE 12 derniers mois 15,6 %"
+        },
+        {
+          label: "Ratio de solvabilité",
+          value: "138 %",
+          prev: "138 % (T2 2025)",
+          delta: "stable",
+          dir: "neutral",
+          note: "ESCAP (AMF) — acquis. RF Capital complétée le 31 oct. 2025"
+        },
+        {
+          label: "Actif sous gestion/admin.",
+          value: "≈ 288 G$",
+          prev: "∼255 G$ (T3 2024)",
+          delta: "+13 %",
+          dir: "up",
+          note: "RF Capital ajoute 43,6 G$ post-clôture (31 oct. 2025)"
+        }
+      ],
+      news: [
+        {
+          date: "2025-11-04",
+          dateStr: { day: "04", month: "Nov", year: "2025" },
+          source: "Business Wire",
+          title: "iA Groupe financier déclare ses résultats pour le troisième trimestre 2025",
+          desc: "BPA de base 3,47 $ (+18 %), solvabilité 138 %, ROE activités de base 17,2 %, RF Capital finalisée.",
+          url: "https://www.businesswire.com/news/home/20251104022279/fr"
+        },
+        {
+          date: "2025-11-05",
+          dateStr: { day: "05", month: "Nov", year: "2025" },
+          source: "Investing.com (fr)",
+          title: "iA Groupe financier T3 2025 — BPA de base en hausse de 18 %, acquisition RF Capital finalisée",
+          desc: "Analyse des résultats : position capital robuste, solvabilité 138 %, 1,7 G$ disponible pour déploiement.",
+          url: "https://fr.investing.com/news/company-news/presentation-des-resultats-du-t3-2025-dia-groupe-financier--bpa-de-base-en-hausse-de-18--acquisition-de-rf-capital-finalisee-93CH-3129450"
+        },
+        {
+          date: "2025-10-31",
+          dateStr: { day: "31", month: "Oct", year: "2025" },
+          source: "Business Wire",
+          title: "iA Groupe financier finalise l'acquisition de RF Capital Group",
+          desc: "Clôture de l'acquisition de RF Capital : 43,6 G$ d'actifs sous gestion, 142 équipes de conseillers.",
+          url: "https://www.businesswire.com/news/home/20251104022279/fr"
+        }
+      ]
+    },
+    AN: {
+      period: "Annuel 2025 (31 décembre 2025)",
+      metrics: [
+        {
+          label: "BPA activités de base",
+          value: "∼12,97 $",
+          prev: "∼11,05 $ (2024)",
+          delta: "+17 %",
+          dir: "up",
+          note: "Somme des 4 trimestres : T1 2,91 + T2 3,49 + T3 3,47 + T4 3,10"
+        },
+        {
+          label: "BPA activités de base T4",
+          value: "3,10 $",
+          prev: "3,04 $ (T4 2024)",
+          delta: "+2 %",
+          dir: "up",
+          note: "BPA de base T4 2025 — ROE activités de base 12 mois 17,1 %"
+        },
+        {
+          label: "Ratio de solvabilité",
+          value: "133 %",
+          prev: "139 % (2024)",
+          delta: "−6 pp",
+          dir: "down",
+          note: "Déploiement actif: acquisition RF Capital + rachats d'actions"
+        },
+        {
+          label: "Actif sous gestion/admin.",
+          value: "341 G$",
+          prev: "261 G$ (2024)",
+          delta: "+31 %",
+          dir: "up",
+          note: "Incluant RF Capital (+43,6 G$) — forte croissance organique"
+        }
+      ],
+      news: [
+        {
+          date: "2026-02-17",
+          dateStr: { day: "17", month: "Fév", year: "2026" },
+          source: "Business Wire",
+          title: "iA Groupe financier déclare ses résultats pour le T4 et l'exercice 2025",
+          desc: "BPA de base T4 3,10 $ (+2 %), solvabilité 133 %, ASG+ASA 341 G$ (+31 %), toutes cibles 2025 atteintes.",
+          url: "https://www.businesswire.com/news/home/20260217705093/fr"
+        },
+        {
+          date: "2026-02-17",
+          dateStr: { day: "17", month: "Fév", year: "2026" },
+          source: "Le Lézard",
+          title: "iA Groupe financier déclare ses résultats pour le quatrième trimestre et l'exercice 2025",
+          desc: "ROE activités de base 17,1 %, cible 17 %+ pour 2026, ASG+ASA 341,1 G$, valeur comptable 79,24 $/action.",
+          url: "https://www.lelezard.com/communique-22118079.html"
+        },
+        {
+          date: "2026-05-06",
+          dateStr: { day: "06", month: "Mai", year: "2026" },
+          source: "Business Wire",
+          title: "iA Groupe financier — Résultats T1 2026 : BPA de base 3,25 $ (+12 %), dividende +11 %",
+          desc: "Dynamique 2025 maintenue en 2026 : ROE 17,5 %, solvabilité 134 %, capital disponible 1,2 G$.",
+          url: "https://www.businesswire.com/news/home/20260505902188/fr"
+        }
+      ]
+    }
+  }
+};
+
+/* ═══════════════════════════════════════════════
+   STATE
+   ═══════════════════════════════════════════════ */
+let activeCompany = 'MFC';
+let activePeriod  = 'T1';
+
+/* ═══════════════════════════════════════════════
+   RENDER
+   ═══════════════════════════════════════════════ */
+function render() {
+  const co = DATA[activeCompany];
+  const pd = co[activePeriod];
+  const el = document.getElementById('content');
+
+  /* Period labels for display */
+  const periodLabels = { T1: 'T1 2025', T2: 'T2 2025', T3: 'T3 2025', AN: 'Annuel 2025' };
+
+  /* Build metrics cards */
+  const metricsHTML = pd.metrics.map(m => {
+    const dirMap = { up: '▲', down: '▼', neutral: '◆' };
+    const arrow  = dirMap[m.dir] || '◆';
+    const badge  = `<span class="badge-delta ${m.dir}">${arrow} ${m.delta}</span>`;
+    const isLarge = m.value.length > 8;
+    return `
+      <div class="metric-card" title="${m.note}">
+        <div class="metric-label">${m.label}</div>
+        <div class="metric-value${isLarge ? ' large' : ''}">${m.value}</div>
+        <div class="metric-footer">
+          <span class="metric-prev">Réf : ${m.prev}</span>
+          ${badge}
+        </div>
+      </div>`;
+  }).join('');
+
+  /* Build news items */
+  const newsHTML = pd.news.map(n => `
+    <div class="news-item">
+      <div class="news-date">
+        <span class="news-date-month">${n.dateStr.month}</span>
+        <span class="news-date-day">${n.dateStr.day}</span>
+        <span class="news-date-year">${n.dateStr.year}</span>
+      </div>
+      <div class="news-content">
+        <div class="news-source">${n.source}</div>
+        <a class="news-title" href="${n.url}" target="_blank" rel="noopener">
+          ${n.title}
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M1 11L11 1M11 1H4M11 1v7"/>
+          </svg>
+        </a>
+        <div class="news-desc">${n.desc}</div>
+      </div>
+    </div>`).join('');
+
+  el.innerHTML = `
+    <div class="company-header">
+      <div>
+        <div class="company-name">${co.name}</div>
+        <div class="company-meta">
+          <span class="company-ticker">${co.ticker}</span>
+          <span class="company-period-label">${pd.period}</span>
+        </div>
+      </div>
+      <a class="btn-ir" href="${co.ir_url}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M1 12L12 1M12 1H5M12 1v7"/>
+        </svg>
+        Relations investisseurs
+      </a>
+    </div>
+
+    <div class="metrics-grid">${metricsHTML}</div>
+
+    <div class="section-divider"></div>
+
+    <div class="news-section-title">Actualités IR — ${co.name} · ${periodLabels[activePeriod]}</div>
+    <div class="news-grid">${newsHTML}</div>
+  `;
+}
+
+/* ═══════════════════════════════════════════════
+   TAB CONTROLS
+   ═══════════════════════════════════════════════ */
+function setCompany(code) {
+  activeCompany = code;
+  document.querySelectorAll('.tab-company').forEach(t => t.classList.remove('active'));
+  const btn = document.getElementById('tab-' + code);
+  if (btn) btn.classList.add('active');
+  render();
+}
+
+function setPeriod(code) {
+  activePeriod = code;
+  document.querySelectorAll('.btn-period').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('btn-' + code);
+  if (btn) btn.classList.add('active');
+  render();
+}
+
+/* ═══════════════════════════════════════════════
+   CSV EXPORT — UTF-8 BOM pour Excel
+   ═══════════════════════════════════════════════ */
+function exportCSV() {
+  const periods  = ['T1', 'T2', 'T3', 'AN'];
+  const companies = ['MFC', 'SLF', 'GWO', 'IAG'];
+  const periodLabels = { T1: 'T1 2025', T2: 'T2 2025', T3: 'T3 2025', AN: 'Annuel 2025' };
+
+  const headers = [
+    'Compagnie', 'Ticker', 'Période', 'Indicateur', 'Valeur', 'Référence (année prec.)', 'Delta', 'Direction', 'Note'
+  ];
+
+  const rows = [headers];
+
+  companies.forEach(coKey => {
+    const co = DATA[coKey];
+    periods.forEach(pKey => {
+      const pd = co[pKey];
+      pd.metrics.forEach(m => {
+        rows.push([
+          co.fullName,
+          co.ticker,
+          periodLabels[pKey],
+          m.label,
+          m.value,
+          m.prev,
+          m.delta,
+          m.dir === 'up' ? 'Hausse' : m.dir === 'down' ? 'Baisse' : 'Stable',
+          m.note
+        ]);
+      });
+    });
+  });
+
+  const csvContent = rows.map(r =>
+    r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(',')
+  ).join('\r\n');
+
+  /* UTF-8 BOM */
+  const BOM  = '\uFEFF';
+  const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'veille-assurance-canada-2025.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ═══════════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════════ */
+render();
+</script>
+</body>
+</html>
