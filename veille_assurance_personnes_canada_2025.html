@@ -1,0 +1,171 @@
+
+<h2 class="sr-only">Tableau de bord de veille — Assurance de personnes Canada, données réelles T4 2025</h2>
+<style>
+  .dash{font-family:var(--font-sans);padding:1.5rem 0}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--color-text-secondary);text-transform:uppercase;margin:0 0 12px}
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
+  .tab{padding:6px 14px;border-radius:var(--border-radius-md);border:.5px solid var(--color-border-secondary);font-size:13px;cursor:pointer;background:var(--color-background-primary);color:var(--color-text-secondary);transition:all .15s}
+  .tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
+  .tab:hover:not(.active){background:var(--color-background-secondary)}
+  .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.5rem}
+  .metric-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px}
+  .metric-label{font-size:11px;color:var(--color-text-secondary);margin:0 0 6px}
+  .metric-value{font-size:19px;font-weight:500;color:var(--color-text-primary);margin:0}
+  .metric-ref{font-size:11px;color:var(--color-text-tertiary);margin:4px 0 0}
+  .metric-delta{font-size:12px;margin:4px 0 0;font-weight:500}
+  .delta-up{color:#1D9E75}
+  .delta-down{color:#D85A30}
+  .delta-neu{color:var(--color-text-tertiary)}
+  .news-card{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:10px}
+  .news-date{font-size:11px;color:var(--color-text-tertiary);margin:0 0 4px}
+  .news-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 6px}
+  .news-body{font-size:13px;color:var(--color-text-secondary);margin:0;line-height:1.5}
+  .divider{border:none;border-top:.5px solid var(--color-border-tertiary);margin:1.5rem 0}
+  .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .period-badge{font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary);padding:3px 10px;border-radius:20px;border:.5px solid var(--color-border-tertiary)}
+  .export-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:var(--border-radius-md);border:.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:12px;cursor:pointer;color:var(--color-text-secondary)}
+  .export-btn:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
+  .data-note{font-size:11px;color:var(--color-text-tertiary);margin-top:1.5rem;padding-top:12px;border-top:.5px solid var(--color-border-tertiary)}
+</style>
+
+<div class="dash">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem">
+    <div>
+      <p style="font-size:18px;font-weight:500;margin:0;color:var(--color-text-primary)">Veille assurance de personnes — Canada</p>
+      <p style="font-size:13px;color:var(--color-text-secondary);margin:4px 0 0">Données réelles · Résultats annuels 2025 (publiés fév. 2026)</p>
+    </div>
+    <button class="export-btn" onclick="exportCSV()"><i class="ti ti-download" style="font-size:14px" aria-hidden="true"></i> Exporter CSV</button>
+  </div>
+
+  <p class="section-label">Compagnie</p>
+  <div class="tabs">
+    <div class="tab active" onclick="show(0)">Manuvie</div>
+    <div class="tab" onclick="show(1)">Sun Life</div>
+    <div class="tab" onclick="show(2)">Great-West Lifeco</div>
+    <div class="tab" onclick="show(3)">iA Groupe financier</div>
+  </div>
+
+  <div id="panel"></div>
+  <p class="data-note">Sources : communiqués de presse IR officiels · Manuvie (fév. 2026) · Sun Life (fév. 2026) · Great-West Lifeco (fév. 2026) · iA Groupe financier (fév. 2026) · Toutes les valeurs en CA$</p>
+</div>
+
+<script>
+const DATA = [
+  {
+    name:"Manuvie", ticker:"MFC.TO", quarter:"2025 annuel", year_ref:"2024",
+    metrics:[
+      {label:"Bénéfices de base", value:"7,5 G$", ref:"~7,3 G$", delta:"+3%", dir:"up"},
+      {label:"BPA de base", value:"4,21 $", ref:"3,90 $", delta:"+8%", dir:"up"},
+      {label:"Ventes APE (assurance)", value:"2,82 G$ (T1)", ref:"2,64 G$ (T1 2024)", delta:"+7%", dir:"up"},
+      {label:"Rendement sur capital (ROE)", value:"16,5 %", ref:"~15,8 %", delta:"+70 pb", dir:"up"}
+    ],
+    news:[
+      {date:"Fév. 2026", title:"Résultats records 2025 — bénéfices de base à 7,5 G$", body:"Manuvie a affiché des résultats records pour 2025, avec des bénéfices de base en hausse de 3 % sur une base de taux de change constant. Le dividende a été relevé de 10,2 % et un rachat d'actions couvrant ~2,5 % des actions en circulation a été annoncé."},
+      {date:"Fév. 2026", title:"Acquisition de Comvest Credit Partners (75 %) — 17,5 G$ d'actifs", body:"Dans le cadre de sa stratégie Global WAM, Manuvie a acquis 75 % de Comvest Credit Partners, un gestionnaire de crédit privé américain avec 17,5 G$ d'actifs sous gestion, renforçant ses capacités en crédit privé."},
+      {date:"Mai 2026", title:"T1 2026 — croissance du BPA de base à deux chiffres", body:"Au premier trimestre 2026, les ventes APE ont progressé de 7 % à 2,82 G$, avec une nouvelle valeur d'affaires (NBV) en hausse de 7 % à 944 M$. Global WAM a toutefois enregistré des sorties nettes de 4,4 G$."}
+    ]
+  },
+  {
+    name:"Sun Life", ticker:"SLF.TO", quarter:"2025 annuel", year_ref:"2024",
+    metrics:[
+      {label:"Revenu net sous-jacent (T4)", value:"1 094 M$", ref:"965 M$", delta:"+13%", dir:"up"},
+      {label:"Actifs sous gestion (AUM)", value:"1 605 G$", ref:"1 543 G$", delta:"+4%", dir:"up"},
+      {label:"CSM total", value:"14,5 G$", ref:"13,4 G$", delta:"+8%", dir:"up"},
+      {label:"Plateforme épargne Canada (AUMA)", value:"277 G$", ref:"~245 G$", delta:"+13%", dir:"up"}
+    ],
+    news:[
+      {date:"Fév. 2026", title:"Résultats T4 et annuels 2025 — revenu sous-jacent T4 en hausse de 13 %", body:"Sun Life a publié des résultats solides pour le T4 2025, portés par une amélioration de l'expérience de crédit, des revenus de frais plus élevés en gestion d'actifs, et la croissance des affaires individuelles au Canada et en Asie."},
+      {date:"Fév. 2026", title:"Restructuration — création de Sun Life Asset Management", body:"Effective au 1er janvier 2026, Sun Life a formalisé son pilier de gestion d'actifs sous l'appellation Sun Life Asset Management, regroupant MFS, SLC Management et ses participations asiatiques (Aditya Birla)."},
+      {date:"Nov. 2025", title:"Position de leader en assurance individuelle au Canada — T3 2025", body:"Sun Life a maintenu sa position de leader en assurance individuelle au Canada, avec une croissance de 31 % en maladies graves (assurance critique) au T3 2025. La transformation numérique de la souscription se poursuit activement."}
+    ]
+  },
+  {
+    name:"Great-West Lifeco", ticker:"GWO.TO", quarter:"2025 annuel", year_ref:"2024",
+    metrics:[
+      {label:"Bénéfices de base (annuels)", value:"4,65 G$", ref:"4,19 G$", delta:"+11%", dir:"up"},
+      {label:"BPA de base", value:"5,03 $", ref:"4,49 $", delta:"+12%", dir:"up"},
+      {label:"Actifs sous admin. (AUA)", value:"3,6 T$", ref:"3,3 T$", delta:"+9%", dir:"up"},
+      {label:"ROE de base", value:"18,2 %", ref:"17,5 %", delta:"+70 pb", dir:"up"}
+    ],
+    news:[
+      {date:"Fév. 2026", title:"Résultats records 2025 — bénéfices de base +11 %, dividende +10 %", body:"Great-West Lifeco a enregistré des bénéfices de base records en 2025, portés par Empower (retraite US), Capital & Risk Solutions, et les opérations canadiennes. La compagnie a racheté 28 M d'actions (>1,6 G$) et dispose encore de 2,1 G$ de liquidités au holding."},
+      {date:"Fév. 2026", title:"Canada T4 — bénéfices de base +10 % à 400 M$", body:"Le segment canadien a affiché des bénéfices de base de 400 M$ au T4 2025, en hausse de 10 % grâce à une expérience favorable en assurances collectives et assurance individuelle, ainsi qu'à des revenus de frais plus élevés."},
+      {date:"Fév. 2026", title:"Journée investisseurs 2026 — cible de croissance BPA de 8-10 % et ROE >19 %", body:"Lors de sa journée investisseurs, Great-West Lifeco a ciblé une croissance du BPA de 8-10 %, un ROE >19 %, et une génération de capital >80 %, en misant sur la croissance organique sans dépendance aux acquisitions."}
+    ]
+  },
+  {
+    name:"iA Groupe financier", ticker:"IAG.TO", quarter:"2025 annuel", year_ref:"2024",
+    metrics:[
+      {label:"BPA de base (annuel)", value:"12,96 $", ref:"11,17 $", delta:"+16%", dir:"up"},
+      {label:"Bénéfices de base (annuels)", value:"1,21 G$", ref:"1,07 G$", delta:"+13%", dir:"up"},
+      {label:"BPA de base (T4)", value:"3,10 $", ref:"3,04 $", delta:"+2%", dir:"up"},
+      {label:"ROE de base (12 mois)", value:"17,1 %", ref:"~15,5 %", delta:"+160 pb", dir:"up"}
+    ],
+    news:[
+      {date:"Fév. 2026", title:"Résultats T4 et annuels 2025 — cible ROE 17 % atteinte 2 ans en avance", body:"iA Groupe financier a dépassé sa cible de ROE de base de 17 % en 2025, deux ans avant l'échéance prévue de 2027. Les bénéfices de base annuels ont progressé de 13 % à 1,21 G$, portés par la gestion de patrimoine et les opérations canadiennes."},
+      {date:"Fév. 2026", title:"Acquisition de RF Capital Group — capital déployé activement", body:"iA a finalisé l'acquisition de RF Capital Group et procédé à des rachats d'actions, réduisant le capital disponible au déploiement à 1,4 G$ (contre 1,7 G$ au T3 2025). La cible de génération de capital organique est relevée à 700 M$+ pour 2026."},
+      {date:"Mai 2026", title:"T1 2026 — ventes assurance individuelle US en hausse de 16 %", body:"Au premier trimestre 2026, les ventes d'assurance individuelle aux États-Unis ont atteint 79 M$ US, en hausse de 16 % vs 2025. Le titre a toutefois subi une correction de ~10 % après la publication des résultats avant de se redresser."}
+    ]
+  }
+];
+
+let current = 0;
+
+function show(idx){
+  current = idx;
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  render();
+}
+
+function render(){
+  const d = DATA[current];
+  const html = `
+    <div style="margin-bottom:1.5rem">
+      <p style="font-size:16px;font-weight:500;margin:0;color:var(--color-text-primary)">${d.name}</p>
+      <span style="font-size:12px;color:var(--color-text-tertiary)">${d.ticker}</span>
+    </div>
+    <div class="section-header">
+      <p class="section-label" style="margin:0">Métriques financières clés</p>
+      <span class="period-badge">${d.quarter} vs ${d.year_ref}</span>
+    </div>
+    <div class="metric-grid">
+      ${d.metrics.map(m=>`
+        <div class="metric-card">
+          <p class="metric-label">${m.label}</p>
+          <p class="metric-value">${m.value}</p>
+          <p class="metric-ref">Réf. ${d.year_ref} : ${m.ref}</p>
+          <p class="metric-delta ${m.dir==='up'?'delta-up':m.dir==='down'?'delta-down':'delta-neu'}">${m.dir==='up'?'▲':m.dir==='down'?'▼':'—'} ${m.delta}</p>
+        </div>
+      `).join('')}
+    </div>
+    <hr class="divider">
+    <div class="section-header">
+      <p class="section-label" style="margin:0">Investor relations — actualités récentes</p>
+    </div>
+    ${d.news.map(n=>`
+      <div class="news-card">
+        <p class="news-date">${n.date}</p>
+        <p class="news-title">${n.title}</p>
+        <p class="news-body">${n.body}</p>
+      </div>
+    `).join('')}
+  `;
+  document.getElementById('panel').innerHTML = html;
+}
+
+function exportCSV(){
+  const rows=[["Compagnie","Ticker","Période","Référence","Métrique","Valeur","Réf. année préc.","Delta"]];
+  DATA.forEach(d=>{
+    d.metrics.forEach(m=>{
+      rows.push([d.name,d.ticker,d.quarter,d.year_ref,m.label,m.value,m.ref,m.delta]);
+    });
+  });
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download="veille_assurance_canada_2025.csv";a.click();
+}
+
+render();
+</script>
