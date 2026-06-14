@@ -1,52 +1,272 @@
-
-<h2 class="sr-only">Tableau de bord de veille — Assurance de personnes Canada, données réelles T4 2025</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille assurance de personnes — Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  .dash{font-family:var(--font-sans);padding:1.5rem 0}
-  .section-label{font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--color-text-secondary);text-transform:uppercase;margin:0 0 12px}
-  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
-  .tab{padding:6px 14px;border-radius:var(--border-radius-md);border:.5px solid var(--color-border-secondary);font-size:13px;cursor:pointer;background:var(--color-background-primary);color:var(--color-text-secondary);transition:all .15s}
-  .tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
-  .tab:hover:not(.active){background:var(--color-background-secondary)}
-  .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.5rem}
-  .metric-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px}
-  .metric-label{font-size:11px;color:var(--color-text-secondary);margin:0 0 6px}
-  .metric-value{font-size:19px;font-weight:500;color:var(--color-text-primary);margin:0}
-  .metric-ref{font-size:11px;color:var(--color-text-tertiary);margin:4px 0 0}
-  .metric-delta{font-size:12px;margin:4px 0 0;font-weight:500}
-  .delta-up{color:#1D9E75}
-  .delta-down{color:#D85A30}
-  .delta-neu{color:var(--color-text-tertiary)}
-  .news-card{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:10px}
-  .news-date{font-size:11px;color:var(--color-text-tertiary);margin:0 0 4px}
-  .news-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 6px}
-  .news-body{font-size:13px;color:var(--color-text-secondary);margin:0;line-height:1.5}
-  .divider{border:none;border-top:.5px solid var(--color-border-tertiary);margin:1.5rem 0}
-  .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-  .period-badge{font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary);padding:3px 10px;border-radius:20px;border:.5px solid var(--color-border-tertiary)}
-  .export-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:var(--border-radius-md);border:.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:12px;cursor:pointer;color:var(--color-text-secondary)}
-  .export-btn:hover{background:var(--color-background-secondary);color:var(--color-text-primary)}
-  .data-note{font-size:11px;color:var(--color-text-tertiary);margin-top:1.5rem;padding-top:12px;border-top:.5px solid var(--color-border-tertiary)}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F7F5;
+    --surface: #FFFFFF;
+    --surface-2: #F0EFEC;
+    --border: #E2E0DB;
+    --border-light: #ECEAE6;
+    --text-primary: #1A1A18;
+    --text-secondary: #5C5B57;
+    --text-tertiary: #9B9A95;
+    --green: #1A7A56;
+    --green-bg: #EAF4EF;
+    --red: #B83D1E;
+    --red-bg: #FAEDE9;
+    --accent: #1A4D8F;
+    --font: 'Inter', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* Header */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .header-left {}
+  .header-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .header-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+  .header-sub {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-family: var(--font);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    transition: all 0.15s;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .export-btn:hover { background: var(--surface-2); color: var(--text-primary); border-color: #ccc; }
+
+  /* Nav tabs */
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+  }
+  .nav-tab {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    padding: 14px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .nav-tab:hover { color: var(--text-secondary); }
+  .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* Main content */
+  .main { padding: 32px 40px; max-width: 1200px; }
+
+  /* Company header */
+  .company-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .company-name { font-size: 20px; font-weight: 600; color: var(--text-primary); }
+  .company-ticker {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-tertiary);
+    background: var(--surface-2);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 14px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .period-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    background: var(--surface-2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+  }
+
+  /* Metric grid */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 900px) { .metric-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .metric-grid { grid-template-columns: 1fr; } }
+
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .metric-card-label {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .metric-card-value {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 6px;
+  }
+  .metric-card-ref {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+  }
+  .metric-delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-top: 2px;
+  }
+  .delta-up { color: var(--green); background: var(--green-bg); }
+  .delta-down { color: var(--red); background: var(--red-bg); }
+  .delta-neu { color: var(--text-tertiary); background: var(--surface-2); }
+
+  /* Divider */
+  .divider { border: none; border-top: 1px solid var(--border-light); margin: 0 0 24px; }
+
+  /* News cards */
+  .news-grid { display: flex; flex-direction: column; gap: 12px; }
+  .news-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 20px;
+    align-items: start;
+  }
+  .news-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    padding-top: 2px;
+    line-height: 1.4;
+  }
+  .news-content {}
+  .news-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; line-height: 1.4; }
+  .news-body { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Footer */
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 16px 20px; }
+    .nav { padding: 0 20px; }
+    .main { padding: 20px; }
+    .news-card { grid-template-columns: 1fr; }
+    .news-date { margin-bottom: 6px; }
+    .header-title { font-size: 18px; }
+  }
 </style>
+</head>
+<body>
 
-<div class="dash">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem">
-    <div>
-      <p style="font-size:18px;font-weight:500;margin:0;color:var(--color-text-primary)">Veille assurance de personnes — Canada</p>
-      <p style="font-size:13px;color:var(--color-text-secondary);margin:4px 0 0">Données réelles · Résultats annuels 2025 (publiés fév. 2026)</p>
-    </div>
-    <button class="export-btn" onclick="exportCSV()"><i class="ti ti-download" style="font-size:14px" aria-hidden="true"></i> Exporter CSV</button>
+<div class="header">
+  <div class="header-left">
+    <p class="header-eyebrow">Veille industrie · Généré par IA</p>
+    <p class="header-title">Assurance de personnes — Canada</p>
+    <p class="header-sub">Données réelles · Résultats annuels 2025 publiés fév. 2026 · Toutes les valeurs en CA$</p>
   </div>
+  <button class="export-btn" onclick="exportCSV()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Exporter CSV
+  </button>
+</div>
 
-  <p class="section-label">Compagnie</p>
-  <div class="tabs">
-    <div class="tab active" onclick="show(0)">Manuvie</div>
-    <div class="tab" onclick="show(1)">Sun Life</div>
-    <div class="tab" onclick="show(2)">Great-West Lifeco</div>
-    <div class="tab" onclick="show(3)">iA Groupe financier</div>
-  </div>
+<nav class="nav">
+  <div class="nav-tab active" onclick="show(0)">Manuvie</div>
+  <div class="nav-tab" onclick="show(1)">Sun Life</div>
+  <div class="nav-tab" onclick="show(2)">Great-West Lifeco</div>
+  <div class="nav-tab" onclick="show(3)">iA Groupe financier</div>
+</nav>
 
+<div class="main">
   <div id="panel"></div>
-  <p class="data-note">Sources : communiqués de presse IR officiels · Manuvie (fév. 2026) · Sun Life (fév. 2026) · Great-West Lifeco (fév. 2026) · iA Groupe financier (fév. 2026) · Toutes les valeurs en CA$</p>
 </div>
 
 <script>
@@ -56,7 +276,7 @@ const DATA = [
     metrics:[
       {label:"Bénéfices de base", value:"7,5 G$", ref:"~7,3 G$", delta:"+3%", dir:"up"},
       {label:"BPA de base", value:"4,21 $", ref:"3,90 $", delta:"+8%", dir:"up"},
-      {label:"Ventes APE (assurance)", value:"2,82 G$ (T1)", ref:"2,64 G$ (T1 2024)", delta:"+7%", dir:"up"},
+      {label:"Ventes APE (assurance)", value:"2,82 G$", ref:"2,64 G$ (T1 2024)", delta:"+7%", dir:"up"},
       {label:"Rendement sur capital (ROE)", value:"16,5 %", ref:"~15,8 %", delta:"+70 pb", dir:"up"}
     ],
     news:[
@@ -111,61 +331,75 @@ const DATA = [
 
 let current = 0;
 
-function show(idx){
+function show(idx) {
   current = idx;
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
   render();
 }
 
-function render(){
+function render() {
   const d = DATA[current];
-  const html = `
-    <div style="margin-bottom:1.5rem">
-      <p style="font-size:16px;font-weight:500;margin:0;color:var(--color-text-primary)">${d.name}</p>
-      <span style="font-size:12px;color:var(--color-text-tertiary)">${d.ticker}</span>
+  document.getElementById('panel').innerHTML = `
+    <div class="company-header">
+      <span class="company-name">${d.name}</span>
+      <span class="company-ticker">${d.ticker}</span>
     </div>
+
     <div class="section-header">
       <p class="section-label" style="margin:0">Métriques financières clés</p>
       <span class="period-badge">${d.quarter} vs ${d.year_ref}</span>
     </div>
+
     <div class="metric-grid">
-      ${d.metrics.map(m=>`
+      ${d.metrics.map(m => `
         <div class="metric-card">
-          <p class="metric-label">${m.label}</p>
-          <p class="metric-value">${m.value}</p>
-          <p class="metric-ref">Réf. ${d.year_ref} : ${m.ref}</p>
-          <p class="metric-delta ${m.dir==='up'?'delta-up':m.dir==='down'?'delta-down':'delta-neu'}">${m.dir==='up'?'▲':m.dir==='down'?'▼':'—'} ${m.delta}</p>
+          <p class="metric-card-label">${m.label}</p>
+          <p class="metric-card-value">${m.value}</p>
+          <p class="metric-card-ref">Réf. ${d.year_ref} : ${m.ref}</p>
+          <span class="metric-delta ${m.dir==='up'?'delta-up':m.dir==='down'?'delta-down':'delta-neu'}">
+            ${m.dir==='up'?'▲':m.dir==='down'?'▼':'—'} ${m.delta}
+          </span>
         </div>
       `).join('')}
     </div>
+
     <hr class="divider">
-    <div class="section-header">
-      <p class="section-label" style="margin:0">Investor relations — actualités récentes</p>
+
+    <p class="section-label">Investor relations — actualités récentes</p>
+    <div class="news-grid">
+      ${d.news.map(n => `
+        <div class="news-card">
+          <p class="news-date">${n.date}</p>
+          <div class="news-content">
+            <p class="news-title">${n.title}</p>
+            <p class="news-body">${n.body}</p>
+          </div>
+        </div>
+      `).join('')}
     </div>
-    ${d.news.map(n=>`
-      <div class="news-card">
-        <p class="news-date">${n.date}</p>
-        <p class="news-title">${n.title}</p>
-        <p class="news-body">${n.body}</p>
-      </div>
-    `).join('')}
+
+    <div class="footer">
+      Sources : communiqués de presse IR officiels · Manuvie (fév. 2026) · Sun Life (fév. 2026) · Great-West Lifeco (fév. 2026) · iA Groupe financier (fév. 2026) · Toutes les valeurs en CA$
+    </div>
   `;
-  document.getElementById('panel').innerHTML = html;
 }
 
-function exportCSV(){
-  const rows=[["Compagnie","Ticker","Période","Référence","Métrique","Valeur","Réf. année préc.","Delta"]];
-  DATA.forEach(d=>{
-    d.metrics.forEach(m=>{
-      rows.push([d.name,d.ticker,d.quarter,d.year_ref,m.label,m.value,m.ref,m.delta]);
+function exportCSV() {
+  const rows = [["Compagnie","Ticker","Période","Référence","Métrique","Valeur","Réf. année préc.","Delta"]];
+  DATA.forEach(d => {
+    d.metrics.forEach(m => {
+      rows.push([d.name, d.ticker, d.quarter, d.year_ref, m.label, m.value, m.ref, m.delta]);
     });
   });
-  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
-  const blob=new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8;"});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url;a.download="veille_assurance_canada_2025.csv";a.click();
+  const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const blob = new Blob(["\uFEFF"+csv], {type:"text/csv;charset=utf-8;"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "veille_assurance_canada_2025.csv";
+  a.click();
 }
 
 render();
 </script>
+</body>
+</html>
