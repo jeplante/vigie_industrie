@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DatasetManifest",
+  "type": "object",
+  "required": ["generatedAt", "datasetHash", "observationCount", "newsCount", "companyCount", "lastSuccessfulRefresh"],
+  "properties": {
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "datasetHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "observationCount": { "type": "integer", "minimum": 0 },
+    "newsCount": { "type": "integer", "minimum": 0 },
+    "companyCount": { "type": "integer", "minimum": 0 },
+    "lastSuccessfulRefresh": { "type": "string", "format": "date-time" }
+  }
+}

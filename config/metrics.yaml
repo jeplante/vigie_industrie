@@ -1,0 +1,85 @@
+metrics:
+  core_eps:
+    label: BPA activités de base
+    unit: CAD_PER_SHARE
+    format: currency_per_share
+    comparison: percent
+    favorableTrend: up
+  reported_eps:
+    label: BPA déclaré
+    unit: CAD_PER_SHARE
+    format: currency_per_share
+    comparison: percent
+    favorableTrend: contextual
+  core_earnings:
+    label: Résultat activités de base
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  net_income:
+    label: Résultat net
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  licat_ratio:
+    label: Ratio LICAT
+    unit: PERCENT
+    format: percentage
+    comparison: percentage_point
+    favorableTrend: contextual
+  solvency_ratio:
+    label: Ratio de solvabilité
+    unit: PERCENT
+    format: percentage
+    comparison: percentage_point
+    favorableTrend: contextual
+  assets_under_management:
+    label: Actif sous gestion
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  assets_under_administration:
+    label: Actif sous administration
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  total_client_assets:
+    label: Actifs clients totaux
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  core_roe:
+    label: Rendement des capitaux propres de base
+    unit: PERCENT
+    format: percentage
+    comparison: percentage_point
+    favorableTrend: up
+  csm:
+    label: Marge sur services contractuels
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  new_business_value:
+    label: Valeur des affaires nouvelles
+    unit: CAD_MILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  ape_sales:
+    label: Souscriptions selon l’EPA
+    unit: CAD_MILLION
+    format: currency
+    comparison: percent
+    favorableTrend: up
+  capital_available:
+    label: Capital disponible
+    unit: CAD_BILLION
+    format: currency
+    comparison: percent
+    favorableTrend: contextual

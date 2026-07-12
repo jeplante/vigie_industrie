@@ -1,0 +1,49 @@
+sources:
+  - id: mfc-results
+    companyId: MFC
+    type: html_release_index
+    url: https://www.manulife.com/ca/en/about-us/investors/results-and-reports
+    adapter: manulife
+    priority: primary
+    language: fr
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, core_earnings, net_income, licat_ratio]
+    fetchPolicy: etag_last_modified_then_hash
+  - id: slf-results
+    companyId: SLF
+    type: html_release_index
+    url: https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/
+    adapter: sunlife
+    priority: primary
+    language: en
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, net_income, licat_ratio, assets_under_management]
+    fetchPolicy: etag_last_modified_then_hash
+  - id: gwo-results
+    companyId: GWO
+    type: html_release_index
+    url: https://www.greatwestlifeco.com/news-events/annual-reports.html
+    adapter: great_west
+    priority: primary
+    language: en
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, core_earnings, licat_ratio, total_client_assets]
+    fetchPolicy: etag_last_modified_then_hash
+  - id: iag-results
+    companyId: IAG
+    type: html_release_index
+    url: https://ia.ca/a-propos/investisseurs/rapports-financiers
+    adapter: ia
+    priority: primary
+    language: fr
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, core_earnings, solvency_ratio, assets_under_administration]
+    fetchPolicy: etag_last_modified_then_hash

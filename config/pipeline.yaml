@@ -1,0 +1,15 @@
+http:
+  timeoutSeconds: 20
+  attempts: 3
+  maxDownloadBytes: 15000000
+validation:
+  deltaTolerance: 0.03
+  minimumObservations: 64
+  maximumVolumeDrop: 0.10
+llm:
+  maxInputCharacters: 80000
+  standardTasks: [summary, classification, simple_extraction, metric_mapping]
+  complexTasks: [complex_table, persistent_ambiguity, standard_retry]
+publication:
+  destination: github_pages
+  atomic: true

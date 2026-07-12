@@ -1,0 +1,4332 @@
+{
+  "schemaVersion": "2.0.0",
+  "generatedAt": "2026-07-11T00:00:00Z",
+  "companies": [
+    {
+      "id": "MFC",
+      "name": "Manuvie",
+      "fullName": "La Société Financière Manuvie",
+      "ticker": "MFC.TO",
+      "investorRelationsUrl": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports"
+    },
+    {
+      "id": "SLF",
+      "name": "Sun Life",
+      "fullName": "Sun Life Financial Inc.",
+      "ticker": "SLF.TO",
+      "investorRelationsUrl": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/"
+    },
+    {
+      "id": "GWO",
+      "name": "Great-West Lifeco",
+      "fullName": "Great-West Lifeco Inc.",
+      "ticker": "GWO.TO",
+      "investorRelationsUrl": "https://www.greatwestlifeco.com/en/investor-relations.html"
+    },
+    {
+      "id": "IAG",
+      "name": "iA Groupe financier",
+      "fullName": "iA Société financière inc.",
+      "ticker": "IAG.TO",
+      "investorRelationsUrl": "https://ia.ca/a-propos/investisseurs/rapports-financiers"
+    }
+  ],
+  "periods": [
+    {
+      "key": "T1",
+      "type": "quarter",
+      "year": 2025,
+      "quarter": 1,
+      "endDate": "2025-03-31",
+      "label": "T1 2025"
+    },
+    {
+      "key": "T2",
+      "type": "quarter",
+      "year": 2025,
+      "quarter": 2,
+      "endDate": "2025-06-30",
+      "label": "T2 2025"
+    },
+    {
+      "key": "T3",
+      "type": "quarter",
+      "year": 2025,
+      "quarter": 3,
+      "endDate": "2025-09-30",
+      "label": "T3 2025"
+    },
+    {
+      "key": "AN",
+      "type": "annual",
+      "year": 2025,
+      "quarter": null,
+      "endDate": "2025-12-31",
+      "label": "Annuel 2025"
+    }
+  ],
+  "observations": [
+    {
+      "id": "MFC-2025-T1-core_eps",
+      "companyId": "MFC",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 0.99,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "0,99 $",
+      "comparison": {
+        "value": 0.96,
+        "displayValue": "0,96 $ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.03125000000000003,
+        "changeUnit": "PERCENT",
+        "displayChange": "+3 %"
+      },
+      "direction": "up",
+      "note": "RPA tiré des activités de base, taux de change constant",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T1-net_income",
+      "companyId": "MFC",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 0.5,
+      "unit": "CAD_BILLION",
+      "displayValue": "0,5 G$",
+      "comparison": {
+        "value": 0.9,
+        "displayValue": "0,9 G$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": -0.4444444444444445,
+        "changeUnit": "PERCENT",
+        "displayChange": "−48 %"
+      },
+      "direction": "down",
+      "note": "Bénéfice net IFRS attribué aux actionnaires",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T1-licat_ratio",
+      "companyId": "MFC",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (MLI)",
+      "value": 134,
+      "unit": "PERCENT",
+      "displayValue": "134 %",
+      "comparison": {
+        "value": 133,
+        "displayValue": "∼133 % (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 1,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+1 pp"
+      },
+      "direction": "up",
+      "note": "Ratio de la Manufacturers Life Insurance Co.",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T1-core_earnings",
+      "companyId": "MFC",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Résultat activités de base",
+      "value": 1.8,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,8 G$",
+      "comparison": {
+        "value": 1.8,
+        "displayValue": "1,8 G$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0,
+        "changeUnit": "PERCENT",
+        "displayChange": "−1 %"
+      },
+      "direction": "down",
+      "note": "Résultat tiré des activités de base (taux change constant)",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T2-core_eps",
+      "companyId": "MFC",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 0.95,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "0,95 $",
+      "comparison": {
+        "value": 0.93,
+        "displayValue": "0,93 $ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.02150537634408592,
+        "changeUnit": "PERCENT",
+        "displayChange": "+2 %"
+      },
+      "direction": "up",
+      "note": "RPA tiré des activités de base, taux de change constant",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-06",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T2-net_income",
+      "companyId": "MFC",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 1.8,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,8 G$",
+      "comparison": {
+        "value": 1.1,
+        "displayValue": "1,1 G$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.6363636363636362,
+        "changeUnit": "PERCENT",
+        "displayChange": "+88 %"
+      },
+      "direction": "up",
+      "note": "Bénéfice net IFRS attribué aux actionnaires",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-06",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T2-licat_ratio",
+      "companyId": "MFC",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (MLI)",
+      "value": 134,
+      "unit": "PERCENT",
+      "displayValue": "134 %",
+      "comparison": {
+        "value": 133,
+        "displayValue": "133 % (T1 2025)",
+        "periodLabel": "T1 2025",
+        "change": 1,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+1 pp"
+      },
+      "direction": "up",
+      "note": "Ratio de la Manufacturers Life Insurance Co.",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-06",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T2-core_earnings",
+      "companyId": "MFC",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Résultat activités de base",
+      "value": 1.7,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,7 G$",
+      "comparison": {
+        "value": 1.8,
+        "displayValue": "1,8 G$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": -0.0555555555555556,
+        "changeUnit": "PERCENT",
+        "displayChange": "−2 %"
+      },
+      "direction": "down",
+      "note": "Résultat tiré des activités de base (taux change constant)",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-06",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T3-core_eps",
+      "companyId": "MFC",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 1.16,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,16 $",
+      "comparison": {
+        "value": 1,
+        "displayValue": "1,00 $ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.15999999999999992,
+        "changeUnit": "PERCENT",
+        "displayChange": "+16 %"
+      },
+      "direction": "up",
+      "note": "RPA tiré des activités de base, résultats records",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-12",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T3-net_income",
+      "companyId": "MFC",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 1.8,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,8 G$",
+      "comparison": {
+        "value": 1.8,
+        "displayValue": "1,8 G$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "≈ stable"
+      },
+      "direction": "neutral",
+      "note": "Bénéfice net IFRS attribué aux actionnaires",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-12",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T3-licat_ratio",
+      "companyId": "MFC",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (MLI)",
+      "value": 138,
+      "unit": "PERCENT",
+      "displayValue": "138 %",
+      "comparison": {
+        "value": 134,
+        "displayValue": "134 % (T2 2025)",
+        "periodLabel": "T2 2025",
+        "change": 4,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+4 pp"
+      },
+      "direction": "up",
+      "note": "Ratio de la Manufacturers Life Insurance Co.",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-12",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-T3-core_earnings",
+      "companyId": "MFC",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Résultat activités de base",
+      "value": 2,
+      "unit": "CAD_BILLION",
+      "displayValue": "2,0 G$",
+      "comparison": {
+        "value": 1.8,
+        "displayValue": "1,8 G$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.11111111111111108,
+        "changeUnit": "PERCENT",
+        "displayChange": "+10 %"
+      },
+      "direction": "up",
+      "note": "Résultats records — hausse à taux de change constant",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-12",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-AN-core_eps",
+      "companyId": "MFC",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 4.21,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "4,21 $",
+      "comparison": {
+        "value": 3.85,
+        "displayValue": "3,85 $ (2024)",
+        "periodLabel": "2024",
+        "change": 0.09350649350649347,
+        "changeUnit": "PERCENT",
+        "displayChange": "+8 %"
+      },
+      "direction": "up",
+      "note": "RPA tiré des activités de base — record annuel",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-AN-net_income",
+      "companyId": "MFC",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 5.6,
+      "unit": "CAD_BILLION",
+      "displayValue": "5,6 G$",
+      "comparison": {
+        "value": 5.4,
+        "displayValue": "5,4 G$ (2024)",
+        "periodLabel": "2024",
+        "change": 0.0370370370370369,
+        "changeUnit": "PERCENT",
+        "displayChange": "+2 %"
+      },
+      "direction": "up",
+      "note": "Bénéfice net IFRS annuel attribué aux actionnaires",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-AN-licat_ratio",
+      "companyId": "MFC",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (MLI)",
+      "value": 136,
+      "unit": "PERCENT",
+      "displayValue": "136 %",
+      "comparison": {
+        "value": 137,
+        "displayValue": "137 % (2024)",
+        "periodLabel": "2024",
+        "change": -1,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "−1 pp"
+      },
+      "direction": "neutral",
+      "note": "Fin d'exercice au 31 décembre 2025",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "MFC-2025-AN-core_earnings",
+      "companyId": "MFC",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Résultat activités de base",
+      "value": 7.5,
+      "unit": "CAD_BILLION",
+      "displayValue": "7,5 G$",
+      "comparison": {
+        "value": 7.2,
+        "displayValue": "7,2 G$ (2024)",
+        "periodLabel": "2024",
+        "change": 0.041666666666666644,
+        "changeUnit": "PERCENT",
+        "displayChange": "+3 %"
+      },
+      "direction": "up",
+      "note": "Record annuel — hausse à taux de change constant",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports",
+        "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T1-core_eps",
+      "companyId": "SLF",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA sous-jacent (dilué)",
+      "value": 1.82,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,82 $",
+      "comparison": {
+        "value": 1.5,
+        "displayValue": "1,50 $ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.21333333333333337,
+        "changeUnit": "PERCENT",
+        "displayChange": "+21 %"
+      },
+      "direction": "up",
+      "note": "Underlying EPS (diluted), résultat net sous-jacent",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T1-net_income",
+      "companyId": "SLF",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "net_income",
+      "label": "Revenu net sous-jacent",
+      "value": 1.045,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,045 G$",
+      "comparison": {
+        "value": 0.875,
+        "displayValue": "0,875 G$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.1942857142857142,
+        "changeUnit": "PERCENT",
+        "displayChange": "+19 %"
+      },
+      "direction": "up",
+      "note": "Underlying net income — hausse tirée par gestion d'actifs",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T1-licat_ratio",
+      "companyId": "SLF",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (SLF Inc.)",
+      "value": 149,
+      "unit": "PERCENT",
+      "displayValue": "149 %",
+      "comparison": {
+        "value": 149,
+        "displayValue": "∼149 % (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "stable"
+      },
+      "direction": "neutral",
+      "note": "Ratio LICAT de SLF Inc. au 31 mars 2025",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T1-assets_under_management",
+      "companyId": "SLF",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "assets_under_management",
+      "label": "Actif sous gestion (AUM)",
+      "value": 1551,
+      "unit": "CAD_BILLION",
+      "displayValue": "1 551 G$",
+      "comparison": {
+        "value": 1465,
+        "displayValue": "∼1 465 G$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.05870307167235495,
+        "changeUnit": "PERCENT",
+        "displayChange": "+6 %"
+      },
+      "direction": "up",
+      "note": "AUM total incluant MFS, SLC Management et assurance",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T2-core_eps",
+      "companyId": "SLF",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA sous-jacent (dilué)",
+      "value": 1.79,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,79 $",
+      "comparison": {
+        "value": 1.72,
+        "displayValue": "1,72 $ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.04069767441860469,
+        "changeUnit": "PERCENT",
+        "displayChange": "+4 %"
+      },
+      "direction": "up",
+      "note": "Underlying EPS (diluted) — légère hausse",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T2-net_income",
+      "companyId": "SLF",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "net_income",
+      "label": "Revenu net sous-jacent",
+      "value": 1.015,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,015 G$",
+      "comparison": {
+        "value": 1,
+        "displayValue": "1,000 G$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.014999999999999902,
+        "changeUnit": "PERCENT",
+        "displayChange": "+2 %"
+      },
+      "direction": "up",
+      "note": "Underlying net income — Asie record, É.-U. difficile",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T2-licat_ratio",
+      "companyId": "SLF",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (SLF Inc.)",
+      "value": 151,
+      "unit": "PERCENT",
+      "displayValue": "151 %",
+      "comparison": {
+        "value": 149,
+        "displayValue": "149 % (T1 2025)",
+        "periodLabel": "T1 2025",
+        "change": 2,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+2 pp"
+      },
+      "direction": "up",
+      "note": "Ratio LICAT de SLF Inc. au 30 juin 2025",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T2-assets_under_management",
+      "companyId": "SLF",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "assets_under_management",
+      "label": "Actif sous gestion (AUM)",
+      "value": 1541,
+      "unit": "CAD_BILLION",
+      "displayValue": "1 541 G$",
+      "comparison": {
+        "value": 1465,
+        "displayValue": "1 465 G$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.05187713310580205,
+        "changeUnit": "PERCENT",
+        "displayChange": "+5 %"
+      },
+      "direction": "up",
+      "note": "AUM total incluant MFS (1 114 G$) et SLC (250 G$)",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T3-core_eps",
+      "companyId": "SLF",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA sous-jacent (dilué)",
+      "value": 1.85,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,85 $",
+      "comparison": {
+        "value": 1.72,
+        "displayValue": "1,72 $ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.07558139534883727,
+        "changeUnit": "PERCENT",
+        "displayChange": "+8 %"
+      },
+      "direction": "up",
+      "note": "Underlying EPS T3 2025",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T3-net_income",
+      "companyId": "SLF",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "net_income",
+      "label": "Revenu net sous-jacent",
+      "value": 1.047,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,047 G$",
+      "comparison": {
+        "value": 1.016,
+        "displayValue": "1,016 G$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.030511811023621965,
+        "changeUnit": "PERCENT",
+        "displayChange": "+3 %"
+      },
+      "direction": "up",
+      "note": "Hausse Canada et Asie, É.-U. en difficulté",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T3-licat_ratio",
+      "companyId": "SLF",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (SLF Inc.)",
+      "value": 154,
+      "unit": "PERCENT",
+      "displayValue": "154 %",
+      "comparison": {
+        "value": 151,
+        "displayValue": "151 % (T2 2025)",
+        "periodLabel": "T2 2025",
+        "change": 3,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+3 pp"
+      },
+      "direction": "up",
+      "note": "Hausse grâce à émission obligataire et génération organique",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-T3-assets_under_management",
+      "companyId": "SLF",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "assets_under_management",
+      "label": "Actif sous gestion (AUM)",
+      "value": 1623,
+      "unit": "CAD_BILLION",
+      "displayValue": "1 623 G$",
+      "comparison": {
+        "value": 1515,
+        "displayValue": "1 515 G$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.07128712871287128,
+        "changeUnit": "PERCENT",
+        "displayChange": "+7 %"
+      },
+      "direction": "up",
+      "note": "Record — dont MFS 1 176 G$ et SLC 259 G$",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-AN-core_eps",
+      "companyId": "SLF",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA sous-jacent (dilué)",
+      "value": 7.45,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "7,45 $",
+      "comparison": {
+        "value": 6.65,
+        "displayValue": "6,65 $ (2024)",
+        "periodLabel": "2024",
+        "change": 0.12030075187969921,
+        "changeUnit": "PERCENT",
+        "displayChange": "+12 %"
+      },
+      "direction": "up",
+      "note": "Underlying EPS — croissance conforme aux objectifs à MT",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-AN-net_income",
+      "companyId": "SLF",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "net_income",
+      "label": "Revenu net sous-jacent",
+      "value": 4.201,
+      "unit": "CAD_BILLION",
+      "displayValue": "4,201 G$",
+      "comparison": {
+        "value": 3.856,
+        "displayValue": "3,856 G$ (2024)",
+        "periodLabel": "2024",
+        "change": 0.0894709543568464,
+        "changeUnit": "PERCENT",
+        "displayChange": "+9 %"
+      },
+      "direction": "up",
+      "note": "Underlying net income annuel 2025",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-AN-licat_ratio",
+      "companyId": "SLF",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT (SLF Inc.)",
+      "value": 157,
+      "unit": "PERCENT",
+      "displayValue": "157 %",
+      "comparison": {
+        "value": 152,
+        "displayValue": "∼152 % (2024)",
+        "periodLabel": "2024",
+        "change": 5,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+5 pp"
+      },
+      "direction": "up",
+      "note": "Position de capital robuste fin 2025",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "SLF-2025-AN-assets_under_management",
+      "companyId": "SLF",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "assets_under_management",
+      "label": "Actif sous gestion (AUM)",
+      "value": 1605,
+      "unit": "CAD_BILLION",
+      "displayValue": "1 605 G$",
+      "comparison": {
+        "value": 1543,
+        "displayValue": "1 543 G$ (2024)",
+        "periodLabel": "2024",
+        "change": 0.04018146467919637,
+        "changeUnit": "PERCENT",
+        "displayChange": "+4 %"
+      },
+      "direction": "up",
+      "note": "AUM total au 31 décembre 2025",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+        "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T1-core_eps",
+      "companyId": "GWO",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA de base (dilué)",
+      "value": 1.11,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,11 $",
+      "comparison": {
+        "value": 1.05,
+        "displayValue": "1,05 $ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.05714285714285719,
+        "changeUnit": "PERCENT",
+        "displayChange": "+6 %"
+      },
+      "direction": "up",
+      "note": "Base EPS — croissance malgré volatilité des marchés",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T1-core_earnings",
+      "companyId": "GWO",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Bénéfice de base",
+      "value": 1.03,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,03 G$",
+      "comparison": {
+        "value": 0.98,
+        "displayValue": "0,98 G$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.051020408163265356,
+        "changeUnit": "PERCENT",
+        "displayChange": "+5 %"
+      },
+      "direction": "up",
+      "note": "Base earnings — solide performance retraite et patrimoine",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T1-licat_ratio",
+      "companyId": "GWO",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 130,
+      "unit": "PERCENT",
+      "displayValue": "130 %",
+      "comparison": {
+        "value": 130,
+        "displayValue": "130 % (T4 2024)",
+        "periodLabel": "T4 2024",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "stable"
+      },
+      "direction": "neutral",
+      "note": "Ratio LICAT au 31 mars 2025, trésorerie Lifeco 2,5 G$",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T1-total_client_assets",
+      "companyId": "GWO",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "total_client_assets",
+      "label": "Actifs clients totaux",
+      "value": 3,
+      "unit": "NUMBER",
+      "displayValue": "3,0 Bil $",
+      "comparison": {
+        "value": 2.7,
+        "displayValue": "∼2,7 Bil $ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.11111111111111104,
+        "changeUnit": "PERCENT",
+        "displayChange": "+11 %"
+      },
+      "direction": "up",
+      "note": "Total client assets incluant retraite, patrimoine et GPA",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T2-core_eps",
+      "companyId": "GWO",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA de base (dilué)",
+      "value": 1.24,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,24 $",
+      "comparison": {
+        "value": 1.11,
+        "displayValue": "1,11 $ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.11711711711711702,
+        "changeUnit": "PERCENT",
+        "displayChange": "+12 %"
+      },
+      "direction": "up",
+      "note": "Base EPS record T2 — hausse de 12 %",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T2-core_earnings",
+      "companyId": "GWO",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Bénéfice de base",
+      "value": 1.1,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,1 G$",
+      "comparison": {
+        "value": 1,
+        "displayValue": "1,0 G$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.10000000000000009,
+        "changeUnit": "PERCENT",
+        "displayChange": "+11 %"
+      },
+      "direction": "up",
+      "note": "Base earnings record T2 — avantages et retraite solides",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T2-licat_ratio",
+      "companyId": "GWO",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 132,
+      "unit": "PERCENT",
+      "displayValue": "132 %",
+      "comparison": {
+        "value": 130,
+        "displayValue": "130 % (T1 2025)",
+        "periodLabel": "T1 2025",
+        "change": 2,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+2 pp"
+      },
+      "direction": "up",
+      "note": "Hausse grâce à la forte génération de capital de base",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T2-total_client_assets",
+      "companyId": "GWO",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "total_client_assets",
+      "label": "Actifs clients totaux",
+      "value": 3,
+      "unit": "NUMBER",
+      "displayValue": "3,0 Bil $",
+      "comparison": {
+        "value": 2.7,
+        "displayValue": "∼2,7 Bil $ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.11111111111111104,
+        "changeUnit": "PERCENT",
+        "displayChange": "+11 %"
+      },
+      "direction": "up",
+      "note": "Retraite +11 %, patrimoine +16 % d'une année à l'autre",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T3-core_eps",
+      "companyId": "GWO",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA de base (dilué)",
+      "value": 1.33,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1,33 $",
+      "comparison": {
+        "value": 1.14,
+        "displayValue": "1,14 $ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.16666666666666682,
+        "changeUnit": "PERCENT",
+        "displayChange": "+17 %"
+      },
+      "direction": "up",
+      "note": "Record — BPA de base supérieur à l'objectif à MT (+15 %)",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T3-core_earnings",
+      "companyId": "GWO",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Bénéfice de base",
+      "value": 1.225,
+      "unit": "CAD_BILLION",
+      "displayValue": "1,225 G$",
+      "comparison": {
+        "value": 1.061,
+        "displayValue": "1,061 G$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.15457115928369478,
+        "changeUnit": "PERCENT",
+        "displayChange": "+15 %"
+      },
+      "direction": "up",
+      "note": "Record — hausse à deux chiffres dans tous les segments",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T3-licat_ratio",
+      "companyId": "GWO",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 131,
+      "unit": "PERCENT",
+      "displayValue": "131 %",
+      "comparison": {
+        "value": 132,
+        "displayValue": "132 % (T2 2025)",
+        "periodLabel": "T2 2025",
+        "change": -1,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "−1 pp"
+      },
+      "direction": "neutral",
+      "note": "Hausse des rachats d'actions (995 M$ cumulé), trésorerie 2,5 G$",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-T3-total_client_assets",
+      "companyId": "GWO",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "total_client_assets",
+      "label": "Actifs clients totaux",
+      "value": 3.1,
+      "unit": "NUMBER",
+      "displayValue": "3,1 Bil $",
+      "comparison": {
+        "value": 2.8,
+        "displayValue": "∼2,8 Bil $ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.10714285714285725,
+        "changeUnit": "PERCENT",
+        "displayChange": "+11 %"
+      },
+      "direction": "up",
+      "note": "Empower Wealth flux nets améliorés de 43 % à 3,4 G$ US",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-AN-core_eps",
+      "companyId": "GWO",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA de base (dilué)",
+      "value": 5.03,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "5,03 $",
+      "comparison": {
+        "value": 4.49,
+        "displayValue": "4,49 $ (2024)",
+        "periodLabel": "2024",
+        "change": 0.12026726057906459,
+        "changeUnit": "PERCENT",
+        "displayChange": "+12 %"
+      },
+      "direction": "up",
+      "note": "Base EPS annuel record — au-delà de l'objectif à MT 8-10 %",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-AN-core_earnings",
+      "companyId": "GWO",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_earnings",
+      "label": "Bénéfice de base",
+      "value": 4.6,
+      "unit": "CAD_BILLION",
+      "displayValue": "4,6 G$",
+      "comparison": {
+        "value": 4.1,
+        "displayValue": "4,1 G$ (2024)",
+        "periodLabel": "2024",
+        "change": 0.12195121951219513,
+        "changeUnit": "PERCENT",
+        "displayChange": "+11 %"
+      },
+      "direction": "up",
+      "note": "Record annuel — É.-U. 31 %, Canada 29 %, Europe 21 %, CRS 19 %",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-AN-licat_ratio",
+      "companyId": "GWO",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 128,
+      "unit": "PERCENT",
+      "displayValue": "128 %",
+      "comparison": {
+        "value": 130,
+        "displayValue": "130 % (2024)",
+        "periodLabel": "2024",
+        "change": -2,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "−2 pp"
+      },
+      "direction": "neutral",
+      "note": "Fin 2025 — après 1,6 G$ de rachats d'actions en 2025",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "GWO-2025-AN-total_client_assets",
+      "companyId": "GWO",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "total_client_assets",
+      "label": "Actifs clients totaux",
+      "value": 3.1,
+      "unit": "NUMBER",
+      "displayValue": "3,1 Bil $",
+      "comparison": {
+        "value": 2.7,
+        "displayValue": "∼2,7 Bil $ (2024)",
+        "periodLabel": "2024",
+        "change": 0.1481481481481481,
+        "changeUnit": "PERCENT",
+        "displayChange": "+15 %"
+      },
+      "direction": "up",
+      "note": "Dont 1,0 Bil $ actifs sous gestion ou conseil (marge élevée)",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/en/investor-relations.html",
+        "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-11",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T1-core_eps",
+      "companyId": "IAG",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 2.91,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "2,91 $",
+      "comparison": {
+        "value": 2.44,
+        "displayValue": "2,44 $ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.1926229508196722,
+        "changeUnit": "PERCENT",
+        "displayChange": "+19 %"
+      },
+      "direction": "up",
+      "note": "BPA dilué tiré des activités de base — forte croissance",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T1-net_income",
+      "companyId": "IAG",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 186,
+      "unit": "CAD_MILLION",
+      "displayValue": "186 M$",
+      "comparison": {
+        "value": 165,
+        "displayValue": "∼165 M$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.12727272727272726,
+        "changeUnit": "PERCENT",
+        "displayChange": "+13 %"
+      },
+      "direction": "up",
+      "note": "BPA dilué IFRS 1,98 $, ROE 12 derniers mois 13,0 %",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T1-solvency_ratio",
+      "companyId": "IAG",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "solvency_ratio",
+      "label": "Ratio de solvabilité",
+      "value": 132,
+      "unit": "PERCENT",
+      "displayValue": "132 %",
+      "comparison": {
+        "value": 139,
+        "displayValue": "139 % (T4 2024)",
+        "periodLabel": "T4 2024",
+        "change": -7,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "−7 pp"
+      },
+      "direction": "down",
+      "note": "ESCAP (AMF) — déploiement de capital et croissance affaires",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T1-assets_under_administration",
+      "companyId": "IAG",
+      "period": {
+        "key": "T1",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 1,
+        "endDate": "2025-03-31",
+        "label": "T1 2025"
+      },
+      "metricId": "assets_under_administration",
+      "label": "Actif sous gestion/admin.",
+      "value": 264,
+      "unit": "CAD_BILLION",
+      "displayValue": "264 G$",
+      "comparison": {
+        "value": 230,
+        "displayValue": "230 G$ (T1 2024)",
+        "periodLabel": "T1 2024",
+        "change": 0.14782608695652175,
+        "changeUnit": "PERCENT",
+        "displayChange": "+15 %"
+      },
+      "direction": "up",
+      "note": "ASG + ASA total — forte progression sur 12 mois",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
+        "publishedAt": "2025-05-07",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T2-core_eps",
+      "companyId": "IAG",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 3.49,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "3,49 $",
+      "comparison": {
+        "value": 2.75,
+        "displayValue": "2,75 $ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.26909090909090916,
+        "changeUnit": "PERCENT",
+        "displayChange": "+27 %"
+      },
+      "direction": "up",
+      "note": "BPA dilué tiré des activités de base — hausse exceptionnelle",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T2-net_income",
+      "companyId": "IAG",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 321,
+      "unit": "CAD_MILLION",
+      "displayValue": "321 M$",
+      "comparison": {
+        "value": 285,
+        "displayValue": "∼285 M$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.12631578947368421,
+        "changeUnit": "PERCENT",
+        "displayChange": "+13 %"
+      },
+      "direction": "up",
+      "note": "BPA dilué IFRS 3,43 $, ROE 12 derniers mois 14,7 %",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T2-solvency_ratio",
+      "companyId": "IAG",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "solvency_ratio",
+      "label": "Ratio de solvabilité",
+      "value": 138,
+      "unit": "PERCENT",
+      "displayValue": "138 %",
+      "comparison": {
+        "value": 132,
+        "displayValue": "132 % (T1 2025)",
+        "periodLabel": "T1 2025",
+        "change": 6,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "+6 pp"
+      },
+      "direction": "up",
+      "note": "ESCAP (AMF) — retour au-dessus des cibles internes",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T2-assets_under_administration",
+      "companyId": "IAG",
+      "period": {
+        "key": "T2",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 2,
+        "endDate": "2025-06-30",
+        "label": "T2 2025"
+      },
+      "metricId": "assets_under_administration",
+      "label": "Actif sous gestion/admin.",
+      "value": 275,
+      "unit": "CAD_BILLION",
+      "displayValue": "≈ 275 G$",
+      "comparison": {
+        "value": 245,
+        "displayValue": "∼245 G$ (T2 2024)",
+        "periodLabel": "T2 2024",
+        "change": 0.12244897959183673,
+        "changeUnit": "PERCENT",
+        "displayChange": "+12 %"
+      },
+      "direction": "up",
+      "note": "Croissance soutenue fonds distincts, accum. patrimoine",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
+        "publishedAt": "2025-08-05",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T3-core_eps",
+      "companyId": "IAG",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 3.47,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "3,47 $",
+      "comparison": {
+        "value": 2.93,
+        "displayValue": "2,93 $ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.18430034129692832,
+        "changeUnit": "PERCENT",
+        "displayChange": "+18 %"
+      },
+      "direction": "up",
+      "note": "BPA dilué tiré des activités de base — dépasse objectif MT",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-04",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T3-net_income",
+      "companyId": "IAG",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net actionnaires",
+      "value": 364,
+      "unit": "CAD_MILLION",
+      "displayValue": "364 M$",
+      "comparison": {
+        "value": 295,
+        "displayValue": "∼295 M$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.23389830508474577,
+        "changeUnit": "PERCENT",
+        "displayChange": "+23 %"
+      },
+      "direction": "up",
+      "note": "BPA dilué IFRS 3,91 $, ROE 12 derniers mois 15,6 %",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-04",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T3-solvency_ratio",
+      "companyId": "IAG",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "solvency_ratio",
+      "label": "Ratio de solvabilité",
+      "value": 138,
+      "unit": "PERCENT",
+      "displayValue": "138 %",
+      "comparison": {
+        "value": 138,
+        "displayValue": "138 % (T2 2025)",
+        "periodLabel": "T2 2025",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "stable"
+      },
+      "direction": "neutral",
+      "note": "ESCAP (AMF) — acquis. RF Capital complétée le 31 oct. 2025",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-04",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-T3-assets_under_administration",
+      "companyId": "IAG",
+      "period": {
+        "key": "T3",
+        "type": "quarter",
+        "year": 2025,
+        "quarter": 3,
+        "endDate": "2025-09-30",
+        "label": "T3 2025"
+      },
+      "metricId": "assets_under_administration",
+      "label": "Actif sous gestion/admin.",
+      "value": 288,
+      "unit": "CAD_BILLION",
+      "displayValue": "≈ 288 G$",
+      "comparison": {
+        "value": 255,
+        "displayValue": "∼255 G$ (T3 2024)",
+        "periodLabel": "T3 2024",
+        "change": 0.12941176470588237,
+        "changeUnit": "PERCENT",
+        "displayChange": "+13 %"
+      },
+      "direction": "up",
+      "note": "RF Capital ajoute 43,6 G$ post-clôture (31 oct. 2025)",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
+        "publishedAt": "2025-11-04",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-AN-core_eps",
+      "companyId": "IAG",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 12.97,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "∼12,97 $",
+      "comparison": {
+        "value": 11.05,
+        "displayValue": "∼11,05 $ (2024)",
+        "periodLabel": "2024",
+        "change": 0.17375565610859728,
+        "changeUnit": "PERCENT",
+        "displayChange": "+17 %"
+      },
+      "direction": "up",
+      "note": "Somme des 4 trimestres : T1 2,91 + T2 3,49 + T3 3,47 + T4 3,10",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-17",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-AN-core_eps_q4",
+      "companyId": "IAG",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "core_eps_q4",
+      "label": "BPA activités de base T4",
+      "value": 3.1,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "3,10 $",
+      "comparison": {
+        "value": 3.04,
+        "displayValue": "3,04 $ (T4 2024)",
+        "periodLabel": "T4 2024",
+        "change": 0.019736842105263174,
+        "changeUnit": "PERCENT",
+        "displayChange": "+2 %"
+      },
+      "direction": "up",
+      "note": "BPA de base T4 2025 — ROE activités de base 12 mois 17,1 %",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-17",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-AN-solvency_ratio",
+      "companyId": "IAG",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "solvency_ratio",
+      "label": "Ratio de solvabilité",
+      "value": 133,
+      "unit": "PERCENT",
+      "displayValue": "133 %",
+      "comparison": {
+        "value": 139,
+        "displayValue": "139 % (2024)",
+        "periodLabel": "2024",
+        "change": -6,
+        "changeUnit": "PERCENTAGE_POINT",
+        "displayChange": "−6 pp"
+      },
+      "direction": "down",
+      "note": "Déploiement actif: acquisition RF Capital + rachats d'actions",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-17",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    },
+    {
+      "id": "IAG-2025-AN-assets_under_administration",
+      "companyId": "IAG",
+      "period": {
+        "key": "AN",
+        "type": "annual",
+        "year": 2025,
+        "quarter": null,
+        "endDate": "2025-12-31",
+        "label": "Annuel 2025"
+      },
+      "metricId": "assets_under_administration",
+      "label": "Actif sous gestion/admin.",
+      "value": 341,
+      "unit": "CAD_BILLION",
+      "displayValue": "341 G$",
+      "comparison": {
+        "value": 261,
+        "displayValue": "261 G$ (2024)",
+        "periodLabel": "2024",
+        "change": 0.3065134099616858,
+        "changeUnit": "PERCENT",
+        "displayChange": "+31 %"
+      },
+      "direction": "up",
+      "note": "Incluant RF Capital (+43,6 G$) — forte croissance organique",
+      "source": {
+        "sourceId": "iag-results",
+        "url": "https://ia.ca/a-propos/investisseurs/rapports-financiers",
+        "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
+        "publishedAt": "2026-02-17",
+        "fetchedAt": "2026-07-11T00:00:00Z",
+        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": [
+          "Provenance migrée de la V1; empreinte calculée sur la référence de source."
+        ]
+      }
+    }
+  ],
+  "news": [
+    {
+      "id": "news-15ff09977d62ebfd2aae",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-le-premier-trimestre-de-2025-844457828.html"
+      },
+      "title": "Manuvie présente ses résultats pour le premier trimestre de 2025",
+      "originalSummary": "BPA de base de 0,99 $, souscriptions EPA +37 %, MSC affaires nouvelles +31 %, VAN +36 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-2d4006ac093beaf173cb",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "specialized_media",
+        "name": "Finance et Investissement",
+        "url": "https://www.finance-investissement.com/nouvelles/actualites/ia-great-west-et-manuvie-devoilent-leurs-resultats-trimestriels/"
+      },
+      "title": "IA, Great-West et Manuvie dévoilent leurs résultats du T1 2025",
+      "originalSummary": "Synthèse des résultats des trois assureurs canadiens au premier trimestre 2025.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-4af0ebcf905a15dcfdb6",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-03-27",
+      "source": {
+        "type": "official_ir",
+        "name": "Manulife.com",
+        "url": "https://www.manulife.com/ca/en/about-us/investors/results-and-reports"
+      },
+      "title": "Rapport annuel 2024 et circulaire 2025 de Manuvie maintenant disponibles",
+      "originalSummary": "Manuvie publie son rapport annuel 2024 incluant les états financiers audités et la circulaire de la direction.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-db26128e5c6256680f88",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-06",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-le-deuxieme-trimestre-de-2025-840374356.html"
+      },
+      "title": "Manuvie présente ses résultats pour le deuxième trimestre de 2025",
+      "originalSummary": "BPA de base 0,95 $, EPA +15 %, MSC affaires nouvelles +37 %, VAN +20 %, entrées nettes GP&A 0,9 G$.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-8f3dd47e59f08f72d7e5",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-07-23",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/manuvie-s-apprete-a-publier-ses-resultats-du-deuxieme-trimestre-de-2025-822284257.html"
+      },
+      "title": "Manuvie s'apprête à publier ses résultats du deuxième trimestre de 2025",
+      "originalSummary": "Annonce de la date de publication des résultats financiers T2 2025 et webémission pour le 7 août 2025.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-1ba547ebb5575507e52f",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-06",
+      "source": {
+        "type": "official_ir",
+        "name": "manulife.com",
+        "url": "https://www.manulife.com/content/dam/manulife-com/ca/financial-documents/investors/MFC_QPR_2025_Q2_FR.pdf"
+      },
+      "title": "Rapport aux actionnaires T2 2025 — Manuvie (PDF officiel)",
+      "originalSummary": "Rapport trimestriel complet avec états financiers consolidés et rapport de gestion du T2 2025.",
+      "generatedSummary": null,
+      "categories": [
+        "other"
+      ],
+      "importance": "medium",
+      "themes": [
+        "other"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-149acd470ee82ed65e6d",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-12",
+      "source": {
+        "type": "official_release",
+        "name": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/manulife-reports-third-quarter-2025-results-302613663.html"
+      },
+      "title": "Manulife Reports Third Quarter 2025 Results — Record Core Earnings",
+      "originalSummary": "Core EPS de 1,16 $ (+16 %), résultats de base records, ROE activités de base 18,1 %, LICAT 138 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-c9ab732ec48b86e3c829",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-12",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-le-troisieme-trimestre-de-2025-891547759.html"
+      },
+      "title": "Manuvie présente ses résultats pour le troisième trimestre de 2025",
+      "originalSummary": "Résultats de base records de 2,0 G$, hausse de 10 % à taux constant. Classement TIME des meilleures entreprises mondiales.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-8c7b41148764cabf0f0f",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-12",
+      "source": {
+        "type": "secondary",
+        "name": "Seeking Alpha / PR",
+        "url": "https://seekingalpha.com/pr/20305296"
+      },
+      "title": "Manulife Q3 2025 — Rapport aux actionnaires (résultats détaillés)",
+      "originalSummary": "Détail par segment : Asie, Canada, É.-U. et Gestion mondiale de patrimoine. VAN +11 %, EPA +8 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-c29e41f05863d5d0f229",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-11",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/manuvie-presente-ses-resultats-pour-l-exercice-et-le-quatrieme-trimestre-de-2025-850273658.html"
+      },
+      "title": "Manuvie présente ses résultats pour l'exercice et le T4 2025 — Résultats records",
+      "originalSummary": "BPA de base annuel 4,21 $ (+8 %), résultats records, dividende haussé de 10,2 %, LICAT 136 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-0f2a0fca7b4d468f9f76",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-11",
+      "source": {
+        "type": "official_release",
+        "name": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/manulife-reports-full-year-and-fourth-quarter-2025-results-302685675.html"
+      },
+      "title": "Manulife Reports Full Year and Fourth Quarter 2025 Results",
+      "originalSummary": "Core earnings record de 7,5 G$, core EPS 4,21 $, retour de 5,4 G$ aux actionnaires en 2025.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-12d99b8a1af145fac00c",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-11",
+      "source": {
+        "type": "official_ir",
+        "name": "manulife.com",
+        "url": "https://www.manulife.com/ca/en/about-us/news/manulife-files-2025-audited-annual-financial-statements-and-related-mda"
+      },
+      "title": "Manuvie dépose ses états financiers annuels 2025 vérifiés et le rapport de gestion connexe",
+      "originalSummary": "Dépôt auprès des Autorités canadiennes en valeurs mobilières et de la SEC (formulaire 40-F).",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-63b3a919b5c6d33a35e2",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "specialized_media",
+        "name": "The Globe and Mail",
+        "url": "https://www.theglobeandmail.com/investing/markets/stocks/SLF-T/pressreleases/32301335/sun-life-reports-first-quarter-2025-results/"
+      },
+      "title": "Sun Life Reports First Quarter 2025 Results — Underlying EPS +21 %",
+      "originalSummary": "Revenu net sous-jacent de 1,045 G$ (+19 %), LICAT 149 %, dividende trimestriel augmenté de 5 %.",
+      "generatedSummary": null,
+      "categories": [
+        "capital_management"
+      ],
+      "importance": "medium",
+      "themes": [
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-67da34a87ce560767c39",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "secondary",
+        "name": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001097362/000109736225000016/a2025q1slfenrlive.htm"
+      },
+      "title": "Sun Life Financial — Formulaire 6-K T1 2025 (communiqué de presse officiel)",
+      "originalSummary": "Formulaire 6-K déposé à la SEC incluant le communiqué de résultats complet du premier trimestre 2025.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-3bc4fd305b1d29354fd4",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "official_ir",
+        "name": "sunlife.com",
+        "url": "https://www.sunlife.com/content/dam/sunlife/regional/global-marketing/documents/com/pa-e-q125-earnings.pdf"
+      },
+      "title": "Sun Life Reports First Quarter 2025 Results (communiqué officiel)",
+      "originalSummary": "Résultats T1 : gestion de patrimoine et d'actifs +19 % en revenu sous-jacent, ROE sous-jacent 17,7 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-9c834290f386484de39b",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-07",
+      "source": {
+        "type": "official_release",
+        "name": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/sun-life-reports-second-quarter-2025-results-302524813.html"
+      },
+      "title": "Sun Life Reports Second Quarter 2025 Results",
+      "originalSummary": "AUM 1 541 G$ (+5 %), LICAT 151 %, revenu sous-jacent Asie record, rachat de 400 M$ d'actions.",
+      "generatedSummary": null,
+      "categories": [
+        "capital_management"
+      ],
+      "importance": "medium",
+      "themes": [
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-2cb24bc2ead76c81187a",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-07",
+      "source": {
+        "type": "official_ir",
+        "name": "Sun Life Newsroom",
+        "url": "https://www.sunlife.com/en/newsroom/news-releases/announcement/sun-life-reports-second-quarter-2025-results/123988/"
+      },
+      "title": "Sun Life Reports Second Quarter 2025 Results (site officiel)",
+      "originalSummary": "Revenu net sous-jacent +2 %, ROE sous-jacent 17,6 %, LICAT 151 %, BPA rapporté 1,26 $ (+14 %).",
+      "generatedSummary": null,
+      "categories": [
+        "other"
+      ],
+      "importance": "medium",
+      "themes": [
+        "other"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-325d3f430796c17ae6b8",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-07",
+      "source": {
+        "type": "secondary",
+        "name": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001097362/000109736225000026/a2025q2slfenrlive.htm"
+      },
+      "title": "Sun Life Financial — Formulaire 6-K T2 2025 (communiqué de presse officiel)",
+      "originalSummary": "Dépôt SEC du communiqué de résultats complet du deuxième trimestre 2025.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-00044b8f8ee6458e6ed7",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-05",
+      "source": {
+        "type": "official_ir",
+        "name": "Sun Life Newsroom",
+        "url": "https://www.sunlife.com/en/newsroom/news-releases/announcement/sun-life-reports-third-quarter-2025-results/124016/"
+      },
+      "title": "Sun Life Reports Third Quarter 2025 Results — AUM 1 623 G$",
+      "originalSummary": "AUM +7 %, LICAT 154 %, dividende augmenté à 0,92 $, rachat de 400 M$ d'actions au T3.",
+      "generatedSummary": null,
+      "categories": [
+        "capital_management"
+      ],
+      "importance": "medium",
+      "themes": [
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-fa27b4d84fae7cf9629b",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-05",
+      "source": {
+        "type": "official_release",
+        "name": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/sun-life-reports-third-quarter-2025-results-302606233.html"
+      },
+      "title": "Sun Life Reports Third Quarter 2025 Results (communiqué complet)",
+      "originalSummary": "Revenu net sous-jacent 1,047 G$ (+3 %), ROE sous-jacent 18,3 %, LICAT 154 %.",
+      "generatedSummary": null,
+      "categories": [
+        "other"
+      ],
+      "importance": "medium",
+      "themes": [
+        "other"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-e3133740bdace9636c67",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-05",
+      "source": {
+        "type": "secondary",
+        "name": "SEC EDGAR",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001097362/000109736225000039/q32025shareholdersreport.htm"
+      },
+      "title": "Sun Life Financial — Formulaire 6-K T3 2025 (rapport aux actionnaires)",
+      "originalSummary": "Rapport aux actionnaires T3 2025 complet — rapport de gestion et états financiers condensés.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-a24f935145deb734d8db",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-11",
+      "source": {
+        "type": "official_ir",
+        "name": "Sun Life Newsroom",
+        "url": "https://www.sunlife.com/en/newsroom/news-releases/announcement/sun-life-reports-fourth-quarter-and-full-year-2025-results/124057/"
+      },
+      "title": "Sun Life Reports Fourth Quarter and Full Year 2025 Results",
+      "originalSummary": "BPA sous-jacent annuel 7,45 $ (+12 %), LICAT 157 %, ROE sous-jacent 18,2 %, dividende haussé.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-0aaf88395d0105f5bc1a",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-11",
+      "source": {
+        "type": "official_release",
+        "name": "PR Newswire",
+        "url": "https://www.prnewswire.com/news-releases/sun-life-reports-fourth-quarter-and-full-year-2025-results-302685703.html"
+      },
+      "title": "Sun Life Reports Fourth Quarter and Full Year 2025 Results (communiqué officiel)",
+      "originalSummary": "Revenu net sous-jacent annuel 4,201 G$, retour de valeur aux actionnaires, AUM 1 605 G$.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-0445af7ae2380cfc9dfc",
+      "companyIds": [
+        "SLF"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-03-30",
+      "source": {
+        "type": "secondary",
+        "name": "Stock Titan",
+        "url": "https://www.stocktitan.net/news/SLF/sun-life-releases-updated-supplementary-information-xht3ub4vboz4.html"
+      },
+      "title": "Sun Life publie un package d'informations supplémentaires mis à jour",
+      "originalSummary": "Nouvelles divulgations alignées avec la création du groupe Gestion d'actifs Sun Life et du plan de rémunération en actions de SLC Management.",
+      "generatedSummary": null,
+      "categories": [
+        "other"
+      ],
+      "importance": "medium",
+      "themes": [
+        "other"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-b9f3e925823ae4808076",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/news-releases/great-west-lifeco-reports-strong-first-quarter-2025-results-driven-by-growth-in-wealth-and-retirement-businesses-800756760.html"
+      },
+      "title": "Great-West Lifeco reports strong first quarter 2025 results",
+      "originalSummary": "Bénéfice de base 1,03 G$ (+5 %), BPA de base 1,11 $ (+6 %), LICAT 130 %, trésorerie 2,5 G$.",
+      "generatedSummary": null,
+      "categories": [
+        "other"
+      ],
+      "importance": "medium",
+      "themes": [
+        "other"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-a0295a96541534880d71",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-08",
+      "source": {
+        "type": "specialized_media",
+        "name": "Investing.com",
+        "url": "https://in.investing.com/news/company-news/greatwest-lifeco-q1-2025-slides-base-earnings-up-5-retirement-segment-surges-24-93CH-4818240"
+      },
+      "title": "Great-West Lifeco Q1 2025 slides — Base earnings up 5%, Retirement surges 24%",
+      "originalSummary": "Segment retraite en hausse de 24 %, portefeuille de 3 Bil $ en actifs clients, ROE de base 17,2 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-c5f707fe66083e1ed998",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-02-24",
+      "source": {
+        "type": "specialized_media",
+        "name": "Finance et Investissement",
+        "url": "https://www.finance-investissement.com/nouvelles/actualites/ia-great-west-et-manuvie-devoilent-leurs-resultats-trimestriels/"
+      },
+      "title": "IA, Great-West et Manuvie dévoilent leurs résultats trimestriels",
+      "originalSummary": "Synthèse des résultats du T1 2025 pour les trois assureurs canadiens incluant Great-West Lifeco.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-862ab1a373440fc84b27",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-05",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/news-releases/great-west-lifeco-reports-record-base-earnings-and-announces-intention-for-additional-500-million-in-share-buybacks-839984903.html"
+      },
+      "title": "Great-West Lifeco reports record base earnings — additional $500M buybacks",
+      "originalSummary": "BPA de base 1,24 $ (+12 %), LICAT 132 %, trésorerie 2,1 G$, intention de racheter 500 M$ supplémentaires.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-f104efb54f27c5f4a8e6",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-05",
+      "source": {
+        "type": "specialized_media",
+        "name": "The Globe and Mail",
+        "url": "https://www.theglobeandmail.com/investing/markets/stocks/GWO-T/pressreleases/33901652/great-west-lifeco-reports-record-base-earnings-and-announces-intention-for-additional-500-million-in-share-buybacks/"
+      },
+      "title": "Great-West Lifeco — résultats T2 2025 (communiqué presse)",
+      "originalSummary": "Bénéfice net 0,894 G$ (−11 %), BPA de base record T2, segment É.-U. (Empower) bien positionné.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-e8f9c09af7607651d50c",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-06",
+      "source": {
+        "type": "specialized_media",
+        "name": "Investing.com",
+        "url": "https://www.investing.com/news/company-news/greatwest-lifeco-q2-2025-slides-record-base-earnings-with-doubledigit-growth-93CH-4175431"
+      },
+      "title": "Great-West Lifeco Q2 2025 — Record base earnings with double-digit growth",
+      "originalSummary": "BPA de base +12 %, LICAT 132 %, actifs clients 3,0 Bil $, retraite Empower: croissance rentable à deux chiffres.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-8c4f32f55d05c2fdf1ee",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-05",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/news-releases/great-west-lifeco-reports-double-digit-base-earnings-growth-and-increases-share-buybacks-881959532.html"
+      },
+      "title": "Great-West Lifeco reports double-digit earnings growth — increases share buybacks",
+      "originalSummary": "BPA de base record 1,33 $ (+15 %), rachat porté à 1,5 G$ pour 2025, valeur comptable/action +8 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-7ea62b53bedd327c9a2e",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-07",
+      "source": {
+        "type": "specialized_media",
+        "name": "Investing.com",
+        "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-greatwest-lifeco-q3-2025-reports-robust-earnings-growth-93CH-4338975"
+      },
+      "title": "Earnings call transcript: Great-West Lifeco Q3 2025 — robust earnings growth",
+      "originalSummary": "BPA 1,33 $ (+9,92 % vs prévisions), hausse de l'action de 3,07 %, revenu 1,42 G$, LICAT 131 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-e4ccfdf9f5a31b44dc58",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-06",
+      "source": {
+        "type": "specialized_media",
+        "name": "Investing.com",
+        "url": "https://www.investing.com/news/company-news/greatwest-lifeco-q3-2025-slides-record-earnings-and-increased-buyback-plans-93CH-4339269"
+      },
+      "title": "Great-West Lifeco Q3 2025 — Record earnings and increased buyback plans",
+      "originalSummary": "Hausse à deux chiffres dans É.-U., Europe et CRS. Programme de rachat passé à 1,5 G$ pour l'exercice.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-e415fb228352ebb25b69",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-11",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/news-releases/great-west-lifeco-reports-record-2025-base-earnings-announces-dividend-increase-of-10-and-continued-share-repurchases-869886801.html"
+      },
+      "title": "Great-West Lifeco reports record 2025 base earnings — dividend +10 %, buybacks continued",
+      "originalSummary": "BPA de base annuel 5,03 $ (+12 %), bénéfice de base 4,6 G$ record, dividende haussé de 10 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-748cc85c5be34125e854",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-12",
+      "source": {
+        "type": "specialized_media",
+        "name": "Investing.com (fr)",
+        "url": "https://fr.investing.com/news/transcripts/transcription-de-lalerte-resultats--greatwest-lifeco-depasse-les-previsions-au-t4-2025-93CH-3269840"
+      },
+      "title": "Great-West Lifeco dépasse les prévisions au T4 2025 — BPA 1,36 $",
+      "originalSummary": "BPA T4 1,36 $ vs 1,28 $ prévu (+6,25 %), chiffre d'affaires 1,52 G$, hausse record de 11 % sur un an.",
+      "generatedSummary": null,
+      "categories": [
+        "other"
+      ],
+      "importance": "medium",
+      "themes": [
+        "other"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-596019265a8784927d59",
+      "companyIds": [
+        "GWO"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-03",
+      "source": {
+        "type": "secondary",
+        "name": "Quartr",
+        "url": "https://quartr.com/companies/great-west-lifeco-inc_11704"
+      },
+      "title": "Great-West Lifeco Investor Day 2025 — objectifs à moyen terme confirmés",
+      "originalSummary": "Cibles de 8-10 % de croissance BPA de base, ROE de base 19 %+, génération de capital 80 %+.",
+      "generatedSummary": null,
+      "categories": [
+        "capital_management"
+      ],
+      "importance": "medium",
+      "themes": [
+        "capital management"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-a43c0d8066647df6bd96",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/ia-groupe-financier-declare-ses-resultats-pour-le-premier-trimestre-825226350.html"
+      },
+      "title": "iA Groupe financier déclare ses résultats pour le premier trimestre",
+      "originalSummary": "BPA de base 2,91 $ (+19 %), primes et dépôts 5,8 G$ (+19 %), actif total 264 G$ (+15 %), solvabilité 132 %.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-f190897a9f0156d96a8b",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-05-07",
+      "source": {
+        "type": "specialized_media",
+        "name": "Finance et Investissement",
+        "url": "https://www.finance-investissement.com/nouvelles/actualites/ia-great-west-et-manuvie-devoilent-leurs-resultats-trimestriels/"
+      },
+      "title": "IA, Great-West et Manuvie dévoilent leurs résultats — T1 2025",
+      "originalSummary": "BPA de base de iA de 2,91 $ (+19 %), ratio de solvabilité 132 %, capital disponible 1,4 G$.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-23c7329340974d8d1533",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T1",
+      "publishedAt": "2025-02-24",
+      "source": {
+        "type": "official_release",
+        "name": "Newswire Canada",
+        "url": "https://www.newswire.ca/fr/news-releases/ia-groupe-financier-presente-ses-nouvelles-indications-de-marche-a-son-evenement-destine-aux-investisseurs-894164402.html"
+      },
+      "title": "iA Groupe financier présente ses nouvelles indications de marché — Événement investisseurs",
+      "originalSummary": "Objectif de croissance BPA 10 %+ annuel à MT, ROE activités de base 17 %+ en 2027, Ready for more.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-fb687334b9ab2183399e",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-08-05",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20250805358364/fr"
+      },
+      "title": "iA Groupe financier déclare ses résultats pour le deuxième trimestre 2025",
+      "originalSummary": "BPA de base 3,49 $ (+27 %), solvabilité 138 %, ROE activités de base 12 mois 17,0 %, résultat net 321 M$.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-5f6d5279b9876e088215",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-07-23",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20250723731758/fr"
+      },
+      "title": "iA Groupe financier annonce la date de publication des résultats T2 2025",
+      "originalSummary": "Résultats du T2 2025 publiés le 5 août 2025 après la clôture des marchés — audioconférence le 6 août.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-fb4e39d1b527be82f2fa",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T2",
+      "publishedAt": "2025-07-28",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20250728741424/fr"
+      },
+      "title": "iA Groupe financier annonce l'acquisition de RF Capital Group Inc.",
+      "originalSummary": "Annonce d'acquisition de RF Capital, leader en gestion de patrimoine, ajoutant 43,6 G$ d'actifs sous gestion.",
+      "generatedSummary": null,
+      "categories": [
+        "capital_management",
+        "merger_acquisition",
+        "artificial_intelligence"
+      ],
+      "importance": "medium",
+      "themes": [
+        "capital management",
+        "merger acquisition",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-9fcd51385efeaee6a5ab",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-04",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20251104022279/fr"
+      },
+      "title": "iA Groupe financier déclare ses résultats pour le troisième trimestre 2025",
+      "originalSummary": "BPA de base 3,47 $ (+18 %), solvabilité 138 %, ROE activités de base 17,2 %, RF Capital finalisée.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-c1f1b3e2d28008b69eed",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-11-05",
+      "source": {
+        "type": "specialized_media",
+        "name": "Investing.com (fr)",
+        "url": "https://fr.investing.com/news/company-news/presentation-des-resultats-du-t3-2025-dia-groupe-financier--bpa-de-base-en-hausse-de-18--acquisition-de-rf-capital-finalisee-93CH-3129450"
+      },
+      "title": "iA Groupe financier T3 2025 — BPA de base en hausse de 18 %, acquisition RF Capital finalisée",
+      "originalSummary": "Analyse des résultats : position capital robuste, solvabilité 138 %, 1,7 G$ disponible pour déploiement.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management",
+        "merger_acquisition",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management",
+        "merger acquisition",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-c3a1d3a0159921f74227",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "T3",
+      "publishedAt": "2025-10-31",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20251104022279/fr"
+      },
+      "title": "iA Groupe financier finalise l'acquisition de RF Capital Group",
+      "originalSummary": "Clôture de l'acquisition de RF Capital : 43,6 G$ d'actifs sous gestion, 142 équipes de conseillers.",
+      "generatedSummary": null,
+      "categories": [
+        "capital_management",
+        "merger_acquisition",
+        "artificial_intelligence"
+      ],
+      "importance": "medium",
+      "themes": [
+        "capital management",
+        "merger acquisition",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-66101885a42055034a98",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-17",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260217705093/fr"
+      },
+      "title": "iA Groupe financier déclare ses résultats pour le T4 et l'exercice 2025",
+      "originalSummary": "BPA de base T4 3,10 $ (+2 %), solvabilité 133 %, ASG+ASA 341 G$ (+31 %), toutes cibles 2025 atteintes.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-b935f6dadb3deb81ee2b",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-02-17",
+      "source": {
+        "type": "secondary",
+        "name": "Le Lézard",
+        "url": "https://www.lelezard.com/communique-22118079.html"
+      },
+      "title": "iA Groupe financier déclare ses résultats pour le quatrième trimestre et l'exercice 2025",
+      "originalSummary": "ROE activités de base 17,1 %, cible 17 %+ pour 2026, ASG+ASA 341,1 G$, valeur comptable 79,24 $/action.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    },
+    {
+      "id": "news-4913d879ed08a00ce2a7",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodKey": "AN",
+      "publishedAt": "2026-05-06",
+      "source": {
+        "type": "official_release",
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/news/home/20260505902188/fr"
+      },
+      "title": "iA Groupe financier — Résultats T1 2026 : BPA de base 3,25 $ (+12 %), dividende +11 %",
+      "originalSummary": "Dynamique 2025 maintenue en 2026 : ROE 17,5 %, solvabilité 134 %, capital disponible 1,2 G$.",
+      "generatedSummary": null,
+      "categories": [
+        "financial_results",
+        "capital_management",
+        "artificial_intelligence"
+      ],
+      "importance": "high",
+      "themes": [
+        "financial results",
+        "capital management",
+        "artificial intelligence"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "v1_migration",
+        "confidence": 1,
+        "warnings": []
+      }
+    }
+  ]
+}
