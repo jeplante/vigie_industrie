@@ -2,10 +2,11 @@
 
 ## Déclencher un rafraîchissement
 
-Dans GitHub, ouvrir **Actions → Refresh and deploy → Run workflow**, choisir éventuellement une
+Dans GitHub, ouvrir **Actions → Refresh industry data → Run workflow**, choisir éventuellement une
 compagnie et confirmer. Le workflow planifié s’exécute à `10:17 UTC`; Montréal est à UTC−5 en
 hiver et UTC−4 en été. Localement, utiliser `python -m vigie_pipeline refresh --offline` pour un
-test sans réseau ou retirer `--offline` pour les sources configurées.
+test sans réseau ou retirer `--offline` pour les sources configurées. Pour republier sans aucune
+acquisition, lancer séparément **Deploy GitHub Pages**.
 
 ## Lire le rapport de qualité
 
@@ -34,15 +35,17 @@ cohérents. Faites approuver la pull request avant fusion.
 ## Changer les modèles Anthropic
 
 Dans **Settings → Secrets and variables → Actions → Variables**, modifier
-`ANTHROPIC_STANDARD_MODEL` ou `ANTHROPIC_COMPLEX_MODEL`. Garder la clé dans **Secrets**. Relancer
-manuellement le workflow et vérifier la trace `quality.llmTrace`; aucun identifiant de modèle du
-workflow n’est figé dans le frontend.
+`ANTHROPIC_STANDARD_MODEL` ou `ANTHROPIC_COMPLEX_MODEL`. Garder la clé dans **Secrets**. Les
+valeurs YAML par défaut sont `claude-haiku-4-5` pour résumés/classification et `claude-sonnet-5`
+pour extraction financière difficile. Relancer le workflow et vérifier `quality.llmTrace`.
 
 ## Diagnostiquer GitHub Actions
 
 - Échec `discover/fetch`: vérifier URL, code HTTP, type MIME, redirections et taille.
   Manuvie a retourné HTTP 403 au client automatisé lors de la vérification du 11 juillet 2026;
-  ne pas contourner les protections du site. Privilégier un flux ou document officiel autorisé.
+  ne pas contourner les protections du site. `Refresh industry data` doit alors échouer, laisser
+  `data/published` inchangé et ne pas appeler le déploiement. `Deploy GitHub Pages` reste utilisable
+  pour servir le last-known-good. Privilégier un flux ou document officiel autorisé.
 - Échec `extract`: télécharger le document, ajouter une fixture représentative, ajuster
   l’adaptateur; Anthropic n’est qu’un secours.
 - Échec `validate`: consulter chaque code du rapport généré; ne pas contourner le contrôle.
@@ -60,3 +63,8 @@ compagnies, les quatre périodes historiques, le statut et la date, la provenanc
 le filtre d’actualités, un lien externe et l’export CSV. Dans les outils réseau, seuls les actifs
 Pages et les trois JSON statiques doivent être chargés; aucun domaine d’assureur ni Anthropic ne
 doit être appelé par le navigateur.
+
+Les périodes doivent être triées par date et limitées à celles publiées pour la compagnie. Dans
+`manifest.json`, vérifiez aussi `latestAvailablePeriodId`, `latestPublishedPeriodId`,
+`latestSourceCheckAt` et `freshnessStatus`. Une compagnie peut être à `2026-T2` pendant qu’une
+autre reste à `2025-AN`; l’interface ne doit jamais inventer la période manquante.

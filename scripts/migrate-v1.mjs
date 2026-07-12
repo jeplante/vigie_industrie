@@ -6,10 +6,10 @@ import vm from 'node:vm';
 const ROOT = resolve(import.meta.dirname, '..');
 const LEGACY_PATH = resolve(ROOT, 'legacy/index-v1.html');
 const PERIODS = {
-  T1: { key: 'T1', type: 'quarter', year: 2025, quarter: 1, endDate: '2025-03-31', label: 'T1 2025' },
-  T2: { key: 'T2', type: 'quarter', year: 2025, quarter: 2, endDate: '2025-06-30', label: 'T2 2025' },
-  T3: { key: 'T3', type: 'quarter', year: 2025, quarter: 3, endDate: '2025-09-30', label: 'T3 2025' },
-  AN: { key: 'AN', type: 'annual', year: 2025, quarter: null, endDate: '2025-12-31', label: 'Annuel 2025' },
+  T1: { periodId: '2025-T1', periodKey: 'T1', type: 'quarter', year: 2025, quarter: 1, endDate: '2025-03-31', label: 'T1 2025' },
+  T2: { periodId: '2025-T2', periodKey: 'T2', type: 'quarter', year: 2025, quarter: 2, endDate: '2025-06-30', label: 'T2 2025' },
+  T3: { periodId: '2025-T3', periodKey: 'T3', type: 'quarter', year: 2025, quarter: 3, endDate: '2025-09-30', label: 'T3 2025' },
+  AN: { periodId: '2025-AN', periodKey: 'AN', type: 'annual', year: 2025, quarter: null, endDate: '2025-12-31', label: 'Annuel 2025' },
 };
 
 const LABEL_TO_METRIC = new Map([
@@ -50,13 +50,14 @@ function firstNumber(value) {
 
 function unitFor(metric) {
   if (metric.value.includes('%')) return 'PERCENT';
+  if (metric.value.includes('Bil $')) return 'CAD_TRILLION';
   if (metric.value.includes('G$')) return 'CAD_BILLION';
   if (metric.value.includes('M$')) return 'CAD_MILLION';
   if (metric.label.includes('BPA')) return 'CAD_PER_SHARE';
   return 'NUMBER';
 }
 
-function comparisonFor(metric) {
+function comparisonFor(metric, periodKey, year) {
   const isPoints = /\bpp\b/u.test(metric.delta);
   const isPercent = metric.delta.includes('%');
   const current = firstNumber(metric.value);
@@ -69,7 +70,22 @@ function comparisonFor(metric) {
         : firstNumber(metric.delta)
     : null;
   const periodLabel = metric.prev.match(/\(([^)]+)\)/u)?.[1] ?? '';
+  const comparisonYear = Number(periodLabel.match(/20\d{2}/u)?.[0]);
+  const comparisonKey = periodLabel.match(/T[1-3]/u)?.[0] ?? (/^\s*20\d{2}\s*$/u.test(periodLabel) ? 'AN' : null);
+  const validPeriod = comparisonYear === year - 1 && comparisonKey === periodKey;
+  if (!validPeriod) {
+    return {
+      periodId: null,
+      value: null,
+      displayValue: '—',
+      periodLabel: '',
+      change: null,
+      changeUnit: 'NONE',
+      displayChange: '—',
+    };
+  }
   return {
+    periodId: `${comparisonYear}-${comparisonKey}`,
     value: previous,
     displayValue: metric.prev,
     periodLabel,
@@ -120,7 +136,7 @@ function migrate(legacy) {
         if (value === null) throw new Error(`Valeur non numérique: ${companyId}/${periodKey}/${metric.label}`);
         const metricId = LABEL_TO_METRIC.get(metric.label) ?? `legacy_metric_${index + 1}`;
         observations.push({
-          id: `${companyId}-${period.year}-${periodKey}-${metricId}`,
+          id: `${companyId}-${period.periodId}-${metricId}`,
           companyId,
           period,
           metricId,
@@ -128,7 +144,7 @@ function migrate(legacy) {
           value,
           unit: unitFor(metric),
           displayValue: metric.value,
-          comparison: comparisonFor(metric),
+          comparison: comparisonFor(metric, periodKey, period.year),
           direction: metric.dir,
           note: metric.note,
           source: {
@@ -137,7 +153,7 @@ function migrate(legacy) {
             title: `${company.name} — ${legacyPeriod.period}`,
             publishedAt: sourceDate,
             fetchedAt: '2026-07-11T00:00:00Z',
-            documentHash: `sha256:${sha(`${company.ir_url}|${periodKey}`)}`,
+            documentHash: `sha256:${sha(`${company.ir_url}|${period.periodId}`)}`,
             priority: 'primary',
           },
           quality: {
@@ -153,6 +169,7 @@ function migrate(legacy) {
         news.push({
           id: `news-${sha(`${companyId}|${periodKey}|${item.url}|${item.title}|${index}`).slice(0, 20)}`,
           companyIds: [companyId],
+          periodId: period.periodId,
           periodKey,
           publishedAt: item.date,
           source: { type: sourceType(item.url, companyId), name: item.source, url: item.url },
@@ -196,6 +213,13 @@ const manifest = {
   newsCount: dataset.news.length,
   companyCount: dataset.companies.length,
   lastSuccessfulRefresh: dataset.generatedAt,
+  companyFreshness: dataset.companies.map((company) => ({
+    companyId: company.id,
+    latestAvailablePeriodId: '2025-AN',
+    latestPublishedPeriodId: '2025-AN',
+    latestSourceCheckAt: dataset.generatedAt,
+    freshnessStatus: 'current',
+  })),
 };
 const report = {
   generatedAt: dataset.generatedAt,

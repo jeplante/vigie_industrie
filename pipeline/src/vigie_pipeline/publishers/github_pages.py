@@ -11,7 +11,11 @@ from vigie_pipeline.models import CanonicalModel, DatasetManifest, QualityReport
 
 def _write_model(path: Path, model: CanonicalModel) -> None:
     path.write_text(
-        json.dumps(model.model_dump(mode="json", by_alias=True), ensure_ascii=False, indent=2)
+        json.dumps(
+            model.model_dump(mode="json", by_alias=True, exclude_none=True),
+            ensure_ascii=False,
+            indent=2,
+        )
         + "\n",
         encoding="utf-8",
     )

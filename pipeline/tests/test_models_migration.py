@@ -3,7 +3,12 @@ from vigie_pipeline.models import VigieDataset
 
 def test_v1_migration_preserves_all_records(dataset: VigieDataset) -> None:
     assert {company.id for company in dataset.companies} == {"MFC", "SLF", "GWO", "IAG"}
-    assert {period.key for period in dataset.periods} == {"T1", "T2", "T3", "AN"}
+    assert {period.period_id for period in dataset.periods} == {
+        "2025-T1",
+        "2025-T2",
+        "2025-T3",
+        "2025-AN",
+    }
     assert len(dataset.observations) == 64
     assert len(dataset.news) == 48
     assert len({item.id for item in dataset.observations}) == 64

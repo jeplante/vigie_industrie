@@ -1,9 +1,9 @@
-export type CompanyId = 'MFC' | 'SLF' | 'GWO' | 'IAG' | string;
-export type PeriodKey = 'T1' | 'T2' | 'T3' | 'AN';
-export type Direction = 'up' | 'down' | 'neutral';
-export type QualityStatus = 'validated' | 'warning' | 'rejected';
-export type ReportStatus = 'success' | 'partial' | 'failed';
-export type Importance = 'high' | 'medium' | 'low';
+export type CompanyId = "MFC" | "SLF" | "GWO" | "IAG" | string;
+export type PeriodKey = "T1" | "T2" | "T3" | "AN";
+export type Direction = "up" | "down" | "neutral";
+export type QualityStatus = "validated" | "warning" | "rejected";
+export type ReportStatus = "success" | "partial" | "failed";
+export type Importance = "high" | "medium" | "low";
 
 export interface Company {
   id: CompanyId;
@@ -14,8 +14,9 @@ export interface Company {
 }
 
 export interface Period {
-  key: PeriodKey;
-  type: 'quarter' | 'annual';
+  periodId: string;
+  periodKey: PeriodKey;
+  type: "quarter" | "annual";
   year: number;
   quarter: number | null;
   endDate: string;
@@ -29,7 +30,7 @@ export interface SourceReference {
   publishedAt: string;
   fetchedAt: string;
   documentHash: string;
-  priority: 'primary' | 'secondary';
+  priority: "primary" | "secondary";
 }
 
 export interface ObservationQuality {
@@ -50,11 +51,12 @@ export interface ObservationQuality {
 }
 
 export interface Comparison {
+  periodId: string | null;
   value: number | null;
   displayValue: string;
   periodLabel: string;
   change: number | null;
-  changeUnit: 'PERCENT' | 'PERCENTAGE_POINT' | 'NONE';
+  changeUnit: "PERCENT" | "PERCENTAGE_POINT" | "NONE";
   displayChange: string;
 }
 
@@ -77,12 +79,17 @@ export interface Observation {
 export interface NewsItem {
   id: string;
   companyIds: CompanyId[];
+  periodId: string;
   periodKey: PeriodKey;
   publishedAt: string;
   source: {
-    type: 'official_ir' | 'official_release' | 'specialized_media' | 'secondary';
+    type:
+      "official_ir" | "official_release" | "specialized_media" | "secondary";
     name: string;
     url: string;
+    sourceId?: string | null;
+    fetchedAt?: string | null;
+    documentHash?: string | null;
   };
   title: string;
   originalSummary: string | null;
@@ -110,6 +117,15 @@ export interface DatasetManifest {
   newsCount: number;
   companyCount: number;
   lastSuccessfulRefresh: string;
+  companyFreshness: CompanyFreshness[];
+}
+
+export interface CompanyFreshness {
+  companyId: CompanyId;
+  latestAvailablePeriodId: string | null;
+  latestPublishedPeriodId: string | null;
+  latestSourceCheckAt: string;
+  freshnessStatus: "current" | "stale" | "unknown";
 }
 
 export interface QualityIssue {

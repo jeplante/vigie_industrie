@@ -5,6 +5,12 @@ metrics:
     format: currency_per_share
     comparison: percent
     favorableTrend: up
+  core_eps_q4:
+    label: BPA activités de base T4
+    unit: CAD_PER_SHARE
+    format: currency_per_share
+    comparison: percent
+    favorableTrend: up
   reported_eps:
     label: BPA déclaré
     unit: CAD_PER_SHARE
@@ -49,7 +55,7 @@ metrics:
     favorableTrend: up
   total_client_assets:
     label: Actifs clients totaux
-    unit: CAD_BILLION
+    unit: CAD_TRILLION
     format: currency
     comparison: percent
     favorableTrend: up

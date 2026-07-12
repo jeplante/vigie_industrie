@@ -1,7 +1,7 @@
 """Contrat indépendant du fournisseur et modèles de résultat LLM."""
 
 from datetime import datetime
-from typing import Protocol, TypeVar
+from typing import Literal, Protocol, TypeVar
 
 from pydantic import BaseModel, Field
 
@@ -9,10 +9,28 @@ T = TypeVar("T", bound=BaseModel)
 
 
 class NewsAnalysis(BaseModel):
-    summary: str
-    categories: list[str] = Field(min_length=1)
-    importance: str
+    summary: str = Field(min_length=1)
+    categories: list[
+        Literal[
+            "financial_results",
+            "capital_management",
+            "merger_acquisition",
+            "strategy",
+            "distribution",
+            "digital_transformation",
+            "artificial_intelligence",
+            "regulation",
+            "risk",
+            "leadership",
+            "product",
+            "wealth_management",
+            "insurance",
+            "other",
+        ]
+    ] = Field(min_length=1)
+    importance: Literal["high", "medium", "low"]
     themes: list[str]
+    company_ids: list[str] = Field(default_factory=list)
     confidence: float = Field(ge=0, le=1)
     warnings: list[str] = Field(default_factory=list)
 

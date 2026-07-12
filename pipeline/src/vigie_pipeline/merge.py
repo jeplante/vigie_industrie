@@ -15,6 +15,9 @@ def merge_datasets(base: VigieDataset, candidate: VigieDataset) -> VigieDataset:
     news.update({item.id: item for item in candidate.news})
     result.observations = list(observations.values())
     result.news = list(news.values())
+    periods = {period.period_id: period for period in result.periods}
+    periods.update({period.period_id: period for period in candidate.periods})
+    result.periods = sorted(periods.values(), key=lambda period: period.end_date, reverse=True)
     result.generated_at = candidate.generated_at
     for company in candidate.companies:
         if company.id not in {item.id for item in result.companies}:

@@ -1,4 +1,4 @@
-name: Refresh and deploy
+name: Refresh industry data
 
 on:
   workflow_dispatch:
@@ -10,15 +10,6 @@ on:
         options: ["", MFC, SLF, GWO, IAG]
   schedule:
     - cron: "17 10 * * *"
-  push:
-    branches: [main]
-    paths:
-      - "app/**"
-      - "pipeline/**"
-      - "config/**"
-      - "data/**"
-      - "schemas/**"
-      - ".github/workflows/refresh-and-deploy.yml"
 
 permissions:
   contents: write
@@ -26,18 +17,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: refresh-data
   cancel-in-progress: false
 
 jobs:
-  refresh-build-deploy:
-    if: >-
-      github.event_name != 'push' ||
-      !contains(github.event.head_commit.message, 'chore(data): refresh industry watch data')
+  refresh:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -72,36 +59,15 @@ jobs:
           ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
         run: python -m vigie_pipeline refresh --company "${{ inputs.company }}"
 
-      - name: Validate refreshed data
+      - name: Validate candidate
         working-directory: pipeline
         run: python -m vigie_pipeline validate
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: npm
-          cache-dependency-path: app/package-lock.json
-
-      - name: Install and test frontend
-        working-directory: app
-        run: npm ci && npm run test && npm run build
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: app/dist
-
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Commit changed published data
+      - name: Commit validated data only
+        id: commit
         run: |
           if git diff --quiet -- data/published app/public/data; then
+            echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
             echo "Aucune donnée modifiée." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
@@ -110,13 +76,18 @@ jobs:
           git add data/published app/public/data
           git commit -m "chore(data): refresh industry watch data"
           git push
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Workflow summary
+      - name: Refresh summary
         if: always()
         run: |
-          echo "## Vigie de l’industrie" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Déclencheur: ${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Rafraîchissement de la Vigie" >> "$GITHUB_STEP_SUMMARY"
           echo "- UTC: $(date -u +'%Y-%m-%d %H:%M:%S')" >> "$GITHUB_STEP_SUMMARY"
-          if [ -f data/published/quality-report.json ]; then
-            echo '- Rapport: `data/published/quality-report.json`' >> "$GITHUB_STEP_SUMMARY"
-          fi
+          echo '- En cas d’échec, `data/published` reste inchangé.' >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: refresh
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: ${{ needs.refresh.outputs.commit_sha }}
+    secrets: inherit

@@ -1,6 +1,7 @@
 """Construction normalisée du rapport de qualité."""
 
 from datetime import UTC, datetime
+from typing import Literal
 
 from vigie_pipeline.models import QualityIssue, QualityReport
 
@@ -19,7 +20,9 @@ def build_quality_report(
     errors = errors or []
     warnings = warnings or []
     sources_failed = max(0, sources_checked - sources_succeeded)
-    status = "failed" if errors else "partial" if warnings or sources_failed else "success"
+    status: Literal["success", "partial", "failed"] = (
+        "failed" if errors else "partial" if warnings or sources_failed else "success"
+    )
     return QualityReport(
         generated_at=generated_at or datetime.now(UTC),
         status=status,

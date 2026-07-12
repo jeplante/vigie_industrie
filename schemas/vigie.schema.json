@@ -8,9 +8,9 @@
     "schemaVersion": { "type": "string", "const": "2.0.0" },
     "generatedAt": { "type": "string", "format": "date-time" },
     "companies": { "type": "array", "minItems": 4, "items": { "$ref": "#/$defs/company" } },
-    "periods": { "type": "array", "minItems": 4 },
+    "periods": { "type": "array", "minItems": 4, "items": { "$ref": "#/$defs/period" } },
     "observations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/observation" } },
-    "news": { "type": "array" }
+    "news": { "type": "array", "items": { "$ref": "#/$defs/news" } }
   },
   "additionalProperties": false,
   "$defs": {
@@ -23,17 +23,48 @@
         "investorRelationsUrl": { "type": "string", "format": "uri" }
       }
     },
+    "period": {
+      "type": "object",
+      "required": ["periodId", "periodKey", "type", "year", "quarter", "endDate", "label"],
+      "properties": {
+        "periodId": { "type": "string", "pattern": "^20[0-9]{2}-(T1|T2|T3|AN)$" },
+        "periodKey": { "enum": ["T1", "T2", "T3", "AN"] },
+        "type": { "enum": ["quarter", "annual"] },
+        "year": { "type": "integer", "minimum": 2000 },
+        "quarter": { "type": ["integer", "null"], "minimum": 1, "maximum": 4 },
+        "endDate": { "type": "string", "format": "date" },
+        "label": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
     "observation": {
       "type": "object",
       "required": ["id", "companyId", "period", "metricId", "label", "value", "unit", "displayValue", "comparison", "direction", "source", "quality"],
       "properties": {
         "id": { "type": "string" }, "companyId": { "type": "string" },
-        "period": { "type": "object" }, "metricId": { "type": "string" },
+        "period": { "$ref": "#/$defs/period" }, "metricId": { "type": "string" },
         "label": { "type": "string" }, "value": { "type": "number" },
-        "unit": { "enum": ["CAD_PER_SHARE", "CAD_BILLION", "CAD_MILLION", "PERCENT", "NUMBER"] },
+        "unit": { "enum": ["CAD_PER_SHARE", "CAD_BILLION", "CAD_TRILLION", "CAD_MILLION", "PERCENT", "NUMBER"] },
         "displayValue": { "type": "string" }, "comparison": { "type": "object" },
         "direction": { "enum": ["up", "down", "neutral"] },
         "source": { "type": "object" }, "quality": { "type": "object" }
+      }
+    },
+    "news": {
+      "type": "object",
+      "required": ["id", "companyIds", "periodId", "periodKey", "publishedAt", "source", "title", "categories", "importance", "themes", "quality"],
+      "properties": {
+        "id": { "type": "string" },
+        "companyIds": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "periodId": { "type": "string", "pattern": "^20[0-9]{2}-(T1|T2|T3|AN)$" },
+        "periodKey": { "enum": ["T1", "T2", "T3", "AN"] },
+        "publishedAt": { "type": "string", "format": "date" },
+        "source": { "type": "object" },
+        "title": { "type": "string" },
+        "categories": { "type": "array", "minItems": 1 },
+        "importance": { "enum": ["high", "medium", "low"] },
+        "themes": { "type": "array" },
+        "quality": { "type": "object" }
       }
     }
   }

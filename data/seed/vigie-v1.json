@@ -33,7 +33,8 @@
   ],
   "periods": [
     {
-      "key": "T1",
+      "periodId": "2025-T1",
+      "periodKey": "T1",
       "type": "quarter",
       "year": 2025,
       "quarter": 1,
@@ -41,7 +42,8 @@
       "label": "T1 2025"
     },
     {
-      "key": "T2",
+      "periodId": "2025-T2",
+      "periodKey": "T2",
       "type": "quarter",
       "year": 2025,
       "quarter": 2,
@@ -49,7 +51,8 @@
       "label": "T2 2025"
     },
     {
-      "key": "T3",
+      "periodId": "2025-T3",
+      "periodKey": "T3",
       "type": "quarter",
       "year": 2025,
       "quarter": 3,
@@ -57,7 +60,8 @@
       "label": "T3 2025"
     },
     {
-      "key": "AN",
+      "periodId": "2025-AN",
+      "periodKey": "AN",
       "type": "annual",
       "year": 2025,
       "quarter": null,
@@ -70,7 +74,8 @@
       "id": "MFC-2025-T1-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -83,6 +88,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "0,99 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.96,
         "displayValue": "0,96 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -98,7 +104,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -114,7 +120,8 @@
       "id": "MFC-2025-T1-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -127,6 +134,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "0,5 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.9,
         "displayValue": "0,9 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -142,7 +150,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -158,7 +166,8 @@
       "id": "MFC-2025-T1-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -171,6 +180,7 @@
       "unit": "PERCENT",
       "displayValue": "134 %",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 133,
         "displayValue": "∼133 % (T1 2024)",
         "periodLabel": "T1 2024",
@@ -186,7 +196,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -202,7 +212,8 @@
       "id": "MFC-2025-T1-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -215,6 +226,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,8 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1.8,
         "displayValue": "1,8 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -230,7 +242,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -246,7 +258,8 @@
       "id": "MFC-2025-T2-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -259,6 +272,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "0,95 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 0.93,
         "displayValue": "0,93 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -274,7 +288,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -290,7 +304,8 @@
       "id": "MFC-2025-T2-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -303,6 +318,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,8 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.1,
         "displayValue": "1,1 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -318,7 +334,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -334,7 +350,8 @@
       "id": "MFC-2025-T2-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -347,12 +364,13 @@
       "unit": "PERCENT",
       "displayValue": "134 %",
       "comparison": {
-        "value": 133,
-        "displayValue": "133 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 1,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+1 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Ratio de la Manufacturers Life Insurance Co.",
@@ -362,7 +380,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -378,7 +396,8 @@
       "id": "MFC-2025-T2-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -391,6 +410,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,7 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.8,
         "displayValue": "1,8 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -406,7 +426,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -422,7 +442,8 @@
       "id": "MFC-2025-T3-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -435,6 +456,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,16 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1,
         "displayValue": "1,00 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -450,7 +472,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -466,7 +488,8 @@
       "id": "MFC-2025-T3-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -479,6 +502,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,8 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.8,
         "displayValue": "1,8 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -494,7 +518,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -510,7 +534,8 @@
       "id": "MFC-2025-T3-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -523,12 +548,13 @@
       "unit": "PERCENT",
       "displayValue": "138 %",
       "comparison": {
-        "value": 134,
-        "displayValue": "134 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": 4,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+4 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Ratio de la Manufacturers Life Insurance Co.",
@@ -538,7 +564,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -554,7 +580,8 @@
       "id": "MFC-2025-T3-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -567,6 +594,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "2,0 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.8,
         "displayValue": "1,8 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -582,7 +610,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -598,7 +626,8 @@
       "id": "MFC-2025-AN-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -611,6 +640,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "4,21 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 3.85,
         "displayValue": "3,85 $ (2024)",
         "periodLabel": "2024",
@@ -626,7 +656,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -642,7 +672,8 @@
       "id": "MFC-2025-AN-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -655,6 +686,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "5,6 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 5.4,
         "displayValue": "5,4 G$ (2024)",
         "periodLabel": "2024",
@@ -670,7 +702,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -686,7 +718,8 @@
       "id": "MFC-2025-AN-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -699,6 +732,7 @@
       "unit": "PERCENT",
       "displayValue": "136 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 137,
         "displayValue": "137 % (2024)",
         "periodLabel": "2024",
@@ -714,7 +748,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -730,7 +764,8 @@
       "id": "MFC-2025-AN-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -743,6 +778,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "7,5 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 7.2,
         "displayValue": "7,2 G$ (2024)",
         "periodLabel": "2024",
@@ -758,7 +794,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -774,7 +810,8 @@
       "id": "SLF-2025-T1-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -787,6 +824,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,82 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1.5,
         "displayValue": "1,50 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -802,7 +840,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -818,7 +856,8 @@
       "id": "SLF-2025-T1-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -831,6 +870,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,045 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.875,
         "displayValue": "0,875 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -846,7 +886,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -862,7 +902,8 @@
       "id": "SLF-2025-T1-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -875,6 +916,7 @@
       "unit": "PERCENT",
       "displayValue": "149 %",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 149,
         "displayValue": "∼149 % (T1 2024)",
         "periodLabel": "T1 2024",
@@ -890,7 +932,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -906,7 +948,8 @@
       "id": "SLF-2025-T1-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -919,6 +962,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 551 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1465,
         "displayValue": "∼1 465 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -934,7 +978,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -950,7 +994,8 @@
       "id": "SLF-2025-T2-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -963,6 +1008,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,79 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.72,
         "displayValue": "1,72 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -978,7 +1024,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -994,7 +1040,8 @@
       "id": "SLF-2025-T2-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1007,6 +1054,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,015 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1,
         "displayValue": "1,000 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1022,7 +1070,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1038,7 +1086,8 @@
       "id": "SLF-2025-T2-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1051,12 +1100,13 @@
       "unit": "PERCENT",
       "displayValue": "151 %",
       "comparison": {
-        "value": 149,
-        "displayValue": "149 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 2,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+2 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Ratio LICAT de SLF Inc. au 30 juin 2025",
@@ -1066,7 +1116,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1082,7 +1132,8 @@
       "id": "SLF-2025-T2-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1095,6 +1146,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 541 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1465,
         "displayValue": "1 465 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1110,7 +1162,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1126,7 +1178,8 @@
       "id": "SLF-2025-T3-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1139,6 +1192,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,85 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.72,
         "displayValue": "1,72 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1154,7 +1208,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1170,7 +1224,8 @@
       "id": "SLF-2025-T3-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1183,6 +1238,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,047 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.016,
         "displayValue": "1,016 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1198,7 +1254,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1214,7 +1270,8 @@
       "id": "SLF-2025-T3-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1227,12 +1284,13 @@
       "unit": "PERCENT",
       "displayValue": "154 %",
       "comparison": {
-        "value": 151,
-        "displayValue": "151 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": 3,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+3 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Hausse grâce à émission obligataire et génération organique",
@@ -1242,7 +1300,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1258,7 +1316,8 @@
       "id": "SLF-2025-T3-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1271,6 +1330,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 623 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1515,
         "displayValue": "1 515 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1286,7 +1346,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1302,7 +1362,8 @@
       "id": "SLF-2025-AN-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -1315,6 +1376,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "7,45 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 6.65,
         "displayValue": "6,65 $ (2024)",
         "periodLabel": "2024",
@@ -1330,7 +1392,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1346,7 +1408,8 @@
       "id": "SLF-2025-AN-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -1359,6 +1422,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "4,201 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 3.856,
         "displayValue": "3,856 G$ (2024)",
         "periodLabel": "2024",
@@ -1374,7 +1438,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1390,7 +1454,8 @@
       "id": "SLF-2025-AN-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -1403,6 +1468,7 @@
       "unit": "PERCENT",
       "displayValue": "157 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 152,
         "displayValue": "∼152 % (2024)",
         "periodLabel": "2024",
@@ -1418,7 +1484,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1434,7 +1500,8 @@
       "id": "SLF-2025-AN-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -1447,6 +1514,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 605 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 1543,
         "displayValue": "1 543 G$ (2024)",
         "periodLabel": "2024",
@@ -1462,7 +1530,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1478,7 +1546,8 @@
       "id": "GWO-2025-T1-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1491,6 +1560,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,11 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1.05,
         "displayValue": "1,05 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -1506,7 +1576,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1522,7 +1592,8 @@
       "id": "GWO-2025-T1-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1535,6 +1606,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,03 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.98,
         "displayValue": "0,98 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -1550,7 +1622,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1566,7 +1638,8 @@
       "id": "GWO-2025-T1-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1579,12 +1652,13 @@
       "unit": "PERCENT",
       "displayValue": "130 %",
       "comparison": {
-        "value": 130,
-        "displayValue": "130 % (T4 2024)",
-        "periodLabel": "T4 2024",
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
         "change": null,
         "changeUnit": "NONE",
-        "displayChange": "stable"
+        "displayChange": "—"
       },
       "direction": "neutral",
       "note": "Ratio LICAT au 31 mars 2025, trésorerie Lifeco 2,5 G$",
@@ -1594,7 +1668,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1610,7 +1684,8 @@
       "id": "GWO-2025-T1-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1620,9 +1695,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,0 Bil $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 2.7,
         "displayValue": "∼2,7 Bil $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -1638,7 +1714,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1654,7 +1730,8 @@
       "id": "GWO-2025-T2-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1667,6 +1744,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,24 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.11,
         "displayValue": "1,11 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1682,7 +1760,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1698,7 +1776,8 @@
       "id": "GWO-2025-T2-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1711,6 +1790,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,1 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1,
         "displayValue": "1,0 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1726,7 +1806,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1742,7 +1822,8 @@
       "id": "GWO-2025-T2-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1755,12 +1836,13 @@
       "unit": "PERCENT",
       "displayValue": "132 %",
       "comparison": {
-        "value": 130,
-        "displayValue": "130 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 2,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+2 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Hausse grâce à la forte génération de capital de base",
@@ -1770,7 +1852,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1786,7 +1868,8 @@
       "id": "GWO-2025-T2-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1796,9 +1879,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,0 Bil $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 2.7,
         "displayValue": "∼2,7 Bil $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1814,7 +1898,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1830,7 +1914,8 @@
       "id": "GWO-2025-T3-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1843,6 +1928,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,33 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.14,
         "displayValue": "1,14 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1858,7 +1944,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -1874,7 +1960,8 @@
       "id": "GWO-2025-T3-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1887,6 +1974,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,225 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.061,
         "displayValue": "1,061 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1902,7 +1990,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -1918,7 +2006,8 @@
       "id": "GWO-2025-T3-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1931,12 +2020,13 @@
       "unit": "PERCENT",
       "displayValue": "131 %",
       "comparison": {
-        "value": 132,
-        "displayValue": "132 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": -1,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "−1 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "neutral",
       "note": "Hausse des rachats d'actions (995 M$ cumulé), trésorerie 2,5 G$",
@@ -1946,7 +2036,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -1962,7 +2052,8 @@
       "id": "GWO-2025-T3-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1972,9 +2063,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3.1,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,1 Bil $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 2.8,
         "displayValue": "∼2,8 Bil $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1990,7 +2082,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -2006,7 +2098,8 @@
       "id": "GWO-2025-AN-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2019,6 +2112,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "5,03 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 4.49,
         "displayValue": "4,49 $ (2024)",
         "periodLabel": "2024",
@@ -2034,7 +2128,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2050,7 +2144,8 @@
       "id": "GWO-2025-AN-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2063,6 +2158,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "4,6 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 4.1,
         "displayValue": "4,1 G$ (2024)",
         "periodLabel": "2024",
@@ -2078,7 +2174,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2094,7 +2190,8 @@
       "id": "GWO-2025-AN-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2107,6 +2204,7 @@
       "unit": "PERCENT",
       "displayValue": "128 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 130,
         "displayValue": "130 % (2024)",
         "periodLabel": "2024",
@@ -2122,7 +2220,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2138,7 +2236,8 @@
       "id": "GWO-2025-AN-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2148,9 +2247,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3.1,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,1 Bil $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 2.7,
         "displayValue": "∼2,7 Bil $ (2024)",
         "periodLabel": "2024",
@@ -2166,7 +2266,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2182,7 +2282,8 @@
       "id": "IAG-2025-T1-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2195,6 +2296,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "2,91 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 2.44,
         "displayValue": "2,44 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -2210,7 +2312,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2226,7 +2328,8 @@
       "id": "IAG-2025-T1-net_income",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2239,6 +2342,7 @@
       "unit": "CAD_MILLION",
       "displayValue": "186 M$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 165,
         "displayValue": "∼165 M$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -2254,7 +2358,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2270,7 +2374,8 @@
       "id": "IAG-2025-T1-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2283,12 +2388,13 @@
       "unit": "PERCENT",
       "displayValue": "132 %",
       "comparison": {
-        "value": 139,
-        "displayValue": "139 % (T4 2024)",
-        "periodLabel": "T4 2024",
-        "change": -7,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "−7 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "down",
       "note": "ESCAP (AMF) — déploiement de capital et croissance affaires",
@@ -2298,7 +2404,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2314,7 +2420,8 @@
       "id": "IAG-2025-T1-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2327,6 +2434,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "264 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 230,
         "displayValue": "230 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -2342,7 +2450,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2358,7 +2466,8 @@
       "id": "IAG-2025-T2-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2371,6 +2480,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "3,49 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 2.75,
         "displayValue": "2,75 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -2386,7 +2496,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2402,7 +2512,8 @@
       "id": "IAG-2025-T2-net_income",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2415,6 +2526,7 @@
       "unit": "CAD_MILLION",
       "displayValue": "321 M$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 285,
         "displayValue": "∼285 M$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -2430,7 +2542,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2446,7 +2558,8 @@
       "id": "IAG-2025-T2-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2459,12 +2572,13 @@
       "unit": "PERCENT",
       "displayValue": "138 %",
       "comparison": {
-        "value": 132,
-        "displayValue": "132 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 6,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+6 pp"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "ESCAP (AMF) — retour au-dessus des cibles internes",
@@ -2474,7 +2588,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2490,7 +2604,8 @@
       "id": "IAG-2025-T2-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2503,6 +2618,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "≈ 275 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 245,
         "displayValue": "∼245 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -2518,7 +2634,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2534,7 +2650,8 @@
       "id": "IAG-2025-T3-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2547,6 +2664,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "3,47 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 2.93,
         "displayValue": "2,93 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2562,7 +2680,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2578,7 +2696,8 @@
       "id": "IAG-2025-T3-net_income",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2591,6 +2710,7 @@
       "unit": "CAD_MILLION",
       "displayValue": "364 M$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 295,
         "displayValue": "∼295 M$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2606,7 +2726,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2622,7 +2742,8 @@
       "id": "IAG-2025-T3-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2635,12 +2756,13 @@
       "unit": "PERCENT",
       "displayValue": "138 %",
       "comparison": {
-        "value": 138,
-        "displayValue": "138 % (T2 2025)",
-        "periodLabel": "T2 2025",
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
         "change": null,
         "changeUnit": "NONE",
-        "displayChange": "stable"
+        "displayChange": "—"
       },
       "direction": "neutral",
       "note": "ESCAP (AMF) — acquis. RF Capital complétée le 31 oct. 2025",
@@ -2650,7 +2772,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2666,7 +2788,8 @@
       "id": "IAG-2025-T3-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2679,6 +2802,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "≈ 288 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 255,
         "displayValue": "∼255 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2694,7 +2818,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2710,7 +2834,8 @@
       "id": "IAG-2025-AN-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2723,6 +2848,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "∼12,97 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 11.05,
         "displayValue": "∼11,05 $ (2024)",
         "periodLabel": "2024",
@@ -2738,7 +2864,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2754,7 +2880,8 @@
       "id": "IAG-2025-AN-core_eps_q4",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2767,12 +2894,13 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "3,10 $",
       "comparison": {
-        "value": 3.04,
-        "displayValue": "3,04 $ (T4 2024)",
-        "periodLabel": "T4 2024",
-        "change": 0.019736842105263174,
-        "changeUnit": "PERCENT",
-        "displayChange": "+2 %"
+        "periodId": null,
+        "value": null,
+        "displayValue": "—",
+        "periodLabel": "",
+        "change": null,
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "BPA de base T4 2025 — ROE activités de base 12 mois 17,1 %",
@@ -2782,7 +2910,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2798,7 +2926,8 @@
       "id": "IAG-2025-AN-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2811,6 +2940,7 @@
       "unit": "PERCENT",
       "displayValue": "133 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 139,
         "displayValue": "139 % (2024)",
         "periodLabel": "2024",
@@ -2826,7 +2956,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2842,7 +2972,8 @@
       "id": "IAG-2025-AN-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
         "quarter": null,
@@ -2855,6 +2986,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "341 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 261,
         "displayValue": "261 G$ (2024)",
         "periodLabel": "2024",
@@ -2870,7 +3002,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2889,6 +3021,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -2918,6 +3051,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -2949,6 +3083,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-03-27",
       "source": {
@@ -2978,6 +3113,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-06",
       "source": {
@@ -3007,6 +3143,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-07-23",
       "source": {
@@ -3036,6 +3173,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-06",
       "source": {
@@ -3065,6 +3203,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-12",
       "source": {
@@ -3094,6 +3233,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-12",
       "source": {
@@ -3123,6 +3263,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-12",
       "source": {
@@ -3152,6 +3293,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3183,6 +3325,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3212,6 +3355,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3241,6 +3385,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3270,6 +3415,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3299,6 +3445,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3328,6 +3475,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-07",
       "source": {
@@ -3357,6 +3505,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-07",
       "source": {
@@ -3386,6 +3535,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-07",
       "source": {
@@ -3415,6 +3565,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3444,6 +3595,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3473,6 +3625,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3502,6 +3655,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3533,6 +3687,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3562,6 +3717,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-03-30",
       "source": {
@@ -3591,6 +3747,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3620,6 +3777,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-08",
       "source": {
@@ -3649,6 +3807,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-02-24",
       "source": {
@@ -3680,6 +3839,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-05",
       "source": {
@@ -3709,6 +3869,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-05",
       "source": {
@@ -3738,6 +3899,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-06",
       "source": {
@@ -3767,6 +3929,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3798,6 +3961,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-07",
       "source": {
@@ -3827,6 +3991,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-06",
       "source": {
@@ -3858,6 +4023,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3889,6 +4055,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-12",
       "source": {
@@ -3918,6 +4085,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-03",
       "source": {
@@ -3947,6 +4115,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3978,6 +4147,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -4011,6 +4181,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-02-24",
       "source": {
@@ -4042,6 +4213,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-05",
       "source": {
@@ -4073,6 +4245,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-07-23",
       "source": {
@@ -4104,6 +4277,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-07-28",
       "source": {
@@ -4137,6 +4311,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-04",
       "source": {
@@ -4170,6 +4345,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -4205,6 +4381,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-10-31",
       "source": {
@@ -4238,6 +4415,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-17",
       "source": {
@@ -4269,6 +4447,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-17",
       "source": {
@@ -4300,6 +4479,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-05-06",
       "source": {

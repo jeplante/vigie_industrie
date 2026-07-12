@@ -6,6 +6,7 @@ from datetime import date
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
+from pydantic import HttpUrl
 
 from vigie_pipeline.fetch import FetchResult
 from vigie_pipeline.hashing import sha256_bytes
@@ -28,7 +29,7 @@ def discover_documents(source_id: str, index: FetchResult) -> list[DiscoveredDoc
         return [
             DiscoveredDocument(
                 source_id=source_id,
-                canonical_url=index.url,
+                canonical_url=HttpUrl(index.url),
                 title=index.url.rsplit("/", 1)[-1],
                 etag=index.etag,
                 last_modified=index.last_modified,
@@ -54,7 +55,7 @@ def discover_documents(source_id: str, index: FetchResult) -> list[DiscoveredDoc
         result.append(
             DiscoveredDocument(
                 source_id=source_id,
-                canonical_url=url,
+                canonical_url=HttpUrl(url),
                 title=title,
                 published_at=_extract_date(combined),
                 content_type="application/pdf" if href.lower().endswith(".pdf") else "text/html",

@@ -3,18 +3,21 @@
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass
 from datetime import UTC, date, datetime
 from io import BytesIO
+from typing import Literal, cast
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, HttpUrl
 from pypdf import PdfReader
 
-from vigie_pipeline.config import SourceConfig
+from vigie_pipeline.config import MetricConfig, ProjectConfig, SourceConfig
 from vigie_pipeline.discovery import discover_documents
-from vigie_pipeline.exceptions import ExtractionError
+from vigie_pipeline.exceptions import DocumentNotIngestedError, ExtractionError, PipelineError
 from vigie_pipeline.fetch import BoundedFetcher, FetchResult
 from vigie_pipeline.hashing import sha256_bytes
 from vigie_pipeline.llm.anthropic_provider import PROMPT_VERSION, AnthropicProvider
+from vigie_pipeline.llm.base import LlmProvider
 from vigie_pipeline.models import (
     Comparison,
     LlmTrace,
@@ -38,16 +41,6 @@ ADAPTERS: dict[str, type[SourceAdapter]] = {
     "great_west": GreatWestAdapter,
     "ia": IaAdapter,
 }
-METRIC_META = {
-    "core_eps": ("BPA activités de base", "CAD_PER_SHARE"),
-    "core_earnings": ("Résultat activités de base", "CAD_BILLION"),
-    "net_income": ("Résultat net", "CAD_BILLION"),
-    "licat_ratio": ("Ratio LICAT", "PERCENT"),
-    "solvency_ratio": ("Ratio de solvabilité", "PERCENT"),
-    "assets_under_management": ("Actif sous gestion", "CAD_BILLION"),
-    "assets_under_administration": ("Actif sous gestion et administration", "CAD_BILLION"),
-    "total_client_assets": ("Actifs clients totaux", "CAD_BILLION"),
-}
 
 
 class LlmMetric(BaseModel):
@@ -64,13 +57,22 @@ class LlmMetricExtraction(BaseModel):
     metrics: list[LlmMetric]
 
 
+@dataclass(frozen=True)
+class FinancialAcquisition:
+    observations: list[Observation]
+    discovered_periods: list[Period]
+    checked_at: datetime
+
+
 def infer_period(title: str) -> Period | None:
     text = title.lower()
     year_match = re.search(r"20\d{2}", text)
     if year_match is None:
         return None
     year = int(year_match.group())
-    quarter_patterns = {
+    quarter_patterns: dict[
+        Literal["T1", "T2", "T3"], tuple[int, tuple[str, ...], tuple[int, int]]
+    ] = {
         "T1": (1, ("q1", "t1", "first quarter", "premier trimestre"), (3, 31)),
         "T2": (2, ("q2", "t2", "second quarter", "deuxième trimestre"), (6, 30)),
         "T3": (3, ("q3", "t3", "third quarter", "troisième trimestre"), (9, 30)),
@@ -78,7 +80,8 @@ def infer_period(title: str) -> Period | None:
     for key, (quarter, markers, end) in quarter_patterns.items():
         if any(marker in text for marker in markers):
             return Period(
-                key=key,
+                period_id=f"{year}-{key}",
+                period_key=key,
                 type="quarter",
                 year=year,
                 quarter=quarter,
@@ -87,7 +90,8 @@ def infer_period(title: str) -> Period | None:
             )
     if any(marker in text for marker in ("annual", "annuel", "full year", "exercice")):
         return Period(
-            key="AN",
+            period_id=f"{year}-AN",
+            period_key="AN",
             type="annual",
             year=year,
             quarter=None,
@@ -115,11 +119,33 @@ def _previous(
         item
         for item in dataset.observations
         if item.company_id == company_id
-        and item.period.key == period.key
-        and item.period.year < period.year
+        and item.period.period_key == period.period_key
+        and item.period.year == period.year - 1
         and item.metric_id == metric_id
     ]
     return max(matches, key=lambda item: item.period.year, default=None)
+
+
+def _llm_trace(
+    *,
+    candidate: MetricCandidate | LlmMetric,
+    config: ProjectConfig,
+    source: SourceConfig,
+    period: Period,
+    fingerprint: str,
+) -> LlmTrace | None:
+    if not isinstance(candidate, LlmMetric):
+        return None
+    return LlmTrace(
+        provider="anthropic",
+        model=config.pipeline.llm.complex_model,
+        prompt_version=PROMPT_VERSION,
+        executed_at=datetime.now(UTC),
+        task_id=(f"financial_extraction_{source.company_id}_{period.label}_{candidate.metric_id}"),
+        source_fingerprint=fingerprint,
+        confidence=candidate.confidence,
+        warnings=candidate.warnings,
+    )
 
 
 def _build_observation(
@@ -130,30 +156,41 @@ def _build_observation(
     document: FetchResult,
     title: str,
     candidate: MetricCandidate | LlmMetric,
-    llm_trace: LlmTrace | None,
+    metric: MetricConfig,
+    config: ProjectConfig,
 ) -> Observation:
-    metric_id = candidate.metric_id
-    label, unit = METRIC_META[metric_id]
-    previous = _previous(dataset, source.company_id, period, metric_id)
+    previous = _previous(dataset, source.company_id, period, candidate.metric_id)
     change = calculate_change(candidate.value, previous.value) if previous else None
-    direction = direction_for(candidate.value, previous.value) if previous else "neutral"
-    display_value = (
-        candidate.raw_value if isinstance(candidate, MetricCandidate) else candidate.display_value
+    direction = cast(
+        Literal["up", "down", "neutral"],
+        direction_for(candidate.value, previous.value) if previous else "neutral",
     )
+    is_llm = isinstance(candidate, LlmMetric)
+    if isinstance(candidate, LlmMetric):
+        display_value = candidate.display_value
+        warnings = list(candidate.warnings)
+        confidence = candidate.confidence
+        if candidate.unit != metric.unit:
+            warnings.append(
+                f"Unité LLM {candidate.unit} normalisée vers l’unité configurée {metric.unit}."
+            )
+    else:
+        display_value = candidate.raw_value
+        warnings = []
+        confidence = 1.0
     display_change = "—" if change is None else f"{change:+.1%}".replace(".", ",")
     fingerprint = sha256_bytes(document.content)
-    confidence = 1.0 if isinstance(candidate, MetricCandidate) else candidate.confidence
-    warnings = [] if isinstance(candidate, MetricCandidate) else candidate.warnings
     return Observation(
-        id=f"{source.company_id}-{period.year}-{period.key}-{metric_id}",
+        id=f"{source.company_id}-{period.period_id}-{candidate.metric_id}",
         company_id=source.company_id,
         period=period,
-        metric_id=metric_id,
-        label=label,
+        metric_id=candidate.metric_id,
+        label=metric.label,
         value=candidate.value,
-        unit=unit,
+        unit=metric.unit,
         display_value=display_value,
         comparison=Comparison(
+            period_id=previous.period.period_id if previous else None,
             value=previous.value if previous else None,
             display_value=previous.display_value if previous else "—",
             period_label=previous.period.label if previous else "",
@@ -165,7 +202,7 @@ def _build_observation(
         note=candidate.context[:500],
         source=SourceReference(
             source_id=source.id,
-            url=document.url,
+            url=HttpUrl(document.url),
             title=title,
             published_at=period.end_date,
             fetched_at=datetime.now(UTC),
@@ -174,90 +211,107 @@ def _build_observation(
         ),
         quality=ObservationQuality(
             status="validated",
-            extraction_method="anthropic" if llm_trace else "deterministic",
+            extraction_method="anthropic" if is_llm else "deterministic",
             confidence=confidence,
             warnings=warnings,
-            llm_trace=llm_trace,
+            llm_trace=_llm_trace(
+                candidate=candidate,
+                config=config,
+                source=source,
+                period=period,
+                fingerprint=fingerprint,
+            ),
         ),
     )
 
 
 def acquire_source(
-    dataset: VigieDataset, source: SourceConfig, settings: Settings
-) -> list[Observation]:
+    dataset: VigieDataset,
+    source: SourceConfig,
+    settings: Settings,
+    config: ProjectConfig,
+    llm_provider: LlmProvider | None = None,
+) -> FinancialAcquisition:
     adapter_type = ADAPTERS.get(source.adapter)
     if adapter_type is None:
         raise ExtractionError(f"Adaptateur inconnu: {source.adapter}")
     with BoundedFetcher(
         timeout=source.timeout_seconds,
         attempts=source.attempts,
-        max_bytes=settings.max_download_bytes,
+        max_bytes=config.pipeline.http.max_download_bytes,
     ) as fetcher:
         index = fetcher.fetch(str(source.url))
         documents = discover_documents(source.id, index)
+        checked_at = datetime.now(UTC)
+        period_documents = [
+            (document, period)
+            for document in documents
+            if (period := infer_period(f"{document.title} {document.canonical_url}")) is not None
+        ]
+        period_documents.sort(key=lambda item: item[1].end_date, reverse=True)
+        discovered_periods = [period for _, period in period_documents]
         results: list[Observation] = []
-        for discovered in documents:
-            period = infer_period(discovered.title)
-            if period is None:
-                continue
+        for discovered, period in period_documents:
             existing = [
                 item
                 for item in dataset.observations
                 if item.company_id == source.company_id
-                and item.period.key == period.key
-                and item.period.year == period.year
+                and item.period.period_id == period.period_id
             ]
             if existing and all(
                 item.quality.extraction_method == "v1_migration" for item in existing
             ):
                 continue
-            document = fetcher.fetch(str(discovered.canonical_url))
-            fingerprint = sha256_bytes(document.content)
-            if existing and all(item.source.document_hash == fingerprint for item in existing):
-                continue
-            content = document_text(document)
-            deterministic = adapter_type().extract_metrics(content)
-            candidates: list[MetricCandidate | LlmMetric] = list(deterministic)
-            llm_trace = None
-            found = {item.metric_id for item in candidates}
-            missing = set(source.expected_metrics) - found
-            if missing and settings.anthropic_api_key:
-                provider = AnthropicProvider(settings)
-                extraction = provider.extract_structured(
-                    content=content,
-                    output_model=LlmMetricExtraction,
-                    task_name=f"financial_extraction_{source.company_id}_{period.label}",
-                    complex_task=True,
+            try:
+                document = fetcher.fetch(str(discovered.canonical_url))
+                fingerprint = sha256_bytes(document.content)
+                if existing and all(item.source.document_hash == fingerprint for item in existing):
+                    continue
+                content = document_text(document)
+                candidates: list[MetricCandidate | LlmMetric] = list(
+                    adapter_type().extract_metrics(content)
                 )
-                candidates.extend(item for item in extraction.metrics if item.metric_id in missing)
                 found = {item.metric_id for item in candidates}
-                llm_trace = LlmTrace(
-                    provider="anthropic",
-                    model=settings.anthropic_complex_model,
-                    prompt_version=PROMPT_VERSION,
-                    executed_at=datetime.now(UTC),
-                    task_id=f"financial_extraction_{source.company_id}_{period.label}",
-                    source_fingerprint=fingerprint,
-                    confidence=min((item.confidence for item in extraction.metrics), default=0.5),
-                    warnings=[],
+                missing = set(source.expected_metrics) - found
+                if missing and settings.anthropic_api_key:
+                    provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
+                    extraction = provider.extract_structured(
+                        content=content,
+                        output_model=LlmMetricExtraction,
+                        task_name=f"financial_extraction_{source.company_id}_{period.label}",
+                        complex_task=True,
+                    )
+                    candidates.extend(
+                        item for item in extraction.metrics if item.metric_id in missing
+                    )
+                    found = {item.metric_id for item in candidates}
+                missing = set(source.expected_metrics) - found
+                if missing:
+                    raise ExtractionError(
+                        f"{source.id}/{period.label}: métriques officielles "
+                        f"manquantes {sorted(missing)}"
+                    )
+                by_metric = {item.metric_id: item for item in candidates}
+                results.extend(
+                    _build_observation(
+                        dataset=dataset,
+                        source=source,
+                        period=period,
+                        document=document,
+                        title=discovered.title,
+                        candidate=by_metric[metric_id],
+                        metric=config.metrics[metric_id],
+                        config=config,
+                    )
+                    for metric_id in source.expected_metrics
                 )
-            missing = set(source.expected_metrics) - found
-            if missing:
-                raise ExtractionError(
-                    f"{source.id}/{period.label}: métriques officielles "
-                    f"manquantes {sorted(missing)}"
-                )
-            by_metric = {item.metric_id: item for item in candidates}
-            results.extend(
-                _build_observation(
-                    dataset=dataset,
-                    source=source,
-                    period=period,
-                    document=document,
-                    title=discovered.title,
-                    candidate=by_metric[metric_id],
-                    llm_trace=llm_trace,
-                )
-                for metric_id in source.expected_metrics
-            )
-        return results
+            except PipelineError as error:
+                raise DocumentNotIngestedError(
+                    f"{source.id}/{period.label}: {error}", period=period
+                ) from error
+        unique_periods = {period.period_id: period for period in discovered_periods}
+        return FinancialAcquisition(
+            observations=results,
+            discovered_periods=sorted(unique_periods.values(), key=lambda item: item.end_date),
+            checked_at=checked_at,
+        )

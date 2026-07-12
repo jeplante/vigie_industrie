@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-11T23:47:11.295324Z",
+  "generatedAt": "2026-07-12T13:47:38.458723Z",
   "companies": [
     {
       "id": "MFC",
@@ -33,7 +33,8 @@
   ],
   "periods": [
     {
-      "key": "T1",
+      "periodId": "2025-T1",
+      "periodKey": "T1",
       "type": "quarter",
       "year": 2025,
       "quarter": 1,
@@ -41,7 +42,8 @@
       "label": "T1 2025"
     },
     {
-      "key": "T2",
+      "periodId": "2025-T2",
+      "periodKey": "T2",
       "type": "quarter",
       "year": 2025,
       "quarter": 2,
@@ -49,7 +51,8 @@
       "label": "T2 2025"
     },
     {
-      "key": "T3",
+      "periodId": "2025-T3",
+      "periodKey": "T3",
       "type": "quarter",
       "year": 2025,
       "quarter": 3,
@@ -57,10 +60,10 @@
       "label": "T3 2025"
     },
     {
-      "key": "AN",
+      "periodId": "2025-AN",
+      "periodKey": "AN",
       "type": "annual",
       "year": 2025,
-      "quarter": null,
       "endDate": "2025-12-31",
       "label": "Annuel 2025"
     }
@@ -70,7 +73,8 @@
       "id": "MFC-2025-T1-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -83,6 +87,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "0,99 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.96,
         "displayValue": "0,96 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -98,7 +103,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -107,15 +112,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T1-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -128,6 +133,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "0,5 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.9,
         "displayValue": "0,9 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -143,7 +149,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -152,15 +158,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T1-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -173,6 +179,7 @@
       "unit": "PERCENT",
       "displayValue": "134 %",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 133.0,
         "displayValue": "∼133 % (T1 2024)",
         "periodLabel": "T1 2024",
@@ -188,7 +195,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -197,15 +204,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T1-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -218,6 +225,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,8 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1.8,
         "displayValue": "1,8 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -233,7 +241,7 @@
         "title": "Manuvie — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:ed9fcc6318f86b597327b92ceb40b98b8032caeb244ee3847f9f9a33c16d4adf",
+        "documentHash": "sha256:6664c516c15674b4bf088c6d39ece0f01b75a136650c0d4609d7b559396c1ce6",
         "priority": "primary"
       },
       "quality": {
@@ -242,15 +250,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T2-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -263,6 +271,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "0,95 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 0.93,
         "displayValue": "0,93 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -278,7 +287,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -287,15 +296,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T2-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -308,6 +317,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,8 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.1,
         "displayValue": "1,1 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -323,7 +333,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -332,15 +342,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T2-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -353,12 +363,10 @@
       "unit": "PERCENT",
       "displayValue": "134 %",
       "comparison": {
-        "value": 133.0,
-        "displayValue": "133 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 1.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+1 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Ratio de la Manufacturers Life Insurance Co.",
@@ -368,7 +376,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -377,15 +385,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T2-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -398,6 +406,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,7 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.8,
         "displayValue": "1,8 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -413,7 +422,7 @@
         "title": "Manuvie — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-06",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f1a3bde03bc03045efe47a70b29152357f7f7344083403d7364640ef33622c0f",
+        "documentHash": "sha256:7e8510a8add3e8eff6c7627ce0637a2bffe6e43f63c10fa07f64d85c4502f62b",
         "priority": "primary"
       },
       "quality": {
@@ -422,15 +431,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T3-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -443,6 +452,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,16 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.0,
         "displayValue": "1,00 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -458,7 +468,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -467,15 +477,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T3-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -488,10 +498,10 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,8 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.8,
         "displayValue": "1,8 G$ (T3 2024)",
         "periodLabel": "T3 2024",
-        "change": null,
         "changeUnit": "NONE",
         "displayChange": "≈ stable"
       },
@@ -503,7 +513,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -512,15 +522,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T3-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -533,12 +543,10 @@
       "unit": "PERCENT",
       "displayValue": "138 %",
       "comparison": {
-        "value": 134.0,
-        "displayValue": "134 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": 4.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+4 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Ratio de la Manufacturers Life Insurance Co.",
@@ -548,7 +556,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -557,15 +565,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-T3-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -578,6 +586,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "2,0 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.8,
         "displayValue": "1,8 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -593,7 +602,7 @@
         "title": "Manuvie — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-12",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:c72f3d212286d03cb7db40c579b095b0cd3d70a93a79f14cea6a2d3019151925",
+        "documentHash": "sha256:5e1eaada4886e24afd460a9c6bbc4f80ecbaa249af43285d8e619e2df95f47dd",
         "priority": "primary"
       },
       "quality": {
@@ -602,18 +611,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-AN-core_eps",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -623,6 +631,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "4,21 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 3.85,
         "displayValue": "3,85 $ (2024)",
         "periodLabel": "2024",
@@ -638,7 +647,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -647,18 +656,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-AN-net_income",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -668,6 +676,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "5,6 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 5.4,
         "displayValue": "5,4 G$ (2024)",
         "periodLabel": "2024",
@@ -683,7 +692,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -692,18 +701,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-AN-licat_ratio",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -713,6 +721,7 @@
       "unit": "PERCENT",
       "displayValue": "136 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 137.0,
         "displayValue": "137 % (2024)",
         "periodLabel": "2024",
@@ -728,7 +737,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -737,18 +746,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "MFC-2025-AN-core_earnings",
       "companyId": "MFC",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -758,6 +766,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "7,5 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 7.2,
         "displayValue": "7,2 G$ (2024)",
         "periodLabel": "2024",
@@ -773,7 +782,7 @@
         "title": "Manuvie — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:fa79759ee746688f3b83337c9f20bf27aa56c3b109525a7abe7356f92384e8d0",
+        "documentHash": "sha256:c0d5a53e26081b695fe0ee489876579398566da510298def29e60f6459f0ea98",
         "priority": "primary"
       },
       "quality": {
@@ -782,15 +791,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T1-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -803,6 +812,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,82 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1.5,
         "displayValue": "1,50 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -818,7 +828,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -827,15 +837,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T1-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -848,6 +858,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,045 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.875,
         "displayValue": "0,875 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -863,7 +874,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -872,15 +883,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T1-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -893,10 +904,10 @@
       "unit": "PERCENT",
       "displayValue": "149 %",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 149.0,
         "displayValue": "∼149 % (T1 2024)",
         "periodLabel": "T1 2024",
-        "change": null,
         "changeUnit": "NONE",
         "displayChange": "stable"
       },
@@ -908,7 +919,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -917,15 +928,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T1-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -938,6 +949,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 551 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1465.0,
         "displayValue": "∼1 465 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -953,7 +965,7 @@
         "title": "Sun Life — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:9271b7352d316635e0b4fae9aeb087c614c7869aa219cb4d5104eb8edc8dc13b",
+        "documentHash": "sha256:3e2e5378cd0c793bedcfddd5244f6bbba8091223611cfa85ca1cd6c3b87dd99f",
         "priority": "primary"
       },
       "quality": {
@@ -962,15 +974,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T2-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -983,6 +995,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,79 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.72,
         "displayValue": "1,72 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -998,7 +1011,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1007,15 +1020,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T2-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1028,6 +1041,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,015 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.0,
         "displayValue": "1,000 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1043,7 +1057,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1052,15 +1066,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T2-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1073,12 +1087,10 @@
       "unit": "PERCENT",
       "displayValue": "151 %",
       "comparison": {
-        "value": 149.0,
-        "displayValue": "149 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 2.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+2 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Ratio LICAT de SLF Inc. au 30 juin 2025",
@@ -1088,7 +1100,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1097,15 +1109,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T2-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1118,6 +1130,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 541 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1465.0,
         "displayValue": "1 465 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1133,7 +1146,7 @@
         "title": "Sun Life — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cdb21082372b89b53d5bef2508db5cf298c5706a869b11ed173c04b4a525174f",
+        "documentHash": "sha256:72c30d4d343922522bbc989fd049b4b1aab523a3c5194913fee304fb1319134e",
         "priority": "primary"
       },
       "quality": {
@@ -1142,15 +1155,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T3-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1163,6 +1176,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,85 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.72,
         "displayValue": "1,72 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1178,7 +1192,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1187,15 +1201,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T3-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1208,6 +1222,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,047 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.016,
         "displayValue": "1,016 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1223,7 +1238,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1232,15 +1247,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T3-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1253,12 +1268,10 @@
       "unit": "PERCENT",
       "displayValue": "154 %",
       "comparison": {
-        "value": 151.0,
-        "displayValue": "151 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": 3.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+3 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Hausse grâce à émission obligataire et génération organique",
@@ -1268,7 +1281,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1277,15 +1290,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-T3-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1298,6 +1311,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 623 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1515.0,
         "displayValue": "1 515 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1313,7 +1327,7 @@
         "title": "Sun Life — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5a7d759c76674b6f2bf5ed42629c7e047c0d76b36d617ecf1e0984226ae9a9e5",
+        "documentHash": "sha256:36536aec95e04d0963abb10a0b8e656fbac786a5cbac49998e7c612360287f0e",
         "priority": "primary"
       },
       "quality": {
@@ -1322,18 +1336,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-AN-core_eps",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -1343,6 +1356,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "7,45 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 6.65,
         "displayValue": "6,65 $ (2024)",
         "periodLabel": "2024",
@@ -1358,7 +1372,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1367,18 +1381,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-AN-net_income",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -1388,6 +1401,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "4,201 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 3.856,
         "displayValue": "3,856 G$ (2024)",
         "periodLabel": "2024",
@@ -1403,7 +1417,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1412,18 +1426,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-AN-licat_ratio",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -1433,6 +1446,7 @@
       "unit": "PERCENT",
       "displayValue": "157 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 152.0,
         "displayValue": "∼152 % (2024)",
         "periodLabel": "2024",
@@ -1448,7 +1462,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1457,18 +1471,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "SLF-2025-AN-assets_under_management",
       "companyId": "SLF",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -1478,6 +1491,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1 605 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 1543.0,
         "displayValue": "1 543 G$ (2024)",
         "periodLabel": "2024",
@@ -1493,7 +1507,7 @@
         "title": "Sun Life — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:2ff9c659efe726a7583be49a9d615fb1054cfdb630b35d0cb6f962ff0113719a",
+        "documentHash": "sha256:a0761626ec4030fbb34b8a4a3d4bbcb242a8b4f48eb786f9f722da80f634114c",
         "priority": "primary"
       },
       "quality": {
@@ -1502,15 +1516,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T1-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1523,6 +1537,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,11 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 1.05,
         "displayValue": "1,05 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -1538,7 +1553,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1547,15 +1562,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T1-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1568,6 +1583,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,03 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 0.98,
         "displayValue": "0,98 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -1583,7 +1599,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1592,15 +1608,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T1-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1613,12 +1629,10 @@
       "unit": "PERCENT",
       "displayValue": "130 %",
       "comparison": {
-        "value": 130.0,
-        "displayValue": "130 % (T4 2024)",
-        "periodLabel": "T4 2024",
-        "change": null,
+        "displayValue": "—",
+        "periodLabel": "",
         "changeUnit": "NONE",
-        "displayChange": "stable"
+        "displayChange": "—"
       },
       "direction": "neutral",
       "note": "Ratio LICAT au 31 mars 2025, trésorerie Lifeco 2,5 G$",
@@ -1628,7 +1642,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1637,15 +1651,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T1-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -1655,9 +1669,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3.0,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,0 Bil $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 2.7,
         "displayValue": "∼2,7 Bil $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -1673,7 +1688,7 @@
         "title": "Great-West Lifeco — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:5615e3e367132d57d8f857fdb6aeaf17d120120efb18ef907d490eacc5046958",
+        "documentHash": "sha256:a87b7197243cfc99b711b6734d3691a0c057a2384e90d8ad741040b577e4f7f6",
         "priority": "primary"
       },
       "quality": {
@@ -1682,15 +1697,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T2-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1703,6 +1718,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,24 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.11,
         "displayValue": "1,11 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1718,7 +1734,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1727,15 +1743,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T2-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1748,6 +1764,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,1 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 1.0,
         "displayValue": "1,0 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1763,7 +1780,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1772,15 +1789,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T2-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1793,12 +1810,10 @@
       "unit": "PERCENT",
       "displayValue": "132 %",
       "comparison": {
-        "value": 130.0,
-        "displayValue": "130 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 2.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+2 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "Hausse grâce à la forte génération de capital de base",
@@ -1808,7 +1823,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1817,15 +1832,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T2-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -1835,9 +1850,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3.0,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,0 Bil $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 2.7,
         "displayValue": "∼2,7 Bil $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -1853,7 +1869,7 @@
         "title": "Great-West Lifeco — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:0b83913844b54863adf8ec58bb9dfdbe7a3b1d4f19fd1ae6e3aee9e9142b3802",
+        "documentHash": "sha256:d4dd07ba91a310e8654b87471ca0d0326864249967e7ca7c66952d4c02f3d682",
         "priority": "primary"
       },
       "quality": {
@@ -1862,15 +1878,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T3-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1883,6 +1899,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "1,33 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.14,
         "displayValue": "1,14 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1898,7 +1915,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -1907,15 +1924,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T3-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1928,6 +1945,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "1,225 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 1.061,
         "displayValue": "1,061 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -1943,7 +1961,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -1952,15 +1970,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T3-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -1973,12 +1991,10 @@
       "unit": "PERCENT",
       "displayValue": "131 %",
       "comparison": {
-        "value": 132.0,
-        "displayValue": "132 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": -1.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "−1 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "neutral",
       "note": "Hausse des rachats d'actions (995 M$ cumulé), trésorerie 2,5 G$",
@@ -1988,7 +2004,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -1997,15 +2013,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-T3-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2015,9 +2031,10 @@
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3.1,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,1 Bil $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 2.8,
         "displayValue": "∼2,8 Bil $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2033,7 +2050,7 @@
         "title": "Great-West Lifeco — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:29a50f1bcc7d79a158bcfebf6fbbb83347c6b0528af2aa82216dcd44410c1312",
+        "documentHash": "sha256:ea5568eafcac5320a853281a2560ca77c9694017feca815a3dcf4d3ffaedeb12",
         "priority": "primary"
       },
       "quality": {
@@ -2042,18 +2059,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-AN-core_eps",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2063,6 +2079,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "5,03 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 4.49,
         "displayValue": "4,49 $ (2024)",
         "periodLabel": "2024",
@@ -2078,7 +2095,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2087,18 +2104,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-AN-core_earnings",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2108,6 +2124,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "4,6 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 4.1,
         "displayValue": "4,1 G$ (2024)",
         "periodLabel": "2024",
@@ -2123,7 +2140,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2132,18 +2149,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-AN-licat_ratio",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2153,6 +2169,7 @@
       "unit": "PERCENT",
       "displayValue": "128 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 130.0,
         "displayValue": "130 % (2024)",
         "periodLabel": "2024",
@@ -2168,7 +2185,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2177,27 +2194,27 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "GWO-2025-AN-total_client_assets",
       "companyId": "GWO",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
       "metricId": "total_client_assets",
       "label": "Actifs clients totaux",
       "value": 3.1,
-      "unit": "NUMBER",
+      "unit": "CAD_TRILLION",
       "displayValue": "3,1 Bil $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 2.7,
         "displayValue": "∼2,7 Bil $ (2024)",
         "periodLabel": "2024",
@@ -2213,7 +2230,7 @@
         "title": "Great-West Lifeco — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-11",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:78e7cc30ad5964232019b2a3c4508ad7047f572982c741835bc2e0484ab5b4d3",
+        "documentHash": "sha256:215ea88432e309608804241f8222869e379f3bd334e12e19014621aa95190e28",
         "priority": "primary"
       },
       "quality": {
@@ -2222,15 +2239,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T1-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2243,6 +2260,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "2,91 $",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 2.44,
         "displayValue": "2,44 $ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -2258,7 +2276,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2267,15 +2285,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T1-net_income",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2288,6 +2306,7 @@
       "unit": "CAD_MILLION",
       "displayValue": "186 M$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 165.0,
         "displayValue": "∼165 M$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -2303,7 +2322,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2312,15 +2331,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T1-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2333,12 +2352,10 @@
       "unit": "PERCENT",
       "displayValue": "132 %",
       "comparison": {
-        "value": 139.0,
-        "displayValue": "139 % (T4 2024)",
-        "periodLabel": "T4 2024",
-        "change": -7.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "−7 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "down",
       "note": "ESCAP (AMF) — déploiement de capital et croissance affaires",
@@ -2348,7 +2365,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2357,15 +2374,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T1-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "T1",
+        "periodId": "2025-T1",
+        "periodKey": "T1",
         "type": "quarter",
         "year": 2025,
         "quarter": 1,
@@ -2378,6 +2395,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "264 G$",
       "comparison": {
+        "periodId": "2024-T1",
         "value": 230.0,
         "displayValue": "230 G$ (T1 2024)",
         "periodLabel": "T1 2024",
@@ -2393,7 +2411,7 @@
         "title": "iA Groupe financier — T1 2025 (31 mars 2025)",
         "publishedAt": "2025-05-07",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:d20372171870cf37a18bb0c7cbf87d1f6238d86bc9f8c2e028bda0d1893a9152",
+        "documentHash": "sha256:53e316d414450e0e98a4129dccc57f430d411c97e21980ed92cf9fadeaa3b42a",
         "priority": "primary"
       },
       "quality": {
@@ -2402,15 +2420,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T2-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2423,6 +2441,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "3,49 $",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 2.75,
         "displayValue": "2,75 $ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -2438,7 +2457,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2447,15 +2466,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T2-net_income",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2468,6 +2487,7 @@
       "unit": "CAD_MILLION",
       "displayValue": "321 M$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 285.0,
         "displayValue": "∼285 M$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -2483,7 +2503,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2492,15 +2512,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T2-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2513,12 +2533,10 @@
       "unit": "PERCENT",
       "displayValue": "138 %",
       "comparison": {
-        "value": 132.0,
-        "displayValue": "132 % (T1 2025)",
-        "periodLabel": "T1 2025",
-        "change": 6.0,
-        "changeUnit": "PERCENTAGE_POINT",
-        "displayChange": "+6 pp"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "ESCAP (AMF) — retour au-dessus des cibles internes",
@@ -2528,7 +2546,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2537,15 +2555,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T2-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "T2",
+        "periodId": "2025-T2",
+        "periodKey": "T2",
         "type": "quarter",
         "year": 2025,
         "quarter": 2,
@@ -2558,6 +2576,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "≈ 275 G$",
       "comparison": {
+        "periodId": "2024-T2",
         "value": 245.0,
         "displayValue": "∼245 G$ (T2 2024)",
         "periodLabel": "T2 2024",
@@ -2573,7 +2592,7 @@
         "title": "iA Groupe financier — T2 2025 (30 juin 2025)",
         "publishedAt": "2025-08-05",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:f2c515cdd12852db247ab2f3513f859e4987a2c8ab46138d3e799dd46bcb8be6",
+        "documentHash": "sha256:3b1fc221b6af84c34863069a14da738b7e9cb7418152d1f3f653351807e0d3b7",
         "priority": "primary"
       },
       "quality": {
@@ -2582,15 +2601,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T3-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2603,6 +2622,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "3,47 $",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 2.93,
         "displayValue": "2,93 $ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2618,7 +2638,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2627,15 +2647,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T3-net_income",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2648,6 +2668,7 @@
       "unit": "CAD_MILLION",
       "displayValue": "364 M$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 295.0,
         "displayValue": "∼295 M$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2663,7 +2684,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2672,15 +2693,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T3-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2693,12 +2714,10 @@
       "unit": "PERCENT",
       "displayValue": "138 %",
       "comparison": {
-        "value": 138.0,
-        "displayValue": "138 % (T2 2025)",
-        "periodLabel": "T2 2025",
-        "change": null,
+        "displayValue": "—",
+        "periodLabel": "",
         "changeUnit": "NONE",
-        "displayChange": "stable"
+        "displayChange": "—"
       },
       "direction": "neutral",
       "note": "ESCAP (AMF) — acquis. RF Capital complétée le 31 oct. 2025",
@@ -2708,7 +2727,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2717,15 +2736,15 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-T3-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "T3",
+        "periodId": "2025-T3",
+        "periodKey": "T3",
         "type": "quarter",
         "year": 2025,
         "quarter": 3,
@@ -2738,6 +2757,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "≈ 288 G$",
       "comparison": {
+        "periodId": "2024-T3",
         "value": 255.0,
         "displayValue": "∼255 G$ (T3 2024)",
         "periodLabel": "T3 2024",
@@ -2753,7 +2773,7 @@
         "title": "iA Groupe financier — T3 2025 (30 septembre 2025)",
         "publishedAt": "2025-11-04",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:cd77b871812a159375de367acacd22c47dcd3130c89a778ffa6e2d57470ab851",
+        "documentHash": "sha256:769318a8884bb2b9291f2b57dc64e3667baec02cd30beaa64c6f48f8f466ead8",
         "priority": "primary"
       },
       "quality": {
@@ -2762,18 +2782,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-AN-core_eps",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2783,6 +2802,7 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "∼12,97 $",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 11.05,
         "displayValue": "∼11,05 $ (2024)",
         "periodLabel": "2024",
@@ -2798,7 +2818,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2807,18 +2827,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-AN-core_eps_q4",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2828,12 +2847,10 @@
       "unit": "CAD_PER_SHARE",
       "displayValue": "3,10 $",
       "comparison": {
-        "value": 3.04,
-        "displayValue": "3,04 $ (T4 2024)",
-        "periodLabel": "T4 2024",
-        "change": 0.019736842105263174,
-        "changeUnit": "PERCENT",
-        "displayChange": "+2 %"
+        "displayValue": "—",
+        "periodLabel": "",
+        "changeUnit": "NONE",
+        "displayChange": "—"
       },
       "direction": "up",
       "note": "BPA de base T4 2025 — ROE activités de base 12 mois 17,1 %",
@@ -2843,7 +2860,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2852,18 +2869,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-AN-solvency_ratio",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2873,6 +2889,7 @@
       "unit": "PERCENT",
       "displayValue": "133 %",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 139.0,
         "displayValue": "139 % (2024)",
         "periodLabel": "2024",
@@ -2888,7 +2905,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2897,18 +2914,17 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     },
     {
       "id": "IAG-2025-AN-assets_under_administration",
       "companyId": "IAG",
       "period": {
-        "key": "AN",
+        "periodId": "2025-AN",
+        "periodKey": "AN",
         "type": "annual",
         "year": 2025,
-        "quarter": null,
         "endDate": "2025-12-31",
         "label": "Annuel 2025"
       },
@@ -2918,6 +2934,7 @@
       "unit": "CAD_BILLION",
       "displayValue": "341 G$",
       "comparison": {
+        "periodId": "2024-AN",
         "value": 261.0,
         "displayValue": "261 G$ (2024)",
         "periodLabel": "2024",
@@ -2933,7 +2950,7 @@
         "title": "iA Groupe financier — Annuel 2025 (31 décembre 2025)",
         "publishedAt": "2026-02-17",
         "fetchedAt": "2026-07-11T00:00:00Z",
-        "documentHash": "sha256:3ea32822335f38a54020d6faf200f09598ca0405ce3ac8636faa6f9689e2d140",
+        "documentHash": "sha256:8bce83e7024a00d52e47b1be65a21744033dd5c7efd36820a03bd927473223c6",
         "priority": "primary"
       },
       "quality": {
@@ -2942,8 +2959,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source."
-        ],
-        "llmTrace": null
+        ]
       }
     }
   ],
@@ -2953,6 +2969,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -2962,7 +2979,6 @@
       },
       "title": "Manuvie présente ses résultats pour le premier trimestre de 2025",
       "originalSummary": "BPA de base de 0,99 $, souscriptions EPA +37 %, MSC affaires nouvelles +31 %, VAN +36 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -2974,8 +2990,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -2983,6 +2998,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -2992,7 +3008,6 @@
       },
       "title": "IA, Great-West et Manuvie dévoilent leurs résultats du T1 2025",
       "originalSummary": "Synthèse des résultats des trois assureurs canadiens au premier trimestre 2025.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -3006,8 +3021,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3015,6 +3029,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-03-27",
       "source": {
@@ -3024,7 +3039,6 @@
       },
       "title": "Rapport annuel 2024 et circulaire 2025 de Manuvie maintenant disponibles",
       "originalSummary": "Manuvie publie son rapport annuel 2024 incluant les états financiers audités et la circulaire de la direction.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3036,8 +3050,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3045,6 +3058,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-06",
       "source": {
@@ -3054,7 +3068,6 @@
       },
       "title": "Manuvie présente ses résultats pour le deuxième trimestre de 2025",
       "originalSummary": "BPA de base 0,95 $, EPA +15 %, MSC affaires nouvelles +37 %, VAN +20 %, entrées nettes GP&A 0,9 G$.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3066,8 +3079,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3075,6 +3087,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-07-23",
       "source": {
@@ -3084,7 +3097,6 @@
       },
       "title": "Manuvie s'apprête à publier ses résultats du deuxième trimestre de 2025",
       "originalSummary": "Annonce de la date de publication des résultats financiers T2 2025 et webémission pour le 7 août 2025.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3096,8 +3108,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3105,6 +3116,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-06",
       "source": {
@@ -3114,7 +3126,6 @@
       },
       "title": "Rapport aux actionnaires T2 2025 — Manuvie (PDF officiel)",
       "originalSummary": "Rapport trimestriel complet avec états financiers consolidés et rapport de gestion du T2 2025.",
-      "generatedSummary": null,
       "categories": [
         "other"
       ],
@@ -3126,8 +3137,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3135,6 +3145,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-12",
       "source": {
@@ -3144,7 +3155,6 @@
       },
       "title": "Manulife Reports Third Quarter 2025 Results — Record Core Earnings",
       "originalSummary": "Core EPS de 1,16 $ (+16 %), résultats de base records, ROE activités de base 18,1 %, LICAT 138 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3156,8 +3166,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3165,6 +3174,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-12",
       "source": {
@@ -3174,7 +3184,6 @@
       },
       "title": "Manuvie présente ses résultats pour le troisième trimestre de 2025",
       "originalSummary": "Résultats de base records de 2,0 G$, hausse de 10 % à taux constant. Classement TIME des meilleures entreprises mondiales.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3186,8 +3195,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3195,6 +3203,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-12",
       "source": {
@@ -3204,7 +3213,6 @@
       },
       "title": "Manulife Q3 2025 — Rapport aux actionnaires (résultats détaillés)",
       "originalSummary": "Détail par segment : Asie, Canada, É.-U. et Gestion mondiale de patrimoine. VAN +11 %, EPA +8 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3216,8 +3224,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3225,6 +3232,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3234,7 +3242,6 @@
       },
       "title": "Manuvie présente ses résultats pour l'exercice et le T4 2025 — Résultats records",
       "originalSummary": "BPA de base annuel 4,21 $ (+8 %), résultats records, dividende haussé de 10,2 %, LICAT 136 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management"
@@ -3248,8 +3255,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3257,6 +3263,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3266,7 +3273,6 @@
       },
       "title": "Manulife Reports Full Year and Fourth Quarter 2025 Results",
       "originalSummary": "Core earnings record de 7,5 G$, core EPS 4,21 $, retour de 5,4 G$ aux actionnaires en 2025.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3278,8 +3284,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3287,6 +3292,7 @@
       "companyIds": [
         "MFC"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3296,7 +3302,6 @@
       },
       "title": "Manuvie dépose ses états financiers annuels 2025 vérifiés et le rapport de gestion connexe",
       "originalSummary": "Dépôt auprès des Autorités canadiennes en valeurs mobilières et de la SEC (formulaire 40-F).",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3308,8 +3313,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3317,6 +3321,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3326,7 +3331,6 @@
       },
       "title": "Sun Life Reports First Quarter 2025 Results — Underlying EPS +21 %",
       "originalSummary": "Revenu net sous-jacent de 1,045 G$ (+19 %), LICAT 149 %, dividende trimestriel augmenté de 5 %.",
-      "generatedSummary": null,
       "categories": [
         "capital_management"
       ],
@@ -3338,8 +3342,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3347,6 +3350,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3356,7 +3360,6 @@
       },
       "title": "Sun Life Financial — Formulaire 6-K T1 2025 (communiqué de presse officiel)",
       "originalSummary": "Formulaire 6-K déposé à la SEC incluant le communiqué de résultats complet du premier trimestre 2025.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3368,8 +3371,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3377,6 +3379,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3386,7 +3389,6 @@
       },
       "title": "Sun Life Reports First Quarter 2025 Results (communiqué officiel)",
       "originalSummary": "Résultats T1 : gestion de patrimoine et d'actifs +19 % en revenu sous-jacent, ROE sous-jacent 17,7 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3398,8 +3400,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3407,6 +3408,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-07",
       "source": {
@@ -3416,7 +3418,6 @@
       },
       "title": "Sun Life Reports Second Quarter 2025 Results",
       "originalSummary": "AUM 1 541 G$ (+5 %), LICAT 151 %, revenu sous-jacent Asie record, rachat de 400 M$ d'actions.",
-      "generatedSummary": null,
       "categories": [
         "capital_management"
       ],
@@ -3428,8 +3429,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3437,6 +3437,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-07",
       "source": {
@@ -3446,7 +3447,6 @@
       },
       "title": "Sun Life Reports Second Quarter 2025 Results (site officiel)",
       "originalSummary": "Revenu net sous-jacent +2 %, ROE sous-jacent 17,6 %, LICAT 151 %, BPA rapporté 1,26 $ (+14 %).",
-      "generatedSummary": null,
       "categories": [
         "other"
       ],
@@ -3458,8 +3458,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3467,6 +3466,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-07",
       "source": {
@@ -3476,7 +3476,6 @@
       },
       "title": "Sun Life Financial — Formulaire 6-K T2 2025 (communiqué de presse officiel)",
       "originalSummary": "Dépôt SEC du communiqué de résultats complet du deuxième trimestre 2025.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3488,8 +3487,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3497,6 +3495,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3506,7 +3505,6 @@
       },
       "title": "Sun Life Reports Third Quarter 2025 Results — AUM 1 623 G$",
       "originalSummary": "AUM +7 %, LICAT 154 %, dividende augmenté à 0,92 $, rachat de 400 M$ d'actions au T3.",
-      "generatedSummary": null,
       "categories": [
         "capital_management"
       ],
@@ -3518,8 +3516,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3527,6 +3524,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3536,7 +3534,6 @@
       },
       "title": "Sun Life Reports Third Quarter 2025 Results (communiqué complet)",
       "originalSummary": "Revenu net sous-jacent 1,047 G$ (+3 %), ROE sous-jacent 18,3 %, LICAT 154 %.",
-      "generatedSummary": null,
       "categories": [
         "other"
       ],
@@ -3548,8 +3545,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3557,6 +3553,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3566,7 +3563,6 @@
       },
       "title": "Sun Life Financial — Formulaire 6-K T3 2025 (rapport aux actionnaires)",
       "originalSummary": "Rapport aux actionnaires T3 2025 complet — rapport de gestion et états financiers condensés.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3578,8 +3574,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3587,6 +3582,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3596,7 +3592,6 @@
       },
       "title": "Sun Life Reports Fourth Quarter and Full Year 2025 Results",
       "originalSummary": "BPA sous-jacent annuel 7,45 $ (+12 %), LICAT 157 %, ROE sous-jacent 18,2 %, dividende haussé.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management"
@@ -3610,8 +3605,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3619,6 +3613,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3628,7 +3623,6 @@
       },
       "title": "Sun Life Reports Fourth Quarter and Full Year 2025 Results (communiqué officiel)",
       "originalSummary": "Revenu net sous-jacent annuel 4,201 G$, retour de valeur aux actionnaires, AUM 1 605 G$.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3640,8 +3634,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3649,6 +3642,7 @@
       "companyIds": [
         "SLF"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-03-30",
       "source": {
@@ -3658,7 +3652,6 @@
       },
       "title": "Sun Life publie un package d'informations supplémentaires mis à jour",
       "originalSummary": "Nouvelles divulgations alignées avec la création du groupe Gestion d'actifs Sun Life et du plan de rémunération en actions de SLC Management.",
-      "generatedSummary": null,
       "categories": [
         "other"
       ],
@@ -3670,8 +3663,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3679,6 +3671,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -3688,7 +3681,6 @@
       },
       "title": "Great-West Lifeco reports strong first quarter 2025 results",
       "originalSummary": "Bénéfice de base 1,03 G$ (+5 %), BPA de base 1,11 $ (+6 %), LICAT 130 %, trésorerie 2,5 G$.",
-      "generatedSummary": null,
       "categories": [
         "other"
       ],
@@ -3700,8 +3692,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3709,6 +3700,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-08",
       "source": {
@@ -3718,7 +3710,6 @@
       },
       "title": "Great-West Lifeco Q1 2025 slides — Base earnings up 5%, Retirement surges 24%",
       "originalSummary": "Segment retraite en hausse de 24 %, portefeuille de 3 Bil $ en actifs clients, ROE de base 17,2 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3730,8 +3721,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3739,6 +3729,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-02-24",
       "source": {
@@ -3748,7 +3739,6 @@
       },
       "title": "IA, Great-West et Manuvie dévoilent leurs résultats trimestriels",
       "originalSummary": "Synthèse des résultats du T1 2025 pour les trois assureurs canadiens incluant Great-West Lifeco.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -3762,8 +3752,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3771,6 +3760,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-05",
       "source": {
@@ -3780,7 +3770,6 @@
       },
       "title": "Great-West Lifeco reports record base earnings — additional $500M buybacks",
       "originalSummary": "BPA de base 1,24 $ (+12 %), LICAT 132 %, trésorerie 2,1 G$, intention de racheter 500 M$ supplémentaires.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3792,8 +3781,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3801,6 +3789,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-05",
       "source": {
@@ -3810,7 +3799,6 @@
       },
       "title": "Great-West Lifeco — résultats T2 2025 (communiqué presse)",
       "originalSummary": "Bénéfice net 0,894 G$ (−11 %), BPA de base record T2, segment É.-U. (Empower) bien positionné.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3822,8 +3810,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3831,6 +3818,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-06",
       "source": {
@@ -3840,7 +3828,6 @@
       },
       "title": "Great-West Lifeco Q2 2025 — Record base earnings with double-digit growth",
       "originalSummary": "BPA de base +12 %, LICAT 132 %, actifs clients 3,0 Bil $, retraite Empower: croissance rentable à deux chiffres.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3852,8 +3839,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3861,6 +3847,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -3870,7 +3857,6 @@
       },
       "title": "Great-West Lifeco reports double-digit earnings growth — increases share buybacks",
       "originalSummary": "BPA de base record 1,33 $ (+15 %), rachat porté à 1,5 G$ pour 2025, valeur comptable/action +8 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management"
@@ -3884,8 +3870,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3893,6 +3878,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-07",
       "source": {
@@ -3902,7 +3888,6 @@
       },
       "title": "Earnings call transcript: Great-West Lifeco Q3 2025 — robust earnings growth",
       "originalSummary": "BPA 1,33 $ (+9,92 % vs prévisions), hausse de l'action de 3,07 %, revenu 1,42 G$, LICAT 131 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results"
       ],
@@ -3914,8 +3899,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3923,6 +3907,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-06",
       "source": {
@@ -3932,7 +3917,6 @@
       },
       "title": "Great-West Lifeco Q3 2025 — Record earnings and increased buyback plans",
       "originalSummary": "Hausse à deux chiffres dans É.-U., Europe et CRS. Programme de rachat passé à 1,5 G$ pour l'exercice.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management"
@@ -3946,8 +3930,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3955,6 +3938,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-11",
       "source": {
@@ -3964,7 +3948,6 @@
       },
       "title": "Great-West Lifeco reports record 2025 base earnings — dividend +10 %, buybacks continued",
       "originalSummary": "BPA de base annuel 5,03 $ (+12 %), bénéfice de base 4,6 G$ record, dividende haussé de 10 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management"
@@ -3978,8 +3961,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -3987,6 +3969,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-12",
       "source": {
@@ -3996,7 +3979,6 @@
       },
       "title": "Great-West Lifeco dépasse les prévisions au T4 2025 — BPA 1,36 $",
       "originalSummary": "BPA T4 1,36 $ vs 1,28 $ prévu (+6,25 %), chiffre d'affaires 1,52 G$, hausse record de 11 % sur un an.",
-      "generatedSummary": null,
       "categories": [
         "other"
       ],
@@ -4008,8 +3990,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4017,6 +3998,7 @@
       "companyIds": [
         "GWO"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-03",
       "source": {
@@ -4026,7 +4008,6 @@
       },
       "title": "Great-West Lifeco Investor Day 2025 — objectifs à moyen terme confirmés",
       "originalSummary": "Cibles de 8-10 % de croissance BPA de base, ROE de base 19 %+, génération de capital 80 %+.",
-      "generatedSummary": null,
       "categories": [
         "capital_management"
       ],
@@ -4038,8 +4019,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4047,6 +4027,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -4056,7 +4037,6 @@
       },
       "title": "iA Groupe financier déclare ses résultats pour le premier trimestre",
       "originalSummary": "BPA de base 2,91 $ (+19 %), primes et dépôts 5,8 G$ (+19 %), actif total 264 G$ (+15 %), solvabilité 132 %.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -4070,8 +4050,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4079,6 +4058,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-05-07",
       "source": {
@@ -4088,7 +4068,6 @@
       },
       "title": "IA, Great-West et Manuvie dévoilent leurs résultats — T1 2025",
       "originalSummary": "BPA de base de iA de 2,91 $ (+19 %), ratio de solvabilité 132 %, capital disponible 1,4 G$.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management",
@@ -4104,8 +4083,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4113,6 +4091,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T1",
       "periodKey": "T1",
       "publishedAt": "2025-02-24",
       "source": {
@@ -4122,7 +4101,6 @@
       },
       "title": "iA Groupe financier présente ses nouvelles indications de marché — Événement investisseurs",
       "originalSummary": "Objectif de croissance BPA 10 %+ annuel à MT, ROE activités de base 17 %+ en 2027, Ready for more.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -4136,8 +4114,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4145,6 +4122,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-08-05",
       "source": {
@@ -4154,7 +4132,6 @@
       },
       "title": "iA Groupe financier déclare ses résultats pour le deuxième trimestre 2025",
       "originalSummary": "BPA de base 3,49 $ (+27 %), solvabilité 138 %, ROE activités de base 12 mois 17,0 %, résultat net 321 M$.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -4168,8 +4145,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4177,6 +4153,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-07-23",
       "source": {
@@ -4186,7 +4163,6 @@
       },
       "title": "iA Groupe financier annonce la date de publication des résultats T2 2025",
       "originalSummary": "Résultats du T2 2025 publiés le 5 août 2025 après la clôture des marchés — audioconférence le 6 août.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -4200,8 +4176,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4209,6 +4184,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T2",
       "periodKey": "T2",
       "publishedAt": "2025-07-28",
       "source": {
@@ -4218,7 +4194,6 @@
       },
       "title": "iA Groupe financier annonce l'acquisition de RF Capital Group Inc.",
       "originalSummary": "Annonce d'acquisition de RF Capital, leader en gestion de patrimoine, ajoutant 43,6 G$ d'actifs sous gestion.",
-      "generatedSummary": null,
       "categories": [
         "capital_management",
         "merger_acquisition",
@@ -4234,8 +4209,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4243,6 +4217,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-04",
       "source": {
@@ -4252,7 +4227,6 @@
       },
       "title": "iA Groupe financier déclare ses résultats pour le troisième trimestre 2025",
       "originalSummary": "BPA de base 3,47 $ (+18 %), solvabilité 138 %, ROE activités de base 17,2 %, RF Capital finalisée.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management",
@@ -4268,8 +4242,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4277,6 +4250,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-11-05",
       "source": {
@@ -4286,7 +4260,6 @@
       },
       "title": "iA Groupe financier T3 2025 — BPA de base en hausse de 18 %, acquisition RF Capital finalisée",
       "originalSummary": "Analyse des résultats : position capital robuste, solvabilité 138 %, 1,7 G$ disponible pour déploiement.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management",
@@ -4304,8 +4277,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4313,6 +4285,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-T3",
       "periodKey": "T3",
       "publishedAt": "2025-10-31",
       "source": {
@@ -4322,7 +4295,6 @@
       },
       "title": "iA Groupe financier finalise l'acquisition de RF Capital Group",
       "originalSummary": "Clôture de l'acquisition de RF Capital : 43,6 G$ d'actifs sous gestion, 142 équipes de conseillers.",
-      "generatedSummary": null,
       "categories": [
         "capital_management",
         "merger_acquisition",
@@ -4338,8 +4310,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4347,6 +4318,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-17",
       "source": {
@@ -4356,7 +4328,6 @@
       },
       "title": "iA Groupe financier déclare ses résultats pour le T4 et l'exercice 2025",
       "originalSummary": "BPA de base T4 3,10 $ (+2 %), solvabilité 133 %, ASG+ASA 341 G$ (+31 %), toutes cibles 2025 atteintes.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -4370,8 +4341,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4379,6 +4349,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-02-17",
       "source": {
@@ -4388,7 +4359,6 @@
       },
       "title": "iA Groupe financier déclare ses résultats pour le quatrième trimestre et l'exercice 2025",
       "originalSummary": "ROE activités de base 17,1 %, cible 17 %+ pour 2026, ASG+ASA 341,1 G$, valeur comptable 79,24 $/action.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "artificial_intelligence"
@@ -4402,8 +4372,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     },
     {
@@ -4411,6 +4380,7 @@
       "companyIds": [
         "IAG"
       ],
+      "periodId": "2025-AN",
       "periodKey": "AN",
       "publishedAt": "2026-05-06",
       "source": {
@@ -4420,7 +4390,6 @@
       },
       "title": "iA Groupe financier — Résultats T1 2026 : BPA de base 3,25 $ (+12 %), dividende +11 %",
       "originalSummary": "Dynamique 2025 maintenue en 2026 : ROE 17,5 %, solvabilité 134 %, capital disponible 1,2 G$.",
-      "generatedSummary": null,
       "categories": [
         "financial_results",
         "capital_management",
@@ -4436,8 +4405,7 @@
         "status": "validated",
         "extractionMethod": "v1_migration",
         "confidence": 1.0,
-        "warnings": [],
-        "llmTrace": null
+        "warnings": []
       }
     }
   ]

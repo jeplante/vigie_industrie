@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
 
 def to_camel(value: str) -> str:
@@ -33,12 +33,24 @@ class Company(CanonicalModel):
 
 
 class Period(CanonicalModel):
-    key: Literal["T1", "T2", "T3", "AN"]
+    period_id: str = Field(pattern=r"^20\d{2}-(T1|T2|T3|AN)$")
+    period_key: Literal["T1", "T2", "T3", "AN"]
     type: Literal["quarter", "annual"]
-    year: int = Field(ge=2000, le=2100)
+    year: int = Field(ge=2000)
     quarter: int | None = Field(default=None, ge=1, le=4)
     end_date: date
     label: str
+
+    @model_validator(mode="after")
+    def validate_composite_id(self) -> Period:
+        expected_id = f"{self.year}-{self.period_key}"
+        if self.period_id != expected_id:
+            raise ValueError(f"periodId doit être {expected_id}")
+        expected_quarter = {"T1": 1, "T2": 2, "T3": 3, "AN": None}[self.period_key]
+        expected_type = "annual" if self.period_key == "AN" else "quarter"
+        if self.quarter != expected_quarter or self.type != expected_type:
+            raise ValueError("periodKey, quarter et type sont incohérents")
+        return self
 
 
 class SourceReference(CanonicalModel):
@@ -71,10 +83,11 @@ class ObservationQuality(CanonicalModel):
 
 
 class Comparison(CanonicalModel):
-    value: float | None
+    period_id: str | None = None
+    value: float | None = None
     display_value: str
     period_label: str
-    change: float | None
+    change: float | None = None
     change_unit: Literal["PERCENT", "PERCENTAGE_POINT", "NONE"]
     display_change: str
 
@@ -99,17 +112,21 @@ class NewsSource(CanonicalModel):
     type: Literal["official_ir", "official_release", "specialized_media", "secondary"]
     name: str
     url: HttpUrl
+    source_id: str | None = None
+    fetched_at: datetime | None = None
+    document_hash: str | None = Field(default=None, pattern=r"^sha256:[a-f0-9]{64}$")
 
 
 class NewsItem(CanonicalModel):
     id: str
     company_ids: list[str] = Field(min_length=1)
+    period_id: str = Field(pattern=r"^20\d{2}-(T1|T2|T3|AN)$")
     period_key: Literal["T1", "T2", "T3", "AN"]
     published_at: date
     source: NewsSource
     title: str
-    original_summary: str | None
-    generated_summary: str | None
+    original_summary: str | None = None
+    generated_summary: str | None = None
     categories: list[str] = Field(min_length=1)
     importance: Literal["high", "medium", "low"]
     themes: list[str]
@@ -125,6 +142,14 @@ class VigieDataset(CanonicalModel):
     news: list[NewsItem]
 
 
+class CompanyFreshness(CanonicalModel):
+    company_id: str
+    latest_available_period_id: str | None = None
+    latest_published_period_id: str | None = None
+    latest_source_check_at: datetime
+    freshness_status: Literal["current", "stale", "unknown"]
+
+
 class DatasetManifest(CanonicalModel):
     schema_version: str = "1.0.0"
     generated_at: datetime
@@ -133,6 +158,7 @@ class DatasetManifest(CanonicalModel):
     news_count: int = Field(ge=0)
     company_count: int = Field(ge=0)
     last_successful_refresh: datetime
+    company_freshness: list[CompanyFreshness]
 
 
 class QualityIssue(CanonicalModel):
