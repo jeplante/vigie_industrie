@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import date
+from typing import Literal
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -21,7 +22,25 @@ DOCUMENT_KEYWORDS = (
     "annuel",
     "financial",
     "rapport",
+    "conference",
+    "webcast",
+    "earnings call",
 )
+
+FUTURE_EVENT_MARKERS = (
+    "conference call",
+    "earnings call",
+    "webcast",
+    "will release",
+    "will announce",
+    "to announce",
+    "date of",
+    "scheduled",
+    "conférence téléphonique",
+    "publiera ses résultats",
+)
+RESULT_MARKERS = ("results", "résultats", "earnings", "financial result")
+REPORT_MARKERS = ("report", "rapport", ".pdf")
 
 
 def discover_documents(source_id: str, index: FetchResult) -> list[DiscoveredDocument]:
@@ -35,6 +54,11 @@ def discover_documents(source_id: str, index: FetchResult) -> list[DiscoveredDoc
                 last_modified=index.last_modified,
                 content_hash=sha256_bytes(index.content),
                 content_type=index.content_type,
+                document_kind=(
+                    "downloadable_report"
+                    if index.content_type == "application/pdf"
+                    else "published_result"
+                ),
             )
         ]
     soup = BeautifulSoup(index.content, "html.parser")
@@ -52,16 +76,37 @@ def discover_documents(source_id: str, index: FetchResult) -> list[DiscoveredDoc
         if url in seen:
             continue
         seen.add(url)
+        context = anchor.parent.get_text(" ", strip=True) if anchor.parent else title
+        published_at = _extract_date(context)
+        kind, is_published = _classify_document(combined)
         result.append(
             DiscoveredDocument(
                 source_id=source_id,
                 canonical_url=HttpUrl(url),
                 title=title,
-                published_at=_extract_date(combined),
+                published_at=published_at,
                 content_type="application/pdf" if href.lower().endswith(".pdf") else "text/html",
+                document_kind=kind,
+                is_published=is_published,
             )
         )
     return result
+
+
+def _classify_document(
+    text: str,
+) -> tuple[
+    Literal["published_result", "downloadable_report", "future_event", "unknown"],
+    bool,
+]:
+    lowered = text.lower()
+    if any(marker in lowered for marker in FUTURE_EVENT_MARKERS):
+        return "future_event", False
+    if any(marker in lowered for marker in RESULT_MARKERS):
+        return "published_result", True
+    if any(marker in lowered for marker in REPORT_MARKERS):
+        return "downloadable_report", True
+    return "unknown", True
 
 
 def _extract_date(text: str) -> date | None:

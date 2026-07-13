@@ -57,16 +57,20 @@ python -m vigie_pipeline validate
 python -m vigie_pipeline publish
 python -m vigie_pipeline refresh
 python -m vigie_pipeline refresh --company MFC
+python -m vigie_pipeline refresh --dry-run
 python -m vigie_pipeline refresh --offline
 python -m vigie_pipeline discover --offline
 python -m vigie_pipeline sync-frontend
 ```
 
 Le mode hors ligne recharge le seed V1, applique les corrections manuelles, valide le candidat
-et publie sans accès réseau. En ligne, une extraction financière incomplète sur un nouveau
-document conserve les observations précédentes et publie un avertissement `stale`; un échec
-bloquant d’une autre source obligatoire ou de la validation produit un rapport structuré dans
-`data/generated/quality-report.json` et conserve `data/published/` intact.
+et publie sans accès réseau. Il déclare donc zéro source vérifiée et une fraîcheur `unknown`, sans
+fabriquer de date de contrôle. `--dry-run` interroge réellement les sources, mais écrit uniquement
+les trois candidats sous `data/generated/`; ces artefacts portent `dryRun=true` et la commande
+`publish` refuse explicitement de les publier. En ligne, une source inaccessible ou une extraction
+financière incomplète conserve les observations précédentes et produit un résultat structuré par
+source. Une validation métier ou une incohérence entre dataset, manifeste et rapport bloque toute
+publication et protège `data/published/`.
 
 ## Périodes et fraîcheur
 
@@ -95,9 +99,11 @@ qui applique les Structured Outputs Anthropic natifs; une validation Pydantic su
 reste obligatoire avant publication.
 
 Les quatre assureurs disposent également d’une source `official_news`. Les nouveaux articles
-sont dédupliqués par URL canonique, téléchargés avec des limites strictes, puis résumés et classés
-en français avec le modèle standard. La source originale, l’empreinte et la trace LLM restent
-attachées à chaque actualité.
+sont dédupliqués par URL canonique puis empreinte, téléchargés avec des limites strictes, puis
+résumés et classés en français avec le modèle standard. Si Anthropic est absent ou indisponible,
+l’article officiel reste publiable en mode dégradé, sans résumé inventé et avec un avertissement.
+Une panne d’actualités n’annule jamais une mise à jour financière valide. Dans l’interface, le fil
+d’actualités est trié par date et indépendant de la période financière sélectionnée.
 
 Dans GitHub : **Settings → Secrets and variables → Actions → New repository secret**, créez
 `ANTHROPIC_API_KEY`. Ajoutez facultativement les deux modèles comme **repository variables**,

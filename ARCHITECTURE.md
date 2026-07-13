@@ -70,9 +70,12 @@ jamais la trace de la métrique extraite par Claude.
 
 Le pipeline ne publie qu’après validation complète. Un nouveau document financier inexploitable
 ne remplace aucune observation: il publie un état `stale` et un avertissement structuré. En cas
-d’échec bloquant d’une autre source obligatoire, de correction ou de validation, un rapport
-`failed` est écrit sous `data/generated/`, le processus retourne un code non nul et
-`data/published/` n’est pas modifié. Les contrôles comprennent
+d’échec d’une source, les autres acquisitions continuent et la dernière donnée valide est
+conservée. Une correction invalide ou une erreur de validation écrit un rapport `failed` sous
+`data/generated/`, retourne un code non nul et ne modifie pas `data/published/`. Avant chaque
+publication, le dataset, le manifeste et le rapport sont validés ensemble : empreinte canonique,
+cardinalités, compagnies, dates, fraîcheur, compteurs de sources et mode d’exécution doivent
+concorder. Les contrôles métier comprennent
 identifiants, compagnies, périodes, nombres finis, unités, source primaire, dates futures, HTML,
 deltas, directions, volume minimal et baisse anormale.
 
@@ -89,12 +92,16 @@ produit `unknown` tout en conservant les observations validées précédentes.
 - Aucun framework UI n’est nécessaire pour quatre onglets, quatre cartes et une liste filtrée.
 - Les quatre adaptateurs sont volontairement petits; leurs alias doivent être ajustés lorsque les
   gabarits officiels changent.
-- Au 11 juillet 2026, la page Manuvie est lisible dans un navigateur mais répond HTTP 403 au
-  client automatisé testé. Le pipeline signale ce blocage et protège le last-known-good; il faut
-  valider avec Manuvie un point d’accès automatisable ou ajouter une source officielle de repli.
+- Au 12 juillet 2026, Manuvie et Sun Life répondent HTTP 403 au client automatisé testé. Le
+  pipeline les classe `unknown`, signale le blocage et protège le last-known-good; il faut valider
+  avec ces assureurs un point d’accès automatisable ou ajouter une source officielle autorisée.
+- La page Great-West expose la période courante mais pas toujours le lien du rapport dans le HTML
+  statique. Son URL de PDF est donc construite par un gabarit configuré à partir de l’année et du
+  trimestre découverts; aucun millésime n’est codé en dur. Un changement de convention d’URL sera
+  visible comme échec de source et devra être corrigé dans le YAML.
 - `deploy-pages.yml` ne fait aucun accès réseau métier et peut toujours republier la dernière
-  donnée valide. `refresh-data.yml` demeure rouge si Manuvie, source obligatoire, retourne 403;
-  il ne commite ni ne remplace alors les données et n’appelle pas le déploiement réutilisable.
+  donnée valide. `refresh-data.yml` peut publier les acquisitions valides avec un rapport
+  `partial` lorsque certaines sources sont bloquées; le statut par compagnie demeure explicite.
 - Les sélecteurs et URL sont couverts par fixtures, mais leur comportement en direct doit être
   surveillé dans le workflow. Une nouvelle mise en page non reconnue échoue de façon visible.
 - Le seed V1 possède des valeurs parfois arrondies. Le delta numérique est recalculé sur ces

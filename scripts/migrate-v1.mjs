@@ -34,6 +34,19 @@ function sha(value) {
   return createHash('sha256').update(value).digest('hex');
 }
 
+function canonical(value) {
+  if (Array.isArray(value)) return value.map(canonical);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value)
+        .filter(([, item]) => item !== null)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .map(([key, item]) => [key, canonical(item)]),
+    );
+  }
+  return value;
+}
+
 function parseLegacyData(html) {
   const start = html.indexOf('const DATA =') + 'const DATA ='.length;
   const scriptEnd = html.indexOf('let activeCompany', start);
@@ -204,10 +217,11 @@ const dataset = migrate(parseLegacyData(html));
 if (dataset.companies.length !== 4 || dataset.observations.length !== 64 || dataset.news.length !== 48) {
   throw new Error(`Migration incomplète: ${dataset.companies.length}/64/${dataset.news.length}`);
 }
-const datasetHash = `sha256:${sha(JSON.stringify(dataset))}`;
+const datasetHash = `sha256:${sha(JSON.stringify(canonical(dataset)))}`;
 const manifest = {
   schemaVersion: '1.0.0',
   generatedAt: dataset.generatedAt,
+  mode: 'migration',
   datasetHash,
   observationCount: dataset.observations.length,
   newsCount: dataset.news.length,
@@ -215,23 +229,26 @@ const manifest = {
   lastSuccessfulRefresh: dataset.generatedAt,
   companyFreshness: dataset.companies.map((company) => ({
     companyId: company.id,
-    latestAvailablePeriodId: '2025-AN',
+    latestAvailablePeriodId: null,
     latestPublishedPeriodId: '2025-AN',
-    latestSourceCheckAt: dataset.generatedAt,
-    freshnessStatus: 'current',
+    latestSourceCheckAt: null,
+    freshnessStatus: 'unknown',
   })),
 };
 const report = {
   generatedAt: dataset.generatedAt,
+  mode: 'migration',
+  dryRun: false,
   status: 'success',
-  sourcesChecked: 4,
-  sourcesSucceeded: 4,
+  sourcesChecked: 0,
+  sourcesSucceeded: 0,
   sourcesFailed: 0,
   observationsAdded: 64,
   observationsUpdated: 0,
   overridesApplied: 0,
   warnings: [],
   errors: [],
+  sourceResults: [],
 };
 
 for (const base of ['data/seed', 'data/published', 'app/public/data']) {

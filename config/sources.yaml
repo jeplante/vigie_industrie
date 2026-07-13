@@ -29,7 +29,7 @@ sources:
     companyId: GWO
     contentCategory: financial_results
     type: html_release_index
-    url: https://www.greatwestlifeco.com/news-events/annual-reports.html
+    url: https://www.greatwestlifeco.com/investor-relations/financial-reports.html
     adapter: great_west
     priority: primary
     language: en
@@ -38,11 +38,12 @@ sources:
     attempts: 3
     expectedMetrics: [core_eps, core_earnings, licat_ratio, total_client_assets]
     fetchPolicy: etag_last_modified_then_hash
+    documentUrlTemplate: https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/{year}/q{quarter}/lifeco-q{quarter}-{year}-quarterly-report-to-shareholders-en.pdf
   - id: iag-results
     companyId: IAG
     contentCategory: financial_results
     type: html_release_index
-    url: https://ia.ca/a-propos/investisseurs/rapports-financiers
+    url: https://ia.ca/investorrelations
     adapter: ia
     priority: primary
     language: fr
@@ -60,7 +61,7 @@ sources:
     priority: official_release
     language: en
     enabled: true
-    required: true
+    required: false
     timeoutSeconds: 20
     attempts: 3
     expectedMetrics: []
@@ -68,7 +69,7 @@ sources:
     linkSelector: a[href]
     articleSelector: article, main
     includePatterns: [/ca/en/about-us/news/]
-    maxArticles: 10
+    maxArticles: 5
   - id: slf-official-news
     companyId: SLF
     contentCategory: official_news
@@ -78,7 +79,7 @@ sources:
     priority: official_release
     language: en
     enabled: true
-    required: true
+    required: false
     timeoutSeconds: 20
     attempts: 3
     expectedMetrics: []
@@ -86,7 +87,7 @@ sources:
     linkSelector: a[href]
     articleSelector: article, main
     includePatterns: [/en/newsroom/news-releases/announcement/]
-    maxArticles: 10
+    maxArticles: 5
   - id: gwo-official-news
     companyId: GWO
     contentCategory: official_news
@@ -96,15 +97,15 @@ sources:
     priority: official_release
     language: en
     enabled: true
-    required: true
+    required: false
     timeoutSeconds: 20
     attempts: 3
     expectedMetrics: []
     fetchPolicy: canonical_url_then_hash
     linkSelector: a[href]
     articleSelector: article, main
-    includePatterns: [/news-events/news/]
-    maxArticles: 10
+    includePatterns: [/news-and-events/news/]
+    maxArticles: 5
   - id: iag-official-news
     companyId: IAG
     contentCategory: official_news
@@ -114,7 +115,7 @@ sources:
     priority: official_release
     language: fr
     enabled: true
-    required: true
+    required: false
     timeoutSeconds: 20
     attempts: 3
     expectedMetrics: []
@@ -122,4 +123,4 @@ sources:
     linkSelector: a[href]
     articleSelector: article, main
     includePatterns: [/newsroom/]
-    maxArticles: 10
+    maxArticles: 5

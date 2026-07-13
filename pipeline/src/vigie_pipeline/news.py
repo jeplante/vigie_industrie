@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup, Tag
 from pydantic import HttpUrl
 
 from vigie_pipeline.config import ProjectConfig, SourceConfig
-from vigie_pipeline.exceptions import ExtractionError
+from vigie_pipeline.exceptions import ExtractionError, PipelineError
 from vigie_pipeline.fetch import BoundedFetcher, FetchResult
 from vigie_pipeline.hashing import sha256_bytes, sha256_text
 from vigie_pipeline.llm.anthropic_provider import PROMPT_VERSION, AnthropicProvider
@@ -66,6 +66,21 @@ class ArticleContent:
     text: str
     fingerprint: str
     fetched_at: datetime
+
+
+@dataclass(frozen=True)
+class NewsFailure:
+    source_id: str
+    document_url: str
+    message: str
+
+
+@dataclass(frozen=True)
+class NewsAcquisition:
+    items: list[NewsItem]
+    documents: list[DiscoveredDocument]
+    failures: list[NewsFailure]
+    anthropic_calls: int
 
 
 def canonicalize_url(url: str) -> str:
@@ -169,50 +184,77 @@ def acquire_news(
     settings: Settings,
     config: ProjectConfig,
     llm_provider: LlmProvider | None = None,
-) -> list[NewsItem]:
-    provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
-    existing_urls = {canonicalize_url(str(item.source.url)) for item in dataset.news}
+) -> NewsAcquisition:
+    existing_by_url = {canonicalize_url(str(item.source.url)): item for item in dataset.news}
     results: list[NewsItem] = []
+    failures: list[NewsFailure] = []
+    anthropic_calls = 0
     with BoundedFetcher(
         timeout=source.timeout_seconds,
         attempts=source.attempts,
         max_bytes=config.pipeline.http.max_download_bytes,
     ) as fetcher:
         index = fetcher.fetch(str(source.url))
-        for discovered in discover_news_documents(source, index):
-            if canonicalize_url(str(discovered.canonical_url)) in existing_urls:
+        documents = discover_news_documents(source, index)
+        for discovered in documents:
+            try:
+                article = extract_article(
+                    fetcher.fetch(str(discovered.canonical_url)), discovered, source
+                )
+            except PipelineError as error:
+                failures.append(
+                    NewsFailure(
+                        source_id=source.id,
+                        document_url=str(discovered.canonical_url),
+                        message=str(error),
+                    )
+                )
                 continue
-            article = extract_article(
-                fetcher.fetch(str(discovered.canonical_url)), discovered, source
-            )
-            if article.canonical_url in existing_urls:
+            existing = existing_by_url.get(article.canonical_url)
+            if existing is not None and existing.source.document_hash == article.fingerprint:
                 continue
-            analysis = provider.summarize_news(
-                title=article.title,
-                content=article.text,
-                source_url=article.canonical_url,
-            )
-            company_ids = [
-                company_id
-                for company_id in dict.fromkeys([source.company_id, *analysis.company_ids])
-                if company_id in config.companies
-            ]
-            trace = LlmTrace(
-                provider="anthropic",
-                model=config.pipeline.llm.standard_model,
-                prompt_version=PROMPT_VERSION,
-                executed_at=datetime.now(UTC),
-                task_id=f"summarize_news_{source.id}_{sha256_text(article.canonical_url)[7:19]}",
-                source_fingerprint=article.fingerprint,
-                confidence=analysis.confidence,
-                warnings=analysis.warnings,
-            )
+            analysis = None
+            llm_warning: str | None = None
+            if llm_provider is not None or settings.anthropic_api_key:
+                try:
+                    provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
+                    anthropic_calls += 1
+                    analysis = provider.summarize_news(
+                        title=article.title,
+                        content=article.text,
+                        source_url=article.canonical_url,
+                    )
+                except PipelineError as error:
+                    llm_warning = f"Analyse Anthropic indisponible: {error}"
+            else:
+                llm_warning = "Analyse Anthropic non exécutée: clé absente."
+            company_ids = [source.company_id]
+            trace = None
+            if analysis is not None:
+                company_ids = [
+                    company_id
+                    for company_id in dict.fromkeys([source.company_id, *analysis.company_ids])
+                    if company_id in config.companies
+                ]
+                trace = LlmTrace(
+                    provider="anthropic",
+                    model=config.pipeline.llm.standard_model,
+                    prompt_version=PROMPT_VERSION,
+                    executed_at=datetime.now(UTC),
+                    task_id=(
+                        f"summarize_news_{source.id}_{sha256_text(article.canonical_url)[7:19]}"
+                    ),
+                    source_fingerprint=article.fingerprint,
+                    confidence=analysis.confidence,
+                    warnings=analysis.warnings,
+                )
+            item_period = period_for_date(article.published_at)
             results.append(
                 NewsItem(
                     id=f"news-{sha256_text(article.canonical_url)[7:27]}",
                     company_ids=company_ids,
-                    period_id=period_for_date(article.published_at).period_id,
-                    period_key=period_for_date(article.published_at).period_key,
+                    period_id=item_period.period_id,
+                    period_key=item_period.period_key,
                     published_at=article.published_at,
                     source=NewsSource(
                         type=(
@@ -228,21 +270,26 @@ def acquire_news(
                     ),
                     title=article.title,
                     original_summary=article.original_summary,
-                    generated_summary=analysis.summary,
-                    categories=list(analysis.categories),
-                    importance=analysis.importance,
-                    themes=analysis.themes,
+                    generated_summary=analysis.summary if analysis else None,
+                    categories=list(analysis.categories) if analysis else ["other"],
+                    importance=analysis.importance if analysis else "medium",
+                    themes=analysis.themes if analysis else [],
                     quality=ObservationQuality(
-                        status="validated",
-                        extraction_method="anthropic",
-                        confidence=analysis.confidence,
-                        warnings=analysis.warnings,
+                        status="validated" if analysis else "warning",
+                        extraction_method=("anthropic" if analysis else "deterministic_fallback"),
+                        confidence=analysis.confidence if analysis else 0.5,
+                        warnings=analysis.warnings if analysis else [llm_warning or ""],
                         llm_trace=trace,
                     ),
                 )
             )
-            existing_urls.add(article.canonical_url)
-    return results
+            existing_by_url[article.canonical_url] = results[-1]
+    return NewsAcquisition(
+        items=results,
+        documents=documents,
+        failures=failures,
+        anthropic_calls=anthropic_calls,
+    )
 
 
 def period_for_date(value: date) -> Period:

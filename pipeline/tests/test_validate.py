@@ -2,7 +2,9 @@ from copy import deepcopy
 
 from vigie_pipeline.config import ProjectConfig
 from vigie_pipeline.models import VigieDataset
-from vigie_pipeline.validate import validate_dataset
+from vigie_pipeline.publish import build_manifest
+from vigie_pipeline.quality import build_quality_report
+from vigie_pipeline.validate import validate_artifact_set, validate_dataset
 
 
 def test_seed_is_valid(dataset: VigieDataset, project_config: ProjectConfig) -> None:
@@ -71,3 +73,19 @@ def test_rejects_cross_period_comparison(
         )
     }
     assert "invalid_comparison_period" in codes
+
+
+def test_cross_validates_dataset_manifest_and_quality_report(dataset: VigieDataset) -> None:
+    report = build_quality_report(mode="migration", generated_at=dataset.generated_at)
+    manifest = build_manifest(dataset, dataset.generated_at, mode="migration")
+    assert validate_artifact_set(dataset, manifest, report) == []
+    manifest.dataset_hash = f"sha256:{'0' * 64}"
+    manifest.observation_count += 1
+    report.sources_checked = 4
+    report.sources_succeeded = 4
+    codes = {item.code for item in validate_artifact_set(dataset, manifest, report)}
+    assert {
+        "dataset_hash_mismatch",
+        "artifact_count_mismatch",
+        "offline_source_claim",
+    } <= codes

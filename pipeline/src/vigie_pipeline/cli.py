@@ -7,30 +7,36 @@ import json
 import logging
 import shutil
 import sys
+from collections.abc import Mapping
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Literal
 
 from pydantic import ValidationError
 
 from vigie_pipeline.acquire import acquire_source
 from vigie_pipeline.config import ProjectConfig, SourceConfig, load_project_config
 from vigie_pipeline.discovery import discover_documents
-from vigie_pipeline.exceptions import (
-    DocumentNotIngestedError,
-    PipelineError,
-    ValidationFailure,
-)
+from vigie_pipeline.exceptions import ConfigurationError, PipelineError, ValidationFailure
 from vigie_pipeline.fetch import BoundedFetcher, FetchResult
-from vigie_pipeline.freshness import SourceCheck, freshness_issues, latest_published_period
+from vigie_pipeline.freshness import SourceCheck, freshness_issues
 from vigie_pipeline.merge import deduplicate_news
-from vigie_pipeline.models import Period, QualityIssue, QualityReport, VigieDataset
+from vigie_pipeline.models import (
+    CanonicalModel,
+    DatasetManifest,
+    Period,
+    QualityIssue,
+    QualityReport,
+    SourceRunResult,
+    VigieDataset,
+)
 from vigie_pipeline.news import acquire_news, discover_news_documents, period_for_date
 from vigie_pipeline.overrides import apply_overrides
-from vigie_pipeline.publish import publish_validated
+from vigie_pipeline.publish import build_manifest, publish_validated
 from vigie_pipeline.publishers.github_pages import GitHubPagesPublisher
 from vigie_pipeline.quality import build_quality_report
 from vigie_pipeline.settings import Settings
-from vigie_pipeline.validate import validate_dataset
+from vigie_pipeline.validate import validate_artifact_set, validate_dataset
 
 LOGGER = logging.getLogger("vigie_pipeline")
 
@@ -43,14 +49,42 @@ def _read_quality(path: Path) -> QualityReport:
     return QualityReport.model_validate_json(path.read_text(encoding="utf-8"))
 
 
-def _write_failure_report(settings: Settings, errors: list[QualityIssue]) -> None:
-    settings.generated_dir.mkdir(parents=True, exist_ok=True)
-    report = build_quality_report(errors=errors)
-    (settings.generated_dir / "quality-report.json").write_text(
-        json.dumps(report.model_dump(mode="json", by_alias=True), ensure_ascii=False, indent=2)
+def _read_manifest(path: Path) -> DatasetManifest:
+    return DatasetManifest.model_validate_json(path.read_text(encoding="utf-8"))
+
+
+def _write_model(path: Path, model: CanonicalModel) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            model.model_dump(mode="json", by_alias=True, exclude_none=True),
+            ensure_ascii=False,
+            indent=2,
+        )
         + "\n",
         encoding="utf-8",
     )
+
+
+def _write_generated_artifacts(
+    settings: Settings,
+    dataset: VigieDataset,
+    manifest: DatasetManifest,
+    report: QualityReport,
+) -> None:
+    _write_model(settings.generated_dir / "vigie.json", dataset)
+    _write_model(settings.generated_dir / "manifest.json", manifest)
+    _write_model(settings.generated_dir / "quality-report.json", report)
+
+
+def _write_failure_report(
+    settings: Settings,
+    errors: list[QualityIssue],
+    *,
+    mode: Literal["offline", "live", "migration"] = "live",
+) -> None:
+    report = build_quality_report(errors=errors, mode=mode)
+    _write_model(settings.generated_dir / "quality-report.json", report)
 
 
 def _validation_errors(
@@ -79,6 +113,10 @@ def command_validate(
     path = candidate or settings.published_dir / "vigie.json"
     dataset = _read_dataset(path)
     errors = _validation_errors(dataset, config)
+    if candidate is None:
+        manifest = _read_manifest(settings.published_dir / "manifest.json")
+        report = _read_quality(settings.published_dir / "quality-report.json")
+        errors.extend(validate_artifact_set(dataset, manifest, report))
     if errors:
         _write_failure_report(settings, errors)
         raise ValidationFailure(f"Validation refusée: {len(errors)} erreur(s).")
@@ -98,9 +136,26 @@ def command_publish(settings: Settings, config: ProjectConfig) -> int:
         _write_failure_report(settings, errors)
         raise ValidationFailure("Le candidat est invalide; dernière version valide conservée.")
     report_path = settings.generated_dir / "quality-report.json"
-    report = _read_quality(report_path) if report_path.exists() else build_quality_report()
+    report = (
+        _read_quality(report_path)
+        if report_path.exists()
+        else build_quality_report(mode="offline", generated_at=dataset.generated_at)
+    )
+    if report.dry_run:
+        raise ValidationFailure(
+            "Un rapport dry-run ne peut pas être publié; relancez refresh sans --dry-run."
+        )
+    previous_manifest_path = settings.published_dir / "manifest.json"
+    previous_manifest = (
+        _read_manifest(previous_manifest_path) if previous_manifest_path.exists() else None
+    )
     publisher = GitHubPagesPublisher(settings.published_dir, settings.root_dir / "app/public/data")
-    publish_validated(dataset, report, publisher)
+    publish_validated(
+        dataset,
+        report,
+        publisher,
+        previous_manifest=previous_manifest,
+    )
     return 0
 
 
@@ -115,10 +170,7 @@ def command_sync_frontend(settings: Settings, config: ProjectConfig) -> int:
     return 0
 
 
-def _selected_sources(
-    config: ProjectConfig,
-    company: str | None,
-) -> list[SourceConfig]:
+def _selected_sources(config: ProjectConfig, company: str | None) -> list[SourceConfig]:
     return [
         source
         for source in config.sources
@@ -172,124 +224,272 @@ def command_discover(
     return 0
 
 
+def _change_counts(before: Mapping[str, object], after: Mapping[str, object]) -> tuple[int, int]:
+    added = len(set(after) - set(before))
+    updated = sum(before[key] != after[key] for key in set(before) & set(after))
+    return added, updated
+
+
 def command_refresh(
     settings: Settings,
     config: ProjectConfig,
     company: str | None,
     offline: bool,
+    dry_run: bool = False,
 ) -> int:
-    if offline:
-        candidate = _read_dataset(settings.root_dir / "data/seed/vigie-v1.json")
-        sources_checked = len(config.companies)
-        sources_succeeded = sources_checked
-        warnings: list[QualityIssue] = []
-        freshness_checks: dict[str, SourceCheck] = {}
-    else:
-        candidate = _read_dataset(settings.published_dir / "vigie.json")
-        sources = _selected_sources(config, company)
-        acquisition_errors: list[QualityIssue] = []
-        warnings = []
-        freshness_checks = {}
-        sources_succeeded = 0
-        for source in sources:
-            try:
-                if source.content_category == "financial_results":
-                    acquisition = acquire_source(candidate, source, settings, config)
-                    by_id = {item.id: item for item in candidate.observations}
-                    by_id.update({item.id: item for item in acquisition.observations})
-                    candidate.observations = list(by_id.values())
-                    _merge_periods(candidate, acquisition.discovered_periods)
-                    latest = max(
-                        acquisition.discovered_periods,
-                        key=lambda period: period.end_date,
-                        default=None,
-                    )
-                    freshness_checks[source.company_id] = SourceCheck(
-                        company_id=source.company_id,
-                        source_id=source.id,
-                        checked_at=acquisition.checked_at,
-                        latest_available_period=latest,
-                        verified=latest is not None,
-                    )
-                else:
-                    news = acquire_news(candidate, source, settings, config)
-                    candidate.news.extend(news)
-                    candidate.news = deduplicate_news(candidate.news)
-                    _merge_periods(candidate, [period_for_date(item.published_at) for item in news])
-                sources_succeeded += 1
-            except DocumentNotIngestedError as error:
-                period = error.period
-                if not isinstance(period, Period):
-                    raise
-                published_period = latest_published_period(candidate, source.company_id)
-                is_newer = published_period is None or period.end_date > published_period.end_date
+    if offline and dry_run:
+        raise ConfigurationError(
+            "--dry-run utilise les vraies sources et ne peut pas être offline."
+        )
+    mode: Literal["offline", "live", "migration"] = "offline" if offline else "live"
+    published_path = settings.published_dir / "vigie.json"
+    previous_manifest_path = settings.published_dir / "manifest.json"
+    previous_manifest = (
+        _read_manifest(previous_manifest_path) if previous_manifest_path.exists() else None
+    )
+    candidate = _read_dataset(
+        settings.root_dir / "data/seed/vigie-v1.json" if offline else published_path
+    )
+    before_observations = {
+        item.id: item.model_dump(mode="json", by_alias=True) for item in candidate.observations
+    }
+    before_news = {item.id: item.model_dump(mode="json", by_alias=True) for item in candidate.news}
+    warnings: list[QualityIssue] = []
+    freshness_checks: dict[str, SourceCheck] = {}
+    source_results: list[SourceRunResult] = []
+    sources_succeeded = 0
+    sources = [] if offline else _selected_sources(config, company)
+
+    for source in sources:
+        try:
+            if source.content_category == "financial_results":
+                financial_acquisition = acquire_source(candidate, source, settings, config)
+                by_id = {item.id: item for item in candidate.observations}
+                by_id.update({item.id: item for item in financial_acquisition.observations})
+                candidate.observations = list(by_id.values())
+                _merge_periods(candidate, financial_acquisition.discovered_periods)
+                latest = max(
+                    financial_acquisition.discovered_periods,
+                    key=lambda period: period.end_date,
+                    default=None,
+                )
                 freshness_checks[source.company_id] = SourceCheck(
                     company_id=source.company_id,
                     source_id=source.id,
-                    checked_at=datetime.now(UTC),
-                    latest_available_period=period,
-                    verified=True,
+                    checked_at=financial_acquisition.checked_at,
+                    latest_available_period=latest,
+                    verified=latest is not None,
                 )
-                warnings.append(
-                    QualityIssue(
-                        code=(
-                            "newer_document_not_ingested" if is_newer else "source_refresh_failed"
-                        ),
-                        message=str(error),
+                for financial_failure in financial_acquisition.failures:
+                    warnings.append(
+                        QualityIssue(
+                            code=(
+                                "newer_document_not_ingested"
+                                if financial_failure.is_newer
+                                else "old_document_not_ingested"
+                            ),
+                            message=financial_failure.message,
+                            source_id=source.id,
+                        )
+                    )
+                source_results.append(
+                    SourceRunResult(
                         source_id=source.id,
+                        company_id=source.company_id,
+                        status=(
+                            "warning"
+                            if financial_acquisition.failures or latest is None
+                            else "success"
+                        ),
+                        documents_discovered=len(financial_acquisition.documents),
+                        document_urls=[
+                            str(item.canonical_url) for item in financial_acquisition.documents
+                        ],
+                        period_ids=sorted(
+                            {item.period_id for item in financial_acquisition.discovered_periods}
+                        ),
+                        message=(
+                            "; ".join(item.message for item in financial_acquisition.failures)
+                            or None
+                        ),
+                        anthropic_calls=financial_acquisition.anthropic_calls,
                     )
                 )
-            except PipelineError as error:
-                issue = QualityIssue(
+            else:
+                news_acquisition = acquire_news(candidate, source, settings, config)
+                candidate.news.extend(news_acquisition.items)
+                candidate.news = deduplicate_news(candidate.news)
+                _merge_periods(
+                    candidate,
+                    [period_for_date(item.published_at) for item in news_acquisition.items],
+                )
+                for news_failure in news_acquisition.failures:
+                    warnings.append(
+                        QualityIssue(
+                            code="news_article_failed",
+                            message=news_failure.message,
+                            source_id=source.id,
+                        )
+                    )
+                degraded = [
+                    item for item in news_acquisition.items if item.quality.status == "warning"
+                ]
+                if degraded:
+                    warnings.append(
+                        QualityIssue(
+                            code="news_llm_degraded",
+                            message=(
+                                f"{len(degraded)} actualité(s) publiée(s) sans résumé Anthropic."
+                            ),
+                            source_id=source.id,
+                        )
+                    )
+                source_results.append(
+                    SourceRunResult(
+                        source_id=source.id,
+                        company_id=source.company_id,
+                        status=("warning" if news_acquisition.failures or degraded else "success"),
+                        documents_discovered=len(news_acquisition.documents),
+                        document_urls=[
+                            str(item.canonical_url) for item in news_acquisition.documents
+                        ],
+                        period_ids=sorted({item.period_id for item in news_acquisition.items}),
+                        message=(
+                            "; ".join(item.message for item in news_acquisition.failures) or None
+                        ),
+                        anthropic_calls=news_acquisition.anthropic_calls,
+                    )
+                )
+            sources_succeeded += 1
+        except PipelineError as error:
+            warnings.append(
+                QualityIssue(
                     code="source_refresh_failed",
                     message=str(error),
                     source_id=source.id,
                 )
-                if source.content_category == "financial_results":
-                    freshness_checks[source.company_id] = SourceCheck(
-                        company_id=source.company_id,
-                        source_id=source.id,
-                        checked_at=datetime.now(UTC),
-                        latest_available_period=None,
-                        verified=False,
-                    )
-                    warnings.append(issue)
-                elif source.required:
-                    acquisition_errors.append(issue)
-                else:
-                    warnings.append(issue)
-        sources_checked = len(sources)
-        if acquisition_errors:
-            _write_failure_report(settings, acquisition_errors)
-            raise ValidationFailure(
-                "Une source obligatoire n’a pas pu être traitée; dernière version valide conservée."
             )
-        existing_issue_keys = {(issue.code, issue.source_id) for issue in warnings}
-        warnings.extend(
-            issue
-            for issue in freshness_issues(candidate, freshness_checks)
-            if (issue.code, issue.source_id) not in existing_issue_keys
-        )
+            if source.content_category == "financial_results":
+                freshness_checks[source.company_id] = SourceCheck(
+                    company_id=source.company_id,
+                    source_id=source.id,
+                    checked_at=datetime.now(UTC),
+                    latest_available_period=None,
+                    verified=False,
+                )
+            source_results.append(
+                SourceRunResult(
+                    source_id=source.id,
+                    company_id=source.company_id,
+                    status="failed",
+                    documents_discovered=0,
+                    message=str(error),
+                )
+            )
+
+    existing_issue_keys = {(issue.code, issue.source_id) for issue in warnings}
+    warnings.extend(
+        issue
+        for issue in freshness_issues(candidate, freshness_checks)
+        if (issue.code, issue.source_id) not in existing_issue_keys
+    )
     candidate.generated_at = datetime.now(UTC)
     candidate, applied = apply_overrides(
         candidate, settings.root_dir / "data/manual/overrides.yaml"
     )
-    published = settings.published_dir / "vigie.json"
-    previous_count = len(_read_dataset(published).observations) if published.exists() else None
+    previous_count = (
+        len(_read_dataset(published_path).observations) if published_path.exists() else None
+    )
     errors = _validation_errors(candidate, config, previous_count=previous_count)
-    if errors:
-        _write_failure_report(settings, errors)
-        raise ValidationFailure("Candidat invalide; dernière version valide conservée.")
+    after_observations = {
+        item.id: item.model_dump(mode="json", by_alias=True) for item in candidate.observations
+    }
+    after_news = {item.id: item.model_dump(mode="json", by_alias=True) for item in candidate.news}
+    observations_added, observations_updated = _change_counts(
+        before_observations, after_observations
+    )
+    news_added, news_updated = _change_counts(before_news, after_news)
     report = build_quality_report(
+        errors=errors,
         warnings=warnings,
-        sources_checked=sources_checked,
+        sources_checked=len(sources),
         sources_succeeded=sources_succeeded,
+        observations_added=observations_added,
+        observations_updated=observations_updated,
         overrides_applied=len(applied),
         generated_at=candidate.generated_at,
+        mode=mode,
+        dry_run=dry_run,
+        source_results=source_results,
     )
-    publisher = GitHubPagesPublisher(settings.published_dir, settings.root_dir / "app/public/data")
-    publish_validated(candidate, report, publisher, freshness_checks)
-    LOGGER.info("refresh_success offline=%s company=%s", offline, company or "all")
+    manifest = build_manifest(
+        candidate,
+        report.generated_at,
+        freshness_checks,
+        mode=mode,
+        previous_manifest=previous_manifest,
+    )
+    artifact_errors = validate_artifact_set(candidate, manifest, report)
+    if artifact_errors:
+        errors.extend(artifact_errors)
+        report = build_quality_report(
+            errors=errors,
+            warnings=warnings,
+            sources_checked=len(sources),
+            sources_succeeded=sources_succeeded,
+            observations_added=observations_added,
+            observations_updated=observations_updated,
+            overrides_applied=len(applied),
+            generated_at=candidate.generated_at,
+            mode=mode,
+            dry_run=dry_run,
+            source_results=source_results,
+        )
+
+    if dry_run or errors:
+        _write_generated_artifacts(settings, candidate, manifest, report)
+    if dry_run:
+        print(
+            json.dumps(
+                {
+                    "mode": mode,
+                    "dryRun": True,
+                    "sources": [
+                        item.model_dump(mode="json", by_alias=True, exclude_none=True)
+                        for item in source_results
+                    ],
+                    "periodsDetected": sorted(
+                        {period for item in source_results for period in item.period_ids}
+                    ),
+                    "anthropicCalls": sum(item.anthropic_calls for item in source_results),
+                    "wouldAdd": {
+                        "observations": observations_added,
+                        "news": news_added,
+                    },
+                    "wouldUpdate": {
+                        "observations": observations_updated,
+                        "news": news_updated,
+                    },
+                    "generatedDirectory": str(settings.generated_dir),
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+    if errors:
+        raise ValidationFailure("Candidat invalide; dernière version valide conservée.")
+    if not dry_run:
+        publisher = GitHubPagesPublisher(
+            settings.published_dir, settings.root_dir / "app/public/data"
+        )
+        publish_validated(
+            candidate,
+            report,
+            publisher,
+            freshness_checks,
+            previous_manifest,
+        )
+    LOGGER.info("refresh_success mode=%s dry_run=%s company=%s", mode, dry_run, company or "all")
     return 0
 
 
@@ -300,6 +500,8 @@ def build_parser() -> argparse.ArgumentParser:
         command = subparsers.add_parser(name)
         command.add_argument("--offline", action="store_true")
         command.add_argument("--company", choices=["MFC", "SLF", "GWO", "IAG"])
+        if name == "refresh":
+            command.add_argument("--dry-run", action="store_true")
     validate = subparsers.add_parser("validate")
     validate.add_argument("--candidate", type=Path)
     subparsers.add_parser("publish")
@@ -314,7 +516,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         config = load_project_config(settings.root_dir, settings)
         if args.command == "refresh":
-            return command_refresh(settings, config, args.company, args.offline)
+            return command_refresh(settings, config, args.company, args.offline, args.dry_run)
         if args.command == "discover":
             return command_discover(settings, config, args.company, args.offline)
         if args.command == "validate":

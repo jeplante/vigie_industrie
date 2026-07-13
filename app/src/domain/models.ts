@@ -4,6 +4,7 @@ export type Direction = "up" | "down" | "neutral";
 export type QualityStatus = "validated" | "warning" | "rejected";
 export type ReportStatus = "success" | "partial" | "failed";
 export type Importance = "high" | "medium" | "low";
+export type RunMode = "offline" | "live" | "migration";
 
 export interface Company {
   id: CompanyId;
@@ -112,6 +113,7 @@ export interface VigieDataset {
 export interface DatasetManifest {
   schemaVersion: string;
   generatedAt: string;
+  mode: RunMode;
   datasetHash: string;
   observationCount: number;
   newsCount: number;
@@ -124,7 +126,7 @@ export interface CompanyFreshness {
   companyId: CompanyId;
   latestAvailablePeriodId: string | null;
   latestPublishedPeriodId: string | null;
-  latestSourceCheckAt: string;
+  latestSourceCheckAt: string | null;
   freshnessStatus: "current" | "stale" | "unknown";
 }
 
@@ -136,6 +138,8 @@ export interface QualityIssue {
 
 export interface QualityReport {
   generatedAt: string;
+  mode: RunMode;
+  dryRun: boolean;
   status: ReportStatus;
   sourcesChecked: number;
   sourcesSucceeded: number;
@@ -145,4 +149,16 @@ export interface QualityReport {
   overridesApplied: number;
   warnings: QualityIssue[];
   errors: QualityIssue[];
+  sourceResults: SourceRunResult[];
+}
+
+export interface SourceRunResult {
+  sourceId: string;
+  companyId: CompanyId;
+  status: "success" | "warning" | "failed";
+  documentsDiscovered: number;
+  documentUrls: string[];
+  periodIds: string[];
+  message: string | null;
+  anthropicCalls: number;
 }

@@ -54,6 +54,7 @@ class SourceConfig(ConfigModel):
     article_selector: str = Field(default="article, main", alias="articleSelector")
     include_patterns: list[str] = Field(default_factory=list, alias="includePatterns")
     max_articles: int = Field(default=10, alias="maxArticles", ge=1, le=100)
+    document_url_template: str | None = Field(default=None, alias="documentUrlTemplate")
 
 
 class HttpConfig(ConfigModel):

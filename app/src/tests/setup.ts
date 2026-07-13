@@ -1,4 +1,4 @@
-import { afterEach } from 'vitest';
+import { afterEach } from "vitest";
 
 afterEach(() => {
   document.body.replaceChildren();

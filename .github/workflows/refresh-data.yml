@@ -8,6 +8,11 @@ on:
         required: false
         type: choice
         options: ["", MFC, SLF, GWO, IAG]
+      dry_run:
+        description: Smoke test réel sans commit ni déploiement
+        required: false
+        type: boolean
+        default: false
   schedule:
     - cron: "17 10 * * *"
 
@@ -42,7 +47,9 @@ jobs:
         run: python -m pip install -e "./pipeline[dev]"
 
       - name: Refresh all companies
-        if: github.event_name != 'workflow_dispatch' || inputs.company == ''
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          (inputs.dry_run == false && inputs.company == '')
         working-directory: pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -51,7 +58,9 @@ jobs:
         run: python -m vigie_pipeline refresh
 
       - name: Refresh selected company
-        if: github.event_name == 'workflow_dispatch' && inputs.company != ''
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          inputs.dry_run == false && inputs.company != ''
         working-directory: pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -59,11 +68,35 @@ jobs:
           ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
         run: python -m vigie_pipeline refresh --company "${{ inputs.company }}"
 
+      - name: Dry-run real sources
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        working-directory: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
+          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+        run: |
+          if [ -n "${{ inputs.company }}" ]; then
+            python -m vigie_pipeline refresh --dry-run --company "${{ inputs.company }}"
+          else
+            python -m vigie_pipeline refresh --dry-run
+          fi
+
       - name: Validate candidate
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run == false
         working-directory: pipeline
         run: python -m vigie_pipeline validate
 
+      - name: Upload dry-run candidates and report
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        uses: actions/upload-artifact@v4
+        with:
+          name: vigie-dry-run
+          path: data/generated
+          if-no-files-found: error
+
       - name: Commit validated data only
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run == false
         id: commit
         run: |
           if git diff --quiet -- data/published app/public/data; then
@@ -87,6 +120,7 @@ jobs:
 
   deploy:
     needs: refresh
+    if: needs.refresh.outputs.commit_sha != ''
     uses: ./.github/workflows/deploy-pages.yml
     with:
       ref: ${{ needs.refresh.outputs.commit_sha }}

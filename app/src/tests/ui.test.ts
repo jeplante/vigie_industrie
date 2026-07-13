@@ -3,6 +3,7 @@ import { enableArrowNavigation } from "../ui/accessibility";
 import { renderCompanyTabs } from "../ui/render-company-tabs";
 import { renderPeriodTabs } from "../ui/render-period-tabs";
 import { renderNews } from "../ui/render-news";
+import { renderDashboard } from "../ui/render-dashboard";
 import { renderStatus } from "../ui/render-status";
 import {
   availablePeriodsForCompany,
@@ -56,9 +57,21 @@ describe("interface", () => {
     const container = document.createElement("div");
     renderNews(
       container,
-      dataset.news.filter((item) => item.categories.includes("other")),
+      dataset.news.filter((item) => item.categories.includes("regulation")),
     );
     expect(container.textContent).toContain("Aucune actualité");
+  });
+
+  it("affiche une actualité T3 même si les derniers résultats sont T2", () => {
+    document.body.innerHTML = `
+      <div id="company-header"></div><div id="metrics"></div><div id="news"></div>
+      <section id="company-panel"></section>`;
+    const state = initialState(dataset);
+    expect(state.periodId).toBe("2026-T2");
+    renderDashboard(state);
+    expect(document.querySelector("#news")?.textContent).toContain(
+      "Actualité postérieure aux derniers résultats",
+    );
   });
 
   it("affiche qualité, sources en erreur et données périmées", () => {

@@ -2,13 +2,13 @@ import json
 from copy import deepcopy
 from datetime import UTC, date, datetime
 from pathlib import Path
+from typing import cast
 
 import pytest
 
 import vigie_pipeline.acquire as acquire_module
 from vigie_pipeline.acquire import _previous, acquire_source, infer_period
 from vigie_pipeline.config import ProjectConfig
-from vigie_pipeline.exceptions import DocumentNotIngestedError
 from vigie_pipeline.fetch import FetchResult
 from vigie_pipeline.freshness import SourceCheck, build_company_freshness, freshness_issues
 from vigie_pipeline.merge import merge_datasets
@@ -50,7 +50,7 @@ def _multi_year_dataset(dataset: VigieDataset, repository_root: Path) -> VigieDa
     fixture = _fixture(repository_root)
     periods = {
         period.period_id: period
-        for payload in fixture["periods"]  # type: ignore[index]
+        for payload in cast(list[object], fixture["periods"])
         if (period := Period.model_validate(payload))
     }
     candidate.periods = list(periods.values())
@@ -79,6 +79,11 @@ def test_future_period_ids_are_composite_and_not_hard_coded() -> None:
     assert period.period_id == "2032-T2"
     assert period.period_key == "T2"
     assert period.year == 2032
+    annual = infer_period(
+        "https://ia.ca/investisseurs/rapportsfinanciers/annuel/2026/annualreport2025.pdf"
+    )
+    assert annual is not None
+    assert annual.period_id == "2025-AN"
 
 
 def test_2025_is_preserved_when_2026_is_merged(
@@ -144,15 +149,13 @@ def test_discovered_2026_document_with_failed_extraction_is_stale(
     )
     monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
     source = next(item for item in project_config.sources if item.id == "mfc-results")
-    with pytest.raises(DocumentNotIngestedError) as captured:
-        acquire_source(
-            dataset,
-            source,
-            Settings(anthropic_api_key=None),
-            project_config,
-        )
-    failed_period = captured.value.period
-    assert isinstance(failed_period, Period)
+    acquisition = acquire_source(
+        dataset,
+        source,
+        Settings(anthropic_api_key=None),
+        project_config,
+    )
+    failed_period = acquisition.failures[0].period
     assert failed_period.period_id == "2026-T1"
     check = SourceCheck(
         company_id="MFC",

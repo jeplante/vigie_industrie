@@ -31,7 +31,10 @@ const periods = [
   period(2025, "AN"),
   period(2026, "T1"),
   period(2026, "T2"),
+  period(2026, "T3"),
 ];
+
+const financialPeriods = periods.filter((item) => item.periodId !== "2026-T3");
 
 const observation = (
   companyId: CompanyId,
@@ -101,12 +104,38 @@ export const dataset: VigieDataset = {
   ],
   periods,
   observations: [
-    ...periods.map((item, index) => observation("MFC", 1.25 + index, item)),
-    ...periods
+    ...financialPeriods.map((item, index) =>
+      observation("MFC", 1.25 + index, item),
+    ),
+    ...financialPeriods
       .slice(0, 4)
       .map((item, index) => observation("SLF", 2.25 + index, item)),
   ],
   news: [
+    {
+      id: "news-mfc-2026-t3",
+      companyIds: ["MFC"],
+      periodId: "2026-T3",
+      periodKey: "T3",
+      publishedAt: "2026-07-15",
+      source: {
+        type: "official_release",
+        name: "Manuvie",
+        url: "https://example.com/news-mfc-t3",
+      },
+      title: "Actualité postérieure aux derniers résultats",
+      originalSummary: "Actualité T3 alors que les résultats sont T2.",
+      generatedSummary: null,
+      categories: ["other"],
+      importance: "medium",
+      themes: [],
+      quality: {
+        status: "warning",
+        extractionMethod: "deterministic_fallback",
+        confidence: 0.5,
+        warnings: ["Anthropic indisponible"],
+      },
+    },
     {
       id: "news-mfc-2026-t2",
       companyIds: ["MFC"],
@@ -161,9 +190,10 @@ export const dataset: VigieDataset = {
 export const manifest: DatasetManifest = {
   schemaVersion: "1.0.0",
   generatedAt: "2026-07-10T12:00:00Z",
+  mode: "live",
   datasetHash: `sha256:${"a".repeat(64)}`,
   observationCount: 10,
-  newsCount: 2,
+  newsCount: 3,
   companyCount: 2,
   lastSuccessfulRefresh: "2026-07-10T12:00:00Z",
   companyFreshness: [
@@ -186,6 +216,8 @@ export const manifest: DatasetManifest = {
 
 export const quality: QualityReport = {
   generatedAt: "2026-07-10T12:00:00Z",
+  mode: "live",
+  dryRun: false,
   status: "success",
   sourcesChecked: 2,
   sourcesSucceeded: 2,
@@ -195,4 +227,5 @@ export const quality: QualityReport = {
   overridesApplied: 0,
   warnings: [],
   errors: [],
+  sourceResults: [],
 };

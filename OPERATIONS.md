@@ -5,15 +5,18 @@
 Dans GitHub, ouvrir **Actions → Refresh industry data → Run workflow**, choisir éventuellement une
 compagnie et confirmer. Le workflow planifié s’exécute à `10:17 UTC`; Montréal est à UTC−5 en
 hiver et UTC−4 en été. Localement, utiliser `python -m vigie_pipeline refresh --offline` pour un
-test sans réseau ou retirer `--offline` pour les sources configurées. Pour republier sans aucune
-acquisition, lancer séparément **Deploy GitHub Pages**.
+test sans réseau ou retirer `--offline` pour les sources configurées. Pour vérifier les vraies
+sources sans publication, cocher l’option **dry run** du workflow manuel ou exécuter
+`python -m vigie_pipeline refresh --dry-run`; télécharger ensuite l’artefact `vigie-dry-run`.
+Pour republier sans aucune acquisition, lancer séparément **Deploy GitHub Pages**.
 
 ## Lire le rapport de qualité
 
 `status=success` autorise la publication. `partial` indique une source ou un avertissement non
-critique. `failed` bloque la publication. `sourcesFailed`, `warnings[].code`, `errors[].sourceId`
-et `errors[].message` orientent le diagnostic. Un échec candidat est sous `data/generated/`; le
-rapport publié décrit toujours la dernière version effectivement servie.
+critique. `failed` bloque la publication. `mode`, `dryRun`, `sourceResults`, `sourcesFailed`,
+`warnings[].code`, `errors[].sourceId` et `errors[].message` orientent le diagnostic. Un échec ou
+un essai à blanc est sous `data/generated/`; le rapport publié décrit toujours la dernière version
+effectivement servie. Ne lancez jamais `publish` sur un dry-run : le pipeline le refuse.
 
 ## Corriger une extraction
 
@@ -42,10 +45,10 @@ pour extraction financière difficile. Relancer le workflow et vérifier `qualit
 ## Diagnostiquer GitHub Actions
 
 - Échec `discover/fetch`: vérifier URL, code HTTP, type MIME, redirections et taille.
-  Manuvie a retourné HTTP 403 au client automatisé lors de la vérification du 11 juillet 2026;
-  ne pas contourner les protections du site. `Refresh industry data` doit alors échouer, laisser
-  `data/published` inchangé et ne pas appeler le déploiement. `Deploy GitHub Pages` reste utilisable
-  pour servir le last-known-good. Privilégier un flux ou document officiel autorisé.
+  Manuvie et Sun Life ont retourné HTTP 403 au client automatisé lors de la vérification du
+  12 juillet 2026; ne pas contourner les protections. Le refresh conserve leur last-known-good,
+  les classe `unknown` et continue les autres sources. Privilégier un flux ou document officiel
+  autorisé.
 - Échec `extract`: télécharger le document, ajouter une fixture représentative, ajuster
   l’adaptateur; Anthropic n’est qu’un secours.
 - Échec `validate`: consulter chaque code du rapport généré; ne pas contourner le contrôle.

@@ -146,13 +146,14 @@ class CompanyFreshness(CanonicalModel):
     company_id: str
     latest_available_period_id: str | None = None
     latest_published_period_id: str | None = None
-    latest_source_check_at: datetime
+    latest_source_check_at: datetime | None = None
     freshness_status: Literal["current", "stale", "unknown"]
 
 
 class DatasetManifest(CanonicalModel):
     schema_version: str = "1.0.0"
     generated_at: datetime
+    mode: Literal["offline", "live", "migration"]
     dataset_hash: str = Field(pattern=r"^sha256:[a-f0-9]{64}$")
     observation_count: int = Field(ge=0)
     news_count: int = Field(ge=0)
@@ -167,8 +168,21 @@ class QualityIssue(CanonicalModel):
     source_id: str | None = None
 
 
+class SourceRunResult(CanonicalModel):
+    source_id: str
+    company_id: str
+    status: Literal["success", "warning", "failed"]
+    documents_discovered: int = Field(ge=0)
+    document_urls: list[str] = Field(default_factory=list)
+    period_ids: list[str] = Field(default_factory=list)
+    message: str | None = None
+    anthropic_calls: int = Field(default=0, ge=0)
+
+
 class QualityReport(CanonicalModel):
     generated_at: datetime
+    mode: Literal["offline", "live", "migration"]
+    dry_run: bool = False
     status: Literal["success", "partial", "failed"]
     sources_checked: int = Field(ge=0)
     sources_succeeded: int = Field(ge=0)
@@ -178,6 +192,7 @@ class QualityReport(CanonicalModel):
     overrides_applied: int = Field(ge=0, default=0)
     warnings: list[QualityIssue] = Field(default_factory=list)
     errors: list[QualityIssue] = Field(default_factory=list)
+    source_results: list[SourceRunResult] = Field(default_factory=list)
 
 
 class DiscoveredDocument(CanonicalModel):
@@ -189,3 +204,7 @@ class DiscoveredDocument(CanonicalModel):
     last_modified: str | None = None
     content_hash: str | None = None
     content_type: str | None = None
+    document_kind: Literal[
+        "published_result", "downloadable_report", "future_event", "index_metrics", "unknown"
+    ] = "unknown"
+    is_published: bool = True

@@ -58,6 +58,7 @@ export function validateDataset(value: unknown): VigieDataset {
 export function validateManifest(value: unknown): DatasetManifest {
   if (!isRecord(value)) throw new Error("Le manifeste doit être un objet.");
   requireString(value, "generatedAt");
+  requireString(value, "mode");
   requireString(value, "datasetHash");
   if (!Array.isArray(value.companyFreshness)) {
     throw new Error("Fraîcheur par compagnie absente du manifeste.");
@@ -69,6 +70,13 @@ export function validateQualityReport(value: unknown): QualityReport {
   if (!isRecord(value))
     throw new Error("Le rapport de qualité doit être un objet.");
   requireString(value, "generatedAt");
+  requireString(value, "mode");
+  if (
+    typeof value.dryRun !== "boolean" ||
+    !Array.isArray(value.sourceResults)
+  ) {
+    throw new Error("Trace d'exécution absente du rapport de qualité.");
+  }
   if (!["success", "partial", "failed"].includes(String(value.status))) {
     throw new Error("Statut de qualité inconnu.");
   }

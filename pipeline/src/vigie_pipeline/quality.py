@@ -3,7 +3,7 @@
 from datetime import UTC, datetime
 from typing import Literal
 
-from vigie_pipeline.models import QualityIssue, QualityReport
+from vigie_pipeline.models import QualityIssue, QualityReport, SourceRunResult
 
 
 def build_quality_report(
@@ -16,6 +16,9 @@ def build_quality_report(
     observations_updated: int = 0,
     overrides_applied: int = 0,
     generated_at: datetime | None = None,
+    mode: Literal["offline", "live", "migration"] = "live",
+    dry_run: bool = False,
+    source_results: list[SourceRunResult] | None = None,
 ) -> QualityReport:
     errors = errors or []
     warnings = warnings or []
@@ -25,6 +28,8 @@ def build_quality_report(
     )
     return QualityReport(
         generated_at=generated_at or datetime.now(UTC),
+        mode=mode,
+        dry_run=dry_run,
         status=status,
         sources_checked=sources_checked,
         sources_succeeded=sources_succeeded,
@@ -34,4 +39,5 @@ def build_quality_report(
         overrides_applied=overrides_applied,
         warnings=warnings,
         errors=errors,
+        source_results=source_results or [],
     )

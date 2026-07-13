@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import UTC, datetime
+from datetime import datetime
 from typing import Literal
 
 from vigie_pipeline.models import CompanyFreshness, Period, QualityIssue, VigieDataset
@@ -28,17 +28,35 @@ def build_company_freshness(
     checks: dict[str, SourceCheck] | None = None,
     *,
     generated_at: datetime | None = None,
+    previous: list[CompanyFreshness] | None = None,
+    mode: Literal["offline", "live", "migration"] = "live",
 ) -> list[CompanyFreshness]:
-    timestamp = generated_at or datetime.now(UTC)
     checks = checks or {}
+    previous_by_company = {item.company_id: item for item in previous or []}
     result: list[CompanyFreshness] = []
     for company in dataset.companies:
         published = latest_published_period(dataset, company.id)
         check = checks.get(company.id)
-        if check is None:
-            available = published
+        prior = previous_by_company.get(company.id)
+        if mode != "live":
+            available = None
             status: Literal["current", "stale", "unknown"] = "unknown"
-            checked_at = timestamp
+            checked_at = None
+        elif check is None and prior is not None:
+            result.append(
+                CompanyFreshness(
+                    company_id=company.id,
+                    latest_available_period_id=prior.latest_available_period_id,
+                    latest_published_period_id=(published.period_id if published else None),
+                    latest_source_check_at=prior.latest_source_check_at,
+                    freshness_status=prior.freshness_status,
+                )
+            )
+            continue
+        elif check is None:
+            available = None
+            status = "unknown"
+            checked_at = None
         elif not check.verified:
             available = check.latest_available_period
             status = "unknown"

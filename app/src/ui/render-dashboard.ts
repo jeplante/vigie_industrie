@@ -42,12 +42,14 @@ export function renderDashboard(state: AppState): void {
   );
   renderNews(
     requiredElement("news"),
-    state.dataset.news.filter(
-      (item) =>
-        item.companyIds.includes(state.companyId) &&
-        item.periodId === state.periodId &&
-        (state.category === "all" || item.categories.includes(state.category)),
-    ),
+    state.dataset.news
+      .filter(
+        (item) =>
+          item.companyIds.includes(state.companyId) &&
+          (state.category === "all" ||
+            item.categories.includes(state.category)),
+      )
+      .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt)),
   );
   requiredElement("company-panel").setAttribute(
     "aria-labelledby",

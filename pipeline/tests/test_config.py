@@ -30,7 +30,7 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
     )
     sources_path = tmp_path / "config/sources.yaml"
     sources_path.write_text(
-        sources_path.read_text(encoding="utf-8").replace("maxArticles: 10", "maxArticles: 3", 1),
+        sources_path.read_text(encoding="utf-8").replace("maxArticles: 5", "maxArticles: 3", 1),
         encoding="utf-8",
     )
     config = load_project_config(

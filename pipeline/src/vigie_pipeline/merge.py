@@ -26,13 +26,13 @@ def merge_datasets(base: VigieDataset, candidate: VigieDataset) -> VigieDataset:
 
 
 def deduplicate_news(items: list[NewsItem]) -> list[NewsItem]:
-    """Conserve le premier item de chaque URL normalisée, de façon stable."""
+    """Conserve la dernière version de chaque URL normalisée, de façon stable."""
 
     seen: set[str] = set()
     result: list[NewsItem] = []
-    for item in items:
+    for item in reversed(items):
         key = str(item.source.url).rstrip("/").lower()
         if key not in seen:
             result.append(item)
             seen.add(key)
-    return result
+    return list(reversed(result))

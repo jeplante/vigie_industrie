@@ -6,10 +6,86 @@ import math
 import re
 from datetime import UTC, datetime, timedelta
 
-from vigie_pipeline.models import QualityIssue, VigieDataset
+from vigie_pipeline.freshness import latest_published_period
+from vigie_pipeline.hashing import dataset_hash
+from vigie_pipeline.models import DatasetManifest, QualityIssue, QualityReport, VigieDataset
 from vigie_pipeline.normalize import calculate_change, direction_for
 
 HTML_PATTERN = re.compile(r"<\s*(script|iframe|object|embed|style|img|a)\b", re.IGNORECASE)
+
+
+def validate_artifact_set(
+    dataset: VigieDataset,
+    manifest: DatasetManifest,
+    report: QualityReport,
+) -> list[QualityIssue]:
+    """Valide la cohérence croisée du dataset, du manifeste et du rapport."""
+
+    errors: list[QualityIssue] = []
+
+    def issue(code: str, message: str) -> None:
+        errors.append(QualityIssue(code=code, message=message))
+
+    if manifest.dataset_hash != dataset_hash(dataset):
+        issue("dataset_hash_mismatch", "Le hash du manifeste ne correspond pas au dataset.")
+    expected_counts = (
+        len(dataset.observations),
+        len(dataset.news),
+        len(dataset.companies),
+    )
+    actual_counts = (
+        manifest.observation_count,
+        manifest.news_count,
+        manifest.company_count,
+    )
+    if actual_counts != expected_counts:
+        issue("artifact_count_mismatch", f"Compteurs {actual_counts}; attendus {expected_counts}.")
+    company_ids = {company.id for company in dataset.companies}
+    freshness_ids = {item.company_id for item in manifest.company_freshness}
+    if freshness_ids != company_ids or len(manifest.company_freshness) != len(company_ids):
+        issue("freshness_company_mismatch", "Les compagnies du manifeste sont incohérentes.")
+    for item in manifest.company_freshness:
+        published = latest_published_period(dataset, item.company_id)
+        published_id = published.period_id if published else None
+        if item.latest_published_period_id != published_id:
+            issue(
+                "latest_published_period_mismatch",
+                f"{item.company_id}: {item.latest_published_period_id}; attendu {published_id}.",
+            )
+    if not (
+        dataset.generated_at == manifest.generated_at == report.generated_at
+        and manifest.last_successful_refresh == manifest.generated_at
+    ):
+        issue("artifact_date_mismatch", "Les dates des trois artefacts ne correspondent pas.")
+    if manifest.mode != report.mode:
+        issue("artifact_mode_mismatch", "Le mode du manifeste diffère du rapport.")
+    if report.sources_failed != max(0, report.sources_checked - report.sources_succeeded):
+        issue("source_count_mismatch", "Les compteurs de sources sont incohérents.")
+    expected_status = (
+        "failed"
+        if report.errors
+        else "partial"
+        if report.warnings or report.sources_failed
+        else "success"
+    )
+    if report.status != expected_status:
+        issue("quality_status_mismatch", f"Statut {report.status}; attendu {expected_status}.")
+    if report.mode != "live":
+        if any((report.sources_checked, report.sources_succeeded, report.sources_failed)):
+            issue(
+                "offline_source_claim", "Un mode non live ne peut déclarer des sources vérifiées."
+            )
+        for item in manifest.company_freshness:
+            if (
+                item.freshness_status != "unknown"
+                or item.latest_available_period_id is not None
+                or item.latest_source_check_at is not None
+            ):
+                issue(
+                    "offline_freshness_claim",
+                    f"{item.company_id}: fraîcheur non vérifiable en mode {report.mode}.",
+                )
+    return errors
 
 
 def _duplicate_issues(values: list[str], kind: str) -> list[QualityIssue]:
