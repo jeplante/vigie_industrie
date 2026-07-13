@@ -1,15 +1,158 @@
 {
-  "generatedAt": "2026-07-13T02:36:16.138407Z",
-  "mode": "offline",
+  "generatedAt": "2026-07-13T11:28:17.837667Z",
+  "mode": "live",
   "dryRun": false,
-  "status": "success",
-  "sourcesChecked": 0,
-  "sourcesSucceeded": 0,
-  "sourcesFailed": 0,
-  "observationsAdded": 0,
+  "status": "partial",
+  "sourcesChecked": 8,
+  "sourcesSucceeded": 1,
+  "sourcesFailed": 7,
+  "observationsAdded": 4,
   "observationsUpdated": 0,
   "overridesApplied": 0,
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "no_documents_discovered",
+      "message": "Aucun document financier découvert.",
+      "sourceId": "mfc-results"
+    },
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+      "sourceId": "slf-results"
+    },
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "iag-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "iag-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "iag-results"
+    },
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/newsroom/news-releases/",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/news-and-events/news.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "no_documents_discovered",
+      "message": "Aucun document d’actualité découvert.",
+      "sourceId": "iag-official-news"
+    }
+  ],
   "errors": [],
-  "sourceResults": []
+  "sourceResults": [
+    {
+      "sourceId": "mfc-results",
+      "companyId": "MFC",
+      "status": "warning",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Aucun document financier découvert.",
+      "anthropicCalls": 0
+    },
+    {
+      "sourceId": "slf-results",
+      "companyId": "SLF",
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+      "anthropicCalls": 0
+    },
+    {
+      "sourceId": "gwo-results",
+      "companyId": "GWO",
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
+      "anthropicCalls": 0
+    },
+    {
+      "sourceId": "iag-results",
+      "companyId": "IAG",
+      "status": "warning",
+      "documentsDiscovered": 4,
+      "documentUrls": [
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-news-release.pdf",
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/annuel/2026/en/foa-annualreport2025.pdf",
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t4/q4-2025-financial-statements-acc.pdf",
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t4/q4-2025-mda.pdf"
+      ],
+      "periodIds": [
+        "2025-AN",
+        "2026-T1"
+      ],
+      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "anthropicCalls": 3
+    },
+    {
+      "sourceId": "mfc-official-news",
+      "companyId": "MFC",
+      "status": "success",
+      "documentsDiscovered": 5,
+      "documentUrls": [
+        "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
+        "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year",
+        "https://www.manulife.com/ca/en/about-us/news/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection",
+        "https://www.manulife.com/ca/en/about-us/news/manulife-launches-takaful-wealth-protection-and-legacy-solution-as-demand-grows-for-islamic-wealth-transfer",
+        "https://www.manulife.com/ca/en/about-us/news/manulife-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1"
+      ],
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
+      "anthropicCalls": 5
+    },
+    {
+      "sourceId": "slf-official-news",
+      "companyId": "SLF",
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/newsroom/news-releases/",
+      "anthropicCalls": 0
+    },
+    {
+      "sourceId": "gwo-official-news",
+      "companyId": "GWO",
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/news-and-events/news.html",
+      "anthropicCalls": 0
+    },
+    {
+      "sourceId": "iag-official-news",
+      "companyId": "IAG",
+      "status": "warning",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Aucun document d’actualité découvert.",
+      "anthropicCalls": 0
+    }
+  ]
 }
