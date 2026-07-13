@@ -1,0 +1,19 @@
+{
+  "periods": [
+    { "periodId": "2025-T1", "periodKey": "T1", "type": "quarter", "year": 2025, "quarter": 1, "endDate": "2025-03-31", "label": "T1 2025" },
+    { "periodId": "2025-T2", "periodKey": "T2", "type": "quarter", "year": 2025, "quarter": 2, "endDate": "2025-06-30", "label": "T2 2025" },
+    { "periodId": "2025-T3", "periodKey": "T3", "type": "quarter", "year": 2025, "quarter": 3, "endDate": "2025-09-30", "label": "T3 2025" },
+    { "periodId": "2025-AN", "periodKey": "AN", "type": "annual", "year": 2025, "quarter": null, "endDate": "2025-12-31", "label": "Annuel 2025" },
+    { "periodId": "2026-T1", "periodKey": "T1", "type": "quarter", "year": 2026, "quarter": 1, "endDate": "2026-03-31", "label": "T1 2026" },
+    { "periodId": "2026-T2", "periodKey": "T2", "type": "quarter", "year": 2026, "quarter": 2, "endDate": "2026-06-30", "label": "T2 2026" }
+  ],
+  "companyPeriods": {
+    "MFC": ["2025-T1", "2025-T2", "2025-T3", "2025-AN", "2026-T1", "2026-T2"],
+    "SLF": ["2025-T1", "2025-T2", "2025-T3", "2025-AN"]
+  },
+  "sourceChecks": {
+    "MFC": { "latestAvailablePeriodId": "2026-T2", "verified": true, "ingested": true },
+    "SLF": { "latestAvailablePeriodId": "2026-T1", "verified": true, "ingested": false, "extractionError": "document_2026_extraction_failed" },
+    "GWO": { "latestAvailablePeriodId": null, "verified": false, "ingested": false }
+  }
+}

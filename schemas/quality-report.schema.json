@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QualityReport",
+  "type": "object",
+  "required": ["generatedAt", "status", "sourcesChecked", "sourcesSucceeded", "sourcesFailed", "warnings", "errors"],
+  "properties": {
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "status": { "enum": ["success", "partial", "failed"] },
+    "sourcesChecked": { "type": "integer", "minimum": 0 },
+    "sourcesSucceeded": { "type": "integer", "minimum": 0 },
+    "sourcesFailed": { "type": "integer", "minimum": 0 },
+    "warnings": { "type": "array" },
+    "errors": { "type": "array" }
+  }
+}

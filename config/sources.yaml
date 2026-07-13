@@ -1,0 +1,126 @@
+sources:
+  - id: mfc-results
+    companyId: MFC
+    contentCategory: financial_results
+    type: html_release_index
+    url: https://www.manulife.com/ca/en/about-us/investors/results-and-reports
+    adapter: manulife
+    priority: primary
+    language: fr
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, core_earnings, net_income, licat_ratio]
+    fetchPolicy: etag_last_modified_then_hash
+  - id: slf-results
+    companyId: SLF
+    contentCategory: financial_results
+    type: html_release_index
+    url: https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/
+    adapter: sunlife
+    priority: primary
+    language: en
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, net_income, licat_ratio, assets_under_management]
+    fetchPolicy: etag_last_modified_then_hash
+  - id: gwo-results
+    companyId: GWO
+    contentCategory: financial_results
+    type: html_release_index
+    url: https://www.greatwestlifeco.com/investor-relations/financial-reports.html
+    adapter: great_west
+    priority: primary
+    language: en
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, core_earnings, licat_ratio, total_client_assets]
+    fetchPolicy: etag_last_modified_then_hash
+    documentUrlTemplate: https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/{year}/q{quarter}/lifeco-q{quarter}-{year}-quarterly-report-to-shareholders-en.pdf
+  - id: iag-results
+    companyId: IAG
+    contentCategory: financial_results
+    type: html_release_index
+    url: https://ia.ca/investorrelations
+    adapter: ia
+    priority: primary
+    language: fr
+    enabled: true
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: [core_eps, core_earnings, solvency_ratio, assets_under_administration]
+    fetchPolicy: etag_last_modified_then_hash
+  - id: mfc-official-news
+    companyId: MFC
+    contentCategory: official_news
+    type: html_news_index
+    url: https://www.manulife.com/ca/en/about-us/news
+    adapter: generic_news
+    priority: official_release
+    language: en
+    enabled: true
+    required: false
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: []
+    fetchPolicy: canonical_url_then_hash
+    linkSelector: a[href]
+    articleSelector: article, main
+    includePatterns: [/ca/en/about-us/news/]
+    maxArticles: 5
+  - id: slf-official-news
+    companyId: SLF
+    contentCategory: official_news
+    type: html_news_index
+    url: https://www.sunlife.com/en/newsroom/news-releases/
+    adapter: generic_news
+    priority: official_release
+    language: en
+    enabled: true
+    required: false
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: []
+    fetchPolicy: canonical_url_then_hash
+    linkSelector: a[href]
+    articleSelector: article, main
+    includePatterns: [/en/newsroom/news-releases/announcement/]
+    maxArticles: 5
+  - id: gwo-official-news
+    companyId: GWO
+    contentCategory: official_news
+    type: html_news_index
+    url: https://www.greatwestlifeco.com/news-and-events/news.html
+    adapter: generic_news
+    priority: official_release
+    language: en
+    enabled: true
+    required: false
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: []
+    fetchPolicy: canonical_url_then_hash
+    linkSelector: a[href]
+    articleSelector: article, main
+    includePatterns: [/news-and-events/news/]
+    maxArticles: 5
+  - id: iag-official-news
+    companyId: IAG
+    contentCategory: official_news
+    type: html_news_index
+    url: https://ia.ca/newsroom
+    adapter: generic_news
+    priority: official_release
+    language: fr
+    enabled: true
+    required: false
+    timeoutSeconds: 20
+    attempts: 3
+    expectedMetrics: []
+    fetchPolicy: canonical_url_then_hash
+    linkSelector: a[href]
+    articleSelector: article, main
+    includePatterns: [/newsroom/]
+    maxArticles: 5

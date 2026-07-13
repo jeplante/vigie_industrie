@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-13T02:36:16.138407Z",
+  "mode": "offline",
+  "datasetHash": "sha256:9448e79168c8330a44a0de18bb2c32e2df14ac56c9955c302ee01a128b180a4e",
+  "observationCount": 64,
+  "newsCount": 48,
+  "companyCount": 4,
+  "lastAttemptAt": "2026-07-13T02:36:16.138407Z",
+  "lastSuccessfulRefresh": "2026-07-11T00:00:00Z",
+  "companyFreshness": [
+    {
+      "companyId": "MFC",
+      "latestPublishedPeriodId": "2025-AN",
+      "freshnessStatus": "unknown"
+    },
+    {
+      "companyId": "SLF",
+      "latestPublishedPeriodId": "2025-AN",
+      "freshnessStatus": "unknown"
+    },
+    {
+      "companyId": "GWO",
+      "latestPublishedPeriodId": "2025-AN",
+      "freshnessStatus": "unknown"
+    },
+    {
+      "companyId": "IAG",
+      "latestPublishedPeriodId": "2025-AN",
+      "freshnessStatus": "unknown"
+    }
+  ]
+}

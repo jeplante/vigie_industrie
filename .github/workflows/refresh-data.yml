@@ -1,0 +1,127 @@
+name: Refresh industry data
+
+on:
+  workflow_dispatch:
+    inputs:
+      company:
+        description: Compagnie seulement (laisser vide pour toutes)
+        required: false
+        type: choice
+        options: ["", MFC, SLF, GWO, IAG]
+      dry_run:
+        description: Smoke test réel sans commit ni déploiement
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: "17 10 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    outputs:
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/pyproject.toml
+
+      - name: Install pipeline
+        run: python -m pip install -e "./pipeline[dev]"
+
+      - name: Refresh all companies
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          (inputs.dry_run == false && inputs.company == '')
+        working-directory: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
+          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+        run: python -m vigie_pipeline refresh
+
+      - name: Refresh selected company
+        if: >-
+          github.event_name == 'workflow_dispatch' &&
+          inputs.dry_run == false && inputs.company != ''
+        working-directory: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
+          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+        run: python -m vigie_pipeline refresh --company "${{ inputs.company }}"
+
+      - name: Dry-run real sources
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        working-directory: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
+          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+        run: |
+          if [ -n "${{ inputs.company }}" ]; then
+            python -m vigie_pipeline refresh --dry-run --company "${{ inputs.company }}"
+          else
+            python -m vigie_pipeline refresh --dry-run
+          fi
+
+      - name: Validate candidate
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run == false
+        working-directory: pipeline
+        run: python -m vigie_pipeline validate
+
+      - name: Upload dry-run candidates and report
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        uses: actions/upload-artifact@v4
+        with:
+          name: vigie-dry-run
+          path: data/generated
+          if-no-files-found: error
+
+      - name: Commit validated data only
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run == false
+        id: commit
+        run: |
+          if git diff --quiet -- data/published app/public/data; then
+            echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            echo "Aucune donnée modifiée." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/published app/public/data
+          git commit -m "chore(data): refresh industry watch data"
+          git push
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Refresh summary
+        if: always()
+        run: |
+          echo "## Rafraîchissement de la Vigie" >> "$GITHUB_STEP_SUMMARY"
+          echo "- UTC: $(date -u +'%Y-%m-%d %H:%M:%S')" >> "$GITHUB_STEP_SUMMARY"
+          echo '- En cas d’échec, `data/published` reste inchangé.' >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: refresh
+    if: needs.refresh.outputs.commit_sha != ''
+    uses: ./.github/workflows/deploy-pages.yml
+    with:
+      ref: ${{ needs.refresh.outputs.commit_sha }}
+    secrets: inherit
