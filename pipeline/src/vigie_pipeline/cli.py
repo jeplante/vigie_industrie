@@ -149,13 +149,7 @@ def command_publish(settings: Settings, config: ProjectConfig) -> int:
     previous_manifest = (
         _read_manifest(previous_manifest_path) if previous_manifest_path.exists() else None
     )
-    financial_source_ids = {
-        source.id for source in config.sources if source.content_category == "financial_results"
-    }
-    financial_refresh_succeeded = any(
-        item.source_id in financial_source_ids and item.status != "failed" and bool(item.period_ids)
-        for item in report.source_results
-    )
+    financial_refresh_succeeded = _has_successful_financial_refresh(config, report.source_results)
     publisher = GitHubPagesPublisher(settings.published_dir, settings.root_dir / "app/public/data")
     publish_validated(
         dataset,
@@ -184,6 +178,18 @@ def _selected_sources(config: ProjectConfig, company: str | None) -> list[Source
         for source in config.sources
         if source.enabled and (company is None or source.company_id == company)
     ]
+
+
+def _has_successful_financial_refresh(
+    config: ProjectConfig, source_results: list[SourceRunResult]
+) -> bool:
+    financial_source_ids = {
+        source.id for source in config.sources if source.content_category == "financial_results"
+    }
+    return any(
+        item.source_id in financial_source_ids and item.status == "success"
+        for item in source_results
+    )
 
 
 def _merge_periods(dataset: VigieDataset, periods: list[Period]) -> None:
@@ -267,7 +273,6 @@ def command_refresh(
     freshness_checks: dict[str, SourceCheck] = {}
     source_results: list[SourceRunResult] = []
     sources_succeeded = 0
-    financial_refresh_succeeded = False
     sources = [] if offline else _selected_sources(config, company)
 
     for source in sources:
@@ -290,8 +295,6 @@ def command_refresh(
                     latest_available_period=latest,
                     verified=latest is not None,
                 )
-                if latest is not None:
-                    financial_refresh_succeeded = True
                 for financial_failure in financial_acquisition.failures:
                     warnings.append(
                         QualityIssue(
@@ -431,6 +434,7 @@ def command_refresh(
                 )
             )
 
+    financial_refresh_succeeded = _has_successful_financial_refresh(config, source_results)
     existing_issue_keys = {(issue.code, issue.source_id) for issue in warnings}
     warnings.extend(
         issue

@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 
 import vigie_pipeline.cli as cli_module
-from vigie_pipeline.acquire import FinancialAcquisition
+from vigie_pipeline.acquire import DocumentFailure, FinancialAcquisition
 from vigie_pipeline.cli import command_publish, command_refresh
 from vigie_pipeline.config import ProjectConfig
 from vigie_pipeline.exceptions import FetchError, ValidationFailure
@@ -185,6 +185,90 @@ def test_empty_financial_and_news_sources_are_non_blocking_warnings(
     assert manifest.last_successful_refresh == dataset.generated_at
     assert manifest.last_attempt_at is not None
     assert manifest.last_attempt_at > manifest.last_successful_refresh
+
+
+def test_discovered_period_with_failed_extraction_preserves_last_success(
+    dataset: VigieDataset,
+    project_config: ProjectConfig,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    published = tmp_path / "data/published"
+    manual = tmp_path / "data/manual"
+    published.mkdir(parents=True)
+    manual.mkdir(parents=True)
+    (published / "vigie.json").write_text(
+        json.dumps(dataset.model_dump(mode="json", by_alias=True)), encoding="utf-8"
+    )
+    (manual / "overrides.yaml").write_text("overrides: []\n", encoding="utf-8")
+    previous_manifest = build_manifest(
+        dataset,
+        dataset.generated_at,
+        mode="live",
+        financial_refresh_succeeded=True,
+    )
+    (published / "manifest.json").write_text(
+        json.dumps(previous_manifest.model_dump(mode="json", by_alias=True)),
+        encoding="utf-8",
+    )
+    period = Period(
+        period_id="2026-T1",
+        period_key="T1",
+        type="quarter",
+        year=2026,
+        quarter=1,
+        end_date=dataset.periods[0].end_date.replace(year=2026, month=3, day=31),
+        label="T1 2026",
+    )
+    document = DiscoveredDocument.model_validate(
+        {
+            "sourceId": "mfc-results",
+            "canonicalUrl": "https://example.com/q1-2026",
+            "title": "Résultats T1 2026",
+            "documentKind": "published_result",
+        }
+    )
+
+    def failed_financial(*_: object, **__: object) -> FinancialAcquisition:
+        return FinancialAcquisition(
+            [],
+            [period],
+            [document],
+            [
+                DocumentFailure(
+                    source_id="mfc-results",
+                    period=period,
+                    document_url=str(document.canonical_url),
+                    message="Toutes les extractions T1 2026 ont échoué.",
+                    is_newer=True,
+                )
+            ],
+            0,
+            dataset.generated_at,
+        )
+
+    def empty_news(*_: object, **__: object) -> NewsAcquisition:
+        return NewsAcquisition([], [], [], 0)
+
+    monkeypatch.setattr(cli_module, "acquire_source", failed_financial)
+    monkeypatch.setattr(cli_module, "acquire_news", empty_news)
+    assert command_refresh(Settings(root_dir=tmp_path), project_config, "MFC", False) == 0
+    report = QualityReport.model_validate_json(
+        (published / "quality-report.json").read_text(encoding="utf-8")
+    )
+    assert report.status == "partial"
+    financial_result = next(
+        item for item in report.source_results if item.source_id == "mfc-results"
+    )
+    assert financial_result.status == "warning"
+    assert financial_result.period_ids == ["2026-T1"]
+    manifest = DatasetManifest.model_validate_json(
+        (published / "manifest.json").read_text(encoding="utf-8")
+    )
+    assert manifest.last_attempt_at is not None
+    assert previous_manifest.last_attempt_at is not None
+    assert manifest.last_attempt_at > previous_manifest.last_attempt_at
+    assert manifest.last_successful_refresh == previous_manifest.last_successful_refresh
 
 
 def test_partial_refresh_preserves_other_company_freshness(
