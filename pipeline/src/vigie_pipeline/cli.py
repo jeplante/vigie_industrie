@@ -149,12 +149,20 @@ def command_publish(settings: Settings, config: ProjectConfig) -> int:
     previous_manifest = (
         _read_manifest(previous_manifest_path) if previous_manifest_path.exists() else None
     )
+    financial_source_ids = {
+        source.id for source in config.sources if source.content_category == "financial_results"
+    }
+    financial_refresh_succeeded = any(
+        item.source_id in financial_source_ids and item.status != "failed" and bool(item.period_ids)
+        for item in report.source_results
+    )
     publisher = GitHubPagesPublisher(settings.published_dir, settings.root_dir / "app/public/data")
     publish_validated(
         dataset,
         report,
         publisher,
         previous_manifest=previous_manifest,
+        financial_refresh_succeeded=financial_refresh_succeeded,
     )
     return 0
 
@@ -250,6 +258,7 @@ def command_refresh(
     candidate = _read_dataset(
         settings.root_dir / "data/seed/vigie-v1.json" if offline else published_path
     )
+    fallback_last_successful_refresh = candidate.generated_at
     before_observations = {
         item.id: item.model_dump(mode="json", by_alias=True) for item in candidate.observations
     }
@@ -258,6 +267,7 @@ def command_refresh(
     freshness_checks: dict[str, SourceCheck] = {}
     source_results: list[SourceRunResult] = []
     sources_succeeded = 0
+    financial_refresh_succeeded = False
     sources = [] if offline else _selected_sources(config, company)
 
     for source in sources:
@@ -280,6 +290,8 @@ def command_refresh(
                     latest_available_period=latest,
                     verified=latest is not None,
                 )
+                if latest is not None:
+                    financial_refresh_succeeded = True
                 for financial_failure in financial_acquisition.failures:
                     warnings.append(
                         QualityIssue(
@@ -292,13 +304,31 @@ def command_refresh(
                             source_id=source.id,
                         )
                     )
+                empty_financial_discovery = not financial_acquisition.documents or latest is None
+                no_document_message = None
+                if empty_financial_discovery:
+                    no_document_message = (
+                        "Aucun document financier découvert."
+                        if not financial_acquisition.documents
+                        else "Aucune période financière découverte."
+                    )
+                    warnings.append(
+                        QualityIssue(
+                            code="no_documents_discovered",
+                            message=no_document_message,
+                            source_id=source.id,
+                        )
+                    )
+                financial_messages = [item.message for item in financial_acquisition.failures]
+                if no_document_message:
+                    financial_messages.append(no_document_message)
                 source_results.append(
                     SourceRunResult(
                         source_id=source.id,
                         company_id=source.company_id,
                         status=(
                             "warning"
-                            if financial_acquisition.failures or latest is None
+                            if financial_acquisition.failures or empty_financial_discovery
                             else "success"
                         ),
                         documents_discovered=len(financial_acquisition.documents),
@@ -308,10 +338,7 @@ def command_refresh(
                         period_ids=sorted(
                             {item.period_id for item in financial_acquisition.discovered_periods}
                         ),
-                        message=(
-                            "; ".join(item.message for item in financial_acquisition.failures)
-                            or None
-                        ),
+                        message="; ".join(financial_messages) or None,
                         anthropic_calls=financial_acquisition.anthropic_calls,
                     )
                 )
@@ -344,23 +371,40 @@ def command_refresh(
                             source_id=source.id,
                         )
                     )
+                no_news_documents = not news_acquisition.documents
+                no_document_message = None
+                if no_news_documents:
+                    no_document_message = "Aucun document d’actualité découvert."
+                    warnings.append(
+                        QualityIssue(
+                            code="no_documents_discovered",
+                            message=no_document_message,
+                            source_id=source.id,
+                        )
+                    )
+                news_messages = [item.message for item in news_acquisition.failures]
+                if no_document_message:
+                    news_messages.append(no_document_message)
                 source_results.append(
                     SourceRunResult(
                         source_id=source.id,
                         company_id=source.company_id,
-                        status=("warning" if news_acquisition.failures or degraded else "success"),
+                        status=(
+                            "warning"
+                            if news_acquisition.failures or degraded or no_news_documents
+                            else "success"
+                        ),
                         documents_discovered=len(news_acquisition.documents),
                         document_urls=[
                             str(item.canonical_url) for item in news_acquisition.documents
                         ],
                         period_ids=sorted({item.period_id for item in news_acquisition.items}),
-                        message=(
-                            "; ".join(item.message for item in news_acquisition.failures) or None
-                        ),
+                        message="; ".join(news_messages) or None,
                         anthropic_calls=news_acquisition.anthropic_calls,
                     )
                 )
-            sources_succeeded += 1
+            if source_results[-1].status == "success":
+                sources_succeeded += 1
         except PipelineError as error:
             warnings.append(
                 QualityIssue(
@@ -428,6 +472,8 @@ def command_refresh(
         freshness_checks,
         mode=mode,
         previous_manifest=previous_manifest,
+        financial_refresh_succeeded=financial_refresh_succeeded,
+        fallback_last_successful_refresh=fallback_last_successful_refresh,
     )
     artifact_errors = validate_artifact_set(candidate, manifest, report)
     if artifact_errors:
@@ -488,6 +534,8 @@ def command_refresh(
             publisher,
             freshness_checks,
             previous_manifest,
+            financial_refresh_succeeded,
+            fallback_last_successful_refresh,
         )
     LOGGER.info("refresh_success mode=%s dry_run=%s company=%s", mode, dry_run, company or "all")
     return 0

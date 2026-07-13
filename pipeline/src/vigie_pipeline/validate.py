@@ -54,9 +54,14 @@ def validate_artifact_set(
             )
     if not (
         dataset.generated_at == manifest.generated_at == report.generated_at
-        and manifest.last_successful_refresh == manifest.generated_at
+        and manifest.last_attempt_at == manifest.generated_at
     ):
         issue("artifact_date_mismatch", "Les dates des trois artefacts ne correspondent pas.")
+    if manifest.last_successful_refresh > manifest.generated_at:
+        issue(
+            "successful_refresh_after_attempt",
+            "Le dernier rafraîchissement réussi est postérieur à la dernière tentative.",
+        )
     if manifest.mode != report.mode:
         issue("artifact_mode_mismatch", "Le mode du manifeste diffère du rapport.")
     if report.sources_failed != max(0, report.sources_checked - report.sources_succeeded):

@@ -118,6 +118,7 @@ export interface DatasetManifest {
   observationCount: number;
   newsCount: number;
   companyCount: number;
+  lastAttemptAt: string;
   lastSuccessfulRefresh: string;
   companyFreshness: CompanyFreshness[];
 }

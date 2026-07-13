@@ -74,6 +74,9 @@ def test_offline_refresh_uses_seed_without_network(
         (tmp_path / "data/published/quality-report.json").read_text(encoding="utf-8")
     )
     assert manifest.mode == report.mode == "offline"
+    assert manifest.last_attempt_at == report.generated_at
+    assert manifest.last_successful_refresh == dataset.generated_at
+    assert manifest.last_attempt_at != manifest.last_successful_refresh
     assert report.sources_checked == report.sources_succeeded == 0
     assert all(item.freshness_status == "unknown" for item in manifest.company_freshness)
     assert all(item.latest_available_period_id is None for item in manifest.company_freshness)
@@ -93,6 +96,16 @@ def test_source_403_is_non_blocking_and_preserves_last_known_good(
     original = json.dumps(dataset.model_dump(mode="json", by_alias=True))
     (published / "vigie.json").write_text(original, encoding="utf-8")
     (manual / "overrides.yaml").write_text("overrides: []\n", encoding="utf-8")
+    previous_manifest = build_manifest(
+        dataset,
+        dataset.generated_at,
+        mode="live",
+        financial_refresh_succeeded=True,
+    )
+    (published / "manifest.json").write_text(
+        json.dumps(previous_manifest.model_dump(mode="json", by_alias=True)),
+        encoding="utf-8",
+    )
 
     def blocked(*_: object, **__: object) -> list[object]:
         raise FetchError("Erreur HTTP 403 pour Manuvie")
@@ -114,6 +127,10 @@ def test_source_403_is_non_blocking_and_preserves_last_known_good(
         "mfc-official-news",
     }
     manifest = json.loads((published / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["lastSuccessfulRefresh"] == dataset.generated_at.isoformat().replace(
+        "+00:00", "Z"
+    )
+    assert manifest["lastAttemptAt"] != manifest["lastSuccessfulRefresh"]
     mfc = next(item for item in manifest["companyFreshness"] if item["companyId"] == "MFC")
     assert mfc["freshnessStatus"] == "unknown"
 
@@ -124,6 +141,50 @@ def test_official_news_sources_are_optional(project_config: ProjectConfig) -> No
     ]
     assert news_sources
     assert all(source.required is False for source in news_sources)
+
+
+def test_empty_financial_and_news_sources_are_non_blocking_warnings(
+    dataset: VigieDataset,
+    project_config: ProjectConfig,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    published = tmp_path / "data/published"
+    manual = tmp_path / "data/manual"
+    published.mkdir(parents=True)
+    manual.mkdir(parents=True)
+    (published / "vigie.json").write_text(
+        json.dumps(dataset.model_dump(mode="json", by_alias=True)), encoding="utf-8"
+    )
+    (manual / "overrides.yaml").write_text("overrides: []\n", encoding="utf-8")
+
+    def empty_financial(*_: object, **__: object) -> FinancialAcquisition:
+        return FinancialAcquisition([], [], [], [], 0, dataset.generated_at)
+
+    def empty_news(*_: object, **__: object) -> NewsAcquisition:
+        return NewsAcquisition([], [], [], 0)
+
+    monkeypatch.setattr(cli_module, "acquire_source", empty_financial)
+    monkeypatch.setattr(cli_module, "acquire_news", empty_news)
+    assert command_refresh(Settings(root_dir=tmp_path), project_config, "MFC", False) == 0
+    report = QualityReport.model_validate_json(
+        (published / "quality-report.json").read_text(encoding="utf-8")
+    )
+    results = {item.source_id: item for item in report.source_results}
+    assert results["mfc-results"].status == "warning"
+    assert results["mfc-official-news"].status == "warning"
+    assert report.sources_succeeded == 0
+    assert report.sources_failed == 2
+    assert {(warning.code, warning.source_id) for warning in report.warnings} >= {
+        ("no_documents_discovered", "mfc-results"),
+        ("no_documents_discovered", "mfc-official-news"),
+    }
+    manifest = DatasetManifest.model_validate_json(
+        (published / "manifest.json").read_text(encoding="utf-8")
+    )
+    assert manifest.last_successful_refresh == dataset.generated_at
+    assert manifest.last_attempt_at is not None
+    assert manifest.last_attempt_at > manifest.last_successful_refresh
 
 
 def test_partial_refresh_preserves_other_company_freshness(
@@ -295,3 +356,7 @@ def test_news_outage_does_not_block_valid_financial_update(
     )
     assert report.status == "partial"
     assert any(item.source_id == "mfc-official-news" for item in report.warnings)
+    manifest = DatasetManifest.model_validate_json(
+        (published / "manifest.json").read_text(encoding="utf-8")
+    )
+    assert manifest.last_attempt_at == manifest.last_successful_refresh

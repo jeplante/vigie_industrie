@@ -18,8 +18,20 @@ def build_manifest(
     *,
     mode: Literal["offline", "live", "migration"] = "live",
     previous_manifest: DatasetManifest | None = None,
+    financial_refresh_succeeded: bool = False,
+    fallback_last_successful_refresh: datetime | None = None,
 ) -> DatasetManifest:
     timestamp = generated_at or datetime.now(UTC)
+    last_successful_refresh = (
+        previous_manifest.last_successful_refresh
+        if previous_manifest is not None
+        else fallback_last_successful_refresh or dataset.generated_at
+    )
+    if mode == "offline" and previous_manifest is not None:
+        if previous_manifest.mode == "offline" and previous_manifest.last_attempt_at is None:
+            last_successful_refresh = fallback_last_successful_refresh or dataset.generated_at
+    elif mode == "live" and financial_refresh_succeeded:
+        last_successful_refresh = timestamp
     return DatasetManifest(
         generated_at=timestamp,
         mode=mode,
@@ -27,7 +39,8 @@ def build_manifest(
         observation_count=len(dataset.observations),
         news_count=len(dataset.news),
         company_count=len(dataset.companies),
-        last_successful_refresh=timestamp,
+        last_attempt_at=timestamp,
+        last_successful_refresh=last_successful_refresh,
         company_freshness=build_company_freshness(
             dataset,
             freshness_checks,
@@ -44,6 +57,8 @@ def publish_validated(
     publisher: Publisher,
     freshness_checks: dict[str, SourceCheck] | None = None,
     previous_manifest: DatasetManifest | None = None,
+    financial_refresh_succeeded: bool = False,
+    fallback_last_successful_refresh: datetime | None = None,
 ) -> DatasetManifest:
     manifest = build_manifest(
         dataset,
@@ -51,6 +66,8 @@ def publish_validated(
         freshness_checks,
         mode=quality_report.mode,
         previous_manifest=previous_manifest,
+        financial_refresh_succeeded=financial_refresh_succeeded,
+        fallback_last_successful_refresh=fallback_last_successful_refresh,
     )
     artifact_errors = validate_artifact_set(dataset, manifest, quality_report)
     if artifact_errors:

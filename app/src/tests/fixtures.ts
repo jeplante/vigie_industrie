@@ -195,6 +195,7 @@ export const manifest: DatasetManifest = {
   observationCount: 10,
   newsCount: 3,
   companyCount: 2,
+  lastAttemptAt: "2026-07-10T12:00:00Z",
   lastSuccessfulRefresh: "2026-07-10T12:00:00Z",
   companyFreshness: [
     {

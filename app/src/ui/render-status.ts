@@ -19,7 +19,13 @@ export function renderStatus(
         report.status === "success" ? "Données validées" : "Qualité dégradée",
     }),
     element("span", {
-      text: `Dernier rafraîchissement : ${formatDateTime(manifest.lastSuccessfulRefresh)}`,
+      text: `Dernière tentative : ${formatDateTime(manifest.lastAttemptAt)}`,
+    }),
+    element("span", {
+      text: `Dernier rafraîchissement financier réussi : ${formatDateTime(manifest.lastSuccessfulRefresh)}`,
+    }),
+    element("span", {
+      text: `Mode : ${{ offline: "offline (hors ligne)", live: "live (en ligne)", migration: "migration" }[manifest.mode]}`,
     }),
   );
   if (stale)

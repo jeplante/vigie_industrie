@@ -226,6 +226,7 @@ const manifest = {
   observationCount: dataset.observations.length,
   newsCount: dataset.news.length,
   companyCount: dataset.companies.length,
+  lastAttemptAt: dataset.generatedAt,
   lastSuccessfulRefresh: dataset.generatedAt,
   companyFreshness: dataset.companies.map((company) => ({
     companyId: company.id,

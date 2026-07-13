@@ -78,13 +78,25 @@ describe("interface", () => {
     const container = document.createElement("div");
     renderStatus(
       container,
-      { ...manifest, lastSuccessfulRefresh: "2026-06-01T00:00:00Z" },
+      {
+        ...manifest,
+        mode: "offline",
+        lastAttemptAt: "2026-07-10T12:00:00Z",
+        lastSuccessfulRefresh: "2026-06-01T00:00:00Z",
+      },
       { ...quality, status: "partial", sourcesFailed: 1 },
       new Date("2026-07-11T00:00:00Z"),
     );
     expect(container.textContent).toContain("Données anciennes");
+    expect(container.textContent).toContain("Dernière tentative");
+    expect(container.textContent).toContain(
+      "Dernier rafraîchissement financier réussi",
+    );
+    expect(container.textContent).toContain("Mode : offline (hors ligne)");
     expect(container.textContent).toContain("1 source");
     expect(container.textContent).toContain("document plus récent non intégré");
+    renderStatus(container, manifest, quality);
+    expect(container.textContent).toContain("Mode : live (en ligne)");
   });
 
   it("navigue entre les onglets au clavier", () => {

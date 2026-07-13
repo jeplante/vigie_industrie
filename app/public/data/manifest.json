@@ -1,12 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-07-13T01:35:16.802999Z",
+  "generatedAt": "2026-07-13T02:36:16.138407Z",
   "mode": "offline",
-  "datasetHash": "sha256:76709039f4475be535f09cff37cbef5ac62d9fe96ce146239a8ebcecd8ca1260",
+  "datasetHash": "sha256:9448e79168c8330a44a0de18bb2c32e2df14ac56c9955c302ee01a128b180a4e",
   "observationCount": 64,
   "newsCount": 48,
   "companyCount": 4,
-  "lastSuccessfulRefresh": "2026-07-13T01:35:16.802999Z",
+  "lastAttemptAt": "2026-07-13T02:36:16.138407Z",
+  "lastSuccessfulRefresh": "2026-07-11T00:00:00Z",
   "companyFreshness": [
     {
       "companyId": "MFC",

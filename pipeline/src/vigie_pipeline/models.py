@@ -158,6 +158,7 @@ class DatasetManifest(CanonicalModel):
     observation_count: int = Field(ge=0)
     news_count: int = Field(ge=0)
     company_count: int = Field(ge=0)
+    last_attempt_at: datetime | None = None
     last_successful_refresh: datetime
     company_freshness: list[CompanyFreshness]
 

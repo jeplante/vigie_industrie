@@ -60,6 +60,8 @@ export function validateManifest(value: unknown): DatasetManifest {
   requireString(value, "generatedAt");
   requireString(value, "mode");
   requireString(value, "datasetHash");
+  requireString(value, "lastAttemptAt");
+  requireString(value, "lastSuccessfulRefresh");
   if (!Array.isArray(value.companyFreshness)) {
     throw new Error("Fraîcheur par compagnie absente du manifeste.");
   }
