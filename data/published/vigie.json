@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-13T11:28:17.837667Z",
+  "generatedAt": "2026-07-14T15:15:02.096045Z",
   "companies": [
     {
       "id": "MFC",
@@ -3161,6 +3161,182 @@
         "confidence": 1.0,
         "warnings": []
       }
+    },
+    {
+      "id": "GWO-2026-T1-core_eps",
+      "companyId": "GWO",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 1.37,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1.37 $",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 1.11,
+        "displayValue": "1,11 $",
+        "periodLabel": "T1 2025",
+        "change": 0.23423423423423423,
+        "changeUnit": "PERCENT",
+        "displayChange": "+23,4%"
+      },
+      "direction": "up",
+      "note": "Base EPS2 $ 1.37",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf",
+        "title": "gwo-results T1 2026 quarterly report",
+        "publishedAt": "2026-05-06",
+        "fetchedAt": "2026-07-14T15:14:02.507554Z",
+        "documentHash": "sha256:070218ed48e7f0bb9d51bae16e6fba81da961a8cdc8fe2ffad89f51144e294bb",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "GWO-2026-T1-core_earnings",
+      "companyId": "GWO",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "core_earnings",
+      "label": "Résultat activités de base",
+      "value": 1.239,
+      "unit": "CAD_BILLION",
+      "displayValue": "1.239 G$",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 1.03,
+        "displayValue": "1,03 G$",
+        "periodLabel": "T1 2025",
+        "change": 0.20291262135922336,
+        "changeUnit": "PERCENT",
+        "displayChange": "+20,3%"
+      },
+      "direction": "up",
+      "note": "Base earnings1 $ 1,239",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf",
+        "title": "gwo-results T1 2026 quarterly report",
+        "publishedAt": "2026-05-06",
+        "fetchedAt": "2026-07-14T15:14:02.508260Z",
+        "documentHash": "sha256:070218ed48e7f0bb9d51bae16e6fba81da961a8cdc8fe2ffad89f51144e294bb",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "GWO-2026-T1-licat_ratio",
+      "companyId": "GWO",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 129.0,
+      "unit": "PERCENT",
+      "displayValue": "129 %",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 130.0,
+        "displayValue": "130 %",
+        "periodLabel": "T1 2025",
+        "change": -0.007692307692307693,
+        "changeUnit": "PERCENT",
+        "displayChange": "-0,8%"
+      },
+      "direction": "down",
+      "note": "LICAT ratio5 of 129%",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf",
+        "title": "gwo-results T1 2026 quarterly report",
+        "publishedAt": "2026-05-06",
+        "fetchedAt": "2026-07-14T15:14:02.508902Z",
+        "documentHash": "sha256:070218ed48e7f0bb9d51bae16e6fba81da961a8cdc8fe2ffad89f51144e294bb",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "GWO-2026-T1-total_client_assets",
+      "companyId": "GWO",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "total_client_assets",
+      "label": "Actifs clients totaux",
+      "value": 3.3,
+      "unit": "CAD_TRILLION",
+      "displayValue": "3.3 T$",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 3.0,
+        "displayValue": "3,0 Bil $",
+        "periodLabel": "T1 2025",
+        "change": 0.09999999999999994,
+        "changeUnit": "PERCENT",
+        "displayChange": "+10,0%"
+      },
+      "direction": "up",
+      "note": "Total client assets4 of $3.3 trillion",
+      "source": {
+        "sourceId": "gwo-results",
+        "url": "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf",
+        "title": "gwo-results T1 2026 quarterly report",
+        "publishedAt": "2026-05-06",
+        "fetchedAt": "2026-07-14T15:14:02.509525Z",
+        "documentHash": "sha256:070218ed48e7f0bb9d51bae16e6fba81da961a8cdc8fe2ffad89f51144e294bb",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
     }
   ],
   "news": [
@@ -4526,8 +4702,8 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-13T11:27:41.103778Z",
-        "documentHash": "sha256:40c1eba2271c3dd7fb6cde41237efecddc6b596a85be2be2295896ae6deb32c3"
+        "fetchedAt": "2026-07-14T15:14:13.341780Z",
+        "documentHash": "sha256:79b73fb04c85be89b15eb4fef2365aaa60173e057a547ebe316a646227f578ed"
       },
       "title": "Asia Care Survey 2026",
       "originalSummary": "Asia Care Survey 2026 For years, Manulife’s Asia Care Survey has explored the health and wealth well-being of people across Asia, uncovering their evolving needs, values, and aspirations. The latest 2026 edition, which surveyed over 9,000 adults across nine Asia markets, highlights a less discussed reality of longevity. As life expectancy increases, the period during which adults rely on others in their later years is also becoming extended. In Asia, it is estimated that older adults may require",
@@ -4545,7 +4721,7 @@
         "réduction de la dépendance familiale",
         "adoption insuffisante des investissements",
         "conversations familiales sur le vieillissement",
-        "soins de santé préventifs",
+        "soins de longue durée et dépendance prolongée",
         "responsabilités familiales et génération sandwich"
       ],
       "quality": {
@@ -4557,9 +4733,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-13T11:27:51.163181Z",
+          "executedAt": "2026-07-14T15:14:36.727604Z",
           "taskId": "summarize_news_mfc-official-news_948c4064159d",
-          "sourceFingerprint": "sha256:40c1eba2271c3dd7fb6cde41237efecddc6b596a85be2be2295896ae6deb32c3",
+          "sourceFingerprint": "sha256:79b73fb04c85be89b15eb4fef2365aaa60173e057a547ebe316a646227f578ed",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4578,23 +4754,23 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-13T11:27:52.084472Z",
-        "documentHash": "sha256:a8616937dd6452db15cc756fff2c9ce0525daf1fa0936675c56b76504c28f22f"
+        "fetchedAt": "2026-07-14T15:14:37.259865Z",
+        "documentHash": "sha256:975b2bc9b699c046aa9afa43bdffaddceeaa3f674f657949ad2d27d0a0103fcc"
       },
       "title": "Manulife Named to Corporate Knights’ Best 50 Corporate Citizens in Canada for Sixth Consecutive Year",
       "originalSummary": "Recognition highlights Manulife’s leadership across its investment activities as a global asset manager and asset owner",
-      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire d'actifs mondial et propriétaire d'actifs. Le classement évalue les organisations canadiennes selon des indicateurs de performance en matière de durabilité, notamment la gestion des ressources, les revenus durables et les investissements, la gestion des employés et des finances, ainsi que la performance des fournisseurs. Manulife a également été reconnue comme l'un des principaux gestionnaires d'investissements en capital naturel au monde et a poursuivi ses progrès dans la mise en œuvre de son Plan d'action climatique, qui comprend un engagement à atteindre des émissions nettes zéro dans son portefeuille d'investissements du Compte général d'ici 2050 et à réduire les émissions absolues de ses actifs immobiliers, forestiers et agricoles détenus et exploités de 40 % d'ici 2035 par rapport à une base de référence de 2019.",
+      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire d'actifs mondial et propriétaire d'actifs. Le classement évalue les organisations canadiennes selon des indicateurs de performance en matière de développement durable, notamment la gestion des ressources, les revenus durables et les investissements, la gestion des employés et des finances, et la performance des fournisseurs. Manulife a également été reconnue comme l'un des principaux gestionnaires d'investissements en capital naturel au monde, avec un engagement à atteindre zéro émission nette dans son portefeuille d'investissements du Compte général d'ici 2050 et à réduire les émissions absolues de ses actifs immobiliers, forestiers et agricoles de 40% d'ici 2035.",
       "categories": [
         "strategy",
-        "risk"
+        "digital_transformation"
       ],
       "importance": "medium",
       "themes": [
         "durabilité",
         "gestion des actifs",
         "changement climatique",
-        "responsabilité sociale des entreprises",
-        "investissements durables"
+        "capital naturel",
+        "investissements responsables"
       ],
       "quality": {
         "status": "validated",
@@ -4605,9 +4781,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-13T11:27:56.170631Z",
+          "executedAt": "2026-07-14T15:14:41.074197Z",
           "taskId": "summarize_news_mfc-official-news_7582deb92f60",
-          "sourceFingerprint": "sha256:a8616937dd6452db15cc756fff2c9ce0525daf1fa0936675c56b76504c28f22f",
+          "sourceFingerprint": "sha256:975b2bc9b699c046aa9afa43bdffaddceeaa3f674f657949ad2d27d0a0103fcc",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4626,8 +4802,8 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-13T11:27:56.796384Z",
-        "documentHash": "sha256:9b37bde6b209af0ee4e0c2f323ea9b8c81a4c5a362c47a389c081dc3509c5549"
+        "fetchedAt": "2026-07-14T15:14:41.630287Z",
+        "documentHash": "sha256:b4355b2bcd56e48a391a9bf6414d6aa6f199a82a09819d93997edd51d614f7ee"
       },
       "title": "As Life Milestones Shift, Manulife Urges Canadians to Review Their Financial Protection",
       "originalSummary": "Many Canadians continue to rely on traditional life events like marriage or homeownership – potentially leaving gaps in coverage as financial responsibilities evolve",
@@ -4656,9 +4832,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-13T11:28:01.239101Z",
+          "executedAt": "2026-07-14T15:14:45.575412Z",
           "taskId": "summarize_news_mfc-official-news_2dcd9f129042",
-          "sourceFingerprint": "sha256:9b37bde6b209af0ee4e0c2f323ea9b8c81a4c5a362c47a389c081dc3509c5549",
+          "sourceFingerprint": "sha256:b4355b2bcd56e48a391a9bf6414d6aa6f199a82a09819d93997edd51d614f7ee",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4677,12 +4853,12 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-launches-takaful-wealth-protection-and-legacy-solution-as-demand-grows-for-islamic-wealth-transfer",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-13T11:28:01.825393Z",
-        "documentHash": "sha256:cdbaecf407305f7a0549cffcbd7ba9bbd7ebd955f58418ef23e9c82b1a9ae31e"
+        "fetchedAt": "2026-07-14T15:14:48.996452Z",
+        "documentHash": "sha256:c4e65be727d145ba8e82aed773e908382ba3cfe22410ce84ac4b3f69b634446b"
       },
       "title": "Manulife Launches Takaful Wealth Protection and Legacy Solution as Demand Grows for Islamic Wealth Transfer and Intergenerational Planning",
       "originalSummary": "New Takaful solution developed to support wealth protection, succession planning and intergenerational transfer",
-      "generatedSummary": "Manulife a lancé Manulife Maseera Indexed Takaful (MMIT), une solution de protection de patrimoine et de planification successorale conforme à la Charia, destinée aux familles fortunées et propriétaires d'entreprises au Moyen-Orient, en Afrique du Nord et en Asie du Sud. Cette solution a été développée sur plus de deux ans avec l'expertise de savants islamiques et s'appuie sur la plateforme mondiale de Manulife pour les clients fortunés. Elle offre des fonctionnalités incluant l'accès à la liquidité, des opportunités de croissance liées à l'indice S&P 500 Sharia et la nomination Hibah pour faciliter le transfert d'actifs selon les principes islamiques. Le lancement s'inscrit dans l'engagement croissant de Manulife dans la région, notamment l'établissement récent d'un bureau au DIFC à Dubaï en 2025.",
+      "generatedSummary": "Manulife a lancé le 22 juin 2026 Manulife Maseera Indexed Takaful (MMIT), une solution de protection de patrimoine et de planification successorale conforme à la Charia, destinée aux familles fortunées et propriétaires d'entreprises au Moyen-Orient, en Afrique du Nord et en Asie du Sud. Cette solution a été développée sur plus de deux ans avec l'expertise de savants islamiques et s'appuie sur la plateforme mondiale de Manulife pour les clients fortunés. Elle offre des fonctionnalités incluant l'accès à la liquidité, des opportunités de croissance liées à l'indice S&P 500 Sharia et la nomination Hibah pour faciliter le transfert d'actifs selon les principes islamiques. Le lancement s'inscrit dans l'engagement croissant de Manulife dans la région, notamment l'établissement de son bureau au DIFC à Dubaï en 2025, qui sert de centre stratégique reliant les opérations de Manulife à Bermuda, Hong Kong, Singapour et aux Émirats arabes unis.",
       "categories": [
         "product",
         "wealth_management"
@@ -4705,9 +4881,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-13T11:28:13.766498Z",
+          "executedAt": "2026-07-14T15:14:57.811971Z",
           "taskId": "summarize_news_mfc-official-news_9fe23f69575f",
-          "sourceFingerprint": "sha256:cdbaecf407305f7a0549cffcbd7ba9bbd7ebd955f58418ef23e9c82b1a9ae31e",
+          "sourceFingerprint": "sha256:c4e65be727d145ba8e82aed773e908382ba3cfe22410ce84ac4b3f69b634446b",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4726,8 +4902,8 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-13T11:28:14.394234Z",
-        "documentHash": "sha256:42d1f95cdeaf7b45c1629a966aab85d222ef7121f28723d91dd76ce62cdf733b"
+        "fetchedAt": "2026-07-14T15:14:58.510958Z",
+        "documentHash": "sha256:ecdba397991e37cc7cde2073c0fa92cc1ae1671d7d8a086ec039d387b2b2d95b"
       },
       "title": "Manulife Financial Corporation announces interest rate reset on Limited Recourse Capital Notes Series 1",
       "originalSummary": "Manulife today announced the interest rate for its $2 billion principal amount of 3.375% Limited Recourse Capital Notes Series 1",
@@ -4738,9 +4914,9 @@
       "importance": "medium",
       "themes": [
         "réinitialisation des taux d'intérêt",
-        "capital subordiné",
-        "gestion de la dette",
-        "instruments de capital"
+        "billets de capital à recours limité",
+        "gestion du capital",
+        "structure de financement"
       ],
       "quality": {
         "status": "validated",
@@ -4751,9 +4927,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-13T11:28:17.283778Z",
+          "executedAt": "2026-07-14T15:15:01.663233Z",
           "taskId": "summarize_news_mfc-official-news_620cbf469001",
-          "sourceFingerprint": "sha256:42d1f95cdeaf7b45c1629a966aab85d222ef7121f28723d91dd76ce62cdf733b",
+          "sourceFingerprint": "sha256:ecdba397991e37cc7cde2073c0fa92cc1ae1671d7d8a086ec039d387b2b2d95b",
           "confidence": 0.95,
           "warnings": []
         }

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-13T11:28:17.837667Z",
+  "generatedAt": "2026-07-14T15:15:02.096045Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 1,
-  "sourcesFailed": 7,
+  "sourcesSucceeded": 2,
+  "sourcesFailed": 6,
   "observationsAdded": 4,
   "observationsUpdated": 0,
   "overridesApplied": 0,
@@ -21,23 +21,18 @@
       "sourceId": "slf-results"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
-      "sourceId": "gwo-results"
-    },
-    {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
@@ -46,8 +41,8 @@
       "sourceId": "slf-official-news"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/news-and-events/news.html",
+      "code": "no_documents_discovered",
+      "message": "Aucun document d’actualité découvert.",
       "sourceId": "gwo-official-news"
     },
     {
@@ -81,29 +76,31 @@
     {
       "sourceId": "gwo-results",
       "companyId": "GWO",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
+      "status": "success",
+      "documentsDiscovered": 2,
+      "documentUrls": [
+        "https://www.greatwestlifeco.com/news-and-events/events/2026/1st-quarter-2026-conference-call-and-webcast.html",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf"
+      ],
+      "periodIds": [
+        "2026-T1"
+      ],
       "anthropicCalls": 0
     },
     {
       "sourceId": "iag-results",
       "companyId": "IAG",
       "status": "warning",
-      "documentsDiscovered": 4,
+      "documentsDiscovered": 3,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-news-release.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/annuel/2026/en/foa-annualreport2025.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t4/q4-2025-financial-statements-acc.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t4/q4-2025-mda.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-financial-statements.pdf",
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-mda.pdf",
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-sip-pdf.pdf"
       ],
       "periodIds": [
-        "2025-AN",
         "2026-T1"
       ],
-      "message": "iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2025: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError; iag-results/T1 2026: Requête Anthropic refusée: BadRequestError; iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
       "anthropicCalls": 3
     },
     {
@@ -137,11 +134,11 @@
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
-      "status": "failed",
+      "status": "warning",
       "documentsDiscovered": 0,
       "documentUrls": [],
       "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/news-and-events/news.html",
+      "message": "Aucun document d’actualité découvert.",
       "anthropicCalls": 0
     },
     {
