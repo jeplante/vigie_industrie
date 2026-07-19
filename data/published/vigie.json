@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-18T11:19:39.776960Z",
+  "generatedAt": "2026-07-19T11:32:09.597077Z",
   "companies": [
     {
       "id": "MFC",
@@ -4702,12 +4702,12 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-18T11:19:04.525142Z",
-        "documentHash": "sha256:ff392cdd355fc87cb2f157b0e94e8fbd7168c20488126cbaac75f732833ea56e"
+        "fetchedAt": "2026-07-19T11:31:35.462260Z",
+        "documentHash": "sha256:9a43b42ae30f19d251849f8193f39078c627f7b690f34e022ce457fa5b08cf72"
       },
       "title": "Asia Care Survey 2026",
       "originalSummary": "Asia Care Survey 2026 For years, Manulife’s Asia Care Survey has explored the health and wealth well-being of people across Asia, uncovering their evolving needs, values, and aspirations. The latest 2026 edition, which surveyed over 9,000 adults across nine Asia markets, highlights a less discussed reality of longevity. As life expectancy increases, the period during which adults rely on others in their later years is also becoming extended. In Asia, it is estimated that older adults may require",
-      "generatedSummary": "L'enquête Asia Care Survey 2026 de Manulife, menée auprès de plus de 9 000 adultes dans neuf marchés asiatiques en février-mars 2026, révèle un changement majeur dans les priorités de retraite et de patrimoine en Asie. Les résultats montrent que 82% des personnes considèrent l'indépendance comme l'héritage le plus significatif à laisser à leurs familles, plutôt que des actifs tangibles. L'enquête identifie un écart critique entre les intentions et les actions : bien que 70% reconnaissent l'importance des conversations familiales sur le vieillissement, seulement 58% les ont réellement. En matière de santé, 64% comprennent que la bonne santé est fondamentale à l'indépendance, mais seulement 50% ont pris des mesures concrètes. Sur le plan financier, les Asiatiques prévoient d'allouer 68% de leurs actifs à leur propre indépendance et seulement 32% à leurs enfants, avec une préférence persistante pour l'épargne (79%) plutôt que les investissements (32% en actions, 23% en fonds communs). L'enquête souligne également que 74% souhaitent une forme de travail après 65 ans, et que près de 50% soutiennent financièrement des membres de la famille, ce qui limite leur capacité à atteindre l'indépendance financière.",
+      "generatedSummary": "L'enquête Asia Care Survey 2026 de Manulife, menée auprès de plus de 9 000 adultes dans neuf marchés asiatiques en février-mars 2026, révèle un changement majeur dans les priorités de retraite et de patrimoine en Asie. Les résultats montrent que 82% des personnes considèrent l'indépendance comme l'héritage le plus significatif à laisser à leurs familles, plutôt que des actifs tangibles. L'enquête identifie un écart critique entre les intentions et les actions : bien que 70% reconnaissent l'importance des conversations familiales ouvertes sur le vieillissement, seulement 58% les ont réellement. Sur le plan financier, les Asiatiques prévoient d'allouer 68% de leurs actifs à leur propre indépendance et seulement 32% à leurs enfants. Cependant, l'adoption des investissements reste faible (32% en actions, 23% en fonds communs), tandis que 52% augmentent leurs épargnes en espèces. L'enquête souligne également que 74% souhaitent une forme de travail après 65 ans, et que près de 50% des adultes asiatiques soutiennent financièrement des membres de leur famille, ce qui limite leur capacité à atteindre l'indépendance financière.",
       "categories": [
         "wealth_management",
         "strategy",
@@ -4715,16 +4715,14 @@
       ],
       "importance": "high",
       "themes": [
-        "indépendance financière",
-        "planification de la retraite",
-        "bien-être santé et richesse",
-        "changement de mentalité familiale",
-        "écart intention-action",
-        "retraite progressive",
-        "dépendance aux soins de longue durée",
-        "diversification des investissements",
-        "conversations familiales",
-        "soutien financier intergénérationnel"
+        "indépendance financière et santé",
+        "planification de la retraite par étapes",
+        "écart entre intention et action",
+        "réduction de la dépendance familiale",
+        "adoption insuffisante des investissements",
+        "conversations familiales sur le vieillissement",
+        "responsabilités familiales et sécurité financière",
+        "soins de longue durée et longévité"
       ],
       "quality": {
         "status": "validated",
@@ -4735,9 +4733,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-18T11:19:15.781058Z",
+          "executedAt": "2026-07-19T11:31:46.704804Z",
           "taskId": "summarize_news_mfc-official-news_948c4064159d",
-          "sourceFingerprint": "sha256:ff392cdd355fc87cb2f157b0e94e8fbd7168c20488126cbaac75f732833ea56e",
+          "sourceFingerprint": "sha256:9a43b42ae30f19d251849f8193f39078c627f7b690f34e022ce457fa5b08cf72",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4756,24 +4754,23 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-18T11:19:16.426489Z",
-        "documentHash": "sha256:673ddc77c4e58e04faa757390aec651d29b244e0e60345e4b9939ad10bc0c01b"
+        "fetchedAt": "2026-07-19T11:31:47.666900Z",
+        "documentHash": "sha256:b91c174d28492042cd42d90dee7f06168032e075a58d9eadeb8385ac0ca3176f"
       },
       "title": "Manulife Named to Corporate Knights’ Best 50 Corporate Citizens in Canada for Sixth Consecutive Year",
       "originalSummary": "Recognition highlights Manulife’s leadership across its investment activities as a global asset manager and asset owner",
-      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire d'actifs mondial et propriétaire d'actifs. Le classement évalue les organisations canadiennes selon des indicateurs de performance en matière de durabilité, notamment la gestion des ressources, les revenus durables et les investissements, la gestion des employés et des finances, ainsi que la performance des fournisseurs. Manulife a également été reconnue comme l'un des principaux gestionnaires d'investissements en capital naturel au monde et continue de progresser dans la mise en œuvre de son Plan d'action climatique, qui vise à atteindre des émissions nettes zéro dans son portefeuille d'investissements du Compte général d'ici 2050 et à réduire les émissions absolues de ses actifs immobiliers, forestiers et agricoles de 40 % d'ici 2035 par rapport à une base de référence de 2019.",
+      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire d'actifs mondial et propriétaire d'actifs. Le classement évalue les organisations canadiennes selon des indicateurs de performance en matière de développement durable, notamment la gestion des ressources, les revenus durables et les investissements, la gestion des employés et des finances, ainsi que la performance des fournisseurs. Manulife a également été reconnue comme l'un des principaux gestionnaires d'investissements en capital naturel au monde, avec un engagement à atteindre zéro émission nette dans son portefeuille d'investissements du Compte général d'ici 2050 et à réduire les émissions absolues de ses actifs immobiliers, forestiers et agricoles de 40% d'ici 2035 par rapport à 2019.",
       "categories": [
         "strategy",
-        "regulation"
+        "digital_transformation"
       ],
       "importance": "medium",
       "themes": [
         "durabilité",
-        "reconnaissance corporative",
         "gestion des actifs",
         "changement climatique",
-        "capital naturel",
-        "investissements responsables"
+        "investissements responsables",
+        "capital naturel"
       ],
       "quality": {
         "status": "validated",
@@ -4784,9 +4781,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-18T11:19:21.861599Z",
+          "executedAt": "2026-07-19T11:31:51.736789Z",
           "taskId": "summarize_news_mfc-official-news_7582deb92f60",
-          "sourceFingerprint": "sha256:673ddc77c4e58e04faa757390aec651d29b244e0e60345e4b9939ad10bc0c01b",
+          "sourceFingerprint": "sha256:b91c174d28492042cd42d90dee7f06168032e075a58d9eadeb8385ac0ca3176f",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4805,8 +4802,8 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-18T11:19:22.575368Z",
-        "documentHash": "sha256:9b3d48c193a215a684bd073dd4100aaffb5d428327d6b0e95a04baf52e693edf"
+        "fetchedAt": "2026-07-19T11:31:52.719584Z",
+        "documentHash": "sha256:de4e75d7bed98828dd9f6fa4e99f666dada61f337100fa4428499825e1cf90e1"
       },
       "title": "As Life Milestones Shift, Manulife Urges Canadians to Review Their Financial Protection",
       "originalSummary": "Many Canadians continue to rely on traditional life events like marriage or homeownership – potentially leaving gaps in coverage as financial responsibilities evolve",
@@ -4835,9 +4832,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-18T11:19:26.425027Z",
+          "executedAt": "2026-07-19T11:31:57.959356Z",
           "taskId": "summarize_news_mfc-official-news_2dcd9f129042",
-          "sourceFingerprint": "sha256:9b3d48c193a215a684bd073dd4100aaffb5d428327d6b0e95a04baf52e693edf",
+          "sourceFingerprint": "sha256:de4e75d7bed98828dd9f6fa4e99f666dada61f337100fa4428499825e1cf90e1",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4856,26 +4853,24 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-launches-takaful-wealth-protection-and-legacy-solution-as-demand-grows-for-islamic-wealth-transfer",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-18T11:19:27.100520Z",
-        "documentHash": "sha256:71def01afae15c38efdd0b727c7e5438115a3fe0385dcb589fedaf59ecd7a11e"
+        "fetchedAt": "2026-07-19T11:31:58.977855Z",
+        "documentHash": "sha256:1579ef0360777ded1eebd449070ec9278ec8850f7404f6ac9ce6302b4e89b9c7"
       },
       "title": "Manulife Launches Takaful Wealth Protection and Legacy Solution as Demand Grows for Islamic Wealth Transfer and Intergenerational Planning",
       "originalSummary": "New Takaful solution developed to support wealth protection, succession planning and intergenerational transfer",
-      "generatedSummary": "Manulife a lancé le 22 juin 2026 Manulife Maseera Indexed Takaful (MMIT), une solution de protection de patrimoine et de planification successorale conforme à la Charia, destinée aux familles fortunées et propriétaires d'entreprises au Moyen-Orient, en Afrique du Nord et en Asie du Sud. Cette solution a été développée sur plus de deux ans avec l'expertise de savants islamiques et s'appuie sur la plateforme mondiale de Manulife pour les clients fortunés. Elle intègre des caractéristiques telles que l'accès à la liquidité, des opportunités de croissance liées à l'indice S&P 500 Sharia et la nomination Hibah facultative. Le lancement s'inscrit dans l'engagement croissant de Manulife dans la région, notamment l'établissement de son bureau au DIFC à Dubaï en 2025, qui sert de centre stratégique reliant les plateformes de Manulife à Bermude, Hong Kong, Singapour et aux Émirats arabes unis.",
+      "generatedSummary": "Manulife a lancé Manulife Maseera Indexed Takaful (MMIT), une solution de protection de patrimoine et de planification successorale conforme à la Charia, destinée aux familles fortunées et propriétaires d'entreprises au Moyen-Orient, en Afrique du Nord et en Asie du Sud. Cette solution a été développée sur plus de deux ans avec l'expertise de savants islamiques et s'appuie sur la plateforme mondiale de Manulife pour les clients fortunés. Elle offre des fonctionnalités incluant l'accès à la liquidité, des opportunités de croissance liées à l'indice S&P 500 Sharia et la nomination Hibah pour faciliter le transfert d'actifs selon les principes islamiques. Le lancement s'inscrit dans l'engagement croissant de Manulife dans la région, notamment l'établissement récent d'un bureau au Dubai International Financial Centre (DIFC) en 2025.",
       "categories": [
         "product",
         "wealth_management"
       ],
       "importance": "medium",
       "themes": [
-        "Islamic finance",
-        "Takaful solutions",
-        "Wealth protection",
-        "Succession planning",
-        "Intergenerational transfer",
-        "High-net-worth clients",
-        "Shariah compliance",
-        "Dubai expansion"
+        "planification successorale",
+        "protection du patrimoine",
+        "solutions conformes à la Charia",
+        "planification intergénérationnelle",
+        "clients fortunés",
+        "expansion régionale"
       ],
       "quality": {
         "status": "validated",
@@ -4886,9 +4881,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-18T11:19:31.698443Z",
+          "executedAt": "2026-07-19T11:32:02.733250Z",
           "taskId": "summarize_news_mfc-official-news_9fe23f69575f",
-          "sourceFingerprint": "sha256:71def01afae15c38efdd0b727c7e5438115a3fe0385dcb589fedaf59ecd7a11e",
+          "sourceFingerprint": "sha256:1579ef0360777ded1eebd449070ec9278ec8850f7404f6ac9ce6302b4e89b9c7",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4907,8 +4902,8 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-18T11:19:32.338738Z",
-        "documentHash": "sha256:91d161e95e679f0b2328393c475f63b0bb37393f6a874eb96f7e6f79d379a242"
+        "fetchedAt": "2026-07-19T11:32:03.636628Z",
+        "documentHash": "sha256:7b1e053ba5d4e755efed95069a7d72e90b8a34e2bdda965a632eb0baa57c1ba8"
       },
       "title": "Manulife Financial Corporation announces interest rate reset on Limited Recourse Capital Notes Series 1",
       "originalSummary": "Manulife today announced the interest rate for its $2 billion principal amount of 3.375% Limited Recourse Capital Notes Series 1",
@@ -4932,9 +4927,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-18T11:19:39.241736Z",
+          "executedAt": "2026-07-19T11:32:08.441147Z",
           "taskId": "summarize_news_mfc-official-news_620cbf469001",
-          "sourceFingerprint": "sha256:91d161e95e679f0b2328393c475f63b0bb37393f6a874eb96f7e6f79d379a242",
+          "sourceFingerprint": "sha256:7b1e053ba5d4e755efed95069a7d72e90b8a34e2bdda965a632eb0baa57c1ba8",
           "confidence": 0.95,
           "warnings": []
         }
