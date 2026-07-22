@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-21T12:02:13.912229Z",
+  "generatedAt": "2026-07-22T12:05:04.852271Z",
   "companies": [
     {
       "id": "MFC",
@@ -4690,158 +4690,6 @@
       }
     },
     {
-      "id": "news-948c4064159da4f72505",
-      "companyIds": [
-        "MFC"
-      ],
-      "periodId": "2026-T3",
-      "periodKey": "T3",
-      "publishedAt": "2026-07-07",
-      "source": {
-        "type": "official_release",
-        "name": "Manuvie",
-        "url": "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
-        "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-21T12:01:38.219749Z",
-        "documentHash": "sha256:42dae6cab640de1504434b40975ad9859438216a50f62aafb1f246f2d290c8dc"
-      },
-      "title": "Asia Care Survey 2026",
-      "originalSummary": "Asia Care Survey 2026 For years, Manulife’s Asia Care Survey has explored the health and wealth well-being of people across Asia, uncovering their evolving needs, values, and aspirations. The latest 2026 edition, which surveyed over 9,000 adults across nine Asia markets, highlights a less discussed reality of longevity. As life expectancy increases, the period during which adults rely on others in their later years is also becoming extended. In Asia, it is estimated that older adults may require",
-      "generatedSummary": "L'enquête Asia Care Survey 2026 de Manulife, menée auprès de plus de 9 000 adultes dans neuf marchés asiatiques en février-mars 2026, révèle un changement majeur dans les priorités de retraite et de patrimoine en Asie. Les résultats montrent que 82% des personnes considèrent l'indépendance comme l'héritage le plus significatif à laisser à leurs familles, plutôt que des actifs tangibles. L'enquête identifie un écart critique entre les intentions et les actions : bien que 70% reconnaissent l'importance des conversations familiales sur le vieillissement, seulement 58% les ont réellement. Sur le plan financier, les Asiatiques prévoient d'allouer 68% de leurs actifs à leur propre indépendance et seulement 32% à leurs enfants. Cependant, l'adoption des investissements reste faible (32% en actions, 23% en fonds communs), tandis que 52% augmentent leurs épargnes en espèces. L'enquête souligne également que 74% souhaitent une forme de travail après 65 ans, et que près de 50% des adultes asiatiques soutiennent financièrement des membres de leur famille, ce qui limite leur capacité à atteindre l'indépendance financière.",
-      "categories": [
-        "wealth_management",
-        "strategy",
-        "product"
-      ],
-      "importance": "high",
-      "themes": [
-        "indépendance financière et personnelle",
-        "planification de la retraite par étapes",
-        "écart entre intention et action",
-        "réduction de la dépendance familiale",
-        "adoption insuffisante des investissements",
-        "conversations familiales sur le vieillissement",
-        "soins de longue durée et dépendance prolongée",
-        "responsabilités familiales et génération sandwich"
-      ],
-      "quality": {
-        "status": "validated",
-        "extractionMethod": "anthropic",
-        "confidence": 0.95,
-        "warnings": [],
-        "llmTrace": {
-          "provider": "anthropic",
-          "model": "claude-haiku-4-5",
-          "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-21T12:01:44.555158Z",
-          "taskId": "summarize_news_mfc-official-news_948c4064159d",
-          "sourceFingerprint": "sha256:42dae6cab640de1504434b40975ad9859438216a50f62aafb1f246f2d290c8dc",
-          "confidence": 0.95,
-          "warnings": []
-        }
-      }
-    },
-    {
-      "id": "news-7582deb92f60a738842f",
-      "companyIds": [
-        "MFC"
-      ],
-      "periodId": "2026-T2",
-      "periodKey": "T2",
-      "publishedAt": "2026-06-24",
-      "source": {
-        "type": "official_release",
-        "name": "Manuvie",
-        "url": "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year",
-        "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-21T12:01:45.083524Z",
-        "documentHash": "sha256:8a8204c8ee8887c5ce8b65122c9c6df03012caf75a6e952cd35587690cfb857f"
-      },
-      "title": "Manulife Named to Corporate Knights’ Best 50 Corporate Citizens in Canada for Sixth Consecutive Year",
-      "originalSummary": "Recognition highlights Manulife’s leadership across its investment activities as a global asset manager and asset owner",
-      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire d'actifs mondial et propriétaire d'actifs. Le classement évalue les organisations canadiennes selon des indicateurs de performance en matière de durabilité, notamment la gestion des ressources, les revenus durables et les investissements, la gestion des employés et des finances, ainsi que la performance des fournisseurs. Manulife a également été reconnue comme l'un des principaux gestionnaires d'investissements en capital naturel au monde et continue de progresser dans la mise en œuvre de son Plan d'action climatique, qui vise à atteindre des émissions nettes zéro dans son portefeuille d'investissements du Compte général d'ici 2050 et à réduire les émissions absolues de ses actifs immobiliers, forestiers et agricoles de 40 % d'ici 2035 par rapport à une base de référence de 2019.",
-      "categories": [
-        "strategy",
-        "regulation"
-      ],
-      "importance": "medium",
-      "themes": [
-        "durabilité",
-        "reconnaissance corporative",
-        "gestion des actifs",
-        "changement climatique",
-        "capital naturel",
-        "investissements responsables"
-      ],
-      "quality": {
-        "status": "validated",
-        "extractionMethod": "anthropic",
-        "confidence": 0.95,
-        "warnings": [],
-        "llmTrace": {
-          "provider": "anthropic",
-          "model": "claude-haiku-4-5",
-          "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-21T12:01:50.054374Z",
-          "taskId": "summarize_news_mfc-official-news_7582deb92f60",
-          "sourceFingerprint": "sha256:8a8204c8ee8887c5ce8b65122c9c6df03012caf75a6e952cd35587690cfb857f",
-          "confidence": 0.95,
-          "warnings": []
-        }
-      }
-    },
-    {
-      "id": "news-2dcd9f129042ae5016de",
-      "companyIds": [
-        "MFC"
-      ],
-      "periodId": "2026-T2",
-      "periodKey": "T2",
-      "publishedAt": "2026-06-22",
-      "source": {
-        "type": "official_release",
-        "name": "Manuvie",
-        "url": "https://www.manulife.com/ca/en/about-us/news/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection",
-        "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-21T12:01:50.624777Z",
-        "documentHash": "sha256:10d1f2b70ab605840f852c95a53f856ecb6819489e22f4b2b87ce6ba6130cd45"
-      },
-      "title": "As Life Milestones Shift, Manulife Urges Canadians to Review Their Financial Protection",
-      "originalSummary": "Many Canadians continue to rely on traditional life events like marriage or homeownership – potentially leaving gaps in coverage as financial responsibilities evolve",
-      "generatedSummary": "Manulife Canada encourage les Canadiens à réévaluer leur couverture d'assurance-vie, car de nombreux résidents restent exposés financièrement en raison de lacunes de couverture. L'entreprise souligne que les jalons de vie traditionnels (mariage, achat immobilier, naissance) arrivent plus tard ou pas du tout, ce qui laisse des lacunes entre la couverture actuelle et les besoins réels. Selon l'étude Canadian Insurance Barometer de LIMRA et Life Happens, près d'un tiers des Canadiens déclarent avoir besoin ou avoir besoin de plus de couverture d'assurance-vie. Manulife note également que les changements de carrière et les transitions professionnelles peuvent créer des périodes sans couverture d'avantages sociaux, renforçant le besoin d'une protection au-delà du milieu de travail.",
-      "categories": [
-        "insurance",
-        "product",
-        "wealth_management"
-      ],
-      "importance": "medium",
-      "themes": [
-        "assurance-vie",
-        "protection financière",
-        "jalons de vie",
-        "couverture d'assurance",
-        "responsabilités financières",
-        "transitions professionnelles",
-        "lacunes de couverture"
-      ],
-      "quality": {
-        "status": "validated",
-        "extractionMethod": "anthropic",
-        "confidence": 0.95,
-        "warnings": [],
-        "llmTrace": {
-          "provider": "anthropic",
-          "model": "claude-haiku-4-5",
-          "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-21T12:01:59.620926Z",
-          "taskId": "summarize_news_mfc-official-news_2dcd9f129042",
-          "sourceFingerprint": "sha256:10d1f2b70ab605840f852c95a53f856ecb6819489e22f4b2b87ce6ba6130cd45",
-          "confidence": 0.95,
-          "warnings": []
-        }
-      }
-    },
-    {
       "id": "news-9fe23f69575ffbeef4b7",
       "companyIds": [
         "MFC"
@@ -4931,6 +4779,252 @@
           "executedAt": "2026-07-21T12:02:13.250626Z",
           "taskId": "summarize_news_mfc-official-news_620cbf469001",
           "sourceFingerprint": "sha256:f49cdc3918b58e9a33b9a09cb1e2791ad992fe2bc86d5f95969a3c3fc809043b",
+          "confidence": 0.95,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-b0f7842c6744f7704a1e",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodId": "2026-T3",
+      "periodKey": "T3",
+      "publishedAt": "2026-07-21",
+      "source": {
+        "type": "official_release",
+        "name": "Manuvie",
+        "url": "https://www.manulife.com/ca/en/about-us/news/manulife-to-release-second-quarter-2026-results",
+        "sourceId": "mfc-official-news",
+        "fetchedAt": "2026-07-22T12:04:25.895169Z",
+        "documentHash": "sha256:f2589ec6945c7503f182e64ad48a0fa6550e303fac30768d3509f04f77dc014b"
+      },
+      "title": "Manulife to Release Second Quarter 2026 Results",
+      "originalSummary": "Manulife to Release Second Quarter 2026 Results Posted : July 21, 2026 TORONTO - Manulife Financial Corporation will release its second quarter 2026 financial results after markets close on Wednesday, August 5, 2026, which will be made available at manulife.com/en/investors/results-and-reports . A live webcast and conference call are scheduled for Thursday, August 6, 2026, at 8:00 a.m. (ET) where members of Manulife's executive leadership team will discuss the results, followed by a question and",
+      "generatedSummary": "Manulife Financial Corporation annoncera ses résultats financiers du deuxième trimestre 2026 après la fermeture des marchés le mercredi 5 août 2026. Une webdiffusion en direct et une conférence téléphonique sont prévues le jeudi 6 août 2026 à 8h00 (HE), au cours desquelles l'équipe de direction exécutive de Manulife discutera des résultats, suivie d'une période de questions et réponses avec les analystes.",
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "medium",
+      "themes": [
+        "publication de résultats trimestriels",
+        "conférence d'analystes",
+        "communication aux investisseurs"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "anthropic",
+        "confidence": 0.95,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-07-22T12:04:31.825497Z",
+          "taskId": "summarize_news_mfc-official-news_b0f7842c6744",
+          "sourceFingerprint": "sha256:f2589ec6945c7503f182e64ad48a0fa6550e303fac30768d3509f04f77dc014b",
+          "confidence": 0.95,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-29c8a28b5e4ef42fb79e",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodId": "2026-T3",
+      "periodKey": "T3",
+      "publishedAt": "2026-07-09",
+      "source": {
+        "type": "official_release",
+        "name": "Manuvie",
+        "url": "https://www.manulife.com/ca/en/about-us/news/manulife-achieves-second-consecutive-year-of-mdrt-membership-growth",
+        "sourceId": "mfc-official-news",
+        "fetchedAt": "2026-07-22T12:04:35.754249Z",
+        "documentHash": "sha256:c5ef05c9eb9a77457b247ae80e970b4ef05ee9fb331400f7a76a14d460688a97"
+      },
+      "title": "Manulife Achieves Second Consecutive Year of MDRT Membership Growth, Ranking No. 3 Globally Among Multinational Insurers",
+      "originalSummary": "Outperformance in growth driven by successful efforts to scale a high-quality agency force that is better equipped to serve the evolving needs of customers across Asia",
+      "generatedSummary": "Manulife a annoncé son classement au 3e rang mondial parmi les assureurs multinationaux pour l'adhésion à la Million Dollar Round Table (MDRT) en 2026, avec 4 442 membres MDRT, représentant une augmentation d'environ 10% d'une année à l'autre. Cette croissance reflète le succès de la stratégie « Agency 2.0 » de Manulife, qui se concentre sur la professionnalisation de la distribution par la formation, l'activation numérique et le recrutement de qualité. Des réalisations régionales notables incluent Manulife-Sinochem China au 1er rang mondial en croissance MDRT (32%), Manulife Hong Kong entrant pour la première fois dans le top 10 mondial (9e rang avec 1 577 membres), et Manulife Financial Advisers Singapore affichant une croissance MDRT de 19%. Manulife a également été classée 1ère assureur-vie mondial pour la maturité en IA en 2026 selon l'indice Evident AI, pour la deuxième année consécutive. L'entreprise continue d'investir dans les outils d'IA, notamment AI SalesPro, et a lancé un programme régional de développement MDRT Aspirant en 2026.",
+      "categories": [
+        "product",
+        "distribution",
+        "artificial_intelligence",
+        "strategy"
+      ],
+      "importance": "medium",
+      "themes": [
+        "croissance MDRT",
+        "stratégie Agency 2.0",
+        "maturité en IA",
+        "développement des conseillers",
+        "expansion en Asie",
+        "transformation numérique"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "anthropic",
+        "confidence": 0.95,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-07-22T12:04:40.748528Z",
+          "taskId": "summarize_news_mfc-official-news_29c8a28b5e4e",
+          "sourceFingerprint": "sha256:c5ef05c9eb9a77457b247ae80e970b4ef05ee9fb331400f7a76a14d460688a97",
+          "confidence": 0.95,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-948c4064159da4f72505",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodId": "2026-T3",
+      "periodKey": "T3",
+      "publishedAt": "2026-07-07",
+      "source": {
+        "type": "official_release",
+        "name": "Manuvie",
+        "url": "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
+        "sourceId": "mfc-official-news",
+        "fetchedAt": "2026-07-22T12:04:41.216329Z",
+        "documentHash": "sha256:d09220769413aea9926b2d76bd0c3389e5c4c8f3a9160cecd8259d72b87f49fc"
+      },
+      "title": "Asia Care Survey 2026",
+      "originalSummary": "Asia Care Survey 2026 For years, Manulife’s Asia Care Survey has explored the health and wealth well-being of people across Asia, uncovering their evolving needs, values, and aspirations. The latest 2026 edition, which surveyed over 9,000 adults across nine Asia markets, highlights a less discussed reality of longevity. As life expectancy increases, the period during which adults rely on others in their later years is also becoming extended. In Asia, it is estimated that older adults may require",
+      "generatedSummary": "L'enquête Asia Care Survey 2026 de Manulife, menée auprès de plus de 9 000 adultes dans neuf marchés asiatiques en février-mars 2026, révèle un changement majeur dans les priorités de retraite et de patrimoine en Asie. Les résultats montrent que 82% des personnes considèrent l'indépendance comme l'héritage le plus significatif à laisser à leurs familles, plutôt que des actifs tangibles. L'enquête identifie un écart critique entre les intentions et les actions : bien que 70% reconnaissent l'importance des conversations familiales ouvertes sur le vieillissement, seulement 58% les ont réellement. Sur le plan financier, les Asiatiques prévoient d'allouer 68% de leurs actifs à leur propre indépendance et seulement 32% à leurs enfants. Cependant, l'adoption des investissements reste faible (32% en actions, 23% en fonds communs), tandis que 52% augmentent leurs épargnes en espèces. L'enquête souligne également que 74% souhaitent une forme de travail après 65 ans, et que près de 50% des adultes asiatiques soutiennent financièrement des membres de la famille, ce qui limite leur capacité à atteindre l'indépendance financière.",
+      "categories": [
+        "wealth_management",
+        "strategy",
+        "product"
+      ],
+      "importance": "high",
+      "themes": [
+        "indépendance financière et personnelle",
+        "planification de la retraite par étapes",
+        "écart entre intention et action en matière de prévention santé",
+        "réallocation des actifs vers l'auto-suffisance plutôt que l'héritage",
+        "sous-utilisation des investissements comme moteur de croissance",
+        "responsabilités familiales limitant l'indépendance",
+        "conversations familiales sur le vieillissement et la retraite"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "anthropic",
+        "confidence": 0.95,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-07-22T12:04:47.553403Z",
+          "taskId": "summarize_news_mfc-official-news_948c4064159d",
+          "sourceFingerprint": "sha256:d09220769413aea9926b2d76bd0c3389e5c4c8f3a9160cecd8259d72b87f49fc",
+          "confidence": 0.95,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-7582deb92f60a738842f",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodId": "2026-T2",
+      "periodKey": "T2",
+      "publishedAt": "2026-06-24",
+      "source": {
+        "type": "official_release",
+        "name": "Manuvie",
+        "url": "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year",
+        "sourceId": "mfc-official-news",
+        "fetchedAt": "2026-07-22T12:04:51.280779Z",
+        "documentHash": "sha256:c33f53b68a2c31e20be92dc1cc3323a73d682fecf5ef260bd4b2036a315dfbd0"
+      },
+      "title": "Manulife Named to Corporate Knights’ Best 50 Corporate Citizens in Canada for Sixth Consecutive Year",
+      "originalSummary": "Recognition highlights Manulife’s leadership across its investment activities as a global asset manager and asset owner",
+      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire d'actifs mondial et propriétaire d'actifs. Le classement évalue les organisations canadiennes selon des indicateurs de performance en matière de développement durable, notamment la gestion des ressources, les revenus durables et les investissements, la gestion des employés et des finances, ainsi que la performance des fournisseurs. Manulife a également été reconnue comme l'un des principaux gestionnaires d'investissements en capital naturel au monde, avec un engagement à atteindre zéro émission nette dans son portefeuille d'investissements du Compte général d'ici 2050 et à réduire les émissions absolues de ses actifs immobiliers, forestiers et agricoles de 40% d'ici 2035 par rapport à 2019.",
+      "categories": [
+        "strategy",
+        "digital_transformation"
+      ],
+      "importance": "medium",
+      "themes": [
+        "durabilité",
+        "gestion des actifs",
+        "changement climatique",
+        "investissements responsables",
+        "capital naturel"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "anthropic",
+        "confidence": 0.95,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-07-22T12:04:55.105860Z",
+          "taskId": "summarize_news_mfc-official-news_7582deb92f60",
+          "sourceFingerprint": "sha256:c33f53b68a2c31e20be92dc1cc3323a73d682fecf5ef260bd4b2036a315dfbd0",
+          "confidence": 0.95,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-2dcd9f129042ae5016de",
+      "companyIds": [
+        "MFC"
+      ],
+      "periodId": "2026-T2",
+      "periodKey": "T2",
+      "publishedAt": "2026-06-22",
+      "source": {
+        "type": "official_release",
+        "name": "Manuvie",
+        "url": "https://www.manulife.com/ca/en/about-us/news/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection",
+        "sourceId": "mfc-official-news",
+        "fetchedAt": "2026-07-22T12:04:59.081080Z",
+        "documentHash": "sha256:9f28c7fd843be357ce638f5e2fb26a97b6c944fc1dfe40a73b1a61930d5617cd"
+      },
+      "title": "As Life Milestones Shift, Manulife Urges Canadians to Review Their Financial Protection",
+      "originalSummary": "Many Canadians continue to rely on traditional life events like marriage or homeownership – potentially leaving gaps in coverage as financial responsibilities evolve",
+      "generatedSummary": "Manulife Canada encourage les Canadiens à réévaluer leur couverture d'assurance-vie, soulignant que de nombreux Canadiens restent exposés financièrement en raison de lacunes de couverture. L'entreprise note que les jalons de vie traditionnels (mariage, achat immobilier, naissance) arrivent plus tard ou pas du tout, ce qui peut laisser des lacunes entre la couverture et les besoins actuels. Selon l'étude Canadian Insurance Barometer de LIMRA et Life Happens, près d'un tiers des Canadiens déclarent avoir besoin ou avoir besoin de plus de couverture d'assurance-vie. Manulife souligne également que les changements de carrière et les transitions professionnelles peuvent créer des périodes sans couverture d'avantages sociaux liés à l'emploi, renforçant le besoin d'une protection au-delà du milieu de travail.",
+      "categories": [
+        "insurance",
+        "product",
+        "wealth_management"
+      ],
+      "importance": "medium",
+      "themes": [
+        "assurance-vie",
+        "protection financière",
+        "jalons de vie",
+        "couverture d'assurance",
+        "transitions professionnelles",
+        "lacunes de protection",
+        "responsabilités financières"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "anthropic",
+        "confidence": 0.95,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "anthropic",
+          "model": "claude-haiku-4-5",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-07-22T12:05:03.700467Z",
+          "taskId": "summarize_news_mfc-official-news_2dcd9f129042",
+          "sourceFingerprint": "sha256:9f28c7fd843be357ce638f5e2fb26a97b6c944fc1dfe40a73b1a61930d5617cd",
           "confidence": 0.95,
           "warnings": []
         }
