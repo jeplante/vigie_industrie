@@ -13,7 +13,8 @@ import {
 export class StaticJsonDataProvider implements DataProvider {
   public constructor(
     private readonly baseUrl = `${import.meta.env.BASE_URL}data`,
-    private readonly fetcher: typeof fetch = fetch,
+    private readonly fetcher: typeof fetch = (input, init) =>
+      globalThis.fetch(input, init),
   ) {}
 
   private async load(path: string): Promise<unknown> {
