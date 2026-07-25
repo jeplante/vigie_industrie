@@ -64,13 +64,23 @@ def validate_artifact_set(
         )
     if manifest.mode != report.mode:
         issue("artifact_mode_mismatch", "Le mode du manifeste diffère du rapport.")
-    if report.sources_failed != max(0, report.sources_checked - report.sources_succeeded):
+    if report.source_results:
+        successful_sources = sum(item.status == "success" for item in report.source_results)
+        failed_sources = sum(item.status == "failed" for item in report.source_results)
+        if (
+            len(report.source_results) != report.sources_checked
+            or successful_sources != report.sources_succeeded
+            or failed_sources != report.sources_failed
+        ):
+            issue("source_count_mismatch", "Les compteurs de sources sont incohérents.")
+    elif report.sources_failed != max(0, report.sources_checked - report.sources_succeeded):
         issue("source_count_mismatch", "Les compteurs de sources sont incohérents.")
+    has_source_warning = any(item.status == "warning" for item in report.source_results)
     expected_status = (
         "failed"
         if report.errors
         else "partial"
-        if report.warnings or report.sources_failed
+        if report.warnings or report.sources_failed or has_source_warning
         else "success"
     )
     if report.status != expected_status:

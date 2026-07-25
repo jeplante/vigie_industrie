@@ -96,7 +96,6 @@ class AnthropicProvider:
             response = self.client.messages.parse(
                 model=model,
                 max_tokens=self.config.max_output_tokens,
-                temperature=0,
                 system=f"Analyse financière factuelle. Prompt: {PROMPT_VERSION}",
                 messages=[{"role": "user", "content": prompt}],
                 output_format=output_model,

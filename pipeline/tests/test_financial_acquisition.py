@@ -134,3 +134,45 @@ def test_document_template_tracks_discovered_year_and_quarter(
     assert {item.source.published_at.isoformat() for item in acquisition.observations} == {
         "2032-08-05"
     }
+
+
+def test_sun_life_financial_highlights_page_is_a_deterministic_source(
+    project_config: ProjectConfig,
+    dataset: VigieDataset,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    index = b"""
+    <html><head><title>Q1 2026 financial results</title></head>
+    <body>
+      <h1>Financial highlights Q1 2026</h1>
+      <p>Diluted underlying EPS 1.89 $</p>
+      <p>Underlying net income 1 050 M$</p>
+      <p>SLF Inc. LICAT ratio 143%</p>
+      <p>Assets under management 1 575 G$</p>
+      <p>Published May 6, 2026.</p>
+    </body></html>
+    """
+    monkeypatch.setattr(
+        acquire_module,
+        "BoundedFetcher",
+        lambda **_: FixtureFetcher(index, {}),
+    )
+    source = next(item for item in project_config.sources if item.id == "slf-results")
+    assert str(source.url) == (
+        "https://www.sunlife.com/en/investors/financial-results-and-reports/"
+    )
+
+    acquisition = acquire_source(
+        dataset,
+        source,
+        Settings(anthropic_api_key=None),
+        project_config,
+    )
+
+    assert {item.metric_id for item in acquisition.observations} == {
+        "core_eps",
+        "net_income",
+        "licat_ratio",
+        "assets_under_management",
+    }
+    assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}

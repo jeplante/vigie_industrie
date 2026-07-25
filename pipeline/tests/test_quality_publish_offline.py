@@ -174,7 +174,7 @@ def test_empty_financial_and_news_sources_are_non_blocking_warnings(
     assert results["mfc-results"].status == "warning"
     assert results["mfc-official-news"].status == "warning"
     assert report.sources_succeeded == 0
-    assert report.sources_failed == 2
+    assert report.sources_failed == 0
     assert {(warning.code, warning.source_id) for warning in report.warnings} >= {
         ("no_documents_discovered", "mfc-results"),
         ("no_documents_discovered", "mfc-official-news"),
