@@ -4,6 +4,7 @@ import { renderCompanyTabs } from "../ui/render-company-tabs";
 import { renderPeriodTabs } from "../ui/render-period-tabs";
 import { renderNews } from "../ui/render-news";
 import { renderDashboard } from "../ui/render-dashboard";
+import { renderHistory } from "../ui/render-history";
 import { renderStatus } from "../ui/render-status";
 import {
   availablePeriodsForCompany,
@@ -34,6 +35,8 @@ describe("interface", () => {
   it("sélectionne la période la plus récente propre à chaque compagnie", () => {
     const state = initialState(dataset);
     expect(state.periodId).toBe("2026-T2");
+    expect(state.viewMode).toBe("summary");
+    expect(state.historicalKpi).toBe("core_eps");
     selectCompany(state, "SLF");
     expect(state.periodId).toBe("2025-AN");
     expect(
@@ -110,5 +113,27 @@ describe("interface", () => {
       new KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }),
     );
     expect(document.activeElement).toBe(buttons[1]);
+  });
+
+  it("trace uniquement l’historique trimestriel des compagnies", () => {
+    const container = document.createElement("div");
+    renderHistory(container, dataset, "core_eps");
+
+    expect(container.querySelector("svg")).not.toBeNull();
+    expect(container.querySelectorAll(".history-line")).toHaveLength(2);
+    expect(container.textContent).toContain("Manuvie");
+    expect(container.textContent).toContain("Sun Life");
+    expect(container.textContent).toContain("T2 2026");
+    expect(container.textContent).not.toContain("Annuel 2025");
+  });
+
+  it("permet de basculer l’historique vers la croissance du BPA", () => {
+    const container = document.createElement("div");
+    renderHistory(container, dataset, "core_eps_growth");
+
+    expect(
+      container.querySelector("#history-chart-title")?.textContent,
+    ).toContain("croissance");
+    expect(container.querySelector("svg")?.textContent).toContain("%");
   });
 });

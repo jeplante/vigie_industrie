@@ -1,10 +1,15 @@
 import type { CompanyId, Period, VigieDataset } from "../domain/models";
 
+export type ViewMode = "summary" | "history";
+export type HistoricalKpi = "core_eps" | "core_eps_growth";
+
 export interface AppState {
   dataset: VigieDataset;
   companyId: CompanyId;
   periodId: string | null;
   category: string;
+  viewMode: ViewMode;
+  historicalKpi: HistoricalKpi;
 }
 
 export function initialState(dataset: VigieDataset): AppState {
@@ -15,6 +20,8 @@ export function initialState(dataset: VigieDataset): AppState {
     companyId: company.id,
     periodId: latestPeriodIdForCompany(dataset, company.id),
     category: "all",
+    viewMode: "summary",
+    historicalKpi: "core_eps",
   };
 }
 

@@ -34,34 +34,91 @@
       </section>
 
       <div id="app-content" hidden>
-        <nav aria-label="Choisir une compagnie">
-          <div id="company-tabs" class="company-tabs" role="tablist"></div>
+        <nav class="view-navigation" aria-label="Choisir une vue">
+          <div id="view-tabs" class="view-tabs" role="tablist">
+            <button
+              id="view-tab-summary"
+              class="view-tab"
+              type="button"
+              role="tab"
+              aria-controls="summary-view"
+              aria-selected="true"
+              data-view="summary"
+            >
+              Synthèse
+            </button>
+            <button
+              id="view-tab-history"
+              class="view-tab"
+              type="button"
+              role="tab"
+              aria-controls="history-view"
+              aria-selected="false"
+              data-view="history"
+              tabindex="-1"
+            >
+              Historique
+            </button>
+          </div>
         </nav>
 
-        <section class="period-bar" aria-labelledby="period-heading">
-          <h2 id="period-heading">Période</h2>
-          <div id="period-tabs" class="period-tabs" role="tablist"></div>
+        <section
+          id="summary-view"
+          role="tabpanel"
+          aria-labelledby="view-tab-summary"
+        >
+          <nav aria-label="Choisir une compagnie">
+            <div id="company-tabs" class="company-tabs" role="tablist"></div>
+          </nav>
+
+          <section class="period-bar" aria-labelledby="period-heading">
+            <h2 id="period-heading">Période</h2>
+            <div id="period-tabs" class="period-tabs" role="tablist"></div>
+          </section>
+
+          <section
+            id="company-panel"
+            role="tabpanel"
+            tabindex="0"
+            aria-live="polite"
+          >
+            <div id="company-header"></div>
+            <div id="metrics" class="metrics-grid"></div>
+          </section>
+
+          <section class="news-section" aria-labelledby="news-heading">
+            <div class="section-heading">
+              <h2 id="news-heading">Actualités</h2>
+              <label for="news-category">Catégorie</label>
+              <select id="news-category">
+                <option value="all">Toutes</option>
+              </select>
+            </div>
+            <div id="news" class="news-list"></div>
+          </section>
         </section>
 
         <section
-          id="company-panel"
+          id="history-view"
+          class="history-view"
           role="tabpanel"
-          tabindex="0"
-          aria-live="polite"
+          aria-labelledby="view-tab-history"
+          hidden
         >
-          <div id="company-header"></div>
-          <div id="metrics" class="metrics-grid"></div>
-        </section>
-
-        <section class="news-section" aria-labelledby="news-heading">
-          <div class="section-heading">
-            <h2 id="news-heading">Actualités</h2>
-            <label for="news-category">Catégorie</label>
-            <select id="news-category">
-              <option value="all">Toutes</option>
-            </select>
+          <div class="history-heading">
+            <div>
+              <p class="eyebrow history-eyebrow">Comparaison multi-assureurs</p>
+              <h2>Évolution trimestrielle</h2>
+            </div>
+            <div class="history-control">
+              <label for="history-kpi">Indicateur</label>
+              <select id="history-kpi">
+                <option value="core_eps">BPA de base</option>
+                <option value="core_eps_growth">Croissance du BPA</option>
+              </select>
+            </div>
           </div>
-          <div id="news" class="news-list"></div>
+          <div id="history-chart" aria-live="polite"></div>
         </section>
       </div>
 

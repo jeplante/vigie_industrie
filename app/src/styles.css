@@ -8,17 +8,24 @@
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  --ink: #172032;
-  --muted: #667085;
-  --line: #dce2ea;
+  --ink: #0f2433;
+  --muted: #5f6f7d;
+  --line: #d7e0e5;
   --panel: #ffffff;
-  --canvas: #f3f6fa;
-  --brand: #164e63;
-  --brand-dark: #0f3b4c;
-  --accent: #d97706;
-  --good: #087443;
-  --bad: #b42318;
-  --shadow: 0 10px 30px rgb(23 32 50 / 8%);
+  --canvas: #f4f7f9;
+  --brand: #146c7e;
+  --brand-dark: #123b4a;
+  --accent: #d99a00;
+  --good: #16835d;
+  --bad: #c2413a;
+  --warning: #9a5a08;
+  --warning-border: #e5bd69;
+  --warning-panel: #fff8e8;
+  --company-mfc: #0072b2;
+  --company-slf: #e69f00;
+  --company-gwo: #009e73;
+  --company-iag: #cc79a7;
+  --shadow: 0 10px 30px rgb(15 36 51 / 8%);
 }
 
 * {
@@ -55,7 +62,7 @@ a {
   gap: 2rem;
   padding: 2.1rem max(1.25rem, calc((100vw - 1180px) / 2));
   color: white;
-  background: linear-gradient(120deg, #0f3443, #185c6d);
+  background: linear-gradient(120deg, var(--brand-dark), var(--brand));
 }
 h1,
 h2,
@@ -78,7 +85,7 @@ h1 {
 }
 .subtitle {
   margin-bottom: 0;
-  color: #d9edf0;
+  color: #d8ebee;
 }
 .button {
   display: inline-flex;
@@ -106,7 +113,7 @@ button:focus-visible,
 a:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #fbbf24;
+  outline: 3px solid #f2b84b;
   outline-offset: 3px;
 }
 main {
@@ -127,12 +134,12 @@ main {
 }
 .status-partial,
 .status-failed {
-  border-color: #f7c97e;
-  background: #fffaeb;
+  border-color: var(--warning-border);
+  background: var(--warning-panel);
 }
 .stale-warning,
 .source-warning {
-  color: #9a3412;
+  color: var(--warning);
   font-weight: 700;
 }
 .spinner {
@@ -147,6 +154,32 @@ main {
   to {
     transform: rotate(360deg);
   }
+}
+.view-navigation {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.65rem;
+}
+.view-tabs {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: var(--panel);
+}
+.view-tab {
+  padding: 0.5rem 0.9rem;
+  border: 0;
+  border-radius: 0.45rem;
+  color: var(--muted);
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+.view-tab[aria-selected="true"] {
+  color: white;
+  background: var(--brand-dark);
 }
 .company-tabs {
   display: grid;
@@ -209,6 +242,126 @@ main {
   color: var(--brand-dark);
   background: white;
   font-weight: 800;
+}
+.history-view {
+  padding-top: 1rem;
+}
+.history-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.history-heading h2 {
+  margin-bottom: 0;
+}
+.history-eyebrow {
+  margin-bottom: 0.2rem;
+}
+.history-control {
+  display: grid;
+  gap: 0.25rem;
+}
+.history-control label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+.history-control select {
+  min-width: 13rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  color: var(--ink);
+  background: var(--panel);
+}
+#history-chart {
+  overflow-x: auto;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.history-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+.history-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.history-legend-mark {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+}
+.history-chart {
+  display: block;
+  width: 100%;
+  min-width: 42rem;
+  height: auto;
+}
+.history-grid-line {
+  stroke: var(--line);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.history-axis-label {
+  fill: var(--muted);
+  font-size: 0.72rem;
+}
+.history-line {
+  fill: none;
+  stroke-width: 2.5;
+  vector-effect: non-scaling-stroke;
+}
+.history-marker {
+  stroke: var(--panel);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+.history-series-0 {
+  stroke: var(--company-mfc);
+  fill: var(--company-mfc);
+  background: var(--company-mfc);
+}
+.history-series-1 {
+  stroke: var(--company-slf);
+  fill: var(--company-slf);
+  background: var(--company-slf);
+}
+.history-series-2 {
+  stroke: var(--company-gwo);
+  fill: var(--company-gwo);
+  background: var(--company-gwo);
+}
+.history-series-3 {
+  stroke: var(--company-iag);
+  fill: var(--company-iag);
+  background: var(--company-iag);
+}
+.history-line.history-series-1 {
+  stroke-dasharray: 8 5;
+}
+.history-line.history-series-2 {
+  stroke-dasharray: 2 4;
+}
+.history-line.history-series-3 {
+  stroke-dasharray: 10 4 2 4;
+}
+.history-note {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 #company-panel {
   padding-top: 1.4rem;
@@ -383,9 +536,9 @@ main {
 .error-panel,
 .empty-state {
   padding: 1.4rem;
-  border: 1px solid #f7c97e;
+  border: 1px solid var(--warning-border);
   border-radius: 0.7rem;
-  background: #fffaeb;
+  background: var(--warning-panel);
 }
 footer {
   padding: 1.4rem;
@@ -418,7 +571,8 @@ footer p {
     grid-template-columns: 1fr;
   }
   #company-header,
-  .section-heading {
+  .section-heading,
+  .history-heading {
     align-items: flex-start;
     flex-direction: column;
   }
