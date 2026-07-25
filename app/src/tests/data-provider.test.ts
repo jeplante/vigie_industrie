@@ -21,4 +21,24 @@ describe("StaticJsonDataProvider", () => {
     );
     await expect(provider.loadDataset()).rejects.toThrow("503");
   });
+
+  it("appelle le fetch global avec le contexte Window", async () => {
+    const contextualFetch = vi.fn(function (this: typeof globalThis) {
+      if (this !== globalThis) throw new TypeError("Illegal invocation");
+      return Promise.resolve(
+        new Response(JSON.stringify(dataset), { status: 200 }),
+      );
+    });
+    vi.stubGlobal("fetch", contextualFetch);
+
+    try {
+      const provider = new StaticJsonDataProvider("/data");
+      await expect(provider.loadDataset()).resolves.toEqual(dataset);
+      expect(contextualFetch).toHaveBeenCalledWith("/data/vigie.json", {
+        cache: "no-cache",
+      });
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
 });
