@@ -75,7 +75,7 @@ def test_native_structured_response_is_validated(project_config: ProjectConfig) 
     call = client.messages.calls[0]
     assert call["output_format"] is NewsAnalysis
     assert call["model"] == "claude-haiku-4-5"
-    assert call["temperature"] == 0
+    assert "temperature" not in call
 
 
 @pytest.mark.parametrize("stop_reason", ["max_tokens", "model_context_window_exceeded"])
@@ -141,3 +141,4 @@ def test_complex_tasks_use_sonnet_5(project_config: ProjectConfig) -> None:
         complex_task=True,
     )
     assert client.messages.calls[0]["model"] == "claude-sonnet-5"
+    assert "temperature" not in client.messages.calls[0]

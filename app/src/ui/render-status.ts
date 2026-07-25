@@ -13,10 +13,14 @@ export function renderStatus(
   container.setAttribute("aria-busy", "false");
   const age = ageInDays(manifest.lastSuccessfulRefresh, now);
   const stale = age > 7;
+  const statusLabel = {
+    success: "Données validées",
+    partial: "Données publiées avec réserves",
+    failed: "Publication bloquée",
+  }[report.status];
   container.append(
     element("strong", {
-      text:
-        report.status === "success" ? "Données validées" : "Qualité dégradée",
+      text: statusLabel,
     }),
     element("span", {
       text: `Dernière tentative : ${formatDateTime(manifest.lastAttemptAt)}`,
@@ -35,11 +39,25 @@ export function renderStatus(
         text: `Données anciennes (${age} jours)`,
       }),
     );
-  if (report.sourcesFailed > 0) {
+  const failedSources = report.sourceResults.filter(
+    (item) => item.status === "failed",
+  ).length;
+  const warningSources = report.sourceResults.filter(
+    (item) => item.status === "warning",
+  ).length;
+  if (failedSources > 0) {
     container.append(
       element("span", {
         className: "source-warning",
-        text: `${report.sourcesFailed} source(s) en erreur`,
+        text: `${failedSources} source${failedSources > 1 ? "s" : ""} bloquée${failedSources > 1 ? "s" : ""}`,
+      }),
+    );
+  }
+  if (warningSources > 0) {
+    container.append(
+      element("span", {
+        className: "source-warning",
+        text: `${warningSources} source${warningSources > 1 ? "s" : ""} avec avertissement`,
       }),
     );
   }
@@ -53,7 +71,7 @@ export function renderStatus(
     container.append(
       element("span", {
         className: "stale-warning",
-        text: `${staleCompanies.length} compagnie(s) avec un document plus récent non intégré`,
+        text: `${staleCompanies.length} compagnie${staleCompanies.length > 1 ? "s" : ""} avec un document plus récent non intégré`,
       }),
     );
   }
@@ -61,7 +79,7 @@ export function renderStatus(
     container.append(
       element("span", {
         className: "source-warning",
-        text: `${unknownCompanies.length} source(s) de fraîcheur non vérifiée(s)`,
+        text: `Fraîcheur non vérifiée pour ${unknownCompanies.length} compagnie${unknownCompanies.length > 1 ? "s" : ""}`,
       }),
     );
   }

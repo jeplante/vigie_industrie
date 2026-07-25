@@ -16,7 +16,7 @@ sources:
     companyId: SLF
     contentCategory: financial_results
     type: html_release_index
-    url: https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/
+    url: https://www.sunlife.com/en/investors/financial-results-and-reports/
     adapter: sunlife
     priority: primary
     language: en

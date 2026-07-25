@@ -87,16 +87,55 @@ describe("interface", () => {
         lastAttemptAt: "2026-07-10T12:00:00Z",
         lastSuccessfulRefresh: "2026-06-01T00:00:00Z",
       },
-      { ...quality, status: "partial", sourcesFailed: 1 },
+      {
+        ...quality,
+        status: "partial",
+        sourcesFailed: 1,
+        sourceResults: [
+          {
+            sourceId: "mfc-results",
+            companyId: "MFC",
+            status: "failed",
+            documentsDiscovered: 0,
+            documentUrls: [],
+            periodIds: [],
+            message: "Source inaccessible",
+            anthropicCalls: 0,
+          },
+          {
+            sourceId: "slf-results",
+            companyId: "SLF",
+            status: "warning",
+            documentsDiscovered: 1,
+            documentUrls: ["https://example.com/slf"],
+            periodIds: ["2026-T1"],
+            message: "Extraction partielle",
+            anthropicCalls: 1,
+          },
+          {
+            sourceId: "gwo-official-news",
+            companyId: "GWO",
+            status: "warning",
+            documentsDiscovered: 0,
+            documentUrls: [],
+            periodIds: [],
+            message: "Aucun document",
+            anthropicCalls: 0,
+          },
+        ],
+      },
       new Date("2026-07-11T00:00:00Z"),
     );
     expect(container.textContent).toContain("Données anciennes");
+    expect(container.textContent).toContain("Données publiées avec réserves");
     expect(container.textContent).toContain("Dernière tentative");
     expect(container.textContent).toContain(
       "Dernier rafraîchissement financier réussi",
     );
     expect(container.textContent).toContain("Mode : offline (hors ligne)");
-    expect(container.textContent).toContain("1 source");
+    expect(container.textContent).toContain("1 source bloquée");
+    expect(container.textContent).toContain("2 sources avec avertissement");
+    expect(container.textContent).not.toContain("source(s) en erreur");
     expect(container.textContent).toContain("document plus récent non intégré");
     renderStatus(container, manifest, quality);
     expect(container.textContent).toContain("Mode : live (en ligne)");

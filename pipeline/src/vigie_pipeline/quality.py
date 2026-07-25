@@ -22,7 +22,12 @@ def build_quality_report(
 ) -> QualityReport:
     errors = errors or []
     warnings = warnings or []
-    sources_failed = max(0, sources_checked - sources_succeeded)
+    normalized_source_results = source_results or []
+    sources_failed = (
+        sum(item.status == "failed" for item in normalized_source_results)
+        if source_results is not None
+        else max(0, sources_checked - sources_succeeded)
+    )
     status: Literal["success", "partial", "failed"] = (
         "failed" if errors else "partial" if warnings or sources_failed else "success"
     )
@@ -39,5 +44,5 @@ def build_quality_report(
         overrides_applied=overrides_applied,
         warnings=warnings,
         errors=errors,
-        source_results=source_results or [],
+        source_results=normalized_source_results,
     )
