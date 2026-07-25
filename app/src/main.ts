@@ -1,7 +1,7 @@
 import "./styles.css";
 import { StaticJsonDataProvider } from "./data/StaticJsonDataProvider";
 import type { DataProvider } from "./data/DataProvider";
-import type { AppState } from "./ui/state";
+import type { AppState, HistoricalKpi, ViewMode } from "./ui/state";
 import {
   availablePeriodsForCompany,
   initialState,
@@ -14,6 +14,7 @@ import { renderDashboard } from "./ui/render-dashboard";
 import { renderStatus } from "./ui/render-status";
 import { enableArrowNavigation } from "./ui/accessibility";
 import { downloadCsv } from "./export/export-csv";
+import { renderHistory } from "./ui/render-history";
 
 export class VigieApp {
   private state: AppState | null = null;
@@ -66,10 +67,40 @@ export class VigieApp {
     requiredElement<HTMLButtonElement>("export-csv").onclick = () => {
       if (this.state) downloadCsv(this.state.dataset);
     };
+    for (const button of requiredElement(
+      "view-tabs",
+    ).querySelectorAll<HTMLButtonElement>("[data-view]")) {
+      button.onclick = () => {
+        if (!this.state) return;
+        this.state.viewMode = button.dataset.view as ViewMode;
+        this.render();
+      };
+    }
+    const historicalKpi = requiredElement<HTMLSelectElement>("history-kpi");
+    historicalKpi.onchange = () => {
+      if (!this.state) return;
+      this.state.historicalKpi = historicalKpi.value as HistoricalKpi;
+      this.render();
+    };
   }
 
   private render(): void {
     if (!this.state) return;
+    const summaryView = requiredElement("summary-view");
+    const historyView = requiredElement("history-view");
+    const isSummary = this.state.viewMode === "summary";
+    summaryView.hidden = !isSummary;
+    historyView.hidden = isSummary;
+    for (const button of requiredElement(
+      "view-tabs",
+    ).querySelectorAll<HTMLButtonElement>("[data-view]")) {
+      const selected = button.dataset.view === this.state.viewMode;
+      button.setAttribute("aria-selected", String(selected));
+      button.tabIndex = selected ? 0 : -1;
+    }
+    const historicalKpi = requiredElement<HTMLSelectElement>("history-kpi");
+    historicalKpi.value = this.state.historicalKpi;
+
     const companyTabs = requiredElement("company-tabs");
     const periodTabs = requiredElement("period-tabs");
     renderCompanyTabs(
@@ -93,10 +124,16 @@ export class VigieApp {
       },
     );
     renderDashboard(this.state);
+    renderHistory(
+      requiredElement("history-chart"),
+      this.state.dataset,
+      this.state.historicalKpi,
+    );
   }
 }
 
 const app = new VigieApp(new StaticJsonDataProvider());
+enableArrowNavigation(requiredElement("view-tabs"));
 enableArrowNavigation(requiredElement("company-tabs"));
 enableArrowNavigation(requiredElement("period-tabs"));
 requiredElement<HTMLButtonElement>("retry-load").addEventListener(
