@@ -1,7 +1,7 @@
 import "./styles.css";
 import { StaticJsonDataProvider } from "./data/StaticJsonDataProvider";
 import type { DataProvider } from "./data/DataProvider";
-import type { AppState, HistoricalKpi, ViewMode } from "./ui/state";
+import type { AppState, ViewMode } from "./ui/state";
 import {
   availablePeriodsForCompany,
   initialState,
@@ -15,6 +15,10 @@ import { renderStatus } from "./ui/render-status";
 import { enableArrowNavigation } from "./ui/accessibility";
 import { downloadCsv } from "./export/export-csv";
 import { renderHistory } from "./ui/render-history";
+import {
+  populateHistoricalKpiSelect,
+  type HistoricalKpi,
+} from "./ui/history-kpis";
 
 export class VigieApp {
   private state: AppState | null = null;
@@ -77,6 +81,13 @@ export class VigieApp {
       };
     }
     const historicalKpi = requiredElement<HTMLSelectElement>("history-kpi");
+    if (this.state) {
+      this.state.historicalKpi = populateHistoricalKpiSelect(
+        historicalKpi,
+        this.state.dataset,
+        this.state.historicalKpi,
+      );
+    }
     historicalKpi.onchange = () => {
       if (!this.state) return;
       this.state.historicalKpi = historicalKpi.value as HistoricalKpi;
