@@ -3,6 +3,7 @@ from types import SimpleNamespace
 import anthropic
 import httpx
 import pytest
+from pydantic import ValidationError
 
 from vigie_pipeline.config import ProjectConfig
 from vigie_pipeline.exceptions import (
@@ -76,6 +77,7 @@ def test_native_structured_response_is_validated(project_config: ProjectConfig) 
     assert call["output_format"] is NewsAnalysis
     assert call["model"] == "claude-haiku-4-5"
     assert "temperature" not in call
+    assert "thinking" not in call
 
 
 @pytest.mark.parametrize("stop_reason", ["max_tokens", "model_context_window_exceeded"])
@@ -119,6 +121,25 @@ def test_additional_pydantic_validation_rejects_wrong_shape(
         provider.summarize_news(title="Titre", content="Contenu", source_url="https://example.com")
 
 
+def test_sdk_parse_validation_error_is_a_controlled_incomplete_response(
+    project_config: ProjectConfig,
+) -> None:
+    with pytest.raises(ValidationError) as captured:
+        NewsAnalysis.model_validate({"summary": "incomplet"})
+    provider = AnthropicProvider(
+        Settings(),
+        project_config.pipeline.llm,
+        client=FakeClient(captured.value),
+    )
+
+    with pytest.raises(LlmIncompleteError, match="tronquée ou illisible"):
+        provider.summarize_news(
+            title="Titre",
+            content="Contenu",
+            source_url="https://example.com",
+        )
+
+
 def test_unsupported_structured_outputs_are_explicit(project_config: ProjectConfig) -> None:
     request = httpx.Request("POST", "https://api.anthropic.com/v1/messages")
     error = anthropic.BadRequestError(
@@ -142,3 +163,4 @@ def test_complex_tasks_use_sonnet_5(project_config: ProjectConfig) -> None:
     )
     assert client.messages.calls[0]["model"] == "claude-sonnet-5"
     assert "temperature" not in client.messages.calls[0]
+    assert client.messages.calls[0]["thinking"] == {"type": "disabled"}
