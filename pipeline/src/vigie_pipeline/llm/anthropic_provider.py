@@ -92,14 +92,21 @@ class AnthropicProvider:
         prompt: str,
         output_model: type[T],
     ) -> T:
+        request: dict[str, Any] = {
+            "model": model,
+            "max_tokens": self.config.max_output_tokens,
+            "system": f"Analyse financière factuelle. Prompt: {PROMPT_VERSION}",
+            "messages": [{"role": "user", "content": prompt}],
+            "output_format": output_model,
+        }
+        if model == "claude-sonnet-5":
+            request["thinking"] = {"type": "disabled"}
         try:
-            response = self.client.messages.parse(
-                model=model,
-                max_tokens=self.config.max_output_tokens,
-                system=f"Analyse financière factuelle. Prompt: {PROMPT_VERSION}",
-                messages=[{"role": "user", "content": prompt}],
-                output_format=output_model,
-            )
+            response = self.client.messages.parse(**request)
+        except ValidationError as error:
+            raise LlmIncompleteError(
+                f"Réponse structurée Anthropic tronquée ou illisible pour {task_name}"
+            ) from error
         except (
             anthropic.APITimeoutError,
             anthropic.APIConnectionError,
