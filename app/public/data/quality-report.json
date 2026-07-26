@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T11:36:11.895050Z",
+  "generatedAt": "2026-07-26T01:00:58.439436Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -17,22 +17,22 @@
     },
     {
       "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
       "sourceId": "iag-results"
     },
     {
@@ -70,7 +70,7 @@
       "documentsDiscovered": 0,
       "documentUrls": [],
       "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/quarterly-reports/",
+      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/",
       "anthropicCalls": 0
     },
     {
@@ -100,7 +100,7 @@
       "periodIds": [
         "2026-T1"
       ],
-      "message": "iag-results/T1 2026: Requête Anthropic refusée: BadRequestError; iag-results/T1 2026: Requête Anthropic refusée: BadRequestError; iag-results/T1 2026: Requête Anthropic refusée: BadRequestError",
+      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026; iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026; iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
       "anthropicCalls": 3
     },
     {
