@@ -7,6 +7,10 @@ import { renderDashboard } from "../ui/render-dashboard";
 import { renderHistory } from "../ui/render-history";
 import { renderStatus } from "../ui/render-status";
 import {
+  historicalKpiOptions,
+  populateHistoricalKpiSelect,
+} from "../ui/history-kpis";
+import {
   availablePeriodsForCompany,
   initialState,
   selectCompany,
@@ -36,7 +40,7 @@ describe("interface", () => {
     const state = initialState(dataset);
     expect(state.periodId).toBe("2026-T2");
     expect(state.viewMode).toBe("summary");
-    expect(state.historicalKpi).toBe("core_eps");
+    expect(state.historicalKpi).toBe("metric:core_eps");
     selectCompany(state, "SLF");
     expect(state.periodId).toBe("2025-AN");
     expect(
@@ -156,7 +160,7 @@ describe("interface", () => {
 
   it("trace uniquement l’historique trimestriel des compagnies", () => {
     const container = document.createElement("div");
-    renderHistory(container, dataset, "core_eps");
+    renderHistory(container, dataset, "metric:core_eps");
 
     expect(container.querySelector("svg")).not.toBeNull();
     expect(container.querySelectorAll(".history-line")).toHaveLength(2);
@@ -168,11 +172,106 @@ describe("interface", () => {
 
   it("permet de basculer l’historique vers la croissance du BPA", () => {
     const container = document.createElement("div");
-    renderHistory(container, dataset, "core_eps_growth");
+    renderHistory(container, dataset, "growth:core_eps");
 
     expect(
       container.querySelector("#history-chart-title")?.textContent,
-    ).toContain("croissance");
+    ).toContain("Variation annuelle");
     expect(container.querySelector("svg")?.textContent).toContain("%");
+  });
+
+  it("propose tous les KPI trimestriels publiés dans la liste historique", () => {
+    const reference = dataset.observations[0]!;
+    const richerDataset = {
+      ...dataset,
+      observations: [
+        ...dataset.observations,
+        {
+          ...reference,
+          id: "MFC-2025-T1-net-income",
+          metricId: "net_income",
+          label: "Résultat net",
+          value: 1.2,
+          unit: "CAD_BILLION",
+          displayValue: "1,2 G$",
+        },
+        {
+          ...reference,
+          id: "MFC-2025-T1-licat",
+          metricId: "licat_ratio",
+          label: "Ratio LICAT",
+          value: 138,
+          unit: "PERCENT",
+          displayValue: "138 %",
+          comparison: {
+            ...reference.comparison,
+            change: -1,
+            changeUnit: "PERCENTAGE_POINT" as const,
+            displayChange: "−1 pp",
+          },
+        },
+      ],
+    };
+    const values = historicalKpiOptions(richerDataset)
+      .filter((option) => option.group === "values")
+      .map((option) => option.value);
+    expect(values).toEqual([
+      "metric:core_eps",
+      "metric:net_income",
+      "metric:licat_ratio",
+    ]);
+
+    const select = document.createElement("select");
+    const selected = populateHistoricalKpiSelect(
+      select,
+      richerDataset,
+      "metric:net_income",
+    );
+    expect(selected).toBe("metric:net_income");
+    expect(select.value).toBe("metric:net_income");
+    expect(select.querySelectorAll('option[value^="metric:"]')).toHaveLength(3);
+    expect(select.textContent).toContain("Résultat net");
+    expect(select.textContent).toContain("Ratio LICAT");
+  });
+
+  it("normalise les millions en milliards pour un même KPI", () => {
+    const mfc = dataset.observations[0]!;
+    const slf = dataset.observations.find(
+      (observation) => observation.companyId === "SLF",
+    )!;
+    const mixedUnitsDataset = {
+      ...dataset,
+      observations: [
+        {
+          ...mfc,
+          id: "MFC-2025-T1-net-income",
+          metricId: "net_income",
+          label: "Résultat net",
+          value: 1.2,
+          unit: "CAD_BILLION",
+          displayValue: "1,2 G$",
+        },
+        {
+          ...slf,
+          id: "SLF-2025-T1-net-income",
+          metricId: "net_income",
+          label: "Résultat net",
+          value: 850,
+          unit: "CAD_MILLION",
+          displayValue: "850 M$",
+        },
+      ],
+    };
+    const container = document.createElement("div");
+    renderHistory(container, mixedUnitsDataset, "metric:net_income");
+
+    expect(container.querySelectorAll(".history-line")).toHaveLength(2);
+    const markerLabels = [
+      ...container.querySelectorAll(".history-marker title"),
+    ]
+      .map((title) => title.textContent)
+      .join(" ");
+    expect(markerLabels).toContain("1,2 G$");
+    expect(markerLabels).toContain("0,85 G$");
   });
 });

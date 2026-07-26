@@ -4,14 +4,24 @@ import type {
   Period,
   VigieDataset,
 } from "../domain/models";
-import type { HistoricalKpi } from "./state";
+import { formatNumericValue } from "../formatters/currency";
 import { clear, element } from "./dom";
+import {
+  parseHistoricalKpi,
+  type HistoricalKpi,
+  type HistoricalKpiSelection,
+} from "./history-kpis";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const WIDTH = 1100;
 const HEIGHT = 430;
 const FRAME = { left: 76, right: 46, top: 28, bottom: 72 };
 const MAX_PERIODS = 12;
+const CURRENCY_SCALE: Record<string, number> = {
+  CAD_MILLION: 1_000_000,
+  CAD_BILLION: 1_000_000_000,
+  CAD_TRILLION: 1_000_000_000_000,
+};
 
 interface HistoricalPoint {
   period: Period;
@@ -37,13 +47,22 @@ function svgElement<K extends keyof SVGElementTagNameMap>(
 
 function valueForObservation(
   observation: Observation,
-  kpi: HistoricalKpi,
+  selection: HistoricalKpiSelection,
 ): HistoricalPoint | null {
-  if (kpi === "core_eps") {
+  if (selection.mode === "metric") {
+    const sourceScale = CURRENCY_SCALE[observation.unit];
+    const targetScale = CURRENCY_SCALE[selection.unit];
+    const value =
+      observation.unit === selection.unit
+        ? observation.value
+        : sourceScale !== undefined && targetScale !== undefined
+          ? (observation.value * sourceScale) / targetScale
+          : null;
+    if (value === null) return null;
     return {
       period: observation.period,
-      value: observation.value,
-      displayValue: observation.displayValue,
+      value,
+      displayValue: formatNumericValue(value, selection.unit),
     };
   }
   if (
@@ -62,29 +81,32 @@ function valueForObservation(
   };
 }
 
-function formatAxisValue(value: number, kpi: HistoricalKpi): string {
-  const formatted = new Intl.NumberFormat("fr-CA", {
-    minimumFractionDigits: kpi === "core_eps" ? 2 : 0,
-    maximumFractionDigits: kpi === "core_eps" ? 2 : 1,
-  }).format(value);
-  return kpi === "core_eps" ? `${formatted} $` : `${formatted} %`;
+function formatAxisValue(
+  value: number,
+  selection: HistoricalKpiSelection,
+): string {
+  return selection.mode === "growth"
+    ? `${new Intl.NumberFormat("fr-CA", {
+        maximumFractionDigits: 1,
+      }).format(value)} %`
+    : formatNumericValue(value, selection.unit);
 }
 
 function buildSeries(
   dataset: VigieDataset,
-  kpi: HistoricalKpi,
+  selection: HistoricalKpiSelection,
 ): HistoricalSeries[] {
   return dataset.companies.map((company) => {
     const points = new Map<string, HistoricalPoint>();
     for (const observation of dataset.observations) {
       if (
         observation.companyId !== company.id ||
-        observation.metricId !== "core_eps" ||
+        observation.metricId !== selection.metricId ||
         observation.period.type !== "quarter"
       ) {
         continue;
       }
-      const point = valueForObservation(observation, kpi);
+      const point = valueForObservation(observation, selection);
       if (point) points.set(observation.period.periodId, point);
     }
     return { company, points };
@@ -128,7 +150,8 @@ export function renderHistory(
   kpi: HistoricalKpi,
 ): void {
   clear(container);
-  const series = buildSeries(dataset, kpi);
+  const selection = parseHistoricalKpi(dataset, kpi);
+  const series = buildSeries(dataset, selection);
   const periodIds = new Set(series.flatMap((item) => [...item.points.keys()]));
   const periods = dataset.periods
     .filter(
@@ -172,23 +195,25 @@ export function renderHistory(
   });
   const title = svgElement("title", { id: "history-chart-title" });
   title.textContent =
-    kpi === "core_eps"
-      ? "Historique trimestriel du BPA de base"
-      : "Historique trimestriel de la croissance du BPA de base";
+    selection.mode === "metric"
+      ? `Historique trimestriel — ${selection.label}`
+      : `Variation annuelle trimestrielle — ${selection.label}`;
   const description = svgElement("desc", {
     id: "history-chart-description",
   });
   description.textContent =
-    "Comparaison des quatre assureurs. Une absence de point indique que la donnée n’est pas publiée.";
+    "Comparaison des assureurs recensés. Une absence de point indique que la donnée n’est pas publiée.";
   svg.append(title, description);
 
   const plotWidth = WIDTH - FRAME.left - FRAME.right;
   const plotHeight = HEIGHT - FRAME.top - FRAME.bottom;
   const rawMin = Math.min(...values);
   const rawMax = Math.max(...values);
-  const domainMin = kpi === "core_eps" ? 0 : Math.min(0, rawMin);
-  const domainRange = Math.max(rawMax - domainMin, 1);
-  const domainMax = rawMax + domainRange * 0.12;
+  let domainMin = Math.min(0, rawMin);
+  const baseMax = Math.max(0, rawMax);
+  const domainRange = Math.max(baseMax - domainMin, 1);
+  if (domainMin < 0) domainMin -= domainRange * 0.08;
+  const domainMax = baseMax + domainRange * 0.12;
   const x = (index: number): number =>
     FRAME.left +
     (periods.length === 1
@@ -217,7 +242,7 @@ export function renderHistory(
       "text-anchor": "end",
       class: "history-axis-label",
     });
-    label.textContent = formatAxisValue(value, kpi);
+    label.textContent = formatAxisValue(value, selection);
     svg.append(label);
   }
 
@@ -265,7 +290,7 @@ export function renderHistory(
 
   const note = element("p", {
     className: "history-note",
-    text: "Périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées.",
+    text: "Périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.",
   });
   container.append(legend, svg, note);
 }
