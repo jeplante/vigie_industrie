@@ -1,4 +1,8 @@
 import { METRIC_CATALOG } from "../domain/metric-catalog";
+import {
+  canonicalMetricId,
+  canonicalObservations,
+} from "../domain/metric-aliases";
 import type { CompanyId, Observation, VigieDataset } from "../domain/models";
 import { clear, element } from "./dom";
 
@@ -9,7 +13,9 @@ const METRIC_ORDER = new Map(
 
 function summaryMetricIds(observations: Observation[]): string[] {
   return [
-    ...new Set(observations.map((observation) => observation.metricId)),
+    ...new Set(
+      observations.map((observation) => canonicalMetricId(observation)),
+    ),
   ].sort((left, right) => {
     const leftOrder = METRIC_ORDER.get(left) ?? Number.MAX_SAFE_INTEGER;
     const rightOrder = METRIC_ORDER.get(right) ?? Number.MAX_SAFE_INTEGER;
@@ -20,8 +26,9 @@ function summaryMetricIds(observations: Observation[]): string[] {
 function metricLabel(metricId: string, observations: Observation[]): string {
   return (
     METRIC_CATALOG.find((metric) => metric.id === metricId)?.label ??
-    observations.find((observation) => observation.metricId === metricId)
-      ?.label ??
+    observations.find(
+      (observation) => canonicalMetricId(observation) === metricId,
+    )?.label ??
     metricId
   );
 }
@@ -113,8 +120,8 @@ export function renderSummary(
       (observation) => observation.companyId === company.id,
     );
     const observationsByMetric = new Map(
-      companyObservations.map((observation) => [
-        observation.metricId,
+      canonicalObservations(companyObservations).map((observation) => [
+        canonicalMetricId(observation),
         observation,
       ]),
     );

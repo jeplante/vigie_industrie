@@ -1,4 +1,5 @@
 import { METRIC_CATALOG } from "../domain/metric-catalog";
+import { canonicalMetricId } from "../domain/metric-aliases";
 import type { VigieDataset } from "../domain/models";
 
 export type HistoricalKpiMode = "metric" | "growth";
@@ -35,12 +36,14 @@ export function historicalKpiOptions(
     (observation) => observation.period.type === "quarter",
   );
   const metricIds = new Set(
-    quarterly.map((observation) => observation.metricId),
+    quarterly.map((observation) => canonicalMetricId(observation)),
   );
   const orderedIds = metricIdsInCatalogOrder(metricIds);
   const values = orderedIds.map((metricId): HistoricalKpiOption => {
     const definition = METRIC_CATALOG.find((metric) => metric.id === metricId);
-    const observation = quarterly.find((item) => item.metricId === metricId);
+    const observation = quarterly.find(
+      (item) => canonicalMetricId(item) === metricId,
+    );
     return {
       value: `metric:${metricId}`,
       label: definition?.label ?? observation?.label ?? metricId,
@@ -51,7 +54,7 @@ export function historicalKpiOptions(
     .filter((metricId) =>
       quarterly.some(
         (observation) =>
-          observation.metricId === metricId &&
+          canonicalMetricId(observation) === metricId &&
           observation.comparison.change !== null &&
           observation.comparison.changeUnit === "PERCENT",
       ),
@@ -60,7 +63,9 @@ export function historicalKpiOptions(
       const definition = METRIC_CATALOG.find(
         (metric) => metric.id === metricId,
       );
-      const observation = quarterly.find((item) => item.metricId === metricId);
+      const observation = quarterly.find(
+        (item) => canonicalMetricId(item) === metricId,
+      );
       const label = definition?.label ?? observation?.label ?? metricId;
       return {
         value: `growth:${metricId}`,
@@ -89,7 +94,7 @@ export function parseHistoricalKpi(
   const metricId = value.slice(separator + 1);
   const definition = METRIC_CATALOG.find((metric) => metric.id === metricId);
   const observation = dataset.observations.find(
-    (item) => item.metricId === metricId,
+    (item) => canonicalMetricId(item) === metricId,
   );
   return {
     mode,

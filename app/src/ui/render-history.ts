@@ -4,6 +4,7 @@ import type {
   Period,
   VigieDataset,
 } from "../domain/models";
+import { canonicalMetricId } from "../domain/metric-aliases";
 import { formatNumericValue } from "../formatters/currency";
 import { clear, element } from "./dom";
 import {
@@ -101,13 +102,19 @@ function buildSeries(
     for (const observation of dataset.observations) {
       if (
         observation.companyId !== company.id ||
-        observation.metricId !== selection.metricId ||
+        canonicalMetricId(observation) !== selection.metricId ||
         observation.period.type !== "quarter"
       ) {
         continue;
       }
       const point = valueForObservation(observation, selection);
-      if (point) points.set(observation.period.periodId, point);
+      const existing = points.get(observation.period.periodId);
+      if (
+        point &&
+        (existing === undefined || observation.metricId === selection.metricId)
+      ) {
+        points.set(observation.period.periodId, point);
+      }
     }
     return { company, points };
   });
@@ -148,17 +155,25 @@ export function renderHistory(
   container: HTMLElement,
   dataset: VigieDataset,
   kpi: HistoricalKpi,
+  selectedPeriodId: string | null,
 ): void {
   clear(container);
   const selection = parseHistoricalKpi(dataset, kpi);
   const series = buildSeries(dataset, selection);
   const periodIds = new Set(series.flatMap((item) => [...item.points.keys()]));
+  const selectedPeriod = dataset.periods.find(
+    (period) => period.periodId === selectedPeriodId,
+  );
   const availablePeriods = dataset.periods
     .filter(
-      (period) => period.type === "quarter" && periodIds.has(period.periodId),
+      (period) =>
+        period.type === "quarter" &&
+        periodIds.has(period.periodId) &&
+        (selectedPeriod === undefined ||
+          period.endDate <= selectedPeriod.endDate),
     )
     .sort((left, right) => left.endDate.localeCompare(right.endDate));
-  const latestYear = availablePeriods.at(-1)?.year;
+  const latestYear = selectedPeriod?.year ?? availablePeriods.at(-1)?.year;
   const periods =
     latestYear === undefined
       ? []
@@ -204,6 +219,7 @@ export function renderHistory(
     selection.mode === "metric"
       ? `Historique trimestriel — ${selection.label}`
       : `Variation annuelle trimestrielle — ${selection.label}`;
+  if (selectedPeriod) title.textContent += ` jusqu’à ${selectedPeriod.label}`;
   const description = svgElement("desc", {
     id: "history-chart-description",
   });
@@ -296,7 +312,7 @@ export function renderHistory(
 
   const note = element("p", {
     className: "history-note",
-    text: "Fenêtre glissante de cinq ans, périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.",
+    text: `Fenêtre glissante de cinq ans jusqu’à ${selectedPeriod?.label ?? "la période la plus récente"}, périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.`,
   });
   container.append(legend, svg, note);
 }

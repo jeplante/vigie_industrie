@@ -60,8 +60,18 @@ def test_ia_adapter_prefers_values_over_deltas_and_normalizes_millions() -> None
     assert candidates["core_eps"].value == 3.25
     assert candidates["core_earnings"].value == 0.298
     assert candidates["core_roe"].value == 17.5
-    assert candidates["solvency_ratio"].value == 134
+    assert candidates["licat_ratio"].value == 134
     assert candidates["assets_under_administration"].value == 346
+
+
+def test_ia_adapter_recognizes_core_earnings_release_wording() -> None:
+    content = """
+    Core earnings of $298 million increased 9% year over year.
+    """
+
+    candidates = {item.metric_id: item for item in IaAdapter().extract_metrics(content)}
+
+    assert candidates["core_earnings"].value == 0.298
 
 
 def test_great_west_adapter_normalizes_report_units() -> None:
@@ -129,7 +139,7 @@ def test_sun_life_adapter_normalizes_release_highlights() -> None:
     """
     candidates = {item.metric_id: item for item in SunLifeAdapter().extract_metrics(content)}
     assert candidates["core_eps"].value == 1.89
-    assert candidates["net_income"].value == 1.05
+    assert candidates["core_earnings"].value == 1.05
     assert candidates["core_roe"].value == 18.6
     assert candidates["licat_ratio"].value == 143
     assert candidates["assets_under_management"].value == 1575

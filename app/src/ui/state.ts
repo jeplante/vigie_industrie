@@ -8,7 +8,6 @@ export interface AppState {
   dataset: VigieDataset;
   companyId: CompanyId;
   periodId: string | null;
-  summaryPeriodId: string | null;
   category: string;
   viewMode: ViewMode;
   historicalKpi: HistoricalKpi;
@@ -20,8 +19,7 @@ export function initialState(dataset: VigieDataset): AppState {
   return {
     dataset,
     companyId: company.id,
-    periodId: latestPeriodIdForCompany(dataset, company.id),
-    summaryPeriodId: latestPeriodId(dataset),
+    periodId: latestPeriodId(dataset),
     category: "all",
     viewMode: "summary",
     historicalKpi: defaultHistoricalKpi(dataset),
@@ -29,11 +27,19 @@ export function initialState(dataset: VigieDataset): AppState {
 }
 
 export function availablePeriods(dataset: VigieDataset): Period[] {
-  const publishedIds = new Set(
-    dataset.observations.map((item) => item.period.periodId),
-  );
+  const companiesByPeriod = new Map<string, Set<CompanyId>>();
+  for (const observation of dataset.observations) {
+    const companies =
+      companiesByPeriod.get(observation.period.periodId) ??
+      new Set<CompanyId>();
+    companies.add(observation.companyId);
+    companiesByPeriod.set(observation.period.periodId, companies);
+  }
   return [...dataset.periods]
-    .filter((period) => publishedIds.has(period.periodId))
+    .filter((period) => {
+      const companies = companiesByPeriod.get(period.periodId);
+      return dataset.companies.every((company) => companies?.has(company.id));
+    })
     .sort((left, right) => right.endDate.localeCompare(left.endDate));
 }
 
@@ -64,5 +70,4 @@ export function latestPeriodIdForCompany(
 
 export function selectCompany(state: AppState, companyId: CompanyId): void {
   state.companyId = companyId;
-  state.periodId = latestPeriodIdForCompany(state.dataset, companyId);
 }

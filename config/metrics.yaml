@@ -18,7 +18,7 @@ metrics:
     comparison: percent
     favorableTrend: contextual
   core_earnings:
-    label: Résultat activités de base
+    label: Résultat des activités de base (core earnings)
     unit: CAD_BILLION
     format: currency
     comparison: percent
@@ -30,7 +30,7 @@ metrics:
     comparison: percent
     favorableTrend: up
   licat_ratio:
-    label: Ratio LICAT
+    label: Ratio LICAT / solvabilité
     unit: PERCENT
     format: percentage
     comparison: percentage_point

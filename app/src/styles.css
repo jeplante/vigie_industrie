@@ -198,10 +198,6 @@ main {
   font-size: 0.88rem;
   text-align: right;
 }
-.summary-period-bar {
-  border-top: 1px solid var(--line);
-  border-radius: 0.7rem;
-}
 .company-summary {
   margin-top: 1.25rem;
 }
@@ -345,7 +341,7 @@ main {
   grid-template-columns: repeat(4, 1fr);
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 0.8rem 0.8rem 0 0;
+  border-radius: 0.8rem;
   background: white;
 }
 .company-tab {
@@ -383,22 +379,27 @@ main {
   text-transform: uppercase;
   color: var(--muted);
 }
-.period-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+.global-period-bar {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  border-top: 1px solid var(--line);
+  border-radius: 0.7rem;
 }
-.period-tab {
-  padding: 0.38rem 0.75rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: transparent;
+.global-period-bar > div:first-child {
+  display: grid;
+  gap: 0.15rem;
+}
+.global-period-bar p {
+  margin: 0;
   color: var(--muted);
-  cursor: pointer;
+  font-size: 0.75rem;
 }
-.period-tab[aria-selected="true"] {
-  border-color: #b8ccd3;
-  color: var(--brand-dark);
+.period-select {
+  min-width: 12rem;
+  padding: 0.5rem 2.2rem 0.5rem 0.75rem;
+  border: 1px solid #b8ccd3;
+  border-radius: 0.45rem;
+  color: var(--muted);
   background: white;
   font-weight: 800;
 }
@@ -750,6 +751,13 @@ footer p {
   }
   .summary-heading > p {
     text-align: left;
+  }
+  .global-period-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .period-select {
+    width: 100%;
   }
   .section-heading h2 {
     margin-right: 0;

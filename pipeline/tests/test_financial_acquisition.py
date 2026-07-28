@@ -433,7 +433,7 @@ def test_sun_life_financial_highlights_page_is_a_deterministic_source(
 
     assert {item.metric_id for item in acquisition.observations} == {
         "core_eps",
-        "net_income",
+        "core_earnings",
         "core_roe",
         "licat_ratio",
         "assets_under_management",

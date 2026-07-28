@@ -75,6 +75,17 @@
         </nav>
 
         <section
+          class="period-bar global-period-bar"
+          aria-labelledby="period-heading"
+        >
+          <div>
+            <h2 id="period-heading">Période commune</h2>
+            <p>Disponible pour les quatre compagnies</p>
+          </div>
+          <div id="period-selector"></div>
+        </section>
+
+        <section
           id="summary-view"
           role="tabpanel"
           aria-labelledby="view-tab-summary"
@@ -86,18 +97,6 @@
             </div>
             <p>Une rangée par assureur, pour la même période de publication.</p>
           </div>
-
-          <section
-            class="period-bar summary-period-bar"
-            aria-labelledby="summary-period-heading"
-          >
-            <h2 id="summary-period-heading">Période</h2>
-            <div
-              id="summary-period-tabs"
-              class="period-tabs"
-              role="tablist"
-            ></div>
-          </section>
 
           <div
             id="company-summary"
@@ -115,11 +114,6 @@
           <nav aria-label="Choisir une compagnie">
             <div id="company-tabs" class="company-tabs" role="tablist"></div>
           </nav>
-
-          <section class="period-bar" aria-labelledby="period-heading">
-            <h2 id="period-heading">Période</h2>
-            <div id="period-tabs" class="period-tabs" role="tablist"></div>
-          </section>
 
           <section
             id="company-panel"

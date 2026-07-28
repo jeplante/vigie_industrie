@@ -11,9 +11,13 @@ class IaAdapter(GenericIrAdapter):
     company_id = "IAG"
     aliases: ClassVar[dict[str, tuple[str, ...]]] = {
         "core_eps": ("BPA tiré des activités de base", "core EPS"),
-        "core_earnings": ("résultat tiré des activités de base", "core earnings"),
+        "core_earnings": (
+            "résultat tiré des activités de base",
+            "résultat des activités de base",
+            "core earnings",
+        ),
         "core_roe": ("rendement des capitaux propres de base", "core ROE"),
-        "solvency_ratio": ("ratio de solvabilité", "solvency ratio"),
+        "licat_ratio": ("ratio de solvabilité", "solvency ratio", "LICAT ratio"),
         "assets_under_administration": (
             "actif sous gestion et sous administration",
             "assets under management",
@@ -27,7 +31,11 @@ class IaAdapter(GenericIrAdapter):
             (
                 "core_earnings",
                 "core earnings",
-                r"core earnings.{0,50}?\(in millions\)\s*(\d{2,4})\b",
+                (
+                    r"core earnings(?:\s*\([^)]*\))*"
+                    r"(?:.{0,50}?\(in millions\)\s*|.{0,40}?\bof\s+\$\s*)"
+                    r"([\d,]{2,5})\s*(?:million)?\b"
+                ),
                 0.001,
             ),
             (
@@ -41,9 +49,9 @@ class IaAdapter(GenericIrAdapter):
                 1.0,
             ),
             (
-                "solvency_ratio",
-                "solvency ratio",
-                r"solvency ratio.{0,40}?(\d{2,3})\s*%",
+                "licat_ratio",
+                "LICAT / solvency ratio",
+                r"(?:solvency|licat) ratio.{0,40}?(\d{2,3})\s*%",
                 1.0,
             ),
             (
@@ -64,7 +72,7 @@ class IaAdapter(GenericIrAdapter):
             parsed = float(match[1].replace(",", ".")) * multiplier
             if metric_id == "core_earnings":
                 raw_value = f"{parsed:.3f} G$"
-            elif metric_id in {"core_roe", "solvency_ratio"}:
+            elif metric_id in {"core_roe", "licat_ratio"}:
                 raw_value = f"{parsed:g} %"
             elif metric_id == "assets_under_administration":
                 raw_value = f"{parsed:g} G$"
