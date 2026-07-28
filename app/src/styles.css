@@ -181,6 +181,73 @@ main {
   color: white;
   background: var(--brand-dark);
 }
+.summary-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.summary-heading h2,
+.summary-heading p {
+  margin-bottom: 0;
+}
+.summary-heading > p {
+  max-width: 28rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: right;
+}
+.summary-period-bar {
+  border-top: 1px solid var(--line);
+  border-radius: 0.7rem;
+}
+.company-summary {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.company-summary-row {
+  padding-left: 1rem;
+  border-left: 0.3rem solid var(--brand);
+}
+.company-summary-mfc {
+  border-left-color: var(--company-mfc);
+}
+.company-summary-slf {
+  border-left-color: var(--company-slf);
+}
+.company-summary-gwo {
+  border-left-color: var(--company-gwo);
+}
+.company-summary-iag {
+  border-left-color: var(--company-iag);
+}
+.company-summary-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+.company-summary-heading h3,
+.company-summary-ticker {
+  margin-bottom: 0;
+}
+.company-summary-heading h3 {
+  font-size: 1.15rem;
+}
+.company-summary-ticker {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.company-summary-detail {
+  min-height: 2.25rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.78rem;
+}
 .company-tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -453,6 +520,17 @@ main {
 .section-heading h2 {
   margin: 0 auto 0 0;
 }
+.news-heading-copy {
+  margin-right: auto;
+}
+.news-heading-copy h2 {
+  margin-bottom: 0;
+}
+.news-freshness {
+  margin: 0.1rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
 .section-heading label {
   font-size: 0.82rem;
   font-weight: 700;
@@ -571,10 +649,15 @@ footer p {
     grid-template-columns: 1fr;
   }
   #company-header,
+  .summary-heading,
+  .company-summary-heading,
   .section-heading,
   .history-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+  .summary-heading > p {
+    text-align: left;
   }
   .section-heading h2 {
     margin-right: 0;

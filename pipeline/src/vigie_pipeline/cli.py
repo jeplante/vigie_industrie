@@ -30,7 +30,12 @@ from vigie_pipeline.models import (
     SourceRunResult,
     VigieDataset,
 )
-from vigie_pipeline.news import acquire_news, discover_news_documents, period_for_date
+from vigie_pipeline.news import (
+    acquire_news,
+    discover_news_documents,
+    fetch_news_index,
+    period_for_date,
+)
 from vigie_pipeline.overrides import apply_overrides
 from vigie_pipeline.publish import build_manifest, publish_validated
 from vigie_pipeline.publishers.github_pages import GitHubPagesPublisher
@@ -223,10 +228,11 @@ def command_discover(
                 attempts=source.attempts,
                 max_bytes=config.pipeline.http.max_download_bytes,
             ) as fetcher:
-                index = fetcher.fetch(str(source.url))
                 if source.content_category == "financial_results":
+                    index = fetcher.fetch(str(source.url))
                     documents.extend(discover_documents(source.id, index))
                 else:
+                    index = fetch_news_index(source, fetcher)
                     documents.extend(discover_news_documents(source, index))
     print(
         json.dumps(

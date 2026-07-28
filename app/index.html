@@ -48,6 +48,18 @@
               Synthèse
             </button>
             <button
+              id="view-tab-company"
+              class="view-tab"
+              type="button"
+              role="tab"
+              aria-controls="company-view"
+              aria-selected="false"
+              data-view="company"
+              tabindex="-1"
+            >
+              Par compagnie
+            </button>
+            <button
               id="view-tab-history"
               class="view-tab"
               type="button"
@@ -66,6 +78,39 @@
           id="summary-view"
           role="tabpanel"
           aria-labelledby="view-tab-summary"
+        >
+          <div class="summary-heading">
+            <div>
+              <p class="eyebrow">Comparatif en un coup d’œil</p>
+              <h2>Résultats des quatre compagnies</h2>
+            </div>
+            <p>Une rangée par assureur, pour la même période de publication.</p>
+          </div>
+
+          <section
+            class="period-bar summary-period-bar"
+            aria-labelledby="summary-period-heading"
+          >
+            <h2 id="summary-period-heading">Période</h2>
+            <div
+              id="summary-period-tabs"
+              class="period-tabs"
+              role="tablist"
+            ></div>
+          </section>
+
+          <div
+            id="company-summary"
+            class="company-summary"
+            aria-live="polite"
+          ></div>
+        </section>
+
+        <section
+          id="company-view"
+          role="tabpanel"
+          aria-labelledby="view-tab-company"
+          hidden
         >
           <nav aria-label="Choisir une compagnie">
             <div id="company-tabs" class="company-tabs" role="tablist"></div>
@@ -88,7 +133,10 @@
 
           <section class="news-section" aria-labelledby="news-heading">
             <div class="section-heading">
-              <h2 id="news-heading">Actualités</h2>
+              <div class="news-heading-copy">
+                <h2 id="news-heading">Actualités</h2>
+                <p id="news-freshness" class="news-freshness"></p>
+              </div>
               <label for="news-category">Catégorie</label>
               <select id="news-category">
                 <option value="all">Toutes</option>

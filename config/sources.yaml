@@ -56,7 +56,7 @@ sources:
     companyId: MFC
     contentCategory: official_news
     type: html_news_index
-    url: https://www.manulife.com/ca/en/about-us/news
+    url: https://www.newswire.ca/news/manulife-financial-corporation/
     adapter: generic_news
     priority: official_release
     language: en
@@ -66,15 +66,15 @@ sources:
     attempts: 3
     expectedMetrics: []
     fetchPolicy: canonical_url_then_hash
-    linkSelector: a[href]
+    linkSelector: a[href*='/news-releases/'][href$='.html']
     articleSelector: article, main
-    includePatterns: [/ca/en/about-us/news/]
-    maxArticles: 5
+    includePatterns: []
+    maxArticles: 8
   - id: slf-official-news
     companyId: SLF
     contentCategory: official_news
     type: html_news_index
-    url: https://www.sunlife.com/en/newsroom/news-releases/
+    url: https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/
     adapter: generic_news
     priority: official_release
     language: en
@@ -84,15 +84,15 @@ sources:
     attempts: 3
     expectedMetrics: []
     fetchPolicy: canonical_url_then_hash
-    linkSelector: a[href]
+    linkSelector: a[href*='/news-releases/'][href$='.html'], a[href*='/en/newsroom/news-releases/announcement/']
     articleSelector: article, main
-    includePatterns: [/en/newsroom/news-releases/announcement/]
-    maxArticles: 5
+    includePatterns: []
+    maxArticles: 8
   - id: gwo-official-news
     companyId: GWO
     contentCategory: official_news
     type: html_news_index
-    url: https://www.greatwestlifeco.com/news-and-events/news.html
+    url: https://www.newswire.ca/news/great__west-lifeco-inc./
     adapter: generic_news
     priority: official_release
     language: en
@@ -102,16 +102,16 @@ sources:
     attempts: 3
     expectedMetrics: []
     fetchPolicy: canonical_url_then_hash
-    linkSelector: a[href]
+    linkSelector: a[href*='/news-releases/'][href$='.html']
     articleSelector: article, main
-    includePatterns: [/news-and-events/news/]
-    maxArticles: 5
+    includePatterns: []
+    maxArticles: 8
   - id: iag-official-news
     companyId: IAG
     contentCategory: official_news
     type: html_news_index
     url: https://ia.ca/newsroom
-    adapter: generic_news
+    adapter: ia_news
     priority: official_release
     language: fr
     enabled: true
@@ -122,5 +122,5 @@ sources:
     fetchPolicy: canonical_url_then_hash
     linkSelector: a[href]
     articleSelector: article, main
-    includePatterns: [/newsroom/]
-    maxArticles: 5
+    includePatterns: [/newsroom/, /salle-de-presse/]
+    maxArticles: 8

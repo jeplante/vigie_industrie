@@ -1,13 +1,14 @@
 import type { CompanyId, Period, VigieDataset } from "../domain/models";
 import { defaultHistoricalKpi, type HistoricalKpi } from "./history-kpis";
 
-export type ViewMode = "summary" | "history";
+export type ViewMode = "summary" | "company" | "history";
 export type { HistoricalKpi } from "./history-kpis";
 
 export interface AppState {
   dataset: VigieDataset;
   companyId: CompanyId;
   periodId: string | null;
+  summaryPeriodId: string | null;
   category: string;
   viewMode: ViewMode;
   historicalKpi: HistoricalKpi;
@@ -20,10 +21,24 @@ export function initialState(dataset: VigieDataset): AppState {
     dataset,
     companyId: company.id,
     periodId: latestPeriodIdForCompany(dataset, company.id),
+    summaryPeriodId: latestPeriodId(dataset),
     category: "all",
     viewMode: "summary",
     historicalKpi: defaultHistoricalKpi(dataset),
   };
+}
+
+export function availablePeriods(dataset: VigieDataset): Period[] {
+  const publishedIds = new Set(
+    dataset.observations.map((item) => item.period.periodId),
+  );
+  return [...dataset.periods]
+    .filter((period) => publishedIds.has(period.periodId))
+    .sort((left, right) => right.endDate.localeCompare(left.endDate));
+}
+
+export function latestPeriodId(dataset: VigieDataset): string | null {
+  return availablePeriods(dataset)[0]?.periodId ?? null;
 }
 
 export function availablePeriodsForCompany(
