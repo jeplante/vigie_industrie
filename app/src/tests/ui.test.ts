@@ -51,19 +51,33 @@ describe("interface", () => {
     ).toEqual(["2025-AN", "2025-T3", "2025-T2", "2025-T1"]);
   });
 
-  it("affiche les compagnies les unes sous les autres pour une période commune", () => {
+  it("affiche les compagnies dans un tableau compact pour une période commune", () => {
     const container = document.createElement("div");
     const onSelect = vi.fn();
     renderSummary(container, dataset, "2025-AN", onSelect);
 
-    const rows = container.querySelectorAll(".company-summary-row");
+    const rows = container.querySelectorAll(".summary-company-row");
     expect(rows).toHaveLength(2);
-    expect(rows[0]?.textContent).toContain("Manuvie · Annuel 2025");
-    expect(rows[1]?.textContent).toContain("Sun Life · Annuel 2025");
-    expect(rows[0]?.querySelectorAll(".metric-card")).toHaveLength(1);
-    expect(rows[1]?.querySelectorAll(".metric-card")).toHaveLength(1);
+    expect(container.querySelector(".summary-table")).not.toBeNull();
+    expect(container.querySelectorAll("thead th")).toHaveLength(2);
+    expect(rows[0]?.textContent).toContain("Manuvie");
+    expect(rows[1]?.textContent).toContain("Sun Life");
+    expect(rows[0]?.querySelectorAll(".summary-metric-cell")).toHaveLength(1);
+    expect(rows[1]?.querySelectorAll(".summary-metric-cell")).toHaveLength(1);
     rows[1]?.querySelector<HTMLButtonElement>("button")?.click();
     expect(onSelect).toHaveBeenCalledWith("SLF");
+  });
+
+  it("signale les données non publiées dans le tableau de synthèse", () => {
+    const container = document.createElement("div");
+    renderSummary(container, dataset, "2026-T2", vi.fn());
+
+    const rows = container.querySelectorAll(".summary-company-row");
+    expect(rows[0]?.textContent).not.toContain("Données non encore publiées");
+    expect(rows[1]?.textContent).toContain("Données non encore publiées");
+    expect(rows[1]?.querySelectorAll(".summary-metric-missing")).toHaveLength(
+      1,
+    );
   });
 
   it("offre dans la synthèse toutes les périodes réellement publiées", () => {
@@ -201,6 +215,50 @@ describe("interface", () => {
     expect(container.textContent).toContain("Sun Life");
     expect(container.textContent).toContain("T2 2026");
     expect(container.textContent).not.toContain("Annuel 2025");
+  });
+
+  it("conserve une fenêtre historique de cinq années civiles", () => {
+    const reference = dataset.observations[0]!;
+    const period2021 = {
+      ...reference.period,
+      periodId: "2021-T1",
+      year: 2021,
+      endDate: "2021-03-31",
+      label: "T1 2021",
+    };
+    const period2022 = {
+      ...reference.period,
+      periodId: "2022-T1",
+      year: 2022,
+      endDate: "2022-03-31",
+      label: "T1 2022",
+    };
+    const historicalDataset = {
+      ...dataset,
+      periods: [...dataset.periods, period2021, period2022],
+      observations: [
+        ...dataset.observations,
+        {
+          ...reference,
+          id: "MFC-2021-T1-core-eps",
+          period: period2021,
+        },
+        {
+          ...reference,
+          id: "MFC-2022-T1-core-eps",
+          period: period2022,
+        },
+      ],
+    };
+    const container = document.createElement("div");
+
+    renderHistory(container, historicalDataset, "metric:core_eps");
+
+    expect(container.querySelector("svg")?.textContent).toContain("T1 2022");
+    expect(container.querySelector("svg")?.textContent).not.toContain(
+      "T1 2021",
+    );
+    expect(container.textContent).toContain("Fenêtre glissante de cinq ans");
   });
 
   it("permet de basculer l’historique vers la croissance du BPA", () => {

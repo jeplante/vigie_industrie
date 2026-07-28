@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, date, datetime
 from io import BytesIO
 from typing import Literal, cast
@@ -67,6 +67,7 @@ class FinancialAcquisition:
     failures: list[DocumentFailure]
     anthropic_calls: int
     checked_at: datetime
+    discovery_warnings: list[str] = field(default_factory=list)
 
 
 @dataclass(frozen=True)
@@ -81,9 +82,27 @@ class DocumentFailure:
 def infer_period(title: str) -> Period | None:
     text = title.lower()
     explicit_quarter = re.search(r"(?:q|t)([1-4])[-_/ ]*(20\d{2})", text)
+    compact_quarter = (
+        re.search(r"(?:q|t)([1-4])([0-9]{2})(?!\d)", text) if explicit_quarter is None else None
+    )
+    reverse_compact_quarter = (
+        re.search(r"([1-4])(?:q|t)([0-9]{2})(?!\d)", text)
+        if explicit_quarter is None and compact_quarter is None
+        else None
+    )
     if explicit_quarter is None:
-        reverse_quarter = re.search(r"(20\d{2})[-_/ ]*(?:q|t)([1-4])", text)
-        if reverse_quarter:
+        reverse_quarter = (
+            re.search(r"(20\d{2})[-_/ ]*(?:q|t)([1-4])", text)
+            if compact_quarter is None and reverse_compact_quarter is None
+            else None
+        )
+        if compact_quarter:
+            quarter_number = int(compact_quarter[1])
+            year = 2000 + int(compact_quarter[2])
+        elif reverse_compact_quarter:
+            quarter_number = int(reverse_compact_quarter[1])
+            year = 2000 + int(reverse_compact_quarter[2])
+        elif reverse_quarter:
             explicit_quarter = reverse_quarter
             quarter_number = int(reverse_quarter[2])
             year = int(reverse_quarter[1])
@@ -116,13 +135,15 @@ def infer_period(title: str) -> Period | None:
         "AN": (4, ("fourth quarter", "4th quarter", "quatrième trimestre"), (12, 31)),
     }
     for key, (quarter, markers, end) in quarter_patterns.items():
-        marker_position = next(
-            (word_text.find(marker) for marker in markers if marker in word_text),
-            -1,
-        )
-        if marker_position >= 0:
-            nearby = word_text[max(0, marker_position - 40) : marker_position + 100]
-            year_match = re.search(r"20\d{2}", nearby)
+        marker = next((item for item in markers if item in word_text), None)
+        if marker is not None:
+            marker_position = word_text.find(marker)
+            following = word_text[marker_position + len(marker) : marker_position + 100]
+            preceding = word_text[max(0, marker_position - 40) : marker_position]
+            preceding_years = list(re.finditer(r"20\d{2}", preceding))
+            year_match = re.search(r"20\d{2}", following) or (
+                preceding_years[-1] if preceding_years else None
+            )
             if year_match is None:
                 continue
             year = int(year_match.group())
@@ -135,12 +156,19 @@ def infer_period(title: str) -> Period | None:
                 end_date=date(year, *end),
                 label=f"Annuel {year}" if key == "AN" else f"{key} {year}",
             )
-    annual_match = re.search(
-        r"annual[-_ ]?report[^0-9]{0,15}(20\d{2})",
-        word_text,
-    ) or re.search(
-        r"(?:annuel|full year|exercice|annual)[^0-9]{0,30}(20\d{2})",
-        word_text,
+    annual_match = (
+        re.search(
+            r"annual[-_ ]?report[^0-9]{0,15}(20\d{2})",
+            word_text,
+        )
+        or re.search(
+            r"(?:annuel|full year|exercice|annual)[^0-9]{0,30}(20\d{2})",
+            word_text,
+        )
+        or re.search(
+            r"\breports? (20\d{2}) (?:net income|core earnings|results)\b",
+            word_text,
+        )
     )
     if annual_match:
         year = int(annual_match[1])
@@ -156,6 +184,94 @@ def infer_period(title: str) -> Period | None:
     return None
 
 
+def historical_periods(latest: Period, years: int) -> list[Period]:
+    """Construit la fenêtre glissante, sans créer de période après la plus récente."""
+
+    result: list[Period] = []
+    first_year = max(2000, latest.year - years + 1)
+    for year in range(first_year, latest.year + 1):
+        last_quarter = (latest.quarter or 4) if year == latest.year else 4
+        for quarter in range(1, last_quarter + 1):
+            key = "AN" if quarter == 4 else f"T{quarter}"
+            end = {1: (3, 31), 2: (6, 30), 3: (9, 30), 4: (12, 31)}[quarter]
+            result.append(
+                Period(
+                    period_id=f"{year}-{key}",
+                    period_key=cast(Literal["T1", "T2", "T3", "AN"], key),
+                    type="annual" if quarter == 4 else "quarter",
+                    year=year,
+                    quarter=None if quarter == 4 else quarter,
+                    end_date=date(year, *end),
+                    label=f"Annuel {year}" if quarter == 4 else f"T{quarter} {year}",
+                )
+            )
+    return result
+
+
+def _missing_history_period_ids(
+    dataset: VigieDataset,
+    source: SourceConfig,
+    latest: Period,
+    years: int,
+) -> set[str]:
+    metrics_by_period: dict[str, set[str]] = {}
+    for item in dataset.observations:
+        if item.company_id == source.company_id:
+            metrics_by_period.setdefault(item.period.period_id, set()).add(item.metric_id)
+    expected = set(source.expected_metrics)
+    return {
+        period.period_id
+        for period in historical_periods(latest, years)
+        if not expected.issubset(metrics_by_period.get(period.period_id, set()))
+    }
+
+
+def _archive_index_urls(source: SourceConfig) -> list[str]:
+    urls: list[str] = []
+    if source.archive_url is not None:
+        urls.append(str(source.archive_url))
+    if source.archive_url_template is not None:
+        urls.extend(
+            source.archive_url_template.format(page=page)
+            for page in range(1, source.archive_pages + 1)
+        )
+    return urls
+
+
+def _templated_document(source: SourceConfig, period: Period) -> DiscoveredDocument:
+    if source.document_url_template is None:
+        raise ExtractionError(f"Source {source.id}: modèle de document absent.")
+    quarter = period.quarter or 4
+    document_url = source.document_url_template.format(
+        year=period.year,
+        year_short=str(period.year)[-2:],
+        quarter=quarter,
+        period_key=period.period_key.lower(),
+    )
+    return DiscoveredDocument(
+        source_id=source.id,
+        canonical_url=HttpUrl(document_url),
+        title=f"{source.id} {period.label} official results",
+        content_type="application/pdf",
+        document_kind="downloadable_report",
+        is_published=True,
+    )
+
+
+def _configured_historical_documents(source: SourceConfig) -> list[DiscoveredDocument]:
+    return [
+        DiscoveredDocument(
+            source_id=source.id,
+            canonical_url=url,
+            title=str(url),
+            content_type="text/html",
+            document_kind="downloadable_report",
+            is_published=True,
+        )
+        for url in source.historical_document_urls
+    ]
+
+
 def _relevant_financial_document(document: DiscoveredDocument) -> bool:
     text = f"{document.title} {document.canonical_url}".lower()
     excluded = (
@@ -167,6 +283,7 @@ def _relevant_financial_document(document: DiscoveredDocument) -> bool:
         ".xlsx",
         "conference-call",
         "annual-meeting",
+        "annual-information-form",
         "circular",
         "notice-of",
     )
@@ -175,13 +292,21 @@ def _relevant_financial_document(document: DiscoveredDocument) -> bool:
     included = (
         "result",
         "résultat",
+        "manulife-reports",
         "news-release",
         "earnings-release",
+        "earnings news release",
+        "-earnings.pdf",
         "shareholders-report",
+        "shareholders report",
+        "shareholders' report",
+        "-shrpt.pdf",
         "report-to-shareholders",
         "quarterly-report",
         "annual-report",
         "annualreport",
+        "annual-",
+        "rapport annuel",
         "financial-statements",
         "-mda",
         "fact-sheet",
@@ -448,24 +573,75 @@ def acquire_source(
         index_text = document_text(index)
         index_candidates = list(adapter.extract_metrics(index_text))
         index_period = _index_period(index, index_text)
-        if source.document_url_template and index_period is not None:
-            quarter = index_period.quarter or 4
-            document_url = source.document_url_template.format(
-                year=index_period.year,
-                quarter=quarter,
-                period_key=index_period.period_key.lower(),
+        latest_published = max(
+            (item.period for item in dataset.observations if item.company_id == source.company_id),
+            key=lambda item: item.end_date,
+            default=None,
+        )
+        initial_periods = [
+            period
+            for document in documents
+            if document.is_published
+            and (period := infer_period(f"{document.title} {document.canonical_url}")) is not None
+        ]
+        if index_period is not None:
+            initial_periods.append(index_period)
+        latest_anchor = max(
+            [*initial_periods, *([latest_published] if latest_published else [])],
+            key=lambda item: item.end_date,
+            default=None,
+        )
+        discovery_warnings: list[str] = []
+        if latest_anchor is not None and _missing_history_period_ids(
+            dataset,
+            source,
+            latest_anchor,
+            config.pipeline.financial_history_years,
+        ):
+            documents.extend(_configured_historical_documents(source))
+            for archive_url in _archive_index_urls(source):
+                try:
+                    archive_index = fetcher.fetch(archive_url)
+                except PipelineError as error:
+                    discovery_warnings.append(
+                        f"{source.id}: archive inaccessible {archive_url}: {error}"
+                    )
+                    continue
+                documents.extend(
+                    item
+                    for item in discover_documents(source.id, archive_index)
+                    if (item.document_kind == "future_event" and _relevant_future_event(item))
+                    or _relevant_financial_document(item)
+                )
+
+        archive_periods = [
+            period
+            for document in documents
+            if document.is_published
+            and (period := infer_period(f"{document.title} {document.canonical_url}")) is not None
+        ]
+        latest_anchor = max(
+            [*archive_periods, *([latest_anchor] if latest_anchor else [])],
+            key=lambda item: item.end_date,
+            default=None,
+        )
+        history_period_ids: set[str] = set()
+        if latest_anchor is not None:
+            history_period_ids = _missing_history_period_ids(
+                dataset,
+                source,
+                latest_anchor,
+                config.pipeline.financial_history_years,
             )
-            documents.insert(
-                0,
-                DiscoveredDocument(
-                    source_id=source.id,
-                    canonical_url=HttpUrl(document_url),
-                    title=f"{source.id} {index_period.label} quarterly report",
-                    content_type="application/pdf",
-                    document_kind="downloadable_report",
-                    is_published=True,
-                ),
-            )
+            if source.document_url_template:
+                documents.extend(
+                    _templated_document(source, period)
+                    for period in historical_periods(
+                        latest_anchor,
+                        config.pipeline.financial_history_years,
+                    )
+                    if period.period_id in history_period_ids
+                )
         if index_candidates and index_period is not None:
             documents.insert(
                 0,
@@ -480,17 +656,17 @@ def acquire_source(
                     is_published=True,
                 ),
             )
+        documents = list(
+            {
+                str(document.canonical_url).rstrip("/").lower(): document for document in documents
+            }.values()
+        )
         period_documents = [
             (document, period)
             for document in documents
             if document.is_published
             and (period := infer_period(f"{document.title} {document.canonical_url}")) is not None
         ]
-        latest_published = max(
-            (item.period for item in dataset.observations if item.company_id == source.company_id),
-            key=lambda item: item.end_date,
-            default=None,
-        )
         latest_discovered = max(
             (period for _, period in period_documents),
             key=lambda item: item.end_date,
@@ -504,6 +680,7 @@ def acquire_source(
         period_documents.sort(
             key=lambda item: (
                 item[1].end_date > latest_published.end_date if latest_published else True,
+                item[1].period_id in history_period_ids,
                 str(item[0].canonical_url).rstrip("/").lower() not in known_urls,
                 item[1].end_date,
             ),
@@ -535,7 +712,8 @@ def acquire_source(
                 and latest_discovered is not None
                 and latest_discovered.period_id == latest_published.period_id
             )
-            if not (is_newer or is_latest or unknown_current):
+            missing_history = period.period_id in history_period_ids
+            if not (is_newer or is_latest or unknown_current or missing_history):
                 continue
             if period.period_id in successful_periods:
                 continue
@@ -557,7 +735,12 @@ def acquire_source(
                     else fetcher.fetch(str(discovered.canonical_url))
                 )
                 fingerprint = sha256_bytes(document.content)
-                if existing and all(item.source.document_hash == fingerprint for item in existing):
+                existing_metrics = {item.metric_id for item in existing}
+                if (
+                    set(source.expected_metrics).issubset(existing_metrics)
+                    and existing
+                    and all(item.source.document_hash == fingerprint for item in existing)
+                ):
                     continue
                 content = document_text(document)
                 candidates: list[MetricCandidate | LlmMetric] = list(
@@ -627,11 +810,18 @@ def acquire_source(
         unique_documents = {
             str(document.canonical_url): document for document in reported_documents
         }
+        discovered_period_ids = {period.period_id for _, period in period_documents}
+        undiscovered_history = sorted(history_period_ids - discovered_period_ids)
+        if undiscovered_history:
+            discovery_warnings.append(
+                f"{source.id}: périodes historiques non découvertes {undiscovered_history}."
+            )
         return FinancialAcquisition(
             observations=results,
             discovered_periods=sorted(unique_periods.values(), key=lambda item: item.end_date),
             documents=list(unique_documents.values()),
             failures=failures,
+            discovery_warnings=discovery_warnings,
             anthropic_calls=anthropic_calls,
             checked_at=checked_at,
         )

@@ -12,6 +12,11 @@ sources:
     attempts: 3
     expectedMetrics: [core_eps, core_earnings, net_income, licat_ratio]
     fetchPolicy: etag_last_modified_then_hash
+    archiveUrlTemplate: https://www.newswire.ca/news/manulife-financial-corporation/?page={page}
+    archivePages: 10
+    historicalDocumentUrls:
+      - https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2024-results-850565610.html
+      - https://www.newswire.ca/news-releases/manulife-reports-2022-net-income-of-7-3-billion-core-earnings-of-6-2-billion-remittances-of-6-9-billion-and-a-dividend-increase-of-11--807038913.html
   - id: slf-results
     companyId: SLF
     contentCategory: financial_results
@@ -25,6 +30,11 @@ sources:
     attempts: 3
     expectedMetrics: [core_eps, net_income, licat_ratio, assets_under_management]
     fetchPolicy: etag_last_modified_then_hash
+    archiveUrlTemplate: https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/?page={page}
+    archivePages: 4
+    historicalDocumentUrls:
+      - https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2022-results-873365295.html
+      - https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2022-results-852333279.html
   - id: gwo-results
     companyId: GWO
     contentCategory: financial_results
@@ -39,6 +49,11 @@ sources:
     expectedMetrics: [core_eps, core_earnings, licat_ratio, total_client_assets]
     fetchPolicy: etag_last_modified_then_hash
     documentUrlTemplate: https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/{year}/q{quarter}/lifeco-q{quarter}-{year}-quarterly-report-to-shareholders-en.pdf
+    historicalDocumentUrls:
+      - https://www.greatwestlifeco.com/news-and-events/news/2025/lifeco-q4-2024-earnings-release.html
+      - https://www.greatwestlifeco.com/news-events/news/great-west-lifeco-reports-fourth-quarter-2023-results.html
+      - https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco--q1-2023-quarterly-report-to-shareholders-en.pdf
+      - https://www.greatwestlifeco.com/news-events/news/great-west-lifeco-reports-fourth-quarter-2022-results.html
   - id: iag-results
     companyId: IAG
     contentCategory: financial_results

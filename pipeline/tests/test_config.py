@@ -45,6 +45,8 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
     assert config.metrics["core_eps"].label == "BPA configuré par YAML"
     assert config.pipeline.llm.standard_model == "standard-env"
     assert config.pipeline.llm.complex_model == "complex-env"
+    assert config.pipeline.financial_history_years == 5
+    assert len(config.sources[0].historical_document_urls) == 2
     assert config.companies["MFC"].name == "Manuvie YAML"
     assert (
         next(source for source in config.sources if source.id == "mfc-official-news").max_articles
@@ -61,3 +63,4 @@ def test_required_anthropic_defaults_come_from_yaml(repository_root: Path) -> No
     config = load_project_config(repository_root)
     assert config.pipeline.llm.standard_model == "claude-haiku-4-5"
     assert config.pipeline.llm.complex_model == "claude-sonnet-5"
+    assert config.pipeline.financial_history_years == 5

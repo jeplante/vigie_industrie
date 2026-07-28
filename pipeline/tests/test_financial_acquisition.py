@@ -1,12 +1,18 @@
+from datetime import date
 from pathlib import Path
 
 import pytest
 
 import vigie_pipeline.acquire as acquire_module
-from vigie_pipeline.acquire import acquire_source, infer_period, publication_date
+from vigie_pipeline.acquire import (
+    acquire_source,
+    historical_periods,
+    infer_period,
+    publication_date,
+)
 from vigie_pipeline.config import ProjectConfig
 from vigie_pipeline.fetch import FetchResult
-from vigie_pipeline.models import VigieDataset
+from vigie_pipeline.models import Period, VigieDataset
 from vigie_pipeline.settings import Settings
 
 
@@ -58,6 +64,15 @@ def test_explicit_document_date_wins_over_period_end() -> None:
         ("sun-life-reports-second-quarter-2027-results.html", "2027-T2"),
         ("company-reports-third-quarter-2028-results.html", "2028-T3"),
         ("company-reports-fourth-quarter-and-full-year-2029-results.html", "2029-AN"),
+        ("pa-e-q124-earnings.pdf", "2024-T1"),
+        ("pa-e-q422-earnings.pdf", "2022-AN"),
+        ("manulife-reports-1q23-net-income.html", "2023-T1"),
+        ("manulife-reports-3q22-net-income.html", "2022-T3"),
+        ("manulife-reports-2022-net-income.html", "2022-AN"),
+        (
+            "Feb 11 2026 Sun Life Reports Fourth Quarter and Full Year 2025 Results",
+            "2025-AN",
+        ),
     ],
 )
 def test_infer_period_accepts_hyphenated_release_slugs(
@@ -67,6 +82,38 @@ def test_infer_period_accepts_hyphenated_release_slugs(
     period = infer_period(slug)
     assert period is not None
     assert period.period_id == period_id
+
+
+def test_historical_periods_cover_five_years_without_future_quarters() -> None:
+    latest = Period(
+        period_id="2026-T1",
+        period_key="T1",
+        type="quarter",
+        year=2026,
+        quarter=1,
+        end_date=date(2026, 3, 31),
+        label="T1 2026",
+    )
+
+    periods = historical_periods(latest, 5)
+
+    assert periods[0].period_id == "2022-T1"
+    assert periods[-1].period_id == "2026-T1"
+    assert len(periods) == 17
+    assert "2026-T2" not in {period.period_id for period in periods}
+
+
+def test_annual_information_form_is_not_a_financial_results_document() -> None:
+    document = acquire_module.DiscoveredDocument(
+        source_id="iag-results",
+        canonical_url=("https://ia.ca/reports/annual/2026/ann-2025-annual-information-form.pdf"),
+        title="2025 Annual Information Form",
+        content_type="application/pdf",
+        document_kind="downloadable_report",
+        is_published=True,
+    )
+
+    assert acquire_module._relevant_financial_document(document) is False
 
 
 def test_index_metrics_are_acquired_and_future_conference_is_excluded(
@@ -82,6 +129,7 @@ def test_index_metrics_are_acquired_and_future_conference_is_excluded(
         lambda **_: FixtureFetcher(index, {}),
     )
     source = next(item for item in project_config.sources if item.id == "mfc-results")
+    source = source.model_copy(update={"historical_document_urls": []})
     acquisition = acquire_source(dataset, source, Settings(anthropic_api_key=None), project_config)
     assert len(acquisition.observations) == 4
     assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
@@ -111,10 +159,11 @@ def test_old_invalid_document_does_not_cancel_new_valid_document(
     )
     monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
     source = next(item for item in project_config.sources if item.id == "mfc-results")
+    source = source.model_copy(update={"historical_document_urls": []})
     acquisition = acquire_source(dataset, source, Settings(anthropic_api_key=None), project_config)
     assert len(acquisition.observations) == 4
     assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
-    assert acquisition.failures == []
+    assert {item.period.period_id for item in acquisition.failures} == {"2024-AN"}
     assert {item.source.published_at.isoformat() for item in acquisition.observations} == {
         "2026-05-09"
     }
@@ -144,6 +193,7 @@ def test_new_period_does_not_reingest_latest_period_from_an_unknown_url(
     )
     monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
     source = next(item for item in project_config.sources if item.id == "mfc-results")
+    source = source.model_copy(update={"historical_document_urls": []})
 
     acquisition = acquire_source(dataset, source, Settings(), project_config)
 
@@ -171,9 +221,16 @@ def test_document_template_tracks_discovered_year_and_quarter(
     monkeypatch.setattr(
         acquire_module,
         "BoundedFetcher",
-        lambda **_: FixtureFetcher(index, {"q2-2032-quarterly": metrics}),
+        lambda **_: FixtureFetcher(
+            index,
+            {
+                "q1-2032-quarterly": b"Document sans mesures.",
+                "q2-2032-quarterly": metrics,
+            },
+        ),
     )
     source = next(item for item in project_config.sources if item.id == "gwo-results")
+    project_config.pipeline.financial_history_years = 1
     acquisition = acquire_source(dataset, source, Settings(), project_config)
     assert {item.period.period_id for item in acquisition.observations} == {"2032-T2"}
     assert {str(item.source.url) for item in acquisition.observations} == {
@@ -208,6 +265,7 @@ def test_sun_life_financial_highlights_page_is_a_deterministic_source(
         lambda **_: FixtureFetcher(index, {}),
     )
     source = next(item for item in project_config.sources if item.id == "slf-results")
+    source = source.model_copy(update={"historical_document_urls": []})
     assert str(source.url) == ("https://www.newswire.ca/search/news/?keyword=Sun%20Life%20Reports")
 
     acquisition = acquire_source(

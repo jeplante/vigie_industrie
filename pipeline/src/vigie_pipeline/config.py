@@ -55,6 +55,13 @@ class SourceConfig(ConfigModel):
     include_patterns: list[str] = Field(default_factory=list, alias="includePatterns")
     max_articles: int = Field(default=10, alias="maxArticles", ge=1, le=100)
     document_url_template: str | None = Field(default=None, alias="documentUrlTemplate")
+    historical_document_urls: list[HttpUrl] = Field(
+        default_factory=list,
+        alias="historicalDocumentUrls",
+    )
+    archive_url: HttpUrl | None = Field(default=None, alias="archiveUrl")
+    archive_url_template: str | None = Field(default=None, alias="archiveUrlTemplate")
+    archive_pages: int = Field(default=0, alias="archivePages", ge=0, le=50)
 
 
 class HttpConfig(ConfigModel):
@@ -88,6 +95,12 @@ class PipelineConfig(ConfigModel):
     validation: ValidationConfig
     llm: LlmConfig
     publication: PublicationConfig
+    financial_history_years: int = Field(
+        default=5,
+        alias="financialHistoryYears",
+        ge=1,
+        le=10,
+    )
 
 
 class ProjectConfig(ConfigModel):
@@ -144,3 +157,9 @@ def _validate_references(config: ProjectConfig) -> None:
             raise ConfigurationError(f"Source financière sans métriques attendues: {source.id}")
         if source.content_category != "financial_results" and source.expected_metrics:
             raise ConfigurationError(f"Source d’actualités avec métriques financières: {source.id}")
+        if source.archive_pages and (
+            source.archive_url_template is None or "{page}" not in source.archive_url_template
+        ):
+            raise ConfigurationError(
+                f"Source {source.id}: archivePages exige archiveUrlTemplate avec {{page}}."
+            )

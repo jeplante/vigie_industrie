@@ -203,50 +203,142 @@ main {
   border-radius: 0.7rem;
 }
 .company-summary {
-  display: grid;
-  gap: 1.25rem;
   margin-top: 1.25rem;
 }
-.company-summary-row {
-  padding-left: 1rem;
-  border-left: 0.3rem solid var(--brand);
+.summary-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: white;
+  box-shadow: 0 0.5rem 1.5rem rgb(15 43 55 / 6%);
 }
-.company-summary-mfc {
+.summary-table {
+  width: 100%;
+  min-width: 72rem;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+.summary-table th,
+.summary-table td {
+  padding: 0.72rem 0.8rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  text-align: left;
+}
+.summary-table tr > :last-child {
+  border-right: 0;
+}
+.summary-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.summary-table thead th {
+  color: var(--muted);
+  background: #f7fafb;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  letter-spacing: 0.025em;
+}
+.summary-company-cell {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 10rem;
+  border-left: 0.3rem solid var(--brand);
+  background: white;
+  box-shadow: 0.3rem 0 0.7rem rgb(15 43 55 / 5%);
+}
+.summary-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 10rem;
+}
+.summary-company-mfc .summary-company-cell {
   border-left-color: var(--company-mfc);
 }
-.company-summary-slf {
+.summary-company-slf .summary-company-cell {
   border-left-color: var(--company-slf);
 }
-.company-summary-gwo {
+.summary-company-gwo .summary-company-cell {
   border-left-color: var(--company-gwo);
 }
-.company-summary-iag {
+.summary-company-iag .summary-company-cell {
   border-left-color: var(--company-iag);
 }
-.company-summary-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.65rem;
+.summary-company-name,
+.summary-company-ticker,
+.summary-company-unavailable {
+  display: block;
 }
-.company-summary-heading h3,
-.company-summary-ticker {
-  margin-bottom: 0;
+.summary-company-name {
+  color: var(--ink);
+  font-size: 0.9rem;
 }
-.company-summary-heading h3 {
-  font-size: 1.15rem;
-}
-.company-summary-ticker {
+.summary-company-ticker {
+  margin-top: 0.08rem;
   color: var(--muted);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
 }
-.company-summary-detail {
-  min-height: 2.25rem;
-  padding: 0.4rem 0.75rem;
-  font-size: 0.78rem;
+.summary-company-unavailable {
+  margin-top: 0.35rem;
+  color: var(--warning);
+  font-size: 0.67rem;
+  font-weight: 600;
+}
+.summary-company-detail {
+  margin-top: 0.45rem;
+  padding: 0;
+  border: 0;
+  color: var(--brand);
+  background: transparent;
+  font-size: 0.68rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+.summary-metric-cell {
+  min-width: 8.5rem;
+}
+.summary-metric-value,
+.summary-metric-comparison,
+.summary-metric-cell .delta {
+  display: block;
+}
+.summary-metric-value {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration-color: #a9c1ca;
+  text-underline-offset: 0.15rem;
+}
+.summary-metric-comparison {
+  margin: 0.22rem 0;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+.summary-metric-cell .delta {
+  width: fit-content;
+}
+.summary-metric-missing {
+  text-align: center;
+  background: #fbfcfd;
+}
+.summary-metric-empty {
+  color: #98a8ae;
+  font-size: 1rem;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 .company-tabs {
   display: grid;
