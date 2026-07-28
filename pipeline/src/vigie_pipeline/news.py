@@ -42,6 +42,18 @@ MONTHS = {
     "october": 10,
     "november": 11,
     "december": 12,
+    "jan": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "jun": 6,
+    "jul": 7,
+    "aug": 8,
+    "sep": 9,
+    "sept": 9,
+    "oct": 10,
+    "nov": 11,
+    "dec": 12,
     "janvier": 1,
     "février": 2,
     "mars": 3,
@@ -133,6 +145,31 @@ def discover_news_documents(source: SourceConfig, index: FetchResult) -> list[Di
     return result
 
 
+def fetch_news_index(source: SourceConfig, fetcher: BoundedFetcher) -> FetchResult:
+    """Charge l’index public, y compris le fragment annuel dynamique de la salle de presse iA."""
+
+    index = fetcher.fetch(str(source.url))
+    if source.adapter != "ia_news":
+        return index
+    if index.content_type not in {"text/html", "application/xhtml+xml"}:
+        raise ExtractionError(f"Index d’actualités non HTML: {source.id}")
+
+    soup = BeautifulSoup(index.content, "html.parser")
+    year_fragments: list[tuple[int, str]] = []
+    for node in soup.select(".salle-presse .tuile-contenu[id][data-item-id]"):
+        year = str(node.get("id", ""))
+        item_id = str(node.get("data-item-id", ""))
+        if re.fullmatch(r"20\d{2}", year) and item_id:
+            year_fragments.append((int(year), item_id))
+    if not year_fragments:
+        raise ExtractionError(f"Année courante introuvable dans la salle de presse: {source.id}")
+
+    _, latest_item_id = max(year_fragments)
+    query = urlencode({"anneeItemId": latest_item_id, "sc_lang": source.language})
+    fragment_url = urljoin(index.url, f"/IA_API/APropos/getSallePresseMois?{query}")
+    return fetcher.fetch(fragment_url)
+
+
 def extract_article(
     result: FetchResult, discovered: DiscoveredDocument, source: SourceConfig
 ) -> ArticleContent:
@@ -194,7 +231,7 @@ def acquire_news(
         attempts=source.attempts,
         max_bytes=config.pipeline.http.max_download_bytes,
     ) as fetcher:
-        index = fetcher.fetch(str(source.url))
+        index = fetch_news_index(source, fetcher)
         documents = discover_news_documents(source, index)
         for discovered in documents:
             try:

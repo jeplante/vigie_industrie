@@ -3,6 +3,7 @@ import { StaticJsonDataProvider } from "./data/StaticJsonDataProvider";
 import type { DataProvider } from "./data/DataProvider";
 import type { AppState, ViewMode } from "./ui/state";
 import {
+  availablePeriods,
   availablePeriodsForCompany,
   initialState,
   selectCompany,
@@ -19,6 +20,7 @@ import {
   populateHistoricalKpiSelect,
   type HistoricalKpi,
 } from "./ui/history-kpis";
+import { renderSummary } from "./ui/render-summary";
 
 export class VigieApp {
   private state: AppState | null = null;
@@ -98,10 +100,12 @@ export class VigieApp {
   private render(): void {
     if (!this.state) return;
     const summaryView = requiredElement("summary-view");
+    const companyView = requiredElement("company-view");
     const historyView = requiredElement("history-view");
     const isSummary = this.state.viewMode === "summary";
     summaryView.hidden = !isSummary;
-    historyView.hidden = isSummary;
+    companyView.hidden = this.state.viewMode !== "company";
+    historyView.hidden = this.state.viewMode !== "history";
     for (const button of requiredElement(
       "view-tabs",
     ).querySelectorAll<HTMLButtonElement>("[data-view]")) {
@@ -114,6 +118,27 @@ export class VigieApp {
 
     const companyTabs = requiredElement("company-tabs");
     const periodTabs = requiredElement("period-tabs");
+    renderPeriodTabs(
+      requiredElement("summary-period-tabs"),
+      availablePeriods(this.state.dataset),
+      this.state.summaryPeriodId,
+      (periodId) => {
+        if (!this.state) return;
+        this.state.summaryPeriodId = periodId;
+        this.render();
+      },
+    );
+    renderSummary(
+      requiredElement("company-summary"),
+      this.state.dataset,
+      this.state.summaryPeriodId,
+      (companyId) => {
+        if (!this.state) return;
+        selectCompany(this.state, companyId);
+        this.state.viewMode = "company";
+        this.render();
+      },
+    );
     renderCompanyTabs(
       companyTabs,
       this.state.dataset,
@@ -145,6 +170,7 @@ export class VigieApp {
 
 const app = new VigieApp(new StaticJsonDataProvider());
 enableArrowNavigation(requiredElement("view-tabs"));
+enableArrowNavigation(requiredElement("summary-period-tabs"));
 enableArrowNavigation(requiredElement("company-tabs"));
 enableArrowNavigation(requiredElement("period-tabs"));
 requiredElement<HTMLButtonElement>("retry-load").addEventListener(

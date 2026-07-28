@@ -5,12 +5,14 @@ import { renderPeriodTabs } from "../ui/render-period-tabs";
 import { renderNews } from "../ui/render-news";
 import { renderDashboard } from "../ui/render-dashboard";
 import { renderHistory } from "../ui/render-history";
+import { renderSummary } from "../ui/render-summary";
 import { renderStatus } from "../ui/render-status";
 import {
   historicalKpiOptions,
   populateHistoricalKpiSelect,
 } from "../ui/history-kpis";
 import {
+  availablePeriods,
   availablePeriodsForCompany,
   initialState,
   selectCompany,
@@ -39,6 +41,7 @@ describe("interface", () => {
   it("sélectionne la période la plus récente propre à chaque compagnie", () => {
     const state = initialState(dataset);
     expect(state.periodId).toBe("2026-T2");
+    expect(state.summaryPeriodId).toBe("2026-T2");
     expect(state.viewMode).toBe("summary");
     expect(state.historicalKpi).toBe("metric:core_eps");
     selectCompany(state, "SLF");
@@ -46,6 +49,32 @@ describe("interface", () => {
     expect(
       availablePeriodsForCompany(dataset, "SLF").map((item) => item.periodId),
     ).toEqual(["2025-AN", "2025-T3", "2025-T2", "2025-T1"]);
+  });
+
+  it("affiche les compagnies les unes sous les autres pour une période commune", () => {
+    const container = document.createElement("div");
+    const onSelect = vi.fn();
+    renderSummary(container, dataset, "2025-AN", onSelect);
+
+    const rows = container.querySelectorAll(".company-summary-row");
+    expect(rows).toHaveLength(2);
+    expect(rows[0]?.textContent).toContain("Manuvie · Annuel 2025");
+    expect(rows[1]?.textContent).toContain("Sun Life · Annuel 2025");
+    expect(rows[0]?.querySelectorAll(".metric-card")).toHaveLength(1);
+    expect(rows[1]?.querySelectorAll(".metric-card")).toHaveLength(1);
+    rows[1]?.querySelector<HTMLButtonElement>("button")?.click();
+    expect(onSelect).toHaveBeenCalledWith("SLF");
+  });
+
+  it("offre dans la synthèse toutes les périodes réellement publiées", () => {
+    expect(availablePeriods(dataset).map((item) => item.periodId)).toEqual([
+      "2026-T2",
+      "2026-T1",
+      "2025-AN",
+      "2025-T3",
+      "2025-T2",
+      "2025-T1",
+    ]);
   });
 
   it("ne mélange jamais deux années portant la même clé de période", () => {
@@ -72,12 +101,16 @@ describe("interface", () => {
   it("affiche une actualité T3 même si les derniers résultats sont T2", () => {
     document.body.innerHTML = `
       <div id="company-header"></div><div id="metrics"></div><div id="news"></div>
+      <p id="news-freshness"></p>
       <section id="company-panel"></section>`;
     const state = initialState(dataset);
     expect(state.periodId).toBe("2026-T2");
     renderDashboard(state);
     expect(document.querySelector("#news")?.textContent).toContain(
       "Actualité postérieure aux derniers résultats",
+    );
+    expect(document.querySelector("#news-freshness")?.textContent).toContain(
+      "15 juill. 2026",
     );
   });
 

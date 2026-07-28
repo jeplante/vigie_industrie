@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-28T16:05:30.493873Z",
+  "generatedAt": "2026-07-28T16:43:12.028071Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
   "sourcesSucceeded": 3,
-  "sourcesFailed": 2,
+  "sourcesFailed": 0,
   "observationsAdded": 0,
   "observationsUpdated": 8,
   "overridesApplied": 0,
@@ -26,23 +26,23 @@
       "sourceId": "iag-results"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.manulife.com/ca/en/about-us/news",
+      "code": "news_llm_degraded",
+      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
       "sourceId": "mfc-official-news"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/newsroom/news-releases/",
+      "code": "news_llm_degraded",
+      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
       "sourceId": "slf-official-news"
     },
     {
-      "code": "no_documents_discovered",
-      "message": "Aucun document d’actualité découvert.",
+      "code": "news_llm_degraded",
+      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
       "sourceId": "gwo-official-news"
     },
     {
-      "code": "no_documents_discovered",
-      "message": "Aucun document d’actualité découvert.",
+      "code": "news_llm_degraded",
+      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
       "sourceId": "iag-official-news"
     }
   ],
@@ -107,41 +107,85 @@
     {
       "sourceId": "mfc-official-news",
       "companyId": "MFC",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.manulife.com/ca/en/about-us/news",
+      "status": "warning",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation-841261989.html",
+        "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
+        "https://www.newswire.ca/news-releases/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection-856947272.html",
+        "https://www.newswire.ca/news-releases/manulife-financial-corporation-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1-896547607.html",
+        "https://www.newswire.ca/news-releases/manulife-named-1-life-insurer-for-ai-maturity-for-second-consecutive-year-by-evident-804697893.html",
+        "https://www.newswire.ca/news-releases/manulife-financial-corporation-announces-results-of-conversion-privileges-of-class-1-preferred-shares-series-3-and-series-4-854260956.html",
+        "https://www.newswire.ca/news-releases/manulife-financial-corporation-to-issue-s-500-million-2-880-subordinated-notes-due-2036-867499733.html",
+        "https://www.newswire.ca/news-releases/mental-fatigue-and-burnout-drive-productivity-losses-equivalent-to-46-working-days-per-employee-every-year-manulife-canada-report-884020804.html"
+      ],
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
       "anthropicCalls": 0
     },
     {
       "sourceId": "slf-official-news",
       "companyId": "SLF",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/newsroom/news-releases/",
+      "status": "warning",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
+        "https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-850531587.html",
+        "https://www.newswire.ca/news-releases/sun-life-completes-acquisition-of-bell-partners-894705536.html",
+        "https://www.newswire.ca/news-releases/sun-life-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-858951667.html",
+        "https://www.newswire.ca/news-releases/sun-life-announces-offering-of-subordinated-unsecured-debentures-826572222.html",
+        "https://www.newswire.ca/news-releases/sun-life-receives-regulatory-approval-of-normal-course-issuer-bid-renewal-858452759.html",
+        "https://www.newswire.ca/news-releases/sun-life-announces-election-of-directors-855650818.html",
+        "https://www.newswire.ca/news-releases/sun-life-increases-common-share-dividend-and-declares-dividends-on-preferred-shares-payable-in-q2-2026-857639851.html"
+      ],
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
       "anthropicCalls": 0
     },
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
       "status": "warning",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Aucun document d’actualité découvert.",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
+        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
+        "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
+        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
+        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html",
+        "https://www.newswire.ca/news-releases/power-corporation-great-west-and-igm-financial-announce-joint-investment-in-sagard-ai-fund-897072555.html",
+        "https://www.newswire.ca/news-releases/great-west-announces-election-of-directors-835512953.html",
+        "https://www.newswire.ca/news-releases/great-west-reports-double-digit-growth-and-base-roe-above-19--869171143.html"
+      ],
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
       "anthropicCalls": 0
     },
     {
       "sourceId": "iag-official-news",
       "companyId": "IAG",
       "status": "warning",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Aucun document d’actualité découvert.",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-cloture-placement-500-m-dollars-debentures-subordonnees-taux-fixe-4-158-pourcent",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable-4-158-pourcent",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-elargissement-role-sebastien-mcmahon-titre-economiste-chef",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-resultats-scrutins-assemblee-annuelle",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-immostar-annoncent-chantier-alo-ste-foy-309-logements-principal-pole-mobilite-quebec",
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
+      ],
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
       "anthropicCalls": 0
     }
   ]

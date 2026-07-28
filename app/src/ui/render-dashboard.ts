@@ -2,6 +2,7 @@ import type { AppState } from "./state";
 import { renderMetrics } from "./render-metrics";
 import { renderNews } from "./render-news";
 import { clear, element, requiredElement } from "./dom";
+import { formatDate } from "../formatters/date";
 
 export function renderDashboard(state: AppState): void {
   const company = state.dataset.companies.find(
@@ -40,16 +41,19 @@ export function renderDashboard(state: AppState): void {
         observationPeriod.periodId === state.periodId,
     ),
   );
+  const companyNews = state.dataset.news
+    .filter((item) => item.companyIds.includes(state.companyId))
+    .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt));
+  const latestNews = companyNews[0];
+  requiredElement("news-freshness").textContent = latestNews
+    ? `Dernière actualité recensée : ${formatDate(latestNews.publishedAt)}`
+    : "Aucune actualité recensée.";
   renderNews(
     requiredElement("news"),
-    state.dataset.news
-      .filter(
-        (item) =>
-          item.companyIds.includes(state.companyId) &&
-          (state.category === "all" ||
-            item.categories.includes(state.category)),
-      )
-      .sort((left, right) => right.publishedAt.localeCompare(left.publishedAt)),
+    companyNews.filter(
+      (item) =>
+        state.category === "all" || item.categories.includes(state.category),
+    ),
   );
   requiredElement("company-panel").setAttribute(
     "aria-labelledby",

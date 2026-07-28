@@ -10,7 +10,12 @@ from vigie_pipeline.exceptions import LlmError
 from vigie_pipeline.fetch import FetchResult
 from vigie_pipeline.llm.base import NewsAnalysis
 from vigie_pipeline.models import VigieDataset
-from vigie_pipeline.news import acquire_news, canonicalize_url, discover_news_documents
+from vigie_pipeline.news import (
+    acquire_news,
+    canonicalize_url,
+    discover_news_documents,
+    fetch_news_index,
+)
 from vigie_pipeline.settings import Settings
 
 T = TypeVar("T", bound=BaseModel)
@@ -72,6 +77,74 @@ class FailingProvider(FakeProvider):
     def summarize_news(self, *, title: str, content: str, source_url: str) -> NewsAnalysis:
         self.calls += 1
         raise LlmError("Anthropic indisponible")
+
+
+class IaIndexFetcher:
+    def __init__(self) -> None:
+        self.urls: list[str] = []
+
+    def fetch(self, url: str) -> FetchResult:
+        self.urls.append(url)
+        if "getSallePresseMois" in url:
+            content = b"""
+                <table><tr><td><time>July 21, 2026</time>
+                <a href="/newsroom/2026/july/quarterly-results-date">
+                iA Financial Group announces its results date</a></td></tr></table>
+            """
+        else:
+            content = b"""
+                <div class="salle-presse">
+                  <div class="tuile-contenu" id="2025" data-item-id="older"></div>
+                  <div class="tuile-contenu" id="2026" data-item-id="latest"></div>
+                </div>
+            """
+        return FetchResult(
+            url=url,
+            content=content,
+            content_type="text/html",
+            etag=None,
+            last_modified=None,
+        )
+
+
+def test_ia_news_fetches_latest_year_fragment(project_config: ProjectConfig) -> None:
+    source = next(item for item in project_config.sources if item.id == "iag-official-news")
+    fetcher = IaIndexFetcher()
+    index = fetch_news_index(source, fetcher)  # type: ignore[arg-type]
+    documents = discover_news_documents(source, index)
+
+    assert "anneeItemId=latest" in fetcher.urls[-1]
+    assert "sc_lang=fr" in fetcher.urls[-1]
+    assert len(documents) == 1
+    assert str(documents[0].canonical_url) == (
+        "https://ia.ca/newsroom/2026/july/quarterly-results-date"
+    )
+    assert documents[0].published_at is not None
+    assert documents[0].published_at.isoformat() == "2026-07-21"
+
+
+def test_cision_abbreviated_date_is_used_instead_of_a_future_event_date(
+    project_config: ProjectConfig,
+) -> None:
+    source = next(item for item in project_config.sources if item.id == "mfc-official-news")
+    index = FetchResult(
+        url=str(source.url),
+        content=b"""
+          <a href="/news-releases/manulife-results-date-123456789.html">
+            <small>Jul 21, 2026, 08:00 ET</small>
+            Manulife to release results after markets close on August 5, 2026.
+          </a>
+        """,
+        content_type="text/html",
+        etag=None,
+        last_modified=None,
+    )
+
+    documents = discover_news_documents(source, index)
+
+    assert len(documents) == 1
+    assert documents[0].published_at is not None
+    assert documents[0].published_at.isoformat() == "2026-07-21"
 
 
 def test_news_discovery_and_canonicalization(

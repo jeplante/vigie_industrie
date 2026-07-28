@@ -1,6 +1,7 @@
 """Fusion sans perte et déduplication contrôlée."""
 
 from copy import deepcopy
+from datetime import date
 
 from vigie_pipeline.models import NewsItem, Observation, VigieDataset
 
@@ -26,13 +27,40 @@ def merge_datasets(base: VigieDataset, candidate: VigieDataset) -> VigieDataset:
 
 
 def deduplicate_news(items: list[NewsItem]) -> list[NewsItem]:
-    """Conserve la dernière version de chaque URL normalisée, de façon stable."""
+    """Déduplique les URL et les reprises du même communiqué sur un autre domaine."""
 
-    seen: set[str] = set()
-    result: list[NewsItem] = []
-    for item in reversed(items):
+    by_url: dict[str, int] = {}
+    unique_urls: list[NewsItem] = []
+    for item in items:
         key = str(item.source.url).rstrip("/").lower()
-        if key not in seen:
+        existing_index = by_url.get(key)
+        if existing_index is None:
+            by_url[key] = len(unique_urls)
+            unique_urls.append(item)
+        else:
+            unique_urls[existing_index] = item
+
+    by_release: dict[tuple[tuple[str, ...], date, str], int] = {}
+    result: list[NewsItem] = []
+    for item in unique_urls:
+        release_key = (
+            tuple(sorted(str(company_id) for company_id in item.company_ids)),
+            item.published_at,
+            " ".join(item.title.casefold().split()),
+        )
+        existing_index = by_release.get(release_key)
+        if existing_index is None:
+            by_release[release_key] = len(result)
             result.append(item)
-            seen.add(key)
-    return list(reversed(result))
+        elif _news_preference(item) > _news_preference(result[existing_index]):
+            result[existing_index] = item
+    return result
+
+
+def _news_preference(item: NewsItem) -> tuple[int, bool, bool]:
+    quality_rank = {"rejected": 0, "warning": 1, "validated": 2}
+    return (
+        quality_rank[item.quality.status],
+        item.generated_summary is not None,
+        "newswire.ca" not in str(item.source.url).lower(),
+    )

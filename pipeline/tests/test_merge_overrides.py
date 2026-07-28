@@ -21,6 +21,23 @@ def test_deduplicate_news_by_url(dataset: VigieDataset) -> None:
     assert len(deduplicate_news([dataset.news[0], duplicate])) == 1
 
 
+def test_deduplicate_news_prefers_validated_direct_release(dataset: VigieDataset) -> None:
+    direct = deepcopy(dataset.news[0])
+    direct.source.url = "https://issuer.example.com/news/strategy"
+    direct.quality.status = "validated"
+    direct.generated_summary = "Résumé validé."
+    syndicated = deepcopy(direct)
+    syndicated.id = "syndicated-id"
+    syndicated.source.url = "https://www.newswire.ca/news-releases/strategy-123.html"
+    syndicated.quality.status = "warning"
+    syndicated.generated_summary = None
+
+    result = deduplicate_news([direct, syndicated])
+
+    assert len(result) == 1
+    assert result[0].id == direct.id
+
+
 def test_manual_override_is_audited(dataset: VigieDataset, tmp_path: Path) -> None:
     observation = dataset.observations[0]
     override = tmp_path / "overrides.yaml"
