@@ -169,6 +169,43 @@ def test_old_invalid_document_does_not_cancel_new_valid_document(
     }
 
 
+def test_failed_alternative_is_cleared_when_same_period_is_fully_ingested(
+    repository_root: Path,
+    project_config: ProjectConfig,
+    dataset: VigieDataset,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    index = b"""
+    <html><body>
+      <a href="/results/z-incomplete-q1-2026">Q1 2026 financial statements</a>
+      <a href="/results/a-complete-q1-2026">Q1 2026 news release</a>
+    </body></html>
+    """
+    fixture_dir = repository_root / "pipeline/tests/fixtures"
+    fetcher = FixtureFetcher(
+        index,
+        {
+            "z-incomplete": (fixture_dir / "financial-old-invalid.html").read_bytes(),
+            "a-complete": (fixture_dir / "financial-new-valid.html").read_bytes(),
+        },
+    )
+    monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
+    source = next(item for item in project_config.sources if item.id == "mfc-results")
+    source = source.model_copy(update={"historical_document_urls": []})
+
+    acquisition = acquire_source(dataset, source, Settings(), project_config)
+
+    assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
+    assert {item.metric_id for item in acquisition.observations} == set(source.expected_metrics)
+    assert acquisition.failures == []
+
+    dataset.observations.extend(acquisition.observations)
+    repeated = acquire_source(dataset, source, Settings(), project_config)
+
+    assert repeated.observations == []
+    assert repeated.failures == []
+
+
 def test_new_period_does_not_reingest_latest_period_from_an_unknown_url(
     repository_root: Path,
     project_config: ProjectConfig,

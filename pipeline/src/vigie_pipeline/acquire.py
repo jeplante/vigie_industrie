@@ -741,6 +741,7 @@ def acquire_source(
                     and existing
                     and all(item.source.document_hash == fingerprint for item in existing)
                 ):
+                    successful_periods.add(period.period_id)
                     continue
                 content = document_text(document)
                 candidates: list[MetricCandidate | LlmMetric] = list(
@@ -800,6 +801,9 @@ def acquire_source(
                     )
                 )
                 continue
+        failures = [
+            failure for failure in failures if failure.period.period_id not in successful_periods
+        ]
         reported_periods = [
             period
             for document in reported_documents

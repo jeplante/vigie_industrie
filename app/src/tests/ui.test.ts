@@ -178,18 +178,81 @@ describe("interface", () => {
       new Date("2026-07-11T00:00:00Z"),
     );
     expect(container.textContent).toContain("Données anciennes");
-    expect(container.textContent).toContain("Données publiées avec réserves");
+    expect(container.textContent).toContain(
+      "Données financières publiées avec réserves",
+    );
     expect(container.textContent).toContain("Dernière tentative");
     expect(container.textContent).toContain(
       "Dernier rafraîchissement financier réussi",
     );
     expect(container.textContent).toContain("Mode : offline (hors ligne)");
-    expect(container.textContent).toContain("1 source bloquée");
-    expect(container.textContent).toContain("2 sources avec avertissement");
+    expect(container.textContent).toContain("1 source financière bloquée");
+    expect(container.textContent).toContain(
+      "1 source financière avec avertissement",
+    );
+    expect(container.textContent).toContain(
+      "Actualités : 1 source avec avertissement",
+    );
     expect(container.textContent).not.toContain("source(s) en erreur");
     expect(container.textContent).toContain("document plus récent non intégré");
     renderStatus(container, manifest, quality);
     expect(container.textContent).toContain("Mode : live (en ligne)");
+  });
+
+  it("ne dégrade pas les données financières pour un avertissement d’actualités", () => {
+    const container = document.createElement("div");
+    renderStatus(
+      container,
+      {
+        ...manifest,
+        companyFreshness: manifest.companyFreshness.map((item) => ({
+          ...item,
+          freshnessStatus: "current",
+        })),
+      },
+      {
+        ...quality,
+        status: "partial",
+        warnings: [
+          {
+            code: "no_documents_discovered",
+            message: "Aucun document d’actualité découvert.",
+            sourceId: "gwo-official-news",
+          },
+        ],
+        sourceResults: [
+          {
+            sourceId: "mfc-results",
+            companyId: "MFC",
+            status: "success",
+            documentsDiscovered: 1,
+            documentUrls: ["https://example.com/mfc"],
+            periodIds: ["2026-T1"],
+            message: null,
+            anthropicCalls: 0,
+          },
+          {
+            sourceId: "gwo-official-news",
+            companyId: "GWO",
+            status: "warning",
+            documentsDiscovered: 0,
+            documentUrls: [],
+            periodIds: [],
+            message: "Aucun document",
+            anthropicCalls: 0,
+          },
+        ],
+      },
+    );
+
+    expect(container.textContent).toContain("Données financières validées");
+    expect(container.textContent).toContain(
+      "Actualités : 1 source avec avertissement",
+    );
+    expect(container.textContent).not.toContain(
+      "Données financières publiées avec réserves",
+    );
+    expect(container.className).toContain("status-success");
   });
 
   it("navigue entre les onglets au clavier", () => {

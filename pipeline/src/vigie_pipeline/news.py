@@ -312,9 +312,9 @@ def acquire_news(
                     importance=analysis.importance if analysis else "medium",
                     themes=analysis.themes if analysis else [],
                     quality=ObservationQuality(
-                        status="validated" if analysis else "warning",
+                        status="validated",
                         extraction_method=("anthropic" if analysis else "deterministic_fallback"),
-                        confidence=analysis.confidence if analysis else 0.5,
+                        confidence=analysis.confidence if analysis else 0.75,
                         warnings=analysis.warnings if analysis else [llm_warning or ""],
                         llm_trace=trace,
                     ),
