@@ -12,6 +12,7 @@ class IaAdapter(GenericIrAdapter):
     aliases: ClassVar[dict[str, tuple[str, ...]]] = {
         "core_eps": ("BPA tiré des activités de base", "core EPS"),
         "core_earnings": ("résultat tiré des activités de base", "core earnings"),
+        "core_roe": ("rendement des capitaux propres de base", "core ROE"),
         "solvency_ratio": ("ratio de solvabilité", "solvency ratio"),
         "assets_under_administration": (
             "actif sous gestion et sous administration",
@@ -28,6 +29,16 @@ class IaAdapter(GenericIrAdapter):
                 "core earnings",
                 r"core earnings.{0,50}?\(in millions\)\s*(\d{2,4})\b",
                 0.001,
+            ),
+            (
+                "core_roe",
+                "core ROE",
+                (
+                    r"(?:trailing[- ]12[- ]month\s+core\s+roe"
+                    r"|core return on common shareholders[’'] equity(?:\s*\(\s*roe\s*\))?)"
+                    r".{0,40}?(\d{1,2}(?:[.,]\d+)?)\s*%"
+                ),
+                1.0,
             ),
             (
                 "solvency_ratio",
@@ -53,7 +64,7 @@ class IaAdapter(GenericIrAdapter):
             parsed = float(match[1].replace(",", ".")) * multiplier
             if metric_id == "core_earnings":
                 raw_value = f"{parsed:.3f} G$"
-            elif metric_id in {"solvency_ratio"}:
+            elif metric_id in {"core_roe", "solvency_ratio"}:
                 raw_value = f"{parsed:g} %"
             elif metric_id == "assets_under_administration":
                 raw_value = f"{parsed:g} G$"

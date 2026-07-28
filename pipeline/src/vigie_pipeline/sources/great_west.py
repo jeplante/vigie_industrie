@@ -12,6 +12,7 @@ class GreatWestAdapter(GenericIrAdapter):
     aliases: ClassVar[dict[str, tuple[str, ...]]] = {
         "core_eps": ("BPA de base", "base earnings per share"),
         "core_earnings": ("bénéfice de base", "base earnings"),
+        "core_roe": ("rendement des capitaux propres de base consolidé", "consolidated base ROE"),
         "licat_ratio": ("ratio LICAT", "LICAT ratio"),
         "total_client_assets": ("actifs clients totaux", "total assets under administration"),
     }
@@ -32,6 +33,20 @@ class GreatWestAdapter(GenericIrAdapter):
                 r"base earnings.{0,100}?\$\s*([\d,]+)\s*(?:million)?",
                 0.001,
                 "G$",
+            ),
+            (
+                "core_roe",
+                "consolidated base ROE",
+                (
+                    r"(?:consolidated\s+base\s+roe|"
+                    r"total\s+lifeco\s+base\s+return\s+on\s+equity|"
+                    r"base\s+roe\s+was|"
+                    r"base\s+(?:roe|return\s+on\s+equity)(?:\d+(?:,\d+)*)?)"
+                    r"(?:\s*\d+|\s*\([^)]*\))*\s+(?:of\s+)?"
+                    r"(\d{1,2}(?:[.,]\d+)?)\s*%"
+                ),
+                1.0,
+                "%",
             ),
             (
                 "licat_ratio",

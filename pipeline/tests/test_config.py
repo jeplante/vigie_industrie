@@ -57,6 +57,11 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
         "financial_results",
         "official_news",
     }
+    assert all(
+        "core_roe" in source.expected_metrics
+        for source in config.sources
+        if source.content_category == "financial_results"
+    )
 
 
 def test_required_anthropic_defaults_come_from_yaml(repository_root: Path) -> None:

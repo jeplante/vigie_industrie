@@ -462,6 +462,28 @@ def _llm_trace(
     )
 
 
+def _comparison_values(
+    current: float,
+    previous: Observation | None,
+    metric: MetricConfig,
+) -> tuple[
+    float | None,
+    Literal["PERCENT", "PERCENTAGE_POINT", "NONE"],
+    str,
+]:
+    if previous is None:
+        return None, "NONE", "—"
+    if metric.comparison == "percentage_point":
+        change = current - previous.value
+        return change, "PERCENTAGE_POINT", f"{change:+.1f} pp".replace(".", ",")
+    relative_change = calculate_change(current, previous.value)
+    return (
+        relative_change,
+        "PERCENT" if relative_change is not None else "NONE",
+        "—" if relative_change is None else f"{relative_change:+.1%}".replace(".", ","),
+    )
+
+
 def _build_observation(
     *,
     dataset: VigieDataset,
@@ -476,7 +498,11 @@ def _build_observation(
     publication_date_fallback: bool = False,
 ) -> Observation:
     previous = _previous(dataset, source.company_id, period, candidate.metric_id)
-    change = calculate_change(candidate.value, previous.value) if previous else None
+    change, change_unit, display_change = _comparison_values(
+        candidate.value,
+        previous,
+        metric,
+    )
     direction = cast(
         Literal["up", "down", "neutral"],
         direction_for(candidate.value, previous.value) if previous else "neutral",
@@ -499,7 +525,6 @@ def _build_observation(
         publication_date_fallback = True
     if publication_date_fallback:
         warnings.append("Date réelle de publication introuvable; date de fin de période utilisée.")
-    display_change = "—" if change is None else f"{change:+.1%}".replace(".", ",")
     fingerprint = sha256_bytes(document.content)
     return Observation(
         id=f"{source.company_id}-{period.period_id}-{candidate.metric_id}",
@@ -516,7 +541,7 @@ def _build_observation(
             display_value=previous.display_value if previous else "—",
             period_label=previous.period.label if previous else "",
             change=change,
-            change_unit="PERCENT" if change is not None else "NONE",
+            change_unit=change_unit,
             display_change=display_change,
         ),
         direction=direction,
@@ -544,6 +569,54 @@ def _build_observation(
             ),
         ),
     )
+
+
+def _rebuild_acquired_comparisons(
+    dataset: VigieDataset,
+    observations: list[Observation],
+    config: ProjectConfig,
+) -> list[Observation]:
+    by_id = {item.id: item for item in dataset.observations}
+    by_id.update({item.id: item for item in observations})
+    combined = dataset.model_copy(update={"observations": list(by_id.values())})
+    rebuilt: list[Observation] = []
+    for observation in observations:
+        previous = _previous(
+            combined,
+            observation.company_id,
+            observation.period,
+            observation.metric_id,
+        )
+        change, change_unit, display_change = _comparison_values(
+            observation.value,
+            previous,
+            config.metrics[observation.metric_id],
+        )
+        direction = cast(
+            Literal["up", "down", "neutral"],
+            (
+                direction_for(observation.value, previous.value)
+                if previous is not None
+                else "neutral"
+            ),
+        )
+        rebuilt.append(
+            observation.model_copy(
+                update={
+                    "comparison": Comparison(
+                        period_id=previous.period.period_id if previous else None,
+                        value=previous.value if previous else None,
+                        display_value=previous.display_value if previous else "—",
+                        period_label=previous.period.label if previous else "",
+                        change=change,
+                        change_unit=change_unit,
+                        display_change=display_change,
+                    ),
+                    "direction": direction,
+                }
+            )
+        )
+    return rebuilt
 
 
 def acquire_source(
@@ -750,7 +823,7 @@ def acquire_source(
                     else adapter.extract_metrics(content)
                 )
                 found = {item.metric_id for item in candidates}
-                missing = set(source.expected_metrics) - found
+                missing = set(source.expected_metrics) - (found | existing_metrics)
                 if missing and settings.anthropic_api_key:
                     provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
                     anthropic_calls += 1
@@ -764,13 +837,18 @@ def acquire_source(
                         item for item in extraction.metrics if item.metric_id in missing
                     )
                     found = {item.metric_id for item in candidates}
-                missing = set(source.expected_metrics) - found
+                missing = set(source.expected_metrics) - (found | existing_metrics)
                 if missing:
                     raise ExtractionError(
                         f"{source.id}/{period.label}: métriques officielles "
                         f"manquantes {sorted(missing)}"
                     )
                 by_metric = {item.metric_id: item for item in candidates}
+                same_document_metrics = {
+                    item.metric_id
+                    for item in existing
+                    if str(item.source.url).rstrip("/").lower() == canonical_url
+                }
                 real_publication_date = discovered.published_at or publication_date(document)
                 used_fallback_date = real_publication_date is None
                 effective_publication_date = real_publication_date or period.end_date
@@ -788,6 +866,8 @@ def acquire_source(
                         publication_date_fallback=used_fallback_date,
                     )
                     for metric_id in source.expected_metrics
+                    if metric_id in by_metric
+                    and (metric_id not in existing_metrics or metric_id in same_document_metrics)
                 )
                 successful_periods.add(period.period_id)
             except PipelineError as error:
@@ -821,7 +901,7 @@ def acquire_source(
                 f"{source.id}: périodes historiques non découvertes {undiscovered_history}."
             )
         return FinancialAcquisition(
-            observations=results,
+            observations=_rebuild_acquired_comparisons(dataset, results, config),
             discovered_periods=sorted(unique_periods.values(), key=lambda item: item.end_date),
             documents=list(unique_documents.values()),
             failures=failures,

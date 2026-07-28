@@ -75,6 +75,29 @@ def test_rejects_cross_period_comparison(
     assert "invalid_comparison_period" in codes
 
 
+def test_rejects_inconsistent_percentage_point_comparison(
+    dataset: VigieDataset, project_config: ProjectConfig
+) -> None:
+    candidate = deepcopy(dataset)
+    observation = candidate.observations[0]
+    observation.metric_id = "core_roe"
+    observation.unit = "PERCENT"
+    observation.value = 17.5
+    observation.comparison.value = 15.0
+    observation.comparison.change = 1.0
+    observation.comparison.change_unit = "PERCENTAGE_POINT"
+    observation.comparison.period_id = "2024-T1"
+    codes = {
+        error.code
+        for error in validate_dataset(
+            candidate,
+            known_units=project_config.known_units,
+            known_metrics=set(project_config.metrics),
+        )
+    }
+    assert "inconsistent_delta" in codes
+
+
 def test_cross_validates_dataset_manifest_and_quality_report(dataset: VigieDataset) -> None:
     report = build_quality_report(mode="migration", generated_at=dataset.generated_at)
     manifest = build_manifest(dataset, dataset.generated_at, mode="migration")

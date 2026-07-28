@@ -351,6 +351,21 @@ describe("interface", () => {
         },
         {
           ...reference,
+          id: "MFC-2025-T1-core-roe",
+          metricId: "core_roe",
+          label: "Rendement des capitaux propres de base",
+          value: 16.5,
+          unit: "PERCENT",
+          displayValue: "16,5 %",
+          comparison: {
+            ...reference.comparison,
+            change: 0.9,
+            changeUnit: "PERCENTAGE_POINT" as const,
+            displayChange: "+0,9 pp",
+          },
+        },
+        {
+          ...reference,
           id: "MFC-2025-T1-licat",
           metricId: "licat_ratio",
           label: "Ratio LICAT",
@@ -373,6 +388,7 @@ describe("interface", () => {
       "metric:core_eps",
       "metric:net_income",
       "metric:licat_ratio",
+      "metric:core_roe",
     ]);
 
     const select = document.createElement("select");
@@ -383,9 +399,12 @@ describe("interface", () => {
     );
     expect(selected).toBe("metric:net_income");
     expect(select.value).toBe("metric:net_income");
-    expect(select.querySelectorAll('option[value^="metric:"]')).toHaveLength(3);
+    expect(select.querySelectorAll('option[value^="metric:"]')).toHaveLength(4);
     expect(select.textContent).toContain("Résultat net");
     expect(select.textContent).toContain("Ratio LICAT");
+    expect(select.textContent).toContain(
+      "Rendement des capitaux propres de base",
+    );
   });
 
   it("normalise les millions en milliards pour un même KPI", () => {

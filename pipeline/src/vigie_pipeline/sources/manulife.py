@@ -13,6 +13,7 @@ class ManulifeAdapter(GenericIrAdapter):
         "core_eps": ("BPA tiré des activités de base", "core EPS"),
         "core_earnings": ("résultat tiré des activités de base", "core earnings"),
         "net_income": ("résultat net attribué aux actionnaires", "net income attributed"),
+        "core_roe": ("rendement des capitaux propres de base", "core ROE"),
         "licat_ratio": ("ratio LICAT", "LICAT ratio"),
     }
 
@@ -39,6 +40,17 @@ class ManulifeAdapter(GenericIrAdapter):
                 r"net income attributed to shareholders\s*\$\s*([\d,]+)",
                 0.001,
                 "G$",
+            ),
+            (
+                "core_roe",
+                "core ROE",
+                (
+                    r"(?:core roe|roe (?:tirÃ© des activitÃ©s )?de base)"
+                    r"(?:\s*\d+|\s*\([^)]*\))*\s+(?:of\s+|Ã©tait de\s+)?"
+                    r"(\d{1,2}(?:[.,]\d+)?)\s*%"
+                ),
+                1.0,
+                "%",
             ),
             (
                 "licat_ratio",
