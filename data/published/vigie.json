@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-27T13:24:18.272526Z",
+  "generatedAt": "2026-07-28T12:16:28.130677Z",
   "companies": [
     {
       "id": "MFC",
@@ -4848,12 +4848,12 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-27T13:23:49.443782Z",
-        "documentHash": "sha256:625c1f297e10d4632de18060eca0779971945e760a593dc4fee4a3895027189b"
+        "fetchedAt": "2026-07-28T12:16:02.996344Z",
+        "documentHash": "sha256:7e3108b4a3a050575f61feb035a86ffb65753c6e4d1dbf9fea8b8dc656f5bf93"
       },
       "title": "Manulife Expands Partnership with Microsoft to Accelerate Enterprise AI Governance and Innovation",
       "originalSummary": "Five year agreement advances Manulife’s strategic priority to become an AI-powered organization",
-      "generatedSummary": "Manulife a annoncé l'expansion de son partenariat avec Microsoft via un accord de cinq ans visant à accélérer sa transformation en organisation basée sur l'IA. L'accord inclut l'adoption de la Microsoft 365 E5 Frontier Suite, le déploiement de Microsoft Agent 365 pour la gouvernance des agents d'IA à l'échelle de l'entreprise, et l'expansion de Microsoft 365 Copilot à plus de 30 000 employés. Manulife prévoit de générer plus d'un milliard de dollars de valeur d'entreprise d'ici 2027, dont 300 millions réalisés à la fin de 2025, grâce à des solutions d'IA déjà en production incluant des outils de support à la vente, des solutions de souscription et des améliorations de l'expérience client.",
+      "generatedSummary": "Manulife a annoncé l'expansion et le renouvellement de son partenariat avec Microsoft dans le cadre d'un accord de cinq ans. Manulife adoptera la suite Microsoft 365 E7 Frontier et déploiera Microsoft Agent 365 pour gouverner et sécuriser les agents d'IA à l'échelle de l'entreprise. L'entreprise étendra également le déploiement de Microsoft 365 Copilot à plus de 30 000 employés. Ce partenariat soutient la transformation stratégique de Manulife pour devenir une organisation alimentée par l'IA, avec des solutions déjà déployées dans la croissance des revenus, le soutien à la souscription et l'expérience client. Manulife prévoit de générer plus d'un milliard de dollars de valeur d'entreprise d'ici 2027, dont 300 millions réalisés à la fin de 2025.",
       "categories": [
         "digital_transformation",
         "artificial_intelligence",
@@ -4864,9 +4864,9 @@
         "partenariat technologique",
         "gouvernance de l'IA",
         "transformation numérique",
-        "création de valeur",
+        "déploiement d'outils d'IA générative",
         "productivité des employés",
-        "innovation en IA responsable"
+        "innovation responsable"
       ],
       "quality": {
         "status": "validated",
@@ -4877,9 +4877,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-27T13:23:57.754113Z",
+          "executedAt": "2026-07-28T12:16:08.002931Z",
           "taskId": "summarize_news_mfc-official-news_87fc787f3f0f",
-          "sourceFingerprint": "sha256:625c1f297e10d4632de18060eca0779971945e760a593dc4fee4a3895027189b",
+          "sourceFingerprint": "sha256:7e3108b4a3a050575f61feb035a86ffb65753c6e4d1dbf9fea8b8dc656f5bf93",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4898,19 +4898,20 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-to-release-second-quarter-2026-results",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-27T13:23:58.530213Z",
-        "documentHash": "sha256:e116891f1a3e1ca34dffd23233cc7387aa07159c420f104a60771a6cb7a3156a"
+        "fetchedAt": "2026-07-28T12:16:08.672447Z",
+        "documentHash": "sha256:30fadddcee121f6caa308592d999678541f3c82868e29b9a2f9263c61bcdf9a5"
       },
       "title": "Manulife to Release Second Quarter 2026 Results",
       "originalSummary": "Manulife to Release Second Quarter 2026 Results Posted : July 21, 2026 TORONTO - Manulife Financial Corporation will release its second quarter 2026 financial results after markets close on Wednesday, August 5, 2026, which will be made available at manulife.com/en/investors/results-and-reports . A live webcast and conference call are scheduled for Thursday, August 6, 2026, at 8:00 a.m. (ET) where members of Manulife's executive leadership team will discuss the results, followed by a question and",
-      "generatedSummary": "Manulife Financial Corporation annoncera ses résultats financiers du deuxième trimestre 2026 après la fermeture des marchés le mercredi 5 août 2026. Une webdiffusion en direct et une conférence téléphonique sont prévues le jeudi 6 août 2026 à 8h00 (HE), au cours desquelles l'équipe de direction de Manulife discutera des résultats, suivie d'une période de questions-réponses avec les analystes. La rediffusion de l'appel sera disponible jusqu'au 6 novembre 2026.",
+      "generatedSummary": "Manulife Financial Corporation annoncera ses résultats financiers du deuxième trimestre 2026 après la fermeture des marchés le mercredi 5 août 2026. Une webdiffusion en direct et une conférence téléphonique sont prévues le jeudi 6 août 2026 à 8h00 (HE), au cours desquelles l'équipe de direction exécutive de Manulife discutera des résultats et répondra aux questions des analystes.",
       "categories": [
         "financial_results"
       ],
       "importance": "medium",
       "themes": [
-        "Publication de résultats trimestriels",
-        "Webdiffusion et conférence téléphonique pour investisseurs"
+        "publication de résultats trimestriels",
+        "conférence téléphonique d'investisseurs",
+        "webdiffusion"
       ],
       "quality": {
         "status": "validated",
@@ -4921,9 +4922,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-27T13:24:01.650262Z",
+          "executedAt": "2026-07-28T12:16:11.087221Z",
           "taskId": "summarize_news_mfc-official-news_b0f7842c6744",
-          "sourceFingerprint": "sha256:e116891f1a3e1ca34dffd23233cc7387aa07159c420f104a60771a6cb7a3156a",
+          "sourceFingerprint": "sha256:30fadddcee121f6caa308592d999678541f3c82868e29b9a2f9263c61bcdf9a5",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4942,25 +4943,25 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-achieves-second-consecutive-year-of-mdrt-membership-growth",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-27T13:24:02.266260Z",
-        "documentHash": "sha256:b72825d6c4ef2411cb8cef4e8b02f01052aa39d5c172bca6ffc2056f79ea9e03"
+        "fetchedAt": "2026-07-28T12:16:11.725098Z",
+        "documentHash": "sha256:680046fa6204c38c91fa1338438d21570ca9d587c7b7373919f4ce8e0b80bfe8"
       },
       "title": "Manulife Achieves Second Consecutive Year of MDRT Membership Growth, Ranking No. 3 Globally Among Multinational Insurers",
       "originalSummary": "Outperformance in growth driven by successful efforts to scale a high-quality agency force that is better equipped to serve the evolving needs of customers across Asia",
-      "generatedSummary": "Manulife a annoncé son classement au 3e rang mondial parmi les assureurs multinationaux pour l'adhésion au Million Dollar Round Table (MDRT) en 2026, avec 4 442 membres MDRT, représentant une augmentation de près de 10% d'une année à l'autre. Cette croissance a été particulièrement forte en Asie, avec Manulife-Sinochem China affichant une croissance de 32%, Manulife Hong Kong entrant pour la première fois dans le top 10 mondial avec 1 577 membres, et Manulife Financial Advisers Singapore réalisant une croissance de 19%. La compagnie attribue ce succès à sa stratégie « Agency 2.0 » mettant l'accent sur la formation, l'intégration de l'IA (comme AI SalesPro) et le recrutement de qualité. Manulife a également été classée 1er assureur-vie mondial pour sa maturité en IA selon l'indice Evident AI pour la deuxième année consécutive.",
+      "generatedSummary": "Manulife a annoncé avoir atteint le classement n°3 mondial parmi les assureurs multinationaux pour l'adhésion à la Million Dollar Round Table (MDRT) en 2026, avec 4 442 membres MDRT, soit une augmentation de près de 10% en glissement annuel. Cette croissance reflète le succès de la stratégie \"Agency 2.0\" axée sur la professionnalisation de la distribution, la formation rigoureuse, l'activation numérique et le recrutement de qualité. Manulife-Sinochem China a classé #1 mondial en croissance d'adhésion MDRT avec 32%, Manulife Hong Kong a intégré le top 10 mondial pour la première fois, et Manulife Financial Advisers Singapore a enregistré une croissance de 19%. La société a également été classée #1 assureur-vie mondial pour la maturité en IA pour la deuxième année consécutive et continue d'investir dans les outils d'IA comme AI SalesPro pour doter les conseillers de capacités de vente basées sur les données.",
       "categories": [
-        "product",
-        "digital_transformation",
-        "artificial_intelligence"
+        "distribution",
+        "artificial_intelligence",
+        "product"
       ],
       "importance": "medium",
       "themes": [
-        "MDRT membership growth",
-        "Agency 2.0 strategy",
-        "AI capability building",
-        "advisor enablement",
-        "Asia expansion",
-        "distribution professionalization"
+        "Croissance du réseau de distribution",
+        "Investissement en IA et technologie",
+        "Excellence des conseillers",
+        "Stratégie Agency 2.0",
+        "Développement des talents",
+        "Expansion en Asie"
       ],
       "quality": {
         "status": "validated",
@@ -4971,9 +4972,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-27T13:24:06.515759Z",
+          "executedAt": "2026-07-28T12:16:16.474694Z",
           "taskId": "summarize_news_mfc-official-news_29c8a28b5e4e",
-          "sourceFingerprint": "sha256:b72825d6c4ef2411cb8cef4e8b02f01052aa39d5c172bca6ffc2056f79ea9e03",
+          "sourceFingerprint": "sha256:680046fa6204c38c91fa1338438d21570ca9d587c7b7373919f4ce8e0b80bfe8",
           "confidence": 0.95,
           "warnings": []
         }
@@ -4992,27 +4993,26 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-27T13:24:06.677044Z",
-        "documentHash": "sha256:4edfc294f9d06cb267ced7d669e015fbd6170d40a7aa66ec94d168d8b160f44a"
+        "fetchedAt": "2026-07-28T12:16:16.531661Z",
+        "documentHash": "sha256:eb92f11dfe2577e698695667354d1d54b048a1eb5ea42791cb82fc9d602ea3f0"
       },
       "title": "Asia Care Survey 2026",
       "originalSummary": "Asia Care Survey 2026 For years, Manulife’s Asia Care Survey has explored the health and wealth well-being of people across Asia, uncovering their evolving needs, values, and aspirations. The latest 2026 edition, which surveyed over 9,000 adults across nine Asia markets, highlights a less discussed reality of longevity. As life expectancy increases, the period during which adults rely on others in their later years is also becoming extended. In Asia, it is estimated that older adults may require",
-      "generatedSummary": "Manulife's Asia Care Survey 2026, conducted across February-March 2026 with over 9,000 adults in nine Asian markets, reveals that 82% of people in Asia prioritize independence as their most meaningful legacy over inheritance. The survey highlights a significant longevity challenge as older adults may require care for 13-14 years. Key findings show a major gap between intention and action: while 70% of Asians believe open family conversations about aging improve well-being, only 58% actually have these discussions. Only half maintain preventive health check-ups despite recognizing good health as independence's foundation. Financial priorities are shifting toward self-reliance, with adults planning to allocate 68% of financial assets to fund their own independence versus only 32% for children. However, investment adoption remains low (32% in stocks, 23% in mutual funds), with 52% preferring cash savings. The survey also finds that 74% want some form of work after age 65, and about half of Asians currently support family members financially, with 38% of monthly income going to family responsibilities, limiting retirement savings capacity.",
+      "generatedSummary": "Manulife publie son sondage Asia Care Survey 2026 basé sur plus de 9 000 adultes dans neuf marchés asiatiques (février-mars 2026). Le sondage révèle que 82% des Asiatiques considèrent l'indépendance comme l'héritage le plus significatif à laisser à leurs familles plutôt que des actifs tangibles. Les résultats mettent en évidence un écart important entre l'intention et l'action : bien que 70% reconnaissent l'importance des discussions familiales ouvertes sur le vieillissement et la retraite, seulement 58% les ont réellement. En matière de santé préventive, seulement la moitié des répondants ont des habitudes concrètes malgré sa valorisation largement reconnue. Sur le plan financier, les Asiatiques prévoient d'allouer plus de 68% de leurs actifs financiers à financer leur propre indépendance (seulement 32% aux enfants), avec des niveaux particulièrement élevés à Taiwan (78%) et au Japon (76%). Cependant, l'adoption des investissements reste faible (32% en actions, 23% en fonds communs) tandis que 52% augmentent l'épargne en espèces. Le sondage révèle également que 74% souhaitent une forme de travail après 65 ans et que près de 50% des Asiatiques soutiennent actuellement des membres de la famille, ce qui limite leur capacité à atteindre l'indépendance financière à long terme (68% rapportent que les responsabilités familiales limitent leur indépendance).",
       "categories": [
         "wealth_management",
-        "strategy",
         "product"
       ],
-      "importance": "high",
+      "importance": "medium",
       "themes": [
-        "longevity risk management",
-        "financial independence vs inheritance",
-        "health and preventive care gap",
-        "family financial obligations",
-        "phased retirement planning",
-        "investment underutilization in retirement planning",
-        "sandwich generation financial burden",
-        "cultural shift from family safety net to self-reliance"
+        "independence as legacy",
+        "health and financial well-being",
+        "preventive care gap",
+        "family financial support",
+        "phased retirement",
+        "investment adoption gap",
+        "longevity planning",
+        "care dependency"
       ],
       "quality": {
         "status": "validated",
@@ -5023,9 +5023,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-27T13:24:12.336574Z",
+          "executedAt": "2026-07-28T12:16:22.831438Z",
           "taskId": "summarize_news_mfc-official-news_948c4064159d",
-          "sourceFingerprint": "sha256:4edfc294f9d06cb267ced7d669e015fbd6170d40a7aa66ec94d168d8b160f44a",
+          "sourceFingerprint": "sha256:eb92f11dfe2577e698695667354d1d54b048a1eb5ea42791cb82fc9d602ea3f0",
           "confidence": 0.95,
           "warnings": []
         }
@@ -5044,22 +5044,22 @@
         "name": "Manuvie",
         "url": "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-07-27T13:24:12.905107Z",
-        "documentHash": "sha256:312f741e89b212501ac806782b4500b6194438eb91fae3bf7ca85470e4f893cc"
+        "fetchedAt": "2026-07-28T12:16:23.368444Z",
+        "documentHash": "sha256:d7ea42f68bf7693c7fc88412790e23b3a3f3a71467283f7a0746c99cb5f8447e"
       },
       "title": "Manulife Named to Corporate Knights’ Best 50 Corporate Citizens in Canada for Sixth Consecutive Year",
       "originalSummary": "Recognition highlights Manulife’s leadership across its investment activities as a global asset manager and asset owner",
-      "generatedSummary": "Manulife a été nommée parmi les 50 meilleures entreprises citoyennes du Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife dans ses activités d'investissement en tant que gestionnaire et propriétaire d'actifs mondiaux. L'évaluation repose sur des indicateurs de durabilité couvrant la gestion des ressources, les revenus durables et les investissements, la gestion des employés et finances, ainsi que la performance des fournisseurs. Manulife a été reconnue comme l'un des principaux gestionnaires d'investissement en capital naturel au monde, et continue de progresser selon son Plan d'action climatique, visant la neutralité carbone nette dans son portefeuille d'investissement du Compte général d'ici 2050 et une réduction de 40% des émissions absolues de ses actifs immobiliers, forestiers et agricoles d'ici 2035.",
+      "generatedSummary": "Manulife a été reconnue parmi les 50 meilleures entreprises citoyennes au Canada par Corporate Knights pour la sixième année consécutive. Cette reconnaissance souligne le leadership de Manulife en tant que gestionnaire et propriétaire d'actifs mondiaux en matière de développement durable. L'évaluation porte sur des indicateurs de performance en gestion des ressources, revenus durables, gestion des employés et des finances, ainsi que la performance des fournisseurs. Manulife a été reconnue comme l'un des principaux gestionnaires d'investissement en capital naturel au monde et progresse dans sa stratégie climatique, visant des émissions nettes zéro dans son portefeuille de placement du Compte général d'ici 2050 et une réduction de 40% des émissions absolues de ses actifs immobiliers, forestiers et agricoles d'ici 2035.",
       "categories": [
         "strategy"
       ],
       "importance": "medium",
       "themes": [
-        "reconnaissance de durabilité",
-        "gestion des actifs mondiaux",
-        "engagement climatique",
-        "investissement responsable",
-        "capital naturel"
+        "reconnaissance en développement durable",
+        "leadership en gestion d'actifs durables",
+        "engagement environnemental",
+        "stratégie climatique",
+        "gestion du capital naturel"
       ],
       "quality": {
         "status": "validated",
@@ -5070,9 +5070,9 @@
           "provider": "anthropic",
           "model": "claude-haiku-4-5",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-07-27T13:24:17.248468Z",
+          "executedAt": "2026-07-28T12:16:27.173852Z",
           "taskId": "summarize_news_mfc-official-news_7582deb92f60",
-          "sourceFingerprint": "sha256:312f741e89b212501ac806782b4500b6194438eb91fae3bf7ca85470e4f893cc",
+          "sourceFingerprint": "sha256:d7ea42f68bf7693c7fc88412790e23b3a3f3a71467283f7a0746c99cb5f8447e",
           "confidence": 0.95,
           "warnings": []
         }
