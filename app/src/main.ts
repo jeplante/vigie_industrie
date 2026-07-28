@@ -2,15 +2,10 @@ import "./styles.css";
 import { StaticJsonDataProvider } from "./data/StaticJsonDataProvider";
 import type { DataProvider } from "./data/DataProvider";
 import type { AppState, ViewMode } from "./ui/state";
-import {
-  availablePeriods,
-  availablePeriodsForCompany,
-  initialState,
-  selectCompany,
-} from "./ui/state";
+import { availablePeriods, initialState, selectCompany } from "./ui/state";
 import { requiredElement } from "./ui/dom";
 import { renderCompanyTabs } from "./ui/render-company-tabs";
-import { renderPeriodTabs } from "./ui/render-period-tabs";
+import { renderPeriodSelect } from "./ui/render-period-select";
 import { renderDashboard } from "./ui/render-dashboard";
 import { renderStatus } from "./ui/render-status";
 import { enableArrowNavigation } from "./ui/accessibility";
@@ -117,21 +112,20 @@ export class VigieApp {
     historicalKpi.value = this.state.historicalKpi;
 
     const companyTabs = requiredElement("company-tabs");
-    const periodTabs = requiredElement("period-tabs");
-    renderPeriodTabs(
-      requiredElement("summary-period-tabs"),
+    renderPeriodSelect(
+      requiredElement("period-selector"),
       availablePeriods(this.state.dataset),
-      this.state.summaryPeriodId,
+      this.state.periodId,
       (periodId) => {
         if (!this.state) return;
-        this.state.summaryPeriodId = periodId;
+        this.state.periodId = periodId;
         this.render();
       },
     );
     renderSummary(
       requiredElement("company-summary"),
       this.state.dataset,
-      this.state.summaryPeriodId,
+      this.state.periodId,
       (companyId) => {
         if (!this.state) return;
         selectCompany(this.state, companyId);
@@ -149,30 +143,19 @@ export class VigieApp {
         this.render();
       },
     );
-    renderPeriodTabs(
-      periodTabs,
-      availablePeriodsForCompany(this.state.dataset, this.state.companyId),
-      this.state.periodId,
-      (periodId) => {
-        if (!this.state) return;
-        this.state.periodId = periodId;
-        this.render();
-      },
-    );
     renderDashboard(this.state);
     renderHistory(
       requiredElement("history-chart"),
       this.state.dataset,
       this.state.historicalKpi,
+      this.state.periodId,
     );
   }
 }
 
 const app = new VigieApp(new StaticJsonDataProvider());
 enableArrowNavigation(requiredElement("view-tabs"));
-enableArrowNavigation(requiredElement("summary-period-tabs"));
 enableArrowNavigation(requiredElement("company-tabs"));
-enableArrowNavigation(requiredElement("period-tabs"));
 requiredElement<HTMLButtonElement>("retry-load").addEventListener(
   "click",
   () => void app.start(),

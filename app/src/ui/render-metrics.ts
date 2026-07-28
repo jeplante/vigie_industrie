@@ -1,4 +1,8 @@
 import type { Observation } from "../domain/models";
+import {
+  canonicalMetricLabel,
+  canonicalObservations,
+} from "../domain/metric-aliases";
 import { clear, element } from "./dom";
 
 const ARROW = { up: "▲", down: "▼", neutral: "◆" } as const;
@@ -17,9 +21,9 @@ export function renderMetrics(
     );
     return;
   }
-  for (const observation of observations) {
+  for (const observation of canonicalObservations(observations)) {
     const card = element("article", { className: "metric-card" });
-    card.append(element("h3", { text: observation.label }));
+    card.append(element("h3", { text: canonicalMetricLabel(observation) }));
     card.append(
       element("p", {
         className: "metric-value",

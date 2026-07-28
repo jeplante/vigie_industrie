@@ -34,7 +34,7 @@ export const METRIC_CATALOG: MetricDefinition[] = [
   ],
   [
     "core_earnings",
-    "Résultat activités de base",
+    "Résultat des activités de base (core earnings)",
     "CAD_BILLION",
     "currency",
     "percent",
@@ -43,7 +43,7 @@ export const METRIC_CATALOG: MetricDefinition[] = [
   ["net_income", "Résultat net", "CAD_BILLION", "currency", "percent", "up"],
   [
     "licat_ratio",
-    "Ratio LICAT",
+    "Ratio LICAT / solvabilité",
     "PERCENT",
     "percentage",
     "percentage_point",

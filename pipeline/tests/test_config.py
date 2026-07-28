@@ -62,6 +62,12 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
         for source in config.sources
         if source.content_category == "financial_results"
     )
+    slf = next(source for source in config.sources if source.id == "slf-results")
+    iag = next(source for source in config.sources if source.id == "iag-results")
+    assert "core_earnings" in slf.expected_metrics
+    assert "net_income" not in slf.expected_metrics
+    assert "licat_ratio" in iag.expected_metrics
+    assert "solvency_ratio" not in iag.expected_metrics
 
 
 def test_required_anthropic_defaults_come_from_yaml(repository_root: Path) -> None:

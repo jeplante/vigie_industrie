@@ -11,7 +11,11 @@ class SunLifeAdapter(GenericIrAdapter):
     company_id = "SLF"
     aliases: ClassVar[dict[str, tuple[str, ...]]] = {
         "core_eps": ("BPA sous-jacent", "underlying EPS"),
-        "net_income": ("résultat net sous-jacent", "underlying net income"),
+        "core_earnings": (
+            "résultat net sous-jacent",
+            "underlying net income",
+            "core earnings",
+        ),
         "core_roe": ("rendement des capitaux propres sous-jacent", "underlying ROE"),
         "licat_ratio": ("ratio LICAT", "LICAT ratio"),
         "assets_under_management": ("actif sous gestion", "assets under management"),
@@ -39,7 +43,7 @@ class SunLifeAdapter(GenericIrAdapter):
                 "$",
             ),
             (
-                "net_income",
+                "core_earnings",
                 "underlying net income",
                 (
                     r"underlying net income(?:\s*\([^)]*\))*\s+of\s+"

@@ -1,4 +1,8 @@
 import type { VigieDataset } from "../domain/models";
+import {
+  canonicalMetricLabel,
+  canonicalObservations,
+} from "../domain/metric-aliases";
 
 export const CSV_HEADERS = [
   "Compagnie",
@@ -23,7 +27,16 @@ const escapeCsv = (value: string | number | null): string =>
 
 export function createCsv(dataset: VigieDataset): string {
   const rows: Array<Array<string | number | null>> = [CSV_HEADERS];
+  const grouped = new Map<string, typeof dataset.observations>();
   for (const observation of dataset.observations) {
+    const key = `${observation.companyId}:${observation.period.periodId}`;
+    const observations = grouped.get(key) ?? [];
+    observations.push(observation);
+    grouped.set(key, observations);
+  }
+  for (const observation of [...grouped.values()].flatMap((observations) =>
+    canonicalObservations(observations),
+  )) {
     const company = dataset.companies.find(
       ({ id }) => id === observation.companyId,
     );
@@ -31,7 +44,7 @@ export function createCsv(dataset: VigieDataset): string {
       company?.name ?? observation.companyId,
       company?.ticker ?? "",
       observation.period.label,
-      observation.label,
+      canonicalMetricLabel(observation),
       observation.value,
       observation.displayValue,
       observation.unit,

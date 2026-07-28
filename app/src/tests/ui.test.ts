@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { enableArrowNavigation } from "../ui/accessibility";
 import { renderCompanyTabs } from "../ui/render-company-tabs";
-import { renderPeriodTabs } from "../ui/render-period-tabs";
+import { renderPeriodSelect } from "../ui/render-period-select";
 import { renderNews } from "../ui/render-news";
 import { renderDashboard } from "../ui/render-dashboard";
 import { renderHistory } from "../ui/render-history";
@@ -20,28 +20,30 @@ import {
 import { dataset, manifest, quality } from "./fixtures";
 
 describe("interface", () => {
-  it("change de compagnie et de période", () => {
+  it("change de compagnie et de période commune", () => {
     const companies = document.createElement("div");
     const periods = document.createElement("div");
     const onCompany = vi.fn();
     const onPeriod = vi.fn();
     renderCompanyTabs(companies, dataset, "MFC", onCompany);
-    renderPeriodTabs(
-      periods,
-      availablePeriodsForCompany(dataset, "MFC"),
-      "2026-T2",
-      onPeriod,
-    );
+    renderPeriodSelect(periods, availablePeriods(dataset), "2025-AN", onPeriod);
     companies.querySelectorAll("button")[1]?.click();
-    periods.querySelectorAll("button")[1]?.click();
+    const select = periods.querySelector("select")!;
+    select.value = "2025-T3";
+    select.dispatchEvent(new Event("change"));
     expect(onCompany).toHaveBeenCalledWith("SLF");
-    expect(onPeriod).toHaveBeenCalledWith("2026-T1");
+    expect(onPeriod).toHaveBeenCalledWith("2025-T3");
+    expect([...select.options].map((option) => option.value)).toEqual([
+      "2025-AN",
+      "2025-T3",
+      "2025-T2",
+      "2025-T1",
+    ]);
   });
 
-  it("sélectionne la période la plus récente propre à chaque compagnie", () => {
+  it("sélectionne la période la plus récente commune aux compagnies", () => {
     const state = initialState(dataset);
-    expect(state.periodId).toBe("2026-T2");
-    expect(state.summaryPeriodId).toBe("2026-T2");
+    expect(state.periodId).toBe("2025-AN");
     expect(state.viewMode).toBe("summary");
     expect(state.historicalKpi).toBe("metric:core_eps");
     selectCompany(state, "SLF");
@@ -80,10 +82,56 @@ describe("interface", () => {
     );
   });
 
-  it("offre dans la synthèse toutes les périodes réellement publiées", () => {
+  it("regroupe les alias core earnings et solvabilité dans les KPI canoniques", () => {
+    const reference = dataset.observations.find(
+      (item) => item.companyId === "SLF" && item.period.periodId === "2025-T3",
+    )!;
+    const aliasDataset = {
+      ...dataset,
+      observations: [
+        ...dataset.observations,
+        {
+          ...reference,
+          id: "SLF-2025-T3-underlying-net-income",
+          metricId: "net_income",
+          label: "Revenu net sous-jacent",
+          note: "Underlying net income of $1,050 million.",
+          unit: "CAD_BILLION",
+          value: 1.05,
+          displayValue: "1,05 G$",
+        },
+        {
+          ...reference,
+          id: "SLF-2025-T3-solvency",
+          metricId: "solvency_ratio",
+          label: "Ratio de solvabilité",
+          note: "Solvency ratio of 143%.",
+          unit: "PERCENT",
+          value: 143,
+          displayValue: "143 %",
+        },
+      ],
+    };
+    const container = document.createElement("div");
+
+    renderSummary(container, aliasDataset, "2025-T3", vi.fn());
+    const options = historicalKpiOptions(aliasDataset).map(
+      (option) => option.value,
+    );
+
+    expect(container.querySelector("thead")?.textContent).toContain(
+      "Résultat des activités de base (core earnings)",
+    );
+    expect(container.querySelector("thead")?.textContent).toContain(
+      "Ratio LICAT / solvabilité",
+    );
+    expect(options).toContain("metric:core_earnings");
+    expect(options).toContain("metric:licat_ratio");
+    expect(options).not.toContain("metric:solvency_ratio");
+  });
+
+  it("offre seulement les périodes publiées pour toutes les compagnies", () => {
     expect(availablePeriods(dataset).map((item) => item.periodId)).toEqual([
-      "2026-T2",
-      "2026-T1",
       "2025-AN",
       "2025-T3",
       "2025-T2",
@@ -99,8 +147,8 @@ describe("interface", () => {
         item.period.periodId === state.periodId,
     );
     expect(selected).toHaveLength(1);
-    expect(selected[0]?.period.periodId).toBe("2026-T2");
-    expect(selected[0]?.comparison.periodId).toBe("2025-T2");
+    expect(selected[0]?.period.periodId).toBe("2025-AN");
+    expect(selected[0]?.comparison.periodId).toBe("2024-AN");
   });
 
   it("filtre les actualités avant rendu", () => {
@@ -118,7 +166,7 @@ describe("interface", () => {
       <p id="news-freshness"></p>
       <section id="company-panel"></section>`;
     const state = initialState(dataset);
-    expect(state.periodId).toBe("2026-T2");
+    expect(state.periodId).toBe("2025-AN");
     renderDashboard(state);
     expect(document.querySelector("#news")?.textContent).toContain(
       "Actualité postérieure aux derniers résultats",
@@ -270,14 +318,30 @@ describe("interface", () => {
 
   it("trace uniquement l’historique trimestriel des compagnies", () => {
     const container = document.createElement("div");
-    renderHistory(container, dataset, "metric:core_eps");
+    renderHistory(container, dataset, "metric:core_eps", "2025-AN");
 
     expect(container.querySelector("svg")).not.toBeNull();
     expect(container.querySelectorAll(".history-line")).toHaveLength(2);
     expect(container.textContent).toContain("Manuvie");
     expect(container.textContent).toContain("Sun Life");
-    expect(container.textContent).toContain("T2 2026");
-    expect(container.textContent).not.toContain("Annuel 2025");
+    expect(container.textContent).toContain("T3 2025");
+    expect(container.textContent).not.toContain("T1 2026");
+    expect(
+      [...container.querySelectorAll(".history-axis-label")].map(
+        (label) => label.textContent,
+      ),
+    ).not.toContain("Annuel 2025");
+  });
+
+  it("borne l’historique à la période commune sélectionnée", () => {
+    const container = document.createElement("div");
+
+    renderHistory(container, dataset, "metric:core_eps", "2025-T2");
+
+    expect(container.textContent).toContain("jusqu’à T2 2025");
+    expect(container.textContent).toContain("T2 2025");
+    expect(container.textContent).not.toContain("T3 2025");
+    expect(container.textContent).not.toContain("T1 2026");
   });
 
   it("conserve une fenêtre historique de cinq années civiles", () => {
@@ -315,7 +379,7 @@ describe("interface", () => {
     };
     const container = document.createElement("div");
 
-    renderHistory(container, historicalDataset, "metric:core_eps");
+    renderHistory(container, historicalDataset, "metric:core_eps", "2026-T2");
 
     expect(container.querySelector("svg")?.textContent).toContain("T1 2022");
     expect(container.querySelector("svg")?.textContent).not.toContain(
@@ -326,7 +390,7 @@ describe("interface", () => {
 
   it("permet de basculer l’historique vers la croissance du BPA", () => {
     const container = document.createElement("div");
-    renderHistory(container, dataset, "growth:core_eps");
+    renderHistory(container, dataset, "growth:core_eps", "2025-AN");
 
     expect(
       container.querySelector("#history-chart-title")?.textContent,
@@ -436,7 +500,7 @@ describe("interface", () => {
       ],
     };
     const container = document.createElement("div");
-    renderHistory(container, mixedUnitsDataset, "metric:net_income");
+    renderHistory(container, mixedUnitsDataset, "metric:net_income", "2025-AN");
 
     expect(container.querySelectorAll(".history-line")).toHaveLength(2);
     const markerLabels = [
