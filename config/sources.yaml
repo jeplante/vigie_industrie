@@ -3,7 +3,7 @@ sources:
     companyId: MFC
     contentCategory: financial_results
     type: html_release_index
-    url: https://www.manulife.com/ca/en/about-us/investors/results-and-reports
+    url: https://www.newswire.ca/search/news/?keyword=Manulife%20Reports
     adapter: manulife
     priority: primary
     language: fr
@@ -16,7 +16,7 @@ sources:
     companyId: SLF
     contentCategory: financial_results
     type: html_release_index
-    url: https://www.sunlife.com/en/investors/financial-results-and-reports/
+    url: https://www.newswire.ca/search/news/?keyword=Sun%20Life%20Reports
     adapter: sunlife
     priority: primary
     language: en

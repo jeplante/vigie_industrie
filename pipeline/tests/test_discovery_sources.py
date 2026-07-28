@@ -5,6 +5,7 @@ from vigie_pipeline.fetch import FetchResult
 from vigie_pipeline.sources.great_west import GreatWestAdapter
 from vigie_pipeline.sources.ia import IaAdapter
 from vigie_pipeline.sources.manulife import ManulifeAdapter
+from vigie_pipeline.sources.sunlife import SunLifeAdapter
 
 
 def _result(path: Path) -> FetchResult:
@@ -68,3 +69,34 @@ def test_great_west_adapter_normalizes_report_units() -> None:
     assert candidates["core_earnings"].value == 1.239
     assert candidates["licat_ratio"].value == 135
     assert candidates["total_client_assets"].value == 3.4
+
+
+def test_manulife_adapter_prefers_current_values_over_growth_rates() -> None:
+    content = """
+    Key highlights include Core earnings of $1.8 billion, up 8%.
+    Net income attributed to shareholders of $1.1 billion.
+    Core EPS of $1.06, up 11%. LICAT ratio of 136%.
+    Quarterly Results 1Q26 1Q25 Change
+    Net income attributed to shareholders $ 1,147 $ 485 149%
+    Core earnings $ 1,836 $ 1,767 8%
+    Core EPS ($) $ 1.06 $ 0.99 11%
+    """
+    candidates = {item.metric_id: item for item in ManulifeAdapter().extract_metrics(content)}
+    assert candidates["core_eps"].value == 1.06
+    assert candidates["core_earnings"].value == 1.836
+    assert candidates["net_income"].value == 1.147
+    assert candidates["licat_ratio"].value == 136
+
+
+def test_sun_life_adapter_normalizes_release_highlights() -> None:
+    content = """
+    Underlying net income (2) of $1,050 million increased $5 million.
+    Underlying EPS (2)(4) of $1.89 increased 4%.
+    Assets under management ("AUM") (2) of $1,575 billion.
+    SLF Inc. LICAT ratio of 143%.
+    """
+    candidates = {item.metric_id: item for item in SunLifeAdapter().extract_metrics(content)}
+    assert candidates["core_eps"].value == 1.89
+    assert candidates["net_income"].value == 1.05
+    assert candidates["licat_ratio"].value == 143
+    assert candidates["assets_under_management"].value == 1575

@@ -1,39 +1,34 @@
 {
-  "generatedAt": "2026-07-28T12:16:28.130677Z",
+  "generatedAt": "2026-07-28T16:05:30.493873Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 2,
+  "sourcesSucceeded": 3,
   "sourcesFailed": 2,
   "observationsAdded": 0,
-  "observationsUpdated": 0,
+  "observationsUpdated": 8,
   "overridesApplied": 0,
   "warnings": [
     {
-      "code": "no_documents_discovered",
-      "message": "Aucun document financier découvert.",
-      "sourceId": "mfc-results"
+      "code": "old_document_not_ingested",
+      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']",
+      "sourceId": "iag-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['core_earnings']",
+      "sourceId": "iag-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']",
+      "sourceId": "iag-results"
     },
     {
       "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/",
-      "sourceId": "slf-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
-      "sourceId": "iag-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
-      "sourceId": "iag-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
-      "sourceId": "iag-results"
+      "message": "Erreur HTTP 403 pour https://www.manulife.com/ca/en/about-us/news",
+      "sourceId": "mfc-official-news"
     },
     {
       "code": "source_refresh_failed",
@@ -56,21 +51,27 @@
     {
       "sourceId": "mfc-results",
       "companyId": "MFC",
-      "status": "warning",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Aucun document financier découvert.",
+      "status": "success",
+      "documentsDiscovered": 1,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html"
+      ],
+      "periodIds": [
+        "2026-T1"
+      ],
       "anthropicCalls": 0
     },
     {
       "sourceId": "slf-results",
       "companyId": "SLF",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.sunlife.com/en/investors/financial-results-and-reports/",
+      "status": "success",
+      "documentsDiscovered": 1,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2026-results-897209083.html"
+      ],
+      "periodIds": [
+        "2026-T1"
+      ],
       "anthropicCalls": 0
     },
     {
@@ -100,26 +101,18 @@
       "periodIds": [
         "2026-T1"
       ],
-      "message": "iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026; iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026; iag-results/T1 2026: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2026",
-      "anthropicCalls": 3
+      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']; iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['core_earnings']; iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']",
+      "anthropicCalls": 0
     },
     {
       "sourceId": "mfc-official-news",
       "companyId": "MFC",
-      "status": "success",
-      "documentsDiscovered": 5,
-      "documentUrls": [
-        "https://www.manulife.com/ca/en/about-us/news/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation",
-        "https://www.manulife.com/ca/en/about-us/news/manulife-to-release-second-quarter-2026-results",
-        "https://www.manulife.com/ca/en/about-us/news/manulife-achieves-second-consecutive-year-of-mdrt-membership-growth",
-        "https://www.manulife.com/ca/en/about-us/news/asia-care-survey-2026",
-        "https://www.manulife.com/ca/en/about-us/news/manulife-named-to-corporate-knights-best-50-corporate-citizens-in-canada-for-sixth-consecutive-year"
-      ],
-      "periodIds": [
-        "2026-T2",
-        "2026-T3"
-      ],
-      "anthropicCalls": 5
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.manulife.com/ca/en/about-us/news",
+      "anthropicCalls": 0
     },
     {
       "sourceId": "slf-official-news",

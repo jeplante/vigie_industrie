@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 import vigie_pipeline.acquire as acquire_module
-from vigie_pipeline.acquire import acquire_source, publication_date
+from vigie_pipeline.acquire import acquire_source, infer_period, publication_date
 from vigie_pipeline.config import ProjectConfig
 from vigie_pipeline.fetch import FetchResult
 from vigie_pipeline.models import VigieDataset
@@ -49,6 +49,24 @@ def test_explicit_document_date_wins_over_period_end() -> None:
     parsed = publication_date(result)
     assert parsed is not None
     assert parsed.isoformat() == "2026-05-06"
+
+
+@pytest.mark.parametrize(
+    ("slug", "period_id"),
+    [
+        ("manulife-reports-first-quarter-2026-results.html", "2026-T1"),
+        ("sun-life-reports-second-quarter-2027-results.html", "2027-T2"),
+        ("company-reports-third-quarter-2028-results.html", "2028-T3"),
+        ("company-reports-fourth-quarter-and-full-year-2029-results.html", "2029-AN"),
+    ],
+)
+def test_infer_period_accepts_hyphenated_release_slugs(
+    slug: str,
+    period_id: str,
+) -> None:
+    period = infer_period(slug)
+    assert period is not None
+    assert period.period_id == period_id
 
 
 def test_index_metrics_are_acquired_and_future_conference_is_excluded(
@@ -100,6 +118,38 @@ def test_old_invalid_document_does_not_cancel_new_valid_document(
     assert {item.source.published_at.isoformat() for item in acquisition.observations} == {
         "2026-05-09"
     }
+
+
+def test_new_period_does_not_reingest_latest_period_from_an_unknown_url(
+    repository_root: Path,
+    project_config: ProjectConfig,
+    dataset: VigieDataset,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    index = b"""
+    <html><body>
+      <a href="/results/q1-2026">First quarter 2026 results</a>
+      <a href="/results/fourth-quarter-and-full-year-2025-results">
+        Fourth quarter and full year 2025 results
+      </a>
+    </body></html>
+    """
+    fixture_dir = repository_root / "pipeline/tests/fixtures"
+    fetcher = FixtureFetcher(
+        index,
+        {
+            "q1-2026": (fixture_dir / "financial-new-valid.html").read_bytes(),
+            "full-year-2025": (fixture_dir / "financial-old-invalid.html").read_bytes(),
+        },
+    )
+    monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
+    source = next(item for item in project_config.sources if item.id == "mfc-results")
+
+    acquisition = acquire_source(dataset, source, Settings(), project_config)
+
+    assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
+    assert acquisition.failures == []
+    assert all("full-year-2025" not in str(item.canonical_url) for item in acquisition.documents)
 
 
 def test_document_template_tracks_discovered_year_and_quarter(
@@ -158,9 +208,7 @@ def test_sun_life_financial_highlights_page_is_a_deterministic_source(
         lambda **_: FixtureFetcher(index, {}),
     )
     source = next(item for item in project_config.sources if item.id == "slf-results")
-    assert str(source.url) == (
-        "https://www.sunlife.com/en/investors/financial-results-and-reports/"
-    )
+    assert str(source.url) == ("https://www.newswire.ca/search/news/?keyword=Sun%20Life%20Reports")
 
     acquisition = acquire_source(
         dataset,
