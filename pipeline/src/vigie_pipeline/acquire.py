@@ -106,6 +106,7 @@ def infer_period(title: str) -> Period | None:
             end_date=date(year, *end),
             label=f"Annuel {year}" if key == "AN" else f"{key} {year}",
         )
+    word_text = re.sub(r"[-_/]+", " ", text)
     quarter_patterns: dict[
         Literal["T1", "T2", "T3", "AN"], tuple[int, tuple[str, ...], tuple[int, int]]
     ] = {
@@ -115,9 +116,12 @@ def infer_period(title: str) -> Period | None:
         "AN": (4, ("fourth quarter", "4th quarter", "quatrième trimestre"), (12, 31)),
     }
     for key, (quarter, markers, end) in quarter_patterns.items():
-        marker_position = next((text.find(marker) for marker in markers if marker in text), -1)
+        marker_position = next(
+            (word_text.find(marker) for marker in markers if marker in word_text),
+            -1,
+        )
         if marker_position >= 0:
-            nearby = text[max(0, marker_position - 40) : marker_position + 100]
+            nearby = word_text[max(0, marker_position - 40) : marker_position + 100]
             year_match = re.search(r"20\d{2}", nearby)
             if year_match is None:
                 continue
@@ -133,10 +137,10 @@ def infer_period(title: str) -> Period | None:
             )
     annual_match = re.search(
         r"annual[-_ ]?report[^0-9]{0,15}(20\d{2})",
-        text,
+        word_text,
     ) or re.search(
         r"(?:annuel|full year|exercice|annual)[^0-9]{0,30}(20\d{2})",
-        text,
+        word_text,
     )
     if annual_match:
         year = int(annual_match[1])
@@ -528,6 +532,8 @@ def acquire_source(
                 unknown_document
                 and latest_published is not None
                 and period.end_date >= latest_published.end_date
+                and latest_discovered is not None
+                and latest_discovered.period_id == latest_published.period_id
             )
             if not (is_newer or is_latest or unknown_current):
                 continue

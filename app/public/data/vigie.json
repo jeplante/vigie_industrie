@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-28T12:16:28.130677Z",
+  "generatedAt": "2026-07-28T16:05:30.493873Z",
   "companies": [
     {
       "id": "MFC",
@@ -3329,6 +3329,358 @@
         "publishedAt": "2026-05-06",
         "fetchedAt": "2026-07-14T15:14:02.509525Z",
         "documentHash": "sha256:070218ed48e7f0bb9d51bae16e6fba81da961a8cdc8fe2ffad89f51144e294bb",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "MFC-2026-T1-core_eps",
+      "companyId": "MFC",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 1.06,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1.06 $",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 0.99,
+        "displayValue": "0,99 $",
+        "periodLabel": "T1 2025",
+        "change": 0.07070707070707077,
+        "changeUnit": "PERCENT",
+        "displayChange": "+7,1%"
+      },
+      "direction": "up",
+      "note": "Core EPS ($) $ 1.06",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html",
+        "title": "manulife-reports-first-quarter-2026-results-825435078.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:04:57.078070Z",
+        "documentHash": "sha256:e7676ad579297e54cca6739a8319e097fbaa98bccfb3466ba32afa03f2dee312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "MFC-2026-T1-core_earnings",
+      "companyId": "MFC",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "core_earnings",
+      "label": "Résultat activités de base",
+      "value": 1.836,
+      "unit": "CAD_BILLION",
+      "displayValue": "1.836 G$",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 1.8,
+        "displayValue": "1,8 G$",
+        "periodLabel": "T1 2025",
+        "change": 0.020000000000000018,
+        "changeUnit": "PERCENT",
+        "displayChange": "+2,0%"
+      },
+      "direction": "up",
+      "note": "Core earnings $ 1,836",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html",
+        "title": "manulife-reports-first-quarter-2026-results-825435078.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:04:57.078070Z",
+        "documentHash": "sha256:e7676ad579297e54cca6739a8319e097fbaa98bccfb3466ba32afa03f2dee312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "MFC-2026-T1-net_income",
+      "companyId": "MFC",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net",
+      "value": 1.147,
+      "unit": "CAD_BILLION",
+      "displayValue": "1.147 G$",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 0.5,
+        "displayValue": "0,5 G$",
+        "periodLabel": "T1 2025",
+        "change": 1.294,
+        "changeUnit": "PERCENT",
+        "displayChange": "+129,4%"
+      },
+      "direction": "up",
+      "note": "Net income attributed to shareholders $ 1,147",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html",
+        "title": "manulife-reports-first-quarter-2026-results-825435078.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:04:57.080082Z",
+        "documentHash": "sha256:e7676ad579297e54cca6739a8319e097fbaa98bccfb3466ba32afa03f2dee312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "MFC-2026-T1-licat_ratio",
+      "companyId": "MFC",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 136.0,
+      "unit": "PERCENT",
+      "displayValue": "136 %",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 134.0,
+        "displayValue": "134 %",
+        "periodLabel": "T1 2025",
+        "change": 0.014925373134328358,
+        "changeUnit": "PERCENT",
+        "displayChange": "+1,5%"
+      },
+      "direction": "up",
+      "note": "LICAT ratio 4 of 136%",
+      "source": {
+        "sourceId": "mfc-results",
+        "url": "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html",
+        "title": "manulife-reports-first-quarter-2026-results-825435078.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:04:57.080082Z",
+        "documentHash": "sha256:e7676ad579297e54cca6739a8319e097fbaa98bccfb3466ba32afa03f2dee312",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "SLF-2026-T1-core_eps",
+      "companyId": "SLF",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "core_eps",
+      "label": "BPA activités de base",
+      "value": 1.89,
+      "unit": "CAD_PER_SHARE",
+      "displayValue": "1.89 $",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 1.82,
+        "displayValue": "1,82 $",
+        "periodLabel": "T1 2025",
+        "change": 0.03846153846153837,
+        "changeUnit": "PERCENT",
+        "displayChange": "+3,8%"
+      },
+      "direction": "up",
+      "note": "Underlying EPS (2)(4) of $1.89",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2026-results-897209083.html",
+        "title": "sun-life-reports-first-quarter-2026-results-897209083.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:05:01.640547Z",
+        "documentHash": "sha256:85e10265344c77c78b48e40b6e9c67484e79fb0b0f950bb0e280406d5fa2be65",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "SLF-2026-T1-net_income",
+      "companyId": "SLF",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "net_income",
+      "label": "Résultat net",
+      "value": 1.05,
+      "unit": "CAD_BILLION",
+      "displayValue": "1.05 G$",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 1.045,
+        "displayValue": "1,045 G$",
+        "periodLabel": "T1 2025",
+        "change": 0.004784688995215422,
+        "changeUnit": "PERCENT",
+        "displayChange": "+0,5%"
+      },
+      "direction": "up",
+      "note": "Underlying net income (2) of $1,050 million",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2026-results-897209083.html",
+        "title": "sun-life-reports-first-quarter-2026-results-897209083.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:05:01.640547Z",
+        "documentHash": "sha256:85e10265344c77c78b48e40b6e9c67484e79fb0b0f950bb0e280406d5fa2be65",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "SLF-2026-T1-licat_ratio",
+      "companyId": "SLF",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "licat_ratio",
+      "label": "Ratio LICAT",
+      "value": 143.0,
+      "unit": "PERCENT",
+      "displayValue": "143 %",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 149.0,
+        "displayValue": "149 %",
+        "periodLabel": "T1 2025",
+        "change": -0.040268456375838924,
+        "changeUnit": "PERCENT",
+        "displayChange": "-4,0%"
+      },
+      "direction": "down",
+      "note": "LICAT ratio of 143%",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2026-results-897209083.html",
+        "title": "sun-life-reports-first-quarter-2026-results-897209083.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:05:01.640547Z",
+        "documentHash": "sha256:85e10265344c77c78b48e40b6e9c67484e79fb0b0f950bb0e280406d5fa2be65",
+        "priority": "primary"
+      },
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "deterministic",
+        "confidence": 1.0,
+        "warnings": []
+      }
+    },
+    {
+      "id": "SLF-2026-T1-assets_under_management",
+      "companyId": "SLF",
+      "period": {
+        "periodId": "2026-T1",
+        "periodKey": "T1",
+        "type": "quarter",
+        "year": 2026,
+        "quarter": 1,
+        "endDate": "2026-03-31",
+        "label": "T1 2026"
+      },
+      "metricId": "assets_under_management",
+      "label": "Actif sous gestion",
+      "value": 1575.0,
+      "unit": "CAD_BILLION",
+      "displayValue": "1575 G$",
+      "comparison": {
+        "periodId": "2025-T1",
+        "value": 1551.0,
+        "displayValue": "1 551 G$",
+        "periodLabel": "T1 2025",
+        "change": 0.015473887814313346,
+        "changeUnit": "PERCENT",
+        "displayChange": "+1,5%"
+      },
+      "direction": "up",
+      "note": "Assets under management (\"AUM\") (2) of $1,575 billion",
+      "source": {
+        "sourceId": "slf-results",
+        "url": "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2026-results-897209083.html",
+        "title": "sun-life-reports-first-quarter-2026-results-897209083.html",
+        "publishedAt": "2026-03-31",
+        "fetchedAt": "2026-07-28T16:05:01.640547Z",
+        "documentHash": "sha256:85e10265344c77c78b48e40b6e9c67484e79fb0b0f950bb0e280406d5fa2be65",
         "priority": "primary"
       },
       "quality": {
