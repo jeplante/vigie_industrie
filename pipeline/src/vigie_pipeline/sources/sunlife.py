@@ -16,6 +16,7 @@ class SunLifeAdapter(GenericIrAdapter):
             "underlying net income",
             "core earnings",
         ),
+        "net_income": ("résultat net déclaré", "reported net income"),
         "core_roe": ("rendement des capitaux propres sous-jacent", "underlying ROE"),
         "licat_ratio": ("ratio LICAT", "LICAT ratio"),
         "assets_under_management": ("actif sous gestion", "assets under management"),
@@ -36,8 +37,8 @@ class SunLifeAdapter(GenericIrAdapter):
                 "core_eps",
                 "underlying EPS",
                 (
-                    r"underlying eps(?:\s*\([^)]*\))*\s+of\s+"
-                    r"\$\s*(\d+(?:[.,]\d+)?)"
+                    r"underlying eps(?:\s*\([^)]*\))*\s+(?:was\s+|of\s+)?"
+                    r"\$?\s*(\d+(?:[.,]\d+)?)"
                 ),
                 1.0,
                 "$",
@@ -46,7 +47,17 @@ class SunLifeAdapter(GenericIrAdapter):
                 "core_earnings",
                 "underlying net income",
                 (
-                    r"underlying net income(?:\s*\([^)]*\))*\s+of\s+"
+                    r"underlying net income(?:\s*\([^)]*\))*\s+(?:of\s+)?"
+                    r"\$?\s*([\d,]+)(?:\s+million)?"
+                ),
+                0.001,
+                "G$",
+            ),
+            (
+                "net_income",
+                "reported net income",
+                (
+                    r"reported net income(?:\s*\([^)]*\))*\s+of\s+"
                     r"\$\s*([\d,]+)\s+million"
                 ),
                 0.001,
@@ -74,8 +85,8 @@ class SunLifeAdapter(GenericIrAdapter):
                 "assets_under_management",
                 "assets under management",
                 (
-                    r"assets under management(?:\s*\([^)]*\))*\s+of\s+"
-                    r"\$\s*([\d,]+)\s+billion"
+                    r"assets under management(?:\s*\([^)]*\))*\s+(?:of\s+)?"
+                    r"\$?\s*([\d,]+)(?:\s+billion)?"
                 ),
                 1.0,
                 "G$",

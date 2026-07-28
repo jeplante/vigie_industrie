@@ -14,6 +14,10 @@ if TYPE_CHECKING:
     from vigie_pipeline.settings import Settings
 
 
+def _default_historical_period_types() -> list[Literal["quarter", "annual"]]:
+    return ["quarter", "annual"]
+
+
 class ConfigModel(BaseModel):
     model_config = ConfigDict(populate_by_name=True, extra="forbid")
 
@@ -49,6 +53,11 @@ class SourceConfig(ConfigModel):
     timeout_seconds: float = Field(alias="timeoutSeconds", gt=0)
     attempts: int = Field(ge=1)
     expected_metrics: list[str] = Field(default_factory=list, alias="expectedMetrics")
+    required_metrics: list[str] = Field(default_factory=list, alias="requiredMetrics")
+    historical_period_types: list[Literal["quarter", "annual"]] = Field(
+        default_factory=_default_historical_period_types,
+        alias="historicalPeriodTypes",
+    )
     fetch_policy: str = Field(alias="fetchPolicy")
     link_selector: str = Field(default="a[href]", alias="linkSelector")
     article_selector: str = Field(default="article, main", alias="articleSelector")
@@ -62,6 +71,10 @@ class SourceConfig(ConfigModel):
     archive_url: HttpUrl | None = Field(default=None, alias="archiveUrl")
     archive_url_template: str | None = Field(default=None, alias="archiveUrlTemplate")
     archive_pages: int = Field(default=0, alias="archivePages", ge=0, le=50)
+
+    @property
+    def metrics_required_for_success(self) -> list[str]:
+        return self.required_metrics or self.expected_metrics
 
 
 class HttpConfig(ConfigModel):
@@ -157,6 +170,19 @@ def _validate_references(config: ProjectConfig) -> None:
             raise ConfigurationError(f"Source financière sans métriques attendues: {source.id}")
         if source.content_category != "financial_results" and source.expected_metrics:
             raise ConfigurationError(f"Source d’actualités avec métriques financières: {source.id}")
+        unknown_required_metrics = set(source.required_metrics) - set(config.metrics)
+        if unknown_required_metrics:
+            raise ConfigurationError(
+                f"Source {source.id}: métriques requises inconnues "
+                f"{sorted(unknown_required_metrics)}"
+            )
+        if not set(source.required_metrics).issubset(source.expected_metrics):
+            raise ConfigurationError(
+                f"Source {source.id}: requiredMetrics doit être un sous-ensemble "
+                "de expectedMetrics."
+            )
+        if source.content_category != "financial_results" and source.required_metrics:
+            raise ConfigurationError(f"Source d’actualités avec métriques requises: {source.id}")
         if source.archive_pages and (
             source.archive_url_template is None or "{page}" not in source.archive_url_template
         ):

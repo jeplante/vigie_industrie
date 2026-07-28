@@ -1,51 +1,15 @@
 {
-  "generatedAt": "2026-07-28T16:43:12.028071Z",
+  "generatedAt": "2026-07-28T22:26:45.298713Z",
   "mode": "live",
   "dryRun": false,
-  "status": "partial",
+  "status": "success",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 3,
+  "sourcesSucceeded": 8,
   "sourcesFailed": 0,
   "observationsAdded": 0,
-  "observationsUpdated": 8,
+  "observationsUpdated": 11,
   "overridesApplied": 0,
-  "warnings": [
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']",
-      "sourceId": "iag-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['core_earnings']",
-      "sourceId": "iag-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']",
-      "sourceId": "iag-results"
-    },
-    {
-      "code": "news_llm_degraded",
-      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
-      "sourceId": "mfc-official-news"
-    },
-    {
-      "code": "news_llm_degraded",
-      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
-      "sourceId": "slf-official-news"
-    },
-    {
-      "code": "news_llm_degraded",
-      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
-      "sourceId": "gwo-official-news"
-    },
-    {
-      "code": "news_llm_degraded",
-      "message": "8 actualité(s) publiée(s) sans résumé Anthropic.",
-      "sourceId": "iag-official-news"
-    }
-  ],
+  "warnings": [],
   "errors": [],
   "sourceResults": [
     {
@@ -80,34 +44,31 @@
       "status": "success",
       "documentsDiscovered": 2,
       "documentUrls": [
-        "https://www.greatwestlifeco.com/news-and-events/events/2026/1st-quarter-2026-conference-call-and-webcast.html",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf"
+        "https://www.greatwestlifeco.com/news-and-events/events/2026/2nd-quarter-2026-conference-call-and-webcast.html",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q2/lifeco-q2-2026-quarterly-report-to-shareholders-en.pdf"
       ],
       "periodIds": [
-        "2026-T1"
+        "2026-T2"
       ],
       "anthropicCalls": 0
     },
     {
       "sourceId": "iag-results",
       "companyId": "IAG",
-      "status": "warning",
-      "documentsDiscovered": 3,
+      "status": "success",
+      "documentsDiscovered": 1,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-financial-statements.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-mda.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-sip-pdf.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-financial-statements.pdf"
       ],
       "periodIds": [
         "2026-T1"
       ],
-      "message": "iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']; iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['core_earnings']; iag-results/T1 2026: iag-results/T1 2026: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps']",
       "anthropicCalls": 0
     },
     {
       "sourceId": "mfc-official-news",
       "companyId": "MFC",
-      "status": "warning",
+      "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
         "https://www.newswire.ca/news-releases/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation-841261989.html",
@@ -128,7 +89,7 @@
     {
       "sourceId": "slf-official-news",
       "companyId": "SLF",
-      "status": "warning",
+      "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
         "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
@@ -149,17 +110,17 @@
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
-      "status": "warning",
+      "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
         "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html",
         "https://www.newswire.ca/news-releases/power-corporation-great-west-and-igm-financial-announce-joint-investment-in-sagard-ai-fund-897072555.html",
-        "https://www.newswire.ca/news-releases/great-west-announces-election-of-directors-835512953.html",
-        "https://www.newswire.ca/news-releases/great-west-reports-double-digit-growth-and-base-roe-above-19--869171143.html"
+        "https://www.newswire.ca/news-releases/great-west-announces-election-of-directors-835512953.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -170,7 +131,7 @@
     {
       "sourceId": "iag-official-news",
       "companyId": "IAG",
-      "status": "warning",
+      "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026",
@@ -183,8 +144,7 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
       ],
       "periodIds": [
-        "2026-T2",
-        "2026-T3"
+        "2026-T2"
       ],
       "anthropicCalls": 0
     }

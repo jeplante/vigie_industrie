@@ -12,6 +12,8 @@ sources:
     attempts: 3
     expectedMetrics:
       [core_eps, core_earnings, net_income, core_roe, licat_ratio]
+    requiredMetrics:
+      [core_eps, core_earnings, net_income, core_roe, licat_ratio]
     fetchPolicy: etag_last_modified_then_hash
     archiveUrlTemplate: https://www.newswire.ca/news/manulife-financial-corporation/?page={page}
     archivePages: 10
@@ -30,7 +32,15 @@ sources:
     timeoutSeconds: 20
     attempts: 3
     expectedMetrics:
-      [core_eps, core_earnings, core_roe, licat_ratio, assets_under_management]
+      [
+        core_eps,
+        core_earnings,
+        net_income,
+        core_roe,
+        licat_ratio,
+        assets_under_management,
+      ]
+    requiredMetrics: [core_eps, core_earnings, core_roe, licat_ratio]
     fetchPolicy: etag_last_modified_then_hash
     archiveUrlTemplate: https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/?page={page}
     archivePages: 4
@@ -49,7 +59,16 @@ sources:
     timeoutSeconds: 20
     attempts: 3
     expectedMetrics:
-      [core_eps, core_earnings, core_roe, licat_ratio, total_client_assets]
+      [
+        core_eps,
+        core_earnings,
+        net_income,
+        core_roe,
+        licat_ratio,
+        total_client_assets,
+      ]
+    requiredMetrics: [core_eps, core_earnings, core_roe, licat_ratio]
+    historicalPeriodTypes: [quarter]
     fetchPolicy: etag_last_modified_then_hash
     documentUrlTemplate: https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/{year}/q{quarter}/lifeco-q{quarter}-{year}-quarterly-report-to-shareholders-en.pdf
     historicalDocumentUrls:
@@ -72,10 +91,12 @@ sources:
       [
         core_eps,
         core_earnings,
+        net_income,
         core_roe,
         licat_ratio,
         assets_under_administration,
       ]
+    requiredMetrics: [core_eps, core_roe, licat_ratio]
     fetchPolicy: etag_last_modified_then_hash
   - id: mfc-official-news
     companyId: MFC
