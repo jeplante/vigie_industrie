@@ -313,6 +313,14 @@ def command_refresh(
                             source_id=source.id,
                         )
                     )
+                for archive_warning in financial_acquisition.discovery_warnings:
+                    warnings.append(
+                        QualityIssue(
+                            code="history_archive_unavailable",
+                            message=archive_warning,
+                            source_id=source.id,
+                        )
+                    )
                 empty_financial_discovery = not financial_acquisition.documents or latest is None
                 no_document_message = None
                 if empty_financial_discovery:
@@ -328,7 +336,9 @@ def command_refresh(
                             source_id=source.id,
                         )
                     )
-                financial_messages = [item.message for item in financial_acquisition.failures]
+                financial_messages = [
+                    item.message for item in financial_acquisition.failures
+                ] + financial_acquisition.discovery_warnings
                 if no_document_message:
                     financial_messages.append(no_document_message)
                 source_results.append(
@@ -337,7 +347,11 @@ def command_refresh(
                         company_id=source.company_id,
                         status=(
                             "warning"
-                            if financial_acquisition.failures or empty_financial_discovery
+                            if (
+                                financial_acquisition.failures
+                                or financial_acquisition.discovery_warnings
+                                or empty_financial_discovery
+                            )
                             else "success"
                         ),
                         documents_discovered=len(financial_acquisition.documents),

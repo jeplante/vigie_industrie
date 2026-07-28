@@ -9,15 +9,48 @@ export function renderStatus(
   now = new Date(),
 ): void {
   clear(container);
-  container.className = `status-panel status-${report.status}`;
   container.setAttribute("aria-busy", "false");
   const age = ageInDays(manifest.lastSuccessfulRefresh, now);
   const stale = age > 7;
-  const statusLabel = {
-    success: "Données validées",
-    partial: "Données publiées avec réserves",
-    failed: "Publication bloquée",
-  }[report.status];
+  const financialResults = report.sourceResults.filter((item) =>
+    item.sourceId.endsWith("-results"),
+  );
+  const newsResults = report.sourceResults.filter(
+    (item) => !item.sourceId.endsWith("-results"),
+  );
+  const financialFailures = financialResults.filter(
+    (item) => item.status === "failed",
+  ).length;
+  const financialWarnings = financialResults.filter(
+    (item) => item.status === "warning",
+  ).length;
+  const newsIssues = newsResults.filter(
+    (item) => item.status !== "success",
+  ).length;
+  const staleCompanies = manifest.companyFreshness.filter(
+    (item) => item.freshnessStatus === "stale",
+  );
+  const unknownCompanies = manifest.companyFreshness.filter(
+    (item) => item.freshnessStatus === "unknown",
+  );
+  const financialConcern =
+    financialFailures > 0 ||
+    financialWarnings > 0 ||
+    staleCompanies.length > 0 ||
+    unknownCompanies.length > 0;
+  const effectiveStatus =
+    report.status === "failed"
+      ? "failed"
+      : financialConcern
+        ? "partial"
+        : "success";
+  container.className = `status-panel status-${effectiveStatus}`;
+  const statusLabel =
+    report.status === "failed"
+      ? "Publication bloquée"
+      : financialConcern
+        ? "Données financières publiées avec réserves"
+        : "Données financières validées";
   container.append(
     element("strong", {
       text: statusLabel,
@@ -39,34 +72,30 @@ export function renderStatus(
         text: `Données anciennes (${age} jours)`,
       }),
     );
-  const failedSources = report.sourceResults.filter(
-    (item) => item.status === "failed",
-  ).length;
-  const warningSources = report.sourceResults.filter(
-    (item) => item.status === "warning",
-  ).length;
-  if (failedSources > 0) {
+  if (financialFailures > 0) {
     container.append(
       element("span", {
         className: "source-warning",
-        text: `${failedSources} source${failedSources > 1 ? "s" : ""} bloquée${failedSources > 1 ? "s" : ""}`,
+        text: `${financialFailures} source${financialFailures > 1 ? "s" : ""} financière${financialFailures > 1 ? "s" : ""} bloquée${financialFailures > 1 ? "s" : ""}`,
       }),
     );
   }
-  if (warningSources > 0) {
+  if (financialWarnings > 0) {
     container.append(
       element("span", {
         className: "source-warning",
-        text: `${warningSources} source${warningSources > 1 ? "s" : ""} avec avertissement`,
+        text: `${financialWarnings} source${financialWarnings > 1 ? "s" : ""} financière${financialWarnings > 1 ? "s" : ""} avec avertissement`,
       }),
     );
   }
-  const staleCompanies = manifest.companyFreshness.filter(
-    (item) => item.freshnessStatus === "stale",
-  );
-  const unknownCompanies = manifest.companyFreshness.filter(
-    (item) => item.freshnessStatus === "unknown",
-  );
+  if (newsIssues > 0) {
+    container.append(
+      element("span", {
+        className: "source-warning",
+        text: `Actualités : ${newsIssues} source${newsIssues > 1 ? "s" : ""} avec avertissement`,
+      }),
+    );
+  }
   if (staleCompanies.length > 0) {
     container.append(
       element("span", {

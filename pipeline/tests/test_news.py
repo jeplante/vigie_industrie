@@ -243,7 +243,7 @@ def test_existing_url_with_changed_hash_is_updated(
     assert provider.calls == 1
 
 
-def test_anthropic_failure_publishes_degraded_news(
+def test_anthropic_failure_keeps_official_news_valid_with_fallback(
     repository_root: Path,
     project_config: ProjectConfig,
     dataset: VigieDataset,
@@ -257,8 +257,11 @@ def test_anthropic_failure_publishes_degraded_news(
     monkeypatch.setattr(news_module, "BoundedFetcher", lambda **_: fetcher)
     acquisition = acquire_news(dataset, source, Settings(), project_config, FailingProvider())
     item = acquisition.items[0]
-    assert item.quality.status == "warning"
+    assert item.quality.status == "validated"
+    assert item.quality.extraction_method == "deterministic_fallback"
+    assert item.quality.warnings
     assert item.generated_summary is None
+    assert item.original_summary
     assert item.categories == ["other"]
     assert item.importance == "medium"
     assert acquisition.anthropic_calls == 1

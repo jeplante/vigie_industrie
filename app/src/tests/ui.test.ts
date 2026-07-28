@@ -51,19 +51,33 @@ describe("interface", () => {
     ).toEqual(["2025-AN", "2025-T3", "2025-T2", "2025-T1"]);
   });
 
-  it("affiche les compagnies les unes sous les autres pour une période commune", () => {
+  it("affiche les compagnies dans un tableau compact pour une période commune", () => {
     const container = document.createElement("div");
     const onSelect = vi.fn();
     renderSummary(container, dataset, "2025-AN", onSelect);
 
-    const rows = container.querySelectorAll(".company-summary-row");
+    const rows = container.querySelectorAll(".summary-company-row");
     expect(rows).toHaveLength(2);
-    expect(rows[0]?.textContent).toContain("Manuvie · Annuel 2025");
-    expect(rows[1]?.textContent).toContain("Sun Life · Annuel 2025");
-    expect(rows[0]?.querySelectorAll(".metric-card")).toHaveLength(1);
-    expect(rows[1]?.querySelectorAll(".metric-card")).toHaveLength(1);
+    expect(container.querySelector(".summary-table")).not.toBeNull();
+    expect(container.querySelectorAll("thead th")).toHaveLength(2);
+    expect(rows[0]?.textContent).toContain("Manuvie");
+    expect(rows[1]?.textContent).toContain("Sun Life");
+    expect(rows[0]?.querySelectorAll(".summary-metric-cell")).toHaveLength(1);
+    expect(rows[1]?.querySelectorAll(".summary-metric-cell")).toHaveLength(1);
     rows[1]?.querySelector<HTMLButtonElement>("button")?.click();
     expect(onSelect).toHaveBeenCalledWith("SLF");
+  });
+
+  it("signale les données non publiées dans le tableau de synthèse", () => {
+    const container = document.createElement("div");
+    renderSummary(container, dataset, "2026-T2", vi.fn());
+
+    const rows = container.querySelectorAll(".summary-company-row");
+    expect(rows[0]?.textContent).not.toContain("Données non encore publiées");
+    expect(rows[1]?.textContent).toContain("Données non encore publiées");
+    expect(rows[1]?.querySelectorAll(".summary-metric-missing")).toHaveLength(
+      1,
+    );
   });
 
   it("offre dans la synthèse toutes les périodes réellement publiées", () => {
@@ -164,18 +178,81 @@ describe("interface", () => {
       new Date("2026-07-11T00:00:00Z"),
     );
     expect(container.textContent).toContain("Données anciennes");
-    expect(container.textContent).toContain("Données publiées avec réserves");
+    expect(container.textContent).toContain(
+      "Données financières publiées avec réserves",
+    );
     expect(container.textContent).toContain("Dernière tentative");
     expect(container.textContent).toContain(
       "Dernier rafraîchissement financier réussi",
     );
     expect(container.textContent).toContain("Mode : offline (hors ligne)");
-    expect(container.textContent).toContain("1 source bloquée");
-    expect(container.textContent).toContain("2 sources avec avertissement");
+    expect(container.textContent).toContain("1 source financière bloquée");
+    expect(container.textContent).toContain(
+      "1 source financière avec avertissement",
+    );
+    expect(container.textContent).toContain(
+      "Actualités : 1 source avec avertissement",
+    );
     expect(container.textContent).not.toContain("source(s) en erreur");
     expect(container.textContent).toContain("document plus récent non intégré");
     renderStatus(container, manifest, quality);
     expect(container.textContent).toContain("Mode : live (en ligne)");
+  });
+
+  it("ne dégrade pas les données financières pour un avertissement d’actualités", () => {
+    const container = document.createElement("div");
+    renderStatus(
+      container,
+      {
+        ...manifest,
+        companyFreshness: manifest.companyFreshness.map((item) => ({
+          ...item,
+          freshnessStatus: "current",
+        })),
+      },
+      {
+        ...quality,
+        status: "partial",
+        warnings: [
+          {
+            code: "no_documents_discovered",
+            message: "Aucun document d’actualité découvert.",
+            sourceId: "gwo-official-news",
+          },
+        ],
+        sourceResults: [
+          {
+            sourceId: "mfc-results",
+            companyId: "MFC",
+            status: "success",
+            documentsDiscovered: 1,
+            documentUrls: ["https://example.com/mfc"],
+            periodIds: ["2026-T1"],
+            message: null,
+            anthropicCalls: 0,
+          },
+          {
+            sourceId: "gwo-official-news",
+            companyId: "GWO",
+            status: "warning",
+            documentsDiscovered: 0,
+            documentUrls: [],
+            periodIds: [],
+            message: "Aucun document",
+            anthropicCalls: 0,
+          },
+        ],
+      },
+    );
+
+    expect(container.textContent).toContain("Données financières validées");
+    expect(container.textContent).toContain(
+      "Actualités : 1 source avec avertissement",
+    );
+    expect(container.textContent).not.toContain(
+      "Données financières publiées avec réserves",
+    );
+    expect(container.className).toContain("status-success");
   });
 
   it("navigue entre les onglets au clavier", () => {
@@ -201,6 +278,50 @@ describe("interface", () => {
     expect(container.textContent).toContain("Sun Life");
     expect(container.textContent).toContain("T2 2026");
     expect(container.textContent).not.toContain("Annuel 2025");
+  });
+
+  it("conserve une fenêtre historique de cinq années civiles", () => {
+    const reference = dataset.observations[0]!;
+    const period2021 = {
+      ...reference.period,
+      periodId: "2021-T1",
+      year: 2021,
+      endDate: "2021-03-31",
+      label: "T1 2021",
+    };
+    const period2022 = {
+      ...reference.period,
+      periodId: "2022-T1",
+      year: 2022,
+      endDate: "2022-03-31",
+      label: "T1 2022",
+    };
+    const historicalDataset = {
+      ...dataset,
+      periods: [...dataset.periods, period2021, period2022],
+      observations: [
+        ...dataset.observations,
+        {
+          ...reference,
+          id: "MFC-2021-T1-core-eps",
+          period: period2021,
+        },
+        {
+          ...reference,
+          id: "MFC-2022-T1-core-eps",
+          period: period2022,
+        },
+      ],
+    };
+    const container = document.createElement("div");
+
+    renderHistory(container, historicalDataset, "metric:core_eps");
+
+    expect(container.querySelector("svg")?.textContent).toContain("T1 2022");
+    expect(container.querySelector("svg")?.textContent).not.toContain(
+      "T1 2021",
+    );
+    expect(container.textContent).toContain("Fenêtre glissante de cinq ans");
   });
 
   it("permet de basculer l’historique vers la croissance du BPA", () => {
@@ -230,6 +351,21 @@ describe("interface", () => {
         },
         {
           ...reference,
+          id: "MFC-2025-T1-core-roe",
+          metricId: "core_roe",
+          label: "Rendement des capitaux propres de base",
+          value: 16.5,
+          unit: "PERCENT",
+          displayValue: "16,5 %",
+          comparison: {
+            ...reference.comparison,
+            change: 0.9,
+            changeUnit: "PERCENTAGE_POINT" as const,
+            displayChange: "+0,9 pp",
+          },
+        },
+        {
+          ...reference,
           id: "MFC-2025-T1-licat",
           metricId: "licat_ratio",
           label: "Ratio LICAT",
@@ -252,6 +388,7 @@ describe("interface", () => {
       "metric:core_eps",
       "metric:net_income",
       "metric:licat_ratio",
+      "metric:core_roe",
     ]);
 
     const select = document.createElement("select");
@@ -262,9 +399,12 @@ describe("interface", () => {
     );
     expect(selected).toBe("metric:net_income");
     expect(select.value).toBe("metric:net_income");
-    expect(select.querySelectorAll('option[value^="metric:"]')).toHaveLength(3);
+    expect(select.querySelectorAll('option[value^="metric:"]')).toHaveLength(4);
     expect(select.textContent).toContain("Résultat net");
     expect(select.textContent).toContain("Ratio LICAT");
+    expect(select.textContent).toContain(
+      "Rendement des capitaux propres de base",
+    );
   });
 
   it("normalise les millions en milliards pour un même KPI", () => {

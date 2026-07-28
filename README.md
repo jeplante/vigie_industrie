@@ -81,6 +81,13 @@ Le pipeline ajoute automatiquement les nouvelles périodes découvertes et fusio
 même identifiant. Le frontend conserve `periodId` dans son état, trie les périodes par date
 décroissante et ne propose que celles réellement publiées pour la compagnie sélectionnée.
 
+Le rafraîchissement entretient aussi une fenêtre historique glissante de cinq exercices
+(`financialHistoryYears`). Il complète uniquement les périodes ou KPI absents à partir des
+archives officielles et conserve explicitement les trous lorsque la source ne publie pas le
+document attendu. L’onglet Historique limite le graphique à cette même fenêtre. Dans l’onglet
+Synthèse, les assureurs sont présentés dans un tableau compact; ses colonnes de KPI sont déduites
+des observations réellement publiées pour la période choisie.
+
 Le manifeste publie, pour chaque compagnie, `latestAvailablePeriodId`,
 `latestPublishedPeriodId`, `latestSourceCheckAt` et `freshnessStatus`. Le statut est `current`
 quand le dernier document officiel découvert est intégré, `stale` quand un document plus récent

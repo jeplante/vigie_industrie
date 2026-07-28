@@ -16,7 +16,7 @@ const SVG_NS = "http://www.w3.org/2000/svg";
 const WIDTH = 1100;
 const HEIGHT = 430;
 const FRAME = { left: 76, right: 46, top: 28, bottom: 72 };
-const MAX_PERIODS = 12;
+const HISTORY_YEARS = 5;
 const CURRENCY_SCALE: Record<string, number> = {
   CAD_MILLION: 1_000_000,
   CAD_BILLION: 1_000_000_000,
@@ -153,12 +153,18 @@ export function renderHistory(
   const selection = parseHistoricalKpi(dataset, kpi);
   const series = buildSeries(dataset, selection);
   const periodIds = new Set(series.flatMap((item) => [...item.points.keys()]));
-  const periods = dataset.periods
+  const availablePeriods = dataset.periods
     .filter(
       (period) => period.type === "quarter" && periodIds.has(period.periodId),
     )
-    .sort((left, right) => left.endDate.localeCompare(right.endDate))
-    .slice(-MAX_PERIODS);
+    .sort((left, right) => left.endDate.localeCompare(right.endDate));
+  const latestYear = availablePeriods.at(-1)?.year;
+  const periods =
+    latestYear === undefined
+      ? []
+      : availablePeriods.filter(
+          (period) => period.year >= latestYear - HISTORY_YEARS + 1,
+        );
   const values = series.flatMap((item) =>
     periods
       .map((period) => item.points.get(period.periodId)?.value)
@@ -290,7 +296,7 @@ export function renderHistory(
 
   const note = element("p", {
     className: "history-note",
-    text: "Périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.",
+    text: "Fenêtre glissante de cinq ans, périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.",
   });
   container.append(legend, svg, note);
 }

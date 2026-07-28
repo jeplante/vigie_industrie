@@ -210,6 +210,17 @@ def validate_dataset(
                         ),
                     )
                 )
+        if previous is not None and item.comparison.change_unit == "PERCENTAGE_POINT":
+            calculated = item.value - previous
+            if extracted_change is None or abs(calculated - extracted_change) > delta_tolerance:
+                errors.append(
+                    QualityIssue(
+                        code="inconsistent_delta",
+                        message=(
+                            f"{prefix}: calculé {calculated:.4f} pp, fourni {extracted_change}."
+                        ),
+                    )
+                )
         if previous is not None and item.metric_id not in {"licat_ratio", "solvency_ratio"}:
             calculated_direction = direction_for(
                 item.value, previous, tolerance=abs(previous) * 0.01
