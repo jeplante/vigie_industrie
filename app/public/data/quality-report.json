@@ -1,233 +1,178 @@
 {
-  "generatedAt": "2026-07-29T12:37:03.258601Z",
+  "generatedAt": "2026-07-30T12:06:59.548807Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
   "sourcesSucceeded": 5,
-  "sourcesFailed": 0,
-  "observationsAdded": 133,
-  "observationsUpdated": 11,
+  "sourcesFailed": 1,
+  "observationsAdded": 0,
+  "observationsUpdated": 10,
   "overridesApplied": 0,
   "warnings": [
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/Annuel 2024: slf-results/Annuel 2024: métriques officielles manquantes ['core_eps']",
+      "message": "slf-results/Annuel 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T3 2024: slf-results/T3 2024: métriques officielles manquantes ['core_eps']",
+      "message": "slf-results/T3 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T2 2024: slf-results/T2 2024: métriques officielles manquantes ['core_eps']",
+      "message": "slf-results/T2 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T1 2024: slf-results/T1 2024: métriques officielles manquantes ['core_eps']",
+      "message": "slf-results/T1 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/Annuel 2023: slf-results/Annuel 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']",
+      "message": "slf-results/Annuel 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T3 2023: slf-results/T3 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']",
+      "message": "slf-results/T3 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T2 2023: slf-results/T2 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']",
+      "message": "slf-results/T2 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T1 2023: slf-results/T1 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']",
+      "message": "slf-results/T1 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/Annuel 2022: slf-results/Annuel 2022: métriques officielles manquantes ['assets_under_management']",
+      "message": "slf-results/Annuel 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T3 2022: slf-results/T3 2022: métriques officielles manquantes ['assets_under_management']",
+      "message": "slf-results/T3 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T2 2022: slf-results/T2 2022: métriques officielles manquantes ['assets_under_management']",
+      "message": "slf-results/T2 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "slf-results/T1 2022: slf-results/T1 2022: métriques officielles manquantes ['assets_under_management']",
+      "message": "slf-results/T1 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "slf-results"
     },
     {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2025: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q4/lifeco-q4-2025-quarterly-report-to-shareholders-en.pdf",
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
       "sourceId": "gwo-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2024: gwo-results/Annuel 2024: métriques officielles manquantes ['core_earnings', 'core_eps', 'core_roe', 'licat_ratio', 'total_client_assets']",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2024: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q4/lifeco-q4-2024-quarterly-report-to-shareholders-en.pdf",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_Annuel 2023",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q4/lifeco-q4-2023-quarterly-report-to-shareholders-en.pdf",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T1 2023",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/T1 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco-q1-2023-quarterly-report-to-shareholders-en.pdf",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_Annuel 2022",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/Annuel 2022: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q4/lifeco-q4-2022-quarterly-report-to-shareholders-en.pdf",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/T3 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T3 2022",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T2 2022",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "gwo-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T1 2022",
-      "sourceId": "gwo-results"
-    },
-    {
-      "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2024",
+      "message": "iag-results/T2 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2024",
+      "message": "iag-results/T2 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2024",
+      "message": "iag-results/T2 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2024",
+      "message": "iag-results/T1 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2024: iag-results/T1 2024: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']",
+      "message": "iag-results/T1 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2024: iag-results/T1 2024: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']",
+      "message": "iag-results/T1 2024: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2023",
+      "message": "iag-results/Annuel 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2023",
+      "message": "iag-results/Annuel 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2023",
+      "message": "iag-results/Annuel 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T3 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2023",
+      "message": "iag-results/T3 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T3 2023: iag-results/T3 2023: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']",
+      "message": "iag-results/T3 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T3 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2023",
+      "message": "iag-results/T3 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2023",
+      "message": "iag-results/T2 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2023",
+      "message": "iag-results/T2 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2023",
+      "message": "iag-results/T2 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2023",
+      "message": "iag-results/T1 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2023",
+      "message": "iag-results/T1 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2023",
+      "message": "iag-results/T1 2023: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2022",
+      "message": "iag-results/Annuel 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/Annuel 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2022",
+      "message": "iag-results/Annuel 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
@@ -237,47 +182,47 @@
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T3 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2022",
+      "message": "iag-results/T3 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T3 2022: iag-results/T3 2022: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']",
+      "message": "iag-results/T3 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T3 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2022",
+      "message": "iag-results/T3 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2022",
+      "message": "iag-results/T2 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2022",
+      "message": "iag-results/T2 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2022",
+      "message": "iag-results/T2 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2022",
+      "message": "iag-results/T1 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2022",
+      "message": "iag-results/T1 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     },
     {
       "code": "old_document_not_ingested",
-      "message": "iag-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2022",
+      "message": "iag-results/T1 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "iag-results"
     }
   ],
@@ -287,45 +232,11 @@
       "sourceId": "mfc-results",
       "companyId": "MFC",
       "status": "success",
-      "documentsDiscovered": 19,
+      "documentsDiscovered": 1,
       "documentUrls": [
-        "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
-        "https://www.newswire.ca/news-releases/manulife-to-release-first-quarter-2026-results-819798196.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-full-year-and-fourth-quarter-2025-results-812799583.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2025-results-833892624.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2025-results-844800268.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2025-results-891113735.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-full-year-and-fourth-quarter-2024-results-874031576.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2024-results-850565610.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2024-results-837710024.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2024-results-872766188.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-full-year-and-fourth-quarter-2023-results-875799121.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2023-results-857440865.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-strong-topline-results-in-2q23-with-ape-sales-up-12-nbv-up-10-new-business-csm-of-592-million-up-15-and-global-wealth-and-asset-management-net-inflows-of-2-2-billion-net-income-attributed-to-shareholders-was-1-0-billion-in--896341109.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-1q23-net-income-attributed-to-shareholders-of-1-4-billion-core-earnings-of-1-5-billion-strong-core-eps-growth-and-core-roe-and-global-wealth-and-asset-management-net-inflows-of-4-4-billion-829411537.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-2022-net-income-of-7-3-billion-core-earnings-of-6-2-billion-remittances-of-6-9-billion-and-a-dividend-increase-of-11--807038913.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-3q22-net-income-of-1-3-billion-core-earnings-of-1-3-billion-ape-sales-of-1-3-billion-and-global-wealth-and-asset-management-net-inflows-of-3-0-billion-829046451.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-2q22-net-income-of-1-1-billion-core-earnings-of-1-6-billion-ape-sales-of-1-4-billion-and-global-wealth-and-asset-management-net-inflows-of-1-7-billion-885962365.html",
-        "https://www.newswire.ca/news-releases/manulife-reports-1q22-net-income-of-3-0-billion-core-earnings-of-1-6-billion-ape-sales-of-1-6-billion-and-global-wealth-and-asset-management-net-inflows-of-6-9-billion-881025977.html",
         "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html"
       ],
       "periodIds": [
-        "2022-AN",
-        "2022-T1",
-        "2022-T2",
-        "2022-T3",
-        "2023-AN",
-        "2023-T1",
-        "2023-T2",
-        "2023-T3",
-        "2024-AN",
-        "2024-T1",
-        "2024-T2",
-        "2024-T3",
-        "2025-AN",
-        "2025-T1",
-        "2025-T2",
-        "2025-T3",
         "2026-T1"
       ],
       "anthropicCalls": 0
@@ -334,14 +245,10 @@
       "sourceId": "slf-results",
       "companyId": "SLF",
       "status": "warning",
-      "documentsDiscovered": 19,
+      "documentsDiscovered": 15,
       "documentUrls": [
         "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
         "https://www.newswire.ca/news-releases/sun-life-hosts-first-quarter-2026-earnings-conference-call-812520472.html",
-        "https://www.newswire.ca/news-releases/sun-life-reports-fourth-quarter-and-full-year-2025-results-824929523.html",
-        "https://www.newswire.ca/news-releases/sun-life-reports-third-quarter-2025-results-838136792.html",
-        "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2025-results-806483917.html",
-        "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2025-results-860448532.html",
         "https://www.newswire.ca/news-releases/sun-life-reports-fourth-quarter-and-full-year-2024-results-823729716.html",
         "https://www.newswire.ca/news-releases/sun-life-reports-third-quarter-2024-results-858393358.html",
         "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2024-results-839542536.html",
@@ -369,83 +276,27 @@
         "2024-T1",
         "2024-T2",
         "2024-T3",
-        "2025-AN",
-        "2025-T1",
-        "2025-T2",
-        "2025-T3",
         "2026-T1"
       ],
-      "message": "slf-results/Annuel 2024: slf-results/Annuel 2024: métriques officielles manquantes ['core_eps']; slf-results/T3 2024: slf-results/T3 2024: métriques officielles manquantes ['core_eps']; slf-results/T2 2024: slf-results/T2 2024: métriques officielles manquantes ['core_eps']; slf-results/T1 2024: slf-results/T1 2024: métriques officielles manquantes ['core_eps']; slf-results/Annuel 2023: slf-results/Annuel 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']; slf-results/T3 2023: slf-results/T3 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']; slf-results/T2 2023: slf-results/T2 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']; slf-results/T1 2023: slf-results/T1 2023: métriques officielles manquantes ['assets_under_management', 'core_eps']; slf-results/Annuel 2022: slf-results/Annuel 2022: métriques officielles manquantes ['assets_under_management']; slf-results/T3 2022: slf-results/T3 2022: métriques officielles manquantes ['assets_under_management']; slf-results/T2 2022: slf-results/T2 2022: métriques officielles manquantes ['assets_under_management']; slf-results/T1 2022: slf-results/T1 2022: métriques officielles manquantes ['assets_under_management']",
+      "message": "slf-results/Annuel 2024: Requête Anthropic refusée: BadRequestError; slf-results/T3 2024: Requête Anthropic refusée: BadRequestError; slf-results/T2 2024: Requête Anthropic refusée: BadRequestError; slf-results/T1 2024: Requête Anthropic refusée: BadRequestError; slf-results/Annuel 2023: Requête Anthropic refusée: BadRequestError; slf-results/T3 2023: Requête Anthropic refusée: BadRequestError; slf-results/T2 2023: Requête Anthropic refusée: BadRequestError; slf-results/T1 2023: Requête Anthropic refusée: BadRequestError; slf-results/Annuel 2022: Requête Anthropic refusée: BadRequestError; slf-results/T3 2022: Requête Anthropic refusée: BadRequestError; slf-results/T2 2022: Requête Anthropic refusée: BadRequestError; slf-results/T1 2022: Requête Anthropic refusée: BadRequestError",
       "anthropicCalls": 12
     },
     {
       "sourceId": "gwo-results",
       "companyId": "GWO",
-      "status": "warning",
-      "documentsDiscovered": 23,
-      "documentUrls": [
-        "https://www.greatwestlifeco.com/news-and-events/events/2026/2nd-quarter-2026-conference-call-and-webcast.html",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q2/lifeco-q2-2026-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q4/lifeco-q4-2025-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q3/lifeco-q3-2025-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q2/lifeco-q2-2025-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q1/lifeco-q1-2025-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/news-and-events/news/2025/lifeco-q4-2024-earnings-release.html",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q4/lifeco-q4-2024-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q3/lifeco-q3-2024-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q2/lifeco-q2-2024-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q1/lifeco-q1-2024-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/news-events/news/great-west-lifeco-reports-fourth-quarter-2023-results.html",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q4/lifeco-q4-2023-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q3/lifeco-q3-2023-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q2/lifeco-q2-2023-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco--q1-2023-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco-q1-2023-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/news-events/news/great-west-lifeco-reports-fourth-quarter-2022-results.html",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q4/lifeco-q4-2022-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q3/lifeco-q3-2022-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q2/lifeco-q2-2022-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q1/lifeco-q1-2022-quarterly-report-to-shareholders-en.pdf",
-        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2026/q1/lifeco-q1-2026-quarterly-report-to-shareholders-en.pdf"
-      ],
-      "periodIds": [
-        "2022-AN",
-        "2022-T1",
-        "2022-T2",
-        "2022-T3",
-        "2023-AN",
-        "2023-T1",
-        "2023-T2",
-        "2023-T3",
-        "2024-AN",
-        "2024-T1",
-        "2024-T2",
-        "2024-T3",
-        "2025-AN",
-        "2025-T1",
-        "2025-T2",
-        "2025-T3",
-        "2026-T1",
-        "2026-T2"
-      ],
-      "message": "gwo-results/Annuel 2025: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q4/lifeco-q4-2025-quarterly-report-to-shareholders-en.pdf; gwo-results/Annuel 2024: gwo-results/Annuel 2024: métriques officielles manquantes ['core_earnings', 'core_eps', 'core_roe', 'licat_ratio', 'total_client_assets']; gwo-results/Annuel 2024: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q4/lifeco-q4-2024-quarterly-report-to-shareholders-en.pdf; gwo-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_Annuel 2023; gwo-results/Annuel 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q4/lifeco-q4-2023-quarterly-report-to-shareholders-en.pdf; gwo-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T1 2023; gwo-results/T1 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco-q1-2023-quarterly-report-to-shareholders-en.pdf; gwo-results/Annuel 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_Annuel 2022; gwo-results/Annuel 2022: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q4/lifeco-q4-2022-quarterly-report-to-shareholders-en.pdf; gwo-results/T3 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T3 2022; gwo-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T2 2022; gwo-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_GWO_T1 2022",
-      "anthropicCalls": 7
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
+      "anthropicCalls": 0
     },
     {
       "sourceId": "iag-results",
       "companyId": "IAG",
       "status": "warning",
-      "documentsDiscovered": 39,
+      "documentsDiscovered": 31,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-financial-statements.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-mda.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/annuel/2026/en/foa-annualreport2025.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t3/q3-2025-news-release.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t2/q2-2025-news-release.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2025/t1/q1-2025-news-release-acc.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2024/t4/q4-2024-financial-statements.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2024/t4/q4-2024-mda.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2024/t3/ia-societe-financiere-et-industrielle-alliance-assurance-services-financiers/q3-2024-news-release-acc.pdf",
         "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2024/t2/ia-societe-financiere-et-industrielle-alliance-assurance-services-financiers/q2-2024-iafc-iaifs-news-release-acc.pdf",
         "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2024/t2/ia-societe-financiere/q2-2024-iafc-financial-statements-acc.pdf",
         "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2024/t2/ia-societe-financiere/q2-2024-iafc-mda-acc.pdf",
@@ -475,7 +326,8 @@
         "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2022/t2/ia-societe-financiere/q2-2022-iafc-mda-v2.pdf",
         "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2022/t1/ia-societe-financiere-et-industrielle-alliance-assurance-services-financiers/q1-2022-iafc-iaifs-news-release-v2.pdf",
         "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2022/t1/ia-societe-financiere/q1-2022-iafc-financial-statements-v2.pdf",
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2022/t1/ia-societe-financiere/q1-2022-iafc-mda-v2.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2022/t1/ia-societe-financiere/q1-2022-iafc-mda-v2.pdf",
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-financial-statements.pdf"
       ],
       "periodIds": [
         "2022-AN",
@@ -486,18 +338,12 @@
         "2023-T1",
         "2023-T2",
         "2023-T3",
-        "2024-AN",
         "2024-T1",
         "2024-T2",
-        "2024-T3",
-        "2025-AN",
-        "2025-T1",
-        "2025-T2",
-        "2025-T3",
         "2026-T1"
       ],
-      "message": "iag-results/T2 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2024; iag-results/T2 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2024; iag-results/T2 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2024; iag-results/T1 2024: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2024; iag-results/T1 2024: iag-results/T1 2024: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']; iag-results/T1 2024: iag-results/T1 2024: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']; iag-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2023; iag-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2023; iag-results/Annuel 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2023; iag-results/T3 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2023; iag-results/T3 2023: iag-results/T3 2023: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']; iag-results/T3 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2023; iag-results/T2 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2023; iag-results/T2 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2023; iag-results/T2 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2023; iag-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2023; iag-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2023; iag-results/T1 2023: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2023; iag-results/Annuel 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2022; iag-results/Annuel 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_Annuel 2022; iag-results/Annuel 2022: Contenu trop volumineux pour https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/annuel/2023/ia-societe-financiere/q4-2022-iafc-annual-report.pdf: 18563733 octets; iag-results/T3 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2022; iag-results/T3 2022: iag-results/T3 2022: métriques officielles manquantes ['assets_under_administration', 'core_earnings', 'core_eps', 'core_roe', 'licat_ratio']; iag-results/T3 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T3 2022; iag-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2022; iag-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2022; iag-results/T2 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T2 2022; iag-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2022; iag-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2022; iag-results/T1 2022: Réponse structurée Anthropic tronquée ou illisible pour financial_extraction_IAG_T1 2022",
-      "anthropicCalls": 31
+      "message": "iag-results/T2 2024: Requête Anthropic refusée: BadRequestError; iag-results/T2 2024: Requête Anthropic refusée: BadRequestError; iag-results/T2 2024: Requête Anthropic refusée: BadRequestError; iag-results/T1 2024: Requête Anthropic refusée: BadRequestError; iag-results/T1 2024: Requête Anthropic refusée: BadRequestError; iag-results/T1 2024: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2023: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2023: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2023: Requête Anthropic refusée: BadRequestError; iag-results/T3 2023: Requête Anthropic refusée: BadRequestError; iag-results/T3 2023: Requête Anthropic refusée: BadRequestError; iag-results/T3 2023: Requête Anthropic refusée: BadRequestError; iag-results/T2 2023: Requête Anthropic refusée: BadRequestError; iag-results/T2 2023: Requête Anthropic refusée: BadRequestError; iag-results/T2 2023: Requête Anthropic refusée: BadRequestError; iag-results/T1 2023: Requête Anthropic refusée: BadRequestError; iag-results/T1 2023: Requête Anthropic refusée: BadRequestError; iag-results/T1 2023: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2022: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2022: Requête Anthropic refusée: BadRequestError; iag-results/Annuel 2022: Contenu trop volumineux pour https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/annuel/2023/ia-societe-financiere/q4-2022-iafc-annual-report.pdf: 18563733 octets; iag-results/T3 2022: Requête Anthropic refusée: BadRequestError; iag-results/T3 2022: Requête Anthropic refusée: BadRequestError; iag-results/T3 2022: Requête Anthropic refusée: BadRequestError; iag-results/T2 2022: Requête Anthropic refusée: BadRequestError; iag-results/T2 2022: Requête Anthropic refusée: BadRequestError; iag-results/T2 2022: Requête Anthropic refusée: BadRequestError; iag-results/T1 2022: Requête Anthropic refusée: BadRequestError; iag-results/T1 2022: Requête Anthropic refusée: BadRequestError; iag-results/T1 2022: Requête Anthropic refusée: BadRequestError",
+      "anthropicCalls": 29
     },
     {
       "sourceId": "mfc-official-news",
