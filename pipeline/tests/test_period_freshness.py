@@ -152,7 +152,7 @@ def test_discovered_2026_document_with_failed_extraction_is_stale(
     acquisition = acquire_source(
         dataset,
         source,
-        Settings(anthropic_api_key=None),
+        Settings(openai_api_key=None),
         project_config,
     )
     failed_period = acquisition.failures[0].period

@@ -174,9 +174,10 @@ def validate_dataset(
         text_fields = [item.label, item.note, item.display_value, item.source.title]
         if any(HTML_PATTERN.search(value) for value in text_fields):
             errors.append(QualityIssue(code="html_injection", message=prefix))
-        if item.quality.extraction_method == "anthropic" and item.quality.llm_trace is None:
+        is_llm_extraction = item.quality.extraction_method in {"anthropic", "openai"}
+        if is_llm_extraction and item.quality.llm_trace is None:
             errors.append(QualityIssue(code="missing_llm_trace", message=prefix))
-        if item.quality.extraction_method != "anthropic" and item.quality.llm_trace is not None:
+        if not is_llm_extraction and item.quality.llm_trace is not None:
             errors.append(QualityIssue(code="unexpected_llm_trace", message=prefix))
 
         previous = item.comparison.value
@@ -243,10 +244,13 @@ def validate_dataset(
         if news_item.published_at > (reference_now + timedelta(days=2)).date():
             errors.append(QualityIssue(code="impossible_future_date", message=news_item.id))
         if (
-            news_item.quality.extraction_method == "anthropic"
+            news_item.quality.extraction_method in {"anthropic", "openai"}
             and news_item.quality.llm_trace is None
         ):
             errors.append(QualityIssue(code="missing_llm_trace", message=news_item.id))
-        if news_item.quality.extraction_method == "anthropic" and not news_item.generated_summary:
+        if (
+            news_item.quality.extraction_method in {"anthropic", "openai"}
+            and not news_item.generated_summary
+        ):
             errors.append(QualityIssue(code="missing_generated_summary", message=news_item.id))
     return errors

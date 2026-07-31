@@ -17,8 +17,8 @@ from vigie_pipeline.discovery import discover_documents
 from vigie_pipeline.exceptions import ExtractionError, PipelineError
 from vigie_pipeline.fetch import BoundedFetcher, FetchResult
 from vigie_pipeline.hashing import sha256_bytes
-from vigie_pipeline.llm.anthropic_provider import PROMPT_VERSION, AnthropicProvider
 from vigie_pipeline.llm.base import LlmProvider
+from vigie_pipeline.llm.openai_provider import PROMPT_VERSION, OpenAIProvider
 from vigie_pipeline.models import (
     Comparison,
     DiscoveredDocument,
@@ -65,7 +65,7 @@ class FinancialAcquisition:
     discovered_periods: list[Period]
     documents: list[DiscoveredDocument]
     failures: list[DocumentFailure]
-    anthropic_calls: int
+    llm_calls: int
     checked_at: datetime
     discovery_warnings: list[str] = field(default_factory=list)
 
@@ -463,7 +463,7 @@ def _llm_trace(
     if not isinstance(candidate, LlmMetric):
         return None
     return LlmTrace(
-        provider="anthropic",
+        provider="openai",
         model=config.pipeline.llm.complex_model,
         prompt_version=PROMPT_VERSION,
         executed_at=datetime.now(UTC),
@@ -569,7 +569,7 @@ def _build_observation(
         ),
         quality=ObservationQuality(
             status="validated",
-            extraction_method="anthropic" if is_llm else "deterministic",
+            extraction_method="openai" if is_llm else "deterministic",
             confidence=confidence,
             warnings=warnings,
             llm_trace=_llm_trace(
@@ -786,7 +786,7 @@ def acquire_source(
         )
         results: list[Observation] = []
         failures: list[DocumentFailure] = []
-        anthropic_calls = 0
+        llm_calls = 0
         successful_periods: set[str] = set()
         attempted_per_period: dict[str, int] = {}
         reported_documents = [
@@ -849,9 +849,9 @@ def acquire_source(
                 )
                 found = {item.metric_id for item in candidates}
                 missing_expected = set(source.expected_metrics) - (found | existing_metrics)
-                if missing_expected and settings.anthropic_api_key:
-                    provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
-                    anthropic_calls += 1
+                if missing_expected and settings.openai_api_key:
+                    provider = llm_provider or OpenAIProvider(settings, config.pipeline.llm)
+                    llm_calls += 1
                     extraction = provider.extract_structured(
                         content=content,
                         output_model=LlmMetricExtraction,
@@ -933,6 +933,6 @@ def acquire_source(
             documents=list(unique_documents.values()),
             failures=failures,
             discovery_warnings=discovery_warnings,
-            anthropic_calls=anthropic_calls,
+            llm_calls=llm_calls,
             checked_at=checked_at,
         )

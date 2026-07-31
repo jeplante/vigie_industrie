@@ -7,7 +7,7 @@ flowchart TD
     A["Sources officielles et réglementaires"] --> B["GitHub Actions · Python 3.12"]
     B --> C["Découverte · ETag · Last-Modified · SHA-256"]
     C --> D["Téléchargement borné et extraction déterministe"]
-    D -->|"ambigu ou incomplet"| E["Fournisseur LLM Anthropic"]
+    D -->|"ambigu ou incomplet"| E["Fournisseur LLM OpenAI"]
     D --> F["Normalisation et corrections manuelles"]
     E --> F
     F --> G{"Validation métier et schémas"}
@@ -30,7 +30,7 @@ Le pipeline charge les quatre YAML dans des modèles Pydantic, découvre les lie
 télécharge avec timeout, reprises,
 redirections et taille maximale, puis confie le contenu à l’adaptateur de la société. Les PDF
 passent par `pypdf`; le HTML par BeautifulSoup et des expressions contrôlées. Une extraction
-Anthropic ne peut fournir qu’un modèle Pydantic strict et reste soumise aux mêmes validations.
+OpenAI ne peut fournir qu’un modèle Pydantic strict et reste soumis aux mêmes validations.
 
 `Publisher` isole la destination. `GitHubPagesPublisher` écrit les trois fichiers candidats dans
 un répertoire temporaire, puis les remplace ensemble. La future destination SharePoint n’affecte
@@ -54,17 +54,16 @@ importance, thèmes et qualité. Le seed garde les 64 observations et 48 actuali
 
 ## Stratégie LLM et traçabilité
 
-`LlmProvider` permet de remplacer Anthropic plus tard. `NoLlmProvider` rend le mode sans LLM
-explicite. Anthropic reçoit un contenu tronqué à la limite configurée et une température nulle.
-Le SDK 0.116+ utilise `messages.parse` et un modèle Pydantic, traduit nativement vers
-`output_config.format`; refus, limite de jetons, réponse incomplète et modèle incompatible sont
-des erreurs distinctes.
+`LlmProvider` isole OpenAI. `NoLlmProvider` rend le mode sans LLM explicite. OpenAI reçoit un
+contenu tronqué à la limite configurée. Le SDK utilise l’API Responses, un format Pydantic strict,
+`store=false` et un effort de raisonnement `none`; refus, limite de jetons, réponse incomplète et
+modèle incompatible sont des erreurs distinctes.
 
 Un résultat LLM publié porte fournisseur, modèle, version du prompt, date, tâche, empreinte de la
 source, confiance et avertissements dans `quality.llmTrace`. Aucun raisonnement interne n’est
 stocké. Les journaux contiennent le modèle, la tâche et l’usage disponible, jamais la clé.
 La trace est construite par résultat : une métrique déterministe d’un document mixte ne reçoit
-jamais la trace de la métrique extraite par Claude.
+jamais la trace de la métrique extraite par OpenAI.
 
 ## Last known good
 

@@ -15,8 +15,8 @@ from vigie_pipeline.config import ProjectConfig, SourceConfig
 from vigie_pipeline.exceptions import ExtractionError, PipelineError
 from vigie_pipeline.fetch import BoundedFetcher, FetchResult
 from vigie_pipeline.hashing import sha256_bytes, sha256_text
-from vigie_pipeline.llm.anthropic_provider import PROMPT_VERSION, AnthropicProvider
 from vigie_pipeline.llm.base import LlmProvider
+from vigie_pipeline.llm.openai_provider import PROMPT_VERSION, OpenAIProvider
 from vigie_pipeline.models import (
     DiscoveredDocument,
     LlmTrace,
@@ -92,7 +92,7 @@ class NewsAcquisition:
     items: list[NewsItem]
     documents: list[DiscoveredDocument]
     failures: list[NewsFailure]
-    anthropic_calls: int
+    llm_calls: int
 
 
 def canonicalize_url(url: str) -> str:
@@ -225,7 +225,7 @@ def acquire_news(
     existing_by_url = {canonicalize_url(str(item.source.url)): item for item in dataset.news}
     results: list[NewsItem] = []
     failures: list[NewsFailure] = []
-    anthropic_calls = 0
+    llm_calls = 0
     with BoundedFetcher(
         timeout=source.timeout_seconds,
         attempts=source.attempts,
@@ -252,19 +252,19 @@ def acquire_news(
                 continue
             analysis = None
             llm_warning: str | None = None
-            if llm_provider is not None or settings.anthropic_api_key:
+            if llm_provider is not None or settings.openai_api_key:
                 try:
-                    provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
-                    anthropic_calls += 1
+                    provider = llm_provider or OpenAIProvider(settings, config.pipeline.llm)
+                    llm_calls += 1
                     analysis = provider.summarize_news(
                         title=article.title,
                         content=article.text,
                         source_url=article.canonical_url,
                     )
                 except PipelineError as error:
-                    llm_warning = f"Analyse Anthropic indisponible: {error}"
+                    llm_warning = f"Analyse OpenAI indisponible: {error}"
             else:
-                llm_warning = "Analyse Anthropic non exécutée: clé absente."
+                llm_warning = "Analyse OpenAI non exécutée: clé absente."
             company_ids = [source.company_id]
             trace = None
             if analysis is not None:
@@ -274,7 +274,7 @@ def acquire_news(
                     if company_id in config.companies
                 ]
                 trace = LlmTrace(
-                    provider="anthropic",
+                    provider="openai",
                     model=config.pipeline.llm.standard_model,
                     prompt_version=PROMPT_VERSION,
                     executed_at=datetime.now(UTC),
@@ -313,7 +313,7 @@ def acquire_news(
                     themes=analysis.themes if analysis else [],
                     quality=ObservationQuality(
                         status="validated",
-                        extraction_method=("anthropic" if analysis else "deterministic_fallback"),
+                        extraction_method=("openai" if analysis else "deterministic_fallback"),
                         confidence=analysis.confidence if analysis else 0.75,
                         warnings=analysis.warnings if analysis else [llm_warning or ""],
                         llm_trace=trace,
@@ -325,7 +325,7 @@ def acquire_news(
         items=results,
         documents=documents,
         failures=failures,
-        anthropic_calls=anthropic_calls,
+        llm_calls=llm_calls,
     )
 
 

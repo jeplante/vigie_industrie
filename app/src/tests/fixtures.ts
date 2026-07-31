@@ -133,7 +133,7 @@ export const dataset: VigieDataset = {
         status: "warning",
         extractionMethod: "deterministic_fallback",
         confidence: 0.5,
-        warnings: ["Anthropic indisponible"],
+        warnings: ["OpenAI indisponible"],
       },
     },
     {

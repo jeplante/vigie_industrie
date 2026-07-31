@@ -1,7 +1,7 @@
 from types import SimpleNamespace
 
-import anthropic
 import httpx
+import openai
 import pytest
 from pydantic import ValidationError
 
@@ -13,12 +13,12 @@ from vigie_pipeline.exceptions import (
     LlmRefusalError,
     StructuredOutputUnsupportedError,
 )
-from vigie_pipeline.llm.anthropic_provider import AnthropicProvider
 from vigie_pipeline.llm.base import NewsAnalysis
+from vigie_pipeline.llm.openai_provider import OpenAIProvider
 from vigie_pipeline.settings import Settings
 
 
-class FakeMessages:
+class FakeResponses:
     def __init__(self, response: SimpleNamespace | Exception) -> None:
         self.response = response
         self.calls: list[dict[str, object]] = []
@@ -32,19 +32,21 @@ class FakeMessages:
 
 class FakeClient:
     def __init__(self, response: SimpleNamespace | Exception) -> None:
-        self.messages = FakeMessages(response)
+        self.responses = FakeResponses(response)
 
 
 def response(
     parsed: object | None,
     *,
-    stop_reason: str = "end_turn",
-    block_type: str = "text",
+    status: str = "completed",
+    content_type: str = "output_text",
+    incomplete_reason: str = "max_output_tokens",
 ) -> SimpleNamespace:
     return SimpleNamespace(
-        parsed_output=parsed,
-        stop_reason=stop_reason,
-        content=[SimpleNamespace(type=block_type)],
+        output_parsed=parsed,
+        status=status,
+        incomplete_details=SimpleNamespace(reason=incomplete_reason),
+        output=[SimpleNamespace(content=[SimpleNamespace(type=content_type)])],
         usage=SimpleNamespace(input_tokens=10, output_tokens=5),
     )
 
@@ -62,47 +64,47 @@ def valid_analysis() -> NewsAnalysis:
 
 
 def test_missing_api_key_is_rejected(project_config: ProjectConfig) -> None:
-    with pytest.raises(ConfigurationError, match="ANTHROPIC_API_KEY"):
-        AnthropicProvider(Settings(anthropic_api_key=None), project_config.pipeline.llm)
+    with pytest.raises(ConfigurationError, match="OPENAI_API_KEY"):
+        OpenAIProvider(Settings(openai_api_key=None), project_config.pipeline.llm)
 
 
 def test_native_structured_response_is_validated(project_config: ProjectConfig) -> None:
     client = FakeClient(response(valid_analysis()))
-    provider = AnthropicProvider(Settings(), project_config.pipeline.llm, client=client)
+    provider = OpenAIProvider(Settings(), project_config.pipeline.llm, client=client)
     result = provider.summarize_news(
         title="Titre", content="Contenu", source_url="https://example.com"
     )
     assert result == valid_analysis()
-    call = client.messages.calls[0]
-    assert call["output_format"] is NewsAnalysis
-    assert call["model"] == "claude-haiku-4-5"
+    call = client.responses.calls[0]
+    assert call["text_format"] is NewsAnalysis
+    assert call["model"] == "gpt-5.6-luna"
+    assert call["reasoning"] == {"effort": "none"}
+    assert call["store"] is False
     assert "temperature" not in call
-    assert "thinking" not in call
 
 
-@pytest.mark.parametrize("stop_reason", ["max_tokens", "model_context_window_exceeded"])
-def test_incomplete_response_is_rejected(project_config: ProjectConfig, stop_reason: str) -> None:
-    provider = AnthropicProvider(
+def test_incomplete_response_is_rejected(project_config: ProjectConfig) -> None:
+    provider = OpenAIProvider(
         Settings(),
         project_config.pipeline.llm,
-        client=FakeClient(response(None, stop_reason=stop_reason)),
+        client=FakeClient(response(None, status="incomplete")),
     )
     with pytest.raises(LlmIncompleteError, match="tronquée"):
         provider.summarize_news(title="Titre", content="Contenu", source_url="https://example.com")
 
 
 def test_refusal_is_rejected(project_config: ProjectConfig) -> None:
-    provider = AnthropicProvider(
+    provider = OpenAIProvider(
         Settings(),
         project_config.pipeline.llm,
-        client=FakeClient(response(None, stop_reason="refusal", block_type="refusal")),
+        client=FakeClient(response(None, content_type="refusal")),
     )
     with pytest.raises(LlmRefusalError, match="refusé"):
         provider.summarize_news(title="Titre", content="Contenu", source_url="https://example.com")
 
 
 def test_missing_parsed_output_is_rejected(project_config: ProjectConfig) -> None:
-    provider = AnthropicProvider(
+    provider = OpenAIProvider(
         Settings(), project_config.pipeline.llm, client=FakeClient(response(None))
     )
     with pytest.raises(LlmIncompleteError, match="absente"):
@@ -112,7 +114,7 @@ def test_missing_parsed_output_is_rejected(project_config: ProjectConfig) -> Non
 def test_additional_pydantic_validation_rejects_wrong_shape(
     project_config: ProjectConfig,
 ) -> None:
-    provider = AnthropicProvider(
+    provider = OpenAIProvider(
         Settings(),
         project_config.pipeline.llm,
         client=FakeClient(response({"summary": "incomplet"})),
@@ -126,7 +128,7 @@ def test_sdk_parse_validation_error_is_a_controlled_incomplete_response(
 ) -> None:
     with pytest.raises(ValidationError) as captured:
         NewsAnalysis.model_validate({"summary": "incomplet"})
-    provider = AnthropicProvider(
+    provider = OpenAIProvider(
         Settings(),
         project_config.pipeline.llm,
         client=FakeClient(captured.value),
@@ -141,26 +143,25 @@ def test_sdk_parse_validation_error_is_a_controlled_incomplete_response(
 
 
 def test_unsupported_structured_outputs_are_explicit(project_config: ProjectConfig) -> None:
-    request = httpx.Request("POST", "https://api.anthropic.com/v1/messages")
-    error = anthropic.BadRequestError(
-        "Model does not support structured output_format",
+    request = httpx.Request("POST", "https://api.openai.com/v1/responses")
+    error = openai.BadRequestError(
+        "Model does not support structured text_format",
         response=httpx.Response(400, request=request),
         body=None,
     )
-    provider = AnthropicProvider(Settings(), project_config.pipeline.llm, client=FakeClient(error))
+    provider = OpenAIProvider(Settings(), project_config.pipeline.llm, client=FakeClient(error))
     with pytest.raises(StructuredOutputUnsupportedError, match="non pris en charge"):
         provider.summarize_news(title="Titre", content="Contenu", source_url="https://example.com")
 
 
-def test_complex_tasks_use_sonnet_5(project_config: ProjectConfig) -> None:
+def test_complex_tasks_use_terra(project_config: ProjectConfig) -> None:
     client = FakeClient(response(valid_analysis()))
-    provider = AnthropicProvider(Settings(), project_config.pipeline.llm, client=client)
+    provider = OpenAIProvider(Settings(), project_config.pipeline.llm, client=client)
     provider.extract_structured(
         content="tableau complexe",
         output_model=NewsAnalysis,
         task_name="complex_table",
         complex_task=True,
     )
-    assert client.messages.calls[0]["model"] == "claude-sonnet-5"
-    assert "temperature" not in client.messages.calls[0]
-    assert client.messages.calls[0]["thinking"] == {"type": "disabled"}
+    assert client.responses.calls[0]["model"] == "gpt-5.6-terra"
+    assert client.responses.calls[0]["reasoning"] == {"effort": "none"}

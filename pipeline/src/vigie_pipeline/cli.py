@@ -362,7 +362,7 @@ def command_refresh(
                             {item.period_id for item in financial_acquisition.discovered_periods}
                         ),
                         message="; ".join(financial_messages) or None,
-                        anthropic_calls=financial_acquisition.anthropic_calls,
+                        llm_calls=financial_acquisition.llm_calls,
                     )
                 )
             else:
@@ -389,7 +389,7 @@ def command_refresh(
                         QualityIssue(
                             code="news_llm_degraded",
                             message=(
-                                f"{len(degraded)} actualité(s) publiée(s) sans résumé Anthropic."
+                                f"{len(degraded)} actualité(s) publiée(s) sans résumé OpenAI."
                             ),
                             source_id=source.id,
                         )
@@ -423,7 +423,7 @@ def command_refresh(
                         ],
                         period_ids=sorted({item.period_id for item in news_acquisition.items}),
                         message="; ".join(news_messages) or None,
-                        anthropic_calls=news_acquisition.anthropic_calls,
+                        llm_calls=news_acquisition.llm_calls,
                     )
                 )
             if source_results[-1].status == "success":
@@ -531,7 +531,7 @@ def command_refresh(
                     "periodsDetected": sorted(
                         {period for item in source_results for period in item.period_ids}
                     ),
-                    "anthropicCalls": sum(item.anthropic_calls for item in source_results),
+                    "llmCalls": sum(item.llm_calls for item in source_results),
                     "wouldAdd": {
                         "observations": observations_added,
                         "news": news_added,

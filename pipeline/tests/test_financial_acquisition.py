@@ -213,7 +213,7 @@ def test_index_metrics_are_acquired_and_future_conference_is_excluded(
     )
     source = next(item for item in project_config.sources if item.id == "mfc-results")
     source = source.model_copy(update={"historical_document_urls": []})
-    acquisition = acquire_source(dataset, source, Settings(anthropic_api_key=None), project_config)
+    acquisition = acquire_source(dataset, source, Settings(openai_api_key=None), project_config)
     assert len(acquisition.observations) == 5
     assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
     assert {item.source.published_at.isoformat() for item in acquisition.observations} == {
@@ -277,7 +277,7 @@ def test_old_invalid_document_does_not_cancel_new_valid_document(
     monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
     source = next(item for item in project_config.sources if item.id == "mfc-results")
     source = source.model_copy(update={"historical_document_urls": []})
-    acquisition = acquire_source(dataset, source, Settings(anthropic_api_key=None), project_config)
+    acquisition = acquire_source(dataset, source, Settings(openai_api_key=None), project_config)
     assert len(acquisition.observations) == 5
     assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
     assert {item.period.period_id for item in acquisition.failures} == {"2024-AN"}
@@ -518,7 +518,7 @@ def test_sun_life_financial_highlights_page_is_a_deterministic_source(
     acquisition = acquire_source(
         dataset,
         source,
-        Settings(anthropic_api_key=None),
+        Settings(openai_api_key=None),
         project_config,
     )
 

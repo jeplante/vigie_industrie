@@ -38,7 +38,7 @@ class TemporaryLlmError(LlmError):
 
 
 class LlmRefusalError(LlmError):
-    """Claude a explicitement refusé la demande."""
+    """Le fournisseur LLM a explicitement refusé la demande."""
 
 
 class LlmIncompleteError(LlmError):

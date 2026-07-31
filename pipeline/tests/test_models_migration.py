@@ -1,4 +1,4 @@
-from vigie_pipeline.models import VigieDataset
+from vigie_pipeline.models import SourceRunResult, VigieDataset
 
 
 def test_v1_migration_preserves_all_records(dataset: VigieDataset) -> None:
@@ -19,3 +19,20 @@ def test_models_round_trip_aliases(dataset: VigieDataset) -> None:
     payload = dataset.model_dump(mode="json", by_alias=True)
     assert payload["observations"][0]["companyId"]
     assert VigieDataset.model_validate(payload) == dataset
+
+
+def test_legacy_anthropic_call_counter_is_read_and_serialized_neutrally() -> None:
+    result = SourceRunResult.model_validate(
+        {
+            "sourceId": "legacy-source",
+            "companyId": "MFC",
+            "status": "success",
+            "documentsDiscovered": 1,
+            "anthropicCalls": 2,
+        }
+    )
+
+    assert result.llm_calls == 2
+    payload = result.model_dump(mode="json", by_alias=True)
+    assert payload["llmCalls"] == 2
+    assert "anthropicCalls" not in payload

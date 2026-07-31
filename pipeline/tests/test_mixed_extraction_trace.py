@@ -7,7 +7,7 @@ from vigie_pipeline.models import Period, VigieDataset
 from vigie_pipeline.sources.base import MetricCandidate
 
 
-def test_only_llm_metric_receives_anthropic_trace(
+def test_only_llm_metric_receives_openai_trace(
     dataset: VigieDataset, project_config: ProjectConfig
 ) -> None:
     source = next(item for item in project_config.sources if item.id == "mfc-results")
@@ -62,6 +62,6 @@ def test_only_llm_metric_receives_anthropic_trace(
     )
     assert deterministic.quality.extraction_method == "deterministic"
     assert deterministic.quality.llm_trace is None
-    assert llm.quality.extraction_method == "anthropic"
+    assert llm.quality.extraction_method == "openai"
     assert llm.quality.llm_trace is not None
     assert llm.quality.llm_trace.task_id.endswith("net_income")

@@ -1,11 +1,11 @@
-"""Fournisseur Anthropic utilisant les Structured Outputs natifs du SDK."""
+"""Fournisseur OpenAI utilisant les Structured Outputs de l'API Responses."""
 
 from __future__ import annotations
 
 import logging
 from typing import Any
 
-import anthropic
+import openai
 from pydantic import ValidationError
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
 
@@ -25,8 +25,8 @@ LOGGER = logging.getLogger(__name__)
 PROMPT_VERSION = "2026-07-12.v2"
 
 
-class AnthropicProvider:
-    """Appelle Anthropic avec un modèle Pydantic comme format de sortie contraint."""
+class OpenAIProvider:
+    """Appelle OpenAI avec un modèle Pydantic comme format de sortie contraint."""
 
     def __init__(
         self,
@@ -34,14 +34,13 @@ class AnthropicProvider:
         llm_config: LlmConfig,
         client: Any | None = None,
     ) -> None:
-        if not settings.anthropic_api_key and client is None:
+        if not settings.openai_api_key and client is None:
             raise ConfigurationError(
-                "ANTHROPIC_API_KEY est absente; utilisez le mode hors ligne "
-                "ou configurez le secret."
+                "OPENAI_API_KEY est absente; utilisez le mode hors ligne ou configurez le secret."
             )
         self.settings = settings
         self.config = llm_config
-        self.client = client or anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        self.client = client or openai.OpenAI(api_key=settings.openai_api_key)
 
     def extract_structured(
         self,
@@ -53,8 +52,8 @@ class AnthropicProvider:
     ) -> T:
         model = self.config.complex_model if complex_task else self.config.standard_model
         prompt = (
-            "N’inventez aucune donnée. Retournez seulement les faits explicitement présents "
-            "dans le contenu source et utilisez les champs optionnels lorsque l’information "
+            "N'inventez aucune donnée. Retournez seulement les faits explicitement présents "
+            "dans le contenu source et utilisez les champs optionnels lorsque l'information "
             f"manque. Tâche: {task_name}\nContenu source:\n"
             f"{content[: self.config.max_input_characters]}"
         )
@@ -67,7 +66,7 @@ class AnthropicProvider:
 
     def summarize_news(self, *, title: str, content: str, source_url: str) -> NewsAnalysis:
         prompt_content = (
-            "Produisez un résumé factuel en français, puis classez l’actualité. "
+            "Produisez un résumé factuel en français, puis classez l'actualité. "
             "company_ids doit utiliser uniquement MFC, SLF, GWO ou IAG quand la société "
             f"est explicitement concernée.\nTitre: {title}\nURL: {source_url}\nTexte: {content}"
         )
@@ -92,55 +91,58 @@ class AnthropicProvider:
         prompt: str,
         output_model: type[T],
     ) -> T:
-        request: dict[str, Any] = {
-            "model": model,
-            "max_tokens": self.config.max_output_tokens,
-            "system": f"Analyse financière factuelle. Prompt: {PROMPT_VERSION}",
-            "messages": [{"role": "user", "content": prompt}],
-            "output_format": output_model,
-        }
-        if model == "claude-sonnet-5":
-            request["thinking"] = {"type": "disabled"}
         try:
-            response = self.client.messages.parse(**request)
+            response = self.client.responses.parse(
+                model=model,
+                instructions=f"Analyse financière factuelle. Prompt: {PROMPT_VERSION}",
+                input=prompt,
+                text_format=output_model,
+                max_output_tokens=self.config.max_output_tokens,
+                reasoning={"effort": "none"},
+                store=False,
+            )
         except ValidationError as error:
             raise LlmIncompleteError(
-                f"Réponse structurée Anthropic tronquée ou illisible pour {task_name}"
+                f"Réponse structurée OpenAI tronquée ou illisible pour {task_name}"
             ) from error
         except (
-            anthropic.APITimeoutError,
-            anthropic.APIConnectionError,
-            anthropic.RateLimitError,
+            openai.APITimeoutError,
+            openai.APIConnectionError,
+            openai.RateLimitError,
         ) as error:
             raise TemporaryLlmError(
-                f"Erreur Anthropic temporaire: {error.__class__.__name__}"
+                f"Erreur OpenAI temporaire: {error.__class__.__name__}"
             ) from error
-        except anthropic.BadRequestError as error:
+        except openai.BadRequestError as error:
             message = str(error).lower()
-            if any(term in message for term in ("structured", "output_format", "json schema")):
+            if any(term in message for term in ("structured", "text_format", "json schema")):
                 raise StructuredOutputUnsupportedError(
                     f"Structured Outputs non pris en charge par {model}"
                 ) from error
-            raise LlmError(f"Requête Anthropic refusée: {error.__class__.__name__}") from error
-        except anthropic.APIError as error:
-            raise LlmError(f"Erreur Anthropic permanente: {error.__class__.__name__}") from error
+            raise LlmError(f"Requête OpenAI refusée: {error.__class__.__name__}") from error
+        except openai.APIError as error:
+            raise LlmError(f"Erreur OpenAI permanente: {error.__class__.__name__}") from error
 
-        stop_reason = str(getattr(response, "stop_reason", ""))
-        if stop_reason == "refusal" or any(
-            getattr(block, "type", "") == "refusal" for block in getattr(response, "content", [])
+        if any(
+            getattr(part, "type", "") == "refusal"
+            for item in getattr(response, "output", [])
+            for part in getattr(item, "content", [])
         ):
-            raise LlmRefusalError(f"Claude a refusé la tâche {task_name}")
-        if stop_reason in {"max_tokens", "model_context_window_exceeded"}:
-            raise LlmIncompleteError(f"Réponse Anthropic tronquée ({stop_reason}) pour {task_name}")
-        parsed = getattr(response, "parsed_output", None)
+            raise LlmRefusalError(f"OpenAI a refusé la tâche {task_name}")
+        status = str(getattr(response, "status", ""))
+        if status == "incomplete":
+            details = getattr(response, "incomplete_details", None)
+            reason = getattr(details, "reason", "unknown")
+            raise LlmIncompleteError(f"Réponse OpenAI tronquée ({reason}) pour {task_name}")
+        parsed = getattr(response, "output_parsed", None)
         if parsed is None:
             raise LlmIncompleteError(f"Réponse structurée absente pour {task_name}")
         try:
             validated = output_model.model_validate(parsed)
         except ValidationError as error:
-            raise LlmError(f"Réponse Anthropic non conforme pour {task_name}") from error
+            raise LlmError(f"Réponse OpenAI non conforme pour {task_name}") from error
         LOGGER.info(
-            "llm_request provider=anthropic model=%s task=%s usage=%s",
+            "llm_request provider=openai model=%s task=%s usage=%s",
             model,
             task_name,
             getattr(response, "usage", None),

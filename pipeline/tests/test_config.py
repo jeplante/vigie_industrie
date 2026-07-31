@@ -37,8 +37,8 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
         tmp_path,
         Settings(
             root_dir=tmp_path,
-            anthropic_standard_model="standard-env",
-            anthropic_complex_model="complex-env",
+            openai_standard_model="standard-env",
+            openai_complex_model="complex-env",
         ),
     )
     assert config.pipeline.http.max_download_bytes == 4321
@@ -74,8 +74,8 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
     assert iag.metrics_required_for_success == ["core_eps", "core_roe", "licat_ratio"]
 
 
-def test_required_anthropic_defaults_come_from_yaml(repository_root: Path) -> None:
+def test_required_openai_defaults_come_from_yaml(repository_root: Path) -> None:
     config = load_project_config(repository_root)
-    assert config.pipeline.llm.standard_model == "claude-haiku-4-5"
-    assert config.pipeline.llm.complex_model == "claude-sonnet-5"
+    assert config.pipeline.llm.standard_model == "gpt-5.6-luna"
+    assert config.pipeline.llm.complex_model == "gpt-5.6-terra"
     assert config.pipeline.financial_history_years == 5

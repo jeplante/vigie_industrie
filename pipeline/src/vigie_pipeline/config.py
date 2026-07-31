@@ -149,10 +149,10 @@ def load_project_config(root_dir: Path, settings: Settings | None = None) -> Pro
     }
     config = ProjectConfig.model_validate(payload)
     if settings is not None:
-        if settings.anthropic_standard_model:
-            config.pipeline.llm.standard_model = settings.anthropic_standard_model
-        if settings.anthropic_complex_model:
-            config.pipeline.llm.complex_model = settings.anthropic_complex_model
+        if settings.openai_standard_model:
+            config.pipeline.llm.standard_model = settings.openai_standard_model
+        if settings.openai_complex_model:
+            config.pipeline.llm.complex_model = settings.openai_complex_model
     _validate_references(config)
     return config
 
