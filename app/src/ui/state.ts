@@ -35,10 +35,21 @@ export function availablePeriods(dataset: VigieDataset): Period[] {
     companies.add(observation.companyId);
     companiesByPeriod.set(observation.period.periodId, companies);
   }
+  const publishedYears = dataset.periods
+    .filter((period) => companiesByPeriod.has(period.periodId))
+    .map((period) => period.year);
+  const latestPublishedYear =
+    publishedYears.length > 0 ? Math.max(...publishedYears) : null;
   return [...dataset.periods]
     .filter((period) => {
       const companies = companiesByPeriod.get(period.periodId);
-      return dataset.companies.every((company) => companies?.has(company.id));
+      if (!companies || latestPublishedYear === null) return false;
+      // L'année courante est publiée progressivement; les années antérieures
+      // restent limitées aux périodes comparables pour tous les assureurs.
+      return (
+        period.year === latestPublishedYear ||
+        dataset.companies.every((company) => companies.has(company.id))
+      );
     })
     .sort((left, right) => right.endDate.localeCompare(left.endDate));
 }

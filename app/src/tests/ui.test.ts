@@ -20,7 +20,7 @@ import {
 import { dataset, manifest, quality } from "./fixtures";
 
 describe("interface", () => {
-  it("change de compagnie et de période commune", () => {
+  it("change de compagnie et de période publiée", () => {
     const companies = document.createElement("div");
     const periods = document.createElement("div");
     const onCompany = vi.fn();
@@ -34,6 +34,8 @@ describe("interface", () => {
     expect(onCompany).toHaveBeenCalledWith("SLF");
     expect(onPeriod).toHaveBeenCalledWith("2025-T3");
     expect([...select.options].map((option) => option.value)).toEqual([
+      "2026-T2",
+      "2026-T1",
       "2025-AN",
       "2025-T3",
       "2025-T2",
@@ -41,13 +43,13 @@ describe("interface", () => {
     ]);
   });
 
-  it("sélectionne la période la plus récente commune aux compagnies", () => {
+  it("sélectionne la période récente dès qu’une compagnie la publie", () => {
     const state = initialState(dataset);
-    expect(state.periodId).toBe("2025-AN");
+    expect(state.periodId).toBe("2026-T2");
     expect(state.viewMode).toBe("summary");
     expect(state.historicalKpi).toBe("metric:core_eps");
     selectCompany(state, "SLF");
-    expect(state.periodId).toBe("2025-AN");
+    expect(state.periodId).toBe("2026-T2");
     expect(
       availablePeriodsForCompany(dataset, "SLF").map((item) => item.periodId),
     ).toEqual(["2025-AN", "2025-T3", "2025-T2", "2025-T1"]);
@@ -182,8 +184,10 @@ describe("interface", () => {
     expect(options).not.toContain("metric:total_client_assets");
   });
 
-  it("offre seulement les périodes publiées pour toutes les compagnies", () => {
+  it("offre les périodes récentes partielles et les anciennes périodes communes", () => {
     expect(availablePeriods(dataset).map((item) => item.periodId)).toEqual([
+      "2026-T2",
+      "2026-T1",
       "2025-AN",
       "2025-T3",
       "2025-T2",
@@ -224,6 +228,33 @@ describe("interface", () => {
     ).toContain("2022-T1");
   });
 
+  it("masque une ancienne période qui n’est pas commune aux compagnies", () => {
+    const reference = dataset.observations[0]!;
+    const oldPartialPeriod = {
+      ...reference.period,
+      periodId: "2024-T1",
+      year: 2024,
+      endDate: "2024-03-31",
+      label: "T1 2024",
+    };
+    const oldPartialDataset = {
+      ...dataset,
+      periods: [...dataset.periods, oldPartialPeriod],
+      observations: [
+        ...dataset.observations,
+        {
+          ...reference,
+          id: "MFC-2024-T1-core-eps",
+          period: oldPartialPeriod,
+        },
+      ],
+    };
+
+    expect(
+      availablePeriods(oldPartialDataset).map((item) => item.periodId),
+    ).not.toContain("2024-T1");
+  });
+
   it("ne mélange jamais deux années portant la même clé de période", () => {
     const state = initialState(dataset);
     const selected = state.dataset.observations.filter(
@@ -232,8 +263,8 @@ describe("interface", () => {
         item.period.periodId === state.periodId,
     );
     expect(selected).toHaveLength(1);
-    expect(selected[0]?.period.periodId).toBe("2025-AN");
-    expect(selected[0]?.comparison.periodId).toBe("2024-AN");
+    expect(selected[0]?.period.periodId).toBe("2026-T2");
+    expect(selected[0]?.comparison.periodId).toBe("2025-T2");
   });
 
   it("filtre les actualités avant rendu", () => {
@@ -251,7 +282,7 @@ describe("interface", () => {
       <p id="news-freshness"></p>
       <section id="company-panel"></section>`;
     const state = initialState(dataset);
-    expect(state.periodId).toBe("2025-AN");
+    expect(state.periodId).toBe("2026-T2");
     renderDashboard(state);
     expect(document.querySelector("#news")?.textContent).toContain(
       "Actualité postérieure aux derniers résultats",
@@ -418,7 +449,7 @@ describe("interface", () => {
     ).not.toContain("Annuel 2025");
   });
 
-  it("borne l’historique à la période commune sélectionnée", () => {
+  it("borne l’historique à la période sélectionnée", () => {
     const container = document.createElement("div");
 
     renderHistory(container, dataset, "metric:core_eps", "2025-T2");
