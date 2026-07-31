@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-30T12:06:59.548807Z",
+  "generatedAt": "2026-07-31T12:19:49.622681Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
   "sourcesSucceeded": 5,
-  "sourcesFailed": 1,
+  "sourcesFailed": 0,
   "observationsAdded": 0,
   "observationsUpdated": 10,
   "overridesApplied": 0,
@@ -71,8 +71,63 @@
       "sourceId": "slf-results"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2025: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q4/lifeco-q4-2025-quarterly-report-to-shareholders-en.pdf",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2024: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2024: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q4/lifeco-q4-2024-quarterly-report-to-shareholders-en.pdf",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2023: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q4/lifeco-q4-2023-quarterly-report-to-shareholders-en.pdf",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/T1 2023: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/T1 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco-q1-2023-quarterly-report-to-shareholders-en.pdf",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2022: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/Annuel 2022: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q4/lifeco-q4-2022-quarterly-report-to-shareholders-en.pdf",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/T3 2022: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/T2 2022: Requête Anthropic refusée: BadRequestError",
+      "sourceId": "gwo-results"
+    },
+    {
+      "code": "old_document_not_ingested",
+      "message": "gwo-results/T1 2022: Requête Anthropic refusée: BadRequestError",
       "sourceId": "gwo-results"
     },
     {
@@ -284,12 +339,35 @@
     {
       "sourceId": "gwo-results",
       "companyId": "GWO",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.greatwestlifeco.com/investor-relations/financial-reports.html",
-      "anthropicCalls": 0
+      "status": "warning",
+      "documentsDiscovered": 13,
+      "documentUrls": [
+        "https://www.greatwestlifeco.com/news-and-events/events/2026/2nd-quarter-2026-conference-call-and-webcast.html",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q4/lifeco-q4-2025-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/news-and-events/news/2025/lifeco-q4-2024-earnings-release.html",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q4/lifeco-q4-2024-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/news-events/news/great-west-lifeco-reports-fourth-quarter-2023-results.html",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q4/lifeco-q4-2023-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco--q1-2023-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco-q1-2023-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/news-events/news/great-west-lifeco-reports-fourth-quarter-2022-results.html",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q4/lifeco-q4-2022-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q3/lifeco-q3-2022-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q2/lifeco-q2-2022-quarterly-report-to-shareholders-en.pdf",
+        "https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q1/lifeco-q1-2022-quarterly-report-to-shareholders-en.pdf"
+      ],
+      "periodIds": [
+        "2022-AN",
+        "2022-T1",
+        "2022-T2",
+        "2022-T3",
+        "2023-AN",
+        "2023-T1",
+        "2024-AN",
+        "2025-AN"
+      ],
+      "message": "gwo-results/Annuel 2025: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2025/q4/lifeco-q4-2025-quarterly-report-to-shareholders-en.pdf; gwo-results/Annuel 2024: Requête Anthropic refusée: BadRequestError; gwo-results/Annuel 2024: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2024/q4/lifeco-q4-2024-quarterly-report-to-shareholders-en.pdf; gwo-results/Annuel 2023: Requête Anthropic refusée: BadRequestError; gwo-results/Annuel 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q4/lifeco-q4-2023-quarterly-report-to-shareholders-en.pdf; gwo-results/T1 2023: Requête Anthropic refusée: BadRequestError; gwo-results/T1 2023: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2023/q1/lifeco-q1-2023-quarterly-report-to-shareholders-en.pdf; gwo-results/Annuel 2022: Requête Anthropic refusée: BadRequestError; gwo-results/Annuel 2022: Erreur HTTP 404 pour https://www.greatwestlifeco.com/content/dam/lifeco/documents/investor-relations/reports/2022/q4/lifeco-q4-2022-quarterly-report-to-shareholders-en.pdf; gwo-results/T3 2022: Requête Anthropic refusée: BadRequestError; gwo-results/T2 2022: Requête Anthropic refusée: BadRequestError; gwo-results/T1 2022: Requête Anthropic refusée: BadRequestError",
+      "anthropicCalls": 7
     },
     {
       "sourceId": "iag-results",
@@ -423,8 +501,11 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-immostar-annoncent-chantier-alo-ste-foy-309-logements-principal-pole-mobilite-quebec",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
       ],
-      "periodIds": [],
-      "anthropicCalls": 0
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
+      "anthropicCalls": 8
     }
   ]
 }
