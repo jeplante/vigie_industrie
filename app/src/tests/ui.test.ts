@@ -130,6 +130,58 @@ describe("interface", () => {
     expect(options).not.toContain("metric:solvency_ratio");
   });
 
+  it("fusionne les trois variantes d’actifs en un seul KPI comparable", () => {
+    const mfc = dataset.observations.find(
+      (item) => item.companyId === "MFC" && item.period.periodId === "2025-T3",
+    )!;
+    const slf = dataset.observations.find(
+      (item) => item.companyId === "SLF" && item.period.periodId === "2025-T3",
+    )!;
+    const assetsDataset = {
+      ...dataset,
+      observations: [
+        ...dataset.observations,
+        {
+          ...mfc,
+          id: "MFC-2025-T3-assets-under-management",
+          metricId: "assets_under_management",
+          label: "Actif sous gestion",
+          value: 900,
+          unit: "CAD_BILLION",
+          displayValue: "900 G$",
+        },
+        {
+          ...slf,
+          id: "SLF-2025-T3-total-client-assets",
+          metricId: "total_client_assets",
+          label: "Actifs clients totaux",
+          value: 2.5,
+          unit: "CAD_TRILLION",
+          displayValue: "2,5 Bil $",
+        },
+      ],
+    };
+    const container = document.createElement("div");
+
+    renderSummary(container, assetsDataset, "2025-T3", vi.fn());
+    const headings = [...container.querySelectorAll("thead th")].map(
+      (heading) => heading.textContent,
+    );
+    const options = historicalKpiOptions(assetsDataset).map(
+      (option) => option.value,
+    );
+
+    expect(headings.filter((label) => label?.includes("Actifs"))).toEqual([
+      "Actifs gérés / administrés",
+    ]);
+    expect(container.textContent).toContain("900 G$");
+    expect(container.textContent).toContain("2,5 Bil $");
+    expect(options).toContain("metric:assets_managed_or_administered");
+    expect(options).not.toContain("metric:assets_under_management");
+    expect(options).not.toContain("metric:assets_under_administration");
+    expect(options).not.toContain("metric:total_client_assets");
+  });
+
   it("offre seulement les périodes publiées pour toutes les compagnies", () => {
     expect(availablePeriods(dataset).map((item) => item.periodId)).toEqual([
       "2025-AN",
@@ -137,6 +189,39 @@ describe("interface", () => {
       "2025-T2",
       "2025-T1",
     ]);
+  });
+
+  it("étend automatiquement le sélecteur aux périodes historiques communes", () => {
+    const reference = dataset.observations[0]!;
+    const period2022 = {
+      ...reference.period,
+      periodId: "2022-T1",
+      year: 2022,
+      endDate: "2022-03-31",
+      label: "T1 2022",
+    };
+    const historicalDataset = {
+      ...dataset,
+      periods: [...dataset.periods, period2022],
+      observations: [
+        ...dataset.observations,
+        {
+          ...reference,
+          id: "MFC-2022-T1-core-eps",
+          period: period2022,
+        },
+        {
+          ...reference,
+          id: "SLF-2022-T1-core-eps",
+          companyId: "SLF" as const,
+          period: period2022,
+        },
+      ],
+    };
+
+    expect(
+      availablePeriods(historicalDataset).map((item) => item.periodId),
+    ).toContain("2022-T1");
   });
 
   it("ne mélange jamais deux années portant la même clé de période", () => {
@@ -199,7 +284,7 @@ describe("interface", () => {
             documentUrls: [],
             periodIds: [],
             message: "Source inaccessible",
-            anthropicCalls: 0,
+            llmCalls: 0,
           },
           {
             sourceId: "slf-results",
@@ -209,7 +294,7 @@ describe("interface", () => {
             documentUrls: ["https://example.com/slf"],
             periodIds: ["2026-T1"],
             message: "Extraction partielle",
-            anthropicCalls: 1,
+            llmCalls: 1,
           },
           {
             sourceId: "gwo-official-news",
@@ -219,7 +304,7 @@ describe("interface", () => {
             documentUrls: [],
             periodIds: [],
             message: "Aucun document",
-            anthropicCalls: 0,
+            llmCalls: 0,
           },
         ],
       },
@@ -277,7 +362,7 @@ describe("interface", () => {
             documentUrls: ["https://example.com/mfc"],
             periodIds: ["2026-T1"],
             message: null,
-            anthropicCalls: 0,
+            llmCalls: 0,
           },
           {
             sourceId: "gwo-official-news",
@@ -287,7 +372,7 @@ describe("interface", () => {
             documentUrls: [],
             periodIds: [],
             message: "Aucun document",
-            anthropicCalls: 0,
+            llmCalls: 0,
           },
         ],
       },

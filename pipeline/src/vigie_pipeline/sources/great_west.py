@@ -12,9 +12,14 @@ class GreatWestAdapter(GenericIrAdapter):
     aliases: ClassVar[dict[str, tuple[str, ...]]] = {
         "core_eps": ("BPA de base", "base earnings per share"),
         "core_earnings": ("bénéfice de base", "base earnings"),
+        "net_income": ("résultat net", "net earnings"),
         "core_roe": ("rendement des capitaux propres de base consolidé", "consolidated base ROE"),
         "licat_ratio": ("ratio LICAT", "LICAT ratio"),
-        "total_client_assets": ("actifs clients totaux", "total assets under administration"),
+        "total_client_assets": (
+            "actifs clients totaux",
+            "total client assets",
+            "assets under administration",
+        ),
     }
 
     def extract_metrics(self, content: str) -> list[MetricCandidate]:
@@ -23,14 +28,31 @@ class GreatWestAdapter(GenericIrAdapter):
             (
                 "core_eps",
                 "base EPS",
-                r"base eps.{0,80}?\$\s*(\d+(?:[.,]\d+)?)",
+                (
+                    r"(?:base eps|base earnings per (?:common )?share"
+                    r"(?:\s*\(\s*eps\s*\))?)"
+                    r".{0,100}?\$\s*(\d+(?:[.,]\d+)?)"
+                ),
                 1.0,
                 "$",
             ),
             (
                 "core_earnings",
                 "base earnings",
-                r"base earnings.{0,100}?\$\s*([\d,]+)\s*(?:million)?",
+                (
+                    r"base earnings(?:\s*\([^)]*\)|\s*\d+)*\s+"
+                    r"(?:were?\s+|of\s+)?\$\s*([\d,]+)\s*(?:million)?"
+                ),
+                0.001,
+                "G$",
+            ),
+            (
+                "net_income",
+                "net earnings",
+                (
+                    r"net earnings(?:\s*\([^)]*\)|\s*\d+)*\s+"
+                    r"(?:were?\s+|of\s+)?\$\s*([\d,]+)\s*(?:million)?"
+                ),
                 0.001,
                 "G$",
             ),
@@ -59,7 +81,10 @@ class GreatWestAdapter(GenericIrAdapter):
                 "total_client_assets",
                 "total client assets",
                 (
-                    r"(?:total client assets|total assets under administration)"
+                    r"(?:total client assets|total assets under administration|"
+                    r"consolidated assets.{0,100}?assets under administration"
+                    r"(?:\s*\(\s*aua\s*\))?)"
+                    r"(?:\s*\d+|\s*\([^)]*\))*"
                     r".{0,120}?\$\s*(\d+(?:[.,]\d+)?)\s*trillion"
                 ),
                 1.0,

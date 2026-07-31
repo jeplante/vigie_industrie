@@ -8,7 +8,7 @@ jamais les sites des assureurs.
 ## Architecture
 
 - `app/` : interface Vite + TypeScript sans framework, tests Vitest, export CSV.
-- `pipeline/` : découverte, téléchargement borné, extraction, Anthropic en secours, validation
+- `pipeline/` : découverte, téléchargement borné, extraction, OpenAI en secours, validation
   et publication atomique en Python 3.12.
 - `config/` : sociétés, sources, métriques et seuils en YAML.
 - `data/seed/` : migration complète des 64 observations et 48 actualités de la V1.
@@ -95,31 +95,31 @@ n’a pas pu être intégré, et `unknown` quand la source n’a pas pu être v�
 qualité utilise alors l’avertissement structuré `newer_document_not_ingested` sans inventer de
 données ni supprimer la dernière version valide.
 
-## Configuration Anthropic
+## Configuration OpenAI
 
-La clé n’est lue que par le pipeline depuis `ANTHROPIC_API_KEY`. Les modèles sont remplaçables
-avec `ANTHROPIC_STANDARD_MODEL` et `ANTHROPIC_COMPLEX_MODEL`. Le modèle standard sert aux
+La clé n’est lue que par le pipeline depuis `OPENAI_API_KEY`. Les modèles sont remplaçables
+avec `OPENAI_STANDARD_MODEL` et `OPENAI_COMPLEX_MODEL`. Le modèle standard sert aux
 résumés et associations simples; le complexe n’est utilisé qu’après une extraction déterministe
-incomplète. Les valeurs par défaut sont respectivement `claude-haiku-4-5` et
-`claude-sonnet-5`. Le SDK utilise `client.messages.parse(..., output_format=ModelePydantic)`,
-qui applique les Structured Outputs Anthropic natifs; une validation Pydantic supplémentaire
-reste obligatoire avant publication.
+incomplète. Les valeurs par défaut sont respectivement `gpt-5.6-luna` et `gpt-5.6-terra`. Le SDK
+utilise l’API Responses avec `client.responses.parse(..., text_format=ModelePydantic)`, sans
+stockage de réponse et avec raisonnement désactivé afin de préserver le comportement du pipeline.
+Une validation Pydantic supplémentaire reste obligatoire avant publication.
 
 Les quatre assureurs disposent également d’une source `official_news`. Les nouveaux articles
 sont dédupliqués par URL canonique puis empreinte, téléchargés avec des limites strictes, puis
-résumés et classés en français avec le modèle standard. Si Anthropic est absent ou indisponible,
+résumés et classés en français avec le modèle standard. Si OpenAI est absent ou indisponible,
 l’article officiel reste publiable en mode dégradé, sans résumé inventé et avec un avertissement.
 Une panne d’actualités n’annule jamais une mise à jour financière valide. Dans l’interface, le fil
 d’actualités est trié par date et indépendant de la période financière sélectionnée.
 
 Dans GitHub : **Settings → Secrets and variables → Actions → New repository secret**, créez
-`ANTHROPIC_API_KEY`. Ajoutez facultativement les deux modèles comme **repository variables**,
+`OPENAI_API_KEY`. Ajoutez facultativement les deux modèles comme **repository variables**,
 pas comme secrets. La clé ne doit jamais être placée dans Pages, un commit ou un journal.
 
 ## GitHub Pages et rafraîchissement manuel
 
 Activez **Settings → Pages → Source: GitHub Actions**. `Deploy GitHub Pages` valide et déploie
-le last-known-good sans contacter les assureurs ni lire `ANTHROPIC_API_KEY`. `Refresh industry
+le last-known-good sans contacter les assureurs ni lire `OPENAI_API_KEY`. `Refresh industry
 data` s’exécute chaque jour à `10:17 UTC` ou manuellement, acquiert et valide les nouveautés,
 puis appelle le déploiement seulement après succès. Une panne d’acquisition ne bloque donc jamais
 un déploiement indépendant de la dernière donnée valide. Le cron GitHub reste en UTC.

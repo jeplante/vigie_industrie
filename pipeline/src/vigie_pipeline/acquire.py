@@ -17,8 +17,8 @@ from vigie_pipeline.discovery import discover_documents
 from vigie_pipeline.exceptions import ExtractionError, PipelineError
 from vigie_pipeline.fetch import BoundedFetcher, FetchResult
 from vigie_pipeline.hashing import sha256_bytes
-from vigie_pipeline.llm.anthropic_provider import PROMPT_VERSION, AnthropicProvider
 from vigie_pipeline.llm.base import LlmProvider
+from vigie_pipeline.llm.openai_provider import PROMPT_VERSION, OpenAIProvider
 from vigie_pipeline.models import (
     Comparison,
     DiscoveredDocument,
@@ -65,7 +65,7 @@ class FinancialAcquisition:
     discovered_periods: list[Period]
     documents: list[DiscoveredDocument]
     failures: list[DocumentFailure]
-    anthropic_calls: int
+    llm_calls: int
     checked_at: datetime
     discovery_warnings: list[str] = field(default_factory=list)
 
@@ -81,6 +81,13 @@ class DocumentFailure:
 
 def infer_period(title: str) -> Period | None:
     text = title.lower()
+    has_annual_marker = (
+        re.search(
+            r"\b(?:annual|annuel|full[- ]year|exercice)\b",
+            text,
+        )
+        is not None
+    )
     explicit_quarter = re.search(r"(?:q|t)([1-4])[-_/ ]*(20\d{2})", text)
     compact_quarter = (
         re.search(r"(?:q|t)([1-4])([0-9]{2})(?!\d)", text) if explicit_quarter is None else None
@@ -113,6 +120,8 @@ def infer_period(title: str) -> Period | None:
         quarter_number = int(explicit_quarter[1])
         year = int(explicit_quarter[2])
     if quarter_number:
+        if quarter_number == 4 and not has_annual_marker:
+            return None
         key = "AN" if quarter_number == 4 else f"T{quarter_number}"
         quarter = None if quarter_number == 4 else quarter_number
         end = {1: (3, 31), 2: (6, 30), 3: (9, 30), 4: (12, 31)}[quarter_number]
@@ -137,6 +146,8 @@ def infer_period(title: str) -> Period | None:
     for key, (quarter, markers, end) in quarter_patterns.items():
         marker = next((item for item in markers if item in word_text), None)
         if marker is not None:
+            if key == "AN" and not has_annual_marker:
+                continue
             marker_position = word_text.find(marker)
             following = word_text[marker_position + len(marker) : marker_position + 100]
             preceding = word_text[max(0, marker_position - 40) : marker_position]
@@ -218,11 +229,12 @@ def _missing_history_period_ids(
     for item in dataset.observations:
         if item.company_id == source.company_id:
             metrics_by_period.setdefault(item.period.period_id, set()).add(item.metric_id)
-    expected = set(source.expected_metrics)
+    expected = set(source.metrics_required_for_success)
     return {
         period.period_id
         for period in historical_periods(latest, years)
-        if not expected.issubset(metrics_by_period.get(period.period_id, set()))
+        if period.type in source.historical_period_types
+        and not expected.issubset(metrics_by_period.get(period.period_id, set()))
     }
 
 
@@ -451,7 +463,7 @@ def _llm_trace(
     if not isinstance(candidate, LlmMetric):
         return None
     return LlmTrace(
-        provider="anthropic",
+        provider="openai",
         model=config.pipeline.llm.complex_model,
         prompt_version=PROMPT_VERSION,
         executed_at=datetime.now(UTC),
@@ -557,7 +569,7 @@ def _build_observation(
         ),
         quality=ObservationQuality(
             status="validated",
-            extraction_method="anthropic" if is_llm else "deterministic",
+            extraction_method="openai" if is_llm else "deterministic",
             confidence=confidence,
             warnings=warnings,
             llm_trace=_llm_trace(
@@ -713,7 +725,7 @@ def acquire_source(
                         latest_anchor,
                         config.pipeline.financial_history_years,
                     )
-                    if period.period_id in history_period_ids
+                    if period.period_id in history_period_ids and period.type != "annual"
                 )
         if index_candidates and index_period is not None:
             documents.insert(
@@ -729,6 +741,19 @@ def acquire_source(
                     is_published=True,
                 ),
             )
+        published_periods = [
+            period
+            for document in documents
+            if document.is_published
+            and (period := infer_period(f"{document.title} {document.canonical_url}")) is not None
+        ]
+        if (
+            source.document_url_template
+            and latest_published is not None
+            and latest_published.type in source.historical_period_types
+            and not published_periods
+        ):
+            documents.append(_templated_document(source, latest_published))
         documents = list(
             {
                 str(document.canonical_url).rstrip("/").lower(): document for document in documents
@@ -761,7 +786,7 @@ def acquire_source(
         )
         results: list[Observation] = []
         failures: list[DocumentFailure] = []
-        anthropic_calls = 0
+        llm_calls = 0
         successful_periods: set[str] = set()
         attempted_per_period: dict[str, int] = {}
         reported_documents = [
@@ -823,10 +848,10 @@ def acquire_source(
                     else adapter.extract_metrics(content)
                 )
                 found = {item.metric_id for item in candidates}
-                missing = set(source.expected_metrics) - (found | existing_metrics)
-                if missing and settings.anthropic_api_key:
-                    provider = llm_provider or AnthropicProvider(settings, config.pipeline.llm)
-                    anthropic_calls += 1
+                missing_expected = set(source.expected_metrics) - (found | existing_metrics)
+                if missing_expected and settings.openai_api_key:
+                    provider = llm_provider or OpenAIProvider(settings, config.pipeline.llm)
+                    llm_calls += 1
                     extraction = provider.extract_structured(
                         content=content,
                         output_model=LlmMetricExtraction,
@@ -834,14 +859,16 @@ def acquire_source(
                         complex_task=True,
                     )
                     candidates.extend(
-                        item for item in extraction.metrics if item.metric_id in missing
+                        item for item in extraction.metrics if item.metric_id in missing_expected
                     )
                     found = {item.metric_id for item in candidates}
-                missing = set(source.expected_metrics) - (found | existing_metrics)
-                if missing:
+                missing_required = set(source.metrics_required_for_success) - (
+                    found | existing_metrics
+                )
+                if missing_required:
                     raise ExtractionError(
                         f"{source.id}/{period.label}: métriques officielles "
-                        f"manquantes {sorted(missing)}"
+                        f"requises manquantes {sorted(missing_required)}"
                     )
                 by_metric = {item.metric_id: item for item in candidates}
                 same_document_metrics = {
@@ -906,6 +933,6 @@ def acquire_source(
             documents=list(unique_documents.values()),
             failures=failures,
             discovery_warnings=discovery_warnings,
-            anthropic_calls=anthropic_calls,
+            llm_calls=llm_calls,
             checked_at=checked_at,
         )

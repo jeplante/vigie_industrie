@@ -76,7 +76,7 @@ class FakeFetcher:
 class FailingProvider(FakeProvider):
     def summarize_news(self, *, title: str, content: str, source_url: str) -> NewsAnalysis:
         self.calls += 1
-        raise LlmError("Anthropic indisponible")
+        raise LlmError("OpenAI indisponible")
 
 
 class IaIndexFetcher:
@@ -196,9 +196,9 @@ def test_official_news_is_summarized_and_traced(
     assert item.generated_summary.startswith("Sun Life lance")
     assert item.source.source_id == "slf-official-news"
     assert item.source.document_hash is not None
-    assert item.quality.extraction_method == "anthropic"
+    assert item.quality.extraction_method == "openai"
     assert item.quality.llm_trace is not None
-    assert item.quality.llm_trace.model == "claude-haiku-4-5"
+    assert item.quality.llm_trace.model == "gpt-5.6-luna"
     assert provider.calls == 1
 
 
@@ -243,7 +243,7 @@ def test_existing_url_with_changed_hash_is_updated(
     assert provider.calls == 1
 
 
-def test_anthropic_failure_keeps_official_news_valid_with_fallback(
+def test_openai_failure_keeps_official_news_valid_with_fallback(
     repository_root: Path,
     project_config: ProjectConfig,
     dataset: VigieDataset,
@@ -264,4 +264,4 @@ def test_anthropic_failure_keeps_official_news_valid_with_fallback(
     assert item.original_summary
     assert item.categories == ["other"]
     assert item.importance == "medium"
-    assert acquisition.anthropic_calls == 1
+    assert acquisition.llm_calls == 1

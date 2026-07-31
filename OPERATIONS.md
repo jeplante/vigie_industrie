@@ -35,11 +35,11 @@ Créer une branche depuis `main`, restaurer les trois fichiers du même commit d
 build frontend. Ne restaurez jamais seulement `vigie.json`: manifeste et rapport doivent rester
 cohérents. Faites approuver la pull request avant fusion.
 
-## Changer les modèles Anthropic
+## Changer les modèles OpenAI
 
 Dans **Settings → Secrets and variables → Actions → Variables**, modifier
-`ANTHROPIC_STANDARD_MODEL` ou `ANTHROPIC_COMPLEX_MODEL`. Garder la clé dans **Secrets**. Les
-valeurs YAML par défaut sont `claude-haiku-4-5` pour résumés/classification et `claude-sonnet-5`
+`OPENAI_STANDARD_MODEL` ou `OPENAI_COMPLEX_MODEL`. Garder la clé dans **Secrets**. Les
+valeurs YAML par défaut sont `gpt-5.6-luna` pour résumés/classification et `gpt-5.6-terra`
 pour extraction financière difficile. Relancer le workflow et vérifier `quality.llmTrace`.
 
 ## Diagnostiquer GitHub Actions
@@ -50,7 +50,7 @@ pour extraction financière difficile. Relancer le workflow et vérifier `qualit
   les classe `unknown` et continue les autres sources. Privilégier un flux ou document officiel
   autorisé.
 - Échec `extract`: télécharger le document, ajouter une fixture représentative, ajuster
-  l’adaptateur; Anthropic n’est qu’un secours.
+  l’adaptateur; OpenAI n’est qu’un secours.
 - Échec `validate`: consulter chaque code du rapport généré; ne pas contourner le contrôle.
 - Échec npm/Vite: vérifier Node 22, `npm ci`, puis la base `/vigie_industrie/`.
 - Échec Pages: vérifier l’environnement `github-pages`, les permissions `pages`/`id-token` et la
@@ -64,7 +64,7 @@ message sur le push suivant pour éviter une boucle.
 Ouvrir <https://jeplante.github.io/vigie_industrie/> en navigation privée. Vérifier les quatre
 compagnies, les quatre périodes historiques, le statut et la date, la provenance d’une métrique,
 le filtre d’actualités, un lien externe et l’export CSV. Dans les outils réseau, seuls les actifs
-Pages et les trois JSON statiques doivent être chargés; aucun domaine d’assureur ni Anthropic ne
+Pages et les trois JSON statiques doivent être chargés; aucun domaine d’assureur ni OpenAI ne
 doit être appelé par le navigateur.
 
 Les périodes doivent être triées par date et limitées à celles publiées pour la compagnie. Dans

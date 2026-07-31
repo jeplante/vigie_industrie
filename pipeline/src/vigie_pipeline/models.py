@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
 
 def to_camel(value: str) -> str:
@@ -177,7 +177,12 @@ class SourceRunResult(CanonicalModel):
     document_urls: list[str] = Field(default_factory=list)
     period_ids: list[str] = Field(default_factory=list)
     message: str | None = None
-    anthropic_calls: int = Field(default=0, ge=0)
+    llm_calls: int = Field(
+        default=0,
+        ge=0,
+        validation_alias=AliasChoices("llm_calls", "llmCalls", "anthropic_calls", "anthropicCalls"),
+        serialization_alias="llmCalls",
+    )
 
 
 class QualityReport(CanonicalModel):

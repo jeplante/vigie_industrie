@@ -11,6 +11,15 @@ function searchableMetricText(observation: Observation): string {
 export function canonicalMetricId(observation: Observation): string {
   if (observation.metricId === "solvency_ratio") return "licat_ratio";
   if (
+    [
+      "assets_under_management",
+      "assets_under_administration",
+      "total_client_assets",
+    ].includes(observation.metricId)
+  ) {
+    return "assets_managed_or_administered";
+  }
+  if (
     observation.metricId === "net_income" &&
     /\b(underlying|sous-jacent|core earnings|activites de base)\b/u.test(
       searchableMetricText(observation),

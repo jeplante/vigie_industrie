@@ -5,6 +5,7 @@ import pytest
 
 import vigie_pipeline.acquire as acquire_module
 from vigie_pipeline.acquire import (
+    _missing_history_period_ids,
     _rebuild_acquired_comparisons,
     acquire_source,
     historical_periods,
@@ -66,7 +67,6 @@ def test_explicit_document_date_wins_over_period_end() -> None:
         ("company-reports-third-quarter-2028-results.html", "2028-T3"),
         ("company-reports-fourth-quarter-and-full-year-2029-results.html", "2029-AN"),
         ("pa-e-q124-earnings.pdf", "2024-T1"),
-        ("pa-e-q422-earnings.pdf", "2022-AN"),
         ("manulife-reports-1q23-net-income.html", "2023-T1"),
         ("manulife-reports-3q22-net-income.html", "2022-T3"),
         ("manulife-reports-2022-net-income.html", "2022-AN"),
@@ -83,6 +83,11 @@ def test_infer_period_accepts_hyphenated_release_slugs(
     period = infer_period(slug)
     assert period is not None
     assert period.period_id == period_id
+
+
+def test_q4_only_document_is_not_labeled_as_full_year() -> None:
+    assert infer_period("pa-e-q422-earnings.pdf") is None
+    assert infer_period("Great-West reports fourth quarter 2022 results") is None
 
 
 def test_historical_periods_cover_five_years_without_future_quarters() -> None:
@@ -102,6 +107,20 @@ def test_historical_periods_cover_five_years_without_future_quarters() -> None:
     assert periods[-1].period_id == "2026-T1"
     assert len(periods) == 17
     assert "2026-T2" not in {period.period_id for period in periods}
+
+
+def test_source_can_limit_historical_backfill_to_quarters(
+    project_config: ProjectConfig,
+    dataset: VigieDataset,
+) -> None:
+    source = next(item for item in project_config.sources if item.id == "gwo-results")
+    latest = infer_period("Q1 2026")
+    assert latest is not None
+
+    missing = _missing_history_period_ids(dataset, source, latest, 5)
+
+    assert missing
+    assert all(not period_id.endswith("-AN") for period_id in missing)
 
 
 def test_same_run_backfill_rebuilds_roe_comparison(
@@ -194,7 +213,7 @@ def test_index_metrics_are_acquired_and_future_conference_is_excluded(
     )
     source = next(item for item in project_config.sources if item.id == "mfc-results")
     source = source.model_copy(update={"historical_document_urls": []})
-    acquisition = acquire_source(dataset, source, Settings(anthropic_api_key=None), project_config)
+    acquisition = acquire_source(dataset, source, Settings(openai_api_key=None), project_config)
     assert len(acquisition.observations) == 5
     assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
     assert {item.source.published_at.isoformat() for item in acquisition.observations} == {
@@ -258,7 +277,7 @@ def test_old_invalid_document_does_not_cancel_new_valid_document(
     monkeypatch.setattr(acquire_module, "BoundedFetcher", lambda **_: fetcher)
     source = next(item for item in project_config.sources if item.id == "mfc-results")
     source = source.model_copy(update={"historical_document_urls": []})
-    acquisition = acquire_source(dataset, source, Settings(anthropic_api_key=None), project_config)
+    acquisition = acquire_source(dataset, source, Settings(openai_api_key=None), project_config)
     assert len(acquisition.observations) == 5
     assert {item.period.period_id for item in acquisition.observations} == {"2026-T1"}
     assert {item.period.period_id for item in acquisition.failures} == {"2024-AN"}
@@ -302,6 +321,41 @@ def test_failed_alternative_is_cleared_when_same_period_is_fully_ingested(
 
     assert repeated.observations == []
     assert repeated.failures == []
+
+
+def test_missing_optional_metric_keeps_verified_financial_observations(
+    repository_root: Path,
+    project_config: ProjectConfig,
+    dataset: VigieDataset,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    index = b"""
+    <html><body>
+      <a href="/results/q1-2026">First quarter 2026 results</a>
+    </body></html>
+    """
+    fixture = (repository_root / "pipeline/tests/fixtures/financial-new-valid.html").read_bytes()
+    monkeypatch.setattr(
+        acquire_module,
+        "BoundedFetcher",
+        lambda **_: FixtureFetcher(index, {"q1-2026": fixture}),
+    )
+    source = next(item for item in project_config.sources if item.id == "mfc-results")
+    source = source.model_copy(
+        update={
+            "historical_document_urls": [],
+            "expected_metrics": [*source.expected_metrics, "capital_available"],
+            "required_metrics": source.expected_metrics,
+        }
+    )
+
+    acquisition = acquire_source(dataset, source, Settings(), project_config)
+
+    assert {item.metric_id for item in acquisition.observations} == set(
+        source.metrics_required_for_success
+    )
+    assert "capital_available" not in {item.metric_id for item in acquisition.observations}
+    assert acquisition.failures == []
 
 
 def test_new_period_does_not_reingest_latest_period_from_an_unknown_url(
@@ -398,6 +452,43 @@ def test_document_template_tracks_discovered_year_and_quarter(
     }
 
 
+def test_document_template_verifies_latest_published_period_when_index_has_no_results(
+    project_config: ProjectConfig,
+    dataset: VigieDataset,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    latest = next(
+        item.period
+        for item in dataset.observations
+        if item.company_id == "GWO" and item.period.period_id == "2025-T3"
+    )
+    dataset.observations = [
+        item
+        for item in dataset.observations
+        if item.company_id != "GWO" or item.period.period_id == latest.period_id
+    ]
+    monkeypatch.setattr(
+        acquire_module,
+        "BoundedFetcher",
+        lambda **_: FixtureFetcher(b"<html><body>No result links</body></html>", {}),
+    )
+    source = next(item for item in project_config.sources if item.id == "gwo-results")
+    source = source.model_copy(
+        update={
+            "expected_metrics": [],
+            "required_metrics": [],
+            "historical_document_urls": [],
+        }
+    )
+
+    acquisition = acquire_source(dataset, source, Settings(), project_config)
+
+    assert [item.period_id for item in acquisition.discovered_periods] == ["2025-T3"]
+    assert len(acquisition.documents) == 1
+    assert "/2025/q3/" in str(acquisition.documents[0].canonical_url)
+    assert acquisition.failures == []
+
+
 def test_sun_life_financial_highlights_page_is_a_deterministic_source(
     project_config: ProjectConfig,
     dataset: VigieDataset,
@@ -427,7 +518,7 @@ def test_sun_life_financial_highlights_page_is_a_deterministic_source(
     acquisition = acquire_source(
         dataset,
         source,
-        Settings(anthropic_api_key=None),
+        Settings(openai_api_key=None),
         project_config,
     )
 

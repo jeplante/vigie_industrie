@@ -58,6 +58,14 @@ export const METRIC_CATALOG: MetricDefinition[] = [
     "contextual",
   ],
   [
+    "assets_managed_or_administered",
+    "Actifs gérés / administrés",
+    "CAD_BILLION",
+    "currency",
+    "percent",
+    "up",
+  ],
+  [
     "assets_under_management",
     "Actif sous gestion",
     "CAD_BILLION",

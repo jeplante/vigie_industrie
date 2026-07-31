@@ -52,9 +52,9 @@ jobs:
           (inputs.dry_run == false && inputs.company == '')
         working-directory: pipeline
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
-          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_STANDARD_MODEL: ${{ vars.OPENAI_STANDARD_MODEL }}
+          OPENAI_COMPLEX_MODEL: ${{ vars.OPENAI_COMPLEX_MODEL }}
         run: python -m vigie_pipeline refresh
 
       - name: Refresh selected company
@@ -63,18 +63,18 @@ jobs:
           inputs.dry_run == false && inputs.company != ''
         working-directory: pipeline
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
-          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_STANDARD_MODEL: ${{ vars.OPENAI_STANDARD_MODEL }}
+          OPENAI_COMPLEX_MODEL: ${{ vars.OPENAI_COMPLEX_MODEL }}
         run: python -m vigie_pipeline refresh --company "${{ inputs.company }}"
 
       - name: Dry-run real sources
         if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
         working-directory: pipeline
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_STANDARD_MODEL: ${{ vars.ANTHROPIC_STANDARD_MODEL }}
-          ANTHROPIC_COMPLEX_MODEL: ${{ vars.ANTHROPIC_COMPLEX_MODEL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_STANDARD_MODEL: ${{ vars.OPENAI_STANDARD_MODEL }}
+          OPENAI_COMPLEX_MODEL: ${{ vars.OPENAI_COMPLEX_MODEL }}
         run: |
           if [ -n "${{ inputs.company }}" ]; then
             python -m vigie_pipeline refresh --dry-run --company "${{ inputs.company }}"

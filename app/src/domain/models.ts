@@ -161,5 +161,7 @@ export interface SourceRunResult {
   documentUrls: string[];
   periodIds: string[];
   message: string | null;
-  anthropicCalls: number;
+  llmCalls?: number;
+  /** Compatibilité en lecture avec les rapports publiés avant la migration OpenAI. */
+  anthropicCalls?: number;
 }
