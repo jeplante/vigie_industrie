@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T22:26:45.298713Z",
+  "generatedAt": "2026-07-31T19:06:17.006289Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -23,7 +23,7 @@
       "periodIds": [
         "2026-T1"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 0
     },
     {
       "sourceId": "slf-results",
@@ -36,7 +36,7 @@
       "periodIds": [
         "2026-T1"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 0
     },
     {
       "sourceId": "gwo-results",
@@ -50,7 +50,7 @@
       "periodIds": [
         "2026-T2"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 0
     },
     {
       "sourceId": "iag-results",
@@ -63,7 +63,7 @@
       "periodIds": [
         "2026-T1"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 0
     },
     {
       "sourceId": "mfc-official-news",
@@ -84,7 +84,7 @@
         "2026-T2",
         "2026-T3"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 8
     },
     {
       "sourceId": "slf-official-news",
@@ -105,7 +105,7 @@
         "2026-T2",
         "2026-T3"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 8
     },
     {
       "sourceId": "gwo-official-news",
@@ -113,20 +113,20 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
         "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
         "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html",
-        "https://www.newswire.ca/news-releases/power-corporation-great-west-and-igm-financial-announce-joint-investment-in-sagard-ai-fund-897072555.html",
-        "https://www.newswire.ca/news-releases/great-west-announces-election-of-directors-835512953.html"
+        "https://www.newswire.ca/news-releases/power-corporation-great-west-and-igm-financial-announce-joint-investment-in-sagard-ai-fund-897072555.html"
       ],
       "periodIds": [
         "2026-T2",
         "2026-T3"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 8
     },
     {
       "sourceId": "iag-official-news",
@@ -144,9 +144,10 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
       ],
       "periodIds": [
-        "2026-T2"
+        "2026-T2",
+        "2026-T3"
       ],
-      "anthropicCalls": 0
+      "llmCalls": 8
     }
   ]
 }
