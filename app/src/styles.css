@@ -87,6 +87,12 @@ h1 {
   margin-bottom: 0;
   color: #d8ebee;
 }
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
 .button {
   display: inline-flex;
   align-items: center;
@@ -105,6 +111,11 @@ h1 {
   border-color: white;
   color: white;
   background: transparent;
+}
+.button-refresh {
+  border-color: white;
+  color: var(--brand-dark);
+  background: white;
 }
 .button:hover {
   box-shadow: 0 3px 12px rgb(0 0 0 / 15%);
@@ -730,6 +741,9 @@ footer p {
   .topbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+  .topbar-actions {
+    justify-content: flex-start;
   }
   main {
     width: min(100% - 1rem, 1180px);
