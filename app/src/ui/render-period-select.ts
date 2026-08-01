@@ -13,7 +13,7 @@ export function renderPeriodSelect(
     className: "period-select",
   });
   select.id = "period-select";
-  select.setAttribute("aria-label", "Choisir la période commune");
+  select.setAttribute("aria-label", "Choisir la période de résultats");
   for (const period of periods) {
     select.append(new Option(shortPeriod(period), period.periodId));
   }

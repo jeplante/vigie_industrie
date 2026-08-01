@@ -17,9 +17,21 @@
         <h1>Vigie de l’industrie</h1>
         <p class="subtitle">MFC · SLF · GWO · IAG — résultats et actualités</p>
       </div>
-      <button id="export-csv" class="button button-primary" type="button">
-        Exporter CSV
-      </button>
+      <div class="topbar-actions">
+        <a
+          id="refresh-data"
+          class="button button-refresh"
+          href="https://github.com/jeplante/vigie_industrie/actions/workflows/refresh-data.yml"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Ouvrir GitHub Actions pour lancer le rafraîchissement"
+        >
+          Actualiser les données
+        </a>
+        <button id="export-csv" class="button button-primary" type="button">
+          Exporter CSV
+        </button>
+      </div>
     </header>
 
     <main id="dashboard" tabindex="-1">
