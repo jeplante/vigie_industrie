@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T19:06:17.006289Z",
+  "generatedAt": "2026-08-01T01:49:30.354810Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -92,14 +92,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/sun-life-appoints-katherine-lee-to-board-of-directors-823810167.html",
         "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
         "https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-850531587.html",
         "https://www.newswire.ca/news-releases/sun-life-completes-acquisition-of-bell-partners-894705536.html",
         "https://www.newswire.ca/news-releases/sun-life-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-858951667.html",
         "https://www.newswire.ca/news-releases/sun-life-announces-offering-of-subordinated-unsecured-debentures-826572222.html",
         "https://www.newswire.ca/news-releases/sun-life-receives-regulatory-approval-of-normal-course-issuer-bid-renewal-858452759.html",
-        "https://www.newswire.ca/news-releases/sun-life-announces-election-of-directors-855650818.html",
-        "https://www.newswire.ca/news-releases/sun-life-increases-common-share-dividend-and-declares-dividends-on-preferred-shares-payable-in-q2-2026-857639851.html"
+        "https://www.newswire.ca/news-releases/sun-life-announces-election-of-directors-855650818.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -143,11 +143,8 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-immostar-annoncent-chantier-alo-ste-foy-309-logements-principal-pole-mobilite-quebec",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
       ],
-      "periodIds": [
-        "2026-T2",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
