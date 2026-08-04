@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T13:23:16.936327Z",
+  "generatedAt": "2026-08-04T12:22:15.813121Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -143,8 +143,11 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-immostar-annoncent-chantier-alo-ste-foy-309-logements-principal-pole-mobilite-quebec",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     }
   ]
 }
