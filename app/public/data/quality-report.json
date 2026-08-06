@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-04T12:22:15.813121Z",
+  "generatedAt": "2026-08-06T12:10:52.769343Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
   "sourcesChecked": 8,
   "sourcesSucceeded": 8,
   "sourcesFailed": 0,
-  "observationsAdded": 0,
-  "observationsUpdated": 11,
+  "observationsAdded": 11,
+  "observationsUpdated": 6,
   "overridesApplied": 0,
   "warnings": [],
   "errors": [],
@@ -16,12 +16,14 @@
       "sourceId": "mfc-results",
       "companyId": "MFC",
       "status": "success",
-      "documentsDiscovered": 1,
+      "documentsDiscovered": 3,
       "documentUrls": [
-        "https://www.newswire.ca/news-releases/manulife-reports-first-quarter-2026-results-825435078.html"
+        "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
+        "https://www.newswire.ca/news-releases/manulife-to-release-first-quarter-2026-results-819798196.html",
+        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html"
       ],
       "periodIds": [
-        "2026-T1"
+        "2026-T2"
       ],
       "llmCalls": 0
     },
@@ -58,10 +60,10 @@
       "status": "success",
       "documentsDiscovered": 1,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t1/q1-2026-financial-statements.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t2/q2-2026-news-release.pdf"
       ],
       "periodIds": [
-        "2026-T1"
+        "2026-T2"
       ],
       "llmCalls": 0
     },
@@ -71,14 +73,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
+        "https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-824250016.html",
+        "https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-838830529.html",
+        "https://www.newswire.ca/news-releases/manulife-announces-3-2-billion-long-term-care-reinsurance-transaction-with-munich-re-843063869.html",
         "https://www.newswire.ca/news-releases/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation-841261989.html",
         "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
         "https://www.newswire.ca/news-releases/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection-856947272.html",
-        "https://www.newswire.ca/news-releases/manulife-financial-corporation-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1-896547607.html",
-        "https://www.newswire.ca/news-releases/manulife-named-1-life-insurer-for-ai-maturity-for-second-consecutive-year-by-evident-804697893.html",
-        "https://www.newswire.ca/news-releases/manulife-financial-corporation-announces-results-of-conversion-privileges-of-class-1-preferred-shares-series-3-and-series-4-854260956.html",
-        "https://www.newswire.ca/news-releases/manulife-financial-corporation-to-issue-s-500-million-2-880-subordinated-notes-due-2036-867499733.html",
-        "https://www.newswire.ca/news-releases/mental-fatigue-and-burnout-drive-productivity-losses-equivalent-to-46-working-days-per-employee-every-year-manulife-canada-report-884020804.html"
+        "https://www.newswire.ca/news-releases/manulife-financial-corporation-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1-896547607.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -134,20 +136,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/aout/iasf-annonce-le-paiement-d-un-dividende-sur-ses-actions-ordinaires",
+        "https://ia.ca/salle-de-presse/2026/aout/iagf-declare-ses-resultats-pour-le-deuxieme-trimestre",
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-cloture-placement-500-m-dollars-debentures-subordonnees-taux-fixe-4-158-pourcent",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable-4-158-pourcent",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-elargissement-role-sebastien-mcmahon-titre-economiste-chef",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-resultats-scrutins-assemblee-annuelle",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-immostar-annoncent-chantier-alo-ste-foy-309-logements-principal-pole-mobilite-quebec",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-changements-comite-executif-soutenir-forte-croissance-nord-americaine"
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-resultats-scrutins-assemblee-annuelle"
       ],
       "periodIds": [
-        "2026-T2",
         "2026-T3"
       ],
-      "llmCalls": 8
+      "llmCalls": 2
     }
   ]
 }
