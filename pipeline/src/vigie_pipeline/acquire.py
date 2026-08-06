@@ -390,9 +390,11 @@ def publication_date(result: FetchResult) -> date | None:
         "décembre": 12,
     }
     names = "|".join(months)
+    normalized_text = text.lower()
+    header_text = normalized_text[:5_000]
     explicitly_dated = re.search(
         rf"\b(?:dated|dat[ée])\s*:?\s*({names})\s+(\d{{1,2}}),?\s+(20\d{{2}})\b",
-        text.lower(),
+        normalized_text,
     )
     if explicitly_dated:
         return date(
@@ -400,10 +402,22 @@ def publication_date(result: FetchResult) -> date | None:
             months[explicitly_dated[1]],
             int(explicitly_dated[2]),
         )
+    release_header = re.search(
+        rf"(?:news\s+release|press\s+release|media\s+release|"
+        rf"communiqu[ée](?:\s+de\s+presse)?).{{0,180}}?"
+        rf"\b({names})\s+(\d{{1,2}}),?\s+(20\d{{2}})\b",
+        header_text,
+    )
+    if release_header:
+        return date(
+            int(release_header[3]),
+            months[release_header[1]],
+            int(release_header[2]),
+        )
     explicit_release = re.search(
         rf"(?:released|reported|announced|publi[ée]s?).{{0,180}}?"
         rf"\b({names})\s+(\d{{1,2}}),?\s+(20\d{{2}})\b",
-        text.lower(),
+        header_text,
     )
     if explicit_release:
         return date(
@@ -417,10 +431,10 @@ def publication_date(result: FetchResult) -> date | None:
             return date.fromisoformat("-".join(iso.groups()))
         except ValueError:
             pass
-    named = re.search(rf"\b({names})\s+(\d{{1,2}}),?\s+(20\d{{2}})\b", text.lower())
+    named = re.search(rf"\b({names})\s+(\d{{1,2}}),?\s+(20\d{{2}})\b", normalized_text)
     if named:
         return date(int(named[3]), months[named[1]], int(named[2]))
-    french = re.search(rf"\b(\d{{1,2}})\s+({names})\s+(20\d{{2}})\b", text.lower())
+    french = re.search(rf"\b(\d{{1,2}})\s+({names})\s+(20\d{{2}})\b", normalized_text)
     if french:
         return date(int(french[3]), months[french[2]], int(french[1]))
     return None
