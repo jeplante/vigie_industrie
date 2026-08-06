@@ -362,7 +362,20 @@ def publication_date(result: FetchResult) -> date | None:
         for selector in selectors:
             node = soup.select_one(selector)
             if node is not None:
-                text = f"{node.get('content') or node.get('datetime') or ''} {text}"
+                structured_attribute = node.get("content") or node.get("datetime")
+                structured_value = (
+                    structured_attribute if isinstance(structured_attribute, str) else ""
+                )
+                structured_iso_date = re.match(
+                    r"(20\d{2}-(?:0[1-9]|1[0-2])-(?:[0-2]\d|3[01]))",
+                    structured_value,
+                )
+                if structured_iso_date:
+                    try:
+                        return date.fromisoformat(structured_iso_date[1])
+                    except ValueError:
+                        pass
+                text = f"{structured_value} {text}"
     months = {
         "january": 1,
         "february": 2,
