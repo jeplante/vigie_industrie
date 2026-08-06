@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-06T12:10:52.769343Z",
+  "generatedAt": "2026-08-06T12:22:20.373043Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
   "sourcesChecked": 8,
   "sourcesSucceeded": 8,
   "sourcesFailed": 0,
-  "observationsAdded": 11,
-  "observationsUpdated": 6,
+  "observationsAdded": 0,
+  "observationsUpdated": 11,
   "overridesApplied": 0,
   "warnings": [],
   "errors": [],
@@ -16,10 +16,8 @@
       "sourceId": "mfc-results",
       "companyId": "MFC",
       "status": "success",
-      "documentsDiscovered": 3,
+      "documentsDiscovered": 1,
       "documentUrls": [
-        "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
-        "https://www.newswire.ca/news-releases/manulife-to-release-first-quarter-2026-results-819798196.html",
         "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html"
       ],
       "periodIds": [
@@ -60,7 +58,7 @@
       "status": "success",
       "documentsDiscovered": 1,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t2/q2-2026-news-release.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t2/q2-2026-financial-statements.pdf"
       ],
       "periodIds": [
         "2026-T2"
@@ -145,10 +143,8 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-resultats-scrutins-assemblee-annuelle"
       ],
-      "periodIds": [
-        "2026-T3"
-      ],
-      "llmCalls": 2
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
