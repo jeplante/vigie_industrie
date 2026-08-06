@@ -59,6 +59,23 @@ def test_explicit_document_date_wins_over_period_end() -> None:
     assert parsed.isoformat() == "2026-05-06"
 
 
+def test_release_header_date_wins_over_later_dividend_date() -> None:
+    result = FetchResult(
+        url="https://example.com/q2-2026-news-release.pdf",
+        content=(
+            b"News Release Quebec City, August 4, 2026. "
+            b"iA Financial Group Reports Second Quarter Results. "
+            b"The dividend announced the previous quarter is payable on "
+            b"September 15, 2026."
+        ),
+        content_type="text/html",
+        etag=None,
+        last_modified=None,
+    )
+
+    assert publication_date(result) == date(2026, 8, 4)
+
+
 @pytest.mark.parametrize(
     ("slug", "period_id"),
     [

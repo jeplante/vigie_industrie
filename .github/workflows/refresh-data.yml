@@ -82,6 +82,14 @@ jobs:
             python -m vigie_pipeline refresh --dry-run
           fi
 
+      - name: Upload failed refresh diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vigie-refresh-failure-${{ github.run_number }}
+          path: data/generated
+          if-no-files-found: warn
+
       - name: Validate candidate
         if: github.event_name != 'workflow_dispatch' || inputs.dry_run == false
         working-directory: pipeline

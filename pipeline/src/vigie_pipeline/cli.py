@@ -92,6 +92,16 @@ def _write_failure_report(
     _write_model(settings.generated_dir / "quality-report.json", report)
 
 
+def _log_validation_errors(errors: list[QualityIssue]) -> None:
+    for issue in errors:
+        LOGGER.error(
+            "validation_error code=%s source_id=%s message=%s",
+            issue.code,
+            issue.source_id or "-",
+            issue.message,
+        )
+
+
 def _validation_errors(
     dataset: VigieDataset,
     config: ProjectConfig,
@@ -124,6 +134,7 @@ def command_validate(
         errors.extend(validate_artifact_set(dataset, manifest, report))
     if errors:
         _write_failure_report(settings, errors)
+        _log_validation_errors(errors)
         raise ValidationFailure(f"Validation refusée: {len(errors)} erreur(s).")
     LOGGER.info(
         "validation_success observations=%d news=%d", len(dataset.observations), len(dataset.news)
@@ -139,6 +150,7 @@ def command_publish(settings: Settings, config: ProjectConfig) -> int:
     errors = _validation_errors(dataset, config)
     if errors:
         _write_failure_report(settings, errors)
+        _log_validation_errors(errors)
         raise ValidationFailure("Le candidat est invalide; dernière version valide conservée.")
     report_path = settings.generated_dir / "quality-report.json"
     report = (
@@ -547,6 +559,7 @@ def command_refresh(
             )
         )
     if errors:
+        _log_validation_errors(errors)
         raise ValidationFailure("Candidat invalide; dernière version valide conservée.")
     if not dry_run:
         publisher = GitHubPagesPublisher(
