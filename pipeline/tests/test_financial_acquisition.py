@@ -76,6 +76,28 @@ def test_release_header_date_wins_over_later_dividend_date() -> None:
     assert publication_date(result) == date(2026, 8, 4)
 
 
+def test_structured_publication_date_wins_over_dividend_payment_date() -> None:
+    result = FetchResult(
+        url="https://example.com/manulife-declares-common-share-dividend.html",
+        content=b"""
+            <html>
+              <head>
+                <meta name="date" content="2026-08-05T17:03:00-04:00">
+              </head>
+              <body>
+                Manulife's Board of Directors today announced a quarterly dividend,
+                payable on September 21, 2026.
+              </body>
+            </html>
+        """,
+        content_type="text/html",
+        etag=None,
+        last_modified=None,
+    )
+
+    assert publication_date(result) == date(2026, 8, 5)
+
+
 @pytest.mark.parametrize(
     ("slug", "period_id"),
     [
