@@ -74,7 +74,7 @@ describe("interface", () => {
     expect(onSelect).toHaveBeenCalledWith("SLF");
   });
 
-  it("renseigne une réponse de contexte à partir des données publiées", () => {
+  it("produit une analyse comparative à partir des données publiées", () => {
     const container = document.createElement("div");
     const comparisonCompanies: Company[] = [
       ...dataset.companies,
@@ -106,7 +106,8 @@ describe("interface", () => {
     expect(container.textContent).toContain("Sun Life");
     expect(container.textContent).toContain("Great-West");
     expect(container.textContent).toContain("iA");
-    expect(container.textContent).toContain("Source :");
+    expect(container.textContent).toContain("Analyse fondée sur Vigie");
+    expect(container.textContent).not.toContain("Contexte fourni au modèle");
   });
 
   it("adapte la réponse au KPI demandé", () => {
@@ -116,7 +117,8 @@ describe("interface", () => {
     const answer = container.querySelector(".chat-answer")?.textContent;
     expect(answer).toContain("BPA activités de base");
     expect(answer).toContain("Manuvie : 6,25 $");
-    expect(answer).not.toContain("Je n’ai pas identifié de KPI précis");
+    expect(answer).toContain("Évolution indiquée");
+    expect(container.querySelector(".chat-context")).toBeNull();
   });
 
   it("signale les données non publiées dans le tableau de synthèse", () => {

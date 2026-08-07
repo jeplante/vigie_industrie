@@ -229,7 +229,6 @@ main {
   font: inherit;
 }
 .chat-question-box,
-.chat-context,
 .chat-answer {
   margin-top: 1rem;
   padding: 1rem;
@@ -238,7 +237,6 @@ main {
   background: #f7fafb;
 }
 .chat-question-label,
-.chat-context h3,
 .chat-answer h3 {
   margin-bottom: 0.5rem;
   color: var(--muted);
@@ -251,7 +249,7 @@ main {
   margin-bottom: 0;
   font-weight: 700;
 }
-.chat-context ul {
+.chat-sources {
   margin: 0;
   padding-left: 1.1rem;
 }

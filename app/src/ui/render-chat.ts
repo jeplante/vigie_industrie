@@ -43,44 +43,91 @@ function observationsForCompany(state: AppState, companyId: string): Observation
   );
 }
 
-function answerForQuestion(state: AppState, question: string, periodLabel: string): string[] {
+interface PublishedValue {
+  companyName: string;
+  observation: Observation;
+}
+
+function publishedValuesForMetric(
+  state: AppState,
+  metricId: string,
+): PublishedValue[] {
+  return state.dataset.companies.flatMap((company) => {
+    const observation = observationsForCompany(state, company.id).find(
+      (item) => canonicalMetricId(item) === metricId,
+    );
+    return observation ? [{ companyName: company.name, observation }] : [];
+  });
+}
+
+function answerForQuestion(
+  state: AppState,
+  question: string,
+  periodLabel: string,
+): { paragraphs: string[]; sources: Observation[] } {
   const selectedMetricId = metricForQuestion(question);
-  const observationsByCompany = state.dataset.companies.map((company) => ({
-    company,
-    observations: observationsForCompany(state, company.id),
-  }));
 
   if (selectedMetricId) {
-    const values = observationsByCompany.map(({ company, observations }) => {
-      const observation = observations.find(
-        (item) => canonicalMetricId(item) === selectedMetricId,
-      );
-      return observation
-        ? `${company.name} : ${observation.displayValue}`
-        : `${company.name} : donnée non publiée`;
-    });
-    const example = observationsByCompany
-      .flatMap(({ observations }) => observations)
-      .find((item) => canonicalMetricId(item) === selectedMetricId);
+    const published = publishedValuesForMetric(state, selectedMetricId);
+    const unavailable = state.dataset.companies
+      .filter((company) => !published.some((value) => value.companyName === company.name))
+      .map((company) => company.name);
+    const example = published[0]?.observation;
     const label = example ? canonicalMetricLabel(example) : "le KPI demandé";
-
-    return [
-      `Pour ${label} à ${periodLabel}, ${values.join("; ")}.`,
-      "Cette synthèse reprend exclusivement les valeurs publiées; une absence ne doit pas être interprétée comme une valeur nulle.",
+    const values = published.map(
+      ({ companyName, observation }) => `${companyName} : ${observation.displayValue}`,
+    );
+    const paragraphs = [
+      `Indicateur analysé : ${label} — ${periodLabel}.`,
+      published.length > 0
+        ? `Valeurs publiées : ${values.join("; ")}.`
+        : `Aucune valeur publiée pour ${label} à cette période.`,
     ];
+
+    if (
+      published.length >= 2 &&
+      new Set(published.map(({ observation }) => observation.unit)).size === 1
+    ) {
+      const ranked = [...published].sort(
+        (left, right) => right.observation.value - left.observation.value,
+      );
+      const leader = ranked[0]!;
+      const trailing = ranked.at(-1)!;
+      paragraphs.push(
+        `${leader.companyName} affiche la valeur la plus élevée (${leader.observation.displayValue}), devant ${trailing.companyName} (${trailing.observation.displayValue}).`,
+      );
+    }
+
+    if (published.length > 0) {
+      paragraphs.push(
+        `Évolution indiquée : ${published
+          .map(
+            ({ companyName, observation }) =>
+              `${companyName} ${observation.comparison.displayChange} vs ${observation.comparison.periodLabel}`,
+          )
+          .join("; ")}.`,
+      );
+    }
+    if (unavailable.length > 0) {
+      paragraphs.push(`Donnée non publiée : ${unavailable.join(", ")}.`);
+    }
+
+    return { paragraphs, sources: published.map(({ observation }) => observation) };
   }
 
+  const observations = state.dataset.companies.flatMap((company) =>
+    observationsForCompany(state, company.id),
+  );
   const availableMetrics = [
-    ...new Set(
-      observationsByCompany.flatMap(({ observations }) =>
-        observations.map(canonicalMetricLabel),
-      ),
-    ),
+    ...new Set(observations.map(canonicalMetricLabel)),
   ];
-  return [
-    `Je n’ai pas identifié de KPI précis dans « ${question} ». Pour ${periodLabel}, les KPI publiés comprennent : ${availableMetrics.join(", ") || "aucun"}.`,
-    "Précisez par exemple le ROE, le BPA, le résultat net, la solvabilité ou les actifs pour obtenir un comparatif chiffré.",
-  ];
+  return {
+    paragraphs: [
+      `Je n’ai pas identifié de KPI précis dans « ${question} ». Pour ${periodLabel}, les indicateurs publiés comprennent : ${availableMetrics.join(", ") || "aucun"}.`,
+      "Précisez le ROE, le BPA, le résultat net, la solvabilité ou les actifs pour une analyse comparative.",
+    ],
+    sources: [],
+  };
 }
 
 export function renderChat(
@@ -107,35 +154,30 @@ export function renderChat(
   });
   questionBox.append(questionLabel, questionText);
 
-  const context = element("div", { className: "chat-context" });
-  const contextList = element("ul");
   const period = state.dataset.periods.find(({ periodId }) => periodId === state.periodId);
   const periodLabel = period?.label ?? state.periodId ?? "Non publiée";
-  const items = [`Période: ${periodLabel}`];
-
-  for (const company of state.dataset.companies) {
-    const metrics = observationsForCompany(state, company.id).map(
-      (item) =>
-        `${canonicalMetricLabel(item)}: ${item.displayValue} (${item.comparison.displayChange} vs ${item.comparison.periodLabel}). Source : ${item.source.title}.`,
-    );
-
-    items.push(`Compagnie: ${company.fullName}`);
-    items.push(
-      ...(metrics.length > 0 ? metrics : ["Données non publiées pour cette période."]),
-    );
-  }
-
-  for (const item of items) {
-    const li = element("li", { text: item });
-    contextList.append(li);
-  }
-  context.append(element("h3", { text: "Contexte fourni au modèle" }), contextList);
-
   const answer = element("div", { className: "chat-answer" });
-  answer.append(element("h3", { text: "Réponse fondée sur Vigie" }));
-  for (const paragraph of answerForQuestion(state, question, periodLabel)) {
+  const response = answerForQuestion(state, question, periodLabel);
+  answer.append(element("h3", { text: "Analyse fondée sur Vigie" }));
+  for (const paragraph of response.paragraphs) {
     answer.append(element("p", { text: paragraph }));
   }
+  if (response.sources.length > 0) {
+    const sources = element("ul", { className: "chat-sources" });
+    const uniqueSources = new Map(
+      response.sources.map((item) => [item.source.url, item.source]),
+    );
+    for (const source of uniqueSources.values()) {
+      const link = element("a", { text: source.title });
+      link.href = source.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      const item = element("li");
+      item.append(link);
+      sources.append(item);
+    }
+    answer.append(element("h3", { text: "Sources officielles" }), sources);
+  }
 
-  container.append(title, intro, questionBox, context, answer);
+  container.append(title, intro, questionBox, answer);
 }
