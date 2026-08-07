@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-06T12:22:20.373043Z",
+  "generatedAt": "2026-08-07T11:10:28.268608Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
   "sourcesChecked": 8,
   "sourcesSucceeded": 8,
   "sourcesFailed": 0,
-  "observationsAdded": 0,
-  "observationsUpdated": 11,
+  "observationsAdded": 6,
+  "observationsUpdated": 5,
   "overridesApplied": 0,
   "warnings": [],
   "errors": [],
@@ -29,12 +29,14 @@
       "sourceId": "slf-results",
       "companyId": "SLF",
       "status": "success",
-      "documentsDiscovered": 1,
+      "documentsDiscovered": 3,
       "documentUrls": [
-        "https://www.newswire.ca/news-releases/sun-life-reports-first-quarter-2026-results-897209083.html"
+        "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
+        "https://www.newswire.ca/news-releases/sun-life-hosts-first-quarter-2026-earnings-conference-call-812520472.html",
+        "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html"
       ],
       "periodIds": [
-        "2026-T1"
+        "2026-T2"
       ],
       "llmCalls": 0
     },
@@ -92,14 +94,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/sun-life-announces-chair-succession-878056303.html",
+        "https://www.newswire.ca/news-releases/sun-life-declares-dividends-on-common-and-preferred-shares-payable-in-q3-2026-867702360.html",
+        "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "https://www.newswire.ca/news-releases/sun-life-appoints-katherine-lee-to-board-of-directors-823810167.html",
         "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
         "https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-850531587.html",
         "https://www.newswire.ca/news-releases/sun-life-completes-acquisition-of-bell-partners-894705536.html",
-        "https://www.newswire.ca/news-releases/sun-life-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-858951667.html",
-        "https://www.newswire.ca/news-releases/sun-life-announces-offering-of-subordinated-unsecured-debentures-826572222.html",
-        "https://www.newswire.ca/news-releases/sun-life-receives-regulatory-approval-of-normal-course-issuer-bid-renewal-858452759.html",
-        "https://www.newswire.ca/news-releases/sun-life-announces-election-of-directors-855650818.html"
+        "https://www.newswire.ca/news-releases/sun-life-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-858951667.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -143,8 +145,11 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-resultats-scrutins-assemblee-annuelle"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     }
   ]
 }
