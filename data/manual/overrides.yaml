@@ -1,2 +1,37 @@
 # Les corrections doivent citer une source officielle et une approbation explicite.
-overrides: []
+overrides:
+  - observationId: IAG-2025-T1-net_income
+    fields:
+      value: 0.186
+      unit: CAD_BILLION
+      displayValue: "0.186 G$"
+    reason: "La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique."
+    sourceUrl: "https://ia.ca/a-propos/investisseurs/rapports-financiers"
+    approvedBy: Jerome Plante
+    approvedAt: "2026-08-07"
+  - observationId: IAG-2025-T2-net_income
+    fields:
+      value: 0.321
+      unit: CAD_BILLION
+      displayValue: "0.321 G$"
+    reason: "La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique."
+    sourceUrl: "https://ia.ca/a-propos/investisseurs/rapports-financiers"
+    approvedBy: Jerome Plante
+    approvedAt: "2026-08-07"
+  - observationId: IAG-2025-T3-net_income
+    fields:
+      value: 0.364
+      unit: CAD_BILLION
+      displayValue: "0.364 G$"
+    reason: "La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique."
+    sourceUrl: "https://ia.ca/a-propos/investisseurs/rapports-financiers"
+    approvedBy: Jerome Plante
+    approvedAt: "2026-08-07"
+  - observationId: MFC-2023-T1-core_eps
+    fields:
+      value: 0.79
+      displayValue: "0.79 $"
+    reason: "Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $."
+    sourceUrl: "https://www.newswire.ca/news-releases/manulife-reports-1q23-net-income-attributed-to-shareholders-of-1-4-billion-core-earnings-of-1-5-billion-strong-core-eps-growth-and-core-roe-and-global-wealth-and-asset-management-net-inflows-of-4-4-billion-829411537.html"
+    approvedBy: Jerome Plante
+    approvedAt: "2026-08-07"

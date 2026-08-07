@@ -8,7 +8,7 @@ import yaml
 from vigie_pipeline.exceptions import ConfigurationError
 from vigie_pipeline.models import VigieDataset
 
-ALLOWED_FIELDS = {"value", "displayValue", "note", "direction"}
+ALLOWED_FIELDS = {"value", "displayValue", "unit", "note", "direction"}
 
 
 def apply_overrides(dataset: VigieDataset, path: Path) -> tuple[VigieDataset, list[str]]:
@@ -35,6 +35,8 @@ def apply_overrides(dataset: VigieDataset, path: Path) -> tuple[VigieDataset, li
                 if key == "value"
                 else "display_value"
                 if key == "displayValue"
+                else key
+                if key == "unit"
                 else key: value
                 for key, value in fields.items()
             }

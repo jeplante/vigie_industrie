@@ -658,6 +658,14 @@ def _rebuild_acquired_comparisons(
     return rebuilt
 
 
+def rebuild_dataset_comparisons(
+    dataset: VigieDataset,
+    config: ProjectConfig,
+) -> list[Observation]:
+    """Rebuild derived comparisons after audited historical corrections."""
+    return _rebuild_acquired_comparisons(dataset, dataset.observations, config)
+
+
 def acquire_source(
     dataset: VigieDataset,
     source: SourceConfig,

@@ -14,7 +14,7 @@ from typing import Literal
 
 from pydantic import ValidationError
 
-from vigie_pipeline.acquire import acquire_source
+from vigie_pipeline.acquire import acquire_source, rebuild_dataset_comparisons
 from vigie_pipeline.config import ProjectConfig, SourceConfig, load_project_config
 from vigie_pipeline.discovery import discover_documents
 from vigie_pipeline.exceptions import ConfigurationError, PipelineError, ValidationFailure
@@ -175,6 +175,50 @@ def command_publish(settings: Settings, config: ProjectConfig) -> int:
         previous_manifest=previous_manifest,
         financial_refresh_succeeded=financial_refresh_succeeded,
     )
+    return 0
+
+
+def command_apply_overrides(settings: Settings, config: ProjectConfig) -> int:
+    """Apply audited corrections to the published dataset without fetching sources."""
+
+    published_path = settings.published_dir / "vigie.json"
+    candidate = _read_dataset(published_path)
+    candidate, applied = apply_overrides(
+        candidate, settings.root_dir / "data/manual/overrides.yaml"
+    )
+    if not applied:
+        LOGGER.info("overrides_skipped reason=none_configured")
+        return 0
+
+    candidate.observations = rebuild_dataset_comparisons(candidate, config)
+    candidate.generated_at = datetime.now(UTC)
+    errors = _validation_errors(
+        candidate,
+        config,
+        previous_count=len(_read_dataset(published_path).observations),
+    )
+    if errors:
+        _write_failure_report(settings, errors)
+        _log_validation_errors(errors)
+        raise ValidationFailure("Les corrections sont invalides; dernière version valide conservée.")
+
+    previous_manifest = _read_manifest(settings.published_dir / "manifest.json")
+    previous_report = _read_quality(settings.published_dir / "quality-report.json")
+    report = previous_report.model_copy(
+        update={
+            "generated_at": candidate.generated_at,
+            "overrides_applied": len(applied),
+        }
+    )
+    publisher = GitHubPagesPublisher(settings.published_dir, settings.root_dir / "app/public/data")
+    publish_validated(
+        candidate,
+        report,
+        publisher,
+        previous_manifest=previous_manifest,
+        financial_refresh_succeeded=False,
+    )
+    LOGGER.info("overrides_success applied=%d", len(applied))
     return 0
 
 
@@ -477,6 +521,8 @@ def command_refresh(
     candidate, applied = apply_overrides(
         candidate, settings.root_dir / "data/manual/overrides.yaml"
     )
+    if applied:
+        candidate.observations = rebuild_dataset_comparisons(candidate, config)
     previous_count = (
         len(_read_dataset(published_path).observations) if published_path.exists() else None
     )
@@ -590,6 +636,7 @@ def build_parser() -> argparse.ArgumentParser:
     validate = subparsers.add_parser("validate")
     validate.add_argument("--candidate", type=Path)
     subparsers.add_parser("publish")
+    subparsers.add_parser("apply-overrides")
     subparsers.add_parser("sync-frontend")
     return parser
 
@@ -606,6 +653,8 @@ def main(argv: list[str] | None = None) -> int:
             return command_discover(settings, config, args.company, args.offline)
         if args.command == "validate":
             return command_validate(settings, config, args.candidate)
+        if args.command == "apply-overrides":
+            return command_apply_overrides(settings, config)
         if args.command == "sync-frontend":
             return command_sync_frontend(settings, config)
         return command_publish(settings, config)

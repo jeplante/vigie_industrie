@@ -47,6 +47,7 @@ def test_manual_override_is_audited(dataset: VigieDataset, tmp_path: Path) -> No
     fields:
       value: 12.96
       displayValue: '12,96 $'
+            unit: CAD_BILLION
     reason: Valeur annuelle officielle
     sourceUrl: https://example.com/official
     approvedBy: Jerome Plante
@@ -56,5 +57,6 @@ def test_manual_override_is_audited(dataset: VigieDataset, tmp_path: Path) -> No
     )
     updated, applied = apply_overrides(dataset, override)
     assert updated.observations[0].value == 12.96
+    assert updated.observations[0].unit == "CAD_BILLION"
     assert applied == [observation.id]
     assert "Correction manuelle" in updated.observations[0].quality.warnings[-1]
