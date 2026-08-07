@@ -106,6 +106,17 @@ describe("interface", () => {
     expect(container.textContent).toContain("Sun Life");
     expect(container.textContent).toContain("Great-West");
     expect(container.textContent).toContain("iA");
+    expect(container.textContent).toContain("Source :");
+  });
+
+  it("adapte la réponse au KPI demandé", () => {
+    const container = document.createElement("div");
+    renderChat(container, initialState(dataset), "Quel est le BPA de Manuvie ?");
+
+    const answer = container.querySelector(".chat-answer")?.textContent;
+    expect(answer).toContain("BPA activités de base");
+    expect(answer).toContain("Manuvie : 6,25 $");
+    expect(answer).not.toContain("Je n’ai pas identifié de KPI précis");
   });
 
   it("signale les données non publiées dans le tableau de synthèse", () => {
