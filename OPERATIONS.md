@@ -39,8 +39,9 @@ cohérents. Faites approuver la pull request avant fusion.
 
 Dans **Settings → Secrets and variables → Actions → Variables**, modifier
 `OPENAI_STANDARD_MODEL` ou `OPENAI_COMPLEX_MODEL`. Garder la clé dans **Secrets**. Les
-valeurs YAML par défaut sont `gpt-5.6-luna` pour résumés/classification et `gpt-5.6-terra`
-pour extraction financière difficile. Relancer le workflow et vérifier `quality.llmTrace`.
+valeurs YAML par défaut sont `gpt-5.6-terra` pour les tâches courantes et `gpt-5.6-sol`
+pour les extractions complexes et analyses comparatives. Relancer le workflow et vérifier
+`quality.llmTrace`.
 
 ## Diagnostiquer GitHub Actions
 

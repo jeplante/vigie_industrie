@@ -99,11 +99,12 @@ données ni supprimer la dernière version valide.
 
 La clé n’est lue que par le pipeline depuis `OPENAI_API_KEY`. Les modèles sont remplaçables
 avec `OPENAI_STANDARD_MODEL` et `OPENAI_COMPLEX_MODEL`. Le modèle standard sert aux
-résumés et associations simples; le complexe n’est utilisé qu’après une extraction déterministe
-incomplète. Les valeurs par défaut sont respectivement `gpt-5.6-luna` et `gpt-5.6-terra`. Le SDK
-utilise l’API Responses avec `client.responses.parse(..., text_format=ModelePydantic)`, sans
-stockage de réponse et avec raisonnement désactivé afin de préserver le comportement du pipeline.
-Une validation Pydantic supplémentaire reste obligatoire avant publication.
+résumés et tâches simples; le complexe n’est utilisé qu’après une extraction déterministe
+incomplète ou pour un cas plus exigeant. Les valeurs par défaut sont respectivement
+`gpt-5.6-terra` et `gpt-5.6-sol`. Le SDK utilise l’API Responses avec
+`client.responses.parse(..., text_format=ModelePydantic)`, sans stockage de réponse et avec
+raisonnement désactivé afin de préserver le comportement du pipeline. Une validation Pydantic
+supplémentaire reste obligatoire avant publication.
 
 Les quatre assureurs disposent également d’une source `official_news`. Les nouveaux articles
 sont dédupliqués par URL canonique puis empreinte, téléchargés avec des limites strictes, puis

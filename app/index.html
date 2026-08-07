@@ -83,6 +83,18 @@
             >
               Historique
             </button>
+            <button
+              id="view-tab-chat"
+              class="view-tab"
+              type="button"
+              role="tab"
+              aria-controls="chat-view"
+              aria-selected="false"
+              data-view="chat"
+              tabindex="-1"
+            >
+              Poser une question
+            </button>
           </div>
         </nav>
 
@@ -170,6 +182,35 @@
             </div>
           </div>
           <div id="history-chart" aria-live="polite"></div>
+        </section>
+
+        <section
+          id="chat-view"
+          class="chat-view"
+          role="tabpanel"
+          aria-labelledby="view-tab-chat"
+          hidden
+        >
+          <div class="chat-header">
+            <div>
+              <p class="eyebrow">Assistant Vigie</p>
+              <h2>Questions basées sur les données publiées</h2>
+            </div>
+          </div>
+
+          <form id="chat-form" class="chat-form">
+            <label for="chat-input" class="sr-only">Posez votre question</label>
+            <input
+              id="chat-input"
+              name="chat-input"
+              type="text"
+              placeholder="Ex. Compare le ROE des quatre compagnies"
+              autocomplete="off"
+            />
+            <button class="button button-primary" type="submit">Envoyer</button>
+          </form>
+
+          <div id="chat-panel" aria-live="polite"></div>
         </section>
       </div>
 

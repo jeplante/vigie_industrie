@@ -7,6 +7,8 @@ import { renderDashboard } from "../ui/render-dashboard";
 import { renderHistory } from "../ui/render-history";
 import { renderSummary } from "../ui/render-summary";
 import { renderStatus } from "../ui/render-status";
+import { renderChat } from "../ui/render-chat";
+import type { Company } from "../domain/models";
 import {
   historicalKpiOptions,
   populateHistoricalKpiSelect,
@@ -70,6 +72,40 @@ describe("interface", () => {
     expect(rows[1]?.querySelectorAll(".summary-metric-cell")).toHaveLength(1);
     rows[1]?.querySelector<HTMLButtonElement>("button")?.click();
     expect(onSelect).toHaveBeenCalledWith("SLF");
+  });
+
+  it("renseigne une réponse de contexte à partir des données publiées", () => {
+    const container = document.createElement("div");
+    const comparisonCompanies: Company[] = [
+      ...dataset.companies,
+      {
+        id: "GWO",
+        name: "Great-West Lifeco",
+        fullName: "Great-West Lifeco",
+        ticker: "GWO.TO",
+        investorRelationsUrl: "https://example.com/gwo",
+      },
+      {
+        id: "IAG",
+        name: "iA Groupe financier",
+        fullName: "iA Groupe financier",
+        ticker: "IAG.TO",
+        investorRelationsUrl: "https://example.com/iag",
+      },
+    ];
+    const comparisonDataset = { ...dataset, companies: comparisonCompanies };
+
+    renderChat(
+      container,
+      initialState(comparisonDataset),
+      "Compare le ROE des quatre compagnies",
+    );
+
+    expect(container.textContent).toContain("ROE");
+    expect(container.textContent).toContain("Manuvie");
+    expect(container.textContent).toContain("Sun Life");
+    expect(container.textContent).toContain("Great-West");
+    expect(container.textContent).toContain("iA");
   });
 
   it("signale les données non publiées dans le tableau de synthèse", () => {

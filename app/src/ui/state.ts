@@ -1,7 +1,7 @@
 import type { CompanyId, Period, VigieDataset } from "../domain/models";
 import { defaultHistoricalKpi, type HistoricalKpi } from "./history-kpis";
 
-export type ViewMode = "summary" | "company" | "history";
+export type ViewMode = "summary" | "company" | "history" | "chat";
 export type { HistoricalKpi } from "./history-kpis";
 
 export interface AppState {
@@ -11,6 +11,7 @@ export interface AppState {
   category: string;
   viewMode: ViewMode;
   historicalKpi: HistoricalKpi;
+  chatQuestion: string;
 }
 
 export function initialState(dataset: VigieDataset): AppState {
@@ -23,6 +24,7 @@ export function initialState(dataset: VigieDataset): AppState {
     category: "all",
     viewMode: "summary",
     historicalKpi: defaultHistoricalKpi(dataset),
+    chatQuestion: "Compare le ROE des quatre compagnies.",
   };
 }
 

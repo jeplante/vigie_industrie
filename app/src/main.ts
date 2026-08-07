@@ -16,6 +16,7 @@ import {
   type HistoricalKpi,
 } from "./ui/history-kpis";
 import { renderSummary } from "./ui/render-summary";
+import { renderChat } from "./ui/render-chat";
 
 export class VigieApp {
   private state: AppState | null = null;
@@ -68,6 +69,18 @@ export class VigieApp {
     requiredElement<HTMLButtonElement>("export-csv").onclick = () => {
       if (this.state) downloadCsv(this.state.dataset);
     };
+    const chatForm = requiredElement<HTMLFormElement>("chat-form");
+    const chatInput = requiredElement<HTMLInputElement>("chat-input");
+    chatForm.onsubmit = (event) => {
+      event.preventDefault();
+      if (!this.state) return;
+      const value = chatInput.value.trim();
+      if (!value) return;
+      this.state.chatQuestion = value;
+      this.state.viewMode = "chat";
+      this.render();
+      chatInput.value = "";
+    };
     for (const button of requiredElement(
       "view-tabs",
     ).querySelectorAll<HTMLButtonElement>("[data-view]")) {
@@ -97,10 +110,12 @@ export class VigieApp {
     const summaryView = requiredElement("summary-view");
     const companyView = requiredElement("company-view");
     const historyView = requiredElement("history-view");
+    const chatView = requiredElement("chat-view");
     const isSummary = this.state.viewMode === "summary";
     summaryView.hidden = !isSummary;
     companyView.hidden = this.state.viewMode !== "company";
     historyView.hidden = this.state.viewMode !== "history";
+    chatView.hidden = this.state.viewMode !== "chat";
     for (const button of requiredElement(
       "view-tabs",
     ).querySelectorAll<HTMLButtonElement>("[data-view]")) {
@@ -150,6 +165,7 @@ export class VigieApp {
       this.state.historicalKpi,
       this.state.periodId,
     );
+    renderChat(requiredElement("chat-panel"), this.state, this.state.chatQuestion);
   }
 }
 

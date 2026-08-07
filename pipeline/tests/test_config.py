@@ -76,6 +76,6 @@ def test_all_yaml_files_drive_runtime_behavior(repository_root: Path, tmp_path: 
 
 def test_required_openai_defaults_come_from_yaml(repository_root: Path) -> None:
     config = load_project_config(repository_root)
-    assert config.pipeline.llm.standard_model == "gpt-5.6-luna"
-    assert config.pipeline.llm.complex_model == "gpt-5.6-terra"
+    assert config.pipeline.llm.standard_model == "gpt-5.6-terra"
+    assert config.pipeline.llm.complex_model == "gpt-5.6-sol"
     assert config.pipeline.financial_history_years == 5

@@ -77,7 +77,7 @@ def test_native_structured_response_is_validated(project_config: ProjectConfig) 
     assert result == valid_analysis()
     call = client.responses.calls[0]
     assert call["text_format"] is NewsAnalysis
-    assert call["model"] == "gpt-5.6-luna"
+    assert call["model"] == "gpt-5.6-terra"
     assert call["reasoning"] == {"effort": "none"}
     assert call["store"] is False
     assert "temperature" not in call
@@ -154,7 +154,7 @@ def test_unsupported_structured_outputs_are_explicit(project_config: ProjectConf
         provider.summarize_news(title="Titre", content="Contenu", source_url="https://example.com")
 
 
-def test_complex_tasks_use_terra(project_config: ProjectConfig) -> None:
+def test_complex_tasks_use_sol(project_config: ProjectConfig) -> None:
     client = FakeClient(response(valid_analysis()))
     provider = OpenAIProvider(Settings(), project_config.pipeline.llm, client=client)
     provider.extract_structured(
@@ -163,5 +163,5 @@ def test_complex_tasks_use_terra(project_config: ProjectConfig) -> None:
         task_name="complex_table",
         complex_task=True,
     )
-    assert client.responses.calls[0]["model"] == "gpt-5.6-terra"
+    assert client.responses.calls[0]["model"] == "gpt-5.6-sol"
     assert client.responses.calls[0]["reasoning"] == {"effort": "none"}
