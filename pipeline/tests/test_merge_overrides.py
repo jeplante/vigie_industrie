@@ -47,7 +47,7 @@ def test_manual_override_is_audited(dataset: VigieDataset, tmp_path: Path) -> No
     fields:
       value: 12.96
       displayValue: '12,96 $'
-            unit: CAD_BILLION
+      unit: CAD_BILLION
     reason: Valeur annuelle officielle
     sourceUrl: https://example.com/official
     approvedBy: Jerome Plante

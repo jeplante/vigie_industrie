@@ -191,7 +191,9 @@ def extract_article(
         if heading
         else discovered.title
     )
-    date_value = discovered.published_at or _date_from_document(soup)
+    # La page de l'article est plus fiable que le texte de la tuile d'index, qui peut
+    # contenir une date d'échéance ou de paiement future avant la date de publication.
+    date_value = _date_from_document(soup) or discovered.published_at
     if date_value is None:
         raise ExtractionError(f"Date de publication introuvable: {canonical_url}")
     description = soup.select_one(
@@ -363,12 +365,14 @@ def _date_from_document(soup: BeautifulSoup) -> date | None:
     selectors = (
         'meta[property="article:published_time"][content]',
         'meta[name="date"][content]',
-        "time[datetime]",
+        "time",
     )
     for selector in selectors:
         node = soup.select_one(selector)
         if node:
-            parsed = _parse_date(str(node.get("content") or node.get("datetime") or ""))
+            parsed = _parse_date(
+                str(node.get("content") or node.get("datetime") or node.get_text(" ", strip=True))
+            )
             if parsed:
                 return parsed
     return _parse_date(soup.get_text(" ", strip=True)[:1000])

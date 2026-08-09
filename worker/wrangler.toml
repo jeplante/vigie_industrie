@@ -1,6 +1,0 @@
-name = "vigie-industrie-chat"
-main = "src/index.ts"
-compatibility_date = "2026-08-07"
-
-# Configure a non-secret model name with `wrangler deploy --var OPENAI_MODEL:<model>`
-# or set it in the Cloudflare dashboard. Do not put OPENAI_API_KEY in this file.

@@ -200,7 +200,9 @@ def command_apply_overrides(settings: Settings, config: ProjectConfig) -> int:
     if errors:
         _write_failure_report(settings, errors)
         _log_validation_errors(errors)
-        raise ValidationFailure("Les corrections sont invalides; dernière version valide conservée.")
+        raise ValidationFailure(
+            "Les corrections sont invalides; dernière version valide conservée."
+        )
 
     previous_manifest = _read_manifest(settings.published_dir / "manifest.json")
     previous_report = _read_quality(settings.published_dir / "quality-report.json")

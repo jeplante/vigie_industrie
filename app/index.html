@@ -191,26 +191,29 @@
           aria-labelledby="view-tab-chat"
           hidden
         >
-          <div class="chat-header">
+          <div class="chat-heading">
             <div>
-              <p class="eyebrow">Assistant Vigie</p>
-              <h2>Questions basées sur les données publiées</h2>
+              <p class="eyebrow">Assistant fondé sur les données publiées</p>
+              <h2>Questionner la Vigie</h2>
             </div>
+            <p>Les réponses citent les documents officiels disponibles.</p>
           </div>
-
-          <form id="chat-form" class="chat-form">
-            <label for="chat-input" class="sr-only">Posez votre question</label>
-            <input
-              id="chat-input"
-              name="chat-input"
-              type="text"
-              placeholder="Ex. Compare le ROE des quatre compagnies"
-              autocomplete="off"
-            />
-            <button class="button button-primary" type="submit">Envoyer</button>
-          </form>
-
-          <div id="chat-panel" aria-live="polite"></div>
+          <div class="chat-shell">
+            <div id="chat-panel" class="chat-messages" aria-live="polite">
+              <div class="chat-message chat-message-assistant"><p>Posez une question sur les résultats, les tendances ou les actualités des quatre assureurs.</p></div>
+            </div>
+            <div class="chat-suggestions" aria-label="Questions suggérées">
+              <button type="button" data-chat-question="Compare les résultats de base des quatre compagnies pour la période sélectionnée.">Comparer les résultats de base</button>
+              <button type="button" data-chat-question="Quelle compagnie présente le meilleur rendement des capitaux propres de base?">Comparer le ROE</button>
+              <button type="button" data-chat-question="Résume les principales tendances historiques visibles dans les données.">Résumer les tendances</button>
+            </div>
+            <form id="chat-form" class="chat-form">
+              <label for="chat-input" class="sr-only">Posez votre question</label>
+              <textarea id="chat-input" name="chat-input" maxlength="600" rows="3" placeholder="Ex. Pourquoi le ratio LICAT de Sun Life a-t-il diminué?" required></textarea>
+              <div class="chat-form-footer"><p id="chat-availability" class="chat-availability"></p><button id="chat-submit" class="button button-primary" type="submit">Envoyer</button></div>
+            </form>
+            <p class="chat-disclaimer">Réponse automatisée à partir des données de la Vigie. Vérifiez les documents officiels avant toute décision financière.</p>
+          </div>
         </section>
       </div>
 

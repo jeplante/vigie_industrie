@@ -16,10 +16,11 @@ import {
   type HistoricalKpi,
 } from "./ui/history-kpis";
 import { renderSummary } from "./ui/render-summary";
-import { renderChat } from "./ui/render-chat";
+import { appendChatMessage, askVigie, type ChatHistoryItem } from "./ui/chat";
 
 export class VigieApp {
   private state: AppState | null = null;
+  private readonly chatHistory: ChatHistoryItem[] = [];
 
   public constructor(private readonly provider: DataProvider) {}
 
@@ -70,16 +71,28 @@ export class VigieApp {
       if (this.state) downloadCsv(this.state.dataset);
     };
     const chatForm = requiredElement<HTMLFormElement>("chat-form");
-    const chatInput = requiredElement<HTMLInputElement>("chat-input");
-    chatForm.onsubmit = (event) => {
+    const chatInput = requiredElement<HTMLTextAreaElement>("chat-input");
+    const chatEndpoint = (import.meta.env.VITE_CHAT_API_URL as string | undefined)?.trim() ?? "";
+    requiredElement("chat-availability").textContent = chatEndpoint ? "Assistant disponible" : "Assistant en attente de configuration";
+    for (const suggestion of requiredElement("chat-view").querySelectorAll<HTMLButtonElement>("[data-chat-question]")) {
+      suggestion.onclick = () => { chatInput.value = suggestion.dataset.chatQuestion ?? ""; chatInput.focus(); };
+    }
+    chatForm.onsubmit = async (event) => {
       event.preventDefault();
       if (!this.state) return;
       const value = chatInput.value.trim();
       if (!value) return;
-      this.state.chatQuestion = value;
-      this.state.viewMode = "chat";
-      this.render();
+      const panel = requiredElement("chat-panel");
+      const submit = requiredElement<HTMLButtonElement>("chat-submit");
+      appendChatMessage(panel, "user", value);
       chatInput.value = "";
+      submit.disabled = true; submit.textContent = "Analyse…";
+      try {
+        const response = await askVigie(chatEndpoint, { question: value, periodId: this.state.periodId, companyId: this.state.companyId, history: this.chatHistory.slice(-6) });
+        appendChatMessage(panel, "assistant", response.answer, response.citations, response.caveat);
+        this.chatHistory.push({ role: "user", content: value }, { role: "assistant", content: response.answer });
+      } catch (error) { appendChatMessage(panel, "error", error instanceof Error ? error.message : "Une erreur inconnue est survenue."); }
+      finally { submit.disabled = false; submit.textContent = "Envoyer"; }
     };
     for (const button of requiredElement(
       "view-tabs",
@@ -165,7 +178,6 @@ export class VigieApp {
       this.state.historicalKpi,
       this.state.periodId,
     );
-    renderChat(requiredElement("chat-panel"), this.state, this.state.chatQuestion);
   }
 }
 

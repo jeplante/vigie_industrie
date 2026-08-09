@@ -73,3 +73,11 @@ jobs:
       - name: Vite build
         working-directory: app
         run: npm run build
+
+      - name: Install chat worker
+        working-directory: worker
+        run: npm ci
+
+      - name: Validate chat worker
+        working-directory: worker
+        run: npm run check
