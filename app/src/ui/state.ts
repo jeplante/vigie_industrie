@@ -1,8 +1,10 @@
 import type { CompanyId, Period, VigieDataset } from "../domain/models";
 import { defaultHistoricalKpi, type HistoricalKpi } from "./history-kpis";
+import type { HistoricalBasis } from "./history-basis";
 
-export type ViewMode = "summary" | "company" | "history" | "chat";
+export type ViewMode = "summary" | "company" | "chat";
 export type { HistoricalKpi } from "./history-kpis";
+export type { HistoricalBasis } from "./history-basis";
 
 export interface AppState {
   dataset: VigieDataset;
@@ -11,6 +13,7 @@ export interface AppState {
   category: string;
   viewMode: ViewMode;
   historicalKpi: HistoricalKpi;
+  historicalBasis: HistoricalBasis;
 }
 
 export function initialState(dataset: VigieDataset): AppState {
@@ -23,6 +26,7 @@ export function initialState(dataset: VigieDataset): AppState {
     category: "all",
     viewMode: "summary",
     historicalKpi: defaultHistoricalKpi(dataset),
+    historicalBasis: "qtd",
   };
 }
 
