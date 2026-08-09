@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-07T21:59:18.523927Z",
+  "generatedAt": "2026-08-09T14:35:30.388787Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
   "sourcesChecked": 8,
   "sourcesSucceeded": 8,
   "sourcesFailed": 0,
-  "observationsAdded": 6,
-  "observationsUpdated": 5,
+  "observationsAdded": 0,
+  "observationsUpdated": 15,
   "overridesApplied": 4,
   "warnings": [],
   "errors": [],
@@ -29,10 +29,8 @@
       "sourceId": "slf-results",
       "companyId": "SLF",
       "status": "success",
-      "documentsDiscovered": 3,
+      "documentsDiscovered": 1,
       "documentUrls": [
-        "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
-        "https://www.newswire.ca/news-releases/sun-life-hosts-first-quarter-2026-earnings-conference-call-812520472.html",
         "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html"
       ],
       "periodIds": [
@@ -136,20 +134,20 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/aout/iagf-annonce-avis-rachat-porteurs-debentures-subordonnees",
         "https://ia.ca/salle-de-presse/2026/aout/iasf-annonce-le-paiement-d-un-dividende-sur-ses-actions-ordinaires",
         "https://ia.ca/salle-de-presse/2026/aout/iagf-declare-ses-resultats-pour-le-deuxieme-trimestre",
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-cloture-placement-500-m-dollars-debentures-subordonnees-taux-fixe-4-158-pourcent",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable-4-158-pourcent",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-elargissement-role-sebastien-mcmahon-titre-economiste-chef",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-resultats-scrutins-assemblee-annuelle"
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc"
       ],
       "periodIds": [
         "2026-T2",
         "2026-T3"
       ],
-      "llmCalls": 8
+      "llmCalls": 3
     }
   ]
 }
