@@ -216,6 +216,9 @@ main {
 .chat-message-user { align-self: flex-end; color: white; background: var(--accent); }
 .chat-message-assistant { align-self: flex-start; border: 1px solid var(--line); background: white; }
 .chat-message-error { align-self: flex-start; color: #991b1b; background: #fef2f2; }
+.chat-message-pending { color: var(--muted); font-style: italic; }
+.chat-message-pending p::before { content: ""; display: inline-block; width: 0.65rem; height: 0.65rem; margin-right: 0.5rem; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+.chat-retry { display: block; margin-top: 0.65rem; padding: 0.35rem 0.65rem; border: 1px solid currentcolor; border-radius: 0.45rem; color: inherit; background: white; cursor: pointer; font-weight: 700; }
 .chat-citations { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0 0; padding: 0; list-style: none; }
 .chat-citations a { display: inline-block; padding: 0.2rem 0.5rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.72rem; }
 .chat-caveat { margin-top: 0.65rem !important; color: var(--muted); font-size: 0.78rem; }
@@ -223,6 +226,7 @@ main {
 .chat-suggestions button { padding: 0.4rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--accent); background: white; cursor: pointer; font-size: 0.76rem; font-weight: 700; }
 .chat-form { padding: 0.9rem 1.2rem 1.2rem; }
 .chat-form textarea { width: 100%; resize: vertical; padding: 0.8rem; border: 1px solid var(--line); border-radius: 0.6rem; font: inherit; }
+.chat-input-hint { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.72rem; }
 .chat-form-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.65rem; }
 .chat-availability, .chat-disclaimer { margin: 0; color: var(--muted); font-size: 0.74rem; }
 .chat-disclaimer { padding: 0 1.2rem 1.2rem; }
