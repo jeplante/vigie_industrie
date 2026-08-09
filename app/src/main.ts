@@ -1,7 +1,7 @@
 import "./styles.css";
 import { StaticJsonDataProvider } from "./data/StaticJsonDataProvider";
 import type { DataProvider } from "./data/DataProvider";
-import type { AppState, ViewMode } from "./ui/state";
+import type { AppState, HistoricalBasis, ViewMode } from "./ui/state";
 import { availablePeriods, initialState, selectCompany } from "./ui/state";
 import { requiredElement } from "./ui/dom";
 import { renderCompanyTabs } from "./ui/render-company-tabs";
@@ -132,18 +132,22 @@ export class VigieApp {
       this.state.historicalKpi = historicalKpi.value as HistoricalKpi;
       this.render();
     };
+    const historicalBasis = requiredElement<HTMLSelectElement>("history-basis");
+    historicalBasis.onchange = () => {
+      if (!this.state) return;
+      this.state.historicalBasis = historicalBasis.value as HistoricalBasis;
+      this.render();
+    };
   }
 
   private render(): void {
     if (!this.state) return;
     const summaryView = requiredElement("summary-view");
     const companyView = requiredElement("company-view");
-    const historyView = requiredElement("history-view");
     const chatView = requiredElement("chat-view");
     const isSummary = this.state.viewMode === "summary";
     summaryView.hidden = !isSummary;
     companyView.hidden = this.state.viewMode !== "company";
-    historyView.hidden = this.state.viewMode !== "history";
     chatView.hidden = this.state.viewMode !== "chat";
     for (const button of requiredElement(
       "view-tabs",
@@ -154,6 +158,8 @@ export class VigieApp {
     }
     const historicalKpi = requiredElement<HTMLSelectElement>("history-kpi");
     historicalKpi.value = this.state.historicalKpi;
+    requiredElement<HTMLSelectElement>("history-basis").value =
+      this.state.historicalBasis;
 
     const companyTabs = requiredElement("company-tabs");
     renderPeriodSelect(
@@ -193,6 +199,7 @@ export class VigieApp {
       this.state.dataset,
       this.state.historicalKpi,
       this.state.periodId,
+      this.state.historicalBasis,
     );
   }
 }

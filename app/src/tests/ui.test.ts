@@ -50,6 +50,7 @@ describe("interface", () => {
     expect(state.periodId).toBe("2026-T2");
     expect(state.viewMode).toBe("summary");
     expect(state.historicalKpi).toBe("metric:core_eps");
+    expect(state.historicalBasis).toBe("qtd");
     selectCompany(state, "SLF");
     expect(state.periodId).toBe("2026-T2");
     expect(
@@ -675,5 +676,116 @@ describe("interface", () => {
       .join(" ");
     expect(markerLabels).toContain("1,2 G$");
     expect(markerLabels).toContain("0,85 G$");
+  });
+
+  it("cumule en YTD les KPI additifs et recommence à chaque année", () => {
+    const reference = dataset.observations[0]!;
+    const period2026T1 = dataset.periods.find(
+      (period) => period.periodId === "2026-T1",
+    )!;
+    const period2026T2 = dataset.periods.find(
+      (period) => period.periodId === "2026-T2",
+    )!;
+    const period2025T3 = dataset.periods.find(
+      (period) => period.periodId === "2025-T3",
+    )!;
+    const additiveDataset = {
+      ...dataset,
+      observations: [
+        {
+          ...reference,
+          id: "MFC-2025-T3-core-earnings",
+          metricId: "core_earnings",
+          label: "Résultat des activités de base",
+          period: period2025T3,
+          value: 4,
+          unit: "CAD_BILLION",
+        },
+        {
+          ...reference,
+          id: "MFC-2026-T1-core-earnings",
+          metricId: "core_earnings",
+          label: "Résultat des activités de base",
+          period: period2026T1,
+          value: 1,
+          unit: "CAD_BILLION",
+        },
+        {
+          ...reference,
+          id: "MFC-2026-T2-core-earnings",
+          metricId: "core_earnings",
+          label: "Résultat des activités de base",
+          period: period2026T2,
+          value: 2,
+          unit: "CAD_BILLION",
+        },
+      ],
+    };
+    const container = document.createElement("div");
+
+    renderHistory(
+      container,
+      additiveDataset,
+      "metric:core_earnings",
+      "2026-T2",
+      "ytd",
+    );
+
+    const markerLabels = [
+      ...container.querySelectorAll(".history-marker title"),
+    ].map((title) => title.textContent);
+    expect(markerLabels).toContain("Manuvie · T3 2025 · 4 G$");
+    expect(markerLabels).toContain("Manuvie · T1 2026 · 1 G$");
+    expect(markerLabels).toContain("Manuvie · T2 2026 · 3 G$");
+    expect(container.textContent).toContain("YTD calculé");
+  });
+
+  it("conserve une valeur à date pour un KPI YTD non additif", () => {
+    const reference = dataset.observations[0]!;
+    const period2026T1 = dataset.periods.find(
+      (period) => period.periodId === "2026-T1",
+    )!;
+    const period2026T2 = dataset.periods.find(
+      (period) => period.periodId === "2026-T2",
+    )!;
+    const pointInTimeDataset = {
+      ...dataset,
+      observations: [
+        {
+          ...reference,
+          id: "MFC-2026-T1-licat",
+          metricId: "licat_ratio",
+          label: "Ratio LICAT",
+          period: period2026T1,
+          value: 136,
+          unit: "PERCENT",
+        },
+        {
+          ...reference,
+          id: "MFC-2026-T2-licat",
+          metricId: "licat_ratio",
+          label: "Ratio LICAT",
+          period: period2026T2,
+          value: 138,
+          unit: "PERCENT",
+        },
+      ],
+    };
+    const container = document.createElement("div");
+
+    renderHistory(
+      container,
+      pointInTimeDataset,
+      "metric:licat_ratio",
+      "2026-T2",
+      "ytd",
+    );
+
+    const markerLabels = [
+      ...container.querySelectorAll(".history-marker title"),
+    ].map((title) => title.textContent);
+    expect(markerLabels).toContain("Manuvie · T2 2026 · 138 %");
+    expect(markerLabels).not.toContain("Manuvie · T2 2026 · 274 %");
+    expect(container.textContent).toContain("valeur à date");
   });
 });

@@ -72,18 +72,6 @@
               Par compagnie
             </button>
             <button
-              id="view-tab-history"
-              class="view-tab"
-              type="button"
-              role="tab"
-              aria-controls="history-view"
-              aria-selected="false"
-              data-view="history"
-              tabindex="-1"
-            >
-              Historique
-            </button>
-            <button
               id="view-tab-chat"
               class="view-tab"
               type="button"
@@ -127,6 +115,33 @@
             class="company-summary"
             aria-live="polite"
           ></div>
+          <section
+            class="history-view summary-history"
+            aria-labelledby="history-heading-title"
+          >
+            <div class="history-heading">
+              <div>
+                <p class="eyebrow history-eyebrow">
+                  Comparaison multi-assureurs
+                </p>
+                <h2 id="history-heading-title">Évolution historique</h2>
+              </div>
+              <div class="history-controls">
+                <div class="history-control">
+                  <label for="history-kpi">Indicateur</label>
+                  <select id="history-kpi"></select>
+                </div>
+                <div class="history-control">
+                  <label for="history-basis">Base</label>
+                  <select id="history-basis">
+                    <option value="qtd">QTD · Trimestre</option>
+                    <option value="ytd">YTD · Cumul annuel</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div id="history-chart" aria-live="polite"></div>
+          </section>
         </section>
 
         <section
@@ -162,26 +177,6 @@
             </div>
             <div id="news" class="news-list"></div>
           </section>
-        </section>
-
-        <section
-          id="history-view"
-          class="history-view"
-          role="tabpanel"
-          aria-labelledby="view-tab-history"
-          hidden
-        >
-          <div class="history-heading">
-            <div>
-              <p class="eyebrow history-eyebrow">Comparaison multi-assureurs</p>
-              <h2>Évolution trimestrielle</h2>
-            </div>
-            <div class="history-control">
-              <label for="history-kpi">Indicateur</label>
-              <select id="history-kpi"></select>
-            </div>
-          </div>
-          <div id="history-chart" aria-live="polite"></div>
         </section>
 
         <section

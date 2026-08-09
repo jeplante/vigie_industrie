@@ -12,6 +12,10 @@ import {
   type HistoricalKpi,
   type HistoricalKpiSelection,
 } from "./history-kpis";
+import {
+  isAdditiveHistoricalMetric,
+  type HistoricalBasis,
+} from "./history-basis";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 const WIDTH = 1100;
@@ -96,8 +100,9 @@ function formatAxisValue(
 function buildSeries(
   dataset: VigieDataset,
   selection: HistoricalKpiSelection,
+  basis: HistoricalBasis,
 ): HistoricalSeries[] {
-  return dataset.companies.map((company) => {
+  const series = dataset.companies.map((company) => {
     const points = new Map<string, HistoricalPoint>();
     for (const observation of dataset.observations) {
       if (
@@ -118,6 +123,29 @@ function buildSeries(
     }
     return { company, points };
   });
+  if (
+    basis !== "ytd" ||
+    selection.mode !== "metric" ||
+    !isAdditiveHistoricalMetric(selection.metricId)
+  ) {
+    return series;
+  }
+  for (const item of series) {
+    let year: number | null = null;
+    let cumulativeValue = 0;
+    for (const point of [...item.points.values()].sort((left, right) =>
+      left.period.endDate.localeCompare(right.period.endDate),
+    )) {
+      if (point.period.year !== year) {
+        year = point.period.year;
+        cumulativeValue = 0;
+      }
+      cumulativeValue += point.value;
+      point.value = cumulativeValue;
+      point.displayValue = formatNumericValue(cumulativeValue, selection.unit);
+    }
+  }
+  return series;
 }
 
 function markerForPoint(x: number, y: number, index: number): SVGElement {
@@ -156,10 +184,17 @@ export function renderHistory(
   dataset: VigieDataset,
   kpi: HistoricalKpi,
   selectedPeriodId: string | null,
+  basis: HistoricalBasis = "qtd",
 ): void {
   clear(container);
   const selection = parseHistoricalKpi(dataset, kpi);
-  const series = buildSeries(dataset, selection);
+  const series = buildSeries(dataset, selection, basis);
+  const additiveYtd =
+    basis === "ytd" &&
+    selection.mode === "metric" &&
+    isAdditiveHistoricalMetric(selection.metricId);
+  const pointInTimeYtd =
+    basis === "ytd" && selection.mode === "metric" && !additiveYtd;
   const periodIds = new Set(series.flatMap((item) => [...item.points.keys()]));
   const selectedPeriod = dataset.periods.find(
     (period) => period.periodId === selectedPeriodId,
@@ -217,7 +252,9 @@ export function renderHistory(
   const title = svgElement("title", { id: "history-chart-title" });
   title.textContent =
     selection.mode === "metric"
-      ? `Historique trimestriel — ${selection.label}`
+      ? pointInTimeYtd
+        ? `Historique — ${selection.label} (valeur à date)`
+        : `Historique ${basis.toUpperCase()} — ${selection.label}`
       : `Variation annuelle trimestrielle — ${selection.label}`;
   if (selectedPeriod) title.textContent += ` jusqu’à ${selectedPeriod.label}`;
   const description = svgElement("desc", {
@@ -310,9 +347,17 @@ export function renderHistory(
     svg.append(...markers);
   });
 
+  const basisNote =
+    selection.mode === "growth"
+      ? "Les variations annuelles utilisent les valeurs trimestrielles publiées; le choix QTD/YTD ne modifie pas cette série."
+      : additiveYtd
+        ? "YTD calculé : cumul des valeurs trimestrielles depuis le début de chaque année; de légers écarts d’arrondi avec les publications officielles sont possibles."
+        : pointInTimeYtd
+          ? "Ce KPI n’est pas additionnable : la vue YTD affiche la valeur à date de chaque fin de trimestre."
+          : "QTD : valeur publiée pour chaque trimestre.";
   const note = element("p", {
     className: "history-note",
-    text: `Fenêtre glissante de cinq ans jusqu’à ${selectedPeriod?.label ?? "la période la plus récente"}, périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.`,
+    text: `${basisNote} Fenêtre glissante de cinq ans jusqu’à ${selectedPeriod?.label ?? "la période la plus récente"}, périodes trimestrielles seulement. Les interruptions indiquent des données non encore publiées; seuls les assureurs ayant publié ce KPI sont affichés.`,
   });
   container.append(legend, svg, note);
 }

@@ -455,6 +455,11 @@ main {
 .history-view {
   padding-top: 1rem;
 }
+.summary-history {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
 .history-heading {
   display: flex;
   align-items: flex-end;
@@ -467,6 +472,11 @@ main {
 }
 .history-eyebrow {
   margin-bottom: 0.2rem;
+}
+.history-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
 }
 .history-control {
   display: grid;
@@ -800,6 +810,14 @@ footer p {
   .history-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+  .history-controls {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .history-control select {
+    width: 100%;
   }
   .summary-heading > p {
     text-align: left;
