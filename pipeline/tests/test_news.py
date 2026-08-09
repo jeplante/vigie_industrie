@@ -1,7 +1,9 @@
+from datetime import date
 from pathlib import Path
 from typing import TypeVar
 
 import pytest
+from bs4 import BeautifulSoup
 from pydantic import BaseModel
 
 import vigie_pipeline.news as news_module
@@ -9,16 +11,58 @@ from vigie_pipeline.config import ProjectConfig
 from vigie_pipeline.exceptions import LlmError
 from vigie_pipeline.fetch import FetchResult
 from vigie_pipeline.llm.base import NewsAnalysis
-from vigie_pipeline.models import VigieDataset
+from vigie_pipeline.models import DiscoveredDocument, VigieDataset
 from vigie_pipeline.news import (
+    _date_from_document,
     acquire_news,
     canonicalize_url,
     discover_news_documents,
+    extract_article,
     fetch_news_index,
 )
 from vigie_pipeline.settings import Settings
 
 T = TypeVar("T", bound=BaseModel)
+
+
+def test_visible_time_wins_over_future_maturity_date() -> None:
+    soup = BeautifulSoup(
+        """
+        <h1>Débentures échéant le 24 septembre 2031</h1>
+        <p>Québec, <time>7 août 2026</time></p>
+        """,
+        "html.parser",
+    )
+
+    assert _date_from_document(soup) == date(2026, 8, 7)
+
+
+def test_article_date_overrides_incorrect_index_date(project_config: ProjectConfig) -> None:
+    source = next(item for item in project_config.sources if item.id == "iag-official-news")
+    result = FetchResult(
+        url="https://ia.ca/salle-de-presse/avis-rachat",
+        content=b"""
+        <html><body><main><h1>Avis de rachat</h1>
+        <p>Quebec, <time>August 7, 2026</time></p>
+        <p>Ce communique officiel contient suffisamment de texte pour constituer
+        un article complet et verifier correctement la date de publication.</p>
+        </main></body></html>
+        """,
+        content_type="text/html",
+        etag=None,
+        last_modified=None,
+    )
+    discovered = DiscoveredDocument(
+        source_id=source.id,
+        canonical_url=result.url,
+        title="Débentures échéant le 24 septembre 2031",
+        published_at=date(2031, 9, 24),
+        content_type="text/html",
+    )
+
+    article = extract_article(result, discovered, source)
+
+    assert article.published_at == date(2026, 8, 7)
 
 
 class FakeProvider:
@@ -198,7 +242,7 @@ def test_official_news_is_summarized_and_traced(
     assert item.source.document_hash is not None
     assert item.quality.extraction_method == "openai"
     assert item.quality.llm_trace is not None
-    assert item.quality.llm_trace.model == "gpt-5.6-luna"
+    assert item.quality.llm_trace.model == "gpt-5.6-terra"
     assert provider.calls == 1
 
 

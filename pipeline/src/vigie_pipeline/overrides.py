@@ -29,17 +29,9 @@ def apply_overrides(dataset: VigieDataset, path: Path) -> tuple[VigieDataset, li
         unknown = set(fields) - ALLOWED_FIELDS
         if unknown:
             raise ConfigurationError(f"Champs de correction interdits: {sorted(unknown)}")
+        field_names = {"displayValue": "display_value"}
         updated = by_id[observation_id].model_copy(
-            update={
-                "value"
-                if key == "value"
-                else "display_value"
-                if key == "displayValue"
-                else key
-                if key == "unit"
-                else key: value
-                for key, value in fields.items()
-            }
+            update={field_names.get(key, key): value for key, value in fields.items()}
         )
         approver = override.get("approvedBy", "approbateur non indiqué")
         updated.quality.warnings.append(f"Correction manuelle: {override['reason']} ({approver}).")

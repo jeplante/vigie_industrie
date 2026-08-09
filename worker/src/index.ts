@@ -1,244 +1,79 @@
-interface Env {
-  OPENAI_API_KEY: string;
-  OPENAI_MODEL: string;
+import { ANSWER_SCHEMA, buildGroundingContext, chooseRoute, parseStructuredAnswer, sourceAllowlist, validateChatRequest } from "./router";
+
+declare global {
+  interface Env { OPENAI_API_KEY: string; SAFETY_SALT: string }
 }
 
-interface ChatRequest {
-  question: string;
+const DEFAULT_ORIGIN = "https://jeplante.github.io";
+const DEFAULT_DATASET = "https://jeplante.github.io/vigie_industrie/data/vigie.json";
+
+function allowedOrigin(origin: string | null, env: Env): boolean {
+  if (!origin) return false;
+  if (origin === (env.ALLOWED_ORIGIN || DEFAULT_ORIGIN)) return true;
+  return false;
 }
 
-interface Citation {
-  title: string;
-  url: string;
-  publishedAt: string;
+function corsHeaders(origin: string | null, env: Env): HeadersInit {
+  return allowedOrigin(origin, env) ? {
+    "Access-Control-Allow-Origin": origin!, "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Max-Age": "86400", Vary: "Origin",
+  } : { Vary: "Origin" };
 }
 
-interface SourceRecord {
-  title?: unknown;
-  url?: unknown;
-  publishedAt?: unknown;
+function json(request: Request, env: Env, body: unknown, status = 200): Response {
+  return Response.json(body, { status, headers: corsHeaders(request.headers.get("Origin"), env) });
 }
 
-interface ObservationRecord {
-  companyId?: unknown;
-  period?: { periodId?: unknown; endDate?: unknown; label?: unknown };
-  metricId?: unknown;
-  label?: unknown;
-  displayValue?: unknown;
-  comparison?: { displayValue?: unknown; displayChange?: unknown; periodLabel?: unknown };
-  note?: unknown;
-  source?: SourceRecord;
+async function identifier(ip: string, salt: string): Promise<string> {
+  const bytes = new TextEncoder().encode(`${salt}:${ip}`);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((part) => part.toString(16).padStart(2, "0")).join("").slice(0, 32);
 }
 
-interface DatasetRecord {
-  generatedAt?: unknown;
-  companies?: Array<{ id?: unknown; name?: unknown; investorRelationsUrl?: unknown }>;
-  observations?: ObservationRecord[];
-}
-
-const ALLOWED_ORIGIN = "https://jeplante.github.io";
-const DATASET_URL = "https://raw.githubusercontent.com/jeplante/vigie_industrie/main/data/published/vigie.json";
-const MAX_QUESTION_LENGTH = 1000;
-const MAX_CONTEXT_LENGTH = 12_000;
-const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX_REQUESTS = 12;
-const rateLimits = new Map<string, { count: number; resetAt: number }>();
-
-const SYSTEM_INSTRUCTION = `Vous etes un analyste d'affaires pour Vigie de l'industrie canadienne de l'assurance de personnes. Repondez en francais avec une analyse substantielle, precise et utile, exclusivement a partir des donnees publiees fournies dans le contexte. N'inventez aucun fait, ne completez pas avec des connaissances externes et ne naviguez jamais sur le Web. Expliquez les incertitudes, les limites de comparabilite ou les donnees manquantes. Ne donnez pas de conseil en investissement, de recommandation d'achat, de vente ou de detention. Lorsque vous appuyez une affirmation sur une source, citez son titre et son URL officielle fournis dans le contexte.`;
-
-function corsHeaders(request: Request): HeadersInit {
-  const origin = request.headers.get("Origin");
-  if (origin && isAllowedOrigin(origin)) {
-    return {
-      "Access-Control-Allow-Origin": origin,
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type",
-      "Access-Control-Max-Age": "86400",
-      "Vary": "Origin",
-    };
-  }
-  return { "Vary": "Origin" };
-}
-
-function isAllowedOrigin(origin: string): boolean {
-  return origin === ALLOWED_ORIGIN || /^http:\/\/localhost(?::\d+)?$/.test(origin);
-}
-
-function jsonResponse(request: Request, body: unknown, status = 200): Response {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { "Content-Type": "application/json; charset=utf-8", ...corsHeaders(request) },
+async function loadDataset(env: Env): Promise<Record<string, unknown>> {
+  const datasetUrl = env.DATASET_URL || DEFAULT_DATASET;
+  const response = await fetch(datasetUrl, {
+    signal: AbortSignal.timeout(8_000),
+    cf: { cacheEverything: true, cacheTtl: 300 },
   });
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-function getClientIp(request: Request): string {
-  return request.headers.get("CF-Connecting-IP") ?? "unknown";
-}
-
-function isRateLimited(clientIp: string): boolean {
-  const now = Date.now();
-  const current = rateLimits.get(clientIp);
-  if (!current || current.resetAt <= now) {
-    rateLimits.set(clientIp, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-  current.count += 1;
-  return current.count > RATE_LIMIT_MAX_REQUESTS;
-}
-
-async function readRequest(request: Request): Promise<ChatRequest | null> {
-  try {
-    const payload: unknown = await request.json();
-    if (!isRecord(payload) || typeof payload.question !== "string") return null;
-    return { question: payload.question, dataset: payload.dataset };
-  } catch {
-    return null;
-  }
-}
-
-async function loadDataset(): Promise<DatasetRecord | null> {
-  try {
-    const response = await fetch(DATASET_URL, { signal: AbortSignal.timeout(8_000) });
-    if (!response.ok) return null;
-    const payload: unknown = await response.json();
-    return isRecord(payload) ? payload : null;
-  } catch {
-    return null;
-  }
-}
-
-function asString(value: unknown): string | null {
-  return typeof value === "string" && value.length > 0 ? value : null;
-}
-
-function isPublishedSourceUrl(value: unknown): value is string {
-  if (typeof value !== "string") return false;
-  try {
-    const url = new URL(value);
-    return url.protocol === "https:";
-  } catch {
-    return false;
-  }
-}
-
-function buildContext(dataset: DatasetRecord): { context: string; citations: Citation[]; dataAsOf: string | null } | null {
-  if (!Array.isArray(dataset.companies) || !Array.isArray(dataset.observations)) return null;
-
-  const companies = dataset.companies
-    .map((company) => ({
-      id: asString(company.id),
-      name: asString(company.name),
-    }))
-    .filter((company): company is { id: string; name: string } =>
-      Boolean(company.id && company.name),
-    );
-  if (companies.length === 0) return null;
-
-  const latestPeriodByCompany = new Map<string, string>();
-  for (const observation of dataset.observations) {
-    const companyId = asString(observation.companyId);
-    const endDate = asString(observation.period?.endDate);
-    if (companyId && endDate && (!latestPeriodByCompany.has(companyId) || endDate > latestPeriodByCompany.get(companyId)!)) {
-      latestPeriodByCompany.set(companyId, endDate);
-    }
-  }
-
-  const citations: Citation[] = [];
-  const citationUrls = new Set<string>();
-  const lines = ["DONNEES VIGIE PUBLIEES (ne pas utiliser d'autre source) :"];
-  for (const company of companies) {
-    const latestEndDate = latestPeriodByCompany.get(company.id);
-    if (!latestEndDate) continue;
-    const observations = dataset.observations.filter((observation) =>
-      observation.companyId === company.id && observation.period?.endDate === latestEndDate,
-    );
-    if (observations.length === 0) continue;
-
-    const periodLabel = asString(observations[0].period?.label) ?? latestEndDate;
-    lines.push(`\n${company.name} - ${periodLabel} (fin ${latestEndDate})`);
-    for (const observation of observations) {
-      const label = asString(observation.label);
-      const value = asString(observation.displayValue);
-      if (!label || !value) continue;
-      const comparison = observation.comparison;
-      const comparisonText = [asString(comparison?.displayValue), asString(comparison?.displayChange)]
-        .filter((item): item is string => item !== null)
-        .join("; ");
-      const note = asString(observation.note);
-      lines.push(`- ${label}: ${value}${comparisonText ? ` (comparaison: ${comparisonText})` : ""}${note ? `; note: ${note}` : ""}`);
-
-      const source = observation.source;
-      if (source && isPublishedSourceUrl(source.url) && !citationUrls.has(source.url)) {
-        citationUrls.add(source.url);
-        citations.push({
-          title: asString(source.title) ?? `${company.name} - source officielle`,
-          url: source.url,
-          publishedAt: asString(source.publishedAt) ?? latestEndDate,
-        });
-      }
-    }
-  }
-
-  if (lines.length === 1) return null;
-  let context = lines.join("\n");
-  if (context.length > MAX_CONTEXT_LENGTH) context = context.slice(0, MAX_CONTEXT_LENGTH);
-  return { context, citations, dataAsOf: asString(dataset.generatedAt) };
-}
-
-async function getAnswer(env: Env, question: string, context: string): Promise<string | null> {
-  try {
-    const response = await fetch("https://api.openai.com/v1/responses", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: env.OPENAI_MODEL,
-        store: false,
-        instructions: SYSTEM_INSTRUCTION,
-        input: `Question de l'utilisateur:\n${question}\n\n${context}`,
-      }),
-      signal: AbortSignal.timeout(30_000),
-    });
-    if (!response.ok) return null;
-    const payload: unknown = await response.json();
-    if (!isRecord(payload)) return null;
-    if (typeof payload.output_text === "string" && payload.output_text.trim()) return payload.output_text.trim();
-    return null;
-  } catch {
-    return null;
-  }
+  if (!response.ok) throw new Error("Les données de la Vigie sont indisponibles.");
+  return await response.json() as Record<string, unknown>;
 }
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("Origin");
-    if (origin && !isAllowedOrigin(origin)) return jsonResponse(request, { error: "Origin not allowed." }, 403);
-    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(request) });
-    if (request.method !== "POST" || new URL(request.url).pathname !== "/api/chat") {
-      return jsonResponse(request, { error: "Not found." }, 404);
+    if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(origin, env) });
+    if (request.method !== "POST" || new URL(request.url).pathname !== "/api/chat") return json(request, env, { error: "Introuvable." }, 404);
+    if (!allowedOrigin(origin, env)) return json(request, env, { error: "Origine refusée." }, 403);
+    if (!env.OPENAI_API_KEY || !env.SAFETY_SALT) return json(request, env, { error: "Service non configuré." }, 503);
+
+    try {
+      const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+      const safetyId = await identifier(ip, env.SAFETY_SALT);
+      const rate = await env.CHAT_RATE_LIMITER.limit({ key: safetyId });
+      if (!rate.success) return json(request, env, { error: "Trop de questions. Réessayez dans une minute." }, 429);
+      const chat = validateChatRequest(await request.json());
+      const context = buildGroundingContext(await loadDataset(env), chat);
+      const route = chooseRoute(chat.question, chat.history.length, env);
+      const response = await fetch("https://api.openai.com/v1/responses", {
+        method: "POST", signal: AbortSignal.timeout(45_000),
+        headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: route.model, reasoning: { effort: route.effort }, store: false, max_output_tokens: 1_200,
+          safety_identifier: safetyId,
+          instructions: "Vous êtes l’assistant de la Vigie de l’industrie canadienne de l’assurance de personnes. Répondez en français uniquement à partir du contexte JSON fourni. N’inventez aucune donnée. Distinguez les faits, comparaisons et interprétations. Signalez toute donnée absente ou non comparable. Ne donnez aucun conseil d’investissement. Citez uniquement les URL présentes dans le contexte.",
+          input: [...chat.history, { role: "user", content: `Question: ${chat.question}\n\nContexte Vigie validé:\n${JSON.stringify(context)}` }],
+          text: { format: { type: "json_schema", name: "vigie_chat_answer", strict: true, schema: ANSWER_SCHEMA } },
+        }),
+      });
+      if (!response.ok) throw new Error(`OpenAI indisponible (${response.status}).`);
+      const answer = parseStructuredAnswer(await response.json(), sourceAllowlist(context));
+      return json(request, env, { ...answer, model: route.model, dataAsOf: context.generatedAt });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Erreur inattendue.";
+      const status = message.includes("invalide") || message.includes("doit contenir") ? 400 : 502;
+      return json(request, env, { error: message }, status);
     }
-    if (isRateLimited(getClientIp(request))) return jsonResponse(request, { error: "Too many requests." }, 429);
-    if (!env.OPENAI_API_KEY || !env.OPENAI_MODEL) return jsonResponse(request, { error: "Service temporarily unavailable." }, 503);
-
-    const chat = await readRequest(request);
-    const question = chat?.question.trim();
-    if (!question || question.length > MAX_QUESTION_LENGTH) {
-      return jsonResponse(request, { error: "Question must contain 1 to 1000 characters." }, 400);
-    }
-
-    const dataset = await loadDataset();
-    if (!dataset) return jsonResponse(request, { error: "Published data is unavailable." }, 502);
-    const prepared = buildContext(dataset);
-    if (!prepared) return jsonResponse(request, { error: "Published data is invalid or incomplete." }, 422);
-
-    const answer = await getAnswer(env, question, prepared.context);
-    if (!answer) return jsonResponse(request, { error: "Analysis service is temporarily unavailable." }, 502);
-    return jsonResponse(request, { answer, citations: prepared.citations, dataAsOf: prepared.dataAsOf });
   },
 } satisfies ExportedHandler<Env>;

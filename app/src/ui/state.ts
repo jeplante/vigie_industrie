@@ -11,7 +11,6 @@ export interface AppState {
   category: string;
   viewMode: ViewMode;
   historicalKpi: HistoricalKpi;
-  chatQuestion: string;
 }
 
 export function initialState(dataset: VigieDataset): AppState {
@@ -24,7 +23,6 @@ export function initialState(dataset: VigieDataset): AppState {
     category: "all",
     viewMode: "summary",
     historicalKpi: defaultHistoricalKpi(dataset),
-    chatQuestion: "Compare le ROE des quatre compagnies.",
   };
 }
 

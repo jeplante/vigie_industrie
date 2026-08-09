@@ -13,5 +13,6 @@ node_modules/
 app/dist/
 app/coverage/
 *.tsbuildinfo
+worker/worker-configuration.d.ts
 data/generated/*
 !data/generated/.gitkeep
