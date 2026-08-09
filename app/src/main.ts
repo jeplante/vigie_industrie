@@ -16,7 +16,7 @@ import {
   type HistoricalKpi,
 } from "./ui/history-kpis";
 import { renderSummary } from "./ui/render-summary";
-import { appendChatMessage, askVigie, type ChatHistoryItem } from "./ui/chat";
+import { appendChatMessage, appendChatPending, askVigie, bindChatSubmitShortcut, type ChatHistoryItem } from "./ui/chat";
 
 export class VigieApp {
   private state: AppState | null = null;
@@ -74,6 +74,7 @@ export class VigieApp {
     const chatInput = requiredElement<HTMLTextAreaElement>("chat-input");
     const chatEndpoint = (import.meta.env.VITE_CHAT_API_URL as string | undefined)?.trim() ?? "";
     requiredElement("chat-availability").textContent = chatEndpoint ? "Assistant disponible" : "Assistant en attente de configuration";
+    bindChatSubmitShortcut(chatInput, chatForm);
     for (const suggestion of requiredElement("chat-view").querySelectorAll<HTMLButtonElement>("[data-chat-question]")) {
       suggestion.onclick = () => { chatInput.value = suggestion.dataset.chatQuestion ?? ""; chatInput.focus(); };
     }
@@ -86,13 +87,28 @@ export class VigieApp {
       const submit = requiredElement<HTMLButtonElement>("chat-submit");
       appendChatMessage(panel, "user", value);
       chatInput.value = "";
+      chatInput.disabled = true;
       submit.disabled = true; submit.textContent = "Analyse…";
+      panel.setAttribute("aria-busy", "true");
+      const pending = appendChatPending(panel);
       try {
         const response = await askVigie(chatEndpoint, { question: value, periodId: this.state.periodId, companyId: this.state.companyId, history: this.chatHistory.slice(-6) });
+        pending.remove();
         appendChatMessage(panel, "assistant", response.answer, response.citations, response.caveat);
         this.chatHistory.push({ role: "user", content: value }, { role: "assistant", content: response.answer });
-      } catch (error) { appendChatMessage(panel, "error", error instanceof Error ? error.message : "Une erreur inconnue est survenue."); }
-      finally { submit.disabled = false; submit.textContent = "Envoyer"; }
+      } catch (error) {
+        pending.remove();
+        const errorMessage = appendChatMessage(panel, "error", error instanceof Error ? error.message : "Une erreur inconnue est survenue.");
+        const retry = document.createElement("button");
+        retry.type = "button"; retry.className = "chat-retry"; retry.textContent = "Réessayer";
+        retry.onclick = () => { chatInput.value = value; chatForm.requestSubmit(); };
+        errorMessage.append(retry);
+      }
+      finally {
+        panel.setAttribute("aria-busy", "false");
+        chatInput.disabled = false; submit.disabled = false; submit.textContent = "Envoyer";
+        chatInput.focus();
+      }
     };
     for (const button of requiredElement(
       "view-tabs",

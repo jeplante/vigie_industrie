@@ -209,7 +209,8 @@
             </div>
             <form id="chat-form" class="chat-form">
               <label for="chat-input" class="sr-only">Posez votre question</label>
-              <textarea id="chat-input" name="chat-input" maxlength="600" rows="3" placeholder="Ex. Pourquoi le ratio LICAT de Sun Life a-t-il diminué?" required></textarea>
+              <textarea id="chat-input" name="chat-input" maxlength="600" rows="3" placeholder="Ex. Pourquoi le ratio LICAT de Sun Life a-t-il diminué?" aria-describedby="chat-input-hint" required></textarea>
+              <p id="chat-input-hint" class="chat-input-hint">Entrée pour envoyer · Maj+Entrée pour une nouvelle ligne</p>
               <div class="chat-form-footer"><p id="chat-availability" class="chat-availability"></p><button id="chat-submit" class="button button-primary" type="submit">Envoyer</button></div>
             </form>
             <p class="chat-disclaimer">Réponse automatisée à partir des données de la Vigie. Vérifiez les documents officiels avant toute décision financière.</p>
