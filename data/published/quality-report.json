@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T10:50:22.537362Z",
+  "generatedAt": "2026-08-19T10:49:14.155326Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -142,11 +142,8 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-elargissement-role-sebastien-mcmahon-titre-economiste-chef",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-investisseurs-contre-offre-achat-restreinte-ocehan-llc"
       ],
-      "periodIds": [
-        "2026-T2",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
