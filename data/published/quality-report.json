@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T10:51:03.772525Z",
+  "generatedAt": "2026-08-22T10:43:25.913714Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -142,11 +142,8 @@
         "https://ia.ca/salle-de-presse/2026/mai/iagf-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable-4-158-pourcent",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-elargissement-role-sebastien-mcmahon-titre-economiste-chef"
       ],
-      "periodIds": [
-        "2026-T2",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
