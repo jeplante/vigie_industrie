@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-08-28T21:14:31.315165Z",
+  "generatedAt": "2026-08-29T15:07:41.833028Z",
   "companies": [
     {
       "id": "MFC",
@@ -2494,6 +2494,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2696,6 +2697,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2878,6 +2880,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5616,6 +5619,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -16897,8 +16901,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-08-28T21:11:17.041955Z",
-        "documentHash": "sha256:01a364a6d7b25b95fb4fac2ef12016cc8fa7de8975fc8cb2e694b108c0f4bf78",
+        "fetchedAt": "2026-08-29T15:05:31.216724Z",
+        "documentHash": "sha256:4e8ac6de06aa08a40a6326a08ca63e2ed31b760a88a2c28359f1a0a82a2e2538",
         "priority": "primary"
       },
       "quality": {
@@ -16941,8 +16945,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-08-28T21:11:17.042573Z",
-        "documentHash": "sha256:01a364a6d7b25b95fb4fac2ef12016cc8fa7de8975fc8cb2e694b108c0f4bf78",
+        "fetchedAt": "2026-08-29T15:05:31.217497Z",
+        "documentHash": "sha256:4e8ac6de06aa08a40a6326a08ca63e2ed31b760a88a2c28359f1a0a82a2e2538",
         "priority": "primary"
       },
       "quality": {
@@ -16985,8 +16989,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-08-28T21:11:17.043155Z",
-        "documentHash": "sha256:01a364a6d7b25b95fb4fac2ef12016cc8fa7de8975fc8cb2e694b108c0f4bf78",
+        "fetchedAt": "2026-08-29T15:05:31.218156Z",
+        "documentHash": "sha256:4e8ac6de06aa08a40a6326a08ca63e2ed31b760a88a2c28359f1a0a82a2e2538",
         "priority": "primary"
       },
       "quality": {
@@ -17029,8 +17033,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-08-28T21:11:17.043696Z",
-        "documentHash": "sha256:01a364a6d7b25b95fb4fac2ef12016cc8fa7de8975fc8cb2e694b108c0f4bf78",
+        "fetchedAt": "2026-08-29T15:05:31.218772Z",
+        "documentHash": "sha256:4e8ac6de06aa08a40a6326a08ca63e2ed31b760a88a2c28359f1a0a82a2e2538",
         "priority": "primary"
       },
       "quality": {
@@ -17073,8 +17077,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-08-28T21:11:17.044236Z",
-        "documentHash": "sha256:01a364a6d7b25b95fb4fac2ef12016cc8fa7de8975fc8cb2e694b108c0f4bf78",
+        "fetchedAt": "2026-08-29T15:05:31.219352Z",
+        "documentHash": "sha256:4e8ac6de06aa08a40a6326a08ca63e2ed31b760a88a2c28359f1a0a82a2e2538",
         "priority": "primary"
       },
       "quality": {
@@ -17381,8 +17385,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-08-28T21:11:20.386244Z",
-        "documentHash": "sha256:11eb0a4cd2c2ed6176eef8f7a127a6881168dada2fec5e43294119fee0c1b69f",
+        "fetchedAt": "2026-08-29T15:05:33.253725Z",
+        "documentHash": "sha256:6e5d53ce5083c648985ed709d5e80eb4ad436b347d5398b0a97530429331b98c",
         "priority": "primary"
       },
       "quality": {
@@ -17425,8 +17429,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-08-28T21:11:20.386753Z",
-        "documentHash": "sha256:11eb0a4cd2c2ed6176eef8f7a127a6881168dada2fec5e43294119fee0c1b69f",
+        "fetchedAt": "2026-08-29T15:05:33.254206Z",
+        "documentHash": "sha256:6e5d53ce5083c648985ed709d5e80eb4ad436b347d5398b0a97530429331b98c",
         "priority": "primary"
       },
       "quality": {
@@ -17469,8 +17473,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-08-28T21:11:20.387187Z",
-        "documentHash": "sha256:11eb0a4cd2c2ed6176eef8f7a127a6881168dada2fec5e43294119fee0c1b69f",
+        "fetchedAt": "2026-08-29T15:05:33.254633Z",
+        "documentHash": "sha256:6e5d53ce5083c648985ed709d5e80eb4ad436b347d5398b0a97530429331b98c",
         "priority": "primary"
       },
       "quality": {
@@ -17513,8 +17517,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-08-28T21:11:20.387595Z",
-        "documentHash": "sha256:11eb0a4cd2c2ed6176eef8f7a127a6881168dada2fec5e43294119fee0c1b69f",
+        "fetchedAt": "2026-08-29T15:05:33.255074Z",
+        "documentHash": "sha256:6e5d53ce5083c648985ed709d5e80eb4ad436b347d5398b0a97530429331b98c",
         "priority": "primary"
       },
       "quality": {
@@ -17557,8 +17561,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-08-28T21:11:20.388009Z",
-        "documentHash": "sha256:11eb0a4cd2c2ed6176eef8f7a127a6881168dada2fec5e43294119fee0c1b69f",
+        "fetchedAt": "2026-08-29T15:05:33.255496Z",
+        "documentHash": "sha256:6e5d53ce5083c648985ed709d5e80eb4ad436b347d5398b0a97530429331b98c",
         "priority": "primary"
       },
       "quality": {
@@ -17601,8 +17605,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-08-28T21:11:20.388406Z",
-        "documentHash": "sha256:11eb0a4cd2c2ed6176eef8f7a127a6881168dada2fec5e43294119fee0c1b69f",
+        "fetchedAt": "2026-08-29T15:05:33.255930Z",
+        "documentHash": "sha256:6e5d53ce5083c648985ed709d5e80eb4ad436b347d5398b0a97530429331b98c",
         "priority": "primary"
       },
       "quality": {
@@ -19564,20 +19568,20 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:13:01.986433Z",
-        "documentHash": "sha256:40a8ee43a15461d9da66424f24db641c6d1fb8ed1ce30a49edcccdd0a0297ec1"
+        "fetchedAt": "2026-08-29T15:07:01.059681Z",
+        "documentHash": "sha256:69e0f6034cd98c51855e0c762d32f387ebd934edb3436e025207b27635897121"
       },
       "title": "Sun Life hosts second quarter 2026 earnings conference call",
       "originalSummary": "/CNW/ - Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) will release its second quarter financial results on Thursday, August 6, 2026 after markets close. A...",
-      "generatedSummary": "Sun Life Financial Inc. publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 6 août 2026. Une conférence téléphonique avec les analystes, diffusée en direct sur le web, est prévue le 7 août 2026 à 10 h (HE), avec une rediffusion disponible après l’événement. Au 31 mars 2026, Sun Life déclarait 1,58 billion de dollars canadiens d’actifs sous gestion totaux.",
+      "generatedSummary": "Sun Life Financial Inc. publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 6 août 2026. Une conférence téléphonique avec les analystes, diffusée en direct sur le Web, aura lieu le 7 août 2026 à 10 h HE; une rediffusion sera disponible après l’événement. Au 31 mars 2026, Sun Life déclarait 1,58 billion de dollars canadiens d’actifs sous gestion totaux.",
       "categories": [
         "financial_results"
       ],
       "importance": "medium",
       "themes": [
-        "publication des résultats du deuxième trimestre 2026",
-        "conférence téléphonique avec les analystes",
-        "actifs sous gestion"
+        "Publication prévue des résultats du deuxième trimestre 2026",
+        "Conférence téléphonique avec les analystes",
+        "Actifs sous gestion"
       ],
       "quality": {
         "status": "validated",
@@ -19588,9 +19592,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:06.375377Z",
+          "executedAt": "2026-08-29T15:07:03.798472Z",
           "taskId": "summarize_news_slf-official-news_87a45d3607f4",
-          "sourceFingerprint": "sha256:40a8ee43a15461d9da66424f24db641c6d1fb8ed1ce30a49edcccdd0a0297ec1",
+          "sourceFingerprint": "sha256:69e0f6034cd98c51855e0c762d32f387ebd934edb3436e025207b27635897121",
           "confidence": 0.99,
           "warnings": []
         }
@@ -19947,20 +19951,21 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:33.806833Z",
-        "documentHash": "sha256:439d5acf6b1e461c2a9c0056717bad8de1c2ab80a4c71aede09b1d9a9c644107"
+        "fetchedAt": "2026-08-29T15:07:16.237635Z",
+        "documentHash": "sha256:53603c0ef46b40c1b1ff02a48a6395662d6b06dd4151c0617ddcb7f8ff0f38ae"
       },
       "title": "Great West's second quarter 2026 earnings conference call to be held on July 29",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\") (TSX: GWO) will release its 2026 second quarter financial results after market close on Tuesday, July 28, 2026....",
-      "generatedSummary": "Great-West Lifeco publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 28 juillet 2026. La direction tiendra une conférence téléphonique et une webdiffusion à 9 h 30 (HE) le 29 juillet 2026 pour les commenter. Au 31 mars 2026, la société indiquait gérer 3,3 billions de dollars d’actifs clients.",
+      "generatedSummary": "Great-West Lifeco publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 28 juillet 2026. La direction discutera des résultats lors d’une conférence téléphonique et webdiffusion le 29 juillet à 9 h 30 (HE).",
       "categories": [
         "financial_results"
       ],
       "importance": "medium",
       "themes": [
-        "Publication des résultats du deuxième trimestre 2026",
-        "Conférence téléphonique avec la direction",
-        "Actifs clients"
+        "Résultats du deuxième trimestre 2026",
+        "Conférence téléphonique",
+        "Webdiffusion",
+        "Relations investisseurs"
       ],
       "quality": {
         "status": "validated",
@@ -19971,9 +19976,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:36.833482Z",
+          "executedAt": "2026-08-29T15:07:18.415051Z",
           "taskId": "summarize_news_gwo-official-news_065d23b1da01",
-          "sourceFingerprint": "sha256:439d5acf6b1e461c2a9c0056717bad8de1c2ab80a4c71aede09b1d9a9c644107",
+          "sourceFingerprint": "sha256:53603c0ef46b40c1b1ff02a48a6395662d6b06dd4151c0617ddcb7f8ff0f38ae",
           "confidence": 0.99,
           "warnings": []
         }
@@ -19992,12 +19997,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:36.969511Z",
-        "documentHash": "sha256:14f2704d7c64503ed6603dfac941f8275f34fa9c56af108f68eecd52de7c7615"
+        "fetchedAt": "2026-08-29T15:07:18.499090Z",
+        "documentHash": "sha256:56a6be2d888bf990dc4091e13fbb3380f9461dc74b35fa67d01176348778ea5a"
       },
       "title": "Great West completes offering of €500 million 3.625% senior euro bonds due 2033",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\") announced today that it has completed the previously announced offering of €500 million 3.625% senior euro bonds...",
-      "generatedSummary": "Great-West Lifeco Inc. a finalisé son émission précédemment annoncée de 500 millions d’euros d’obligations senior à 3,625 %, échéant le 7 juillet 2033. Les obligations sont notées A+ par S&P Global Ratings et A par Fitch Ratings. Elles sont inscrites à la cote officielle d’Euronext Dublin et admises à la négociation sur son Global Exchange Market. Barclays, Crédit Agricole CIB, J.P. Morgan Securities et Merrill Lynch International ont agi comme teneurs de livre actifs conjoints pour le compte d’un syndicat de gestionnaires.",
+      "generatedSummary": "Great-West Lifeco a finalisé l’émission précédemment annoncée de 500 millions d’euros d’obligations senior à 3,625 %, échéant le 7 juillet 2033. Les obligations sont notées A+ par S&P Global Ratings et A par Fitch Ratings. Elles sont inscrites sur la liste officielle d’Euronext Dublin et admises à la négociation sur son Global Exchange Market.",
       "categories": [
         "capital_management"
       ],
@@ -20006,6 +20011,7 @@
         "Émission obligataire",
         "Financement",
         "Dette senior",
+        "Notation de crédit",
         "Euronext Dublin"
       ],
       "quality": {
@@ -20017,9 +20023,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:40.477548Z",
+          "executedAt": "2026-08-29T15:07:20.849972Z",
           "taskId": "summarize_news_gwo-official-news_30395c3f007d",
-          "sourceFingerprint": "sha256:14f2704d7c64503ed6603dfac941f8275f34fa9c56af108f68eecd52de7c7615",
+          "sourceFingerprint": "sha256:56a6be2d888bf990dc4091e13fbb3380f9461dc74b35fa67d01176348778ea5a",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20038,12 +20044,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:40.626296Z",
-        "documentHash": "sha256:0c0d244d62e3b5699aa83364afea0521784c0be4e835fc49bc7023ee4c16d300"
+        "fetchedAt": "2026-08-29T15:07:20.938819Z",
+        "documentHash": "sha256:2e2400e2897f614551fd4f05523fd50ef83282b5ca979992c25b603f1fa572b4"
       },
       "title": "Great West announces pricing of €500 million senior fixed rate euro bonds",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\" or the \"Company\") announced today the pricing of €500 million senior fixed rate euro bonds. This is the Company's...",
-      "generatedSummary": "Great-West Lifeco a annoncé la fixation du prix d’une émission de 500 millions d’euros d’obligations senior à taux fixe, d’une durée de sept ans. Les obligations, libellées en euros, porteront un coupon annuel de 3,625 %, ont été émises à 99,575 % du pair et offriront un rendement de 3,695 %. Elles devraient être notées A+ par S&P Global Ratings et A par Fitch Ratings. La clôture est prévue vers le 7 juillet 2026. Le produit net doit servir aux besoins généraux de l’entreprise, notamment au possible remboursement de 500 millions d’euros d’obligations à 1,750 % arrivant à échéance en décembre 2026. Une demande de cotation sur le Global Exchange Market d’Euronext Dublin sera déposée.",
+      "generatedSummary": "Great-West Lifeco a annoncé la fixation du prix d’une émission de 500 millions d’euros d’obligations senior à taux fixe, sa quatrième émission de dette sur le marché de l’euro. Les obligations, d’une maturité de sept ans, portent un coupon annuel de 3,625 % et ont été émises à 99,575 % du pair, pour un rendement de 3,695 %. Elles devraient être notées A+ par S&P Global Ratings et A par Fitch Ratings. La clôture est attendue vers le 7 juillet 2026. Le produit net servira aux besoins généraux de l’entreprise, y compris potentiellement au remboursement d’obligations en euros de 500 millions d’euros à 1,750 % arrivant à échéance en décembre 2026. Une demande de cotation sur le Global Exchange Market d’Euronext Dublin sera déposée.",
       "categories": [
         "capital_management"
       ],
@@ -20059,18 +20065,18 @@
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "La clôture de l’opération, les notations attendues et l’utilisation prévue du produit sont des éléments prospectifs."
+          "La clôture de l’opération, les notations attendues et l’utilisation potentielle du produit pour rembourser les obligations arrivant à échéance en décembre 2026 sont des éléments prospectifs."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:45.800642Z",
+          "executedAt": "2026-08-29T15:07:25.222523Z",
           "taskId": "summarize_news_gwo-official-news_64d362dbc38b",
-          "sourceFingerprint": "sha256:0c0d244d62e3b5699aa83364afea0521784c0be4e835fc49bc7023ee4c16d300",
+          "sourceFingerprint": "sha256:2e2400e2897f614551fd4f05523fd50ef83282b5ca979992c25b603f1fa572b4",
           "confidence": 0.99,
           "warnings": [
-            "La clôture de l’opération, les notations attendues et l’utilisation prévue du produit sont des éléments prospectifs."
+            "La clôture de l’opération, les notations attendues et l’utilisation potentielle du produit pour rembourser les obligations arrivant à échéance en décembre 2026 sont des éléments prospectifs."
           ]
         }
       }
@@ -20088,12 +20094,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:46.043320Z",
-        "documentHash": "sha256:64c774e4435459c86f115b6642239f612dd4a1a0dd1c560a4d661ae153347d03"
+        "fetchedAt": "2026-08-29T15:07:25.424373Z",
+        "documentHash": "sha256:3b24761ab5467fb7fb2cea8913c4d977efd1252a6d77cc055cdc1f1386bb72e9"
       },
       "title": "Great West subsidiary Empower to acquire the retirement plan and benefits administration business of Milliman, Inc.",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (Great West or the Company) subsidiary Empower today announced that it has entered into a definitive agreement with Milliman,...",
-      "generatedSummary": "Great-West Lifeco (GWO) a annoncé que sa filiale Empower a conclu une entente définitive pour acquérir auprès de Milliman, Inc. son activité d’administration de régimes de retraite et d’avantages sociaux, sous réserve des autorisations réglementaires et des conditions de clôture usuelles. La contrepartie totale est de 340 M$ US, dont 244 M$ US payables à la clôture et le solde sur cinq ans, financée par les liquidités existantes. L’activité acquise administre des régimes à cotisations définies, à prestations définies et de santé et bien-être; elle compte environ 130 G$ US d’actifs clients et 1,5 million de participants, et a généré environ 120 M$ US de revenus en 2025. La clôture est attendue au second semestre de 2026. Great West prévoit environ 20 M$ US de synergies de coûts sur trois ans et environ 50 M$ US de coûts totaux d’intégration. La société indique que l’opération devrait être relutive pour le bénéfice de base dès la première année et générer un TRI pleinement synergisé dans le milieu de l’adolescence; ces éléments sont des déclarations prospectives.",
+      "generatedSummary": "Great-West Lifeco (GWO) a annoncé que sa filiale Empower a conclu un accord définitif pour acquérir auprès de Milliman, Inc. son activité d’administration de régimes de retraite et d’avantages sociaux, sous réserve des approbations réglementaires et des conditions habituelles. La contrepartie totale est de 340 M$ US, financée par les liquidités existantes d’Empower : 244 M$ US à la clôture et le solde sur cinq ans. L’activité acquise administrait environ 130 G$ US d’actifs clients pour 1,5 million de participants et a généré environ 120 M$ US de revenus en 2025. La clôture est attendue au second semestre de 2026. Great West prévoit environ 20 M$ US de synergies de coûts dans les trois ans et environ 50 M$ US de coûts d’intégration. La société indique que l’opération devrait être relutive pour le bénéfice de base dès la première année et générer un TRI pleinement synergisé dans le milieu de l’adolescence; ces éléments sont des déclarations prospectives.",
       "categories": [
         "merger_acquisition",
         "strategy",
@@ -20102,31 +20108,32 @@
       ],
       "importance": "high",
       "themes": [
-        "Acquisition aux États-Unis",
-        "Administration de régimes de retraite et d’avantages sociaux",
-        "Expansion des capacités en prestations définies et santé et bien-être",
-        "Synergies de coûts",
-        "Financement par liquidités existantes"
+        "Acquisition de l’activité d’administration des retraites et avantages sociaux de Milliman",
+        "Expansion des capacités d’Empower en régimes à cotisations définies, prestations définies et avantages sociaux",
+        "Contrepartie totale de 340 M$ US",
+        "Environ 130 G$ US d’actifs clients et 1,5 million de participants ajoutés à la clôture",
+        "Synergies de coûts attendues de 20 M$ US sur trois ans",
+        "Clôture prévue au second semestre de 2026, sous conditions"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "La réalisation, le calendrier et les effets financiers anticipés de l’opération sont soumis aux autorisations réglementaires, aux conditions de clôture usuelles et à des risques et incertitudes décrits par Great West.",
-          "Les actifs clients et le bénéfice de base sont des mesures non conformes aux PCGR, selon le communiqué."
+          "Les prévisions de relution du bénéfice de base, de TRI, de synergies, de coûts d’intégration et de date de clôture sont des informations prospectives soumises à des risques et incertitudes.",
+          "Les actifs clients et le bénéfice de base sont présentés comme des mesures non conformes aux PCGR."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:52.852488Z",
+          "executedAt": "2026-08-29T15:07:32.013274Z",
           "taskId": "summarize_news_gwo-official-news_ac1146bd1979",
-          "sourceFingerprint": "sha256:64c774e4435459c86f115b6642239f612dd4a1a0dd1c560a4d661ae153347d03",
+          "sourceFingerprint": "sha256:3b24761ab5467fb7fb2cea8913c4d977efd1252a6d77cc055cdc1f1386bb72e9",
           "confidence": 0.99,
           "warnings": [
-            "La réalisation, le calendrier et les effets financiers anticipés de l’opération sont soumis aux autorisations réglementaires, aux conditions de clôture usuelles et à des risques et incertitudes décrits par Great West.",
-            "Les actifs clients et le bénéfice de base sont des mesures non conformes aux PCGR, selon le communiqué."
+            "Les prévisions de relution du bénéfice de base, de TRI, de synergies, de coûts d’intégration et de date de clôture sont des informations prospectives soumises à des risques et incertitudes.",
+            "Les actifs clients et le bénéfice de base sont présentés comme des mesures non conformes aux PCGR."
           ]
         }
       }
@@ -20144,12 +20151,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:53.008877Z",
-        "documentHash": "sha256:c84b026fb1c66c5c64c73a5a6153c3cf8e671caead1c4b37a2a98cdff189cfb3"
+        "fetchedAt": "2026-08-29T15:07:32.124762Z",
+        "documentHash": "sha256:bbe05dfbe60b7517735341061161004b836c8d3b6d20d9f5a1ecc940a4b27498"
       },
       "title": "Great West completes offering of Series 24 Preferred Shares",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") announced today the closing of its previously announced offering of 8,000,000 5.70% Non-Cumulative...",
-      "generatedSummary": "Great-West Lifeco Inc. a finalisé son offre précédemment annoncée de 8 000 000 d’actions privilégiées de premier rang non cumulatives à 5,70 %, série 24, pour un produit brut de 200 millions de dollars, incluant l’exercice intégral de l’option des preneurs fermes. L’offre a été réalisée par un syndicat dirigé par BMO Marchés des capitaux, RBC Marchés des capitaux et Scotiabank. Les actions seront inscrites à la Bourse de Toronto sous le symbole GWO.PF.A.",
+      "generatedSummary": "Great-West Lifeco a finalisé son offre précédemment annoncée de 8 000 000 d’actions privilégiées de premier rang non cumulatives à 5,70 %, série 24. L’opération a généré un produit brut de 200 millions de dollars, incluant l’exercice intégral de l’option des preneurs fermes. Les actions seront inscrites à la Bourse de Toronto sous le symbole GWO.PF.A.",
       "categories": [
         "capital_management"
       ],
@@ -20168,9 +20175,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:56.356286Z",
+          "executedAt": "2026-08-29T15:07:34.456737Z",
           "taskId": "summarize_news_gwo-official-news_5bf7dd91efff",
-          "sourceFingerprint": "sha256:c84b026fb1c66c5c64c73a5a6153c3cf8e671caead1c4b37a2a98cdff189cfb3",
+          "sourceFingerprint": "sha256:bbe05dfbe60b7517735341061161004b836c8d3b6d20d9f5a1ecc940a4b27498",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20189,24 +20196,24 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/power-corporation-great-west-and-igm-financial-announce-joint-investment-in-sagard-ai-fund-897072555.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:56.509245Z",
-        "documentHash": "sha256:8f8ac7a8bfe83ddd3b37da13060e3fd36e7e9c1b91cefece0f786493f691c2e1"
+        "fetchedAt": "2026-08-29T15:07:34.549018Z",
+        "documentHash": "sha256:4ae43238abe169aa445e04ec31a2862488b4039567c5c3997624a7efb0378c4a"
       },
       "title": "Power Corporation, Great West and IGM Financial Announce Joint Investment in Sagard AI Fund",
       "originalSummary": "/CNW/ - Power Corporation of Canada (\"Power Corporation\" or \"Power\"), Great‑West Lifeco Inc. (\"Great West\") and IGM Financial Inc. (\"IGM\"), today announced a...",
-      "generatedSummary": "Power Corporation, Great-West Lifeco et IGM Financial ont annoncé un investissement conjoint total de 150 millions de dollars américains dans le Sagard AI Fund LP, un véhicule fermé nouvellement créé. Le fonds vise à investir dans des entreprises d’intelligence artificielle et à favoriser l’adoption de l’IA dans les services financiers et d’autres secteurs. Selon les sociétés, l’initiative doit notamment fournir des informations sur le marché mondial de l’IA, faciliter des partenariats et projets pilotes, offrir des possibilités d’investissements additionnels et soutenir l’intégration responsable de capacités d’IA dans leurs activités.",
+      "generatedSummary": "Power Corporation, Great-West Lifeco et IGM Financial annoncent un investissement conjoint total de 150 millions de dollars américains dans le nouveau fonds fermé Sagard AI Fund LP. Le fonds vise les entreprises d’intelligence artificielle et doit notamment fournir au groupe Power un accès à l’information de marché, des possibilités de partenariats et de projets pilotes, ainsi que des opportunités d’investissement additionnelles. Les sociétés indiquent que cette démarche s’inscrit dans leur approche visant à intégrer l’IA dans leurs activités, notamment dans l’assurance, la gestion de patrimoine, la gestion d’actifs et les services de retraite.",
       "categories": [
+        "strategy",
         "artificial_intelligence",
-        "capital_management",
-        "strategy"
+        "capital_management"
       ],
       "importance": "medium",
       "themes": [
-        "Investissement conjoint de 150 M$ US",
-        "Fonds Sagard AI Fund LP",
-        "Adoption de l’IA dans les services financiers",
-        "Partenariats commerciaux et projets pilotes",
-        "Efficacité opérationnelle et expérience client et conseiller"
+        "Investissement conjoint",
+        "Fonds Sagard AI",
+        "Intelligence artificielle",
+        "Partenariats et projets pilotes",
+        "Services financiers"
       ],
       "quality": {
         "status": "validated",
@@ -20217,9 +20224,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:14:00.760281Z",
+          "executedAt": "2026-08-29T15:07:37.812049Z",
           "taskId": "summarize_news_gwo-official-news_509f1ffa26c1",
-          "sourceFingerprint": "sha256:8f8ac7a8bfe83ddd3b37da13060e3fd36e7e9c1b91cefece0f786493f691c2e1",
+          "sourceFingerprint": "sha256:4ae43238abe169aa445e04ec31a2862488b4039567c5c3997624a7efb0378c4a",
           "confidence": 0.98,
           "warnings": []
         }
@@ -20677,12 +20684,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:21.758890Z",
-        "documentHash": "sha256:7f48a9020a64f8ceee57f43a43cc2bd7ab8cfa7a27e80bcdd0d2ddc14233f5dd"
+        "fetchedAt": "2026-08-29T15:07:09.083180Z",
+        "documentHash": "sha256:2fa8d9319244a1c5e61541db44fa9e74e2ba1fd6ced56340e0e17c4bd1f2f147"
       },
       "title": "Great West reports Q2 2026 results with double-digit earnings growth",
       "originalSummary": "TSX:GWO Great-West Lifeco Inc.'s Quarterly Report to Shareholders for the second quarter of 2026, including its Management's Discussion and Analysis (MD&A) and...",
-      "generatedSummary": "Great-West Lifeco a publié ses résultats du T2 2026. Le bénéfice de base a atteint 1,270 Md$ CA, en hausse de 11 % sur un an, et le bénéfice net attribuable aux actionnaires ordinaires s’est établi à 1,039 Md$ CA, en hausse de 16 %. Le BPA de base a progressé de 15 % à 1,42 $ et le BPA net de 20 % à 1,16 $. Le rendement des capitaux propres de base a été de 19,3 %, atteignant l’objectif à moyen terme de plus de 19 %, tandis que le ratio LICAT est resté à 128 %. La société a racheté 4,4 millions d’actions ordinaires pour 336 M$ CA au trimestre et a porté la limite de son programme de rachat à 40 millions d’actions. Empower a annoncé l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman pour 340 M$ US, sous réserve des conditions de clôture et des approbations réglementaires. Great-West a également déclaré un dividende trimestriel de 0,67 $ par action ordinaire, payable le 29 septembre 2026.",
+      "generatedSummary": "Great-West Lifeco a publié ses résultats du T2 2026. Le bénéfice de base a atteint 1,270 Md$ CA, en hausse de 11 % sur un an, et le bénéfice net attribuable aux actionnaires ordinaires 1,039 Md$ CA, en hausse de 16 %. Le BPA de base a progressé de 15 % à 1,42 $ et le BPA net de 20 % à 1,16 $. Le rendement des capitaux propres de base s’est établi à 19,3 %, atteignant l’objectif à moyen terme de plus de 19 % pour un deuxième trimestre consécutif. Le ratio LICAT était de 128 % et la trésorerie de la holding de 2,5 Md$ CA au 30 juin 2026. La société a racheté 4,4 millions d’actions ordinaires pour 336 M$ CA au T2 et a relevé de 20 millions à 40 millions le nombre maximal d’actions pouvant être rachetées dans le cadre de son offre publique de rachat dans le cours normal des activités. Empower a annoncé l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman pour 340 M$ US, sous réserve des conditions de clôture et des approbations réglementaires, avec une clôture attendue au second semestre 2026. Le conseil a approuvé un dividende trimestriel de 0,67 $ par action ordinaire, payable le 29 septembre 2026 aux actionnaires inscrits le 1er septembre 2026.",
       "categories": [
         "financial_results",
         "capital_management",
@@ -20691,30 +20698,31 @@
       "importance": "high",
       "themes": [
         "Résultats du deuxième trimestre 2026",
-        "Croissance du bénéfice et du bénéfice par action",
+        "Croissance du bénéfice et du BPA",
+        "Rentabilité et capitalisation",
         "Rachats d’actions et dividende",
         "Acquisition de l’activité de Milliman par Empower",
-        "Capitalisation et ratio LICAT"
+        "Retraite et gestion de patrimoine aux États-Unis"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base, les actifs clients et certains ratios sont des mesures ou ratios non conformes aux PCGR/IFRS, selon la société.",
-          "Les effets attendus de l’acquisition de Milliman, notamment l’accrétion au bénéfice, le TRI, les synergies et la date de clôture au second semestre 2026, sont des déclarations prospectives."
+          "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base, les actifs clients et certains autres indicateurs cités sont des mesures ou ratios non conformes aux PCGR, selon la société.",
+          "Les éléments relatifs à l’acquisition de Milliman, dont la clôture, les synergies, les coûts d’intégration, l’effet relutif et le TRI attendu, sont des informations prospectives."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:28.654655Z",
+          "executedAt": "2026-08-29T15:07:16.127966Z",
           "taskId": "summarize_news_gwo-official-news_8e3e71da6266",
-          "sourceFingerprint": "sha256:7f48a9020a64f8ceee57f43a43cc2bd7ab8cfa7a27e80bcdd0d2ddc14233f5dd",
+          "sourceFingerprint": "sha256:2fa8d9319244a1c5e61541db44fa9e74e2ba1fd6ced56340e0e17c4bd1f2f147",
           "confidence": 0.99,
           "warnings": [
-            "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base, les actifs clients et certains ratios sont des mesures ou ratios non conformes aux PCGR/IFRS, selon la société.",
-            "Les effets attendus de l’acquisition de Milliman, notamment l’accrétion au bénéfice, le TRI, les synergies et la date de clôture au second semestre 2026, sont des déclarations prospectives."
+            "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base, les actifs clients et certains autres indicateurs cités sont des mesures ou ratios non conformes aux PCGR, selon la société.",
+            "Les éléments relatifs à l’acquisition de Milliman, dont la clôture, les synergies, les coûts d’intégration, l’effet relutif et le TRI attendu, sont des informations prospectives."
           ]
         }
       }
@@ -20732,22 +20740,22 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-08-28T21:13:18.602562Z",
-        "documentHash": "sha256:ff8e2390cf3eff6adc55c5f5169711f009dd738db49fedf8034821914967b87b"
+        "fetchedAt": "2026-08-29T15:07:06.247829Z",
+        "documentHash": "sha256:e74645f37e67fe91ea83cbd184caf3f6a388aceaa02502b9e7611de69d8c443c"
       },
       "title": "Great West President & Chief Executive Officer David Harney to join Virtual Fireside Chat with Jefferies",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") today announced that David Harney, President and Chief Executive Officer, Great West, will join...",
-      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion virtuelle avec l’analyste de Jefferies John Aiken le 30 juillet 2026 à 11 h HE. La discussion portera sur la stratégie de Great West et ses résultats financiers du premier semestre de 2026. Une rediffusion sera accessible après l’événement sur le site de Great West.",
+      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion virtuelle avec l’analyste John Aiken de Jefferies le 30 juillet 2026 à 11 h (HE). Les échanges porteront sur la stratégie de Great West et ses résultats financiers du premier semestre 2026. Un lien vers la rediffusion sera publié après l’événement sur le site de Great West. Au 30 juin 2026, les actifs totaux des clients de Great West s’élevaient à 3,7 billions de dollars.",
       "categories": [
         "strategy",
         "financial_results"
       ],
       "importance": "low",
       "themes": [
-        "Discussion investisseurs",
+        "Discussion virtuelle avec Jefferies",
         "Stratégie",
         "Résultats du premier semestre 2026",
-        "Webdiffusion"
+        "Relations investisseurs"
       ],
       "quality": {
         "status": "validated",
@@ -20758,9 +20766,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:21.485122Z",
+          "executedAt": "2026-08-29T15:07:08.861280Z",
           "taskId": "summarize_news_gwo-official-news_859ccc25bac5",
-          "sourceFingerprint": "sha256:ff8e2390cf3eff6adc55c5f5169711f009dd738db49fedf8034821914967b87b",
+          "sourceFingerprint": "sha256:e74645f37e67fe91ea83cbd184caf3f6a388aceaa02502b9e7611de69d8c443c",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20779,12 +20787,12 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-appoints-katherine-lee-to-board-of-directors-823810167.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:58.357327Z",
-        "documentHash": "sha256:7b4ffb1aa280995e2c9650cb8ed15a9b1828cc35c416506bb1cb23a588d64deb"
+        "fetchedAt": "2026-08-29T15:06:57.783742Z",
+        "documentHash": "sha256:154275bb1c5b570507082218fa0c390f0a3b0d61e39727f3f5bb64adc54f7250"
       },
       "title": "Sun Life Appoints Katherine Lee to Board of Directors",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) is pleased to announce the appointment of Katherine Lee to the Sun Life Board of Directors, effective...",
-      "generatedSummary": "Sun Life Financial Inc. a nommé Katherine Lee à son conseil d’administration, avec prise d’effet le 31 juillet 2026. Mme Lee possède une expérience de plus de 20 ans dans des fonctions de direction et d’administratrice dans les services financiers, les investissements et l’immobilier. Elle a notamment été présidente et chef de la direction de GE Capital Canada de 2010 à 2015, ainsi que chef de la direction de GE Capital Real Estate Canada de 2002 à 2010.",
+      "generatedSummary": "Sun Life Financial Inc. a nommé Katherine Lee à son conseil d’administration, avec prise d’effet le 31 juillet 2026. Katherine Lee a notamment occupé les fonctions de présidente et chef de la direction de GE Capital Canada de 2010 à 2015 et de chef de la direction de GE Capital Real Estate Canada de 2002 à 2010. Elle apporte également plus de 20 ans d’expérience au sein de conseils d’administration, notamment chez BCE, Colliers International Group, l’Office d’investissement des régimes de pensions du secteur public et Chorus Aviation.",
       "categories": [
         "leadership"
       ],
@@ -20792,7 +20800,7 @@
       "themes": [
         "Nomination au conseil d’administration",
         "Gouvernance",
-        "Expérience dans les services financiers et l’immobilier"
+        "Expérience en services financiers et immobilier"
       ],
       "quality": {
         "status": "validated",
@@ -20803,9 +20811,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:13:01.876449Z",
+          "executedAt": "2026-08-29T15:07:00.974600Z",
           "taskId": "summarize_news_slf-official-news_239200d158c4",
-          "sourceFingerprint": "sha256:7b4ffb1aa280995e2c9650cb8ed15a9b1828cc35c416506bb1cb23a588d64deb",
+          "sourceFingerprint": "sha256:154275bb1c5b570507082218fa0c390f0a3b0d61e39727f3f5bb64adc54f7250",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20824,12 +20832,12 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-08-28T21:11:32.364719Z",
-        "documentHash": "sha256:057d1aa061712b20a5183780110b3864cc1cbac873ee213dcdb170c3ac2da354"
+        "fetchedAt": "2026-08-29T15:05:37.998904Z",
+        "documentHash": "sha256:fd198a65f3e8f5114d05abcba794365db6ddc37c5d555cc630aa2a0a4fbf1392"
       },
       "title": "Manulife Reports Second Quarter 2026 Results",
       "originalSummary": "/CNW/ -- Manulife Financial Corporation (\"Manulife\" or the \"Company\") reported its second quarter results for the period ended June 30, 2026, delivering...",
-      "generatedSummary": "Manuvie a publié ses résultats du deuxième trimestre 2026, clos le 30 juin 2026. Le résultat net attribué aux actionnaires s’est établi à 2,1 milliards de dollars canadiens, contre 1,8 milliard un an plus tôt (+17 % à taux de change constant), tandis que le résultat de base a atteint 1,9 milliard (+12 %). Le BPA de base a progressé de 16 % à 1,09 $ et le BPA de 22 % à 1,20 $. Le ROE de base était de 16,3 %, le ratio LICAT de 136 %, et les ventes APE, la CSM des nouvelles affaires et la valeur des nouvelles affaires ont augmenté respectivement de 21 %, 16 % et 10 %. Global WAM a enregistré 0,4 milliard de dollars d’entrées nettes, contre 0,9 milliard au deuxième trimestre 2025. Au premier semestre, Manuvie a retourné 2,6 milliards de dollars aux actionnaires sous forme de dividendes et de rachats d’actions. La société a aussi indiqué qu’une transaction de réassurance de soins de longue durée annoncée ce jour-là devrait être conclue au quatrième trimestre 2026, sous réserve des approbations réglementaires.",
+      "generatedSummary": "Manulife a publié ses résultats du deuxième trimestre 2026, clos le 30 juin 2026. Le résultat net attribué aux actionnaires s’est élevé à 2,1 milliards de dollars canadiens, contre 1,8 milliard un an plus tôt, tandis que les bénéfices de base ont atteint 1,9 milliard, en hausse de 12 % à taux de change constant. Le BPA de base a progressé de 16 % à 1,09 $ et le BPA de 22 % à 1,20 $. Le rendement des capitaux propres de base s’est établi à 16,3 % et le ratio LICAT à 136 %. Les ventes APE, la CSM des nouvelles affaires et la valeur des nouvelles affaires ont augmenté respectivement de 21 %, 16 % et 10 %. Global WAM a enregistré 0,4 milliard de dollars de flux nets positifs, contre 0,9 milliard au T2 2025. Manulife indique avoir retourné 2,6 milliards de dollars aux actionnaires sous forme de dividendes et de rachats d’actions au premier semestre 2026. La société a aussi annoncé qu’une transaction de réassurance de soins de longue durée, annoncée le même jour, devrait être finalisée au T4 2026 sous réserve des approbations réglementaires.",
       "categories": [
         "financial_results",
         "capital_management",
@@ -20845,13 +20853,13 @@
       "importance": "high",
       "themes": [
         "Résultats du deuxième trimestre 2026",
-        "Croissance du résultat de base et du BPA",
-        "Croissance des nouvelles affaires d’assurance",
-        "Flux nets de Global WAM",
+        "Croissance des bénéfices de base et du BPA",
+        "Nouvelles affaires d’assurance",
+        "Flux et marges de Global WAM",
         "Retour de capital aux actionnaires",
-        "Réassurance de soins de longue durée",
         "Innovation produits et distribution",
-        "Déploiement de l’intelligence artificielle"
+        "Intégration de l’intelligence artificielle",
+        "Réassurance de soins de longue durée"
       ],
       "quality": {
         "status": "validated",
@@ -20862,9 +20870,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:11:40.356391Z",
+          "executedAt": "2026-08-29T15:05:45.458482Z",
           "taskId": "summarize_news_mfc-official-news_2f3c1825af5b",
-          "sourceFingerprint": "sha256:057d1aa061712b20a5183780110b3864cc1cbac873ee213dcdb170c3ac2da354",
+          "sourceFingerprint": "sha256:fd198a65f3e8f5114d05abcba794365db6ddc37c5d555cc630aa2a0a4fbf1392",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20883,19 +20891,20 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-824250016.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-08-28T21:11:46.382507Z",
-        "documentHash": "sha256:af07cf202ff0f7d86e7d338e10b419ef90ee3e719b1ccecfb65e80bebc638df3"
+        "fetchedAt": "2026-08-29T15:05:45.565044Z",
+        "documentHash": "sha256:a01aa9851d027cb4c40e719533794f9bd3c6c2492d9d9516356174167f78ef95"
       },
       "title": "Manulife declares preferred share dividend",
       "originalSummary": "/CNW/ -- Manulife's Board of Directors today announced quarterly shareholders' dividends on the following non-cumulative preferred shares of Manulife Financial...",
-      "generatedSummary": "Manulife Financial Corporation a annoncé des dividendes trimestriels sur dix séries d’actions privilégiées non cumulatives. Les dividendes, allant de 0,28125 $ à 0,396875 $ par action selon la série, seront versés à compter du 19 septembre 2026 aux actionnaires inscrits à la clôture du 21 août 2026.",
+      "generatedSummary": "Le conseil d’administration de Manulife Financial Corporation a déclaré des dividendes trimestriels sur plusieurs séries d’actions privilégiées non cumulatives. Les dividendes seront payables à compter du 19 septembre 2026 aux actionnaires inscrits à la clôture des marchés le 21 août 2026. Les montants par action annoncés vont de 0,28125 $ CA (actions de catégorie A, série 3) à 0,396875 $ CA (actions de catégorie 1, série 13).",
       "categories": [
         "capital_management"
       ],
       "importance": "low",
       "themes": [
-        "dividendes sur actions privilégiées",
-        "retour aux actionnaires"
+        "Dividendes sur actions privilégiées",
+        "Rémunération des actionnaires",
+        "Manulife"
       ],
       "quality": {
         "status": "validated",
@@ -20906,9 +20915,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:11:50.853535Z",
+          "executedAt": "2026-08-29T15:05:49.288784Z",
           "taskId": "summarize_news_mfc-official-news_4807366f7dd3",
-          "sourceFingerprint": "sha256:af07cf202ff0f7d86e7d338e10b419ef90ee3e719b1ccecfb65e80bebc638df3",
+          "sourceFingerprint": "sha256:a01aa9851d027cb4c40e719533794f9bd3c6c2492d9d9516356174167f78ef95",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20927,12 +20936,12 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-838830529.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-08-28T21:11:51.057402Z",
-        "documentHash": "sha256:50138b190ff50bb08fb7252304a1be207d23cd53d696d4a4d075c2f8b5bddca9"
+        "fetchedAt": "2026-08-29T15:05:49.467045Z",
+        "documentHash": "sha256:7711c1585516736d411ed7216bfa40e37dae7b613b8801540b28c74dcfba0166"
       },
       "title": "Manulife declares common share dividend",
       "originalSummary": "/CNW/ -- Manulife's Board of Directors today announced a quarterly common shareholders' dividend of $0.485 per share on the common shares of Manulife, payable...",
-      "generatedSummary": "Manuvie a annoncé un dividende trimestriel de 0,485 $ CA par action ordinaire. Il sera payable à compter du 21 septembre 2026 aux actionnaires inscrits à la clôture des marchés le 21 août 2026. Dans le cadre de ses régimes canadien et américain de réinvestissement des dividendes et d’achat d’actions, la société achètera des actions ordinaires sur le marché libre pour les réinvestissements de dividendes et les achats facultatifs en espèces. Le prix d’achat reposera sur le coût moyen réel d’acquisition, sans rabais applicable.",
+      "generatedSummary": "Manulife Financial Corporation a annoncé un dividende trimestriel de 0,485 $ par action ordinaire. Il sera payable à compter du 21 septembre 2026 aux actionnaires inscrits à la clôture des marchés le 21 août 2026. Dans le cadre de ses régimes canadien et américain de réinvestissement des dividendes et d’achat d’actions, Manulife achètera des actions ordinaires sur le marché libre pour les réinvestissements de dividendes et les achats facultatifs en espèces. Le prix d’achat sera fondé sur le coût moyen réel d’acquisition, sans escompte applicable.",
       "categories": [
         "capital_management"
       ],
@@ -20952,9 +20961,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:11:55.166950Z",
+          "executedAt": "2026-08-29T15:05:52.836346Z",
           "taskId": "summarize_news_mfc-official-news_5e3a95e0c4fd",
-          "sourceFingerprint": "sha256:50138b190ff50bb08fb7252304a1be207d23cd53d696d4a4d075c2f8b5bddca9",
+          "sourceFingerprint": "sha256:7711c1585516736d411ed7216bfa40e37dae7b613b8801540b28c74dcfba0166",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20973,12 +20982,12 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-announces-3-2-billion-long-term-care-reinsurance-transaction-with-munich-re-843063869.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-08-28T21:11:55.287813Z",
-        "documentHash": "sha256:298460fb2a02b6046b4d44d5d99cec5971d8178cf00855e9cfc5cf84f48a21a8"
+        "fetchedAt": "2026-08-29T15:05:52.928029Z",
+        "documentHash": "sha256:7b6828e3e41f93a1e5dc14742b84b917b28be289f96383bf1c1487006b3b78b6"
       },
       "title": "Manulife announces $3.2 billion long-term care reinsurance transaction with Munich Re",
       "originalSummary": "/CNW/ -- Manulife Financial Corporation (\"Manulife\" or the \"Company\") announced today that it has agreed to reinsure biometric risk1 on a block of long-term...",
-      "generatedSummary": "Manuvie a conclu une entente pour réassurer auprès de Munich Re Life US le risque biométrique d’un bloc autonome de polices de soins de longue durée (LTC) assorti de 3,2 milliards de dollars canadiens de réserves IFRS, sur une quote-part de 80 %. La transaction prévoit un transfert intégral du risque biométrique, sans transfert d’actifs, et devrait être finalisée au quatrième trimestre de 2026 sous réserve des approbations réglementaires. À la clôture, les trois opérations de réassurance LTC de Manuvie devraient avoir réduit cumulativement sa sensibilité à la morbidité LTC de 24 %. La transaction est décrite comme largement neutre en capital; son incidence annuelle sur les bénéfices de base et le résultat net attribué aux actionnaires est estimée à environ 30 millions de dollars canadiens la première année, puis en diminution. Manuvie indique également une cession négative modeste de 5 % et une tarification similaire à celle des transactions précédentes.",
+      "generatedSummary": "Manulife a conclu une entente pour réassurer auprès de Munich Re Life US le risque biométrique d’un bloc autonome de polices d’assurance soins de longue durée (LTC) représentant 3,2 milliards de dollars canadiens de réserves IFRS, sur une quote-part de 80 %. La transaction, sans transfert d’actifs, prévoit un transfert complet du risque biométrique et devrait être conclue au quatrième trimestre de 2026, sous réserve des approbations réglementaires. Après clôture et en incluant les opérations antérieures, Manulife estime avoir réduit cumulativement sa sensibilité à la morbidité LTC de 24 %. La société indique une tarification similaire à celle des transactions précédentes, avec une cession négative modeste de 5 %, un effet largement neutre sur le capital et un impact annuel non significatif d’environ 30 millions de dollars canadiens sur les bénéfices de base et le résultat net attribué aux actionnaires la première année, décroissant ensuite.",
       "categories": [
         "risk",
         "insurance",
@@ -20986,10 +20995,10 @@
       ],
       "importance": "medium",
       "themes": [
-        "Réassurance des soins de longue durée",
+        "Réassurance",
+        "Assurance soins de longue durée",
         "Transfert du risque biométrique",
         "Réduction de la sensibilité à la morbidité",
-        "Impact sur le capital et les bénéfices",
         "Approbations réglementaires"
       ],
       "quality": {
@@ -20997,18 +21006,20 @@
         "extractionMethod": "openai",
         "confidence": 0.98,
         "warnings": [
-          "La clôture attendue au quatrième trimestre de 2026, les incidences financières et la réduction cumulative de la sensibilité sont des déclarations prospectives soumises notamment aux approbations réglementaires et aux conditions de clôture."
+          "La clôture est attendue au quatrième trimestre de 2026 et reste soumise aux approbations réglementaires et aux conditions de clôture habituelles.",
+          "Les incidences financières et de capital annoncées sont des estimations prospectives."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:00.697456Z",
+          "executedAt": "2026-08-29T15:05:57.608596Z",
           "taskId": "summarize_news_mfc-official-news_0bcfee95f4a5",
-          "sourceFingerprint": "sha256:298460fb2a02b6046b4d44d5d99cec5971d8178cf00855e9cfc5cf84f48a21a8",
+          "sourceFingerprint": "sha256:7b6828e3e41f93a1e5dc14742b84b917b28be289f96383bf1c1487006b3b78b6",
           "confidence": 0.98,
           "warnings": [
-            "La clôture attendue au quatrième trimestre de 2026, les incidences financières et la réduction cumulative de la sensibilité sont des déclarations prospectives soumises notamment aux approbations réglementaires et aux conditions de clôture."
+            "La clôture est attendue au quatrième trimestre de 2026 et reste soumise aux approbations réglementaires et aux conditions de clôture habituelles.",
+            "Les incidences financières et de capital annoncées sont des estimations prospectives."
           ]
         }
       }
@@ -21120,12 +21131,12 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-announces-chair-succession-878056303.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:42.428797Z",
-        "documentHash": "sha256:5868f61fa8ed5dcaf931918c6ee9909dfa092226c1f6a5cc7f8a5a2bbc3b4965"
+        "fetchedAt": "2026-08-29T15:06:40.501217Z",
+        "documentHash": "sha256:5fe1003fd8d6d5eaa965fd7c675eb342e13cc8aa00b31a050727a1b7993879ea"
       },
       "title": "Sun Life announces Chair succession",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) announced today that Scott Powers will retire as chair and from its Board of Directors upon completing...",
-      "generatedSummary": "Sun Life Financial Inc. a annoncé que Scott Powers prendra sa retraite de la présidence et du conseil d’administration après l’assemblée annuelle du 5 mai 2027, à l’issue de son mandat complet. Sous réserve de sa réélection lors de cette assemblée, Joseph Natale lui succédera comme président du conseil. Administrateur de Sun Life depuis février 2023, Joseph Natale préside actuellement le comité des ressources de gestion et siège au comité des risques. Au 30 juin 2026, Sun Life déclarait 1,70 billion de dollars canadiens d’actifs sous gestion totaux.",
+      "generatedSummary": "Sun Life Financial a annoncé que Scott Powers prendra sa retraite de son poste de président du conseil d’administration et quittera le conseil après l’assemblée annuelle du 5 mai 2027, à l’issue de son mandat complet. Sous réserve de sa réélection lors de cette assemblée, Joseph Natale lui succédera comme président du conseil. Administrateur de Sun Life depuis février 2023, Joseph Natale préside actuellement le comité des ressources de gestion et siège au comité des risques. Au 30 juin 2026, Sun Life déclarait 1,70 billion de dollars canadiens d’actifs sous gestion totaux.",
       "categories": [
         "leadership"
       ],
@@ -21144,9 +21155,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:46.025489Z",
+          "executedAt": "2026-08-29T15:06:44.221808Z",
           "taskId": "summarize_news_slf-official-news_765429ce1f66",
-          "sourceFingerprint": "sha256:5868f61fa8ed5dcaf931918c6ee9909dfa092226c1f6a5cc7f8a5a2bbc3b4965",
+          "sourceFingerprint": "sha256:5fe1003fd8d6d5eaa965fd7c675eb342e13cc8aa00b31a050727a1b7993879ea",
           "confidence": 0.99,
           "warnings": []
         }
@@ -21165,21 +21176,21 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-declares-dividends-on-common-and-preferred-shares-payable-in-q3-2026-867702360.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:46.126273Z",
-        "documentHash": "sha256:8263a2115d53e83976210ca366a8753cba3097e6da641996475d265626bcccf7"
+        "fetchedAt": "2026-08-29T15:06:44.312691Z",
+        "documentHash": "sha256:46599a3ad5784d7b5fcb17eb5bf89de1580e7e7bfec3aea7f45045646698ed73"
       },
       "title": "Sun Life declares dividends on Common and Preferred Shares payable in Q3 2026",
       "originalSummary": "/CNW/ -- The Board of Directors (the \"Board\") of Sun Life Financial Inc. (the \"Company\") (TSX: SLF) (NYSE: SLF) today announced that a dividend of $0.96 per...",
-      "generatedSummary": "Sun Life Financial Inc. a déclaré un dividende trimestriel de 0,96 $ CA par action ordinaire, payable le 29 septembre 2026 aux actionnaires inscrits à la clôture du 26 août 2026. Ce montant est identique à celui du trimestre précédent. La société a également déclaré des dividendes sur ses actions privilégiées de catégorie A non cumulatives des séries 3, 4, 5, 8R, 9QR, 10R et 11QR, également payables le 29 septembre 2026 aux actionnaires inscrits le 26 août 2026. Les dividendes sont désignés comme des dividendes déterminés aux fins de la Loi de l’impôt sur le revenu du Canada.",
+      "generatedSummary": "Sun Life Financial Inc. a déclaré un dividende trimestriel de 0,96 $ CA par action ordinaire, payable le 29 septembre 2026 aux actionnaires inscrits à la clôture du 26 août 2026. Ce montant est identique à celui du trimestre précédent. La société a également déclaré des dividendes sur ses actions privilégiées de catégorie A non cumulatives des séries 3, 4, 5, 8R, 9QR, 10R et 11QR, également payables le 29 septembre 2026 aux actionnaires inscrits le 26 août 2026. Les dividendes sont désignés comme dividendes déterminés aux fins de la Loi de l’impôt sur le revenu du Canada.",
       "categories": [
         "capital_management"
       ],
-      "importance": "medium",
+      "importance": "low",
       "themes": [
-        "dividende trimestriel",
-        "actions ordinaires",
-        "actions privilégiées",
-        "politique de distribution aux actionnaires"
+        "Dividendes",
+        "Actions ordinaires",
+        "Actions privilégiées",
+        "Politique de distribution aux actionnaires"
       ],
       "quality": {
         "status": "validated",
@@ -21190,9 +21201,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:49.982458Z",
+          "executedAt": "2026-08-29T15:06:47.460438Z",
           "taskId": "summarize_news_slf-official-news_bc4676ece0b4",
-          "sourceFingerprint": "sha256:8263a2115d53e83976210ca366a8753cba3097e6da641996475d265626bcccf7",
+          "sourceFingerprint": "sha256:46599a3ad5784d7b5fcb17eb5bf89de1580e7e7bfec3aea7f45045646698ed73",
           "confidence": 0.99,
           "warnings": []
         }
@@ -21211,46 +21222,46 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:50.211052Z",
-        "documentHash": "sha256:018ff418f308702e80127c33ad0b6b4d07425acd28575be92e37b93593d02bb0"
+        "fetchedAt": "2026-08-29T15:06:47.658287Z",
+        "documentHash": "sha256:4af75cdb33f2de116d14eddf103d4813a9cdc9e4717794dfa62e33e708c0396e"
       },
       "title": "Sun Life Reports Second Quarter 2026 Results",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc.(1) (TSX: SLF) (NYSE: SLF) announced its results for the second quarter ended June 30, 2026. Underlying net income(2) of $1,123...",
-      "generatedSummary": "Sun Life Financial Inc. a publié ses résultats du deuxième trimestre clos le 30 juin 2026. Le résultat net sous-jacent s’est établi à 1,123 milliard de dollars, en hausse de 108 millions de dollars, soit 11 % sur un an, tandis que le résultat net déclaré attribuable aux actionnaires ordinaires a atteint 1,008 milliard, en hausse de 292 millions, soit 41 %. Le BPA sous-jacent a progressé de 13 % à 2,02 $ et le BPA déclaré de 44 % à 1,81 $. Le rendement des capitaux propres sous-jacent était de 19,1 % et le ratio LICAT de SLF Inc. de 145 %. Les actifs sous gestion ont atteint 1 696 milliards de dollars, en hausse de 10 % sur un an. La société a indiqué que la hausse du résultat sous-jacent reflétait notamment la croissance et une expérience d’assurance favorable au Canada, la croissance à Hong Kong et la progression des revenus de medical stop-loss aux États-Unis. Le 2 juillet 2026, Sun Life a finalisé l’acquisition de Bell Partners, qui opère sous BentallGreenOak. Sun Life a également fait état d’initiatives numériques et d’IA, incluant son adhésion fondatrice à l’AI Consortium et le lancement d’une plateforme propriétaire d’IA agentique pour les équipes d’architecture technologique.",
+      "generatedSummary": "Sun Life Financial Inc. a publié ses résultats du deuxième trimestre clos le 30 juin 2026. Le résultat net sous-jacent s’est établi à 1,123 Md$ CA, en hausse de 11 % sur un an, tandis que le résultat net déclaré attribuable aux actionnaires ordinaires a atteint 1,008 Md$ CA, en hausse de 41 %. Le bénéfice par action sous-jacent a progressé de 13 % à 2,02 $ CA et le BPA déclaré de 44 % à 1,81 $ CA. Le rendement des capitaux propres sous-jacent était de 19,1 % et le ratio LICAT de SLF Inc. de 145 %. Les actifs sous gestion ont atteint 1 696 Md$ CA, en hausse de 10 % sur un an. La société a indiqué que la hausse du résultat sous-jacent provenait notamment de la croissance et d’une expérience d’assurance favorable au Canada, de la croissance à Hong Kong et de la croissance des revenus de stop-loss médical aux États-Unis. Le 2 juillet 2026, Sun Life a finalisé l’acquisition de Bell Partners, qui opère sous BentallGreenOak. Sun Life a également mentionné son adhésion fondatrice à l’AI Consortium et le lancement d’une plateforme propriétaire d’IA agentique destinée aux équipes d’architecture technologique.",
       "categories": [
         "financial_results",
         "merger_acquisition",
-        "digital_transformation",
         "artificial_intelligence",
-        "wealth_management",
-        "insurance"
+        "wealth_management"
       ],
       "importance": "high",
       "themes": [
         "Résultats du T2 2026",
         "Croissance du résultat net sous-jacent",
         "Capital et ratio LICAT",
-        "Gestion d’actifs et flux nets",
+        "Actifs sous gestion",
         "Acquisition de Bell Partners",
-        "Initiatives numériques et IA"
+        "Intelligence artificielle"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Le résultat net sous-jacent, le BPA sous-jacent, le rendement des capitaux propres sous-jacent et les actifs sous gestion sont des mesures non conformes aux IFRS, telles que définies par Sun Life. Les résultats intermédiaires sont non audités."
+          "Le résultat net sous-jacent, le BPA sous-jacent, le ROE sous-jacent et les actifs sous gestion sont des mesures non conformes aux IFRS, telles que définies par la société.",
+          "Les résultats intermédiaires publiés sont non audités."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:58.235097Z",
+          "executedAt": "2026-08-29T15:06:57.642393Z",
           "taskId": "summarize_news_slf-official-news_7d30eacd77a3",
-          "sourceFingerprint": "sha256:018ff418f308702e80127c33ad0b6b4d07425acd28575be92e37b93593d02bb0",
+          "sourceFingerprint": "sha256:4af75cdb33f2de116d14eddf103d4813a9cdc9e4717794dfa62e33e708c0396e",
           "confidence": 0.99,
           "warnings": [
-            "Le résultat net sous-jacent, le BPA sous-jacent, le rendement des capitaux propres sous-jacent et les actifs sous gestion sont des mesures non conformes aux IFRS, telles que définies par Sun Life. Les résultats intermédiaires sont non audités."
+            "Le résultat net sous-jacent, le BPA sous-jacent, le ROE sous-jacent et les actifs sous gestion sont des mesures non conformes aux IFRS, telles que définies par la société.",
+            "Les résultats intermédiaires publiés sont non audités."
           ]
         }
       }
@@ -21314,16 +21325,16 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-announces-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-879158806.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:38.015926Z",
-        "documentHash": "sha256:9e7faf356197140385ecf7b6e2dc6d0cdcd5ec972891359fafc1cd79b2649df3"
+        "fetchedAt": "2026-08-29T15:06:36.718370Z",
+        "documentHash": "sha256:0d37562ddd696aeba92a91da9ab177674c229fa1e196f1f419b774afdb69aed8"
       },
       "title": "Sun Life Announces Conversion Privilege of Class A Non-Cumulative Rate Reset Preferred Shares Series 10R and Class A Non-Cumulative Floating Rate Preferred Shares Series 11QR",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) (\"Sun Life\") today announced that it does not intend to exercise its right to redeem its currently...",
-      "generatedSummary": "Sun Life Financial Inc. a annoncé qu’elle n’exercera pas son droit de racheter, le 30 septembre 2026, ses actions privilégiées de catégorie A à dividende non cumulatif et taux révisable, série 10R, ni ses actions privilégiées de catégorie A à dividende non cumulatif à taux variable, série 11QR. Sous réserve de certaines conditions, les détenteurs pourront convertir leurs actions d’une série en l’autre à raison d’une action pour une action à cette date. La date limite d’exercice pour les propriétaires véritables est fixée au 16 septembre 2026 à 17 h (HE). Les taux de dividende applicables aux séries 10R et 11QR pour leurs prochaines périodes respectives seront déterminés et annoncés le 31 août 2026.",
+      "generatedSummary": "Sun Life Financial Inc. a annoncé qu’elle n’exercera pas son droit de racheter, le 30 septembre 2026, ses actions privilégiées de catégorie A à taux révisable non cumulatif, série 10R, ni ses actions privilégiées de catégorie A à taux variable non cumulatif, série 11QR. Sous réserve de certaines conditions, les porteurs pourront convertir tout ou partie de leurs titres d’une série vers l’autre à raison d’une action pour une action le 30 septembre 2026. La date limite pour les propriétaires véritables souhaitant exercer ce droit est le 16 septembre 2026 à 17 h (HE). Les taux de dividende applicables aux séries 10R et 11QR pour les prochaines périodes seront déterminés et annoncés le 31 août 2026. Des conversions automatiques s’appliqueront si moins d’un million d’actions de l’une ou l’autre série demeurent en circulation après le 30 septembre 2026.",
       "categories": [
         "capital_management"
       ],
-      "importance": "medium",
+      "importance": "low",
       "themes": [
         "Actions privilégiées",
         "Droit de conversion",
@@ -21333,16 +21344,16 @@
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.98,
+        "confidence": 0.99,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:42.328400Z",
+          "executedAt": "2026-08-29T15:06:40.412868Z",
           "taskId": "summarize_news_slf-official-news_7c63e25e9ff9",
-          "sourceFingerprint": "sha256:9e7faf356197140385ecf7b6e2dc6d0cdcd5ec972891359fafc1cd79b2649df3",
-          "confidence": 0.98,
+          "sourceFingerprint": "sha256:0d37562ddd696aeba92a91da9ab177674c229fa1e196f1f419b774afdb69aed8",
+          "confidence": 0.99,
           "warnings": []
         }
       }
@@ -21410,12 +21421,12 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-and-wilton-re-announce-a-strategic-partnership-combining-depth-and-breadth-of-capabilities-across-life-and-annuity-reinsurance-and-asset-management-889167801.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:32.372393Z",
-        "documentHash": "sha256:1d9e887c7458a91cdbe2bc2b1f2b10d671aec2a2777b4e458e956c1baaed78f3"
+        "fetchedAt": "2026-08-29T15:06:31.726083Z",
+        "documentHash": "sha256:ac9b0a10813e1e396f6dfbb65f012d369fce25bc3fab9e9bef97090e5cd2760a"
       },
       "title": "Sun Life and Wilton Re announce a strategic partnership, combining depth and breadth of capabilities across life and annuity reinsurance and asset management",
       "originalSummary": "Wilton Re to form Windsor Life Re, a U.S. and Bermuda-domiciled affiliated reinsurer supported by long-term strategic capital commitments from Wilton Re and...",
-      "generatedSummary": "Sun Life et Wilton Re ont conclu un accord définitif pour établir un partenariat stratégique en réassurance vie et rentes ainsi qu’en gestion d’actifs. Wilton Re créera Windsor Life Re, un réassureur affilié domicilié aux États-Unis et aux Bermudes et géré par Wilton Re. SLC Management, gestionnaire d’actifs institutionnel de Sun Life, en sera le principal gestionnaire d’actifs. Le partenariat devrait déployer environ 900 M$ US de capital, Sun Life et Wilton Re apportant chacun environ un tiers de la capitalisation en fonds propres. Windsor Life Re réassurera initialement auprès de Wilton Re un portefeuille en vigueur d’environ 1,7 Md$ US; les activités futures seraient cédées sur une base de quote-part. À terme, Windsor Life Re devrait atteindre environ 10 Md$ US d’actifs. Le lancement est prévu au premier semestre 2027, sous réserve des autorisations réglementaires et des conditions habituelles de clôture.",
+      "generatedSummary": "Sun Life et Wilton Re ont conclu un accord définitif pour établir un partenariat stratégique de réassurance et de gestion d’actifs. Wilton Re créera Windsor Life Re, un réassureur affilié domicilié aux États-Unis et aux Bermudes et géré par Wilton Re. SLC Management, gestionnaire mondial d’actifs alternatifs institutionnels de Sun Life, en sera le gestionnaire d’actifs principal. Le partenariat devrait déployer environ 900 M$ US de capital, Sun Life et Wilton Re apportant chacune environ un tiers de la capitalisation en actions. Windsor Life Re réassurera initialement auprès de Wilton Re un portefeuille en vigueur d’environ 1,7 Md$ US; les activités futures seront cédées sur une base de quote-part. À terme, Windsor Life Re devrait atteindre environ 10 Md$ US d’actifs. Le lancement est attendu au premier semestre 2027, sous réserve des approbations réglementaires et des conditions de clôture usuelles.",
       "categories": [
         "strategy",
         "insurance",
@@ -21427,28 +21438,29 @@
       "themes": [
         "Partenariat stratégique",
         "Réassurance vie et rentes",
-        "Gestion d'actifs d'assurance",
-        "Création de Windsor Life Re",
+        "Gestion d'actifs",
+        "SLC Management",
+        "Windsor Life Re",
         "Déploiement de capital",
-        "Autorisations réglementaires"
+        "Approbations réglementaires"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.99,
+        "confidence": 0.98,
         "warnings": [
-          "Les montants de capital à déployer, la croissance des actifs et le calendrier de lancement sont présentés comme des déclarations prospectives et restent soumis aux autorisations réglementaires ainsi qu'aux conditions de clôture."
+          "Les montants de capital à déployer, la croissance attendue des actifs et le calendrier de lancement sont des déclarations prospectives, soumises notamment aux approbations réglementaires et aux conditions de clôture."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:37.860969Z",
+          "executedAt": "2026-08-29T15:06:36.601343Z",
           "taskId": "summarize_news_slf-official-news_bbfb8a698a78",
-          "sourceFingerprint": "sha256:1d9e887c7458a91cdbe2bc2b1f2b10d671aec2a2777b4e458e956c1baaed78f3",
-          "confidence": 0.99,
+          "sourceFingerprint": "sha256:ac9b0a10813e1e396f6dfbb65f012d369fce25bc3fab9e9bef97090e5cd2760a",
+          "confidence": 0.98,
           "warnings": [
-            "Les montants de capital à déployer, la croissance des actifs et le calendrier de lancement sont présentés comme des déclarations prospectives et restent soumis aux autorisations réglementaires ainsi qu'aux conditions de clôture."
+            "Les montants de capital à déployer, la croissance attendue des actifs et le calendrier de lancement sont des déclarations prospectives, soumises notamment aux approbations réglementaires et aux conditions de clôture."
           ]
         }
       }
@@ -21466,12 +21478,12 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-president-and-chief-executive-officer-kevin-strain-to-speak-at-the-scotiabank-financials-summit-891042337.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-08-28T21:12:28.728333Z",
-        "documentHash": "sha256:d5291139717b649414698c9694e9afc4374bdc133596d5c517c5ca3603068946"
+        "fetchedAt": "2026-08-29T15:06:27.977335Z",
+        "documentHash": "sha256:e55e8d963efb4f26a1bff1258d5b0e30811b10d698953b430bc2ae8af39d3283"
       },
       "title": "Sun Life President and Chief Executive Officer Kevin Strain to speak at the Scotiabank Financials Summit",
       "originalSummary": "/CNW/ -- Kevin Strain, Sun Life's President and Chief Executive Officer, will participate in a fireside chat at the Scotiabank Financials Summit. He will be...",
-      "generatedSummary": "Sun Life a annoncé que son président et chef de la direction, Kevin Strain, participera à une discussion informelle lors du Scotiabank Financials Summit le 9 septembre 2026 à 13 h 55 (HE). Il sera accompagné de Mike Rizvanovic, directeur général des services financiers canadiens chez Scotiabank. La webdiffusion en direct et une reprise seront accessibles via la page Relations avec les investisseurs de Sun Life. Au 30 juin 2026, Sun Life déclarait 1,70 billion de dollars canadiens d’actifs sous gestion totaux.",
+      "generatedSummary": "Sun Life a annoncé que son président et chef de la direction, Kevin Strain, participera à une discussion informelle lors du Scotiabank Financials Summit le 9 septembre 2026 à 13 h 55 (HE). Mike Rizvanovic, directeur général des services financiers canadiens à la Banque Scotia, participera également à l’échange. Une webdiffusion en direct et une reprise seront accessibles via la page Relations avec les investisseurs de Sun Life. Au 30 juin 2026, Sun Life déclarait 1,70 billion de dollars canadiens d’actifs sous gestion totaux.",
       "categories": [
         "leadership"
       ],
@@ -21479,7 +21491,7 @@
       "themes": [
         "Participation de la direction à une conférence investisseurs",
         "Scotiabank Financials Summit",
-        "Actifs sous gestion"
+        "Webdiffusion investisseurs"
       ],
       "quality": {
         "status": "validated",
@@ -21490,9 +21502,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-08-28T21:12:32.153534Z",
+          "executedAt": "2026-08-29T15:06:31.524881Z",
           "taskId": "summarize_news_slf-official-news_ac5fbbd8a6b8",
-          "sourceFingerprint": "sha256:d5291139717b649414698c9694e9afc4374bdc133596d5c517c5ca3603068946",
+          "sourceFingerprint": "sha256:e55e8d963efb4f26a1bff1258d5b0e30811b10d698953b430bc2ae8af39d3283",
           "confidence": 0.99,
           "warnings": []
         }
