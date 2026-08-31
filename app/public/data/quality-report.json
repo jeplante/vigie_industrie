@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T14:54:26.684297Z",
+  "generatedAt": "2026-08-31T17:40:56.446702Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -71,14 +71,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-president-and-chief-executive-officer-phil-witherington-to-participate-in-fireside-chat-at-the-scotiabank-financials-summit-819173835.html",
         "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-824250016.html",
         "https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-838830529.html",
         "https://www.newswire.ca/news-releases/manulife-announces-3-2-billion-long-term-care-reinsurance-transaction-with-munich-re-843063869.html",
         "https://www.newswire.ca/news-releases/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation-841261989.html",
         "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
-        "https://www.newswire.ca/news-releases/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection-856947272.html",
-        "https://www.newswire.ca/news-releases/manulife-financial-corporation-announces-interest-rate-reset-on-limited-recourse-capital-notes-series-1-896547607.html"
+        "https://www.newswire.ca/news-releases/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection-856947272.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -133,17 +133,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/aout/denis-ricard-prendra-la-parole-au-sommet-financier-de-la-banque-scotia",
         "https://ia.ca/salle-de-presse/2026/aout/iasc-sassocie-a-vinfast-auto-canada-pour-offrir-des-solutions-de-protection",
         "https://ia.ca/salle-de-presse/2026/aout/iagf-annonce-avis-rachat-porteurs-debentures-subordonnees",
         "https://ia.ca/salle-de-presse/2026/aout/iasf-annonce-le-paiement-d-un-dividende-sur-ses-actions-ordinaires",
         "https://ia.ca/salle-de-presse/2026/aout/iagf-declare-ses-resultats-pour-le-deuxieme-trimestre",
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-cloture-placement-500-m-dollars-debentures-subordonnees-taux-fixe-4-158-pourcent",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable-4-158-pourcent",
-        "https://ia.ca/salle-de-presse/2026/mai/iagf-annonce-elargissement-role-sebastien-mcmahon-titre-economiste-chef"
+        "https://ia.ca/salle-de-presse/2026/mai/iagf-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable-4-158-pourcent"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-T3"
+      ],
+      "llmCalls": 1
     }
   ]
 }
