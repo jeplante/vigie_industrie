@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T14:58:20.196924Z",
+  "generatedAt": "2026-09-02T14:33:33.873526Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -71,17 +71,16 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/hormone-replacement-therapy-use-jumps-228-among-canadian-women-in-peak-working-years-manulife-data-807182636.html",
+        "https://www.newswire.ca/news-releases/manulife-financial-corporation-prices-u-s-public-offering-of-subordinated-notes-803634504.html",
         "https://www.newswire.ca/news-releases/manulife-president-and-chief-executive-officer-phil-witherington-to-participate-in-fireside-chat-at-the-scotiabank-financials-summit-819173835.html",
         "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-824250016.html",
         "https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-838830529.html",
         "https://www.newswire.ca/news-releases/manulife-announces-3-2-billion-long-term-care-reinsurance-transaction-with-munich-re-843063869.html",
-        "https://www.newswire.ca/news-releases/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation-841261989.html",
-        "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
-        "https://www.newswire.ca/news-releases/as-life-milestones-shift-manulife-urges-canadians-to-review-their-financial-protection-856947272.html"
+        "https://www.newswire.ca/news-releases/manulife-expands-partnership-with-microsoft-to-accelerate-enterprise-ai-governance-and-innovation-841261989.html"
       ],
       "periodIds": [
-        "2026-T2",
         "2026-T3"
       ],
       "llmCalls": 8
@@ -112,14 +111,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
         "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
         "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
         "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
-        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html",
-        "https://www.newswire.ca/news-releases/power-corporation-great-west-and-igm-financial-announce-joint-investment-in-sagard-ai-fund-897072555.html"
+        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -142,10 +141,8 @@
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/mai/iagf-cloture-placement-500-m-dollars-debentures-subordonnees-taux-fixe-4-158-pourcent"
       ],
-      "periodIds": [
-        "2026-T3"
-      ],
-      "llmCalls": 2
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
