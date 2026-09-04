@@ -1,21 +1,15 @@
 {
-  "generatedAt": "2026-09-03T14:38:37.989237Z",
+  "generatedAt": "2026-09-04T14:26:09.882612Z",
   "mode": "live",
   "dryRun": false,
-  "status": "partial",
+  "status": "success",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 7,
-  "sourcesFailed": 1,
+  "sourcesSucceeded": 8,
+  "sourcesFailed": 0,
   "observationsAdded": 0,
   "observationsUpdated": 15,
   "overridesApplied": 4,
-  "warnings": [
-    {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/great__west-lifeco-inc./",
-      "sourceId": "gwo-official-news"
-    }
-  ],
+  "warnings": [],
   "errors": [],
   "sourceResults": [
     {
@@ -114,12 +108,23 @@
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/great__west-lifeco-inc./",
-      "llmCalls": 0
+      "status": "success",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
+        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
+        "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
+        "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
+        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
+        "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
+        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
+        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html"
+      ],
+      "periodIds": [
+        "2026-T2",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     },
     {
       "sourceId": "iag-official-news",
@@ -139,7 +144,7 @@
       "periodIds": [
         "2026-T3"
       ],
-      "llmCalls": 3
+      "llmCalls": 8
     }
   ]
 }
