@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T14:26:09.882612Z",
+  "generatedAt": "2026-09-05T13:29:32.729953Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -141,10 +141,8 @@
         "https://ia.ca/salle-de-presse/2026/aout/iagf-declare-ses-resultats-pour-le-deuxieme-trimestre",
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026"
       ],
-      "periodIds": [
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
