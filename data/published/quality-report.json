@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T15:54:47.206057Z",
+  "generatedAt": "2026-09-08T14:37:22.048066Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -111,14 +111,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html",
         "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
         "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
         "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
-        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
-        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-series-24-preferred-shares-849998488.html"
+        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html"
       ],
       "periodIds": [
         "2026-T2",
@@ -141,8 +141,10 @@
         "https://ia.ca/salle-de-presse/2026/aout/iagf-declare-ses-resultats-pour-le-deuxieme-trimestre",
         "https://ia.ca/salle-de-presse/2026/juillet/iagf-annonce-la-date-de-divulgation-de-ses-resultats-financiers-du-deuxieme-trimestre-2026"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-T3"
+      ],
+      "llmCalls": 1
     }
   ]
 }
