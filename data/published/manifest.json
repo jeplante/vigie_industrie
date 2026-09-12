@@ -1,40 +1,40 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-09-11T14:30:30.438440Z",
+  "generatedAt": "2026-09-12T13:39:22.342601Z",
   "mode": "live",
-  "datasetHash": "sha256:2a26cf5bb36a029cfe3e3357fa1617b99d0856bdcfc2ac8aa10cb3da3328f629",
+  "datasetHash": "sha256:e281a059c9af319053456e2ddc3bfb6e2a12b5cad9c26ab98b0634213cf6e021",
   "observationCount": 399,
   "newsCount": 111,
   "companyCount": 4,
-  "lastAttemptAt": "2026-09-11T14:30:30.438440Z",
-  "lastSuccessfulRefresh": "2026-09-11T14:30:30.438440Z",
+  "lastAttemptAt": "2026-09-12T13:39:22.342601Z",
+  "lastSuccessfulRefresh": "2026-09-12T13:39:22.342601Z",
   "companyFreshness": [
     {
       "companyId": "MFC",
       "latestAvailablePeriodId": "2026-T2",
       "latestPublishedPeriodId": "2026-T2",
-      "latestSourceCheckAt": "2026-09-11T14:27:22.002393Z",
+      "latestSourceCheckAt": "2026-09-12T13:37:11.953210Z",
       "freshnessStatus": "current"
     },
     {
       "companyId": "SLF",
       "latestAvailablePeriodId": "2026-T2",
       "latestPublishedPeriodId": "2026-T2",
-      "latestSourceCheckAt": "2026-09-11T14:27:32.059509Z",
+      "latestSourceCheckAt": "2026-09-12T13:37:14.783060Z",
       "freshnessStatus": "current"
     },
     {
       "companyId": "GWO",
       "latestAvailablePeriodId": "2026-T2",
       "latestPublishedPeriodId": "2026-T2",
-      "latestSourceCheckAt": "2026-09-11T14:27:33.364952Z",
+      "latestSourceCheckAt": "2026-09-12T13:37:16.297804Z",
       "freshnessStatus": "current"
     },
     {
       "companyId": "IAG",
       "latestAvailablePeriodId": "2026-T2",
       "latestPublishedPeriodId": "2026-T2",
-      "latestSourceCheckAt": "2026-09-11T14:27:33.919126Z",
+      "latestSourceCheckAt": "2026-09-12T13:37:16.863547Z",
       "freshnessStatus": "current"
     }
   ]

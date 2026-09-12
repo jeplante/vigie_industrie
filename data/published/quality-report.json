@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T14:30:30.438440Z",
+  "generatedAt": "2026-09-12T13:39:22.342601Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -141,10 +141,8 @@
         "https://ia.ca/salle-de-presse/2026/aout/iasf-annonce-le-paiement-d-un-dividende-sur-ses-actions-ordinaires",
         "https://ia.ca/salle-de-presse/2026/aout/iagf-declare-ses-resultats-pour-le-deuxieme-trimestre"
       ],
-      "periodIds": [
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
