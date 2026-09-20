@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T13:58:20.086059Z",
+  "generatedAt": "2026-09-20T14:17:00.399221Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -141,10 +141,8 @@
         "https://ia.ca/salle-de-presse/2026/aout/iagf-annonce-avis-rachat-porteurs-debentures-subordonnees",
         "https://ia.ca/salle-de-presse/2026/aout/iasf-annonce-le-paiement-d-un-dividende-sur-ses-actions-ordinaires"
       ],
-      "periodIds": [
-        "2026-T3"
-      ],
-      "llmCalls": 4
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
