@@ -1,28 +1,31 @@
 {
-  "generatedAt": "2026-09-24T15:11:11.733382Z",
+  "generatedAt": "2026-09-25T15:22:14.195441Z",
   "mode": "live",
   "dryRun": false,
-  "status": "success",
+  "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 8,
-  "sourcesFailed": 0,
+  "sourcesSucceeded": 7,
+  "sourcesFailed": 1,
   "observationsAdded": 0,
-  "observationsUpdated": 15,
+  "observationsUpdated": 10,
   "overridesApplied": 4,
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/search/news/?keyword=Manulife%20Reports",
+      "sourceId": "mfc-results"
+    }
+  ],
   "errors": [],
   "sourceResults": [
     {
       "sourceId": "mfc-results",
       "companyId": "MFC",
-      "status": "success",
-      "documentsDiscovered": 1,
-      "documentUrls": [
-        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html"
-      ],
-      "periodIds": [
-        "2026-T2"
-      ],
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/search/news/?keyword=Manulife%20Reports",
       "llmCalls": 0
     },
     {
@@ -132,19 +135,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026",
         "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution",
         "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-celebre-le-10e-anniversaire-de-son-concours-philanthropique",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-nouvelle-chaire-recherche-ecole-gestion-rotman-universite-toronto",
-        "https://ia.ca/salle-de-presse/2026/septembre/iagf-et-science-humans-enjeu-sante-hormonale-metabolique-hommes-femmes",
-        "https://ia.ca/salle-de-presse/2026/aout/denis-ricard-prendra-la-parole-au-sommet-financier-de-la-banque-scotia"
+        "https://ia.ca/salle-de-presse/2026/septembre/iagf-et-science-humans-enjeu-sante-hormonale-metabolique-hommes-femmes"
       ],
       "periodIds": [
         "2026-T3"
       ],
-      "llmCalls": 2
+      "llmCalls": 8
     }
   ]
 }
