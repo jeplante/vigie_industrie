@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T14:34:00.581642Z",
+  "generatedAt": "2026-09-27T15:12:45.996326Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -141,10 +141,8 @@
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-nouvelle-chaire-recherche-ecole-gestion-rotman-universite-toronto",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-et-science-humans-enjeu-sante-hormonale-metabolique-hommes-femmes"
       ],
-      "periodIds": [
-        "2026-T3"
-      ],
-      "llmCalls": 1
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
