@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T17:28:48.112600Z",
+  "generatedAt": "2026-10-08T17:27:43.718188Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -71,14 +71,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html",
         "https://www.newswire.ca/news-releases/manulife-announces-presenting-partnership-of-the-hinton-lectures-tm-on-ai-safety-853002684.html",
         "https://www.newswire.ca/news-releases/manulife-closes-long-term-care-reinsurance-transaction-with-munich-re-809038201.html",
         "https://www.newswire.ca/news-releases/manulife-canada-partners-with-sword-to-launch-ai-enabled-physiotherapy-solution-to-support-faster-recovery-and-return-to-work-outcomes-808892012.html",
         "https://www.newswire.ca/news-releases/manulife-becomes-the-first-in-canada-to-offer-travel-insurance-quotes-in-chatgpt-892493999.html",
         "https://www.newswire.ca/news-releases/four-common-health-measures-can-help-canadians-better-understand-future-health-risks-new-manulife-report-finds-841080388.html",
         "https://www.newswire.ca/news-releases/manulife-appoints-sarah-chapman-as-global-chief-marketing-amp-customer-experience-officer-joining-executive-leadership-team-807909109.html",
-        "https://www.newswire.ca/news-releases/manulife-expands-segregated-fund-lineup-to-help-canadians-grow-and-protect-their-wealth-845610170.html",
-        "https://www.newswire.ca/news-releases/hormone-replacement-therapy-use-jumps-228-among-canadian-women-in-peak-working-years-manulife-data-807182636.html"
+        "https://www.newswire.ca/news-releases/manulife-expands-segregated-fund-lineup-to-help-canadians-grow-and-protect-their-wealth-845610170.html"
       ],
       "periodIds": [
         "2026-AN",
@@ -143,10 +143,9 @@
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-celebre-le-10e-anniversaire-de-son-concours-philanthropique"
       ],
       "periodIds": [
-        "2026-AN",
-        "2026-T3"
+        "2026-AN"
       ],
-      "llmCalls": 2
+      "llmCalls": 1
     }
   ]
 }
