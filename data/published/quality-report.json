@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T17:03:43.126406Z",
+  "generatedAt": "2026-10-10T15:55:22.267939Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -143,11 +143,8 @@
         "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-celebre-le-10e-anniversaire-de-son-concours-philanthropique"
       ],
-      "periodIds": [
-        "2026-AN",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
