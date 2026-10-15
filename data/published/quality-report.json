@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T15:13:07.669556Z",
+  "generatedAt": "2026-10-15T15:05:48.844710Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -71,14 +71,14 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/travel-protected-stay-connected-manulife-canada-introduces-complimentary-esim-816412695.html",
         "https://www.newswire.ca/news-releases/manulife-launches-new-advisor-ai-assistant-expanding-ai-enabled-underwriting-support-for-advisors-874574770.html",
         "https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html",
         "https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html",
         "https://www.newswire.ca/news-releases/manulife-announces-presenting-partnership-of-the-hinton-lectures-tm-on-ai-safety-853002684.html",
         "https://www.newswire.ca/news-releases/manulife-closes-long-term-care-reinsurance-transaction-with-munich-re-809038201.html",
         "https://www.newswire.ca/news-releases/manulife-canada-partners-with-sword-to-launch-ai-enabled-physiotherapy-solution-to-support-faster-recovery-and-return-to-work-outcomes-808892012.html",
-        "https://www.newswire.ca/news-releases/manulife-becomes-the-first-in-canada-to-offer-travel-insurance-quotes-in-chatgpt-892493999.html",
-        "https://www.newswire.ca/news-releases/four-common-health-measures-can-help-canadians-better-understand-future-health-risks-new-manulife-report-finds-841080388.html"
+        "https://www.newswire.ca/news-releases/manulife-becomes-the-first-in-canada-to-offer-travel-insurance-quotes-in-chatgpt-892493999.html"
       ],
       "periodIds": [
         "2026-AN",
@@ -143,8 +143,11 @@
         "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-celebre-le-10e-anniversaire-de-son-concours-philanthropique"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-AN",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     }
   ]
 }
