@@ -1,28 +1,31 @@
 {
-  "generatedAt": "2026-10-17T13:46:46.060729Z",
+  "generatedAt": "2026-10-18T14:05:25.554491Z",
   "mode": "live",
   "dryRun": false,
-  "status": "success",
+  "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 8,
-  "sourcesFailed": 0,
+  "sourcesSucceeded": 7,
+  "sourcesFailed": 1,
   "observationsAdded": 0,
-  "observationsUpdated": 15,
+  "observationsUpdated": 10,
   "overridesApplied": 4,
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 503 pour https://www.newswire.ca/search/news/?keyword=Manulife%20Reports",
+      "sourceId": "mfc-results"
+    }
+  ],
   "errors": [],
   "sourceResults": [
     {
       "sourceId": "mfc-results",
       "companyId": "MFC",
-      "status": "success",
-      "documentsDiscovered": 1,
-      "documentUrls": [
-        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html"
-      ],
-      "periodIds": [
-        "2026-T2"
-      ],
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 503 pour https://www.newswire.ca/search/news/?keyword=Manulife%20Reports",
       "llmCalls": 0
     },
     {
@@ -143,10 +146,8 @@
         "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution",
         "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est"
       ],
-      "periodIds": [
-        "2026-AN"
-      ],
-      "llmCalls": 1
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
