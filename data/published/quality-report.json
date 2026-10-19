@@ -1,31 +1,28 @@
 {
-  "generatedAt": "2026-10-18T14:05:25.554491Z",
+  "generatedAt": "2026-10-19T17:01:46.372833Z",
   "mode": "live",
   "dryRun": false,
-  "status": "partial",
+  "status": "success",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 7,
-  "sourcesFailed": 1,
+  "sourcesSucceeded": 8,
+  "sourcesFailed": 0,
   "observationsAdded": 0,
-  "observationsUpdated": 10,
+  "observationsUpdated": 15,
   "overridesApplied": 4,
-  "warnings": [
-    {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 503 pour https://www.newswire.ca/search/news/?keyword=Manulife%20Reports",
-      "sourceId": "mfc-results"
-    }
-  ],
+  "warnings": [],
   "errors": [],
   "sourceResults": [
     {
       "sourceId": "mfc-results",
       "companyId": "MFC",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 503 pour https://www.newswire.ca/search/news/?keyword=Manulife%20Reports",
+      "status": "success",
+      "documentsDiscovered": 1,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html"
+      ],
+      "periodIds": [
+        "2026-T2"
+      ],
       "llmCalls": 0
     },
     {
