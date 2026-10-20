@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T17:01:46.372833Z",
+  "generatedAt": "2026-10-20T15:09:29.750740Z",
   "mode": "live",
   "dryRun": false,
   "status": "success",
@@ -143,8 +143,11 @@
         "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution",
         "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-AN",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     }
   ]
 }

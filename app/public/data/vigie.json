@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-19T17:01:46.372833Z",
+  "generatedAt": "2026-10-20T15:09:29.750740Z",
   "companies": [
     {
       "id": "MFC",
@@ -2554,6 +2554,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2808,6 +2809,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2990,6 +2992,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5780,6 +5783,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -17113,8 +17117,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-19T16:59:34.646473Z",
-        "documentHash": "sha256:7a875fc7e9de4baf9b0730598bf2b5d01807b88e6102c6ba517b69d8b93c80f6",
+        "fetchedAt": "2026-10-20T15:06:59.794874Z",
+        "documentHash": "sha256:363ace95ef6c1ab99ce5f00a67e0392abd6dcb6e8fb48fc516d83a1788def94f",
         "priority": "primary"
       },
       "quality": {
@@ -17157,8 +17161,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-19T16:59:34.646971Z",
-        "documentHash": "sha256:7a875fc7e9de4baf9b0730598bf2b5d01807b88e6102c6ba517b69d8b93c80f6",
+        "fetchedAt": "2026-10-20T15:06:59.795471Z",
+        "documentHash": "sha256:363ace95ef6c1ab99ce5f00a67e0392abd6dcb6e8fb48fc516d83a1788def94f",
         "priority": "primary"
       },
       "quality": {
@@ -17201,8 +17205,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-19T16:59:34.647420Z",
-        "documentHash": "sha256:7a875fc7e9de4baf9b0730598bf2b5d01807b88e6102c6ba517b69d8b93c80f6",
+        "fetchedAt": "2026-10-20T15:06:59.796034Z",
+        "documentHash": "sha256:363ace95ef6c1ab99ce5f00a67e0392abd6dcb6e8fb48fc516d83a1788def94f",
         "priority": "primary"
       },
       "quality": {
@@ -17245,8 +17249,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-19T16:59:34.647874Z",
-        "documentHash": "sha256:7a875fc7e9de4baf9b0730598bf2b5d01807b88e6102c6ba517b69d8b93c80f6",
+        "fetchedAt": "2026-10-20T15:06:59.796562Z",
+        "documentHash": "sha256:363ace95ef6c1ab99ce5f00a67e0392abd6dcb6e8fb48fc516d83a1788def94f",
         "priority": "primary"
       },
       "quality": {
@@ -17289,8 +17293,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-19T16:59:34.648310Z",
-        "documentHash": "sha256:7a875fc7e9de4baf9b0730598bf2b5d01807b88e6102c6ba517b69d8b93c80f6",
+        "fetchedAt": "2026-10-20T15:06:59.797094Z",
+        "documentHash": "sha256:363ace95ef6c1ab99ce5f00a67e0392abd6dcb6e8fb48fc516d83a1788def94f",
         "priority": "primary"
       },
       "quality": {
@@ -17597,8 +17601,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-19T16:59:36.526792Z",
-        "documentHash": "sha256:da613a2076fcff9c03c622460120ab7692df501a9ceda7ca6d44a6b4f24c2df8",
+        "fetchedAt": "2026-10-20T15:07:01.709939Z",
+        "documentHash": "sha256:7b08a4c1deae0cdaf8242bffe7925edbe11fa153c3e706829622a5d8c35f32ce",
         "priority": "primary"
       },
       "quality": {
@@ -17641,8 +17645,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-19T16:59:36.527172Z",
-        "documentHash": "sha256:da613a2076fcff9c03c622460120ab7692df501a9ceda7ca6d44a6b4f24c2df8",
+        "fetchedAt": "2026-10-20T15:07:01.710391Z",
+        "documentHash": "sha256:7b08a4c1deae0cdaf8242bffe7925edbe11fa153c3e706829622a5d8c35f32ce",
         "priority": "primary"
       },
       "quality": {
@@ -17685,8 +17689,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-19T16:59:36.527504Z",
-        "documentHash": "sha256:da613a2076fcff9c03c622460120ab7692df501a9ceda7ca6d44a6b4f24c2df8",
+        "fetchedAt": "2026-10-20T15:07:01.710816Z",
+        "documentHash": "sha256:7b08a4c1deae0cdaf8242bffe7925edbe11fa153c3e706829622a5d8c35f32ce",
         "priority": "primary"
       },
       "quality": {
@@ -17729,8 +17733,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-19T16:59:36.527843Z",
-        "documentHash": "sha256:da613a2076fcff9c03c622460120ab7692df501a9ceda7ca6d44a6b4f24c2df8",
+        "fetchedAt": "2026-10-20T15:07:01.711220Z",
+        "documentHash": "sha256:7b08a4c1deae0cdaf8242bffe7925edbe11fa153c3e706829622a5d8c35f32ce",
         "priority": "primary"
       },
       "quality": {
@@ -17773,8 +17777,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-19T16:59:36.528223Z",
-        "documentHash": "sha256:da613a2076fcff9c03c622460120ab7692df501a9ceda7ca6d44a6b4f24c2df8",
+        "fetchedAt": "2026-10-20T15:07:01.711672Z",
+        "documentHash": "sha256:7b08a4c1deae0cdaf8242bffe7925edbe11fa153c3e706829622a5d8c35f32ce",
         "priority": "primary"
       },
       "quality": {
@@ -17817,8 +17821,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-19T16:59:36.528549Z",
-        "documentHash": "sha256:da613a2076fcff9c03c622460120ab7692df501a9ceda7ca6d44a6b4f24c2df8",
+        "fetchedAt": "2026-10-20T15:07:01.712082Z",
+        "documentHash": "sha256:7b08a4c1deae0cdaf8242bffe7925edbe11fa153c3e706829622a5d8c35f32ce",
         "priority": "primary"
       },
       "quality": {
@@ -20163,20 +20167,20 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:22.681104Z",
-        "documentHash": "sha256:f737a80665b7fcaa90c8f4e8c69db74ecbb2bc6476c95cdee618c9eed6c687f0"
+        "fetchedAt": "2026-10-20T15:08:41.520806Z",
+        "documentHash": "sha256:4cb9e1fffa093ab760301c7dbb87617a824c2f5f409887df7c31107e797c0cad"
       },
       "title": "Great West's second quarter 2026 earnings conference call to be held on July 29",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\") (TSX: GWO) will release its 2026 second quarter financial results after market close on Tuesday, July 28, 2026....",
-      "generatedSummary": "Great-West Lifeco ಪ್ರಕಟera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 28 juillet 2026. La direction les commentera lors d’une conférence téléphonique et webdiffusion le 29 juillet à 9 h 30 (HE).",
+      "generatedSummary": "Great-West Lifeco publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 28 juillet 2026. La direction tiendra une conférence téléphonique et une webdiffusion le 29 juillet à 9 h 30 (heure de l’Est) pour les commenter. Au 31 mars 2026, la société indiquait gérer 3,3 billions de dollars d’actifs clients totaux.",
       "categories": [
         "financial_results"
       ],
-      "importance": "low",
+      "importance": "medium",
       "themes": [
-        "Publication des résultats du T2 2026",
-        "Conférence téléphonique sur les résultats",
-        "Relations investisseurs"
+        "Publication des résultats du deuxième trimestre 2026",
+        "Conférence téléphonique avec la direction",
+        "Actifs clients"
       ],
       "quality": {
         "status": "validated",
@@ -20187,9 +20191,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:25.163922Z",
+          "executedAt": "2026-10-20T15:08:44.475661Z",
           "taskId": "summarize_news_gwo-official-news_065d23b1da01",
-          "sourceFingerprint": "sha256:f737a80665b7fcaa90c8f4e8c69db74ecbb2bc6476c95cdee618c9eed6c687f0",
+          "sourceFingerprint": "sha256:4cb9e1fffa093ab760301c7dbb87617a824c2f5f409887df7c31107e797c0cad",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20208,12 +20212,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:25.297070Z",
-        "documentHash": "sha256:2626cdbf1502cac8d3a20d0b2c9ab39a6010cdf430309afc873294e5e95a2e90"
+        "fetchedAt": "2026-10-20T15:08:44.592181Z",
+        "documentHash": "sha256:682d995a727bfb6233d06f9b74ddc72b210f828f70689143387a151b8f30dab8"
       },
       "title": "Great West completes offering of €500 million 3.625% senior euro bonds due 2033",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\") announced today that it has completed the previously announced offering of €500 million 3.625% senior euro bonds...",
-      "generatedSummary": "Great-West Lifeco a finalisé une émission précédemment annoncée de 500 millions d’euros d’obligations senior à 3,625 %, échéant le 7 juillet 2033. Les obligations sont notées A+ par S&P Global Ratings et A par Fitch Ratings. Elles sont inscrites sur la liste officielle d’Euronext Dublin et admises à la négociation sur son Global Exchange Market. Barclays Bank, Crédit Agricole Corporate and Investment Bank, J.P. Morgan Securities et Merrill Lynch International ont agi comme teneurs de livres actifs conjoints pour le compte d’un syndicat de gestionnaires.",
+      "generatedSummary": "Great-West Lifeco a finalisé une émission précédemment annoncée de 500 millions d’euros d’obligations senior à 3,625 %, arrivant à échéance le 7 juillet 2033. Les obligations sont notées A+ par S&P Global Ratings et A par Fitch Ratings. Elles sont inscrites à la cote officielle d’Euronext Dublin et admises à la négociation sur son Global Exchange Market. Barclays, Crédit Agricole CIB, J.P. Morgan Securities et Merrill Lynch International ont agi comme teneurs de livre conjoints actifs pour le compte d’un syndicat de gestionnaires.",
       "categories": [
         "capital_management"
       ],
@@ -20233,9 +20237,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:28.740602Z",
+          "executedAt": "2026-10-20T15:08:47.852973Z",
           "taskId": "summarize_news_gwo-official-news_30395c3f007d",
-          "sourceFingerprint": "sha256:2626cdbf1502cac8d3a20d0b2c9ab39a6010cdf430309afc873294e5e95a2e90",
+          "sourceFingerprint": "sha256:682d995a727bfb6233d06f9b74ddc72b210f828f70689143387a151b8f30dab8",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20254,39 +20258,39 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:28.873454Z",
-        "documentHash": "sha256:1853052fb4d52a39f69a6a0827d56a11c5b10c7ce24ea0f70f0e8cd284ce4f3e"
+        "fetchedAt": "2026-10-20T15:08:47.959298Z",
+        "documentHash": "sha256:47eae1b0c6f70e9fa1a3a14d8b717763ebf8cbf77e7178039d03e9ef71b3e3ec"
       },
       "title": "Great West announces pricing of €500 million senior fixed rate euro bonds",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\" or the \"Company\") announced today the pricing of €500 million senior fixed rate euro bonds. This is the Company's...",
-      "generatedSummary": "Great-West Lifeco a annoncé la fixation du prix d’une émission de 500 millions d’euros d’obligations senior à taux fixe, sa quatrième émission de dette sur le marché de l’euro. Les obligations, d’une durée de sept ans, porteront un coupon annuel de 3,625 %, ont été émises à 99,575 % du pair et offrent un rendement de 3,695 %. La clôture est attendue vers le 7 juillet 2026. Le produit net doit servir aux besoins généraux de l’entreprise, y compris potentiellement au remboursement d’obligations en euros de 500 millions d’euros à 1,750 % arrivant à échéance en décembre 2026. Les titres devraient être notés A+ par S&P Global Ratings et A par Fitch Ratings, et une demande de cotation sur le Global Exchange Market d’Euronext Dublin sera déposée.",
+      "generatedSummary": "Great-West Lifeco a annoncé la fixation du prix d’une émission de 500 millions d’euros d’obligations senior à taux fixe, sa quatrième émission de dette sur le marché de l’euro. Les obligations à sept ans portent un coupon annuel de 3,625 %, ont été émises à 99,575 % du pair et affichent un rendement de 3,695 %. La clôture est attendue vers le 7 juillet 2026. Le produit net doit servir aux besoins généraux de l’entreprise, y compris potentiellement au remboursement de ses obligations de 500 millions d’euros à 1,750 % arrivant à échéance en décembre 2026. Une demande de cotation sur le Global Exchange Market d’Euronext Dublin est prévue.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
         "Émission obligataire en euros",
-        "Financement à taux fixe",
-        "Gestion des échéances de dette",
-        "Remboursement potentiel d’obligations arrivant à maturité"
+        "Refinancement de dette",
+        "Obligations senior à taux fixe",
+        "Gestion du capital"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.98,
+        "confidence": 0.99,
         "warnings": [
-          "La clôture prévue, les notations attendues, la cotation envisagée et l’utilisation potentielle du produit net sont des informations prospectives."
+          "La date de clôture, l’utilisation des produits et les notations attendues sont des informations prospectives ou attendues, non des faits réalisés."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:33.452432Z",
+          "executedAt": "2026-10-20T15:08:51.984405Z",
           "taskId": "summarize_news_gwo-official-news_64d362dbc38b",
-          "sourceFingerprint": "sha256:1853052fb4d52a39f69a6a0827d56a11c5b10c7ce24ea0f70f0e8cd284ce4f3e",
-          "confidence": 0.98,
+          "sourceFingerprint": "sha256:47eae1b0c6f70e9fa1a3a14d8b717763ebf8cbf77e7178039d03e9ef71b3e3ec",
+          "confidence": 0.99,
           "warnings": [
-            "La clôture prévue, les notations attendues, la cotation envisagée et l’utilisation potentielle du produit net sont des informations prospectives."
+            "La date de clôture, l’utilisation des produits et les notations attendues sont des informations prospectives ou attendues, non des faits réalisés."
           ]
         }
       }
@@ -20304,12 +20308,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-to-acquire-the-retirement-plan-and-benefits-administration-business-of-milliman-inc--864268197.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:33.541200Z",
-        "documentHash": "sha256:30fe3d83678accad428c28645155e5e1342aa7143e656c50ecdfb34ac997368b"
+        "fetchedAt": "2026-10-20T15:08:52.097760Z",
+        "documentHash": "sha256:978dab2fbf41a09a709fa6d51116fead324a205135b1f1a95c5077c7dfabc209"
       },
       "title": "Great West subsidiary Empower to acquire the retirement plan and benefits administration business of Milliman, Inc.",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (Great West or the Company) subsidiary Empower today announced that it has entered into a definitive agreement with Milliman,...",
-      "generatedSummary": "Great-West Lifeco (GWO) a annoncé que sa filiale Empower a conclu un accord définitif pour acquérir auprès de Milliman son activité d’administration de régimes de retraite et d’avantages sociaux, sous réserve des autorisations réglementaires et autres conditions habituelles. La contrepartie totale est de 340 M$ US, dont 244 M$ US à la clôture et le solde sur cinq ans, financée par les liquidités existantes. L’activité acquise administre des régimes à cotisations définies, à prestations définies et des avantages santé et sociaux; elle représente environ 130 G$ US d’actifs clients et 1,5 million de participants, et a généré environ 120 M$ US de revenus en 2025. La clôture est attendue au second semestre 2026. Great West prévoit environ 20 M$ US de synergies de coûts sur trois ans et environ 50 M$ US de coûts d’intégration; ces prévisions, ainsi que l’effet relutif attendu sur le bénéfice de base dès la première année et un TRI attendu dans le milieu de la dizaine de pourcentage, sont des informations prospectives.",
+      "generatedSummary": "Great-West Lifeco (GWO) a annoncé que sa filiale Empower a conclu un accord définitif pour acquérir l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman pour une contrepartie totale de 340 M$ US, sous réserve des approbations réglementaires et des conditions de clôture usuelles. L’activité acquise administre des régimes à cotisations définies, à prestations définies et des avantages santé et sociaux; elle représente environ 130 G$ US d’actifs clients et 1,5 million de participants. Elle a généré environ 120 M$ US de revenus en 2025. Great-West prévoit financer l’opération avec ses liquidités existantes, dont 244 M$ US à la clôture et le solde sur cinq ans. La clôture est attendue au second semestre de 2026. La société anticipe une contribution positive aux bénéfices de base dès la première année, un TRI pleinement synergisé dans le milieu de la dizaine et environ 20 M$ US de synergies de coûts sur trois ans; les coûts d’intégration sont estimés à environ 50 M$ US. Ces éléments constituent des déclarations prospectives.",
       "categories": [
         "merger_acquisition",
         "strategy",
@@ -20321,28 +20325,28 @@
         "Acquisition de l’activité d’administration de retraites et d’avantages sociaux de Milliman",
         "Expansion des capacités d’Empower en régimes à prestations définies et avantages santé et sociaux",
         "Financement par liquidités existantes",
-        "Synergies de coûts et coûts d’intégration attendus",
-        "Clôture attendue au second semestre 2026, sous conditions réglementaires"
+        "Synergies de coûts et accrétion attendue aux bénéfices de base",
+        "Clôture prévue au second semestre de 2026, sous conditions réglementaires"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "La transaction, la date de clôture, les synergies, les coûts d’intégration, le TRI et l’effet relutif attendu sont soumis à des conditions et/ou constituent des informations prospectives.",
-          "Les actifs clients et le bénéfice de base sont présentés comme des mesures non conformes aux PCGR dans la source."
+          "Les projections de TRI, d’accrétion aux bénéfices, de synergies, de coûts d’intégration, de rachats d’actions et de calendrier de clôture sont des informations prospectives soumises à des risques et incertitudes.",
+          "Les « actifs clients » et les « bénéfices de base » sont des mesures non conformes aux PCGR, selon la société."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:40.879886Z",
+          "executedAt": "2026-10-20T15:08:59.000465Z",
           "taskId": "summarize_news_gwo-official-news_ac1146bd1979",
-          "sourceFingerprint": "sha256:30fe3d83678accad428c28645155e5e1342aa7143e656c50ecdfb34ac997368b",
+          "sourceFingerprint": "sha256:978dab2fbf41a09a709fa6d51116fead324a205135b1f1a95c5077c7dfabc209",
           "confidence": 0.99,
           "warnings": [
-            "La transaction, la date de clôture, les synergies, les coûts d’intégration, le TRI et l’effet relutif attendu sont soumis à des conditions et/ou constituent des informations prospectives.",
-            "Les actifs clients et le bénéfice de base sont présentés comme des mesures non conformes aux PCGR dans la source."
+            "Les projections de TRI, d’accrétion aux bénéfices, de synergies, de coûts d’intégration, de rachats d’actions et de calendrier de clôture sont des informations prospectives soumises à des risques et incertitudes.",
+            "Les « actifs clients » et les « bénéfices de base » sont des mesures non conformes aux PCGR, selon la société."
           ]
         }
       }
@@ -20893,12 +20897,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:15.269135Z",
-        "documentHash": "sha256:b54d53a492b796f34a37b40a717eed4edd3573ae470317250795609aa0f1b5ad"
+        "fetchedAt": "2026-10-20T15:08:34.369679Z",
+        "documentHash": "sha256:d18a6337f774f73b4b6e86b7b449de597728d16638f7f30a64d18c2caa466416"
       },
       "title": "Great West reports Q2 2026 results with double-digit earnings growth",
       "originalSummary": "TSX:GWO Great-West Lifeco Inc.'s Quarterly Report to Shareholders for the second quarter of 2026, including its Management's Discussion and Analysis (MD&A) and...",
-      "generatedSummary": "Great-West Lifeco a publié ses résultats du T2 2026 : le bénéfice de base a atteint 1,270 Md$ CA, en hausse de 11 % sur un an, et le bénéfice net attribuable aux actionnaires ordinaires 1,039 Md$ CA, en hausse de 16 %. Le BPA de base a progressé de 15 % à 1,42 $ CA et le BPA net de 20 % à 1,16 $ CA. Le rendement des capitaux propres de base s’est établi à 19,3 %, tandis que le ratio LICAT était de 128 % au 30 juin 2026. La société a racheté 4,4 millions d’actions ordinaires pour 336 M$ CA au trimestre et a augmenté de 20 millions à 40 millions le nombre maximal d’actions pouvant être rachetées dans le cadre de son offre publique de rachat dans le cours normal des activités, sous réserve de prise d’effet prévue vers le 31 juillet 2026. Empower a annoncé le 30 juin l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman pour 340 M$ US, une transaction attendue au second semestre 2026 sous réserve des conditions de clôture et approbations réglementaires. Le conseil a aussi approuvé un dividende trimestriel de 0,67 $ CA par action ordinaire, payable le 29 septembre 2026 aux actionnaires inscrits le 1er septembre 2026.",
+      "generatedSummary": "Great-West Lifeco a publié ses résultats du deuxième trimestre 2026. Le bénéfice de base a augmenté de 11 % sur un an, à 1 270 M$ CA, et le bénéfice net attribuable aux actionnaires ordinaires de 16 %, à 1 039 M$ CA. Le bénéfice par action de base a progressé de 15 %, à 1,42 $ CA, tandis que le BPA net a augmenté de 20 %, à 1,16 $ CA. Le rendement des capitaux propres de base s’est établi à 19,3 % et le ratio LICAT à 128 %. La société a racheté 4,4 millions d’actions ordinaires pour 336 M$ CA au trimestre et a relevé à 40 millions le nombre maximal d’actions pouvant être rachetées dans le cadre de son offre publique de rachat dans le cours normal des activités, sous réserve de prise d’effet attendue vers le 31 juillet 2026. Empower a annoncé le 30 juin l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman pour 340 M$ US, une clôture étant attendue au second semestre 2026 sous réserve des conditions usuelles et des approbations réglementaires. Le conseil a déclaré un dividende trimestriel de 0,67 $ CA par action ordinaire, payable le 29 septembre 2026 aux actionnaires inscrits le 1er septembre 2026.",
       "categories": [
         "financial_results",
         "capital_management",
@@ -20906,32 +20910,32 @@
       ],
       "importance": "high",
       "themes": [
-        "Résultats du deuxième trimestre 2026",
-        "Croissance du bénéfice et du BPA",
-        "Rachat d’actions et augmentation de l’offre publique de rachat",
+        "Résultats du T2 2026",
+        "Croissance du bénéfice de base et du BPA",
+        "Rachats d’actions",
         "Acquisition de l’activité de Milliman par Empower",
-        "Dividende trimestriel",
-        "Capitalisation et ratio LICAT"
+        "Capital et ratio LICAT",
+        "Dividende"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR/IFRS, selon la société.",
-          "Les informations relatives à la clôture, aux synergies, au rendement interne et à l’effet relutif de l’acquisition de Milliman sont prospectives et soumises à des conditions et approbations."
+          "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR, selon la société.",
+          "Les effets attendus de l’acquisition de Milliman, y compris l’effet relutif, le TRI, les synergies, les coûts d’intégration et le calendrier de clôture, sont des déclarations prospectives."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:22.259299Z",
+          "executedAt": "2026-10-20T15:08:41.400850Z",
           "taskId": "summarize_news_gwo-official-news_8e3e71da6266",
-          "sourceFingerprint": "sha256:b54d53a492b796f34a37b40a717eed4edd3573ae470317250795609aa0f1b5ad",
+          "sourceFingerprint": "sha256:d18a6337f774f73b4b6e86b7b449de597728d16638f7f30a64d18c2caa466416",
           "confidence": 0.99,
           "warnings": [
-            "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR/IFRS, selon la société.",
-            "Les informations relatives à la clôture, aux synergies, au rendement interne et à l’effet relutif de l’acquisition de Milliman sont prospectives et soumises à des conditions et approbations."
+            "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR, selon la société.",
+            "Les effets attendus de l’acquisition de Milliman, y compris l’effet relutif, le TRI, les synergies, les coûts d’intégration et le calendrier de clôture, sont des déclarations prospectives."
           ]
         }
       }
@@ -20949,23 +20953,22 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:11.953325Z",
-        "documentHash": "sha256:b9d6d6a2ffee9d128c026713688cb89626e7eb09659cb9316085d243c266dad9"
+        "fetchedAt": "2026-10-20T15:08:31.432229Z",
+        "documentHash": "sha256:09f4593f8edc90751c4b8a75748e706af6b0e7739167757889a003edb0eebd88"
       },
       "title": "Great West President & Chief Executive Officer David Harney to join Virtual Fireside Chat with Jefferies",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") today announced that David Harney, President and Chief Executive Officer, Great West, will join...",
-      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion virtuelle avec l’analyste John Aiken de Jefferies le 30 juillet 2026 à 11 h (HE). La discussion portera sur la stratégie de Great West et ses résultats financiers du premier semestre de 2026. Une rediffusion sera disponible sur le site de Great West après l’événement. Au 30 juin 2026, les actifs totaux des clients de Great West s’élevaient à 3,7 billions de dollars.",
+      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera le 30 juillet 2026 à 11 h (HE) à une discussion virtuelle avec l’analyste John Aiken de Jefferies. Les échanges porteront sur la stratégie de Great West et ses résultats financiers du premier semestre 2026. Une rediffusion sera disponible sur le site de Great West après l’événement. Au 30 juin 2026, les actifs clients totaux de Great West s’élevaient à 3,7 billions de dollars.",
       "categories": [
         "strategy",
-        "financial_results",
-        "leadership"
+        "financial_results"
       ],
       "importance": "low",
       "themes": [
-        "Discussion virtuelle avec Jefferies",
+        "Présentation investisseurs",
         "Stratégie",
-        "Résultats financiers du premier semestre 2026",
-        "Relations investisseurs"
+        "Résultats du premier semestre 2026",
+        "Webdiffusion"
       ],
       "quality": {
         "status": "validated",
@@ -20976,9 +20979,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:14.974764Z",
+          "executedAt": "2026-10-20T15:08:34.026489Z",
           "taskId": "summarize_news_gwo-official-news_859ccc25bac5",
-          "sourceFingerprint": "sha256:b9d6d6a2ffee9d128c026713688cb89626e7eb09659cb9316085d243c266dad9",
+          "sourceFingerprint": "sha256:09f4593f8edc90751c4b8a75748e706af6b0e7739167757889a003edb0eebd88",
           "confidence": 0.99,
           "warnings": []
         }
@@ -21641,43 +21644,45 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-and-wilton-re-announce-a-strategic-partnership-combining-depth-and-breadth-of-capabilities-across-life-and-annuity-reinsurance-and-asset-management-889167801.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:54.285842Z",
-        "documentHash": "sha256:85f28754d3993750bd7b6350d1857ac2ab72bf51483f38b7244ef0ed49809fc5"
+        "fetchedAt": "2026-10-20T15:08:14.744708Z",
+        "documentHash": "sha256:34eecacf2b06758747895d7c66cadb00ed3bacdd297dcec73016e30cbe761eaf"
       },
       "title": "Sun Life and Wilton Re announce a strategic partnership, combining depth and breadth of capabilities across life and annuity reinsurance and asset management",
       "originalSummary": "Wilton Re to form Windsor Life Re, a U.S. and Bermuda-domiciled affiliated reinsurer supported by long-term strategic capital commitments from Wilton Re and...",
-      "generatedSummary": "Sun Life et Wilton Re ont conclu un accord définitif pour établir un partenariat stratégique en réassurance vie et rentes ainsi qu’en gestion d’actifs. Wilton Re créera Windsor Life Re, un réassureur affilié domicilié aux États-Unis et aux Bermudes et géré par Wilton Re. SLC Management, gestionnaire d’actifs alternatifs institutionnels de Sun Life, sera le gestionnaire principal des investissements de Windsor Life Re. Le partenariat prévoit environ 900 M$ US de capital, Sun Life et Wilton Re apportant chacune environ un tiers de la capitalisation en fonds propres. Windsor Life Re réassurera initialement auprès de Wilton Re un portefeuille en vigueur d’environ 1,7 Md$ US; les activités futures seraient cédées en quote-part. À maturité, Windsor Life Re devrait atteindre environ 10 Md$ US d’actifs. Le lancement est attendu au premier semestre 2027, sous réserve des autorisations réglementaires et des conditions de clôture usuelles.",
+      "generatedSummary": "Sun Life et Wilton Re ont conclu un accord définitif pour établir un partenariat stratégique en réassurance et gestion d’actifs. Wilton Re créera Windsor Life Re, un réassureur affilié domicilié aux États-Unis et aux Bermudes, qu’elle gérera. SLC Management, gestionnaire d’actifs institutionnel de Sun Life, sera le gestionnaire principal des investissements de Windsor Life Re. Le partenariat prévoit le déploiement d’environ 900 M$ US de capital, Sun Life et Wilton Re apportant chacune environ un tiers de la capitalisation en actions. Windsor Life Re réassurera initialement auprès de Wilton Re un portefeuille en vigueur d’environ 1,7 Md$ US; les futures affaires seront cédées en quote-part. À terme, Windsor Life Re devrait atteindre environ 10 Md$ US d’actifs. Le lancement est attendu au premier semestre 2027, sous réserve des autorisations réglementaires et des conditions habituelles de clôture.",
       "categories": [
         "strategy",
         "insurance",
-        "wealth_management"
+        "wealth_management",
+        "capital_management",
+        "regulation"
       ],
-      "importance": "medium",
+      "importance": "high",
       "themes": [
-        "partenariat stratégique",
-        "réassurance vie et rentes",
-        "gestion d'actifs",
-        "Windsor Life Re",
-        "SLC Management",
-        "capital stratégique"
+        "Partenariat stratégique",
+        "Réassurance vie et rentes",
+        "Gestion d’actifs",
+        "Création de Windsor Life Re",
+        "Déploiement de capital",
+        "Approbations réglementaires"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.98,
         "warnings": [
-          "Les montants de capital, d'actifs anticipés et le calendrier de lancement constituent des déclarations prospectives soumises notamment aux approbations réglementaires et aux conditions de clôture."
+          "Les montants de capital, la croissance attendue des actifs et le calendrier de lancement sont des déclarations prospectives, soumises notamment aux approbations réglementaires et aux conditions de clôture."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:59.502285Z",
+          "executedAt": "2026-10-20T15:08:19.478043Z",
           "taskId": "summarize_news_slf-official-news_bbfb8a698a78",
-          "sourceFingerprint": "sha256:85f28754d3993750bd7b6350d1857ac2ab72bf51483f38b7244ef0ed49809fc5",
+          "sourceFingerprint": "sha256:34eecacf2b06758747895d7c66cadb00ed3bacdd297dcec73016e30cbe761eaf",
           "confidence": 0.98,
           "warnings": [
-            "Les montants de capital, d'actifs anticipés et le calendrier de lancement constituent des déclarations prospectives soumises notamment aux approbations réglementaires et aux conditions de clôture."
+            "Les montants de capital, la croissance attendue des actifs et le calendrier de lancement sont des déclarations prospectives, soumises notamment aux approbations réglementaires et aux conditions de clôture."
           ]
         }
       }
@@ -21695,19 +21700,19 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-president-and-chief-executive-officer-kevin-strain-to-speak-at-the-scotiabank-financials-summit-891042337.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:50.805877Z",
-        "documentHash": "sha256:317801a36e83804b5a678d9df3c7e6e9183b4aa62443f62a49035eecbc0e14e4"
+        "fetchedAt": "2026-10-20T15:08:11.156214Z",
+        "documentHash": "sha256:0f8a77f5ba7b1414da7476d1019fc4fe01fa3e5919160af52803d4dd96828223"
       },
       "title": "Sun Life President and Chief Executive Officer Kevin Strain to speak at the Scotiabank Financials Summit",
       "originalSummary": "/CNW/ -- Kevin Strain, Sun Life's President and Chief Executive Officer, will participate in a fireside chat at the Scotiabank Financials Summit. He will be...",
-      "generatedSummary": "Sun Life a annoncé que son président et chef de la direction, Kevin Strain, participera à une discussion informelle lors du Scotiabank Financials Summit le 9 septembre 2026 à 13 h 55 (HE), aux côtés de Mike Rizvanovic de Scotiabank. Une webdiffusion en direct et une reprise seront accessibles via la page Relations investisseurs de Sun Life. Au 30 juin 2026, Sun Life déclarait 1,70 billion de dollars canadiens d’actifs sous gestion totaux.",
+      "generatedSummary": "Sun Life a annoncé que son président-directeur général, Kevin Strain, participera à une discussion informelle lors du Scotiabank Financials Summit le 9 septembre 2026 à 13 h 55 (heure de l’Est), aux côtés de Mike Rizvanovic de Scotiabank. Une webdiffusion en direct et une reprise seront accessibles via la page Relations avec les investisseurs de Sun Life. Sun Life indique disposer de 1,70 billion de dollars canadiens d’actifs sous gestion au 30 juin 2026.",
       "categories": [
         "leadership"
       ],
       "importance": "low",
       "themes": [
-        "Participation de la direction à une conférence investisseurs",
-        "Webdiffusion destinée aux investisseurs",
+        "Participation de Kevin Strain à une conférence investisseurs",
+        "Webdiffusion via les relations avec les investisseurs",
         "Actifs sous gestion"
       ],
       "quality": {
@@ -21719,9 +21724,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:54.180717Z",
+          "executedAt": "2026-10-20T15:08:14.635504Z",
           "taskId": "summarize_news_slf-official-news_ac5fbbd8a6b8",
-          "sourceFingerprint": "sha256:317801a36e83804b5a678d9df3c7e6e9183b4aa62443f62a49035eecbc0e14e4",
+          "sourceFingerprint": "sha256:0f8a77f5ba7b1414da7476d1019fc4fe01fa3e5919160af52803d4dd96828223",
           "confidence": 0.99,
           "warnings": []
         }
@@ -21831,21 +21836,21 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-announces-dividend-rates-on-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-860397379.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:46.822785Z",
-        "documentHash": "sha256:d8081b172be3331b44f80cd7b3e32ef246297aba1228bc87a663894daac409c5"
+        "fetchedAt": "2026-10-20T15:08:07.469093Z",
+        "documentHash": "sha256:90fd9dd6dadee1654eaebfde9a99b17a06660763489c7118d8e8da1bedef6919"
       },
       "title": "Sun Life Announces Dividend Rates on Class A Non-Cumulative Rate Reset Preferred Shares Series 10R and Class A Non-Cumulative Floating Rate Preferred Shares Series 11QR",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) today announced the applicable dividend rates for its Class A Non-Cumulative Rate Reset Preferred...",
-      "generatedSummary": "Sun Life Financial a annoncé les taux de dividendes applicables à ses actions privilégiées de catégorie A à taux rajusté non cumulatif, série 10R, et à taux variable non cumulatif, série 11QR. Pour les actions 10R demeurant en circulation après le 30 septembre 2026, le taux sera de 5,519 % par an, soit 0,344938 $ par action par trimestre, pour la période du 30 septembre 2026 au 30 septembre 2031. Pour les actions 11QR demeurant en circulation après le 30 septembre 2026, le taux pour la période allant au 31 décembre 2026 sera de 4,459 % par an, soit 0,280978 $ par action. Les dividendes sont versés trimestriellement, lorsqu’ils sont déclarés par le conseil d’administration et sous réserve de la Loi sur les sociétés d’assurances (Canada). La date limite d’exercice du droit de conversion est fixée au 16 septembre 2026 à 17 h (HE).",
+      "generatedSummary": "Sun Life Financial Inc. a annoncé les taux de dividende applicables à ses actions privilégiées de catégorie A à taux réinitialisable non cumulatif, série 10R, et à taux variable non cumulatif, série 11QR. Pour les actions 10R demeurant en circulation après le 30 septembre 2026, le taux sera de 5,519 % par an, soit 0,344938 $ par action trimestriellement, du 30 septembre 2026 au 30 septembre 2031. Pour les actions 11QR demeurant en circulation après cette date, le taux pour la période du 30 septembre au 31 décembre 2026 sera de 4,459 % par an, soit 0,280978 $ par action. Les porteurs souhaitant exercer leur droit de conversion doivent le faire au plus tard le 16 septembre 2026 à 17 h (HE).",
       "categories": [
         "capital_management"
       ],
       "importance": "low",
       "themes": [
-        "dividendes",
-        "actions privilégiées",
-        "taux de dividende",
-        "droit de conversion"
+        "dividendes sur actions privilégiées",
+        "actions privilégiées à taux réinitialisable",
+        "actions privilégiées à taux variable",
+        "droits de conversion"
       ],
       "quality": {
         "status": "validated",
@@ -21856,9 +21861,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:50.585364Z",
+          "executedAt": "2026-10-20T15:08:10.965787Z",
           "taskId": "summarize_news_slf-official-news_9b0a3a79904c",
-          "sourceFingerprint": "sha256:d8081b172be3331b44f80cd7b3e32ef246297aba1228bc87a663894daac409c5",
+          "sourceFingerprint": "sha256:90fd9dd6dadee1654eaebfde9a99b17a06660763489c7118d8e8da1bedef6919",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22020,12 +22025,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:05.677583Z",
-        "documentHash": "sha256:2eac590634c1b1e6521d5dde2bd06202d63fe87e3c48786144f53d2aa7d1ed07"
+        "fetchedAt": "2026-10-20T15:08:25.825303Z",
+        "documentHash": "sha256:6244250dbe122a9c4c1a47aadcde51a8feafd5cfcaafe639539da114434f78d9"
       },
       "title": "Great West subsidiary Empower closes acquisition of Milliman's retirement administration business",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") subsidiary Empower today announced the closing of Empower's acquisition of Milliman's retirement plan...",
-      "generatedSummary": "La filiale Empower de Great-West Lifeco a finalisé l’acquisition de l’activité d’administration des régimes de retraite et d’avantages sociaux de Milliman, annoncée initialement le 30 juin 2026. L’opération élargit les capacités d’Empower dans l’administration des régimes à prestations définies, à cotisations définies, ainsi que des avantages sociaux. Environ 800 employés rejoignent Empower. La transaction ajoute environ 400 régimes à prestations définies, représentant environ 790 000 participants et 80 milliards de dollars américains d’actifs clients, plus de 1 100 régimes à cotisations définies représentant environ 750 000 participants et plus de 50 milliards de dollars américains d’actifs clients, ainsi que 100 clients d’administration santé et avantages sociaux couvrant environ 100 000 participants. Après l’opération, Empower indique servir plus de 22 millions de personnes, administrer plus de 2 300 milliards de dollars américains d’actifs clients et compter 96 000 régimes en milieu de travail.",
+      "generatedSummary": "La filiale Empower de Great-West Lifeco a finalisé l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman, annoncée initialement le 30 juin 2026. L’opération élargit les capacités d’Empower dans l’administration des régimes à prestations déterminées, à cotisations déterminées, ainsi que des avantages santé et sociaux. Environ 800 employés rejoignent Empower. L’acquisition ajoute environ 400 régimes à prestations déterminées, représentant environ 790 000 participants et 80 milliards de dollars US d’actifs clients, plus de 1 100 régimes à cotisations déterminées comptant environ 750 000 participants et plus de 50 milliards de dollars US d’actifs clients, ainsi que 100 clients d’administration d’avantages santé et sociaux couvrant environ 100 000 participants. Après l’opération, Empower indique servir plus de 22 millions de personnes, administrer plus de 2 300 milliards de dollars US d’actifs clients et gérer 96 000 régimes d’employeur.",
       "categories": [
         "merger_acquisition",
         "strategy",
@@ -22034,9 +22039,9 @@
       "importance": "medium",
       "themes": [
         "Finalisation d'acquisition",
-        "Administration des régimes de retraite",
-        "Prestations définies",
-        "Cotisations définies",
+        "Administration de régimes de retraite",
+        "Prestations déterminées",
+        "Cotisations déterminées",
         "Avantages sociaux",
         "Expansion des capacités d'Empower"
       ],
@@ -22045,22 +22050,22 @@
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Les « actifs clients » sont présentés comme une mesure financière non conforme aux PCGR et ne sont pas directement comparables aux mesures similaires d'autres entreprises.",
-          "Les données relatives aux régimes à cotisations définies et aux clients santé et avantages sociaux sont indiquées au 31 décembre 2025.",
-          "Les chiffres reflètent la méthodologie de reporting d’Empower; Milliman utilise une méthode différente pouvant conduire à une ventilation différente des données."
+          "Les actifs clients sont présentés comme des mesures financières non conformes aux PCGR et ne sont pas directement comparables à des mesures similaires d'autres sociétés.",
+          "Les données relatives aux régimes à cotisations déterminées et aux clients d'avantages santé et sociaux sont indiquées au 31 décembre 2025.",
+          "Les chiffres reflètent la méthodologie de présentation d'Empower, qui diffère de celle de Milliman."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:11.762271Z",
+          "executedAt": "2026-10-20T15:08:31.311012Z",
           "taskId": "summarize_news_gwo-official-news_0111ffecaaac",
-          "sourceFingerprint": "sha256:2eac590634c1b1e6521d5dde2bd06202d63fe87e3c48786144f53d2aa7d1ed07",
+          "sourceFingerprint": "sha256:6244250dbe122a9c4c1a47aadcde51a8feafd5cfcaafe639539da114434f78d9",
           "confidence": 0.99,
           "warnings": [
-            "Les « actifs clients » sont présentés comme une mesure financière non conforme aux PCGR et ne sont pas directement comparables aux mesures similaires d'autres entreprises.",
-            "Les données relatives aux régimes à cotisations définies et aux clients santé et avantages sociaux sont indiquées au 31 décembre 2025.",
-            "Les chiffres reflètent la méthodologie de reporting d’Empower; Milliman utilise une méthode différente pouvant conduire à une ventilation différente des données."
+            "Les actifs clients sont présentés comme des mesures financières non conformes aux PCGR et ne sont pas directement comparables à des mesures similaires d'autres sociétés.",
+            "Les données relatives aux régimes à cotisations déterminées et aux clients d'avantages santé et sociaux sont indiquées au 31 décembre 2025.",
+            "Les chiffres reflètent la méthodologie de présentation d'Empower, qui diffère de celle de Milliman."
           ]
         }
       }
@@ -22128,20 +22133,20 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-19T17:01:01.311313Z",
-        "documentHash": "sha256:20fdee29634fea82456ca7664e78d4ea15f4a86a5f76ec725e095b005fa16333"
+        "fetchedAt": "2026-10-20T15:08:22.747408Z",
+        "documentHash": "sha256:9328eb2f9ff3691e30492f2e6ad70e52b415daac8c0b6caa74372a8213d2164c"
       },
       "title": "Great West President & Chief Executive Officer David Harney to speak at the Scotiabank Financials Summit",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") today announced that David Harney, President and Chief Executive Officer, Great West, will join a...",
-      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion informelle lors du Scotiabank Financials Summit le 10 septembre 2026 à 8 h 30 (HE). Une rediffusion en ligne sera disponible après l’événement sur le site de Great West. La société indique exercer aux États-Unis, au Canada et en Europe sous les marques Empower, Canada Life et Irish Life, et déclarait 3,7 billions de dollars d’actifs clients au 30 juin 2026.",
+      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion informelle lors du Scotiabank Financials Summit le 10 septembre 2026 à 8 h 30 (HE). Une rediffusion web sera accessible après l’événement dans la section Events du site de Great West. La société indique exercer aux États-Unis, au Canada et en Europe sous les marques Empower, Canada Life et Irish Life.",
       "categories": [
         "leadership"
       ],
       "importance": "low",
       "themes": [
-        "Participation de la direction à une conférence investisseurs",
-        "Scotiabank Financials Summit",
-        "Webdiffusion disponible après l’événement"
+        "Conférence investisseurs",
+        "Prise de parole du dirigeant",
+        "Webdiffusion"
       ],
       "quality": {
         "status": "validated",
@@ -22152,9 +22157,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:01:05.547509Z",
+          "executedAt": "2026-10-20T15:08:25.698382Z",
           "taskId": "summarize_news_gwo-official-news_21a8166a7d25",
-          "sourceFingerprint": "sha256:20fdee29634fea82456ca7664e78d4ea15f4a86a5f76ec725e095b005fa16333",
+          "sourceFingerprint": "sha256:9328eb2f9ff3691e30492f2e6ad70e52b415daac8c0b6caa74372a8213d2164c",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22318,23 +22323,23 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:40.870555Z",
-        "documentHash": "sha256:5f9a4ce46e7944a6694fa04797f601c636f72ddaecee29134d9ad99c42a7bce5"
+        "fetchedAt": "2026-10-20T15:08:01.763043Z",
+        "documentHash": "sha256:9235ed7bbea9b3489d2540d14541498f798824d7559e770b4aac9c827f5c5d48"
       },
       "title": "Sun Life launches $5 billion Commitment to Canadian Infrastructure Initiative",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) today announced a Commitment to Canadian Infrastructure Initiative that will seek to deploy $5 billion...",
-      "generatedSummary": "Sun Life Financial a annoncé une initiative visant à déployer 5 milliards de dollars canadiens sur cinq ans dans des investissements d’infrastructure au Canada afin de soutenir la croissance économique et la résilience. L’initiative ciblera notamment les infrastructures numériques, l’énergie, ainsi que le transport et la logistique. Dans ce cadre, Sun Life prévoit de déployer 1,5 milliard de dollars canadiens sur cinq ans en participations dans des infrastructures canadiennes, sous la supervision de SLC Management et avec InfraRed Capital Partners comme gestionnaire d’investissement. Ce déploiement de 1,5 milliard dépend de modifications à la Loi sur les sociétés d’assurances permettant aux assureurs d’effectuer des investissements en actions dans les infrastructures. Au 30 juin 2026, Sun Life gérait 1,70 billion de dollars canadiens d’actifs sous gestion.",
+      "generatedSummary": "Sun Life Financial Inc. annonce une initiative visant à déployer 5 milliards de dollars canadiens sur cinq ans dans des investissements d’infrastructure au Canada, afin de soutenir la croissance économique et la résilience du pays tout en recherchant des rendements à long terme. L’initiative ciblera notamment les infrastructures numériques, l’énergie, ainsi que le transport et la logistique. Dans ce cadre, Sun Life prévoit de déployer 1,5 milliard de dollars sur cinq ans dans des participations en infrastructures canadiennes, sous la supervision de SLC Management et gérées par InfraRed Capital Partners. Cette composante dépend de modifications à la Loi sur les sociétés d’assurances permettant aux assureurs d’effectuer des investissements en actions dans les infrastructures. Au 30 juin 2026, Sun Life déclarait 1,70 billion de dollars canadiens d’actifs sous gestion.",
       "categories": [
         "capital_management",
         "strategy",
         "wealth_management",
-        "regulation"
+        "risk"
       ],
       "importance": "medium",
       "themes": [
-        "Investissements en infrastructures canadiennes",
-        "Engagement de déploiement de capital sur cinq ans",
-        "Infrastructure numérique, énergie, transport et logistique",
+        "Engagement d’investissement de 5 milliards de dollars canadiens sur cinq ans",
+        "Infrastructures canadiennes",
+        "Actifs alternatifs et participations en infrastructures",
         "Condition réglementaire liée à la Loi sur les sociétés d’assurances",
         "SLC Management et InfraRed Capital Partners"
       ],
@@ -22343,20 +22348,20 @@
         "extractionMethod": "openai",
         "confidence": 0.98,
         "warnings": [
-          "Les montants et le calendrier de déploiement annoncés sont prospectifs et ne constituent pas des faits historiques.",
-          "Le déploiement envisagé de 1,5 milliard de dollars canadiens en infrastructures canadiennes en actions est conditionné notamment à des modifications de la Loi sur les sociétés d’assurances."
+          "Les montants et le déploiement prévus constituent des déclarations prospectives et non des faits historiques.",
+          "Le déploiement prévu de 1,5 milliard de dollars canadiens en participations d’infrastructure dépend notamment de modifications à la Loi sur les sociétés d’assurances."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:46.689381Z",
+          "executedAt": "2026-10-20T15:08:07.338538Z",
           "taskId": "summarize_news_slf-official-news_20a56e517a64",
-          "sourceFingerprint": "sha256:5f9a4ce46e7944a6694fa04797f601c636f72ddaecee29134d9ad99c42a7bce5",
+          "sourceFingerprint": "sha256:9235ed7bbea9b3489d2540d14541498f798824d7559e770b4aac9c827f5c5d48",
           "confidence": 0.98,
           "warnings": [
-            "Les montants et le calendrier de déploiement annoncés sont prospectifs et ne constituent pas des faits historiques.",
-            "Le déploiement envisagé de 1,5 milliard de dollars canadiens en infrastructures canadiennes en actions est conditionné notamment à des modifications de la Loi sur les sociétés d’assurances."
+            "Les montants et le déploiement prévus constituent des déclarations prospectives et non des faits historiques.",
+            "Le déploiement prévu de 1,5 milliard de dollars canadiens en participations d’infrastructure dépend notamment de modifications à la Loi sur les sociétés d’assurances."
           ]
         }
       }
@@ -22423,15 +22428,15 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:55:18.219286Z",
-        "documentHash": "sha256:9f508c2aeefefbc5b02eea372dbefc8648fb3cd20d8b470b8025794748ae88cf"
+        "fetchedAt": "2026-10-20T15:09:27.174110Z",
+        "documentHash": "sha256:232071e33b8d364171458712f95c25e506308503d57a7f211b7a851e8f8ca815"
       },
       "title": "Denis Ricard, président et chef de la direction de iA Groupe financier, prendra la parole à la Conférence annuelle CIBC à l’intention des investisseurs institutionnels, région de l’Est",
       "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX: IAG)) annonce la participation de Denis Ricard, président et chef de la direction, à une causerie animée par Paul Holden, le jeudi 24 septembre 2026 à 11h40 (heure de l’Est) dans le cadre de la 25e Conférence annuelle CIBC à l’intention des investisseurs institutionnels, région de l’Est.",
-      "generatedSummary": "iA Groupe financier a annoncé que son président et chef de la direction, Denis Ricard, participera à une causerie animée par Paul Holden le 24 septembre 2026 à 11 h 40 (heure de l’Est), dans le cadre de la 25e Conférence annuelle CIBC à l’intention des investisseurs institutionnels, région de l’Est. Une webdiffusion en direct et en différé sera accessible via CIBC Virtual et le site de relations avec les investisseurs d’iA Groupe financier.",
+      "generatedSummary": "iA Groupe financier a annoncé que son président et chef de la direction, Denis Ricard, participera à une causerie animée par Paul Holden le 24 septembre 2026 à 11 h 40 (heure de l’Est), dans le cadre de la 25e Conférence annuelle CIBC à l’intention des investisseurs institutionnels, région de l’Est. Une webdiffusion en direct et en différé sera proposée.",
       "categories": [
         "leadership",
-        "distribution"
+        "strategy"
       ],
       "importance": "low",
       "themes": [
@@ -22449,9 +22454,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:55:21.328046Z",
+          "executedAt": "2026-10-20T15:09:29.748411Z",
           "taskId": "summarize_news_iag-official-news_9a82ce4740cf",
-          "sourceFingerprint": "sha256:9f508c2aeefefbc5b02eea372dbefc8648fb3cd20d8b470b8025794748ae88cf",
+          "sourceFingerprint": "sha256:232071e33b8d364171458712f95c25e506308503d57a7f211b7a851e8f8ca815",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22470,23 +22475,23 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:55:13.655056Z",
-        "documentHash": "sha256:9a00de11571aab89169855ed3b86bdb2be05c278cff9a1b23732993ca6514315"
+        "fetchedAt": "2026-10-20T15:09:22.289924Z",
+        "documentHash": "sha256:3a70b70bea22254a0a7c454c946a106b9d9790c49d928d3266c2a0518b0ee930"
       },
       "title": "Patrimoine Richardson annonce son intention de devenir Patrimoine Nobelia, marquant ainsi un nouveau chapitre de son évolution",
       "originalSummary": "Nous avons le plaisir d’annoncer notre intention de lancer Patrimoine Nobelia, le nouveau nom de Patrimoine Richardson, à compter du 30 novembre 2026, sous réserve de l’approbation des autorités réglementaires.",
-      "generatedSummary": "Patrimoine Richardson annonce son intention de changer de nom pour devenir Patrimoine Nobelia à compter du 30 novembre 2026, sous réserve de l’approbation des autorités réglementaires. Acquise par iA Groupe financier en 2025, la société indique vouloir préserver sa culture, ses valeurs et son approche personnalisée, tout en s’appuyant sur les capacités technologiques et l’envergure de iA. Patrimoine Nobelia complétera les plateformes de gestion de patrimoine Investia et iA Gestion privée de patrimoine. iA Groupe financier indique gérer plus de 218 G$ d’actifs sous administration au 30 juin 2026.",
+      "generatedSummary": "Patrimoine Richardson annonce son intention de changer de nom pour devenir Patrimoine Nobelia à compter du 30 novembre 2026, sous réserve de l’approbation des autorités réglementaires. Acquise par iA Groupe financier en 2025, l’entreprise entend préserver sa culture « boutique », son approche personnalisée et son conseil indépendant, tout en s’appuyant sur les capacités technologiques et l’envergure de iA. Patrimoine Nobelia complétera les plateformes de gestion de patrimoine d’iA, aux côtés d’Investia et d’iA Gestion privée de patrimoine. iA Groupe financier indique gérer plus de 218 G$ d’actifs sous administration au 30 juin 2026.",
       "categories": [
         "strategy",
         "wealth_management",
-        "product"
+        "distribution"
       ],
       "importance": "medium",
       "themes": [
         "Changement de marque",
         "Gestion de patrimoine",
         "Distribution de patrimoine",
-        "Plateformes de conseillers",
+        "Plateformes de conseillers indépendants",
         "Approbation réglementaire"
       ],
       "quality": {
@@ -22498,9 +22503,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:55:17.836922Z",
+          "executedAt": "2026-10-20T15:09:26.505912Z",
           "taskId": "summarize_news_iag-official-news_a9e864c754d3",
-          "sourceFingerprint": "sha256:9a00de11571aab89169855ed3b86bdb2be05c278cff9a1b23732993ca6514315",
+          "sourceFingerprint": "sha256:3a70b70bea22254a0a7c454c946a106b9d9790c49d928d3266c2a0518b0ee930",
           "confidence": 0.98,
           "warnings": []
         }
@@ -22519,38 +22524,38 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:31.662826Z",
-        "documentHash": "sha256:14018dba509c2b63672c0abfb3d8e96df926a677312709c5fead8658add687f4"
+        "fetchedAt": "2026-10-20T15:07:52.333830Z",
+        "documentHash": "sha256:e1d253ef183a245f1587a2c66b3ebf3c91684fb838d15d1aebb5ad498268a0e7"
       },
       "title": "Sun Life announces intention to redeem Series 2021-1 Subordinated Unsecured 2.46% Fixed/Floating Debentures",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) (\"Sun Life\") today announced its intention to redeem all of the outstanding $500 million principal...",
-      "generatedSummary": "Sun Life Financial Inc. annonce son intention de rembourser la totalité des débentures non garanties subordonnées à taux fixe/flottant de 2,46 % de série 2021-1 en circulation, d’un capital total de 500 millions de dollars canadiens. Le remboursement, que Sun Life prévoit d’effectuer le 18 novembre 2026, sera financé par les liquidités et actifs liquides existants. Le prix de remboursement correspondra au capital, majoré des intérêts courus et impayés jusqu’à la date de remboursement. Après cette date, les intérêts cesseront de courir.",
+      "generatedSummary": "Sun Life Financial Inc. annonce son intention de rembourser la totalité de ses débentures subordonnées non garanties de série 2021-1, à taux fixe/flottant de 2,46 %, représentant un montant principal en circulation de 500 millions de dollars canadiens. Le remboursement est envisagé le 18 novembre 2026, à un prix égal au principal majoré des intérêts courus et impayés jusqu’à la date de remboursement. L’opération serait financée par la trésorerie et les actifs liquides existants. Après le remboursement, les intérêts cesseront de courir et les porteurs n’auront plus de droits autres que celui de recevoir le prix de remboursement.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
         "Remboursement de dette",
-        "Débentures subordonnées non garanties",
-        "Gestion des liquidités"
+        "Débentures subordonnées",
+        "Gestion de la liquidité"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "L’opération est annoncée comme une intention et constitue une déclaration prospective."
+          "Le remboursement prévu le 18 novembre 2026 est une intention et constitue une déclaration prospective."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:35.524438Z",
+          "executedAt": "2026-10-20T15:07:56.644839Z",
           "taskId": "summarize_news_slf-official-news_ff8b067c1c85",
-          "sourceFingerprint": "sha256:14018dba509c2b63672c0abfb3d8e96df926a677312709c5fead8658add687f4",
+          "sourceFingerprint": "sha256:e1d253ef183a245f1587a2c66b3ebf3c91684fb838d15d1aebb5ad498268a0e7",
           "confidence": 0.99,
           "warnings": [
-            "L’opération est annoncée comme une intention et constitue une déclaration prospective."
+            "Le remboursement prévu le 18 novembre 2026 est une intention et constitue une déclaration prospective."
           ]
         }
       }
@@ -22568,12 +22573,12 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:35.646807Z",
-        "documentHash": "sha256:bd0485931eee6e7d135cf344eb867c0477e627a431079df8577c0df6eb5d4909"
+        "fetchedAt": "2026-10-20T15:07:56.758338Z",
+        "documentHash": "sha256:7ff21a7f20e7b6fd47d691f27f2e66c79fc1cd75ed56ebe122c61a43ce5d31b9"
       },
       "title": "Sun Life Reports Results of Conversion Privilege of Class A Non-Cumulative Rate Reset Preferred Shares Series 10R and Class A Non-Cumulative Floating Rate Preferred Shares Series 11QR",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) (\"Sun Life\") today announced that 1,400 of its 6,838,672 Class A Non-cumulative Rate Reset Preferred...",
-      "generatedSummary": "Sun Life a annoncé les résultats des élections de conversion de ses actions privilégiées de catégorie A, séries 10R et 11QR, prévues le 30 septembre 2026. Des détenteurs de 1 400 des 6 838 672 actions de série 10R ont choisi leur conversion en actions de série 11QR, tandis que 621 829 des 1 161 328 actions de série 11QR ont choisi leur conversion en actions de série 10R. Le nombre d’actions de série 11QR devant être inférieur à 1 000 000 après ces élections, Sun Life convertira automatiquement toutes les actions 11QR restantes en actions 10R, à raison d’une action pour une action, et les détenteurs de 10R ne pourront pas convertir leurs actions en 11QR. Au 30 septembre 2026, Sun Life prévoit donc compter 8 000 000 actions 10R en circulation et aucune action 11QR. Les actions 10R verseront, sous réserve de déclaration par le conseil et de la Loi sur les sociétés d’assurances (Canada), un dividende trimestriel non cumulatif de 0,344938 $ par action, soit 5,519 % par an, du 30 septembre 2026 au 30 septembre 2031 exclu.",
+      "generatedSummary": "Sun Life a annoncé les résultats des élections de conversion de ses actions privilégiées de catégorie A à taux rajusté, série 10R, et à taux flottant, série 11QR, prévues le 30 septembre 2026. Au total, 1 400 des 6 838 672 actions série 10R ont été élues pour conversion en actions série 11QR, tandis que 621 829 des 1 161 328 actions série 11QR ont été élues pour conversion en actions série 10R. Comme moins d’un million d’actions série 11QR auraient été en circulation après les élections, Sun Life convertira automatiquement toutes les actions série 11QR restantes en actions série 10R, à raison d’une pour une. La conversion des actions 10R vers les 11QR ne sera pas permise. Après le 30 septembre 2026, 8 000 000 actions série 10R seront en circulation et aucune action série 11QR ne le sera. Les dividendes trimestriels non cumulatifs des actions série 10R seront fixés à un taux annuel de 5,519 % jusqu’au 30 septembre 2031, sous réserve de déclaration par le conseil d’administration et de la Loi sur les sociétés d’assurances (Canada).",
       "categories": [
         "capital_management"
       ],
@@ -22593,9 +22598,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:40.696018Z",
+          "executedAt": "2026-10-20T15:08:01.662441Z",
           "taskId": "summarize_news_slf-official-news_430db2f65eac",
-          "sourceFingerprint": "sha256:bd0485931eee6e7d135cf344eb867c0477e627a431079df8577c0df6eb5d4909",
+          "sourceFingerprint": "sha256:7ff21a7f20e7b6fd47d691f27f2e66c79fc1cd75ed56ebe122c61a43ce5d31b9",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22614,38 +22619,38 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:55:09.769051Z",
-        "documentHash": "sha256:9cdfd3e216607f3b0b7c51984475d05968edad38e3bc0451053a5ad7495896ab"
+        "fetchedAt": "2026-10-20T15:09:18.029672Z",
+        "documentHash": "sha256:45b5eb1f63c389759cc04a6ade6ec25099ea9b31b892b8b34eb7df92d108eca2"
       },
       "title": "iA Groupe financier se classe parmi les 10 meilleures entreprises canadiennes, selon le palmarès « World’s Best Companies of 2026 » du magazine TIME",
       "originalSummary": "iA Groupe financier a le plaisir d’annoncer qu’il a été nommé l’une des 10 meilleures entreprises ayant leur siège social au Canada dans le classement des meilleures compagnies de 2026 du magazine TIME.",
-      "generatedSummary": "iA Groupe financier a été nommé parmi les 10 meilleures entreprises ayant leur siège social au Canada dans le palmarès « World’s Best Companies of 2026 » de TIME. Le classement évalue 1 000 entreprises mondiales selon la croissance des revenus, la satisfaction des employés et la transparence en matière de durabilité. La société indique que ses primes nettes, équivalents de primes et dépôts ont augmenté de 25 % au deuxième trimestre de 2026 par rapport au trimestre correspondant de 2025, tandis que les actifs sous gestion et sous administration ont progressé de 37 % sur les 12 mois clos le 30 juin 2026. iA souligne également ses investissements dans le développement des employés et ses priorités de durabilité.",
+      "generatedSummary": "iA Groupe financier annonce avoir été classé parmi les 10 meilleures entreprises ayant leur siège social au Canada dans le palmarès « World’s Best Companies of 2026 » de TIME. Le classement évalue 1 000 entreprises mondiales selon la croissance des revenus, la satisfaction des employés et la transparence en matière de durabilité. La société indique que ses primes nettes, équivalents de primes et dépôts ont augmenté de 25 % au deuxième trimestre de 2026 par rapport au trimestre correspondant de 2025, tandis que ses actifs sous gestion et sous administration ont progressé de 37 % sur les 12 mois clos le 30 juin 2026. Elle met également en avant ses investissements dans le développement des employés et ses priorités de durabilité.",
       "categories": [
-        "strategy",
         "financial_results",
+        "strategy",
         "risk"
       ],
       "importance": "low",
       "themes": [
-        "Reconnaissance externe",
+        "Classement TIME « World’s Best Companies of 2026 »",
         "Croissance des primes, équivalents de primes et dépôts",
         "Croissance des actifs sous gestion et sous administration",
-        "Expérience et développement des employés",
+        "Développement et mobilité interne des employés",
         "Durabilité et transparence"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.99,
+        "confidence": 0.98,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:55:13.205400Z",
+          "executedAt": "2026-10-20T15:09:21.723401Z",
           "taskId": "summarize_news_iag-official-news_5b3e05d232d6",
-          "sourceFingerprint": "sha256:9cdfd3e216607f3b0b7c51984475d05968edad38e3bc0451053a5ad7495896ab",
-          "confidence": 0.99,
+          "sourceFingerprint": "sha256:45b5eb1f63c389759cc04a6ade6ec25099ea9b31b892b8b34eb7df92d108eca2",
+          "confidence": 0.98,
           "warnings": []
         }
       }
@@ -22663,12 +22668,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:55:05.968188Z",
-        "documentHash": "sha256:97515bdc00f58663f94142285b4ba3734481fb5da89edffae171275bafdffb0d"
+        "fetchedAt": "2026-10-20T15:09:14.336130Z",
+        "documentHash": "sha256:7ff11a7836c5aa0bd30cebac9ac0493c6493e5bcb00770b3becf02d8188d8646"
       },
       "title": "iA Groupe financier annonce la nomination de Nicolas Coulombe au poste de vice-président exécutif, Technologies de l’information",
       "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX: IAG)) annonce aujourd’hui la nomination de Nicolas Coulombe au poste de vice-président exécutif, Technologies de l’information et chef de l’information, à compter du 1er octobre 2026.",
-      "generatedSummary": "iA Groupe financier annonce la nomination de Nicolas Coulombe comme vice-président exécutif, Technologies de l’information, et chef de l’information, à compter du 1er octobre 2026. Il rejoindra également le comité de direction. Il succédera à Alain Bergeron, qui prendra sa retraite le 31 décembre 2026 et accompagnera la transition jusqu’à la fin de l’année. L’entreprise indique que cette nomination reflète l’importance de la technologie, des données, de l’intelligence artificielle et de la transformation numérique dans son modèle d’affaires et ses ambitions stratégiques.",
+      "generatedSummary": "iA Groupe financier annonce la nomination de Nicolas Coulombe comme vice-président exécutif, Technologies de l’information, et chef de l’information, à compter du 1er octobre 2026. Il rejoindra également le comité de direction. Il succède à Alain Bergeron, qui prendra sa retraite le 31 décembre 2026 et accompagnera la transition jusqu’à la fin de l’année. La société indique que cette nomination s’inscrit dans l’importance de la technologie, des données, de l’intelligence artificielle et de la transformation numérique dans son modèle d’affaires et ses ambitions stratégiques.",
       "categories": [
         "leadership",
         "digital_transformation",
@@ -22677,10 +22682,9 @@
       "importance": "medium",
       "themes": [
         "Nomination de dirigeant",
-        "Technologies de l’information",
-        "Transition de direction",
+        "Transition de la direction des TI",
         "Transformation numérique",
-        "Intelligence artificielle"
+        "Technologie et données"
       ],
       "quality": {
         "status": "validated",
@@ -22691,9 +22695,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:55:09.144371Z",
+          "executedAt": "2026-10-20T15:09:17.688861Z",
           "taskId": "summarize_news_iag-official-news_b297ea5bb1ec",
-          "sourceFingerprint": "sha256:97515bdc00f58663f94142285b4ba3734481fb5da89edffae171275bafdffb0d",
+          "sourceFingerprint": "sha256:7ff11a7836c5aa0bd30cebac9ac0493c6493e5bcb00770b3becf02d8188d8646",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22712,20 +22716,20 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:55:02.740690Z",
-        "documentHash": "sha256:d061c9f4d9e00a8fd9722fb878883dd25ba2e753adecb0bf5809fd7109646d8c"
+        "fetchedAt": "2026-10-20T15:09:11.543252Z",
+        "documentHash": "sha256:46c8e192d3f3366ca8700f7f06345d5710d92a1b622791c73d06aec7bf1b6a6b"
       },
       "title": "iA Groupe financier rachète ses débentures subordonnées 3,072 % échéant le 24 septembre 2031",
       "originalSummary": "iA Société financière inc. (TSX: IAG) annonce qu’elle a racheté aujourd’hui la totalité de ses débentures subordonnées 3,072 % échéant le 24 septembre 2031 (les « débentures ») sur paiement du prix de rachat de 1 015,36 $ pour chaque tranche de 1 000 $ de capital de débentures, soit l’équivalent de la valeur nominale, majoré de l’intérêt couru et impayé jusqu'à la date de rachat, exclusivement, d’un montant de 15,36 $.",
-      "generatedSummary": "Le 24 septembre 2026, iA Société financière inc. (TSX : IAG) a annoncé avoir racheté la totalité de ses débentures subordonnées à 3,072 % échéant le 24 septembre 2031. Le prix de rachat était de 1 015,36 $ par tranche de 1 000 $ de capital, comprenant la valeur nominale et 15,36 $ d’intérêts courus et impayés jusqu’à la date de rachat, exclusivement.",
+      "generatedSummary": "Le 24 septembre 2026, iA Société financière inc. (TSX : IAG) a annoncé avoir racheté la totalité de ses débentures subordonnées à 3,072 % échéant le 24 septembre 2031. Le prix de rachat était de 1 015,36 $ par tranche de capital de 1 000 $, soit la valeur nominale majorée de 15,36 $ d’intérêts courus et impayés jusqu’à la date de rachat, exclusivement.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
-        "Rachat de dette subordonnée",
-        "Gestion du capital",
-        "Débentures"
+        "Rachat de dette",
+        "Débentures subordonnées",
+        "Gestion du capital"
       ],
       "quality": {
         "status": "validated",
@@ -22736,9 +22740,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:55:05.305134Z",
+          "executedAt": "2026-10-20T15:09:13.955554Z",
           "taskId": "summarize_news_iag-official-news_b94d99db663c",
-          "sourceFingerprint": "sha256:d061c9f4d9e00a8fd9722fb878883dd25ba2e753adecb0bf5809fd7109646d8c",
+          "sourceFingerprint": "sha256:46c8e192d3f3366ca8700f7f06345d5710d92a1b622791c73d06aec7bf1b6a6b",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22757,26 +22761,26 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-becomes-the-first-in-canada-to-offer-travel-insurance-quotes-in-chatgpt-892493999.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T17:00:11.445185Z",
-        "documentHash": "sha256:104ee0ef142bcd9704006d3c6cb1bc6c2931d02eac6c70a99eb64ad4e0835805"
+        "fetchedAt": "2026-10-20T15:07:38.197536Z",
+        "documentHash": "sha256:39f9caeba9921459b185581afda72cc54e6a3cf68f06fd6fdeb0964f6ac410f4"
       },
       "title": "Manulife Becomes the First in Canada to Offer Travel Insurance Quotes in ChatGPT",
       "originalSummary": "/CNW/ -- Manulife today announced the launch of a new CoverMe plugin in ChatGPT, making it easier for Canadians to explore travel insurance and receive a...",
-      "generatedSummary": "Manulife a annoncé le lancement d’un plugin CoverMe dans ChatGPT permettant aux voyageurs canadiens admissibles d’explorer des options d’assurance voyage et d’obtenir un devis personnalisé. Les clients répondent à des questions sur leur voyage dans ChatGPT, puis peuvent finaliser leur demande et leur achat sur CoverMe.com; les besoins nécessitant des informations ou couvertures supplémentaires sont orientés vers CoverMe.com. Manulife présente cette initiative comme son premier plugin ChatGPT à l’échelle mondiale et indique que l’expérience est offerte en anglais et en français.",
+      "generatedSummary": "Manuvie a lancé un plugin CoverMe dans ChatGPT permettant aux voyageurs canadiens admissibles d’explorer des options d’assurance voyage et d’obtenir une soumission personnalisée. Les clients répondent à des questions sur leur voyage dans ChatGPT, puis peuvent finaliser leur demande et leur achat sur CoverMe.com; les besoins nécessitant davantage d’information sont également redirigés vers ce site. Manuvie présente cette initiative comme son premier plugin ChatGPT mondial et indique qu’elle est offerte initialement en anglais et en français. Selon l’entreprise, le plugin a été développé conformément à ses principes d’IA responsable.",
       "categories": [
-        "artificial_intelligence",
         "digital_transformation",
+        "artificial_intelligence",
         "product",
         "insurance"
       ],
       "importance": "medium",
       "themes": [
         "Assurance voyage",
-        "Devis personnalisés",
-        "Plugin ChatGPT",
-        "IA responsable",
+        "Soumissions personnalisées",
+        "ChatGPT",
+        "IA générative",
         "Expérience client numérique",
-        "CoverMe"
+        "IA responsable"
       ],
       "quality": {
         "status": "validated",
@@ -22787,9 +22791,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:21.735236Z",
+          "executedAt": "2026-10-20T15:07:41.631676Z",
           "taskId": "summarize_news_mfc-official-news_6a4eb3fd6abb",
-          "sourceFingerprint": "sha256:104ee0ef142bcd9704006d3c6cb1bc6c2931d02eac6c70a99eb64ad4e0835805",
+          "sourceFingerprint": "sha256:39f9caeba9921459b185581afda72cc54e6a3cf68f06fd6fdeb0964f6ac410f4",
           "confidence": 0.98,
           "warnings": []
         }
@@ -22808,24 +22812,25 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:54:59.203883Z",
-        "documentHash": "sha256:c1a044733c3a306cd6b892c337a3466e74aeda31c93347141de2112095c82b00"
+        "fetchedAt": "2026-10-20T15:09:07.851206Z",
+        "documentHash": "sha256:1e02e4c59567add57caa1640988e970e903f99832e12db9b926f77eae44f9fb2"
       },
       "title": "iA Groupe financier franchit le cap des 50 milliards de dollars d’actif sous gestion en fonds distincts",
       "originalSummary": "iA Groupe financier a dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts, en gestion de patrimoine individuel, au cours du mois de septembre 2026.",
-      "generatedSummary": "iA Groupe financier a annoncé avoir dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts de gestion de patrimoine individuel en septembre 2026. L’entreprise indique détenir près de 40 % du marché canadien des actifs sous gestion en fonds distincts et occuper le premier rang des ventes nettes de fonds distincts au Canada depuis 2016, selon Investor Economics. Elle met également en avant ses plateformes technologiques EVO, Espace client et iA Mobile.",
+      "generatedSummary": "iA Groupe financier a annoncé avoir dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts dans sa gestion de patrimoine individuel en septembre 2026. Selon l’entreprise, elle détient près de 40 % du marché canadien des actifs sous gestion de fonds distincts et occupe le premier rang des ventes nettes de fonds distincts au Canada depuis 2016, d’après Investor Economics. Le groupe met notamment de l’avant ses produits, son réseau de distribution et ses plateformes numériques EVO, Espace client et iA Mobile.",
       "categories": [
         "wealth_management",
-        "digital_transformation"
+        "digital_transformation",
+        "strategy"
       ],
       "importance": "medium",
       "themes": [
-        "Fonds distincts",
-        "Actif sous gestion",
-        "Part de marché",
-        "Ventes nettes",
-        "Gestion de patrimoine individuel",
-        "Plateformes numériques"
+        "actifs sous gestion",
+        "fonds distincts",
+        "gestion de patrimoine individuel",
+        "part de marché",
+        "distribution",
+        "plateformes numériques"
       ],
       "quality": {
         "status": "validated",
@@ -22836,9 +22841,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:55:02.258142Z",
+          "executedAt": "2026-10-20T15:09:11.197260Z",
           "taskId": "summarize_news_iag-official-news_ec7e2319cfd2",
-          "sourceFingerprint": "sha256:c1a044733c3a306cd6b892c337a3466e74aeda31c93347141de2112095c82b00",
+          "sourceFingerprint": "sha256:1e02e4c59567add57caa1640988e970e903f99832e12db9b926f77eae44f9fb2",
           "confidence": 0.98,
           "warnings": []
         }
@@ -22857,27 +22862,27 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-canada-partners-with-sword-to-launch-ai-enabled-physiotherapy-solution-to-support-faster-recovery-and-return-to-work-outcomes-808892012.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T17:00:07.311698Z",
-        "documentHash": "sha256:1f85414d4a4040f67e1b4969afded8b7ac88bd5b2d1df9b0440471547175fea3"
+        "fetchedAt": "2026-10-20T15:07:34.203748Z",
+        "documentHash": "sha256:4d743deee8465c94f1d6c262b956a04ff677ad625464139bf2c879542a698c62"
       },
       "title": "Manulife Canada partners with Sword to launch AI-enabled physiotherapy solution to support faster recovery and return-to-work outcomes",
       "originalSummary": "/CNW/ -- Manulife Canada today announced it has partnered with Sword®, a global AI health company to offer AI-enabled physiotherapy to eligible Group Benefits...",
-      "generatedSummary": "Manulife Canada a annoncé un partenariat avec Sword afin d’offrir une solution de physiothérapie assistée par IA aux membres admissibles de ses garanties collectives en congé d’invalidité souffrant de troubles musculosquelettiques aigus ou chroniques. La première phase donne accès à des physiothérapeutes canadiens agréés et à une tablette de suivi des mouvements approuvée par Santé Canada, avec plans de traitement personnalisés, suivi des progrès et échanges avec les équipes de soins. En 2027, le programme doit être étendu à tous les membres bénéficiant d’une couverture de soins de santé complémentaires.",
+      "generatedSummary": "Manuvie Canada a conclu un partenariat avec Sword afin d’offrir de la physiothérapie alimentée par l’IA aux membres admissibles de ses garanties collectives en congé d’invalidité souffrant de troubles musculosquelettiques aigus ou chroniques. La première phase donne accès à des physiothérapeutes canadiens autorisés et à une tablette de suivi des mouvements approuvée par Santé Canada, pour des plans de traitement personnalisés, le suivi des progrès et la communication avec les équipes de soins. En 2027, le programme doit être étendu à tous les membres des garanties collectives disposant d’une couverture de soins de santé complémentaires.",
       "categories": [
+        "strategy",
         "product",
-        "distribution",
         "digital_transformation",
         "artificial_intelligence",
         "insurance"
       ],
       "importance": "medium",
       "themes": [
+        "Partenariat avec Sword",
         "Physiothérapie à distance",
-        "Invalidité collective",
+        "Gestion de l’invalidité",
         "Troubles musculosquelettiques",
         "Retour au travail",
-        "Accès aux soins",
-        "Partenariat avec Sword"
+        "Extension prévue en 2027"
       ],
       "quality": {
         "status": "validated",
@@ -22888,9 +22893,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:11.204651Z",
+          "executedAt": "2026-10-20T15:07:38.024184Z",
           "taskId": "summarize_news_mfc-official-news_a32cd8d02a9a",
-          "sourceFingerprint": "sha256:1f85414d4a4040f67e1b4969afded8b7ac88bd5b2d1df9b0440471547175fea3",
+          "sourceFingerprint": "sha256:4d743deee8465c94f1d6c262b956a04ff677ad625464139bf2c879542a698c62",
           "confidence": 0.98,
           "warnings": []
         }
@@ -22909,12 +22914,12 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:27.487122Z",
-        "documentHash": "sha256:d0711ec0d106679415554d8bb9c8473dc5246480b615e43d8ad666e6fa467a26"
+        "fetchedAt": "2026-10-20T15:07:49.125109Z",
+        "documentHash": "sha256:ebad4fe95ff18a1146d6ad9d785fbd8219dc009940bc5559e551b5285f255890"
       },
       "title": "Sun Life Announces Executive Appointment to Lead Investor Relations",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (TSX: SLF) (NYSE: SLF) today announced the appointment of Darko Mihelic as Sun Life's Senior Vice-President, Head of Investor...",
-      "generatedSummary": "Sun Life Financial Inc. a nommé Darko Mihelic au poste de vice-président principal et chef des relations avec les investisseurs. Il entrera en fonction le 22 octobre 2026 et relèvera de Tim Deacon, vice-président exécutif et chef des finances. M. Mihelic rejoint Sun Life depuis RBC Marchés des capitaux, où il était directeur général, recherche actions, couvrant les secteurs bancaire et de l’assurance au Canada. Il succède à Natalie Brady, nommée plus tôt en 2026 vice-présidente principale, gestion du capital et développement corporatif chez Sun Life.",
+      "generatedSummary": "Sun Life Financial Inc. a nommé Darko Mihelic au poste de vice-président principal et chef des relations avec les investisseurs. Il entrera en fonction le 22 octobre 2026 et relèvera de Tim Deacon, vice-président exécutif et chef des finances. Il rejoint Sun Life depuis RBC Capital Markets, où il était directeur général en recherche actions couvrant les secteurs bancaire et de l’assurance au Canada. Il succède à Natalie Brady, nommée plus tôt cette année vice-présidente principale, gestion du capital et développement corporatif chez Sun Life.",
       "categories": [
         "leadership"
       ],
@@ -22922,7 +22927,8 @@
       "themes": [
         "Nomination de dirigeant",
         "Relations avec les investisseurs",
-        "Gouvernance"
+        "Gouvernance",
+        "Sun Life"
       ],
       "quality": {
         "status": "validated",
@@ -22933,9 +22939,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:31.313779Z",
+          "executedAt": "2026-10-20T15:07:52.188370Z",
           "taskId": "summarize_news_slf-official-news_b16aa56c8e98",
-          "sourceFingerprint": "sha256:d0711ec0d106679415554d8bb9c8473dc5246480b615e43d8ad666e6fa467a26",
+          "sourceFingerprint": "sha256:ebad4fe95ff18a1146d6ad9d785fbd8219dc009940bc5559e551b5285f255890",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22954,22 +22960,23 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-closes-long-term-care-reinsurance-transaction-with-munich-re-809038201.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T17:00:03.963084Z",
-        "documentHash": "sha256:5726763ded83e41fd4360a3777682999a4783dbd95a177340ca0785ec092a75d"
+        "fetchedAt": "2026-10-20T15:07:31.202111Z",
+        "documentHash": "sha256:639127a812566057f0659018bab6724035444be9e101c97e4c69d8d88d0e6a51"
       },
       "title": "Manulife Closes Long-Term Care Reinsurance Transaction with Munich Re",
       "originalSummary": "/CNW/ -- Manulife Financial Corporation (\"Manulife\" or the \"Company\") announced today that it has closed1 the previously announced transaction to reinsure...",
-      "generatedSummary": "Manulife Financial Corporation a finalisé la transaction annoncée précédemment visant à réassurer auprès de Munich American Reassurance Company, filiale du groupe Munich Re, le risque biométrique d’un portefeuille de polices d’assurance soins de longue durée. Le portefeuille concerné représente 3,2 milliards de dollars canadiens de réserves IFRS, sur la base d’une quote-part de 80 %. La réassurance a pris effet le 1er juillet 2026.",
+      "generatedSummary": "Manulife Financial Corporation a finalisé la transaction annoncée précédemment visant à réassurer auprès de Munich American Reassurance Company, filiale de Munich Re Group, le risque biométrique d’un portefeuille de polices de soins de longue durée. Le portefeuille concerné représente 3,2 milliards de dollars canadiens de provisions IFRS, sur la base d’une quote-part de 80 %. La réassurance a pris effet le 1er juillet 2026.",
       "categories": [
         "risk",
-        "capital_management"
+        "capital_management",
+        "insurance"
       ],
       "importance": "medium",
       "themes": [
-        "réassurance",
-        "assurance soins de longue durée",
-        "transfert du risque biométrique",
-        "réserves IFRS",
+        "Réassurance",
+        "Soins de longue durée",
+        "Risque biométrique",
+        "Gestion du capital",
         "Munich Re"
       ],
       "quality": {
@@ -22981,9 +22988,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:07.211063Z",
+          "executedAt": "2026-10-20T15:07:34.099730Z",
           "taskId": "summarize_news_mfc-official-news_e726c8656d1f",
-          "sourceFingerprint": "sha256:5726763ded83e41fd4360a3777682999a4783dbd95a177340ca0785ec092a75d",
+          "sourceFingerprint": "sha256:639127a812566057f0659018bab6724035444be9e101c97e4c69d8d88d0e6a51",
           "confidence": 0.98,
           "warnings": []
         }
@@ -23389,36 +23396,36 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-announces-presenting-partnership-of-the-hinton-lectures-tm-on-ai-safety-853002684.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T17:00:00.971123Z",
-        "documentHash": "sha256:eb2e9f757b24a79c7e50f78dbbc9c96c750470afd5e3c112e0d1176deea506ab"
+        "fetchedAt": "2026-10-20T15:07:28.802342Z",
+        "documentHash": "sha256:d350aee8baa5c217b990a56216491b9e842d85cbaefb3ca9ed1113537e9621b5"
       },
       "title": "Manulife Announces Presenting Partnership of The Hinton Lectures™ on AI Safety",
       "originalSummary": "/CNW/ -- Manulife is proud to announce a two-year presenting partnership with The Hinton Lectures™, supporting the 2026 and 2027 lecture series dedicated to...",
-      "generatedSummary": "Manuvie annonce un partenariat de présentation de deux ans avec The Hinton Lectures™, couvrant les séries de conférences 2026 et 2027 consacrées à la sécurité de l’IA. Les conférences de 2026 se tiendront à Toronto en novembre et sont cofondées par le professeur Geoffrey Hinton, lauréat du prix Nobel et expert en IA, ainsi que par l’AI Safety Foundation.",
+      "generatedSummary": "Manuvie annonce un partenariat de présentation de deux ans avec The Hinton Lectures™ afin de soutenir les séries de conférences 2026 et 2027 consacrées à la sécurité de l’IA. Les conférences de 2026 se tiendront à Toronto en novembre et sont cofondées par le professeur Geoffrey Hinton et l’AI Safety Foundation.",
       "categories": [
         "artificial_intelligence",
         "strategy"
       ],
       "importance": "low",
       "themes": [
-        "Sécurité de l’intelligence artificielle",
+        "sécurité de l’IA",
         "IA responsable",
-        "Partenariat",
-        "Conférences publiques"
+        "partenariat",
+        "conférences publiques"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.99,
+        "confidence": 0.98,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:03.860920Z",
+          "executedAt": "2026-10-20T15:07:31.101384Z",
           "taskId": "summarize_news_mfc-official-news_779a7e738c9c",
-          "sourceFingerprint": "sha256:eb2e9f757b24a79c7e50f78dbbc9c96c750470afd5e3c112e0d1176deea506ab",
-          "confidence": 0.99,
+          "sourceFingerprint": "sha256:d350aee8baa5c217b990a56216491b9e842d85cbaefb3ca9ed1113537e9621b5",
+          "confidence": 0.98,
           "warnings": []
         }
       }
@@ -23436,12 +23443,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-16T14:54:55.838225Z",
-        "documentHash": "sha256:7c786fdfa1e5f1f65cffb6284aa3b8d6ebfc92062c31015b260d56ecdb32ad9e"
+        "fetchedAt": "2026-10-20T15:09:04.238511Z",
+        "documentHash": "sha256:6a5812d581be6739e17c64f0fbe468292f5100d75a1583609b29cef6a3abfc95"
       },
       "title": "iA Groupe financier remporte un prix d’Excellence en apprentissage et en développement de capacités (Learning & Capability Development) aux Canadian HR Awards 2026",
       "originalSummary": "iA Groupe financier a également été nommé finaliste dans trois autres catégories",
-      "generatedSummary": "iA Groupe financier a remporté le prix d’Excellence en apprentissage et en développement de capacités aux Canadian HR Awards 2026, tenus à Toronto. L’entreprise a aussi été finaliste dans les catégories Culture d’entreprise et expérience employé, Stratégie de travail flexible et hybride, ainsi que pour le prix Medcan de stratégie de bien-être des employés. Le communiqué met notamment en avant ses investissements dans le leadership, la relève, la mobilité interne, le mentorat et le développement de compétences liées à l’intelligence artificielle.",
+      "generatedSummary": "iA Groupe financier a remporté un prix d’Excellence en apprentissage et en développement de capacités aux Canadian HR Awards 2026, tenus à Toronto. L’entreprise a aussi été finaliste dans trois catégories : culture d’entreprise et expérience employé, stratégie de travail flexible et hybride, et stratégie de bien-être des employés. Le communiqué met notamment en avant ses investissements en développement du leadership, mobilité interne, mentorat et talents en intelligence artificielle.",
       "categories": [
         "leadership",
         "artificial_intelligence",
@@ -23450,10 +23457,10 @@
       "importance": "low",
       "themes": [
         "Prix et reconnaissance RH",
-        "Développement des talents et du leadership",
-        "Culture d’apprentissage",
+        "Apprentissage et développement des capacités",
+        "Développement du leadership",
         "Mobilité interne et mentorat",
-        "Compétences en intelligence artificielle"
+        "Stratégie de talents en intelligence artificielle"
       ],
       "quality": {
         "status": "validated",
@@ -23464,9 +23471,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-16T14:54:58.830169Z",
+          "executedAt": "2026-10-20T15:09:07.315078Z",
           "taskId": "summarize_news_iag-official-news_ea57d2fc9224",
-          "sourceFingerprint": "sha256:7c786fdfa1e5f1f65cffb6284aa3b8d6ebfc92062c31015b260d56ecdb32ad9e",
+          "sourceFingerprint": "sha256:6a5812d581be6739e17c64f0fbe468292f5100d75a1583609b29cef6a3abfc95",
           "confidence": 0.99,
           "warnings": []
         }
@@ -23485,21 +23492,23 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T16:59:56.940202Z",
-        "documentHash": "sha256:013ee7f41d47cdfb1dd4da5df3e910ea006ce18b10629fed0cc3d8b3fc51281a"
+        "fetchedAt": "2026-10-20T15:07:24.234803Z",
+        "documentHash": "sha256:a2b6c69c05ba23a4653d94ba3e3c8356e2cb5d7ead2dcdba6158b17118c0b5a6"
       },
       "title": "Manulife appoints Sinéad O'Connor as Chief Actuary, joining Executive Leadership Team",
       "originalSummary": "/CNW/ -- Manulife has appointed Sinéad O'Connor as Chief Actuary, effective October 12, 2026, reporting to Phil Witherington, President and Chief Executive...",
-      "generatedSummary": "Manulife a nommé Sinéad O’Connor au poste de chef actuariat à compter du 12 octobre 2026. Elle relèvera de Phil Witherington, président et chef de la direction, et rejoindra l’équipe de direction exécutive. Mme O’Connor, chez Manulife depuis 2007 et auparavant responsable mondiale de la gestion des contrats en vigueur, succède à Stephanie Fadous, décédée subitement le mois précédent. Jusqu’à l’obtention par Mme O’Connor de son accréditation canadienne FCIA, Derek Houle exercera la fonction d’actuaire désigné. Manulife prévoit nommer ultérieurement un nouveau responsable mondial de la gestion des contrats en vigueur.",
+      "generatedSummary": "Manulife a nommé Sinéad O'Connor au poste de chef actuariat, à compter du 12 octobre 2026. Elle relèvera de Phil Witherington, président et chef de la direction, et intégrera l'équipe de direction. Ancienne responsable mondiale de la gestion des contrats en vigueur, elle succède à Stephanie Fadous, décédée subitement le mois précédent. En attendant l'obtention par Sinéad O'Connor de son accréditation canadienne FCIA, Derek Houle assurera la fonction d'actuaire désigné. Manulife prévoit de nommer ultérieurement un nouveau responsable mondial de la gestion des contrats en vigueur.",
       "categories": [
-        "leadership"
+        "leadership",
+        "risk"
       ],
       "importance": "medium",
       "themes": [
         "Nomination de la chef actuariat",
-        "Équipe de direction exécutive",
+        "Gouvernance actuarielle",
         "Gestion des contrats en vigueur",
-        "Accréditation actuarielle canadienne"
+        "Réassurance",
+        "Transition de direction"
       ],
       "quality": {
         "status": "validated",
@@ -23510,9 +23519,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:00.797654Z",
+          "executedAt": "2026-10-20T15:07:28.702259Z",
           "taskId": "summarize_news_mfc-official-news_5767e13a7291",
-          "sourceFingerprint": "sha256:013ee7f41d47cdfb1dd4da5df3e910ea006ce18b10629fed0cc3d8b3fc51281a",
+          "sourceFingerprint": "sha256:a2b6c69c05ba23a4653d94ba3e3c8356e2cb5d7ead2dcdba6158b17118c0b5a6",
           "confidence": 0.99,
           "warnings": []
         }
@@ -23531,22 +23540,22 @@
         "name": "Sun Life",
         "url": "https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html",
         "sourceId": "slf-official-news",
-        "fetchedAt": "2026-10-19T17:00:22.839395Z",
-        "documentHash": "sha256:c1c97700b8c8557d58f39f6af841376bfcc36a3c93cdc9906e57f54b8bdb32a4"
+        "fetchedAt": "2026-10-20T15:07:44.530649Z",
+        "documentHash": "sha256:fb4c9605d24a7ede52f8174d5ebc4ae7477dc8eb58f7a2642d647b0b50ba5e9b"
       },
       "title": "Sun Life cautions shareholders regarding Ocehan LLC's below-market bid for shares",
       "originalSummary": "/CNW/ -- Sun Life Financial Inc. (\"Sun Life\") (TSX: SLF) (NYSE: SLF) has been notified that Ocehan LLC (\"Ocehan\") has made an unsolicited mini-tender offer to...",
-      "generatedSummary": "Sun Life Financial Inc. a été informée qu’Ocehan LLC a lancé une offre publique d’achat non sollicitée visant jusqu’à 100 000 actions ordinaires de Sun Life. Selon Sun Life, le prix proposé est sensiblement inférieur aux cours récents et représente une décote de 24,97 % par rapport au cours de clôture à la TSX et de 24,93 % par rapport à celui du NYSE le 27 août 2026, avant le lancement de l’offre. Sun Life indique ne pas être associée à Ocehan, ne recommande pas l’acceptation de l’offre et rappelle que les actionnaires ne sont pas tenus de vendre leurs actions. D’après les documents d’offre d’Ocehan, les actionnaires ayant déjà apporté leurs titres peuvent les retirer dans un délai de 21 jours selon les modalités prévues.",
+      "generatedSummary": "Sun Life Financial Inc. a été informée qu’Ocehan LLC a lancé une offre publique d’achat non sollicitée visant jusqu’à 100 000 actions ordinaires de Sun Life. Selon Sun Life, le prix proposé est sensiblement inférieur aux cours récents : il représentait une décote de 24,97 % par rapport au cours de clôture à la TSX et de 24,93 % par rapport à celui du NYSE le 27 août 2026, dernier jour de bourse avant le lancement de l’offre. Sun Life indique ne pas être associée à Ocehan, ne recommande ni n’approuve l’acceptation de l’offre, et précise que les actionnaires ne sont pas tenus de vendre leurs titres. D’après les documents d’offre d’Ocehan, les actionnaires ayant déjà apporté leurs actions peuvent les retirer dans un délai de 21 jours conformément aux modalités indiquées. Sun Life invite les actionnaires à examiner les documents d’offre et à consulter leur conseiller.",
       "categories": [
         "risk",
-        "regulation"
+        "other"
       ],
       "importance": "medium",
       "themes": [
-        "Offre publique d’achat non sollicitée",
-        "Mini-offre publique d’achat",
-        "Protection des actionnaires",
-        "Décote par rapport au marché"
+        "Offre mini-tender non sollicitée",
+        "Décote par rapport aux cours de marché",
+        "Protection et information des actionnaires",
+        "Retrait des actions apportées"
       ],
       "quality": {
         "status": "validated",
@@ -23557,9 +23566,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T17:00:27.406846Z",
+          "executedAt": "2026-10-20T15:07:49.017810Z",
           "taskId": "summarize_news_slf-official-news_f7f586d2df0e",
-          "sourceFingerprint": "sha256:c1c97700b8c8557d58f39f6af841376bfcc36a3c93cdc9906e57f54b8bdb32a4",
+          "sourceFingerprint": "sha256:fb4c9605d24a7ede52f8174d5ebc4ae7477dc8eb58f7a2642d647b0b50ba5e9b",
           "confidence": 0.99,
           "warnings": []
         }
@@ -23578,12 +23587,12 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T16:59:51.785103Z",
-        "documentHash": "sha256:2a5e52007c3db13235a502d84c39e1ff2ed69d923af0e3589ebc9d78a0fad48f"
+        "fetchedAt": "2026-10-20T15:07:19.157769Z",
+        "documentHash": "sha256:ddc89c992af28a6f5fa6c07df4351f9b2071b6ce6abb3c9aa26995ffe4c54174"
       },
       "title": "Manulife Launches Enterprise AI Platform to Scale AI Solutions and Deliver Business Value Across Global Operations",
       "originalSummary": "/CNW/ -- Manulife today announced the launch of its proprietary enterprise AI platform, marking a significant milestone in the company's journey to become...",
-      "generatedSummary": "Manulife a lancé une plateforme d’IA propriétaire à l’échelle de l’entreprise afin de permettre aux équipes de développer, déployer et gérer des solutions d’IA de manière cohérente dans ses opérations mondiales. La plateforme vise à réutiliser des cas d’usage approuvés et à intégrer des contrôles de sécurité, de risque et de gouvernance. Manulife prévoit générer 1 milliard de dollars de valeur cumulative liée à l’IA d’ici 2027; 300 millions de dollars avaient été réalisés à fin 2025. Parmi les solutions citées figurent Singapore Sales Agent, le traitement intelligent des documents et Quick Quote aux États-Unis. La société indique que les solutions respecteront ses principes d’IA responsable. Les objectifs et bénéfices attendus sont des déclarations prospectives soumises à des risques et incertitudes.",
+      "generatedSummary": "Manulife a lancé une plateforme d’IA d’entreprise propriétaire destinée à permettre aux équipes de développer, déployer et gérer des solutions d’IA de manière cohérente à l’échelle mondiale. La plateforme vise à réutiliser des cas d’usage approuvés et à intégrer des contrôles de sécurité, de risque et de gouvernance. Manulife prévoit de générer 1 milliard de dollars de valeur cumulée issue de l’IA d’ici 2027; 300 millions de dollars avaient été réalisés à fin 2025. Parmi les solutions citées figurent Singapore Sales Agent, le traitement intelligent de documents et Quick Quote aux États-Unis. Les solutions de la plateforme doivent respecter les principes d’IA responsable de Manulife. Les objectifs et bénéfices attendus sont des déclarations prospectives soumises à des risques et incertitudes.",
       "categories": [
         "digital_transformation",
         "artificial_intelligence",
@@ -23592,29 +23601,29 @@
       ],
       "importance": "medium",
       "themes": [
-        "Plateforme d’IA d’entreprise",
-        "Déploiement mondial et gouvernance de l’IA",
-        "Objectif de valeur cumulative de 1 milliard de dollars d’ici 2027",
-        "IA responsable",
-        "Automatisation des processus"
+        "plateforme d’IA d’entreprise",
+        "déploiement mondial de l’IA",
+        "gouvernance et IA responsable",
+        "objectif de valeur cumulative de 1 milliard de dollars d’ici 2027",
+        "automatisation des processus"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Les prévisions de valeur liée à l’IA et les bénéfices attendus sont des déclarations prospectives."
+          "Les objectifs de valeur générée par l’IA et les bénéfices attendus constituent des déclarations prospectives."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T16:59:56.812497Z",
+          "executedAt": "2026-10-20T15:07:24.117743Z",
           "taskId": "summarize_news_mfc-official-news_2251e7011bcf",
-          "sourceFingerprint": "sha256:2a5e52007c3db13235a502d84c39e1ff2ed69d923af0e3589ebc9d78a0fad48f",
+          "sourceFingerprint": "sha256:ddc89c992af28a6f5fa6c07df4351f9b2071b6ce6abb3c9aa26995ffe4c54174",
           "confidence": 0.99,
           "warnings": [
-            "Les prévisions de valeur liée à l’IA et les bénéfices attendus sont des déclarations prospectives."
+            "Les objectifs de valeur générée par l’IA et les bénéfices attendus constituent des déclarations prospectives."
           ]
         }
       }
@@ -23632,46 +23641,47 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/manulife-launches-new-advisor-ai-assistant-expanding-ai-enabled-underwriting-support-for-advisors-874574770.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T16:59:46.427356Z",
-        "documentHash": "sha256:87528bc02a97d4451f5e920e2e800e18ed7c7eeb294916f13ee8eca12f6a0acc"
+        "fetchedAt": "2026-10-20T15:07:13.882914Z",
+        "documentHash": "sha256:1d96d4966a63312d6d0b8956ca7485e7f2cc4cccd11d4565fceddc864455653b"
       },
       "title": "Manulife launches new Advisor AI Assistant, expanding AI-enabled underwriting support for advisors",
       "originalSummary": "/CNW/ -- Manulife today announced the launch of the Manulife Advisor AI Assistant™, a new AI-powered capability designed to help advisors access underwriting...",
-      "generatedSummary": "Manulife a lancé le Manulife Advisor AI Assistant, un outil d’IA accessible 24 h/24 et 7 j/7 via l’Advisor Portal, qui fournit aux conseillers des orientations de tarification provenant des guides de souscription de Manulife. La première version couvre l’assurance vie, l’assurance maladies graves et les produits Synergy. L’outil ne prend pas de décisions de souscription et ne fournit aucune indication contraignante sur l’assurabilité, les primes, la couverture ou l’issue d’une demande; les demandes restent soumises aux exigences et à l’évaluation de souscription de Manulife. Manulife indique viser plus de 1 milliard de dollars de valeur d’entreprise issue de ses initiatives d’IA d’ici 2027, dont 300 millions de dollars atteints à fin 2025.",
+      "generatedSummary": "Manulife a lancé le Manulife Advisor AI Assistant, un outil d’IA accessible 24 h/24 et 7 j/7 via Advisor Portal, qui fournit aux conseillers des orientations de souscription issues de ses manuels destinés aux conseillers. La première version couvre l’assurance vie, l’assurance maladies graves et les produits Synergy. L’outil vise à aider les conseillers à préparer les échanges avec les clients et à identifier plus tôt les exigences potentielles de souscription. Il complète MAUDE, le moteur de souscription assisté par IA de Manulife utilisé après le dépôt d’une demande. L’assistant ne prend pas de décisions de souscription et ne fournit pas d’indication contraignante sur l’assurabilité, la prime, la couverture ou l’issue d’une demande. Manulife indique viser plus de 1 milliard de dollars de valeur d’entreprise issue de ses initiatives d’IA d’ici 2027; 300 millions de dollars avaient été réalisés à fin 2025.",
       "categories": [
         "artificial_intelligence",
         "digital_transformation",
         "insurance",
+        "product",
         "strategy",
         "risk"
       ],
       "importance": "medium",
       "themes": [
         "Assistant IA pour conseillers",
-        "Orientation de souscription 24/7",
-        "Assurance vie et maladies graves",
-        "Gouvernance et supervision humaine de l’IA",
+        "Souscription d’assurance",
+        "Accès continu aux orientations de souscription",
+        "Gouvernance et supervision de l’IA",
         "Objectif de valeur d’entreprise liée à l’IA"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.98,
+        "confidence": 0.99,
         "warnings": [
-          "L’objectif de générer plus de 1 milliard de dollars de valeur d’entreprise d’ici 2027 constitue une déclaration prospective et est soumis à des risques et incertitudes.",
-          "Les réponses générées par l’IA peuvent contenir des erreurs; les conseillers doivent exercer leur jugement professionnel."
+          "L’objectif de plus de 1 milliard de dollars de valeur d’entreprise d’ici 2027 est une déclaration prospective, soumise à des risques et incertitudes.",
+          "Les réponses générées par l’IA peuvent contenir des erreurs et les conseillers doivent exercer leur jugement professionnel."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T16:59:51.656809Z",
+          "executedAt": "2026-10-20T15:07:19.024575Z",
           "taskId": "summarize_news_mfc-official-news_c2ef5f1f4fe6",
-          "sourceFingerprint": "sha256:87528bc02a97d4451f5e920e2e800e18ed7c7eeb294916f13ee8eca12f6a0acc",
-          "confidence": 0.98,
+          "sourceFingerprint": "sha256:1d96d4966a63312d6d0b8956ca7485e7f2cc4cccd11d4565fceddc864455653b",
+          "confidence": 0.99,
           "warnings": [
-            "L’objectif de générer plus de 1 milliard de dollars de valeur d’entreprise d’ici 2027 constitue une déclaration prospective et est soumis à des risques et incertitudes.",
-            "Les réponses générées par l’IA peuvent contenir des erreurs; les conseillers doivent exercer leur jugement professionnel."
+            "L’objectif de plus de 1 milliard de dollars de valeur d’entreprise d’ici 2027 est une déclaration prospective, soumise à des risques et incertitudes.",
+            "Les réponses générées par l’IA peuvent contenir des erreurs et les conseillers doivent exercer leur jugement professionnel."
           ]
         }
       }
@@ -23689,38 +23699,39 @@
         "name": "Manuvie",
         "url": "https://www.newswire.ca/news-releases/travel-protected-stay-connected-manulife-canada-introduces-complimentary-esim-816412695.html",
         "sourceId": "mfc-official-news",
-        "fetchedAt": "2026-10-19T16:59:41.227709Z",
-        "documentHash": "sha256:f2df284d58ac8a2746ef2b1b6c087131bbd73f8e90213473d2d4af5cbf4eccff"
+        "fetchedAt": "2026-10-20T15:07:07.815475Z",
+        "documentHash": "sha256:dc3b2efb0b3d23faadfdd179b7376b498f8cb5c59094a3f3d00c6cce058a3e7f"
       },
       "title": "Travel protected. Stay connected. Manulife Canada introduces complimentary eSIM",
       "originalSummary": "/CNW/ -- As travellers seek seamless, connected experiences wherever they go, Manulife Canada is introducing a new travel perk designed to help them stay...",
-      "generatedSummary": "Manulife Canada annonce un partenariat avec Travelgoogoo, société singapourienne de connectivité de voyage. Les clients disposant d’une police d’assurance voyage Manulife admissible recevront une adhésion eSIM gratuite d’un an, permettant un accès mobile dans plus de 120 pays. L’offre comprend notamment la messagerie illimitée via certaines applications, 1 Go de données mondiales à haut débit et une réduction de 20 % sur des forfaits de données additionnels. Cette prestation est intégrée à Manulife Travel Advantage et reste soumise aux conditions applicables ainsi qu’à la compatibilité des appareils.",
+      "generatedSummary": "Manulife Canada annonce un partenariat avec Travelgoogoo, société singapourienne de connectivité de voyage. Les clients détenteurs de polices d’assurance voyage Manulife admissibles recevront une adhésion eSIM gratuite d’un an, donnant accès à des services mobiles dans plus de 120 pays. L’offre comprend notamment la messagerie illimitée sur certaines applications, 1 Go de données mondiales à haut débit, une remise de 20 % sur des forfaits de données additionnels et un soutien client eSIM mondial 24 h/24 et 7 j/7. Cette offre est intégrée à Manulife Travel Advantage et reste soumise aux conditions, exclusions et à la compatibilité des appareils.",
       "categories": [
         "product",
         "insurance",
-        "distribution"
+        "strategy"
       ],
       "importance": "low",
       "themes": [
         "Assurance voyage",
         "Partenariat avec Travelgoogoo",
-        "Connectivité eSIM",
-        "Avantage client",
-        "Services numériques"
+        "Connectivité mobile",
+        "eSIM",
+        "Avantages clients",
+        "Manulife Travel Advantage"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.98,
+        "confidence": 0.99,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-19T16:59:46.294395Z",
+          "executedAt": "2026-10-20T15:07:13.761804Z",
           "taskId": "summarize_news_mfc-official-news_e98b97400565",
-          "sourceFingerprint": "sha256:f2df284d58ac8a2746ef2b1b6c087131bbd73f8e90213473d2d4af5cbf4eccff",
-          "confidence": 0.98,
+          "sourceFingerprint": "sha256:dc3b2efb0b3d23faadfdd179b7376b498f8cb5c59094a3f3d00c6cce058a3e7f",
+          "confidence": 0.99,
           "warnings": []
         }
       }
@@ -23738,12 +23749,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-17T13:46:39.600062Z",
-        "documentHash": "sha256:95ca4a7c57c9c351b4bf7634c37ee129e730713811480ace7170e39cd1dea643"
+        "fetchedAt": "2026-10-20T15:09:00.387135Z",
+        "documentHash": "sha256:858b81f961ffc4df6966a6654e8d55e3fdd6413b5b2ce8e821ac68690a4146ee"
       },
       "title": "Isabelle Durand, cheffe des Services juridiques de iA Groupe financier, nommée Juriste d’entreprise de l’année",
       "originalSummary": "iA Groupe financier est fier de féliciter Isabelle Durand, cheffe des Services juridiques, pour sa nomination à titre de Juriste d’entreprise de l’année lors d’une cérémonie qui s’est tenue le 8 octobre dernier à Toronto.",
-      "generatedSummary": "Le 16 octobre 2026, iA Groupe financier a annoncé qu’Isabelle Durand, vice-présidente principale, Affaires juridiques, Approvisionnement et Gouvernance de données, et cheffe des Services juridiques, a été nommée Juriste d’entreprise de l’année. La distinction a été remise lors de la quatrième édition de la Célébration des juristes d’entreprise au Canada, organisée par ABC-Juristes en contentieux et Legal 500; la cérémonie s’est tenue le 8 octobre à Toronto. iA indique que cette reconnaissance souligne le rôle de son équipe juridique dans la croissance, la gouvernance et la gestion des risques juridiques. Le communiqué mentionne également que cette équipe a récemment contribué à l’acquisition de RF Capital Group inc. (Patrimoine Richardson).",
+      "generatedSummary": "iA Groupe financier annonce qu’Isabelle Durand, vice-présidente principale, Affaires juridiques, Approvisionnement et Gouvernance de données, et cheffe des Services juridiques, a été nommée Juriste d’entreprise de l’année lors de la quatrième édition de la Célébration des juristes d’entreprise au Canada. La cérémonie s’est tenue le 8 octobre à Toronto et le prix est décerné conjointement par ABC-Juristes en contentieux et Legal 500. Le communiqué souligne le rôle de l’équipe juridique dans la croissance, la gouvernance et la gestion des risques juridiques du groupe, ainsi que sa contribution récente à l’acquisition de RF Capital Group inc. (Patrimoine Richardson).",
       "categories": [
         "leadership",
         "risk",
@@ -23760,16 +23771,16 @@
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.98,
+        "confidence": 0.99,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-17T13:46:43.071597Z",
+          "executedAt": "2026-10-20T15:09:03.747966Z",
           "taskId": "summarize_news_iag-official-news_14265255ee31",
-          "sourceFingerprint": "sha256:95ca4a7c57c9c351b4bf7634c37ee129e730713811480ace7170e39cd1dea643",
-          "confidence": 0.98,
+          "sourceFingerprint": "sha256:858b81f961ffc4df6966a6654e8d55e3fdd6413b5b2ce8e821ac68690a4146ee",
+          "confidence": 0.99,
           "warnings": []
         }
       }
