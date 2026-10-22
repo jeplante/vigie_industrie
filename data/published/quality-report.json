@@ -1,15 +1,21 @@
 {
-  "generatedAt": "2026-10-21T15:20:05.323951Z",
+  "generatedAt": "2026-10-22T15:20:31.225978Z",
   "mode": "live",
   "dryRun": false,
-  "status": "success",
+  "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 8,
-  "sourcesFailed": 0,
+  "sourcesSucceeded": 7,
+  "sourcesFailed": 1,
   "observationsAdded": 0,
   "observationsUpdated": 15,
   "overridesApplied": 4,
-  "warnings": [],
+  "warnings": [
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 503 pour https://www.newswire.ca/news/manulife-financial-corporation/",
+      "sourceId": "mfc-official-news"
+    }
+  ],
   "errors": [],
   "sourceResults": [
     {
@@ -68,23 +74,12 @@
     {
       "sourceId": "mfc-official-news",
       "companyId": "MFC",
-      "status": "success",
-      "documentsDiscovered": 8,
-      "documentUrls": [
-        "https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html",
-        "https://www.newswire.ca/news-releases/travel-protected-stay-connected-manulife-canada-introduces-complimentary-esim-816412695.html",
-        "https://www.newswire.ca/news-releases/manulife-launches-new-advisor-ai-assistant-expanding-ai-enabled-underwriting-support-for-advisors-874574770.html",
-        "https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html",
-        "https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html",
-        "https://www.newswire.ca/news-releases/manulife-announces-presenting-partnership-of-the-hinton-lectures-tm-on-ai-safety-853002684.html",
-        "https://www.newswire.ca/news-releases/manulife-closes-long-term-care-reinsurance-transaction-with-munich-re-809038201.html",
-        "https://www.newswire.ca/news-releases/manulife-canada-partners-with-sword-to-launch-ai-enabled-physiotherapy-solution-to-support-faster-recovery-and-return-to-work-outcomes-808892012.html"
-      ],
-      "periodIds": [
-        "2026-AN",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 503 pour https://www.newswire.ca/news/manulife-financial-corporation/",
+      "llmCalls": 0
     },
     {
       "sourceId": "slf-official-news",
@@ -145,10 +140,9 @@
         "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est"
       ],
       "periodIds": [
-        "2026-AN",
         "2026-T3"
       ],
-      "llmCalls": 8
+      "llmCalls": 2
     }
   ]
 }
