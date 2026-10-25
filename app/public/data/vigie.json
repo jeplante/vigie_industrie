@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-24T14:03:13.228016Z",
+  "generatedAt": "2026-10-25T14:25:19.219607Z",
   "companies": [
     {
       "id": "MFC",
@@ -2559,6 +2559,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2818,6 +2819,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3000,6 +3002,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5795,6 +5798,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -17133,8 +17137,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-24T14:01:31.884958Z",
-        "documentHash": "sha256:7e3ab8f2a9e4a279dcb45a98a6b659128b2018761875edd0b6177b1b3ecf331d",
+        "fetchedAt": "2026-10-25T14:23:52.593463Z",
+        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
         "priority": "primary"
       },
       "quality": {
@@ -17177,8 +17181,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-24T14:01:31.885519Z",
-        "documentHash": "sha256:7e3ab8f2a9e4a279dcb45a98a6b659128b2018761875edd0b6177b1b3ecf331d",
+        "fetchedAt": "2026-10-25T14:23:52.594036Z",
+        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
         "priority": "primary"
       },
       "quality": {
@@ -17221,8 +17225,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-24T14:01:31.886058Z",
-        "documentHash": "sha256:7e3ab8f2a9e4a279dcb45a98a6b659128b2018761875edd0b6177b1b3ecf331d",
+        "fetchedAt": "2026-10-25T14:23:52.594556Z",
+        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
         "priority": "primary"
       },
       "quality": {
@@ -17265,8 +17269,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-24T14:01:31.886584Z",
-        "documentHash": "sha256:7e3ab8f2a9e4a279dcb45a98a6b659128b2018761875edd0b6177b1b3ecf331d",
+        "fetchedAt": "2026-10-25T14:23:52.595082Z",
+        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
         "priority": "primary"
       },
       "quality": {
@@ -17309,8 +17313,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-24T14:01:31.887105Z",
-        "documentHash": "sha256:7e3ab8f2a9e4a279dcb45a98a6b659128b2018761875edd0b6177b1b3ecf331d",
+        "fetchedAt": "2026-10-25T14:23:52.595590Z",
+        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
         "priority": "primary"
       },
       "quality": {
@@ -17617,8 +17621,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-24T14:01:33.838647Z",
-        "documentHash": "sha256:0f1258081320e2d7343addc672c90060e3eee3aa6f8ed6b14506f41a9b000215",
+        "fetchedAt": "2026-10-25T14:24:04.589504Z",
+        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
         "priority": "primary"
       },
       "quality": {
@@ -17661,8 +17665,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-24T14:01:33.839074Z",
-        "documentHash": "sha256:0f1258081320e2d7343addc672c90060e3eee3aa6f8ed6b14506f41a9b000215",
+        "fetchedAt": "2026-10-25T14:24:04.589950Z",
+        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
         "priority": "primary"
       },
       "quality": {
@@ -17705,8 +17709,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-24T14:01:33.839461Z",
-        "documentHash": "sha256:0f1258081320e2d7343addc672c90060e3eee3aa6f8ed6b14506f41a9b000215",
+        "fetchedAt": "2026-10-25T14:24:04.590343Z",
+        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
         "priority": "primary"
       },
       "quality": {
@@ -17749,8 +17753,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-24T14:01:33.839863Z",
-        "documentHash": "sha256:0f1258081320e2d7343addc672c90060e3eee3aa6f8ed6b14506f41a9b000215",
+        "fetchedAt": "2026-10-25T14:24:04.590747Z",
+        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
         "priority": "primary"
       },
       "quality": {
@@ -17793,8 +17797,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-24T14:01:33.840299Z",
-        "documentHash": "sha256:0f1258081320e2d7343addc672c90060e3eee3aa6f8ed6b14506f41a9b000215",
+        "fetchedAt": "2026-10-25T14:24:04.591178Z",
+        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
         "priority": "primary"
       },
       "quality": {
@@ -17837,8 +17841,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-24T14:01:33.840701Z",
-        "documentHash": "sha256:0f1258081320e2d7343addc672c90060e3eee3aa6f8ed6b14506f41a9b000215",
+        "fetchedAt": "2026-10-25T14:24:04.591565Z",
+        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
         "priority": "primary"
       },
       "quality": {
@@ -20183,20 +20187,20 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:02:58.071263Z",
-        "documentHash": "sha256:60f0d8419c0e055d177b793ba518c6f970943f84515b4af64d6475fba212ad2e"
+        "fetchedAt": "2026-10-25T14:25:06.292512Z",
+        "documentHash": "sha256:ba8a2b3c6c4a872de2b67682601562ac85431c36bf80b9262b277444ba139d88"
       },
       "title": "Great West's second quarter 2026 earnings conference call to be held on July 29",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\") (TSX: GWO) will release its 2026 second quarter financial results after market close on Tuesday, July 28, 2026....",
-      "generatedSummary": "Great-West Lifeco publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 28 juillet 2026. La direction tiendra une conférence téléphonique et une webdiffusion à 9 h 30 (HE) le 29 juillet 2026 pour les commenter. Au 31 mars 2026, les actifs clients totaux de Great West s’élevaient à 3,3 billions de dollars.",
+      "generatedSummary": "Great-West Lifeco publiera ses résultats financiers du deuxième trimestre 2026 après la clôture des marchés le 28 juillet 2026. La direction tiendra une conférence téléphonique et une webdiffusion à 9 h 30 (HE) le 29 juillet pour discuter de ces résultats.",
       "categories": [
         "financial_results"
       ],
       "importance": "medium",
       "themes": [
         "Publication des résultats du deuxième trimestre 2026",
-        "Conférence téléphonique sur les résultats",
-        "Actifs clients"
+        "Conférence téléphonique avec la direction",
+        "Webdiffusion investisseurs"
       ],
       "quality": {
         "status": "validated",
@@ -20207,9 +20211,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:03:00.308264Z",
+          "executedAt": "2026-10-25T14:25:08.089914Z",
           "taskId": "summarize_news_gwo-official-news_065d23b1da01",
-          "sourceFingerprint": "sha256:60f0d8419c0e055d177b793ba518c6f970943f84515b4af64d6475fba212ad2e",
+          "sourceFingerprint": "sha256:ba8a2b3c6c4a872de2b67682601562ac85431c36bf80b9262b277444ba139d88",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20228,12 +20232,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:03:00.409141Z",
-        "documentHash": "sha256:6b92139862ad14ee6c9598c755b8b9dc68382c42d13e392db80919197df7e144"
+        "fetchedAt": "2026-10-25T14:25:08.188135Z",
+        "documentHash": "sha256:74a094d87143ce477b85a147d4fd289ce3a9c136def85e3e61cdbf7e7767c227"
       },
       "title": "Great West completes offering of €500 million 3.625% senior euro bonds due 2033",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\") announced today that it has completed the previously announced offering of €500 million 3.625% senior euro bonds...",
-      "generatedSummary": "Great-West Lifeco a finalisé l’émission précédemment annoncée de 500 millions d’euros d’obligations senior à 3,625 %, arrivant à échéance le 7 juillet 2033. Les obligations sont notées A+ par S&P Global Ratings et A par Fitch Ratings. Elles sont inscrites sur la liste officielle d’Euronext Dublin et admises à la négociation sur son Global Exchange Market.",
+      "generatedSummary": "Great-West Lifeco a finalisé son émission précédemment annoncée de 500 millions d’euros d’obligations senior à 3,625 %, arrivant à échéance le 7 juillet 2033. Les obligations sont notées A+ par S&P Global Ratings et A par Fitch Ratings. Elles sont inscrites à la cote officielle d’Euronext Dublin et admises à la négociation sur son Global Exchange Market. Barclays, Crédit Agricole Corporate and Investment Bank, J.P. Morgan Securities et Merrill Lynch International ont agi comme teneurs de livre associés actifs pour le compte d’un syndicat de gestionnaires.",
       "categories": [
         "capital_management"
       ],
@@ -20242,8 +20246,7 @@
         "Émission obligataire",
         "Financement",
         "Dette senior",
-        "Notation de crédit",
-        "Euronext Dublin"
+        "Marchés de capitaux"
       ],
       "quality": {
         "status": "validated",
@@ -20254,9 +20257,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:03:02.823920Z",
+          "executedAt": "2026-10-25T14:25:11.262314Z",
           "taskId": "summarize_news_gwo-official-news_30395c3f007d",
-          "sourceFingerprint": "sha256:6b92139862ad14ee6c9598c755b8b9dc68382c42d13e392db80919197df7e144",
+          "sourceFingerprint": "sha256:74a094d87143ce477b85a147d4fd289ce3a9c136def85e3e61cdbf7e7767c227",
           "confidence": 0.99,
           "warnings": []
         }
@@ -20275,38 +20278,39 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:03:02.916066Z",
-        "documentHash": "sha256:a8d28ce3b305f868bca1ddfb229c17f67bcfe4d6b81761798eea90aca8c4f060"
+        "fetchedAt": "2026-10-25T14:25:11.357040Z",
+        "documentHash": "sha256:bfc7aa8af924f7f8b5d563ad2329a8c77bbe69e097c951aaa698a3c8b31c5288"
       },
       "title": "Great West announces pricing of €500 million senior fixed rate euro bonds",
       "originalSummary": "/CNW/ - Great-West Lifeco Inc. (\"Great West\" or the \"Company\") announced today the pricing of €500 million senior fixed rate euro bonds. This is the Company's...",
-      "generatedSummary": "Great-West Lifeco a annoncé la tarification d’une émission de 500 millions d’euros d’obligations senior à taux fixe, sa quatrième émission de dette sur le marché de l’euro. Les obligations, d’une maturité de sept ans, verseront un coupon annuel de 3,625 % et ont été fixées à 99,575 % du pair, pour un rendement de 3,695 %. La clôture est attendue autour du 7 juillet 2026. Le produit net doit servir aux besoins généraux de l’entreprise, y compris potentiellement au remboursement de ses obligations en euros de 500 millions d’euros à 1,750 % arrivant à échéance en décembre 2026. Les obligations devraient être notées A+ par S&P Global Ratings et A par Fitch Ratings, et une demande de cotation sur le Global Exchange Market d’Euronext Dublin est prévue.",
+      "generatedSummary": "Great-West Lifeco a annoncé la fixation du prix d’une émission de 500 millions d’euros d’obligations senior à taux fixe, sa quatrième émission de dette sur le marché de l’euro. Les obligations, d’une maturité de sept ans, portent un coupon annuel de 3,625 %, ont été émises à 99,575 % du pair et offrent un rendement de 3,695 %. Elles devraient être notées A+ par S&P Global Ratings et A par Fitch Ratings. La clôture est attendue vers le 7 juillet 2026. Le produit net doit servir aux besoins généraux de l’entreprise, y compris potentiellement au remboursement d’obligations en euros de 500 millions d’euros à 1,750 % arrivant à échéance en décembre 2026. Une demande de cotation sur le Global Exchange Market d’Euronext Dublin sera déposée.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
         "Émission obligataire en euros",
-        "Refinancement potentiel de dette arrivant à échéance",
-        "Dette senior à taux fixe"
+        "Financement",
+        "Gestion de la dette",
+        "Refinancement potentiel"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "La clôture prévue, l’utilisation des produits et les notations attendues constituent des informations prospectives ou conditionnelles."
+          "La clôture prévue, les notations attendues et l’utilisation envisagée du produit sont des informations prospectives."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:03:06.696448Z",
+          "executedAt": "2026-10-25T14:25:15.101283Z",
           "taskId": "summarize_news_gwo-official-news_64d362dbc38b",
-          "sourceFingerprint": "sha256:a8d28ce3b305f868bca1ddfb229c17f67bcfe4d6b81761798eea90aca8c4f060",
+          "sourceFingerprint": "sha256:bfc7aa8af924f7f8b5d563ad2329a8c77bbe69e097c951aaa698a3c8b31c5288",
           "confidence": 0.99,
           "warnings": [
-            "La clôture prévue, l’utilisation des produits et les notations attendues constituent des informations prospectives ou conditionnelles."
+            "La clôture prévue, les notations attendues et l’utilisation envisagée du produit sont des informations prospectives."
           ]
         }
       }
@@ -20913,12 +20917,12 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:02:52.402298Z",
-        "documentHash": "sha256:0982851be606f55a9d6e7691c08a558bc0db7dfb9f6fcc71889b767825b33d09"
+        "fetchedAt": "2026-10-25T14:25:00.334156Z",
+        "documentHash": "sha256:77584a76f3f4edd991b2ceb7b490bfc90b516f171293d823dc48351734d14492"
       },
       "title": "Great West reports Q2 2026 results with double-digit earnings growth",
       "originalSummary": "TSX:GWO Great-West Lifeco Inc.'s Quarterly Report to Shareholders for the second quarter of 2026, including its Management's Discussion and Analysis (MD&A) and...",
-      "generatedSummary": "Great-West Lifeco a publié ses résultats du T2 2026. Le bénéfice de base a atteint 1 270 M$ CA, en hausse de 11 % sur un an, et le bénéfice net attribuable aux actionnaires ordinaires 1 039 M$ CA, en hausse de 16 %. Le BPA de base a progressé de 15 % à 1,42 $ et le BPA net de 20 % à 1,16 $. Le rendement des capitaux propres de base s’est établi à 19,3 %, tandis que le ratio LICAT était de 128 % au 30 juin 2026. La société a racheté 4,4 millions d’actions ordinaires pour 336 M$ CA au T2 et a relevé la limite de son programme de rachat à 40 millions d’actions, sous réserve de la prise d’effet prévue vers le 31 juillet 2026. Empower a annoncé le 30 juin l’acquisition de l’activité d’administration des régimes de retraite et d’avantages sociaux de Milliman pour 340 M$ US, une opération dont la clôture est prévue au second semestre 2026, sous réserve des conditions et approbations usuelles. Le conseil a aussi approuvé un dividende trimestriel de 0,67 $ par action ordinaire, payable le 29 septembre 2026 aux actionnaires inscrits le 1er septembre 2026.",
+      "generatedSummary": "Great-West Lifeco a publié ses résultats du deuxième trimestre 2026. Le bénéfice de base a augmenté de 11 % sur un an, à 1 270 M$ CA, et le bénéfice net attribuable aux actionnaires ordinaires a progressé de 16 %, à 1 039 M$ CA. Le BPA de base a atteint 1,42 $ (+15 %) et le BPA net 1,16 $ (+20 %). Le rendement des capitaux propres de base s’est établi à 19,3 %, dépassant l’objectif à moyen terme de plus de 19 %, tandis que le ratio LICAT est resté à 128 %. La société a racheté 4,4 millions d’actions ordinaires pour 336 M$ CA au trimestre et a augmenté à 40 millions le plafond de rachats autorisés dans le cadre de son offre publique de rachat dans le cours normal des activités. Empower a annoncé l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman pour 340 M$ US, sous réserve des conditions de clôture et des approbations réglementaires. Great-West a aussi déclaré un dividende trimestriel de 0,67 $ par action ordinaire, payable le 29 septembre 2026.",
       "categories": [
         "financial_results",
         "capital_management",
@@ -20926,32 +20930,32 @@
       ],
       "importance": "high",
       "themes": [
-        "Résultats du deuxième trimestre 2026",
-        "Croissance du bénéfice et du BPA",
+        "Résultats du T2 2026",
+        "Croissance du bénéfice de base et du BPA",
         "Rachats d’actions",
         "Acquisition de l’activité de Milliman par Empower",
-        "Dividende trimestriel",
-        "Capital et ratio LICAT"
+        "Capital et ratio LICAT",
+        "Dividende"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Les bénéfices de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR, tels que définis par la société.",
-          "Les effets attendus de l’acquisition de Milliman, y compris l’effet relutif, le TRI, les synergies et le calendrier de clôture, sont des informations prospectives."
+          "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR/IFRS, selon la société.",
+          "Les synergies, le rendement attendu et le caractère relutif de l’acquisition de Milliman sont des déclarations prospectives soumises aux conditions de clôture et aux approbations réglementaires."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:02:57.895258Z",
+          "executedAt": "2026-10-25T14:25:06.106812Z",
           "taskId": "summarize_news_gwo-official-news_8e3e71da6266",
-          "sourceFingerprint": "sha256:0982851be606f55a9d6e7691c08a558bc0db7dfb9f6fcc71889b767825b33d09",
+          "sourceFingerprint": "sha256:77584a76f3f4edd991b2ceb7b490bfc90b516f171293d823dc48351734d14492",
           "confidence": 0.99,
           "warnings": [
-            "Les bénéfices de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR, tels que définis par la société.",
-            "Les effets attendus de l’acquisition de Milliman, y compris l’effet relutif, le TRI, les synergies et le calendrier de clôture, sont des informations prospectives."
+            "Le bénéfice de base, le BPA de base, le rendement des capitaux propres de base et certains indicateurs d’actifs sont des mesures ou ratios non conformes aux PCGR/IFRS, selon la société.",
+            "Les synergies, le rendement attendu et le caractère relutif de l’acquisition de Milliman sont des déclarations prospectives soumises aux conditions de clôture et aux approbations réglementaires."
           ]
         }
       }
@@ -20969,23 +20973,22 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:02:49.789613Z",
-        "documentHash": "sha256:a5787f797af411d5c495988c06d6dc2f713aedff22acbd9d9a1f53e3d3347cb0"
+        "fetchedAt": "2026-10-25T14:24:57.204300Z",
+        "documentHash": "sha256:6f141ebece093f1b221c05f537da1d2cc4ec970a910aeb43aa3374a2e0ffdd10"
       },
       "title": "Great West President & Chief Executive Officer David Harney to join Virtual Fireside Chat with Jefferies",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") today announced that David Harney, President and Chief Executive Officer, Great West, will join...",
-      "generatedSummary": "Great-West Lifeco a annoncé que son président et chef de la direction, David Harney, participera le 30 juillet 2026 à 11 h (HE) à une discussion virtuelle avec l’analyste John Aiken de Jefferies. La discussion portera sur la stratégie de Great West et ses résultats financiers du premier semestre de 2026. Une rediffusion sera disponible après l’événement sur le site de Great West. Au 30 juin 2026, les actifs totaux des clients de Great West s’élevaient à 3,7 billions de dollars.",
+      "generatedSummary": "Great-West Lifeco a annoncé que son président et chef de la direction, David Harney, participera à une discussion virtuelle avec l’analyste John Aiken de Jefferies le 30 juillet 2026 à 11 h HE. La discussion portera sur la stratégie de Great West et ses résultats financiers du premier semestre de 2026. Une rediffusion sera accessible après l’événement sur le site de Great West. Au 30 juin 2026, les actifs totaux des clients de Great West s’élevaient à 3,7 billions de dollars.",
       "categories": [
         "strategy",
-        "financial_results",
-        "leadership"
+        "financial_results"
       ],
       "importance": "low",
       "themes": [
-        "Discussion virtuelle avec Jefferies",
+        "Discussion investisseurs",
         "Stratégie",
-        "Résultats du premier semestre 2026",
-        "Actifs des clients"
+        "Résultats financiers du premier semestre 2026",
+        "Webdiffusion"
       ],
       "quality": {
         "status": "validated",
@@ -20996,9 +20999,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:02:52.079747Z",
+          "executedAt": "2026-10-25T14:25:00.088557Z",
           "taskId": "summarize_news_gwo-official-news_859ccc25bac5",
-          "sourceFingerprint": "sha256:a5787f797af411d5c495988c06d6dc2f713aedff22acbd9d9a1f53e3d3347cb0",
+          "sourceFingerprint": "sha256:6f141ebece093f1b221c05f537da1d2cc4ec970a910aeb43aa3374a2e0ffdd10",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22042,47 +22045,43 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:02:45.558751Z",
-        "documentHash": "sha256:8dd75d14e7db92a6d6c174644b82e9ebcf5cffec2518868bd9aa939105bcefb2"
+        "fetchedAt": "2026-10-25T14:24:52.675023Z",
+        "documentHash": "sha256:1944dbb539af5e543dbec0f77c9170113a0ff936ba8dc02a0deef6d685226cfa"
       },
       "title": "Great West subsidiary Empower closes acquisition of Milliman's retirement administration business",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") subsidiary Empower today announced the closing of Empower's acquisition of Milliman's retirement plan...",
-      "generatedSummary": "La filiale Empower de Great-West Lifeco a finalisé l’acquisition de l’activité d’administration de régimes de retraite et d’avantages sociaux de Milliman, annoncée initialement le 30 juin 2026. L’opération élargit les capacités d’Empower dans l’administration des régimes à prestations déterminées, à cotisations déterminées et des avantages sociaux. Environ 800 employés rejoignent Empower. L’acquisition ajoute environ 400 régimes à prestations déterminées, 1 100 régimes à cotisations déterminées et 100 clients d’administration d’avantages sociaux. Après l’opération, Empower indique servir plus de 22 millions de personnes, administrer plus de 2 300 milliards de dollars américains d’actifs clients et compter 96 000 régimes professionnels.",
+      "generatedSummary": "La filiale Empower de Great-West Lifeco a finalisé l’acquisition de l’activité d’administration des régimes de retraite et d’avantages sociaux de Milliman, annoncée le 30 juin 2026. L’opération élargit les capacités d’Empower dans l’administration des régimes à prestations définies, à cotisations définies ainsi que des avantages santé et sociaux. Environ 800 employés rejoignent Empower. L’acquisition ajoute environ 400 régimes à prestations définies, représentant environ 790 000 participants et 80 milliards de dollars américains d’actifs clients, plus de 1 100 régimes à cotisations définies représentant environ 750 000 participants et plus de 50 milliards de dollars américains d’actifs clients, ainsi que 100 clients d’administration santé et avantages sociaux couvrant environ 100 000 participants. Après l’opération, Empower indique servir plus de 22 millions de personnes, administrer plus de 2 300 milliards de dollars américains d’actifs clients et compter 96 000 régimes professionnels.",
       "categories": [
         "merger_acquisition",
         "strategy",
         "wealth_management"
       ],
-      "importance": "medium",
+      "importance": "high",
       "themes": [
         "Finalisation d'acquisition",
         "Administration de régimes de retraite",
-        "Prestations déterminées",
-        "Cotisations déterminées",
+        "Prestations définies",
+        "Prestations à cotisations définies",
         "Avantages sociaux",
-        "Expansion des capacités d'Empower"
+        "Expansion aux États-Unis"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.99,
         "warnings": [
-          "Les actifs clients sont présentés comme des mesures financières non conformes aux PCGR et ne sont pas directement comparables à des mesures similaires utilisées par d’autres sociétés.",
-          "Les données relatives aux régimes et aux participants ajoutés reflètent la méthodologie de présentation d’Empower; Milliman utilise une méthode différente.",
-          "Certaines données sont indiquées au 31 décembre 2025 ou au 31 mars 2026."
+          "Les « actifs clients » constituent une mesure financière non conforme aux PCGR, selon le communiqué. Certaines données relatives aux régimes à cotisations définies et aux avantages sociaux sont indiquées au 31 décembre 2025."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:02:49.696589Z",
+          "executedAt": "2026-10-25T14:24:57.088320Z",
           "taskId": "summarize_news_gwo-official-news_0111ffecaaac",
-          "sourceFingerprint": "sha256:8dd75d14e7db92a6d6c174644b82e9ebcf5cffec2518868bd9aa939105bcefb2",
+          "sourceFingerprint": "sha256:1944dbb539af5e543dbec0f77c9170113a0ff936ba8dc02a0deef6d685226cfa",
           "confidence": 0.99,
           "warnings": [
-            "Les actifs clients sont présentés comme des mesures financières non conformes aux PCGR et ne sont pas directement comparables à des mesures similaires utilisées par d’autres sociétés.",
-            "Les données relatives aux régimes et aux participants ajoutés reflètent la méthodologie de présentation d’Empower; Milliman utilise une méthode différente.",
-            "Certaines données sont indiquées au 31 décembre 2025 ou au 31 mars 2026."
+            "Les « actifs clients » constituent une mesure financière non conforme aux PCGR, selon le communiqué. Certaines données relatives aux régimes à cotisations définies et aux avantages sociaux sont indiquées au 31 décembre 2025."
           ]
         }
       }
@@ -22150,14 +22149,15 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:02:43.342314Z",
-        "documentHash": "sha256:d88776798387a25d2bb23afc39351f03f69953be3bb9889032465b3a5c56fd44"
+        "fetchedAt": "2026-10-25T14:24:50.003539Z",
+        "documentHash": "sha256:e5aaa0511d86de51370bac0ac3ccf5d4597be8402f11b92fe2556a3e7a46fca6"
       },
       "title": "Great West President & Chief Executive Officer David Harney to speak at the Scotiabank Financials Summit",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (TSX: GWO) (\"Great West\") today announced that David Harney, President and Chief Executive Officer, Great West, will join a...",
-      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion informelle lors du Scotiabank Financials Summit le 10 septembre 2026 à 8 h 30 (HE). Une rediffusion web sera disponible après l’événement dans la section « Events » du site de Great West.",
+      "generatedSummary": "Great-West Lifeco a annoncé que son président-directeur général, David Harney, participera à une discussion informelle lors du Scotiabank Financials Summit le 10 septembre 2026 à 8 h 30 (HE). Une rediffusion web sera accessible après l’événement dans la section Événements de son site internet.",
       "categories": [
-        "leadership"
+        "leadership",
+        "strategy"
       ],
       "importance": "low",
       "themes": [
@@ -22173,9 +22173,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:02:45.464055Z",
+          "executedAt": "2026-10-25T14:24:52.579859Z",
           "taskId": "summarize_news_gwo-official-news_21a8166a7d25",
-          "sourceFingerprint": "sha256:d88776798387a25d2bb23afc39351f03f69953be3bb9889032465b3a5c56fd44",
+          "sourceFingerprint": "sha256:e5aaa0511d86de51370bac0ac3ccf5d4597be8402f11b92fe2556a3e7a46fca6",
           "confidence": 0.99,
           "warnings": []
         }
@@ -23866,20 +23866,19 @@
         "name": "Great-West Lifeco",
         "url": "https://www.newswire.ca/news-releases/great-west-s-third-quarter-2026-earnings-conference-call-to-be-held-on-november-5-827015894.html",
         "sourceId": "gwo-official-news",
-        "fetchedAt": "2026-10-24T14:02:40.218151Z",
-        "documentHash": "sha256:30a51c5b40aae6f41e6ef1335543d3d7fc401e2f6160ee33e68a5be35716597c"
+        "fetchedAt": "2026-10-25T14:24:46.097209Z",
+        "documentHash": "sha256:d53d30425955c73959c496d19c7804033ee2fd9253f124eda2f3a6e6432c203f"
       },
       "title": "Great West's third quarter 2026 earnings conference call to be held on November 5",
       "originalSummary": "/CNW/ -- Great-West Lifeco Inc. (\"Great West\") (TSX: GWO) will release its 2026 third quarter financial results after market close on Wednesday, November 4,...",
-      "generatedSummary": "Great-West Lifeco Inc. publiera ses résultats financiers du troisième trimestre 2026 après la clôture des marchés le 4 novembre 2026. La direction les commentera lors d’une conférence téléphonique et d’une webdiffusion le 5 novembre à 9 h 30 (HE). Au 30 juin 2026, la société indiquait gérer 3,7 billions de dollars d’actifs clients totaux et compter environ 40 millions de relations clients.",
+      "generatedSummary": "Great-West Lifeco հրապարակnera ses résultats financiers du troisième trimestre 2026 après la clôture des marchés le 4 novembre 2026. La direction les présentera lors d’une conférence téléphonique et webdiffusion le 5 novembre à 9 h 30 (HE).",
       "categories": [
         "financial_results"
       ],
       "importance": "low",
       "themes": [
-        "Annonce de calendrier des résultats du troisième trimestre 2026",
-        "Conférence téléphonique et webdiffusion investisseurs",
-        "Actifs clients et présence internationale"
+        "Publication des résultats trimestriels",
+        "Conférence téléphonique sur les résultats"
       ],
       "quality": {
         "status": "validated",
@@ -23890,9 +23889,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-24T14:02:43.243227Z",
+          "executedAt": "2026-10-25T14:24:49.905225Z",
           "taskId": "summarize_news_gwo-official-news_209c4d8a24cf",
-          "sourceFingerprint": "sha256:30a51c5b40aae6f41e6ef1335543d3d7fc401e2f6160ee33e68a5be35716597c",
+          "sourceFingerprint": "sha256:d53d30425955c73959c496d19c7804033ee2fd9253f124eda2f3a6e6432c203f",
           "confidence": 0.99,
           "warnings": []
         }
