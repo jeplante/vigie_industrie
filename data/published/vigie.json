@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-10-25T14:25:19.219607Z",
+  "generatedAt": "2026-10-26T16:48:33.495680Z",
   "companies": [
     {
       "id": "MFC",
@@ -2560,6 +2560,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2820,6 +2821,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3002,6 +3004,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5798,6 +5801,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -17137,8 +17141,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-25T14:23:52.593463Z",
-        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
+        "fetchedAt": "2026-10-26T16:48:09.443458Z",
+        "documentHash": "sha256:a7b15583296ebd055c5e25519ac6db4d99510e7aba0bc98cac9ffe65daf8a023",
         "priority": "primary"
       },
       "quality": {
@@ -17181,8 +17185,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-25T14:23:52.594036Z",
-        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
+        "fetchedAt": "2026-10-26T16:48:09.444168Z",
+        "documentHash": "sha256:a7b15583296ebd055c5e25519ac6db4d99510e7aba0bc98cac9ffe65daf8a023",
         "priority": "primary"
       },
       "quality": {
@@ -17225,8 +17229,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-25T14:23:52.594556Z",
-        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
+        "fetchedAt": "2026-10-26T16:48:09.444804Z",
+        "documentHash": "sha256:a7b15583296ebd055c5e25519ac6db4d99510e7aba0bc98cac9ffe65daf8a023",
         "priority": "primary"
       },
       "quality": {
@@ -17269,8 +17273,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-25T14:23:52.595082Z",
-        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
+        "fetchedAt": "2026-10-26T16:48:09.445455Z",
+        "documentHash": "sha256:a7b15583296ebd055c5e25519ac6db4d99510e7aba0bc98cac9ffe65daf8a023",
         "priority": "primary"
       },
       "quality": {
@@ -17313,8 +17317,8 @@
         "url": "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
         "title": "manulife-reports-second-quarter-2026-results-825420484.html",
         "publishedAt": "2026-08-05",
-        "fetchedAt": "2026-10-25T14:23:52.595590Z",
-        "documentHash": "sha256:d94944678a151872f53dd3719fed756dd99e2ec0289afca0b461c9d868cf07b1",
+        "fetchedAt": "2026-10-26T16:48:09.446120Z",
+        "documentHash": "sha256:a7b15583296ebd055c5e25519ac6db4d99510e7aba0bc98cac9ffe65daf8a023",
         "priority": "primary"
       },
       "quality": {
@@ -17621,8 +17625,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-25T14:24:04.589504Z",
-        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
+        "fetchedAt": "2026-10-26T16:48:10.847942Z",
+        "documentHash": "sha256:e5ec9ad0747a4178cfa646d07e2db3c9b6fb76c35fe2586722392c97bca1a915",
         "priority": "primary"
       },
       "quality": {
@@ -17665,8 +17669,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-25T14:24:04.589950Z",
-        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
+        "fetchedAt": "2026-10-26T16:48:10.848465Z",
+        "documentHash": "sha256:e5ec9ad0747a4178cfa646d07e2db3c9b6fb76c35fe2586722392c97bca1a915",
         "priority": "primary"
       },
       "quality": {
@@ -17709,8 +17713,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-25T14:24:04.590343Z",
-        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
+        "fetchedAt": "2026-10-26T16:48:10.848928Z",
+        "documentHash": "sha256:e5ec9ad0747a4178cfa646d07e2db3c9b6fb76c35fe2586722392c97bca1a915",
         "priority": "primary"
       },
       "quality": {
@@ -17753,8 +17757,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-25T14:24:04.590747Z",
-        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
+        "fetchedAt": "2026-10-26T16:48:10.849371Z",
+        "documentHash": "sha256:e5ec9ad0747a4178cfa646d07e2db3c9b6fb76c35fe2586722392c97bca1a915",
         "priority": "primary"
       },
       "quality": {
@@ -17797,8 +17801,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-25T14:24:04.591178Z",
-        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
+        "fetchedAt": "2026-10-26T16:48:10.849873Z",
+        "documentHash": "sha256:e5ec9ad0747a4178cfa646d07e2db3c9b6fb76c35fe2586722392c97bca1a915",
         "priority": "primary"
       },
       "quality": {
@@ -17841,8 +17845,8 @@
         "url": "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html",
         "title": "sun-life-reports-second-quarter-2026-results-837411895.html",
         "publishedAt": "2026-08-06",
-        "fetchedAt": "2026-10-25T14:24:04.591565Z",
-        "documentHash": "sha256:ad790c3c8b70da390ab289f62eceda0dd1634036a39aba26514acda1c5b7b754",
+        "fetchedAt": "2026-10-26T16:48:10.850317Z",
+        "documentHash": "sha256:e5ec9ad0747a4178cfa646d07e2db3c9b6fb76c35fe2586722392c97bca1a915",
         "priority": "primary"
       },
       "quality": {
@@ -22639,12 +22643,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-23T15:08:16.781999Z",
-        "documentHash": "sha256:0a6532b31ce0b04a5a1056f6e34093057b9f0c12cf9797ac92832274e19060f8"
+        "fetchedAt": "2026-10-26T16:48:28.093166Z",
+        "documentHash": "sha256:9c2cb28c42028ddb55140d3d878622a5a9dd9b29d02c628ec53a0d6ca8b25043"
       },
       "title": "iA Groupe financier se classe parmi les 10 meilleures entreprises canadiennes, selon le palmarès « World’s Best Companies of 2026 » du magazine TIME",
       "originalSummary": "iA Groupe financier a le plaisir d’annoncer qu’il a été nommé l’une des 10 meilleures entreprises ayant leur siège social au Canada dans le classement des meilleures compagnies de 2026 du magazine TIME.",
-      "generatedSummary": "iA Groupe financier a été nommé parmi les 10 meilleures entreprises ayant leur siège social au Canada dans le palmarès « World’s Best Companies of 2026 » de TIME. Le classement évalue 1 000 entreprises mondiales selon la croissance des revenus, la satisfaction des employés et la transparence en matière de durabilité. iA indique que ses primes nettes, équivalents de primes et dépôts ont augmenté de 25 % au deuxième trimestre de 2026 par rapport au trimestre correspondant de 2025, tandis que ses actifs sous gestion et sous administration ont progressé de 37 % sur les 12 mois terminés le 30 juin 2026. L’entreprise met également de l’avant ses investissements dans le développement des employés et ses priorités de durabilité.",
+      "generatedSummary": "iA Groupe financier a été nommé parmi les 10 meilleures entreprises ayant leur siège social au Canada dans le palmarès « World’s Best Companies of 2026 » de TIME. Le classement évalue 1 000 entreprises mondiales selon la croissance des revenus, la satisfaction des employés et la transparence en matière de durabilité. iA indique que ses primes nettes, équivalents de primes et dépôts ont augmenté de 25 % au deuxième trimestre de 2026 par rapport au trimestre correspondant de 2025. Le total des actifs sous gestion et des actifs sous administration a progressé de 37 % sur les 12 mois terminés le 30 juin 2026. L’entreprise met également en avant ses investissements dans le développement des employés, la mobilité interne et trois priorités de durabilité : la santé physique, mentale et financière, l’éducation et l’apprentissage, et un avenir durable.",
       "categories": [
         "financial_results",
         "strategy",
@@ -22652,25 +22656,29 @@
       ],
       "importance": "low",
       "themes": [
-        "Reconnaissance par TIME",
+        "Reconnaissance TIME",
         "Croissance des primes, dépôts et actifs",
-        "Développement des employés",
-        "Durabilité"
+        "Développement des employés et mobilité interne",
+        "Durabilité et transparence"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
         "confidence": 0.98,
-        "warnings": [],
+        "warnings": [
+          "Les primes nettes, équivalents de primes, dépôts, actifs sous gestion et actifs sous administration sont présentés comme des mesures financières supplémentaires."
+        ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-23T15:08:20.193596Z",
+          "executedAt": "2026-10-26T16:48:32.893853Z",
           "taskId": "summarize_news_iag-official-news_5b3e05d232d6",
-          "sourceFingerprint": "sha256:0a6532b31ce0b04a5a1056f6e34093057b9f0c12cf9797ac92832274e19060f8",
+          "sourceFingerprint": "sha256:9c2cb28c42028ddb55140d3d878622a5a9dd9b29d02c628ec53a0d6ca8b25043",
           "confidence": 0.98,
-          "warnings": []
+          "warnings": [
+            "Les primes nettes, équivalents de primes, dépôts, actifs sous gestion et actifs sous administration sont présentés comme des mesures financières supplémentaires."
+          ]
         }
       }
     },
@@ -23460,12 +23468,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-10-23T15:08:01.930202Z",
-        "documentHash": "sha256:2f1d715c62dc9d51d31738000e8a4d03ad6fefee7556867c1f51080acf816467"
+        "fetchedAt": "2026-10-26T16:48:22.347992Z",
+        "documentHash": "sha256:ccaf5fbce86f22298f1f22eba55f4c4c58f0d2f540530633f00b85da5c55a326"
       },
       "title": "iA Groupe financier remporte un prix d’Excellence en apprentissage et en développement de capacités (Learning & Capability Development) aux Canadian HR Awards 2026",
       "originalSummary": "iA Groupe financier a également été nommé finaliste dans trois autres catégories",
-      "generatedSummary": "iA Groupe financier a remporté un prix d’Excellence en apprentissage et en développement de capacités aux Canadian HR Awards 2026, tenus à Toronto. L’entreprise a aussi été finaliste dans trois catégories : culture d’entreprise et expérience employé, stratégie de travail flexible et hybride, et stratégie de bien-être des employés. Le prix reconnaît notamment ses investissements dans le développement du leadership, la relève et une culture d’apprentissage. iA Groupe financier mentionne également une stratégie de talents en intelligence artificielle visant le développement de compétences tournées vers l’avenir.",
+      "generatedSummary": "iA Groupe financier a remporté le prix d’Excellence en apprentissage et en développement de capacités aux Canadian HR Awards 2026, tenus à Toronto. L’entreprise a aussi été finaliste dans trois catégories : culture d’entreprise et expérience employé, stratégie de travail flexible et hybride, et stratégie de bien-être des employés. Le prix reconnaît notamment ses investissements dans le développement du leadership, la préparation de futurs dirigeants et sa culture d’apprentissage. iA mentionne également une stratégie de talents en intelligence artificielle, la mobilité interne et le mentorat comme leviers de développement des compétences et de la relève.",
       "categories": [
         "leadership",
         "artificial_intelligence",
@@ -23473,11 +23481,14 @@
       ],
       "importance": "low",
       "themes": [
-        "Prix et reconnaissance RH",
-        "Apprentissage et développement des talents",
-        "Leadership et planification de la relève",
-        "Mobilité interne et mentorat",
-        "Stratégie de talents en intelligence artificielle"
+        "Ressources humaines",
+        "Apprentissage et développement des capacités",
+        "Développement du leadership",
+        "Planification de la relève",
+        "Mobilité interne",
+        "Mentorat",
+        "Talents en intelligence artificielle",
+        "Récompense sectorielle"
       ],
       "quality": {
         "status": "validated",
@@ -23488,9 +23499,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-10-23T15:08:05.574504Z",
+          "executedAt": "2026-10-26T16:48:26.485345Z",
           "taskId": "summarize_news_iag-official-news_ea57d2fc9224",
-          "sourceFingerprint": "sha256:2f1d715c62dc9d51d31738000e8a4d03ad6fefee7556867c1f51080acf816467",
+          "sourceFingerprint": "sha256:ccaf5fbce86f22298f1f22eba55f4c4c58f0d2f540530633f00b85da5c55a326",
           "confidence": 0.99,
           "warnings": []
         }
@@ -24030,6 +24041,50 @@
           "executedAt": "2026-10-24T14:02:13.576773Z",
           "taskId": "summarize_news_slf-official-news_b2c615cde8b0",
           "sourceFingerprint": "sha256:468e4ae6dadeaa71e7aecd17d846af32471765320077ee53161db320cd576127",
+          "confidence": 0.99,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-3b852e19c18b7ff94f2a",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodId": "2026-AN",
+      "periodKey": "AN",
+      "publishedAt": "2026-10-26",
+      "source": {
+        "type": "official_release",
+        "name": "iA Groupe financier",
+        "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
+        "sourceId": "iag-official-news",
+        "fetchedAt": "2026-10-26T16:48:16.871968Z",
+        "documentHash": "sha256:0f58958a545e61dce4070edbcf89ffa18925b41d937a837eaaa53a91db72fcc3"
+      },
+      "title": "iA Groupe financier annonce la date de divulgation de ses résultats financiers du troisième trimestre 2026",
+      "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX: IAG)) divulguera ses résultats financiers pour le troisième trimestre de 2026 le lundi 9 novembre 2026, après la clôture des marchés.",
+      "generatedSummary": "iA Groupe financier (iA Société financière inc., TSX : IAG) a annoncé qu’il divulguera ses résultats financiers du troisième trimestre de 2026 le 9 novembre 2026 après la clôture des marchés. La direction tiendra une audioconférence le 10 novembre 2026 à 11 h (HE). Les documents relatifs aux résultats seront publiés après 17 h (HE) le 9 novembre sur le site de la société.",
+      "categories": [
+        "financial_results"
+      ],
+      "importance": "low",
+      "themes": [
+        "Annonce de la date de publication des résultats du troisième trimestre 2026",
+        "Audioconférence avec la direction"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "openai",
+        "confidence": 0.99,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-10-26T16:48:21.506423Z",
+          "taskId": "summarize_news_iag-official-news_3b852e19c18b",
+          "sourceFingerprint": "sha256:0f58958a545e61dce4070edbcf89ffa18925b41d937a837eaaa53a91db72fcc3",
           "confidence": 0.99,
           "warnings": []
         }

@@ -1,24 +1,29 @@
 {
-  "generatedAt": "2026-10-25T14:25:19.219607Z",
+  "generatedAt": "2026-10-26T16:48:33.495680Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 6,
-  "sourcesFailed": 2,
+  "sourcesSucceeded": 5,
+  "sourcesFailed": 3,
   "observationsAdded": 0,
   "observationsUpdated": 15,
   "overridesApplied": 4,
   "warnings": [
     {
       "code": "source_refresh_failed",
-      "message": "Erreur HTTP 503 pour https://www.newswire.ca/news/manulife-financial-corporation/",
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/manulife-financial-corporation/",
       "sourceId": "mfc-official-news"
     },
     {
       "code": "source_refresh_failed",
-      "message": "Erreur HTTP 503 pour https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/",
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/",
       "sourceId": "slf-official-news"
+    },
+    {
+      "code": "source_refresh_failed",
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/great__west-lifeco-inc./",
+      "sourceId": "gwo-official-news"
     }
   ],
   "errors": [],
@@ -83,7 +88,7 @@
       "documentsDiscovered": 0,
       "documentUrls": [],
       "periodIds": [],
-      "message": "Erreur HTTP 503 pour https://www.newswire.ca/news/manulife-financial-corporation/",
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/manulife-financial-corporation/",
       "llmCalls": 0
     },
     {
@@ -93,30 +98,18 @@
       "documentsDiscovered": 0,
       "documentUrls": [],
       "periodIds": [],
-      "message": "Erreur HTTP 503 pour https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/",
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/",
       "llmCalls": 0
     },
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
-      "status": "success",
-      "documentsDiscovered": 8,
-      "documentUrls": [
-        "https://www.newswire.ca/news-releases/great-west-s-third-quarter-2026-earnings-conference-call-to-be-held-on-november-5-827015894.html",
-        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html",
-        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
-        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
-        "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
-        "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
-        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
-        "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html"
-      ],
-      "periodIds": [
-        "2026-AN",
-        "2026-T2",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "status": "failed",
+      "documentsDiscovered": 0,
+      "documentUrls": [],
+      "periodIds": [],
+      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/great__west-lifeco-inc./",
+      "llmCalls": 0
     },
     {
       "sourceId": "iag-official-news",
@@ -124,17 +117,20 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026",
-        "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution",
-        "https://ia.ca/salle-de-presse/2026/septembre/d-ricard-prendra-parole-conference-annuelle-cibc-investisseurs-institutionnels-region-est"
+        "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-AN",
+        "2026-T3"
+      ],
+      "llmCalls": 3
     }
   ]
 }
