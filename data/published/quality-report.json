@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-10-26T16:48:33.495680Z",
+  "generatedAt": "2026-10-27T15:56:22.470177Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 5,
-  "sourcesFailed": 3,
+  "sourcesSucceeded": 6,
+  "sourcesFailed": 0,
   "observationsAdded": 0,
-  "observationsUpdated": 15,
+  "observationsUpdated": 9,
   "overridesApplied": 4,
   "warnings": [
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/manulife-financial-corporation/",
-      "sourceId": "mfc-official-news"
+      "code": "history_archive_unavailable",
+      "message": "mfc-results: périodes historiques non découvertes ['2026-T3'].",
+      "sourceId": "mfc-results"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/",
-      "sourceId": "slf-official-news"
+      "code": "newer_document_not_ingested",
+      "message": "slf-results/Annuel 2026: slf-results/Annuel 2026: métriques officielles requises manquantes ['core_earnings', 'core_eps', 'licat_ratio']",
+      "sourceId": "slf-results"
     },
     {
-      "code": "source_refresh_failed",
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/great__west-lifeco-inc./",
-      "sourceId": "gwo-official-news"
+      "code": "history_archive_unavailable",
+      "message": "slf-results: périodes historiques non découvertes ['2026-T3'].",
+      "sourceId": "slf-results"
     }
   ],
   "errors": [],
@@ -31,28 +31,34 @@
     {
       "sourceId": "mfc-results",
       "companyId": "MFC",
-      "status": "success",
-      "documentsDiscovered": 1,
+      "status": "warning",
+      "documentsDiscovered": 3,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html",
+        "https://www.newswire.ca/news-releases/manulife-to-release-second-quarter-2026-results-831564555.html",
         "https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html"
       ],
       "periodIds": [
         "2026-T2"
       ],
+      "message": "mfc-results: périodes historiques non découvertes ['2026-T3'].",
       "llmCalls": 0
     },
     {
       "sourceId": "slf-results",
       "companyId": "SLF",
-      "status": "success",
-      "documentsDiscovered": 1,
+      "status": "warning",
+      "documentsDiscovered": 3,
       "documentUrls": [
-        "https://www.newswire.ca/news-releases/sun-life-reports-second-quarter-2026-results-837411895.html"
+        "https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html",
+        "https://www.newswire.ca/news-releases/sun-life-hosts-second-quarter-2026-earnings-conference-call-878826302.html",
+        "https://www.newswire.ca/news-releases/la-sun-life-annonce-ses-resultats-du-deuxieme-trimestre-de-l-exercice-2026-843520875.html"
       ],
       "periodIds": [
-        "2026-T2"
+        "2026-AN"
       ],
-      "llmCalls": 0
+      "message": "slf-results/Annuel 2026: slf-results/Annuel 2026: métriques officielles requises manquantes ['core_earnings', 'core_eps', 'licat_ratio']; slf-results: périodes historiques non découvertes ['2026-T3'].",
+      "llmCalls": 1
     },
     {
       "sourceId": "gwo-results",
@@ -84,32 +90,65 @@
     {
       "sourceId": "mfc-official-news",
       "companyId": "MFC",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/manulife-financial-corporation/",
-      "llmCalls": 0
+      "status": "success",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
+        "https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html",
+        "https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html",
+        "https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html",
+        "https://www.newswire.ca/news-releases/travel-protected-stay-connected-manulife-canada-introduces-complimentary-esim-816412695.html",
+        "https://www.newswire.ca/news-releases/manulife-launches-new-advisor-ai-assistant-expanding-ai-enabled-underwriting-support-for-advisors-874574770.html",
+        "https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html",
+        "https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html"
+      ],
+      "periodIds": [
+        "2026-AN"
+      ],
+      "llmCalls": 8
     },
     {
       "sourceId": "slf-official-news",
       "companyId": "SLF",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/sun-life-financial-inc.-__-financial-news/",
-      "llmCalls": 0
+      "status": "success",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html",
+        "https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html",
+        "https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html",
+        "https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html",
+        "https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html",
+        "https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html",
+        "https://www.newswire.ca/news-releases/sun-life-announces-dividend-rates-on-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-860397379.html",
+        "https://www.newswire.ca/news-releases/sun-life-president-and-chief-executive-officer-kevin-strain-to-speak-at-the-scotiabank-financials-summit-891042337.html"
+      ],
+      "periodIds": [
+        "2026-AN",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     },
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
-      "status": "failed",
-      "documentsDiscovered": 0,
-      "documentUrls": [],
-      "periodIds": [],
-      "message": "Erreur HTTP 502 pour https://www.newswire.ca/news/great__west-lifeco-inc./",
-      "llmCalls": 0
+      "status": "success",
+      "documentsDiscovered": 8,
+      "documentUrls": [
+        "https://www.newswire.ca/news-releases/great-west-s-third-quarter-2026-earnings-conference-call-to-be-held-on-november-5-827015894.html",
+        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html",
+        "https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
+        "https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
+        "https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
+        "https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
+        "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
+        "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html"
+      ],
+      "periodIds": [
+        "2026-AN",
+        "2026-T2",
+        "2026-T3"
+      ],
+      "llmCalls": 8
     },
     {
       "sourceId": "iag-official-news",
@@ -117,20 +156,20 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information",
-        "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026",
-        "https://ia.ca/salle-de-presse/2026/septembre/patrimoine-richardson-annonce-intention-devenir-patrimoine-nobelia-nouveau-chapitre-evolution"
+        "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026"
       ],
       "periodIds": [
         "2026-AN",
         "2026-T3"
       ],
-      "llmCalls": 3
+      "llmCalls": 8
     }
   ]
 }
