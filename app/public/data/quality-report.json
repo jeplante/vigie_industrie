@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T16:41:15.544999Z",
+  "generatedAt": "2026-10-29T16:58:49.533207Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -156,20 +156,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/octobre/iagf-don-tragedie-wainwright-croix-rouge",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
         "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
-        "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information",
-        "https://ia.ca/salle-de-presse/2026/septembre/iagf-classe-parmi-10-meilleures-entreprises-canadiennes-selon-world-s-best-companies-2026"
+        "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information"
       ],
       "periodIds": [
-        "2026-AN",
-        "2026-T3"
+        "2026-AN"
       ],
-      "llmCalls": 8
+      "llmCalls": 1
     }
   ]
 }
