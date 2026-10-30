@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T16:58:49.533207Z",
+  "generatedAt": "2026-10-30T16:45:01.634527Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -166,9 +166,10 @@
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information"
       ],
       "periodIds": [
-        "2026-AN"
+        "2026-AN",
+        "2026-T3"
       ],
-      "llmCalls": 1
+      "llmCalls": 8
     }
   ]
 }
