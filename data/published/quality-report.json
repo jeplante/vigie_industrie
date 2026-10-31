@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T16:45:01.634527Z",
+  "generatedAt": "2026-10-31T15:46:41.317213Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -165,11 +165,8 @@
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-annonce-nomination-nicolas-coulombe-poste-vice-president-executif-technologies-information"
       ],
-      "periodIds": [
-        "2026-AN",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
