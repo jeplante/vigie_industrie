@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-03T17:54:12.537787Z",
+  "generatedAt": "2026-11-04T18:00:16.059069Z",
   "companies": [
     {
       "id": "MFC",
@@ -2569,6 +2569,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2838,6 +2839,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3020,6 +3022,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5825,6 +5828,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -22782,20 +22786,20 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:54:09.542210Z",
-        "documentHash": "sha256:12e9ab39b5fbc73f69fa561f4f4d2018a704688036762d33be96337953a5b21f"
+        "fetchedAt": "2026-11-04T18:00:13.386994Z",
+        "documentHash": "sha256:f0d88f35c75df73b2bcc94e4d8b21d185e4760f3b25f8bd6ba1bee309b8f074e"
       },
       "title": "iA Groupe financier rachète ses débentures subordonnées 3,072 % échéant le 24 septembre 2031",
       "originalSummary": "iA Société financière inc. (TSX: IAG) annonce qu’elle a racheté aujourd’hui la totalité de ses débentures subordonnées 3,072 % échéant le 24 septembre 2031 (les « débentures ») sur paiement du prix de rachat de 1 015,36 $ pour chaque tranche de 1 000 $ de capital de débentures, soit l’équivalent de la valeur nominale, majoré de l’intérêt couru et impayé jusqu'à la date de rachat, exclusivement, d’un montant de 15,36 $.",
-      "generatedSummary": "Le 24 septembre 2026, iA Société financière inc. (TSX : IAG) a racheté la totalité de ses débentures subordonnées à 3,072 % échéant le 24 septembre 2031. Le prix de rachat s’est établi à 1 015,36 $ par tranche de 1 000 $ de capital, soit la valeur nominale majorée de 15,36 $ d’intérêts courus et impayés jusqu’à la date de rachat, exclusivement.",
+      "generatedSummary": "Le 24 septembre 2026, iA Société financière inc. (TSX : IAG) a annoncé avoir racheté la totalité de ses débentures subordonnées à 3,072 % échéant le 24 septembre 2031. Le prix de rachat était de 1 015,36 $ par tranche de 1 000 $ de capital, soit la valeur nominale majorée de 15,36 $ d’intérêts courus et impayés jusqu’à la date de rachat, exclusivement.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
-        "Rachat de dette subordonnée",
-        "Gestion du capital",
-        "Débentures 3,072 % échéant en 2031"
+        "rachat de dette subordonnée",
+        "débentures",
+        "intérêts courus"
       ],
       "quality": {
         "status": "validated",
@@ -22806,9 +22810,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:54:12.535608Z",
+          "executedAt": "2026-11-04T18:00:16.053510Z",
           "taskId": "summarize_news_iag-official-news_b94d99db663c",
-          "sourceFingerprint": "sha256:12e9ab39b5fbc73f69fa561f4f4d2018a704688036762d33be96337953a5b21f",
+          "sourceFingerprint": "sha256:f0d88f35c75df73b2bcc94e4d8b21d185e4760f3b25f8bd6ba1bee309b8f074e",
           "confidence": 0.99,
           "warnings": []
         }
@@ -22878,38 +22882,38 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:54:06.487585Z",
-        "documentHash": "sha256:eb7a4ef3d4d623d1bce185c893517794968df5990c730277646ebb397bde465c"
+        "fetchedAt": "2026-11-04T18:00:09.536794Z",
+        "documentHash": "sha256:38dbaf0a8eb322e66ba26c56b40d1ad38d5440f54d23e4a55241ca28707b52d4"
       },
       "title": "iA Groupe financier franchit le cap des 50 milliards de dollars d’actif sous gestion en fonds distincts",
       "originalSummary": "iA Groupe financier a dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts, en gestion de patrimoine individuel, au cours du mois de septembre 2026.",
-      "generatedSummary": "En septembre 2026, iA Groupe financier a dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts dans sa division de gestion de patrimoine individuel. La société indique détenir près de 40 % du marché canadien des actifs sous gestion de fonds distincts et être au premier rang des ventes nettes de fonds distincts au Canada depuis 2016, selon Investor Economics. Elle met également en avant ses plateformes numériques EVO, Espace client et iA Mobile.",
+      "generatedSummary": "iA Groupe financier a annoncé avoir dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts dans sa division de gestion de patrimoine individuel en septembre 2026. Selon le communiqué, l’entreprise détient près de 40 % du marché canadien des actifs sous gestion en fonds distincts et occupe le premier rang des ventes nettes de fonds distincts au Canada depuis 2016, sur la base de données d’Investor Economics. Elle cite notamment ses produits, son réseau de distribution et ses plateformes technologiques EVO, Espace client et iA Mobile comme facteurs de soutien à sa croissance.",
       "categories": [
         "wealth_management",
         "digital_transformation"
       ],
       "importance": "medium",
       "themes": [
-        "actif sous gestion",
-        "fonds distincts",
-        "part de marché",
-        "ventes nettes",
-        "gestion de patrimoine individuel",
-        "plateformes numériques"
+        "Actifs sous gestion",
+        "Fonds distincts",
+        "Gestion de patrimoine individuel",
+        "Part de marché",
+        "Ventes nettes",
+        "Plateformes numériques"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.99,
+        "confidence": 0.98,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:54:09.205548Z",
+          "executedAt": "2026-11-04T18:00:13.005229Z",
           "taskId": "summarize_news_iag-official-news_ec7e2319cfd2",
-          "sourceFingerprint": "sha256:eb7a4ef3d4d623d1bce185c893517794968df5990c730277646ebb397bde465c",
-          "confidence": 0.99,
+          "sourceFingerprint": "sha256:38dbaf0a8eb322e66ba26c56b40d1ad38d5440f54d23e4a55241ca28707b52d4",
+          "confidence": 0.98,
           "warnings": []
         }
       }
@@ -23508,12 +23512,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:54:02.696423Z",
-        "documentHash": "sha256:eeebd135866f6cce52bafb43f70250be8e2367f3926c985cd93f3f36bfbed6e9"
+        "fetchedAt": "2026-11-04T18:00:06.061471Z",
+        "documentHash": "sha256:e1d55f0c131437337297878ed6942c7425ebc1d672717f90bf4b33ea15e704b9"
       },
       "title": "iA Groupe financier remporte un prix d’Excellence en apprentissage et en développement de capacités (Learning & Capability Development) aux Canadian HR Awards 2026",
       "originalSummary": "iA Groupe financier a également été nommé finaliste dans trois autres catégories",
-      "generatedSummary": "iA Groupe financier a remporté le prix d’Excellence en apprentissage et en développement de capacités aux Canadian HR Awards 2026, tenus à Toronto. L’entreprise a aussi été finaliste dans les catégories Culture d’entreprise et expérience employé, Stratégie de travail flexible et hybride, et stratégie de bien-être des employés. Le communiqué met notamment en avant ses investissements dans le développement du leadership, un vivier de futurs dirigeants, la mobilité interne, le mentorat et une stratégie de talents en intelligence artificielle.",
+      "generatedSummary": "iA Groupe financier a remporté le prix d’Excellence en apprentissage et en développement de capacités aux Canadian HR Awards 2026, organisés à Toronto. L’entreprise a aussi été finaliste dans les catégories Culture d’entreprise et expérience employé, Stratégie de travail flexible et hybride, ainsi que pour le prix Medcan en stratégie de bien-être des employés. Le communiqué souligne ses initiatives de développement du leadership, de mobilité interne, de mentorat et de développement de talents en intelligence artificielle.",
       "categories": [
         "leadership",
         "artificial_intelligence",
@@ -23525,7 +23529,8 @@
         "Apprentissage et développement des capacités",
         "Développement du leadership et relève",
         "Mobilité interne et mentorat",
-        "Stratégie de talents en intelligence artificielle"
+        "Talents en intelligence artificielle",
+        "Culture et engagement des employés"
       ],
       "quality": {
         "status": "validated",
@@ -23536,9 +23541,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:54:05.984686Z",
+          "executedAt": "2026-11-04T18:00:09.073883Z",
           "taskId": "summarize_news_iag-official-news_ea57d2fc9224",
-          "sourceFingerprint": "sha256:eeebd135866f6cce52bafb43f70250be8e2367f3926c985cd93f3f36bfbed6e9",
+          "sourceFingerprint": "sha256:e1d55f0c131437337297878ed6942c7425ebc1d672717f90bf4b33ea15e704b9",
           "confidence": 0.99,
           "warnings": []
         }
@@ -23809,36 +23814,38 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:53:59.163644Z",
-        "documentHash": "sha256:7bace0a4c9433022fd968e81c8a9092abfe87c0f22bfc2924d5b8602335f035c"
+        "fetchedAt": "2026-11-04T18:00:02.003329Z",
+        "documentHash": "sha256:bf98123dbee5eac1c2ce77bbe0af42b5a5cb26fe734ca6ca269c765e00a4d61b"
       },
       "title": "Isabelle Durand, cheffe des Services juridiques de iA Groupe financier, nommée Juriste d’entreprise de l’année",
       "originalSummary": "iA Groupe financier est fier de féliciter Isabelle Durand, cheffe des Services juridiques, pour sa nomination à titre de Juriste d’entreprise de l’année lors d’une cérémonie qui s’est tenue le 8 octobre dernier à Toronto.",
-      "generatedSummary": "iA Groupe financier annonce qu’Isabelle Durand, vice-présidente principale, Affaires juridiques, Approvisionnement et Gouvernance de données et cheffe des Services juridiques, a été nommée Juriste d’entreprise de l’année lors de la quatrième édition de la Célébration des juristes d’entreprise au Canada. La cérémonie s’est tenue le 8 octobre 2026 à Toronto, et le prix est décerné conjointement par ABC-Juristes en contentieux et Legal 500. Le communiqué indique que cette distinction reconnaît son leadership ainsi que le rôle de l’équipe juridique dans la croissance, la gouvernance et la gestion des risques juridiques d’iA Groupe financier.",
+      "generatedSummary": "iA Groupe financier annonce qu’Isabelle Durand, vice-présidente principale, Affaires juridiques, Approvisionnement et Gouvernance de données et cheffe des Services juridiques, a été nommée Juriste d’entreprise de l’année lors de la quatrième Célébration des juristes d’entreprise au Canada. La cérémonie s’est tenue le 8 octobre 2026 à Toronto et le prix est décerné conjointement par ABC-Juristes en contentieux et Legal 500. Le communiqué souligne le rôle de l’équipe juridique dans la gouvernance, la gestion des risques et la croissance de l’organisation, ainsi que sa contribution récente à l’acquisition de RF Capital Group inc. (Patrimoine Richardson).",
       "categories": [
         "leadership",
-        "risk"
+        "risk",
+        "merger_acquisition"
       ],
       "importance": "low",
       "themes": [
         "Distinction professionnelle",
-        "Services juridiques",
+        "Leadership juridique",
         "Gouvernance",
-        "Gestion des risques juridiques"
+        "Gestion des risques juridiques",
+        "Acquisition de RF Capital Group inc. (Patrimoine Richardson)"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.99,
+        "confidence": 0.98,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:54:02.299294Z",
+          "executedAt": "2026-11-04T18:00:05.663342Z",
           "taskId": "summarize_news_iag-official-news_14265255ee31",
-          "sourceFingerprint": "sha256:7bace0a4c9433022fd968e81c8a9092abfe87c0f22bfc2924d5b8602335f035c",
-          "confidence": 0.99,
+          "sourceFingerprint": "sha256:bf98123dbee5eac1c2ce77bbe0af42b5a5cb26fe734ca6ca269c765e00a4d61b",
+          "confidence": 0.98,
           "warnings": []
         }
       }
@@ -24089,20 +24096,20 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:53:55.716090Z",
-        "documentHash": "sha256:63faf318e67e68770e52515d1f52a166fb365510a45f58e51c3f437b504bb1b4"
+        "fetchedAt": "2026-11-04T17:59:58.387205Z",
+        "documentHash": "sha256:26351ed3ccac568a4898f99d52f5fee374dd2fdd58fddb4c596cf7131a33be07"
       },
       "title": "iA Groupe financier annonce la date de divulgation de ses résultats financiers du troisième trimestre 2026",
       "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX: IAG)) divulguera ses résultats financiers pour le troisième trimestre de 2026 le lundi 9 novembre 2026, après la clôture des marchés.",
-      "generatedSummary": "iA Groupe financier (iA Société financière inc., TSX : IAG) annonce qu’il divulguera ses résultats financiers du troisième trimestre de 2026 le 9 novembre 2026 après la clôture des marchés. La direction présentera les résultats lors d’une audioconférence le 10 novembre 2026 à 11 h (HE). Les documents relatifs aux résultats seront publiés sur le site de la société après 17 h (HE) le 9 novembre 2026.",
+      "generatedSummary": "iA Groupe financier (iA Société financière inc., TSX : IAG) annonce qu’il divulguera ses résultats financiers du troisième trimestre de 2026 le 9 novembre 2026 après la clôture des marchés. La direction tiendra une audioconférence le 10 novembre 2026 à 11 h (HE). Les documents relatifs aux résultats seront publiés sur le site de la société après 17 h (HE) le 9 novembre 2026.",
       "categories": [
         "financial_results"
       ],
       "importance": "low",
       "themes": [
-        "Annonce de date de publication",
-        "Résultats du troisième trimestre 2026",
-        "Audioconférence avec la direction"
+        "Calendrier de publication des résultats du troisième trimestre 2026",
+        "Audioconférence avec la direction",
+        "Relations avec les investisseurs"
       ],
       "quality": {
         "status": "validated",
@@ -24113,9 +24120,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:53:58.442728Z",
+          "executedAt": "2026-11-04T18:00:01.563001Z",
           "taskId": "summarize_news_iag-official-news_3b852e19c18b",
-          "sourceFingerprint": "sha256:63faf318e67e68770e52515d1f52a166fb365510a45f58e51c3f437b504bb1b4",
+          "sourceFingerprint": "sha256:26351ed3ccac568a4898f99d52f5fee374dd2fdd58fddb4c596cf7131a33be07",
           "confidence": 0.99,
           "warnings": []
         }
@@ -24186,24 +24193,23 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:53:51.717521Z",
-        "documentHash": "sha256:c18d5c41a892d1d2281844873fc3c8588a74c4fe81d9a747f65e8c67c712580a"
+        "fetchedAt": "2026-11-04T17:59:54.232433Z",
+        "documentHash": "sha256:727247be7a4c6ea590566a52650007e02b95f9456b776f65f4df414b17f28681"
       },
       "title": "iA Groupe financier bonifie son offre de fonds distincts en proposant cinq nouvelles options d’investissement",
       "originalSummary": "iA Groupe financier (TSX: IAG) annonce l’ajout de cinq nouvelles options d’investissement à sa gamme de fonds distincts.",
-      "generatedSummary": "iA Groupe financier annonce l’ajout de cinq options à sa gamme de fonds distincts : Fidelity Actions mondiales+, Actions américaines croissance à moyenne capitalisation (RBC), Indexia actions internationales (iA), Indiciel islamique mondial tous pays (BlackRock) et Obligations de sociétés valeur (Canso). Ces ajouts visent notamment la croissance, les revenus, l’exposition aux marchés mondiaux, des options à prix concurrentiel et l’investissement conforme à des principes particuliers. La société indique que l’actif sous gestion de ses fonds distincts dans la gestion de patrimoine individuel a dépassé 50 milliards de dollars en septembre 2026.",
+      "generatedSummary": "iA Groupe financier a annoncé le 27 octobre 2026 l’ajout de cinq options à sa gamme de fonds distincts : Fidelity Actions mondiales+, Actions américaines croissance à moyenne capitalisation (RBC), Indexia actions internationales (iA), Indiciel islamique mondial tous pays (BlackRock) et Obligations de sociétés valeur (Canso). Ces solutions couvrent notamment les actions mondiales, les actions américaines de moyenne capitalisation, les marchés internationaux, l’investissement conforme aux principes islamiques et le crédit de sociétés. iA indique qu’en septembre 2026, l’actif sous gestion de ses fonds distincts dans la gestion de patrimoine individuel a dépassé 50 milliards de dollars.",
       "categories": [
         "product",
-        "wealth_management",
-        "strategy"
+        "wealth_management"
       ],
       "importance": "medium",
       "themes": [
-        "Fonds distincts",
-        "Nouvelles options d’investissement",
-        "Diversification",
-        "Gestion de patrimoine individuel",
-        "Actif sous gestion"
+        "fonds distincts",
+        "options d’investissement",
+        "gestion de patrimoine individuel",
+        "diversification",
+        "actifs sous gestion"
       ],
       "quality": {
         "status": "validated",
@@ -24214,9 +24220,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:53:55.186813Z",
+          "executedAt": "2026-11-04T17:59:58.002789Z",
           "taskId": "summarize_news_iag-official-news_726bae0b542a",
-          "sourceFingerprint": "sha256:c18d5c41a892d1d2281844873fc3c8588a74c4fe81d9a747f65e8c67c712580a",
+          "sourceFingerprint": "sha256:727247be7a4c6ea590566a52650007e02b95f9456b776f65f4df414b17f28681",
           "confidence": 0.99,
           "warnings": []
         }
@@ -24235,21 +24241,21 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-don-tragedie-wainwright-croix-rouge",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:53:48.233356Z",
-        "documentHash": "sha256:d34724c91e5e27a7105269f93ee0c1ce781c652f6ad7cc3497daec3b67fba96d"
+        "fetchedAt": "2026-11-04T17:59:50.412794Z",
+        "documentHash": "sha256:9ffd464d7841537d7c3c348f13d43256846267b132859bb3ca18faae7c961c94"
       },
       "title": "iA Groupe financier annonce le versement d’un don de 75 000 $ au Fonds de secours : Tragédie de Wainwright de la Croix-Rouge canadienne",
       "originalSummary": "iA Groupe financier fait un don de 75 000 $ au Fonds de secours : Tragédie de Wainwright de la Croix-Rouge canadienne.",
-      "generatedSummary": "iA Groupe financier a annoncé, le 29 octobre 2026, un don de 75 000 $ au Fonds de secours : Tragédie de Wainwright de la Croix-Rouge canadienne. Les fonds doivent répondre aux besoins immédiats des personnes touchées par les événements tragiques survenus à la Base des Forces armées canadiennes Wainwright, soutenir les familles et les particuliers, et contribuer au rétablissement ainsi qu’à la résilience de la communauté.",
+      "generatedSummary": "iA Groupe financier a annoncé, le 29 octobre 2026, un don de 75 000 $ au Fonds de secours : Tragédie de Wainwright de la Croix-Rouge canadienne. Les fonds visent à répondre aux besoins immédiats des personnes touchées par les événements tragiques survenus à la Base des Forces armées canadiennes Wainwright, à soutenir les familles et les particuliers, et à contribuer au rétablissement et à la résilience de la communauté.",
       "categories": [
         "other"
       ],
       "importance": "low",
       "themes": [
-        "Don philanthropique",
-        "Soutien aux personnes touchées par la tragédie de Wainwright",
+        "don corporatif",
+        "soutien communautaire",
         "Croix-Rouge canadienne",
-        "Responsabilité communautaire"
+        "tragédie de Wainwright"
       ],
       "quality": {
         "status": "validated",
@@ -24260,9 +24266,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:53:51.345482Z",
+          "executedAt": "2026-11-04T17:59:53.822105Z",
           "taskId": "summarize_news_iag-official-news_63a7d03f21b4",
-          "sourceFingerprint": "sha256:d34724c91e5e27a7105269f93ee0c1ce781c652f6ad7cc3497daec3b67fba96d",
+          "sourceFingerprint": "sha256:9ffd464d7841537d7c3c348f13d43256846267b132859bb3ca18faae7c961c94",
           "confidence": 0.99,
           "warnings": []
         }
@@ -24281,12 +24287,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-devoile-les-finalistes-de-son-10e-concours-philanthropique-annuel",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-03T17:53:44.029173Z",
-        "documentHash": "sha256:b72dcf8e2a9d98e9eded74a1538a33a9436da10f4ca92fc7dee429148e95c4a7"
+        "fetchedAt": "2026-11-04T17:59:44.134584Z",
+        "documentHash": "sha256:3f799adee6636103f42171375be23608401e57d5c46f8edf2ba7a1960bb1e886"
       },
       "title": "iA Groupe financier dévoile les finalistes de son 10e concours philanthropique annuel",
       "originalSummary": "iA Groupe financier a le plaisir d’annoncer les 12 finalistes de son concours philanthropique annuel.",
-      "generatedSummary": "iA Groupe financier a annoncé les 12 finalistes de la 10e édition de son concours philanthropique annuel. Pour cette édition, l’entreprise a doublé son financement annuel à un montant record de 1 million de dollars. Le public peut voter du 3 au 25 novembre 2026; quatre gagnants recevront chacun 200 000 $, tandis que le solde sera réparti entre les autres finalistes. Les gagnants seront annoncés durant la semaine du 7 décembre 2026. Depuis le lancement du concours en 2017, plus de 2 100 propositions ont été reçues et plus de 5 millions de dollars ont été investis dans des initiatives caritatives au Canada. En 2025, iA Groupe financier indique avoir investi 11,4 millions de dollars dans des initiatives communautaires canadiennes.",
+      "generatedSummary": "iA Groupe financier a annoncé les 12 finalistes de la 10e édition de son concours philanthropique annuel. Pour cette édition 2026, l’entreprise a doublé son financement annuel à un montant record de 1 million de dollars. Le public peut voter du 3 au 25 novembre pour désigner quatre gagnants, qui recevront chacun 200 000 $, tandis que le solde sera partagé entre les autres finalistes. Les gagnants seront annoncés durant la semaine du 7 décembre 2026. Depuis le lancement du concours en 2017, iA indique avoir reçu plus de 2 100 propositions et investi plus de 5 millions de dollars dans des initiatives caritatives au Canada. En 2025, la société indique avoir investi 11,4 millions de dollars dans des initiatives communautaires.",
       "categories": [
         "other"
       ],
@@ -24295,7 +24301,7 @@
         "philanthropie",
         "engagement communautaire",
         "jeunesse",
-        "concours philanthropique"
+        "durabilité"
       ],
       "quality": {
         "status": "validated",
@@ -24306,9 +24312,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-03T17:53:47.827384Z",
+          "executedAt": "2026-11-04T17:59:49.878889Z",
           "taskId": "summarize_news_iag-official-news_1d994d28c7c9",
-          "sourceFingerprint": "sha256:b72dcf8e2a9d98e9eded74a1538a33a9436da10f4ca92fc7dee429148e95c4a7",
+          "sourceFingerprint": "sha256:3f799adee6636103f42171375be23608401e57d5c46f8edf2ba7a1960bb1e886",
           "confidence": 0.99,
           "warnings": []
         }

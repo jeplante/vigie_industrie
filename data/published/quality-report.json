@@ -1,15 +1,20 @@
 {
-  "generatedAt": "2026-11-03T17:54:12.537787Z",
+  "generatedAt": "2026-11-04T18:00:16.059069Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
-  "sourcesSucceeded": 6,
+  "sourcesSucceeded": 3,
   "sourcesFailed": 0,
   "observationsAdded": 0,
-  "observationsUpdated": 9,
+  "observationsUpdated": 4,
   "overridesApplied": 4,
   "warnings": [
+    {
+      "code": "old_document_not_ingested",
+      "message": "mfc-results/T2 2026: Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html",
+      "sourceId": "mfc-results"
+    },
     {
       "code": "history_archive_unavailable",
       "message": "mfc-results: périodes historiques non découvertes ['2026-T3'].",
@@ -17,13 +22,133 @@
     },
     {
       "code": "newer_document_not_ingested",
-      "message": "slf-results/Annuel 2026: slf-results/Annuel 2026: métriques officielles requises manquantes ['core_earnings', 'core_eps', 'licat_ratio']",
+      "message": "slf-results/Annuel 2026: Erreur HTTP 403 pour https://www.newswire.ca/news-releases/la-sun-life-annonce-ses-resultats-du-deuxieme-trimestre-de-l-exercice-2026-843520875.html",
       "sourceId": "slf-results"
     },
     {
       "code": "history_archive_unavailable",
       "message": "slf-results: périodes historiques non découvertes ['2026-T3'].",
       "sourceId": "slf-results"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/travel-protected-stay-connected-manulife-canada-introduces-complimentary-esim-816412695.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-launches-new-advisor-ai-assistant-expanding-ai-enabled-underwriting-support-for-advisors-874574770.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html",
+      "sourceId": "mfc-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-dividend-rates-on-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-860397379.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-president-and-chief-executive-officer-kevin-strain-to-speak-at-the-scotiabank-financials-summit-891042337.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-s-third-quarter-2026-earnings-conference-call-to-be-held-on-november-5-827015894.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
+      "sourceId": "gwo-official-news"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
+      "sourceId": "gwo-official-news"
     }
   ],
   "errors": [],
@@ -41,7 +166,7 @@
       "periodIds": [
         "2026-T2"
       ],
-      "message": "mfc-results: périodes historiques non découvertes ['2026-T3'].",
+      "message": "mfc-results/T2 2026: Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-reports-second-quarter-2026-results-825420484.html; mfc-results: périodes historiques non découvertes ['2026-T3'].",
       "llmCalls": 0
     },
     {
@@ -57,8 +182,8 @@
       "periodIds": [
         "2026-AN"
       ],
-      "message": "slf-results/Annuel 2026: slf-results/Annuel 2026: métriques officielles requises manquantes ['core_earnings', 'core_eps', 'licat_ratio']; slf-results: périodes historiques non découvertes ['2026-T3'].",
-      "llmCalls": 1
+      "message": "slf-results/Annuel 2026: Erreur HTTP 403 pour https://www.newswire.ca/news-releases/la-sun-life-annonce-ses-resultats-du-deuxieme-trimestre-de-l-exercice-2026-843520875.html; slf-results: périodes historiques non découvertes ['2026-T3'].",
+      "llmCalls": 0
     },
     {
       "sourceId": "gwo-results",
@@ -90,7 +215,7 @@
     {
       "sourceId": "mfc-official-news",
       "companyId": "MFC",
-      "status": "success",
+      "status": "warning",
       "documentsDiscovered": 8,
       "documentUrls": [
         "https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
@@ -102,15 +227,14 @@
         "https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html",
         "https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html"
       ],
-      "periodIds": [
-        "2026-AN"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/travel-protected-stay-connected-manulife-canada-introduces-complimentary-esim-816412695.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-launches-new-advisor-ai-assistant-expanding-ai-enabled-underwriting-support-for-advisors-874574770.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-launches-enterprise-ai-platform-to-scale-ai-solutions-and-deliver-business-value-across-global-operations-836923775.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-appoints-sinead-o-connor-as-chief-actuary-joining-executive-leadership-team-802993371.html",
+      "llmCalls": 0
     },
     {
       "sourceId": "slf-official-news",
       "companyId": "SLF",
-      "status": "success",
+      "status": "warning",
       "documentsDiscovered": 8,
       "documentUrls": [
         "https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html",
@@ -122,16 +246,14 @@
         "https://www.newswire.ca/news-releases/sun-life-announces-dividend-rates-on-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-860397379.html",
         "https://www.newswire.ca/news-releases/sun-life-president-and-chief-executive-officer-kevin-strain-to-speak-at-the-scotiabank-financials-summit-891042337.html"
       ],
-      "periodIds": [
-        "2026-AN",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-dividend-rates-on-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-860397379.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-president-and-chief-executive-officer-kevin-strain-to-speak-at-the-scotiabank-financials-summit-891042337.html",
+      "llmCalls": 0
     },
     {
       "sourceId": "gwo-official-news",
       "companyId": "GWO",
-      "status": "success",
+      "status": "warning",
       "documentsDiscovered": 8,
       "documentUrls": [
         "https://www.newswire.ca/news-releases/great-west-s-third-quarter-2026-earnings-conference-call-to-be-held-on-november-5-827015894.html",
@@ -143,12 +265,9 @@
         "https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html",
         "https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html"
       ],
-      "periodIds": [
-        "2026-AN",
-        "2026-T2",
-        "2026-T3"
-      ],
-      "llmCalls": 8
+      "periodIds": [],
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-s-third-quarter-2026-earnings-conference-call-to-be-held-on-november-5-827015894.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-speak-at-the-scotiabank-financials-summit-831779043.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-subsidiary-empower-closes-acquisition-of-milliman-s-retirement-administration-business-886316341.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-president-amp-chief-executive-officer-david-harney-to-join-virtual-fireside-chat-with-jefferies-804525760.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-reports-q2-2026-results-with-double-digit-earnings-growth-863055536.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-s-second-quarter-2026-earnings-conference-call-to-be-held-on-july-29-818790230.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-completes-offering-of-eur500-million-3-625-senior-euro-bonds-due-2033-847349639.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/great-west-announces-pricing-of-eur500-million-senior-fixed-rate-euro-bonds-838789599.html",
+      "llmCalls": 0
     },
     {
       "sourceId": "iag-official-news",
