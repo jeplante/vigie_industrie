@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-05T18:03:01.892966Z",
+  "generatedAt": "2026-11-06T17:31:22.990035Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
   "sourcesSucceeded": 3,
   "sourcesFailed": 0,
-  "observationsAdded": 6,
+  "observationsAdded": 0,
   "observationsUpdated": 4,
   "overridesApplied": 4,
   "warnings": [
@@ -29,6 +29,11 @@
       "code": "newer_document_not_ingested",
       "message": "slf-results/T3 2026: Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-reports-third-quarter-2026-results-828763299.html",
       "sourceId": "slf-results"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-cautions-investors-regarding-ocehan-llc-offer-for-shares-810573042.html",
+      "sourceId": "mfc-official-news"
     },
     {
       "code": "news_article_failed",
@@ -63,11 +68,6 @@
     {
       "code": "news_article_failed",
       "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html",
-      "sourceId": "mfc-official-news"
-    },
-    {
-      "code": "news_article_failed",
-      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html",
       "sourceId": "mfc-official-news"
     },
     {
@@ -221,17 +221,17 @@
       "status": "warning",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-cautions-investors-regarding-ocehan-llc-offer-for-shares-810573042.html",
         "https://www.newswire.ca/news-releases/photo-and-video-opportunity-manulife-marks-remembrance-day-with-annual-tribute-to-canada-s-fallen-heroes-855958622.html",
         "https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2026-results-872018950.html",
         "https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-302929813.html",
         "https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-851345633.html",
         "https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
         "https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html",
-        "https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html",
-        "https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html"
+        "https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html"
       ],
       "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/photo-and-video-opportunity-manulife-marks-remembrance-day-with-annual-tribute-to-canada-s-fallen-heroes-855958622.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2026-results-872018950.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-302929813.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-851345633.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-and-uplink-announce-winners-of-the-shaping-canada-s-longevity-advantage-challenge-848797857.html",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-cautions-investors-regarding-ocehan-llc-offer-for-shares-810573042.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/photo-and-video-opportunity-manulife-marks-remembrance-day-with-annual-tribute-to-canada-s-fallen-heroes-855958622.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2026-results-872018950.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-302929813.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-851345633.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-to-release-third-quarter-2026-results-855076043.html",
       "llmCalls": 0
     },
     {
