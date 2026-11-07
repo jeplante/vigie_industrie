@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-06T17:31:22.990035Z",
+  "generatedAt": "2026-11-07T16:28:28.774325Z",
   "companies": [
     {
       "id": "MFC",
@@ -2572,6 +2572,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2844,6 +2845,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3026,6 +3028,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5834,6 +5837,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -24088,12 +24092,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-06T17:31:08.199266Z",
-        "documentHash": "sha256:ce610000a6052a34d9114de4a97a8597d810e50077771bf42e5d858b492f99c6"
+        "fetchedAt": "2026-11-07T16:28:22.276505Z",
+        "documentHash": "sha256:612a68a4adbd75ce20b8797e5960dff36808329c6c7a1b81faae1f99699c92eb"
       },
       "title": "Isabelle Durand, cheffe des Services juridiques de iA Groupe financier, nommée Juriste d’entreprise de l’année",
       "originalSummary": "iA Groupe financier est fier de féliciter Isabelle Durand, cheffe des Services juridiques, pour sa nomination à titre de Juriste d’entreprise de l’année lors d’une cérémonie qui s’est tenue le 8 octobre dernier à Toronto.",
-      "generatedSummary": "Isabelle Durand, vice-présidente principale, Affaires juridiques, Approvisionnement et Gouvernance de données, et cheffe des Services juridiques d’iA Groupe financier, a été nommée Juriste d’entreprise de l’année 2026 lors de la quatrième Célébration des juristes d’entreprise au Canada. La cérémonie s’est tenue le 8 octobre à Toronto et la distinction est décernée conjointement par ABC-Juristes en contentieux et Legal 500. iA indique que cette reconnaissance souligne le leadership de Mme Durand ainsi que le rôle de son équipe juridique dans la croissance, la gouvernance et la gestion des risques juridiques. Le communiqué mentionne également que l’équipe a récemment contribué à l’acquisition de RF Capital Group inc. (Patrimoine Richardson).",
+      "generatedSummary": "iA Groupe financier annonce qu’Isabelle Durand, vice-présidente principale, Affaires juridiques, Approvisionnement et Gouvernance de données, et cheffe des Services juridiques, a été nommée Juriste d’entreprise de l’année lors de la quatrième Célébration des juristes d’entreprise au Canada. La cérémonie s’est tenue le 8 octobre 2026 à Toronto. Le prix est décerné conjointement par ABC-Juristes en contentieux et Legal 500. Le communiqué indique que cette reconnaissance souligne son leadership ainsi que le rôle de l’équipe juridique dans la croissance, la gouvernance et la gestion des risques juridiques du groupe. Il précise également que cette équipe a récemment contribué à l’acquisition de RF Capital Group inc. (Patrimoine Richardson).",
       "categories": [
         "leadership",
         "risk",
@@ -24102,24 +24106,24 @@
       "importance": "low",
       "themes": [
         "Distinction professionnelle",
-        "Leadership juridique",
-        "Gouvernance d’entreprise",
+        "Fonction juridique",
+        "Gouvernance",
         "Gestion des risques juridiques",
         "Acquisition de RF Capital Group inc. (Patrimoine Richardson)"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.98,
+        "confidence": 0.99,
         "warnings": [],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-06T17:31:12.743906Z",
+          "executedAt": "2026-11-07T16:28:27.347667Z",
           "taskId": "summarize_news_iag-official-news_14265255ee31",
-          "sourceFingerprint": "sha256:ce610000a6052a34d9114de4a97a8597d810e50077771bf42e5d858b492f99c6",
-          "confidence": 0.98,
+          "sourceFingerprint": "sha256:612a68a4adbd75ce20b8797e5960dff36808329c6c7a1b81faae1f99699c92eb",
+          "confidence": 0.99,
           "warnings": []
         }
       }
