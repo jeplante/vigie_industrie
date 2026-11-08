@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T16:28:28.774325Z",
+  "generatedAt": "2026-11-08T16:41:24.403744Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -287,10 +287,8 @@
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031"
       ],
-      "periodIds": [
-        "2026-AN"
-      ],
-      "llmCalls": 1
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
