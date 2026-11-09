@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-08T16:41:24.403744Z",
+  "generatedAt": "2026-11-09T20:46:37.632596Z",
   "companies": [
     {
       "id": "MFC",
@@ -2574,6 +2574,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2848,6 +2849,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3030,6 +3032,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5840,6 +5843,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -23162,25 +23166,24 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-06T17:31:17.052033Z",
-        "documentHash": "sha256:2e699adb65a1c13c8f443197b3f28b531a1dd9c39f837434630e0c10e37270e6"
+        "fetchedAt": "2026-11-09T20:46:33.605512Z",
+        "documentHash": "sha256:968244e34fe968eeeef7955849b4c7efff091d43a5337bcb065bbfff8b2c7f02"
       },
       "title": "iA Groupe financier franchit le cap des 50 milliards de dollars d’actif sous gestion en fonds distincts",
       "originalSummary": "iA Groupe financier a dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts, en gestion de patrimoine individuel, au cours du mois de septembre 2026.",
-      "generatedSummary": "En septembre 2026, iA Groupe financier a dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts dans sa gestion de patrimoine individuel. La société indique détenir près de 40 % du marché canadien des actifs sous gestion de fonds distincts et se classer au premier rang des ventes nettes de fonds distincts au Canada depuis 2016, selon Investor Economics. Elle cite notamment ses produits, son réseau de distribution et ses plateformes technologiques EVO, Espace client et iA Mobile comme facteurs de soutien.",
+      "generatedSummary": "En septembre 2026, iA Groupe financier a dépassé 50 milliards de dollars d’actif sous gestion en fonds distincts dans sa division de gestion de patrimoine individuel. Selon le communiqué, l’entreprise détient près de 40 % du marché canadien des actifs sous gestion de fonds distincts et se classe au premier rang des ventes nettes de fonds distincts au Canada depuis 2016, d’après les données d’Investor Economics. iA met notamment de l’avant ses produits, son réseau de distribution et ses plateformes numériques EVO, Espace client et iA Mobile.",
       "categories": [
         "wealth_management",
-        "distribution",
         "digital_transformation"
       ],
       "importance": "medium",
       "themes": [
-        "Fonds distincts",
-        "Actif sous gestion",
-        "Gestion de patrimoine individuel",
-        "Part de marché",
-        "Ventes nettes",
-        "Plateformes numériques"
+        "fonds distincts",
+        "actif sous gestion",
+        "gestion de patrimoine individuel",
+        "part de marché",
+        "ventes nettes",
+        "plateformes numériques"
       ],
       "quality": {
         "status": "validated",
@@ -23191,9 +23194,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-06T17:31:20.054326Z",
+          "executedAt": "2026-11-09T20:46:37.159503Z",
           "taskId": "summarize_news_iag-official-news_ec7e2319cfd2",
-          "sourceFingerprint": "sha256:2e699adb65a1c13c8f443197b3f28b531a1dd9c39f837434630e0c10e37270e6",
+          "sourceFingerprint": "sha256:968244e34fe968eeeef7955849b4c7efff091d43a5337bcb065bbfff8b2c7f02",
           "confidence": 0.98,
           "warnings": []
         }
@@ -24378,18 +24381,18 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-06T17:31:03.749055Z",
-        "documentHash": "sha256:71048747dfaf76141478eb14e5b300e868897144ca80b734da71354f912a9956"
+        "fetchedAt": "2026-11-09T20:46:27.137052Z",
+        "documentHash": "sha256:13f5f9729f36ca7855bbf6d4a2337f0f9068a9383511882c884600389fb30c6d"
       },
       "title": "iA Groupe financier annonce la date de divulgation de ses résultats financiers du troisième trimestre 2026",
       "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX: IAG)) divulguera ses résultats financiers pour le troisième trimestre de 2026 le lundi 9 novembre 2026, après la clôture des marchés.",
-      "generatedSummary": "iA Groupe financier (iA Société financière inc., TSX : IAG) publiera ses résultats financiers du troisième trimestre de 2026 après la clôture des marchés le 9 novembre 2026. Une audioconférence de la direction est prévue le 10 novembre 2026 à 11 h (HE), avec une période de questions réservée aux analystes financiers. Les documents relatifs aux résultats seront disponibles sur le site de la société après 17 h (HE) le 9 novembre 2026.",
+      "generatedSummary": "iA Groupe financier (iA Société financière inc., TSX : IAG) annonce qu’il publiera ses résultats financiers du troisième trimestre de 2026 le 9 novembre 2026 après la clôture des marchés. La direction tiendra une audioconférence le 10 novembre 2026 à 11 h (HE), dont la période de questions sera réservée aux analystes financiers. Les documents relatifs aux résultats seront publiés sur le site de la société après 17 h (HE) le 9 novembre.",
       "categories": [
         "financial_results"
       ],
-      "importance": "medium",
+      "importance": "low",
       "themes": [
-        "Publication des résultats du troisième trimestre 2026",
+        "Publication prévue des résultats du troisième trimestre 2026",
         "Audioconférence avec la direction",
         "Relations avec les investisseurs"
       ],
@@ -24402,9 +24405,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-06T17:31:07.626736Z",
+          "executedAt": "2026-11-09T20:46:32.220145Z",
           "taskId": "summarize_news_iag-official-news_3b852e19c18b",
-          "sourceFingerprint": "sha256:71048747dfaf76141478eb14e5b300e868897144ca80b734da71354f912a9956",
+          "sourceFingerprint": "sha256:13f5f9729f36ca7855bbf6d4a2337f0f9068a9383511882c884600389fb30c6d",
           "confidence": 0.99,
           "warnings": []
         }
