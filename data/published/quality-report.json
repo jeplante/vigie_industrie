@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-09T20:46:37.632596Z",
+  "generatedAt": "2026-11-10T17:52:51.136622Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
   "sourcesSucceeded": 3,
   "sourcesFailed": 0,
-  "observationsAdded": 0,
+  "observationsAdded": 6,
   "observationsUpdated": 4,
   "overridesApplied": 4,
   "warnings": [
@@ -208,10 +208,10 @@
       "status": "success",
       "documentsDiscovered": 1,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t2/q2-2026-financial-statements.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t3/q3-2026-news-release-acc-2.pdf"
       ],
       "periodIds": [
-        "2026-T2"
+        "2026-T3"
       ],
       "llmCalls": 0
     },
@@ -278,20 +278,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-renouvellement-offre-publique-rachat-cours-normal-activites",
+        "https://ia.ca/salle-de-presse/2026/novembre/iasf-hausse-7-pourcent-dividende-actions-ordinaires-paiement-dividende-actions-privilegiees",
+        "https://ia.ca/salle-de-presse/2026/novembre/iagf-declare-resultats-troisieme-trimestre-augmentation-7-pourcent-dividende-actions-ordinaires",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-devoile-les-finalistes-de-son-10e-concours-philanthropique-annuel",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-don-tragedie-wainwright-croix-rouge",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
-        "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee",
-        "https://ia.ca/salle-de-presse/2026/octobre/iagf-remporte-un-prix-d-excellence-en-apprentissage-et-en-developpement-de-capacites",
-        "https://ia.ca/salle-de-presse/2026/septembre/iagf-franchit-cap-50-milliards-dollars-actif-gestion-fonds-distincts",
-        "https://ia.ca/salle-de-presse/2026/septembre/iagf-rachete-ses-debentures-subordonnees-3-072-pourcent-echeant-le-24-septembre-2031"
+        "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee"
       ],
       "periodIds": [
-        "2026-AN",
-        "2026-T3"
+        "2026-AN"
       ],
-      "llmCalls": 2
+      "llmCalls": 8
     }
   ]
 }
