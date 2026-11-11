@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-10T17:52:51.136622Z",
+  "generatedAt": "2026-11-11T17:55:40.577350Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
   "sourcesChecked": 8,
   "sourcesSucceeded": 3,
   "sourcesFailed": 0,
-  "observationsAdded": 6,
+  "observationsAdded": 0,
   "observationsUpdated": 4,
   "overridesApplied": 4,
   "warnings": [
@@ -208,7 +208,7 @@
       "status": "success",
       "documentsDiscovered": 1,
       "documentUrls": [
-        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t3/q3-2026-news-release-acc-2.pdf"
+        "https://ia.ca/-/media/files/ia/investisseurs/rapportsfinanciers/trimestriel/2026/t3/q3-2026-news-release-ncib.pdf"
       ],
       "periodIds": [
         "2026-T3"
@@ -278,19 +278,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/novembre/d-ricard-e-jobin-iagf-participeront-causerie-virtuelle-valeurs-mobilieres-td",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-renouvellement-offre-publique-rachat-cours-normal-activites",
         "https://ia.ca/salle-de-presse/2026/novembre/iasf-hausse-7-pourcent-dividende-actions-ordinaires-paiement-dividende-actions-privilegiees",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-declare-resultats-troisieme-trimestre-augmentation-7-pourcent-dividende-actions-ordinaires",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-devoile-les-finalistes-de-son-10e-concours-philanthropique-annuel",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-don-tragedie-wainwright-croix-rouge",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
-        "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026",
-        "https://ia.ca/salle-de-presse/2026/octobre/isabelle-durand-cheffe-services-juridiques-iagf-nommee-juriste-entreprise-de-l-annee"
+        "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026"
       ],
       "periodIds": [
         "2026-AN"
       ],
-      "llmCalls": 8
+      "llmCalls": 1
     }
   ]
 }

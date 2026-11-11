@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-10T17:52:51.136622Z",
+  "generatedAt": "2026-11-11T17:55:40.577350Z",
   "companies": [
     {
       "id": "MFC",
@@ -2576,6 +2576,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2852,6 +2853,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3034,6 +3036,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5846,6 +5849,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -25018,6 +25022,53 @@
           "executedAt": "2026-11-10T17:52:29.335349Z",
           "taskId": "summarize_news_iag-official-news_f4622550023d",
           "sourceFingerprint": "sha256:6e267dd1a03d34993481b05cc90cd49dfd10fa5460c4893f8f5e7f2f13e5f619",
+          "confidence": 0.99,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-49a9d193baa2f9fb69ad",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodId": "2026-AN",
+      "periodKey": "AN",
+      "publishedAt": "2026-11-11",
+      "source": {
+        "type": "official_release",
+        "name": "iA Groupe financier",
+        "url": "https://ia.ca/salle-de-presse/2026/novembre/d-ricard-e-jobin-iagf-participeront-causerie-virtuelle-valeurs-mobilieres-td",
+        "sourceId": "iag-official-news",
+        "fetchedAt": "2026-11-11T17:55:12.249704Z",
+        "documentHash": "sha256:e963fcae228a7a6bf06e42994402d5c857cd3050a761ace046fbe0b906e20337"
+      },
+      "title": "Denis Ricard, président et chef de la direction de iA Groupe financier, et Éric Jobin, vice-président exécutif, chef des finances et actuaire en chef, participeront à une causerie virtuelle avec Valeurs Mobilières TD",
+      "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX : IAG)) annonce que Denis Ricard, président et chef de la direction, et Éric Jobin, vice-président exécutif, chef des finances et actuaire en chef, se joindront à Mario Mendonca, analyste chez Valeurs Mobilières TD, dans le cadre d’une causerie virtuelle, le lundi 16 novembre 2026 à 13h (heure de l’Est).",
+      "generatedSummary": "iA Groupe financier a annoncé que Denis Ricard, président et chef de la direction, et Éric Jobin, vice-président exécutif, chef des finances et actuaire en chef, participeront à une causerie virtuelle avec Mario Mendonca, analyste chez Valeurs Mobilières TD, le 16 novembre 2026 à 13 h (HE). Une webdiffusion en direct et en différé sera accessible via un lien d’inscription et dans la section Relations avec les investisseurs du site de la société.",
+      "categories": [
+        "strategy",
+        "leadership"
+      ],
+      "importance": "low",
+      "themes": [
+        "Relations avec les investisseurs",
+        "Causerie virtuelle",
+        "Direction",
+        "Valeurs Mobilières TD"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "openai",
+        "confidence": 0.99,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-11-11T17:55:16.867599Z",
+          "taskId": "summarize_news_iag-official-news_49a9d193baa2",
+          "sourceFingerprint": "sha256:e963fcae228a7a6bf06e42994402d5c857cd3050a761ace046fbe0b906e20337",
           "confidence": 0.99,
           "warnings": []
         }
