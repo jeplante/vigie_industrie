@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T17:55:40.577350Z",
+  "generatedAt": "2026-11-12T18:20:53.928191Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -72,6 +72,11 @@
     },
     {
       "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-s-jessica-tan-to-participate-in-fireside-chat-at-the-desjardins-toronto-conference-817621757.html",
+      "sourceId": "slf-official-news"
+    },
+    {
+      "code": "news_article_failed",
       "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-increases-common-share-dividend-and-declares-dividends-on-preferred-shares-payable-in-q4-2026-896790087.html",
       "sourceId": "slf-official-news"
     },
@@ -103,11 +108,6 @@
     {
       "code": "news_article_failed",
       "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html",
-      "sourceId": "slf-official-news"
-    },
-    {
-      "code": "news_article_failed",
-      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html",
       "sourceId": "slf-official-news"
     },
     {
@@ -240,17 +240,17 @@
       "status": "warning",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/sunlife-s-jessica-tan-to-participate-in-fireside-chat-at-the-desjardins-toronto-conference-817621757.html",
         "https://www.newswire.ca/news-releases/sunlife-increases-common-share-dividend-and-declares-dividends-on-preferred-shares-payable-in-q4-2026-896790087.html",
         "https://www.newswire.ca/news-releases/sunlife-reports-third-quarter-2026-results-828763299.html",
         "https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html",
         "https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html",
         "https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html",
         "https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html",
-        "https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html",
-        "https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html"
+        "https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html"
       ],
       "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-increases-common-share-dividend-and-declares-dividends-on-preferred-shares-payable-in-q4-2026-896790087.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-reports-third-quarter-2026-results-828763299.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-launches-5-billion-commitment-to-canadian-infrastructure-initiative-804435157.html",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-s-jessica-tan-to-participate-in-fireside-chat-at-the-desjardins-toronto-conference-817621757.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-increases-common-share-dividend-and-declares-dividends-on-preferred-shares-payable-in-q4-2026-896790087.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-reports-third-quarter-2026-results-828763299.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-hosts-third-quarter-2026-earnings-conference-call-843307735.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-cautions-shareholders-regarding-ocehan-llc-s-below-market-bid-for-shares-897477148.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-executive-appointment-to-lead-investor-relations-868713807.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-announces-intention-to-redeem-series-2021-1-subordinated-unsecured-2-46-fixed-floating-debentures-841533245.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sun-life-reports-results-of-conversion-privilege-of-class-a-non-cumulative-rate-reset-preferred-shares-series-10r-and-class-a-non-cumulative-floating-rate-preferred-shares-series-11qr-852212926.html",
       "llmCalls": 0
     },
     {
@@ -287,10 +287,8 @@
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026"
       ],
-      "periodIds": [
-        "2026-AN"
-      ],
-      "llmCalls": 1
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
