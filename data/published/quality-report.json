@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T18:20:53.928191Z",
+  "generatedAt": "2026-11-13T17:46:34.362588Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -287,8 +287,10 @@
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-date-divulgation-resultats-financiers-troisieme-trimestre-2026"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-AN"
+      ],
+      "llmCalls": 8
     }
   ]
 }
