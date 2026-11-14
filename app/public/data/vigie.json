@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-13T17:46:34.362588Z",
+  "generatedAt": "2026-11-14T16:37:45.777082Z",
   "companies": [
     {
       "id": "MFC",
@@ -2579,6 +2579,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2858,6 +2859,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3040,6 +3042,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5855,6 +5858,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -25075,6 +25079,60 @@
           "sourceFingerprint": "sha256:b1d707f16b83ce80af05cd9cd4a09d5b01e7c20f2204b59a6f4da2fad918c87f",
           "confidence": 0.99,
           "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-362f1e73567b28b29c10",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodId": "2026-AN",
+      "periodKey": "AN",
+      "publishedAt": "2026-11-13",
+      "source": {
+        "type": "official_release",
+        "name": "iA Groupe financier",
+        "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-augmente-sa-cible-de-roe-tire-des-activites-de-base-a-18-5-pourcent-et-plus-en-2028",
+        "sourceId": "iag-official-news",
+        "fetchedAt": "2026-11-14T16:37:35.372155Z",
+        "documentHash": "sha256:cdfc236b516b460af670d65d5454de98c72b07d601ad11f7dca36691d3a3c362"
+      },
+      "title": "iA Groupe financier augmente sa cible de ROE tiré des activités de base à 18,5 % et plus en 2028",
+      "originalSummary": "La cible plus élevée reflète une forte dynamique de croissance interne et des possibilités accrues de déploiement du capital attendues de la Ligne directrice ESCAP de l’AMF proposée pour 2027",
+      "generatedSummary": "iA Groupe financier (iA Société financière inc., TSX : IAG) relève sa cible de rendement des capitaux propres (ROE) tiré des activités de base à 18,5 % et plus en 2028, contre 17 % et plus en 2026. La société attribue cette hausse à sa dynamique de croissance interne et aux possibilités additionnelles de déploiement du capital attendues de la Ligne directrice ESCAP proposée pour 2027 par l’AMF. Si cette ligne directrice était adoptée dans la forme proposée, iA estime, au 30 septembre 2026 sur une base pro forma, que son capital disponible pour déploiement augmenterait de 1,7 G$ pour atteindre 2,6 G$, que son ratio de solvabilité atteindrait 134 % et que son ratio de base atteindrait 118 %. L’AMF a publié le projet en consultation le 12 novembre 2026; la consultation doit se terminer le 11 décembre 2026 et la version définitive est attendue au premier trimestre de 2027, avec une entrée en vigueur prévue le 1er janvier 2027. Ces objectifs et incidences sont prospectifs et dépendent notamment de l’adoption de la ligne directrice dans une forme essentiellement semblable à celle proposée.",
+      "categories": [
+        "financial_results",
+        "capital_management",
+        "strategy",
+        "regulation"
+      ],
+      "importance": "medium",
+      "themes": [
+        "hausse de la cible de ROE",
+        "déploiement du capital",
+        "ligne directrice ESCAP de l’AMF",
+        "optimisation du bilan",
+        "information prospective"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "openai",
+        "confidence": 0.99,
+        "warnings": [
+          "La cible de ROE et les incidences estimées de la Ligne directrice ESCAP sont des informations prospectives. Elles reposent sur l’hypothèse d’une adoption de la ligne directrice essentiellement dans sa forme proposée et pourraient différer sensiblement des résultats réels."
+        ],
+        "llmTrace": {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-11-14T16:37:42.204101Z",
+          "taskId": "summarize_news_iag-official-news_362f1e73567b",
+          "sourceFingerprint": "sha256:cdfc236b516b460af670d65d5454de98c72b07d601ad11f7dca36691d3a3c362",
+          "confidence": 0.99,
+          "warnings": [
+            "La cible de ROE et les incidences estimées de la Ligne directrice ESCAP sont des informations prospectives. Elles reposent sur l’hypothèse d’une adoption de la ligne directrice essentiellement dans sa forme proposée et pourraient différer sensiblement des résultats réels."
+          ]
         }
       }
     }
