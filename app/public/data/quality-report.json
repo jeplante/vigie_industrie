@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T16:37:45.777082Z",
+  "generatedAt": "2026-11-15T17:13:19.420920Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -287,10 +287,8 @@
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-don-tragedie-wainwright-croix-rouge",
         "https://ia.ca/salle-de-presse/2026/octobre/iagf-bonifie-son-offre-de-fonds-distincts-en-proposant-cinq-nouvelles-options-d-investissement"
       ],
-      "periodIds": [
-        "2026-AN"
-      ],
-      "llmCalls": 1
+      "periodIds": [],
+      "llmCalls": 0
     }
   ]
 }
