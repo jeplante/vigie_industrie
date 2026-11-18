@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T19:12:33.026183Z",
+  "generatedAt": "2026-11-18T18:52:42.543895Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -29,6 +29,11 @@
       "code": "newer_document_not_ingested",
       "message": "slf-results/T3 2026: Erreur HTTP 403 pour https://www.newswire.ca/news-releases/sunlife-reports-third-quarter-2026-results-828763299.html",
       "sourceId": "slf-results"
+    },
+    {
+      "code": "news_article_failed",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-chief-financial-officer-colin-simpson-to-participate-in-fireside-chat-at-the-desjardins-toronto-conference-811319460.html",
+      "sourceId": "mfc-official-news"
     },
     {
       "code": "news_article_failed",
@@ -63,11 +68,6 @@
     {
       "code": "news_article_failed",
       "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
-      "sourceId": "mfc-official-news"
-    },
-    {
-      "code": "news_article_failed",
-      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html",
       "sourceId": "mfc-official-news"
     },
     {
@@ -221,17 +221,17 @@
       "status": "warning",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://www.newswire.ca/news-releases/manulife-chief-financial-officer-colin-simpson-to-participate-in-fireside-chat-at-the-desjardins-toronto-conference-811319460.html",
         "https://www.newswire.ca/news-releases/manulife-announces-subordinated-debenture-issue-862114625.html",
         "https://www.newswire.ca/news-releases/manulife-cautions-investors-regarding-ocehan-llc-offer-for-shares-810573042.html",
         "https://www.newswire.ca/news-releases/photo-and-video-opportunity-manulife-marks-remembrance-day-with-annual-tribute-to-canada-s-fallen-heroes-855958622.html",
         "https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2026-results-872018950.html",
         "https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-302929813.html",
         "https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-851345633.html",
-        "https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
-        "https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html"
+        "https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html"
       ],
       "periodIds": [],
-      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-announces-subordinated-debenture-issue-862114625.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-cautions-investors-regarding-ocehan-llc-offer-for-shares-810573042.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/photo-and-video-opportunity-manulife-marks-remembrance-day-with-annual-tribute-to-canada-s-fallen-heroes-855958622.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2026-results-872018950.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-302929813.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-851345633.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-bank-introduces-a-new-approach-to-rewards-rooted-in-health-wealth-and-longevity-890101966.html",
+      "message": "Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-chief-financial-officer-colin-simpson-to-participate-in-fireside-chat-at-the-desjardins-toronto-conference-811319460.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-announces-subordinated-debenture-issue-862114625.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-cautions-investors-regarding-ocehan-llc-offer-for-shares-810573042.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/photo-and-video-opportunity-manulife-marks-remembrance-day-with-annual-tribute-to-canada-s-fallen-heroes-855958622.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-reports-third-quarter-2026-results-872018950.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-preferred-share-dividend-302929813.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/manulife-declares-common-share-dividend-851345633.html; Erreur HTTP 403 pour https://www.newswire.ca/news-releases/new-manulife-and-mit-agelab-longevity-preparedness-index-reveals-what-it-takes-to-age-well-in-canada-806773441.html",
       "llmCalls": 0
     },
     {
