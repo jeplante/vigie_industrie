@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-11-18T18:52:42.543895Z",
+  "generatedAt": "2026-11-19T19:00:42.361076Z",
   "companies": [
     {
       "id": "MFC",
@@ -2584,6 +2584,7 @@
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 186 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -2868,6 +2869,7 @@
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
+          "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 321 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante)."
         ]
       }
@@ -3050,6 +3052,7 @@
         "confidence": 1.0,
         "warnings": [
           "Provenance migrée de la V1; empreinte calculée sur la référence de source.",
+          "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
           "Correction manuelle: La valeur source de 364 M$ doit être normalisée en milliards pour la métrique canonique. (Jerome Plante).",
@@ -5870,6 +5873,7 @@
         "extractionMethod": "deterministic",
         "confidence": 1.0,
         "warnings": [
+          "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
           "Correction manuelle: Le 11 % est la croissance du BPA; le BPA activités de base publié est de 0,79 $. (Jerome Plante).",
@@ -24920,20 +24924,21 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-renouvellement-offre-publique-rachat-cours-normal-activites",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:22.173760Z",
-        "documentHash": "sha256:8d9f2c0b601e2c108b57314d80fe30f8f07f2bdc8805a1e5bf74bdb90ff3d1a6"
+        "fetchedAt": "2026-11-19T19:00:26.822683Z",
+        "documentHash": "sha256:bf25f7b53e0128b9502fce034428bce9ed50a21e5c16afe9870e370292fedca8"
       },
       "title": "iA Groupe financier annonce le renouvellement de son offre publique de rachat dans le cours normal des activités",
       "originalSummary": "Avec l’approbation de la Bourse de Toronto et de l’Autorité des marchés financiers, le conseil d’administration de iA Société financière inc. (TSX: IAG) (« iA Groupe financier » ou la « Société ») a autorisé la Société à racheter, dans le cours normal de ses activités, entre le 14 novembre 2026 et le 13 novembre 2027, jusqu’à concurrence de 4 355 019 actions ordinaires, représentant approximativement 5 % de ses 87 100 392 actions ordinaires émises et en circulation au 31 octobre 2026.",
-      "generatedSummary": "iA Groupe financier (TSX : IAG) a annoncé le renouvellement de son offre publique de rachat dans le cours normal des activités, avec l’approbation de la Bourse de Toronto et de l’Autorité des marchés financiers. Du 14 novembre 2026 au 13 novembre 2027, la Société pourra racheter aux fins d’annulation jusqu’à 4 355 019 actions ordinaires, soit environ 5 % des 87 100 392 actions en circulation au 31 octobre 2026. Dans le cadre de l’OPRA arrivant à échéance le 13 novembre 2026, elle avait l’autorisation de racheter jusqu’à 7 371 485 actions; au 31 octobre 2026, 5 248 931 actions avaient été rachetées et annulées à un prix moyen pondéré d’environ 175,6692 $ par action. La Société a également mis en place un régime automatique de rachat approuvé par la Bourse de Toronto.",
+      "generatedSummary": "iA Société financière inc. (TSX : IAG) a annoncé le renouvellement de son offre publique de rachat dans le cours normal des activités, approuvée par la Bourse de Toronto et l’Autorité des marchés financiers. Du 14 novembre 2026 au 13 novembre 2027, la Société pourra racheter pour annulation jusqu’à 4 355 019 actions ordinaires, soit environ 5 % des 87 100 392 actions en circulation au 31 octobre 2026. Dans le cadre de l’OPRA arrivant à échéance le 13 novembre 2026, 5 248 931 actions avaient été rachetées et annulées au 31 octobre 2026, à un prix moyen pondéré d’environ 175,6692 $ par action. La Société a également mis en place un régime automatique de rachat d’actions approuvé par la Bourse de Toronto.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
         "Rachat d’actions",
+        "OPRA",
+        "Allocation du capital",
         "Annulation d’actions",
-        "Gestion du capital",
         "Régime automatique de rachat"
       ],
       "quality": {
@@ -24945,9 +24950,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:27.137210Z",
+          "executedAt": "2026-11-19T19:00:31.178947Z",
           "taskId": "summarize_news_iag-official-news_521687cd881b",
-          "sourceFingerprint": "sha256:8d9f2c0b601e2c108b57314d80fe30f8f07f2bdc8805a1e5bf74bdb90ff3d1a6",
+          "sourceFingerprint": "sha256:bf25f7b53e0128b9502fce034428bce9ed50a21e5c16afe9870e370292fedca8",
           "confidence": 0.99,
           "warnings": []
         }
@@ -24966,20 +24971,21 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/iasf-hausse-7-pourcent-dividende-actions-ordinaires-paiement-dividende-actions-privilegiees",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:27.591404Z",
-        "documentHash": "sha256:f55af012b83cc6ce0cbcd3527eb80465a16bc3ddadc04f6a8d57b542a97ba194"
+        "fetchedAt": "2026-11-19T19:00:31.559466Z",
+        "documentHash": "sha256:001d59ac5412d3d873ac89657fbdd06ac1900c1a7c13a0c030ba19b2c2d1fc56"
       },
       "title": "iA Société financière inc. annonce une hausse de 7 % du dividende sur ses actions ordinaires et le paiement d’un dividende sur ses actions privilégiées",
       "originalSummary": "Le conseil d’administration de iA Société financière inc. (TSX: IAG) a annoncé aujourd’hui une hausse de 0,08 $ de son dividende par action ordinaire en circulation pour le trimestre se terminant le 30 septembre 2026, le faisant passer à 1,1800 $.",
-      "generatedSummary": "iA Société financière inc. (TSX : IAG) a annoncé une hausse de 0,08 $ de son dividende trimestriel par action ordinaire, le portant à 1,1800 $ pour le trimestre terminé le 30 septembre 2026, soit une hausse de 7 %. Le dividende sera payable le 15 décembre 2026 aux actionnaires inscrits au 20 novembre 2026. Le conseil a également annoncé un dividende semestriel de 32,1750 $ par action privilégiée de catégorie A, série C, payable le 31 décembre 2026 aux actionnaires inscrits au 4 décembre 2026. Les dividendes sur actions ordinaires et privilégiées sont déterminés aux fins fiscales canadiennes.",
+      "generatedSummary": "iA Société financière inc. (TSX : IAG) a annoncé une hausse de 0,08 $ de son dividende trimestriel par action ordinaire, le portant à 1,1800 $ pour le trimestre terminé le 30 septembre 2026, soit une hausse de 7 %. Le dividende sera versé le 15 décembre 2026 aux actionnaires inscrits le 20 novembre 2026. Le conseil a également annoncé un dividende semestriel de 32,1750 $ par action privilégiée de catégorie A, série C, payable le 31 décembre 2026 aux actionnaires inscrits le 4 décembre 2026. Les dividendes sur actions ordinaires et privilégiées sont des dividendes déterminés aux fins fiscales canadiennes et provinciales ou territoriales correspondantes.",
       "categories": [
         "capital_management"
       ],
       "importance": "medium",
       "themes": [
-        "Hausse du dividende ordinaire",
-        "Dividende sur actions privilégiées",
-        "Régime de réinvestissement des dividendes"
+        "hausse du dividende ordinaire",
+        "dividende sur actions privilégiées",
+        "politique de dividendes",
+        "régime de réinvestissement des dividendes"
       ],
       "quality": {
         "status": "validated",
@@ -24990,9 +24996,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:31.439759Z",
+          "executedAt": "2026-11-19T19:00:35.975625Z",
           "taskId": "summarize_news_iag-official-news_ccc4b53054e0",
-          "sourceFingerprint": "sha256:f55af012b83cc6ce0cbcd3527eb80465a16bc3ddadc04f6a8d57b542a97ba194",
+          "sourceFingerprint": "sha256:001d59ac5412d3d873ac89657fbdd06ac1900c1a7c13a0c030ba19b2c2d1fc56",
           "confidence": 0.99,
           "warnings": []
         }
@@ -25011,23 +25017,24 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-declare-resultats-troisieme-trimestre-augmentation-7-pourcent-dividende-actions-ordinaires",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:31.885244Z",
-        "documentHash": "sha256:c0149a8ae2d47d35b29bedf83a24fc34d88277059641bc3a7ef3fb3cfd56f789"
+        "fetchedAt": "2026-11-19T19:00:36.384484Z",
+        "documentHash": "sha256:a730a90b53ca8220b7ea7eda849e24dfd0dbaba48673b81eb37deebd2d91d659"
       },
       "title": "iA Groupe financier déclare ses résultats pour le troisième trimestre et annonce une augmentation de 7 % de son dividende sur les actions ordinaires",
       "originalSummary": "Forte croissance des affaires soutenue par la dynamique solide en Gestion de patrimoine et en Assurance individuelle",
-      "generatedSummary": "iA Groupe financier (TSX : IAG) a annoncé, pour le troisième trimestre clos le 30 septembre 2026, un bénéfice tiré des activités de base de 356 millions de dollars et un BPA dilué tiré des activités de base de 4,03 $, en hausse de 16 % sur un an. Le résultat net attribué aux actionnaires ordinaires s’est établi à 255 millions de dollars, avec un BPA dilué de 2,89 $, en baisse de 26 % sur un an. Le ROE tiré des activités de base sur 12 mois était de 17,6 %, contre un ROE de 13,3 %. L’actif sous gestion et sous administration atteignait 375 milliards de dollars au 30 septembre 2026, en hausse de 30 % sur 12 mois. La société a également annoncé une hausse de 7 % de son dividende sur les actions ordinaires et le renouvellement de son programme OPRA, visant le rachat de jusqu’à 5 % des actions en circulation.",
+      "generatedSummary": "iA Groupe financier (TSX : IAG) a annoncé, pour le troisième trimestre clos le 30 septembre 2026, un bénéfice tiré des activités de base de 356 M$ et un BPA dilué tiré des activités de base de 4,03 $, en hausse de 16 % sur un an. Le ROE tiré des activités de base sur 12 mois a atteint 17,6 %, conformément à l’objectif 2026 d’au moins 17 %. Le résultat net attribué aux actionnaires ordinaires s’est établi à 255 M$, le BPA dilué à 2,89 $ et le ROE sur 12 mois à 13,3 %. La société a annoncé une hausse de 7 % du dividende sur les actions ordinaires et le renouvellement de son programme OPRA pour racheter jusqu’à 5 % des actions en circulation. L’actif sous gestion et sous administration a atteint 375 G$ au 30 septembre 2026, en hausse de 30 % sur 12 mois, tandis que le ratio de solvabilité était de 131 %.",
       "categories": [
         "financial_results",
-        "capital_management"
+        "capital_management",
+        "wealth_management"
       ],
       "importance": "high",
       "themes": [
         "Résultats du troisième trimestre 2026",
-        "Hausse du dividende ordinaire",
+        "Hausse de 7 % du dividende ordinaire",
         "Rachat d’actions",
         "Gestion de patrimoine",
-        "Capital et solvabilité"
+        "Solvabilité et génération de capital"
       ],
       "quality": {
         "status": "validated",
@@ -25038,9 +25045,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:36.966144Z",
+          "executedAt": "2026-11-19T19:00:42.359563Z",
           "taskId": "summarize_news_iag-official-news_f4622550023d",
-          "sourceFingerprint": "sha256:c0149a8ae2d47d35b29bedf83a24fc34d88277059641bc3a7ef3fb3cfd56f789",
+          "sourceFingerprint": "sha256:a730a90b53ca8220b7ea7eda849e24dfd0dbaba48673b81eb37deebd2d91d659",
           "confidence": 0.99,
           "warnings": []
         }
@@ -25059,12 +25066,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/d-ricard-e-jobin-iagf-participeront-causerie-virtuelle-valeurs-mobilieres-td",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:18.649096Z",
-        "documentHash": "sha256:23d06214339c441778186444a3ed5b79e00f4a080fd2da559919b71902fecf8d"
+        "fetchedAt": "2026-11-19T19:00:23.055180Z",
+        "documentHash": "sha256:8b7d458d43257ee8c132bc8145eaba3bc4eb186cd31009ec2ee64115666348d7"
       },
       "title": "Denis Ricard, président et chef de la direction de iA Groupe financier, et Éric Jobin, vice-président exécutif, chef des finances et actuaire en chef, participeront à une causerie virtuelle avec Valeurs Mobilières TD",
       "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX : IAG)) annonce que Denis Ricard, président et chef de la direction, et Éric Jobin, vice-président exécutif, chef des finances et actuaire en chef, se joindront à Mario Mendonca, analyste chez Valeurs Mobilières TD, dans le cadre d’une causerie virtuelle, le lundi 16 novembre 2026 à 13h (heure de l’Est).",
-      "generatedSummary": "iA Groupe financier annonce que son président et chef de la direction, Denis Ricard, et son vice-président exécutif, chef des finances et actuaire en chef, Éric Jobin, participeront à une causerie virtuelle avec Mario Mendonca, analyste chez Valeurs Mobilières TD, le 16 novembre 2026 à 13 h (HE). Une webdiffusion en direct et en différé sera disponible.",
+      "generatedSummary": "iA Groupe financier annonce que Denis Ricard, président et chef de la direction, et Éric Jobin, vice-président exécutif, chef des finances et actuaire en chef, participeront à une causerie virtuelle avec Mario Mendonca, analyste chez Valeurs Mobilières TD, le 16 novembre 2026 à 13 h (heure de l’Est). Une webdiffusion en direct et en différé sera accessible via un lien d’inscription et la section Relations avec les investisseurs du site de la société.",
       "categories": [
         "strategy",
         "leadership"
@@ -25073,8 +25080,8 @@
       "themes": [
         "Relations avec les investisseurs",
         "Causerie virtuelle",
-        "Webdiffusion",
-        "Direction"
+        "Direction",
+        "Webdiffusion"
       ],
       "quality": {
         "status": "validated",
@@ -25085,9 +25092,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:21.819789Z",
+          "executedAt": "2026-11-19T19:00:26.274965Z",
           "taskId": "summarize_news_iag-official-news_49a9d193baa2",
-          "sourceFingerprint": "sha256:23d06214339c441778186444a3ed5b79e00f4a080fd2da559919b71902fecf8d",
+          "sourceFingerprint": "sha256:8b7d458d43257ee8c132bc8145eaba3bc4eb186cd31009ec2ee64115666348d7",
           "confidence": 0.99,
           "warnings": []
         }
@@ -25106,12 +25113,12 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-augmente-sa-cible-de-roe-tire-des-activites-de-base-a-18-5-pourcent-et-plus-en-2028",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:11.495742Z",
-        "documentHash": "sha256:f033287428673b0be182046ffe090215148da1bdc67be30a118ed639a7da1dad"
+        "fetchedAt": "2026-11-19T19:00:16.161115Z",
+        "documentHash": "sha256:79c8ba8342c297a23c65054615effd7885c82f8cb311ac3484a7c6597b2a126f"
       },
       "title": "iA Groupe financier augmente sa cible de ROE tiré des activités de base à 18,5 % et plus en 2028",
       "originalSummary": "La cible plus élevée reflète une forte dynamique de croissance interne et des possibilités accrues de déploiement du capital attendues de la Ligne directrice ESCAP de l’AMF proposée pour 2027",
-      "generatedSummary": "iA Groupe financier (iA Société financière inc.) relève sa cible de rendement des capitaux propres (ROE) tiré des activités de base à 18,5 % et plus en 2028, contre 17 % et plus en 2026. La société attribue cette hausse à sa dynamique de croissance interne et aux possibilités additionnelles de déploiement du capital associées au projet de ligne directrice ESCAP 2027 de l’AMF. Si ce projet était adopté dans sa forme soumise à consultation, iA estime que son capital disponible pour déploiement augmenterait de 1,7 G$ pour atteindre 2,6 G$, que son ratio de solvabilité atteindrait 134 % et son ratio de base 118 %, sur une base pro forma au 30 septembre 2026. L’AMF a publié le projet en consultation le 12 novembre 2026; la consultation devrait se terminer le 11 décembre 2026 et la version définitive est prévue au premier trimestre de 2027. Ces objectifs et incidences sont prospectifs et dépendent notamment de l’adoption de la ligne directrice dans une forme essentiellement similaire.",
+      "generatedSummary": "iA Groupe financier (TSX : IAG) relève sa cible de rendement des capitaux propres (ROE) tiré des activités de base à 18,5 % et plus en 2028, contre 17 % et plus en 2026. La société attribue cette hausse à sa dynamique de croissance interne et aux possibilités supplémentaires de déploiement du capital attendues de la ligne directrice ESCAP proposée par l’AMF pour 2027. Si celle-ci était adoptée dans la forme soumise à consultation, iA estime qu’au 30 septembre 2026 son capital disponible pour déploiement atteindrait 2,6 G$, dont 1,7 G$ lié aux modifications proposées, et que ses ratios de solvabilité et de base atteindraient respectivement 134 % et 118 %. Ces données sont prospectives et pro forma; les incidences réelles dépendront notamment de la version définitive de la ligne directrice. L’AMF a ouvert la consultation le 12 novembre 2026, prévue jusqu’au 11 décembre 2026, et envisage une version définitive au premier trimestre de 2027 avec une entrée en vigueur attendue le 1er janvier 2027.",
       "categories": [
         "financial_results",
         "capital_management",
@@ -25120,31 +25127,29 @@
       ],
       "importance": "high",
       "themes": [
-        "Relèvement de la cible de ROE tiré des activités de base",
+        "Cible de ROE",
         "Déploiement du capital",
-        "Projet de ligne directrice ESCAP 2027 de l’AMF",
-        "Ratios de solvabilité et optimisation du bilan",
+        "Ligne directrice ESCAP",
+        "Solvabilité",
         "Information prospective"
       ],
       "quality": {
         "status": "validated",
         "extractionMethod": "openai",
-        "confidence": 0.99,
+        "confidence": 0.98,
         "warnings": [
-          "Les cibles de ROE et les incidences estimées de la ligne directrice ESCAP sont des informations prospectives.",
-          "Les données de capital disponible et de ratios sont présentées sur une base pro forma au 30 septembre 2026 et supposent l’adoption du projet ESCAP dans une forme essentiellement similaire."
+          "Les objectifs de ROE et les incidences de la ligne directrice ESCAP proposée sont des informations prospectives et des estimations pro forma conditionnelles à son adoption, notamment dans une forme essentiellement conforme au projet soumis à consultation."
         ],
         "llmTrace": {
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:18.262433Z",
+          "executedAt": "2026-11-19T19:00:22.575761Z",
           "taskId": "summarize_news_iag-official-news_362f1e73567b",
-          "sourceFingerprint": "sha256:f033287428673b0be182046ffe090215148da1bdc67be30a118ed639a7da1dad",
-          "confidence": 0.99,
+          "sourceFingerprint": "sha256:79c8ba8342c297a23c65054615effd7885c82f8cb311ac3484a7c6597b2a126f",
+          "confidence": 0.98,
           "warnings": [
-            "Les cibles de ROE et les incidences estimées de la ligne directrice ESCAP sont des informations prospectives.",
-            "Les données de capital disponible et de ratios sont présentées sur une base pro forma au 30 septembre 2026 et supposent l’adoption du projet ESCAP dans une forme essentiellement similaire."
+            "Les objectifs de ROE et les incidences de la ligne directrice ESCAP proposée sont des informations prospectives et des estimations pro forma conditionnelles à son adoption, notamment dans une forme essentiellement conforme au projet soumis à consultation."
           ]
         }
       }
@@ -25162,19 +25167,20 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/d-ricard-president-chef-direction-iagf-prendra-parole-conference-desjardins-toronto",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:00.654769Z",
-        "documentHash": "sha256:c73258f9964a492cc7efff34200a8963e87a07899fd7c8d6d7ee93c14ae1ced6"
+        "fetchedAt": "2026-11-19T19:00:06.869423Z",
+        "documentHash": "sha256:3311043e879444cd788539bbbb9676a9849485261ad8bf95b761d6369443750e"
       },
       "title": "Denis Ricard, président et chef de la direction de iA Groupe financier, prendra la parole à la Conférence Desjardins de Toronto",
       "originalSummary": "iA Groupe financier (iA Société financière inc. (TSX: IAG)) annonce la participation de Denis Ricard, président et chef de la direction, à une causerie animée par Doug Young, analyste de Desjardins Valeurs Mobilières le mardi 24 novembre 2026 à 10h45 (heure de l’Est) dans le cadre de la Conférence Desjardins de Toronto.",
-      "generatedSummary": "iA Groupe financier annonce que son président et chef de la direction, Denis Ricard, participera à une causerie animée par Doug Young de Desjardins Valeurs Mobilières lors de la Conférence Desjardins de Toronto, le 24 novembre 2026 à 10 h 45 (heure de l’Est). Une webdiffusion en direct et en différé sera accessible en ligne ainsi que dans la section Relations avec les investisseurs du site de la société.",
+      "generatedSummary": "iA Groupe financier annonce que son président et chef de la direction, Denis Ricard, participera à une causerie animée par Doug Young de Desjardins Valeurs Mobilières lors de la Conférence Desjardins de Toronto, le 24 novembre 2026 à 10 h 45 (heure de l’Est). Une webdiffusion en direct et en différé sera accessible en ligne et dans la section Relations avec les investisseurs du site de la société.",
       "categories": [
         "leadership",
-        "strategy"
+        "distribution"
       ],
       "importance": "low",
       "themes": [
-        "Participation à une conférence investisseurs",
+        "Conférence investisseurs",
+        "Prise de parole de la direction",
         "Relations avec les investisseurs",
         "Webdiffusion"
       ],
@@ -25187,9 +25193,9 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:05.758858Z",
+          "executedAt": "2026-11-19T19:00:10.628098Z",
           "taskId": "summarize_news_iag-official-news_5e852290dd5c",
-          "sourceFingerprint": "sha256:c73258f9964a492cc7efff34200a8963e87a07899fd7c8d6d7ee93c14ae1ced6",
+          "sourceFingerprint": "sha256:3311043e879444cd788539bbbb9676a9849485261ad8bf95b761d6369443750e",
           "confidence": 0.99,
           "warnings": []
         }
@@ -25208,24 +25214,24 @@
         "name": "iA Groupe financier",
         "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-cadre-reference-obligations-durables-2026",
         "sourceId": "iag-official-news",
-        "fetchedAt": "2026-11-18T18:52:06.394595Z",
-        "documentHash": "sha256:9e94b7148c9cb2461288b69f0c970bd683b8c57db3554aa575b8ce118d4fe666"
+        "fetchedAt": "2026-11-19T19:00:11.005765Z",
+        "documentHash": "sha256:964791560b457f7f5c1ace172f6b44521a900dcc23d2235a5a4ed2d33ba2276f"
       },
       "title": "iA Groupe financier annonce son Cadre de référence des obligations durables 2026",
       "originalSummary": "iA Société financière inc. (« iA Groupe financier ») (TSX: IAG) a le plaisir d’annoncer la mise à jour de son Cadre de référence des obligations durables 2026 (le « Cadre »), qui vise à soutenir la stratégie de iA Groupe financier en matière de durabilité.",
-      "generatedSummary": "iA Groupe financier a annoncé la mise à jour de son Cadre de référence des obligations durables 2026, applicable à toutes les obligations vertes, sociales ou de durabilité émises à compter du 17 novembre 2026. Le produit net de ces émissions doit financer ou refinancer des actifs admissibles nouveaux ou existants. Moody’s Ratings a confirmé la conformité du Cadre aux principes et lignes directrices de l’ICMA et lui a attribué la note SQS2 (« Très bon »). La société prévoit de publier annuellement, pour chaque émission, un rapport d’affectation des produits jusqu’à leur affectation complète, ainsi que des informations sur les répercussions environnementales et sociales lorsque possible.",
+      "generatedSummary": "iA Groupe financier a annoncé la mise à jour de son Cadre de référence des obligations durables 2026, applicable à toutes les obligations durables émises à compter du 17 novembre 2026. Le produit net des obligations vertes, sociales ou de durabilité doit financer ou refinancer des actifs admissibles. Moody’s Ratings a confirmé la conformité du Cadre aux principes et lignes directrices de l’ICMA et lui a attribué la note SQS2 (« Très bon »). La Société prévoit publier annuellement un rapport sur l’affectation des produits jusqu’à leur affectation complète, ainsi que, lorsque possible, des informations sur les répercussions environnementales et sociales des actifs financés ou refinancés.",
       "categories": [
         "strategy",
         "capital_management",
-        "regulation"
+        "risk"
       ],
       "importance": "medium",
       "themes": [
         "finance durable",
         "obligations vertes, sociales et de durabilité",
-        "affectation des produits",
+        "allocation du produit des émissions",
         "transition environnementale et sociale",
-        "divulgation d’impact",
+        "reporting d’impact",
         "conformité aux principes de l’ICMA"
       ],
       "quality": {
@@ -25237,9 +25243,56 @@
           "provider": "openai",
           "model": "gpt-5.6-terra",
           "promptVersion": "2026-07-12.v2",
-          "executedAt": "2026-11-18T18:52:11.013787Z",
+          "executedAt": "2026-11-19T19:00:15.685629Z",
           "taskId": "summarize_news_iag-official-news_42839c0b61a6",
-          "sourceFingerprint": "sha256:9e94b7148c9cb2461288b69f0c970bd683b8c57db3554aa575b8ce118d4fe666",
+          "sourceFingerprint": "sha256:964791560b457f7f5c1ace172f6b44521a900dcc23d2235a5a4ed2d33ba2276f",
+          "confidence": 0.99,
+          "warnings": []
+        }
+      }
+    },
+    {
+      "id": "news-51b5bfa73c8ba15abbe0",
+      "companyIds": [
+        "IAG"
+      ],
+      "periodId": "2026-AN",
+      "periodKey": "AN",
+      "publishedAt": "2026-11-18",
+      "source": {
+        "type": "official_release",
+        "name": "iA Groupe financier",
+        "url": "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-placement-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable",
+        "sourceId": "iag-official-news",
+        "fetchedAt": "2026-11-19T19:00:00.092509Z",
+        "documentHash": "sha256:1af2713a7565128f7441b6459f25ba59219d511cae3996f065db422eb82af20e"
+      },
+      "title": "iA Groupe financier annonce un placement de 500 millions de dollars de débentures subordonnées non garanties à taux fixe/variable de 4,625 %",
+      "originalSummary": "iA Groupe financier (la « Société ») (TSX: IAG) a annoncé aujourd’hui un placement d’un capital global de 500 millions de dollars de débentures subordonnées non garanties à taux fixe/variable de 4,625 % (les « débentures ») venant à échéance le 24 novembre 2036 (le « placement »).",
+      "generatedSummary": "iA Groupe financier (TSX : IAG) a annoncé un placement de 500 millions de dollars de débentures subordonnées non garanties à taux fixe/variable de 4,625 %, échéant le 24 novembre 2036. Les titres seront émis comme obligations durables dans le cadre de référence des obligations durables 2026 du groupe. La clôture est prévue vers le 24 novembre 2026. Le produit net doit servir à financer ou refinancer des actifs admissibles relevant de catégories vertes et sociales. Le coupon fixe annuel de 4,625 % sera payé semestriellement jusqu’au 24 novembre 2031; il sera ensuite remplacé par le taux CORRA composé quotidiennement majoré de 1,27 %, payable trimestriellement.",
+      "categories": [
+        "capital_management"
+      ],
+      "importance": "medium",
+      "themes": [
+        "émission de dette subordonnée",
+        "obligations durables",
+        "financement d'actifs verts et sociaux",
+        "refinancement",
+        "CORRA"
+      ],
+      "quality": {
+        "status": "validated",
+        "extractionMethod": "openai",
+        "confidence": 0.99,
+        "warnings": [],
+        "llmTrace": {
+          "provider": "openai",
+          "model": "gpt-5.6-terra",
+          "promptVersion": "2026-07-12.v2",
+          "executedAt": "2026-11-19T19:00:06.327436Z",
+          "taskId": "summarize_news_iag-official-news_51b5bfa73c8b",
+          "sourceFingerprint": "sha256:1af2713a7565128f7441b6459f25ba59219d511cae3996f065db422eb82af20e",
           "confidence": 0.99,
           "warnings": []
         }
