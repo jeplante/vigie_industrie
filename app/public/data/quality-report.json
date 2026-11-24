@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T22:03:37.130176Z",
+  "generatedAt": "2026-11-24T20:40:55.446837Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -278,17 +278,19 @@
       "status": "success",
       "documentsDiscovered": 8,
       "documentUrls": [
+        "https://ia.ca/salle-de-presse/2026/novembre/iagf-placement-500-millions-dollars-debentures-subordonnees-taux-fixe-variable-4-625-pourcent",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-placement-500-millions-debentures-subordonnees-non-garanties-taux-fixe-variable",
         "https://ia.ca/salle-de-presse/2026/novembre/d-ricard-president-chef-direction-iagf-prendra-parole-conference-desjardins-toronto",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-cadre-reference-obligations-durables-2026",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-augmente-sa-cible-de-roe-tire-des-activites-de-base-a-18-5-pourcent-et-plus-en-2028",
         "https://ia.ca/salle-de-presse/2026/novembre/d-ricard-e-jobin-iagf-participeront-causerie-virtuelle-valeurs-mobilieres-td",
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-renouvellement-offre-publique-rachat-cours-normal-activites",
-        "https://ia.ca/salle-de-presse/2026/novembre/iasf-hausse-7-pourcent-dividende-actions-ordinaires-paiement-dividende-actions-privilegiees",
-        "https://ia.ca/salle-de-presse/2026/novembre/iagf-declare-resultats-troisieme-trimestre-augmentation-7-pourcent-dividende-actions-ordinaires"
+        "https://ia.ca/salle-de-presse/2026/novembre/iasf-hausse-7-pourcent-dividende-actions-ordinaires-paiement-dividende-actions-privilegiees"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-AN"
+      ],
+      "llmCalls": 5
     }
   ]
 }
