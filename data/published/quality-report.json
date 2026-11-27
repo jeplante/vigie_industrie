@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T19:38:09.792002Z",
+  "generatedAt": "2026-11-27T19:29:49.086648Z",
   "mode": "live",
   "dryRun": false,
   "status": "partial",
@@ -287,8 +287,10 @@
         "https://ia.ca/salle-de-presse/2026/novembre/iagf-annonce-renouvellement-offre-publique-rachat-cours-normal-activites",
         "https://ia.ca/salle-de-presse/2026/novembre/iasf-hausse-7-pourcent-dividende-actions-ordinaires-paiement-dividende-actions-privilegiees"
       ],
-      "periodIds": [],
-      "llmCalls": 0
+      "periodIds": [
+        "2026-AN"
+      ],
+      "llmCalls": 8
     }
   ]
 }
